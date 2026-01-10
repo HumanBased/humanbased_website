@@ -1,0 +1,112 @@
+
+import React, { useState, useEffect } from 'react';
+import LogoOrb from './LogoOrb';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+const Navbar: React.FC = () => {
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const isAbout = location.pathname === "/about";
+  const isServices = location.pathname === "/services";
+  const isProcess = location.pathname === "/process";
+  const isHome = location.pathname === "/" || location.pathname === "/home";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      // shrink logic for isScrolled
+      setIsScrolled(currentY > 20);
+
+      // hide when scrolling down, show when scrolling up
+      if (currentY > lastScrollY && currentY > 80) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+
+      setLastScrollY(currentY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 w-full bg-transparent pt-6 transition-all duration-300 transform ${
+      isHidden ? '-translate-y-full' : 'translate-y-0'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="glass rounded-full px-6 py-3 flex items-center justify-start transition-all duration-300">
+          <Link to="/" className="flex items-center gap-3">
+            <LogoOrb className="h-20 w-20 md:h-24 md:w-24" />
+            <span className="font-semibold text-xl md:text-2xl tracking-tight">HumanBased</span>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-10 ml-auto">
+  <NavLink
+    to="/about"
+    className="text-sm font-medium transition-colors uppercase tracking-widest"
+  >
+    <span className="flex flex-col leading-tight text-left">
+      <span className={`text-[10px] uppercase tracking-[0.25em] ${
+        isAbout ? "text-amber-400" : "text-white/40"
+      }`}>
+        Why
+      </span>
+      <span className={`text-base md:text-lg font-medium ${
+        isAbout ? "text-amber-400" : "text-white/80"
+      }`}>
+        About
+      </span>
+    </span>
+  </NavLink>
+  <NavLink
+    to="/services"
+    className="text-sm font-medium transition-colors uppercase tracking-widest"
+  >
+    <span className="flex flex-col leading-tight text-left">
+      <span className={`text-[10px] uppercase tracking-[0.25em] ${
+        isServices ? "text-amber-400" : "text-white/40"
+      }`}>
+        What
+      </span>
+      <span className={`text-base md:text-lg font-medium ${
+        isServices ? "text-amber-400" : "text-white/80"
+      }`}>
+        Services
+      </span>
+    </span>
+  </NavLink>
+  <NavLink
+    to="/process"
+    className="text-sm font-medium transition-colors uppercase tracking-widest"
+  >
+    <span className="flex flex-col leading-tight text-left">
+      <span className={`text-[10px] uppercase tracking-[0.25em] ${
+        isProcess ? "text-amber-400" : "text-white/40"
+      }`}>
+        How
+      </span>
+      <span className={`text-base md:text-lg font-medium ${
+        isProcess ? "text-amber-400" : "text-white/80"
+      }`}>
+        The Process
+      </span>
+    </span>
+  </NavLink>
+</div>
+          <div className="ml-12">
+            <a href="/#contact" className="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
