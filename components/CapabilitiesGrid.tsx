@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
-import ethicalIntelligenceImg from '../assets/Images/about-ethical-intelligence.webp.png';
-import organizationalEnablementImg from '../assets/Images/about-organizational-enablement.webp.png';
+import ethicalIntelligenceImg from '../assets/images/about-ethical-intelligence.webp.png';
+import organizationalEnablementImg from '../assets/images/about-organizational-enablement.webp.png';
 import strategicDiscoveryImg from '../assets/images/about-strategic-discovery.webp.png';
 import responsiblePlatformsImg from '../assets/images/about-responsible-platforms.webp.png';
 
