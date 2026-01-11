@@ -49,3 +49,12 @@ body {
   }
 }
 
+@keyframes star-drift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 10% 10%; }
+}
+
+.animate-star-drift {
+  background-size: 110% 110%; /* Zoom in so it has room to move */
+  animation: star-drift 90s linear infinite alternate; /* 'alternate' makes it go back and forth smoothly */
+}

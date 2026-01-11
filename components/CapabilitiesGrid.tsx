@@ -76,15 +76,15 @@ const CapabilitiesGrid: React.FC = () => {
         <div key={i} className="glass rounded-[2.5rem] bg-white/[0.02] border-white/5 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04] hover:border-white/10 group shadow-2xl overflow-hidden">
           <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
             {p.title === "Strategic Discovery" ? (
-              <img src={strategicDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Abstract holographic visualization representing strategic discovery and organizational mapping" />
+              <img src={strategicDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing strategic discovery and organizational mapping" />
             ) : p.title === "Responsible Platforms" ? (
-              <img src={responsiblePlatformsImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Abstract holographic visualization representing responsible platforms and robust digital environments" />
+              <img src={responsiblePlatformsImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing responsible platforms and robust digital environments" />
             ) : p.title === "Ethical Intelligence" ? (
-              <img src={ethicalIntelligenceImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Abstract holographic visualization representing ethical intelligence and aligned technology" />
+              <img src={ethicalIntelligenceImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing ethical intelligence and aligned technology" />
             ) : p.title === "Organizational Enablement" ? (
-              <img src={organizationalEnablementImg} className="visual-card-img brightness-125 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:scale-[1.02]" alt="Abstract holographic visualization representing organizational enablement and connected teams" />
+              <img src={organizationalEnablementImg} className="visual-card-img brightness-125 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:scale-[1.02] active:brightness-125 active:scale-[1.02]" alt="Abstract holographic visualization representing organizational enablement and connected teams" />
             ) : images[i] ? (
-              <img src={images[i]} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={p.title} />
+              <img src={images[i]} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt={p.title} />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-6 h-6 border-2 border-white/10 border-t-amber-500 rounded-full animate-spin"></div>

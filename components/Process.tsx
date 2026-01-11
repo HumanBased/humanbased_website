@@ -69,13 +69,13 @@ const Process: React.FC = () => {
               <div className="glass p-6 md:p-7 rounded-[2.5rem] bg-white/[0.01] border-white/5 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.03] hover:border-white/10 group relative overflow-hidden">
               <div className="aspect-[4/3] md:aspect-[5/4] w-full rounded-3xl overflow-hidden mb-8 bg-black/20 relative">
                 {step.title === "Deep Discovery & Insight" ? (
-                  <img src={processDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} />
+                  <img src={processDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt={step.title} />
                 ) : step.title === "Co-Design & Validation" ? (
-                  <img src={processCodesignImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} />
+                  <img src={processCodesignImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt={step.title} />
                 ) : step.title === "Ethical, Auditable Engineering" ? (
-                  <img src={processEthicalImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} />
+                  <img src={processEthicalImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt={step.title} />
                 ) : step.title === "Continuous Improvement & Capability Building" ? (
-                  <img src={processImprovementImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} />
+                  <img src={processImprovementImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt={step.title} />
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
               </div>

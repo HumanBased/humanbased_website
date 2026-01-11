@@ -7,7 +7,7 @@ import SocialHub from './SocialHub';
 const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/5 mt-24">
-      <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 pb-40 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-12 mb-12">
           {/* Left: Logo + Tagline */}
           <div className="space-y-4 max-w-sm">
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Company</span>
               <Link to="/about" className="text-sm text-white/60 hover:text-amber-500 transition-colors">About</Link>
               <a href="/#contact" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Contact</a>
-              <a href="/privacy" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Privacy</a>
+              <Link to="/privacy" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Privacy</Link>
               <Link to="/legal" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Legal</Link>
             </div>
             
@@ -39,15 +39,15 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Right: Social Hub Wheel */}
-          <div className="w-full md:w-auto flex justify-start md:justify-end">
-            <div className="w-56 h-56 md:w-64 md:h-64">
+          <div className="relative w-full md:w-auto min-h-[224px] md:min-h-0">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 md:relative md:left-20 md:translate-x-0 md:bottom-auto md:ml-auto w-56 h-56 md:w-64 md:h-64 block">
               <SocialHub size="compact" />
             </div>
           </div>
         </div>
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/10">
-          <span>© 2024 HumanBased. All rights reserved.</span>
+          <span>© 2025 HumanBased. All rights reserved.</span>
           <div className="flex gap-10">
             <span className="cursor-pointer hover:text-white/30 transition-colors">Cookie Settings</span>
             <span className="cursor-pointer hover:text-white/30 transition-colors">Accessibility</span>

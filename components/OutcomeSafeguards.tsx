@@ -9,7 +9,7 @@ const OutcomeSafeguards: React.FC = () => {
       {/* Cost Reduction */}
       <div className="glass group rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl">
         <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-          <img src={processCostImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Cost Reduction" />
+          <img src={processCostImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Cost Reduction" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
         </div>
         <div className="p-8 md:p-10 space-y-5">
@@ -25,7 +25,7 @@ const OutcomeSafeguards: React.FC = () => {
       {/* Uncompromising Quality */}
       <div className="glass group rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl">
         <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-          <img src={processQualityImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Uncompromising Quality" />
+          <img src={processQualityImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Uncompromising Quality" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
         </div>
         <div className="p-8 md:p-10 space-y-5">

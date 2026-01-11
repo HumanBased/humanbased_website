@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsError(false);
     setIsSuccess(false);
@@ -50,21 +50,30 @@ const Contact: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Replace this with your actual submit logic
-      // For now, simulating an API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const formDataObj = new FormData(e.currentTarget);
       
-      // If you have an actual endpoint, uncomment and use:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-      // if (!response.ok) throw new Error('Submission failed');
+      const response = await fetch("https://formspree.io/f/PLACEHOLDER_ID", {
+        method: "POST",
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-      setIsSuccess(true);
-      setFormData({ name: '', company: '', email: '', message: '' });
-      setErrors({});
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: '', company: '', email: '', message: '' });
+        setErrors({});
+        // Reset form
+        e.currentTarget.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          setIsError(true);
+        } else {
+          setIsError(true);
+        }
+      }
     } catch (error) {
       setIsError(true);
     } finally {

@@ -172,26 +172,50 @@ const ServicesPage: React.FC = () => {
       <section className="pb-12 pt-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="glass rounded-[3rem] overflow-hidden bg-white/[0.01] border-white/5 p-2 relative">
-            <div className="aspect-[21/9] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
-              <img
-                src={servicesHeroImg}
-                alt="Abstract holographic visualization representing services that create real impact"
-                className="h-full w-full ml-24 object-cover object-center transition-transform transition-opacity duration-500 ease-out hover:brightness-110 hover:scale-[1.02]"
-                style={{
-                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)'
-                }}
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509] via-[#050509]/85 to-transparent"></div>
-              <div className="absolute inset-0 flex items-center px-12 md:px-20 visual-overlay-transition z-10 pt-32">
-                <div className="max-w-md drop-shadow-lg relative z-10">
-                  <h4 className="font-serif text-3xl md:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
-                  <p className="text-white font-light mb-4">
-                    We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
-                  </p>
-                  <p className="text-white font-light mb-8">
-                    Your needs drive every decision. Your results define our success. Real impact, tangible results, customer-first always.
-                  </p>
+            {/* Mobile Layout: Flex Column with Image on Top, Text Below */}
+            <div className="flex flex-col md:block">
+              {/* Top Half: Image (Mobile) */}
+              <div className="relative w-full h-64 md:hidden rounded-[2.8rem] overflow-hidden group">
+                <img
+                  src={servicesHeroImg}
+                  alt="Abstract holographic visualization representing services that create real impact"
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+              
+              {/* Bottom Half: Text on Black Background (Mobile) */}
+              <div className="w-full p-6 bg-[#050509] md:hidden rounded-b-[2.8rem]">
+                <h4 className="font-serif text-2xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
+                <p className="text-white font-light mb-4 text-base">
+                  We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
+                </p>
+                <p className="text-white font-light text-base">
+                  Your needs drive every decision. Your results define our success. Real impact, tangible results, customer-first always.
+                </p>
+              </div>
+              
+              {/* Desktop Layout: Image with Overlay Text */}
+              <div className="hidden md:block aspect-[21/9] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
+                <img
+                  src={servicesHeroImg}
+                  alt="Abstract holographic visualization representing services that create real impact"
+                  className="h-full w-full ml-24 object-cover object-center transition-transform transition-opacity duration-500 ease-out hover:brightness-110 hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)'
+                  }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509] via-[#050509]/85 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center px-12 lg:px-20 visual-overlay-transition z-10 pt-32">
+                  <div className="max-w-md drop-shadow-lg relative z-10 p-12">
+                    <h4 className="font-serif text-3xl lg:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
+                    <p className="text-white font-light mb-4 text-lg">
+                      We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
+                    </p>
+                    <p className="text-white font-light mb-8 text-lg">
+                      Your needs drive every decision. Your results define our success. Real impact, tangible results, customer-first always.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,7 +287,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="md:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Organizational Development" />
+                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Organizational Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
               </div>
             </div>
@@ -303,7 +327,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="md:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Social Development" />
+                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Social Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
               </div>
             </div>
@@ -343,7 +367,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="md:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Personal Development" />
+                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Personal Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
               </div>
             </div>
@@ -388,7 +412,7 @@ const ServicesPage: React.FC = () => {
                 <img
                   src={impactProductivityImg}
                   alt="Abstract holographic visualization representing productivity improvement"
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
@@ -401,12 +425,6 @@ const ServicesPage: React.FC = () => {
                   Streamlined approval chains, automated status updates, and unified dashboards reduced decision latency and
                   manual handoffs across teams.
                 </p>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-amber-500">+42%</span>
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-white/40">
-                    Productivity
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -416,7 +434,7 @@ const ServicesPage: React.FC = () => {
                 <img
                   src={impactCostImg}
                   alt="Abstract holographic visualization representing cost reduction"
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
@@ -429,12 +447,6 @@ const ServicesPage: React.FC = () => {
                   Intelligent automation and demand-aware infrastructure reduced operational overhead while preserving
                   service quality and reliability.
                 </p>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-emerald-400">-28%</span>
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-white/40">
-                    Costs
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -444,7 +456,7 @@ const ServicesPage: React.FC = () => {
                 <img
                   src={impactParticipationImg}
                   alt="Abstract holographic visualization representing increased participation"
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
@@ -457,12 +469,6 @@ const ServicesPage: React.FC = () => {
                   Purpose-built channels, prompts, and feedback loops brought more voices into important decisions without
                   overwhelming the signal.
                 </p>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-amber-500">+68%</span>
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-white/40">
-                    Participation
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -472,7 +478,7 @@ const ServicesPage: React.FC = () => {
                 <img
                   src={impactSatisfactionImg}
                   alt="Abstract holographic visualization representing improved satisfaction"
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
@@ -485,12 +491,6 @@ const ServicesPage: React.FC = () => {
                   Thoughtful journeys, clearer communication, and responsive support created better days for the people who
                   use and deliver your services.
                 </p>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-amber-500">+52%</span>
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-white/40">
-                    Satisfaction
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -514,7 +514,7 @@ const ServicesPage: React.FC = () => {
             {/* Expert Mission */}
             <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Expert Mission" />
+                <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Expert Mission" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
               <div className="p-8 md:p-10 space-y-5">
@@ -531,7 +531,7 @@ const ServicesPage: React.FC = () => {
             {/* 24/7 Intelligent Automation */}
             <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="24/7 Intelligent Automation" />
+                <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="24/7 Intelligent Automation" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
               <div className="p-8 md:p-10 space-y-5">

@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProcessPage from './pages/ProcessPage';
 import LegalPage from './pages/LegalPage';
+import PrivacyPage from './pages/PrivacyPage';
 import siteBg from './assets/images/site-bg.webp.png';
 
 const App: React.FC = () => {
@@ -17,10 +18,14 @@ const App: React.FC = () => {
       <ScrollHandler />
       {/* Fixed site background layer */}
       <div className="fixed inset-0 z-[-1]">
-        <img 
-          src={siteBg} 
-          alt="" 
-          className="h-full w-full object-cover opacity-100" 
+        <div 
+          className="absolute inset-0 opacity-100 animate-star-drift"
+          style={{
+            backgroundImage: `url(${siteBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
         />
         {/* Dark Overlay to ensure text readability */}
         <div className="absolute inset-0 bg-[#050509]/70" />
@@ -37,6 +42,7 @@ const App: React.FC = () => {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/process" element={<ProcessPage />} />
               <Route path="/legal" element={<LegalPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
             </Routes>
           </main>
 
