@@ -1,0 +1,15 @@
+{
+  "short_name": "HumanBased",
+  "name": "HumanBased - Human problems. Digital solutions.",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#050509",
+  "background_color": "#050509"
+}

@@ -1,0 +1,51 @@
+/* Global header offset */
+:root {
+  --nav-height: 96px; /* Adjust if needed based on actual header height */
+}
+
+/* Ensure the main scroll container accounts for the fixed nav */
+html,
+body {
+  padding-top: var(--nav-height);
+  scroll-padding-top: var(--nav-height); /* helpful for in-page anchors */
+}
+
+/* Aurora background animation */
+
+.aurora-layer {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Keep base background from the app (bg-black), just add faint streaks */
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(120, 220, 255, 0.18) 0, transparent 60%),
+    radial-gradient(ellipse at 90% 10%, rgba(255, 180, 230, 0.14) 0, transparent 65%),
+    radial-gradient(ellipse at 0% 90%, rgba(255, 220, 160, 0.10) 0, transparent 65%),
+    radial-gradient(ellipse at 100% 80%, rgba(160, 200, 255, 0.14) 0, transparent 65%);
+  filter: blur(70px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+
+  animation: auroraFloat 26s ease-in-out infinite alternate;
+}
+
+@keyframes auroraFloat {
+  0% {
+    transform: translate3d(-5%, -5%, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(3%, -8%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.03);
+  }
+  75% {
+    transform: translate3d(-4%, 6%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(2%, -3%, 0) scale(1.02);
+  }
+}
+
