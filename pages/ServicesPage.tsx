@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import React from 'react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import Reveal from '../components/Reveal';
 import impactProductivityImg from '../assets/images/services-impact-productivity.webp.png';
@@ -15,157 +14,6 @@ import automationImg from '../assets/images/services-automation.webp.png';
 
 const ServicesPage: React.FC = () => {
   usePageTitle('Services – HumanBased');
-  const [deliveryImages, setDeliveryImages] = useState<{ expert: string | null; automation: string | null }>({
-    expert: null,
-    automation: null
-  });
-  const [developmentImages, setDevelopmentImages] = useState<{ organizational: string | null; social: string | null; personal: string | null }>({
-    organizational: null,
-    social: null,
-    personal: null
-  });
-  const [statImages, setStatImages] = useState<{ productivity: string | null; costReduction: string | null; participation: string | null; satisfaction: string | null }>({
-    productivity: null,
-    costReduction: null,
-    participation: null,
-    satisfaction: null
-  });
-
-
-  useEffect(() => {
-    const fetchDeliveryImages = async () => {
-      const apiKey = (import.meta as any).env?.VITE_API_KEY as string | undefined;
-      if (!apiKey) return;
-      try {
-        const ai = new GoogleGenAI({ apiKey });
-        
-        const generateOne = async (prompt: string, retries = 3, delay = 2000): Promise<string | null> => {
-          try {
-            const res = await ai.models.generateContent({
-              model: 'gemini-2.5-flash-image',
-              contents: { parts: [{ text: prompt }] },
-              config: { imageConfig: { aspectRatio: "16:9" } }
-            });
-            const part = res.candidates?.[0]?.content?.parts.find(p => p.inlineData);
-            return part?.inlineData ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : null;
-          } catch (error: any) {
-            if (retries > 0 && JSON.stringify(error).includes('429')) {
-              await new Promise(r => setTimeout(r, delay));
-              return generateOne(prompt, retries - 1, delay * 2);
-            }
-            return null;
-          }
-        };
-
-        const expertPrompt = 'Cinematic, high-contrast scene of a small, focused strategy team around a glowing table of data and diagrams, in a dark environment with warm golden highlights, symbolizing a dedicated mission-focused team, ultra-detailed, premium UX website illustration, 4k.';
-        const automationPrompt = 'Futuristic network of interconnected glowing nodes and flowing data streams in deep midnight colors, with a subtle human silhouette monitoring from a control hub, symbolizing 24/7 intelligent automation with humans in control, cinematic lighting, high-end product website style, 4k.';
-
-        const expertImg = await generateOne(expertPrompt);
-        setDeliveryImages(prev => ({ ...prev, expert: expertImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const automationImg = await generateOne(automationPrompt);
-        setDeliveryImages(prev => ({ ...prev, automation: automationImg }));
-      } catch (_err) {
-        // silent fail
-      }
-    };
-
-    fetchDeliveryImages();
-  }, []);
-
-  useEffect(() => {
-    const fetchDevelopmentImages = async () => {
-      const apiKey = (import.meta as any).env?.VITE_API_KEY as string | undefined;
-      if (!apiKey) return;
-      try {
-        const ai = new GoogleGenAI({ apiKey });
-        
-        const generateOne = async (prompt: string, retries = 3, delay = 2000): Promise<string | null> => {
-          try {
-            const res = await ai.models.generateContent({
-              model: 'gemini-2.5-flash-image',
-              contents: { parts: [{ text: prompt }] },
-              config: { imageConfig: { aspectRatio: "16:9" } }
-            });
-            const part = res.candidates?.[0]?.content?.parts.find(p => p.inlineData);
-            return part?.inlineData ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : null;
-          } catch (error: any) {
-            if (retries > 0 && JSON.stringify(error).includes('429')) {
-              await new Promise(r => setTimeout(r, delay));
-              return generateOne(prompt, retries - 1, delay * 2);
-            }
-            return null;
-          }
-        };
-
-        const organizationalPrompt = 'Wide cinematic illustration. Dark near-black background (#050509) with warm amber holographic dashboards and system diagrams flowing across multiple panels. The composition suggests a whole organization being orchestrated: interconnected departments, workflows, and metrics aligned. Emphasize clarity, structure, and coordinated motion, not chaos. Translucent holographic UI panels and glass-like surfaces. Warm amber/gold lighting as primary color, subtle teal/blue as supporting accent. Cinematic, high-contrast, premium look. Clean, not cluttered. No overlaid text or logos. Technology-forward and human-aligned, no realistic people; at most abstract silhouettes. 4k.';
-        const socialPrompt = 'Cinematic illustration of interconnected communities and social systems. Dark near-black background (#050509), warm amber and gold lines connecting clusters of translucent nodes, like neighborhoods or groups. Subtle abstract city or network forms, with glowing pathways indicating information and resources flowing. Translucent holographic UI panels and glass-like surfaces. Warm amber/gold lighting as primary color, subtle teal/blue as supporting accent. Cinematic, high-contrast, premium look. Clean, not cluttered. No overlaid text or logos. Technology-forward and human-aligned, no realistic people; at most abstract silhouettes. 4k.';
-        const personalPrompt = 'Abstract representation of individual growth supported by ethical technology. Dark near-black background (#050509); in the center, a subtle, non-realistic human silhouette or head profile made of translucent lines and particles, surrounded by amber and gold holographic interfaces orbiting it. Feels empowering and calm, not overwhelming. Translucent holographic UI panels and glass-like surfaces. Warm amber/gold lighting as primary color, subtle teal/blue as supporting accent. Cinematic, high-contrast, premium look. Clean, not cluttered. No overlaid text or logos. Technology-forward and human-aligned. 4k.';
-
-        const organizationalImg = await generateOne(organizationalPrompt);
-        setDevelopmentImages(prev => ({ ...prev, organizational: organizationalImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const socialImg = await generateOne(socialPrompt);
-        setDevelopmentImages(prev => ({ ...prev, social: socialImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const personalImg = await generateOne(personalPrompt);
-        setDevelopmentImages(prev => ({ ...prev, personal: personalImg }));
-      } catch (_err) {
-        // silent fail
-      }
-    };
-
-    fetchDevelopmentImages();
-  }, []);
-
-  useEffect(() => {
-    const fetchStatImages = async () => {
-      const apiKey = (import.meta as any).env?.VITE_API_KEY as string | undefined;
-      if (!apiKey) return;
-      try {
-        const ai = new GoogleGenAI({ apiKey });
-        
-        const generateOne = async (prompt: string, retries = 3, delay = 2000): Promise<string | null> => {
-          try {
-            const res = await ai.models.generateContent({
-              model: 'gemini-2.5-flash-image',
-              contents: { parts: [{ text: prompt }] },
-              config: { imageConfig: { aspectRatio: "16:10" } }
-            });
-            const part = res.candidates?.[0]?.content?.parts.find(p => p.inlineData);
-            return part?.inlineData ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : null;
-          } catch (error: any) {
-            if (retries > 0 && JSON.stringify(error).includes('429')) {
-              await new Promise(r => setTimeout(r, delay));
-              return generateOne(prompt, retries - 1, delay * 2);
-            }
-            return null;
-          }
-        };
-
-        const productivityPrompt = 'Square icon-style image. Dark background (#050509) with a bright amber upward graph and arrows, representing productivity rising. Clean holographic chart with subtle grid, no numbers or text. Same site color palette and style. Dark near-black background (#050509). Warm amber/gold lighting with subtle teal accents. Cinematic, high-contrast, premium, translucent holographic style. Clean, no overlaid text or logos in the image.';
-        const costReductionPrompt = 'Square icon-style image. Dark background (#050509) with a glowing amber line or bar graph trending downward in a positive way, symbolizing reduced costs. Include subtle hints of budgets or resources, but no explicit currency symbols or text. Same holographic style and colors. Dark near-black background (#050509). Warm amber/gold lighting with subtle teal accents. Cinematic, high-contrast, premium, translucent holographic style. Clean, no overlaid text or logos in the image.';
-        const participationPrompt = 'Square icon-style image. Dark background (#050509) with a cluster of glowing nodes that light up progressively, representing more people joining and engaging. Nodes are arranged in a network with increasing brightness and density. Same amber/gold holographic aesthetic. Dark near-black background (#050509). Warm amber/gold lighting with subtle teal accents. Cinematic, high-contrast, premium, translucent holographic style. Clean, no overlaid text or logos in the image.';
-        const satisfactionPrompt = 'Square icon-style image. Dark background (#050509) with a glowing gauge dial or abstract smile arc trending upward into a bright amber zone, indicating improved satisfaction. No text or numbers on the gauge. Same cinematic, glass-like style and palette. Dark near-black background (#050509). Warm amber/gold lighting with subtle teal accents. Cinematic, high-contrast, premium, translucent holographic style. Clean, no overlaid text or logos in the image.';
-
-        const productivityImg = await generateOne(productivityPrompt);
-        setStatImages(prev => ({ ...prev, productivity: productivityImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const costReductionImg = await generateOne(costReductionPrompt);
-        setStatImages(prev => ({ ...prev, costReduction: costReductionImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const participationImg = await generateOne(participationPrompt);
-        setStatImages(prev => ({ ...prev, participation: participationImg }));
-        await new Promise(r => setTimeout(r, 1000));
-        const satisfactionImg = await generateOne(satisfactionPrompt);
-        setStatImages(prev => ({ ...prev, satisfaction: satisfactionImg }));
-      } catch (_err) {
-        // silent fail
-      }
-    };
-
-    fetchStatImages();
-  }, []);
 
   return (
     <div className="flex-grow bg-transparent">
@@ -184,7 +32,7 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Bottom Half: Text on Black Background (Mobile) */}
-              <div className="w-full p-6 bg-[#050509] md:hidden rounded-b-[2.8rem]">
+              <div className="w-full pt-[50px] pb-[50px] px-6 bg-[#050509] md:hidden rounded-b-[2.8rem]">
                 <h4 className="font-serif text-2xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
                 <p className="text-white font-light mb-4 text-base">
                   We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
@@ -195,19 +43,19 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Desktop Layout: Image with Overlay Text */}
-              <div className="hidden md:block aspect-[21/9] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
+              <div className="hidden md:block md:h-[600px] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
                 <img
                   src={servicesHeroImg}
                   alt="Abstract holographic visualization representing services that create real impact"
-                  className="h-full w-full ml-24 object-cover object-center transition-transform transition-opacity duration-500 ease-out hover:brightness-110 hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform transition-opacity duration-500 ease-out hover:brightness-110 hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
                   style={{
                     maskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)',
                     WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)'
                   }}
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509] via-[#050509]/85 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center px-12 lg:px-20 visual-overlay-transition z-10 pt-32">
-                  <div className="max-w-md drop-shadow-lg relative z-10 p-12">
+                <div className="absolute inset-0 flex flex-col justify-center px-12 visual-overlay-transition z-10">
+                  <div className="max-w-md drop-shadow-lg relative z-10">
                     <h4 className="font-serif text-3xl lg:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
                     <p className="text-white font-light mb-4 text-lg">
                       We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.

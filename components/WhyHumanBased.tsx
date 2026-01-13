@@ -1,50 +1,8 @@
-
-import React, { useState, useEffect } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import React from 'react';
 import resultsFirstImg from '../assets/images/home-results-first.webp.png';
 import homeKpiImg from '../assets/images/home-kpi.webp.png';
 
 const WhyHumanBased: React.FC = () => {
-  const [images, setImages] = useState<{ op: string | null; hardware: string | null }>({
-    op: null,
-    hardware: null,
-  });
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      const apiKey = import.meta.env.VITE_API_KEY as string | undefined;
-      if (!apiKey) {
-        return;
-      }
-      const ai = new GoogleGenAI({ apiKey });
-      const prompts = [
-        "Cinematic visualization of human connection and growth, glowing golden network nodes rising and converging to uplift human figures, deep navy and black background, soft amber lighting, premium, 4k, hyperrealistic.",
-        "Futuristic data visualization dashboard displaying rising trend lines and performance metrics in glowing amber and cool blue, sharp high-tech interface, cinematic depth of field, dark background, 4k."
-      ];
-
-      const generateOne = async (prompt: string, retries = 3, delay = 2000): Promise<string | null> => {
-        try {
-          const res = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-image',
-            contents: { parts: [{ text: prompt }] },
-            config: { imageConfig: { aspectRatio: "4:3" } }
-          });
-          const part = res.candidates?.[0]?.content?.parts.find(p => p.inlineData);
-          return part?.inlineData ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : null;
-        } catch (error: any) {
-          if (retries > 0 && JSON.stringify(error).includes('429')) {
-            await new Promise(r => setTimeout(r, delay));
-            return generateOne(prompt, retries - 1, delay * 2);
-          }
-          return null;
-        }
-      };
-
-      // Our Ultimate KPI and Results First cards now use static images, skipping image generation
-    };
-
-    fetchImages();
-  }, []);
 
   return (
     <section className="pt-10 md:pt-14 pb-20 px-6">

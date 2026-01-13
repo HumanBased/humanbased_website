@@ -1,50 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import React from 'react';
 
 const Services: React.FC = () => {
-  const [images, setImages] = useState<Record<string, string | null>>({});
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      const apiKey = import.meta.env.VITE_API_KEY as string | undefined;
-      if (!apiKey) {
-        return;
-      }
-      const ai = new GoogleGenAI({ apiKey });
-      const prompts = [
-        "A hyperrealistic abstract view of floating glass interface elements with amber glows. 4k.",
-        "Deep indigo and purple bokeh cinematic lighting. Premium.",
-        "A futuristic minimal workspace with soft amber reflections on metal. Cinematic."
-      ];
-
-      const generateOne = async (prompt: string, retries = 3, delay = 2000): Promise<string | null> => {
-        try {
-          const res = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-image',
-            contents: { parts: [{ text: prompt }] },
-            config: { imageConfig: { aspectRatio: "16:9" } }
-          });
-          const part = res.candidates?.[0]?.content?.parts.find(p => p.inlineData);
-          return part?.inlineData ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : null;
-        } catch (error: any) {
-          if (retries > 0 && JSON.stringify(error).includes('429')) {
-            await new Promise(r => setTimeout(r, delay));
-            return generateOne(prompt, retries - 1, delay * 2);
-          }
-          return null;
-        }
-      };
-
-      const img1 = await generateOne(prompts[0]);
-      setImages(prev => ({ ...prev, main: img1 }));
-      await new Promise(r => setTimeout(r, 1000));
-      const img2 = await generateOne(prompts[1]);
-      setImages(prev => ({ ...prev, impact1: img2 }));
-    };
-
-    fetchImages();
-  }, []);
 
   return (
     <section className="py-24 md:py-32 px-6 relative">
