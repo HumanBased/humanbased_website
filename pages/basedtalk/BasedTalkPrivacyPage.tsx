@@ -34,7 +34,7 @@ const BasedTalkPrivacyPage: React.FC = () => {
                   <li>We do not permanently store full audio recordings.</li>
                   <li>We may store short transcriptions only if needed for app features.</li>
                 </ul>
-                <p>Voice data is processed securely and never sold.</p>
+                <p>Voice data is transmitted over TLS, processed using industry-standard encryption, and is never sold or shared with third parties for advertising.</p>
               </div>
 
               <div className="space-y-4">
