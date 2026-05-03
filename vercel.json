@@ -1,5 +1,9 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
+    { "source": "/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
+    { "source": "/apps/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
+    { "source": "/apps/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }
