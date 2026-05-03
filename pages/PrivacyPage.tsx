@@ -39,7 +39,7 @@ const PrivacyPage: React.FC = () => {
                 Advanced Security
               </h2>
               <p className="text-sm md:text-base text-white/60">
-                For organizations with sensitive needs, we offer bespoke privacy models, including on-premise deployment and end-to-end encryption, ensuring your data remains strictly under your control.
+                For organizations with sensitive needs, we offer bespoke privacy models, including on-premise hosting and hardened encryption configurations, so your data remains under your direct control.
               </p>
             </div>
           </div>
