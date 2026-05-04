@@ -7,6 +7,7 @@ import puppeteer from 'puppeteer';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
+const publicDir = path.resolve(__dirname, '..', 'public');
 
 const ROUTES = [
   '/',
@@ -53,10 +54,26 @@ function startServer() {
   });
 }
 
+async function copyPublicMissing() {
+  if (!existsSync(publicDir)) return;
+  const entries = await fs.readdir(publicDir, { withFileTypes: true, recursive: true });
+  for (const entry of entries) {
+    if (!entry.isFile()) continue;
+    const abs = path.join(entry.parentPath ?? entry.path, entry.name);
+    const rel = path.relative(publicDir, abs);
+    const dest = path.join(distDir, rel);
+    if (existsSync(dest)) continue;
+    await fs.mkdir(path.dirname(dest), { recursive: true });
+    await fs.copyFile(abs, dest);
+    console.log(`[prerender] copied public -> ${rel}`);
+  }
+}
+
 async function prerender() {
   if (!existsSync(distDir)) {
     throw new Error(`dist directory not found at ${distDir}`);
   }
+  await copyPublicMissing();
   const server = await startServer();
   const port = server.address().port;
   const baseUrl = `http://127.0.0.1:${port}`;
