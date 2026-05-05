@@ -14,9 +14,6 @@ const ROUTES = [
   '/about',
   '/services',
   '/process',
-  '/apps/basedtalk',
-  '/apps/basedtalk/privacy',
-  '/apps/basedtalk/terms',
 ];
 
 const MIME = {
