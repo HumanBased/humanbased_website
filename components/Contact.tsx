@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
     const form = e.currentTarget;
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://www.humanbased.org/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

@@ -15,7 +15,7 @@ export default async function handler(req: Request) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
     }
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'HumanBased Contact <support@humanbased.org>',
       to: 'support@humanbased.org',
       replyTo: email,
@@ -29,6 +29,11 @@ export default async function handler(req: Request) {
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     });
+
+    if (error) {
+      console.error('Resend error:', error);
+      return new Response(JSON.stringify({ error: 'Failed to send email', details: error }), { status: 500 });
+    }
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
