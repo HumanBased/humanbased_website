@@ -49,30 +49,22 @@ const Contact: React.FC = () => {
 
     setIsLoading(true);
 
+    const form = e.currentTarget;
+
     try {
-      const formDataObj = new FormData(e.currentTarget);
-      
-      const response = await fetch("https://formspree.io/f/PLACEHOLDER_ID", {
-        method: "POST",
-        body: formDataObj,
-        headers: {
-          'Accept': 'application/json'
-        }
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setIsSuccess(true);
         setFormData({ name: '', company: '', email: '', message: '' });
         setErrors({});
-        // Reset form
-        e.currentTarget.reset();
+        form.reset();
       } else {
-        const data = await response.json();
-        if (data.errors) {
-          setIsError(true);
-        } else {
-          setIsError(true);
-        }
+        setIsError(true);
       }
     } catch (error) {
       setIsError(true);
