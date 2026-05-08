@@ -76,7 +76,16 @@ const ProductsPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-amber-500 text-black font-bold text-xs tracking-widest px-3 py-1 rounded-full uppercase">
+                    <span
+                      className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
+                      style={{
+                        fontSize: '13px',
+                        fontWeight: 800,
+                        padding: '8px 18px',
+                        color: '#000',
+                        boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
+                      }}
+                    >
                       Available Now
                     </span>
                   </div>
