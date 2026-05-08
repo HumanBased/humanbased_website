@@ -76,7 +76,7 @@ const ProductsPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-300 bg-amber-500/15 border border-amber-400/30 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                    <span className="bg-amber-500 text-black font-bold text-xs tracking-widest px-3 py-1 rounded-full uppercase">
                       Available Now
                     </span>
                   </div>
