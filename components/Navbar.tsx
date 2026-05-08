@@ -41,20 +41,28 @@ const Navbar: React.FC = () => {
       isHidden ? '-translate-y-full' : 'translate-y-0'
     }`}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="glass rounded-full px-6 py-3 flex items-center justify-start transition-all duration-300">
+        <div className="relative glass rounded-full px-6 py-3 flex items-center justify-start transition-all duration-300">
           <Link to="/" className="flex items-center gap-3">
             <LogoOrb className="h-20 w-20 md:h-24 md:w-24" />
             <span className="font-semibold text-xl md:text-2xl tracking-tight">HumanBased</span>
           </Link>
 
-          {/* Standalone primary nav item (desktop) */}
+          {/* Standalone primary nav item (desktop), absolutely centered in the bar */}
           <NavLink
             to="/products"
-            className="hidden md:flex items-center transition-colors ml-8 lg:ml-12"
+            className="hidden md:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity hover:opacity-90"
           >
-            <span className={`text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] ${
-              isProducts ? "text-amber-400" : "text-white"
-            } hover:text-amber-300 transition-colors whitespace-nowrap`}>
+            <span
+              className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+              style={{
+                fontFamily: "'Cinzel', serif",
+                backgroundImage: 'linear-gradient(135deg, #C0C0C0 0%, #FFD700 40%, #FFF8DC 60%, #C0C0C0 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
               Our Products
             </span>
           </NavLink>

@@ -50,7 +50,7 @@ const ProductsPage: React.FC = () => {
             <span className="block font-light text-3xl sm:text-4xl md:text-5xl text-white/90">
               one simple truth
             </span>
-            <span className="block font-bold text-amber-500 text-5xl sm:text-6xl md:text-7xl lg:text-8xl pt-2 md:pt-3">
+            <span className="block font-bold text-amber-500 text-3xl sm:text-4xl md:text-5xl">
               Humanity comes first.
             </span>
           </h1>
