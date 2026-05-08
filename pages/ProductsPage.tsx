@@ -68,27 +68,27 @@ const ProductsPage: React.FC = () => {
             <div className="relative group">
               <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40">
+                <div className="absolute top-4 left-4 z-10">
+                  <span
+                    className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: 800,
+                      padding: '8px 18px',
+                      color: '#000',
+                      boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
+                    }}
+                  >
+                    Available Now
+                  </span>
+                </div>
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
                   <img
                     src="/bt-banner.png"
                     alt="BasedTalk app banner"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
-                      style={{
-                        fontSize: '13px',
-                        fontWeight: 800,
-                        padding: '8px 18px',
-                        color: '#000',
-                        boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
-                      }}
-                    >
-                      Available Now
-                    </span>
-                  </div>
                 </div>
 
                 <div className="p-8 md:p-10 space-y-5">
