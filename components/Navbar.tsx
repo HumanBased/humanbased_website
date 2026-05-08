@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
           {/* Middle column: standalone primary nav item (desktop) */}
           <NavLink
             to="/products"
-            className="hidden md:flex flex-1 items-center justify-center transition-opacity hover:opacity-90"
+            className="hidden md:flex flex-1 items-end justify-end pb-2 pr-8 lg:pr-16 transition-opacity hover:opacity-90"
           >
             <span
               className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
