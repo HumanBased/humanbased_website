@@ -47,18 +47,20 @@ const Navbar: React.FC = () => {
             <span className="font-semibold text-xl md:text-2xl tracking-tight">HumanBased</span>
           </Link>
 
+          {/* Standalone primary nav item (desktop) */}
+          <NavLink
+            to="/products"
+            className="hidden md:flex items-center transition-colors ml-8 lg:ml-12"
+          >
+            <span className={`text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] ${
+              isProducts ? "text-amber-400" : "text-white"
+            } hover:text-amber-300 transition-colors whitespace-nowrap`}>
+              Our Products
+            </span>
+          </NavLink>
+
           {/* Desktop Links and Button */}
           <div className="hidden md:flex items-center gap-8 ml-auto">
-            <NavLink
-              to="/products"
-              className="flex items-center transition-colors"
-            >
-              <span className={`text-base md:text-lg font-bold uppercase tracking-[0.2em] ${
-                isProducts ? "text-amber-400" : "text-white"
-              } hover:text-amber-300 transition-colors`}>
-                Our Products
-              </span>
-            </NavLink>
             <NavLink
               to="/about"
               className="text-sm font-medium transition-colors uppercase tracking-widest"

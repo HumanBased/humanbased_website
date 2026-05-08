@@ -43,11 +43,18 @@ const ProductsPage: React.FC = () => {
           <p className="text-sm md:text-base font-medium tracking-[0.3em] uppercase text-amber-400">
             Our Products
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white">
-            Our technology is built on one simple truth:{' '}
-            <span className="text-amber-500">humanity comes first.</span>
+          <h1 className="font-serif tracking-tight leading-[1.05] text-white space-y-2 md:space-y-3">
+            <span className="block font-light text-3xl sm:text-4xl md:text-5xl text-white/90">
+              Our technology is built on
+            </span>
+            <span className="block font-light text-3xl sm:text-4xl md:text-5xl text-white/90">
+              one simple truth
+            </span>
+            <span className="block font-bold text-amber-500 text-5xl sm:text-6xl md:text-7xl lg:text-8xl pt-2 md:pt-3">
+              Humanity comes first.
+            </span>
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sans text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-white max-w-2xl mx-auto leading-relaxed pt-2">
             Empowering people through technology that serves their needs.
           </p>
         </div>
