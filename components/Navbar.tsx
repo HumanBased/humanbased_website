@@ -51,20 +51,25 @@ const Navbar: React.FC = () => {
           {/* Middle column: standalone primary nav item (desktop) */}
           <NavLink
             to="/products"
-            className="hidden md:flex flex-1 self-end items-end justify-end pb-3 pr-4 lg:pr-8 transition-opacity hover:opacity-90"
+            className="hidden md:flex flex-1 items-center justify-end pr-4 lg:pr-8 transition-opacity hover:opacity-90"
           >
-            <span
-              className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
-              style={{
-                fontFamily: "'Cinzel', serif",
-                backgroundImage: 'linear-gradient(135deg, #C0C0C0 0%, #FFD700 40%, #FFF8DC 60%, #C0C0C0 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              Our Products
+            <span className="flex flex-col leading-tight text-right">
+              <span className="text-[10px] uppercase tracking-[0.25em] invisible" aria-hidden="true">
+                &nbsp;
+              </span>
+              <span
+                className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  backgroundImage: 'linear-gradient(135deg, #C0C0C0 0%, #FFD700 40%, #FFF8DC 60%, #C0C0C0 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Our Products
+              </span>
             </span>
           </NavLink>
 
