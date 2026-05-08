@@ -41,16 +41,17 @@ const Navbar: React.FC = () => {
       isHidden ? '-translate-y-full' : 'translate-y-0'
     }`}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative glass rounded-full px-6 py-3 flex items-center justify-start transition-all duration-300">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="glass rounded-full px-6 py-3 flex items-center transition-all duration-300">
+          {/* Left column: Logo */}
+          <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <LogoOrb className="h-20 w-20 md:h-24 md:w-24" />
             <span className="font-semibold text-xl md:text-2xl tracking-tight">HumanBased</span>
           </Link>
 
-          {/* Standalone primary nav item (desktop), absolutely centered in the bar */}
+          {/* Middle column: standalone primary nav item (desktop) */}
           <NavLink
             to="/products"
-            className="hidden md:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity hover:opacity-90"
+            className="hidden md:flex flex-1 items-center justify-center transition-opacity hover:opacity-90"
           >
             <span
               className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
@@ -67,8 +68,8 @@ const Navbar: React.FC = () => {
             </span>
           </NavLink>
 
-          {/* Desktop Links and Button */}
-          <div className="hidden md:flex items-center gap-8 ml-auto">
+          {/* Right column: Desktop Links and Button */}
+          <div className="hidden md:flex items-center gap-8 flex-shrink-0">
             <NavLink
               to="/about"
               className="text-sm font-medium transition-colors uppercase tracking-widest"
