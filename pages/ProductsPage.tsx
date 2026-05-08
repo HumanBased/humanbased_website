@@ -65,7 +65,19 @@ const ProductsPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* BasedTalk, active */}
-            <div className="relative group">
+            <div
+              className="relative group cursor-pointer"
+              role="link"
+              tabIndex={0}
+              onClick={() => { window.location.href = '/basedtalk'; }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/basedtalk';
+                }
+              }}
+              aria-label="Open BasedTalk"
+            >
               <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
                 <div className="absolute top-4 left-4 z-10">
@@ -108,6 +120,7 @@ const ProductsPage: React.FC = () => {
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <Link
                       to="/apps/basedtalk"
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-black text-xs md:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
                     >
                       Explore BasedTalk
@@ -116,6 +129,7 @@ const ProductsPage: React.FC = () => {
                       href="https://play.google.com/store/apps/details?id=org.humanbased.basedtalk"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex items-center justify-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs md:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
                     >
                       Get on Google Play
