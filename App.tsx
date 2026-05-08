@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProcessPage from './pages/ProcessPage';
+import ProductsPage from './pages/ProductsPage';
 import LegalPage from './pages/LegalPage';
 import PrivacyPage from './pages/PrivacyPage';
 import BasedTalkLandingPage from './pages/basedtalk/BasedTalkLandingPage';
@@ -59,6 +60,7 @@ const AppRoutes = () => {
       <Route path="/about" element={<MainLayout><AboutPage /></MainLayout>} />
       <Route path="/services" element={<MainLayout><ServicesPage /></MainLayout>} />
       <Route path="/process" element={<MainLayout><ProcessPage /></MainLayout>} />
+      <Route path="/products" element={<MainLayout><ProductsPage /></MainLayout>} />
       <Route path="/legal" element={<MainLayout><LegalPage /></MainLayout>} />
       <Route path="/privacy" element={<MainLayout><PrivacyPage /></MainLayout>} />
       

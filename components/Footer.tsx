@@ -33,6 +33,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-6">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Work</span>
               <Link to="/services" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Services</Link>
+              <Link to="/products" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Our Products</Link>
               <Link to="/process" className="text-sm text-white/60 hover:text-amber-500 transition-colors">The Process</Link>
               <a href="/#contact" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Get in Touch</a>
             </div>

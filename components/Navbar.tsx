@@ -12,6 +12,7 @@ const Navbar: React.FC = () => {
   const isAbout = location.pathname === "/about";
   const isServices = location.pathname === "/services";
   const isProcess = location.pathname === "/process";
+  const isProducts = location.pathname === "/products";
   const isHome = location.pathname === "/" || location.pathname === "/home";
 
   useEffect(() => {
@@ -48,6 +49,16 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Links and Button */}
           <div className="hidden md:flex items-center gap-8 ml-auto">
+            <NavLink
+              to="/products"
+              className="flex items-center transition-colors"
+            >
+              <span className={`text-base md:text-lg font-bold uppercase tracking-[0.2em] ${
+                isProducts ? "text-amber-400" : "text-white"
+              } hover:text-amber-300 transition-colors`}>
+                Our Products
+              </span>
+            </NavLink>
             <NavLink
               to="/about"
               className="text-sm font-medium transition-colors uppercase tracking-widest"
@@ -129,6 +140,17 @@ const Navbar: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+          <NavLink
+            to="/products"
+            onClick={() => setIsOpen(false)}
+            className="text-center"
+          >
+            <span className={`text-2xl font-bold uppercase tracking-[0.2em] ${
+              isProducts ? "text-amber-400" : "text-white"
+            }`}>
+              Our Products
+            </span>
+          </NavLink>
           <NavLink
             to="/about"
             onClick={() => setIsOpen(false)}
