@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           }}
         />
         {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-transparent z-[5]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/35 to-transparent z-[5]" />
       </div>
 
       {/* Content overlay */}
