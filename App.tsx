@@ -14,6 +14,8 @@ import PrivacyPage from './pages/PrivacyPage';
 import BasedTalkLandingPage from './pages/basedtalk/BasedTalkLandingPage';
 import BasedTalkPrivacyPage from './pages/basedtalk/BasedTalkPrivacyPage';
 import BasedTalkTermsPage from './pages/basedtalk/BasedTalkTermsPage';
+import BasedTalkDeleteAccountPage from './pages/basedtalk/BasedTalkDeleteAccountPage';
+import BasedTalkDeleteDataPage from './pages/basedtalk/BasedTalkDeleteDataPage';
 import siteBg from './assets/images/site-bg.webp.png';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -52,8 +54,12 @@ const AppRoutes = () => {
     <Routes>
       {/* BasedTalk Routes (No MainLayout) */}
       <Route path="/apps/basedtalk" element={<BasedTalkLandingPage />} />
-      <Route path="/apps/basedtalk/privacy" element={<BasedTalkPrivacyPage />} />
       <Route path="/apps/basedtalk/terms" element={<BasedTalkTermsPage />} />
+
+      {/* Google Play required policy pages, served from this repo in HumanBased dark theme */}
+      <Route path="/apps/basedtalk/privacy" element={<MainLayout><BasedTalkPrivacyPage /></MainLayout>} />
+      <Route path="/apps/basedtalk/delete-account" element={<MainLayout><BasedTalkDeleteAccountPage /></MainLayout>} />
+      <Route path="/apps/basedtalk/delete-data" element={<MainLayout><BasedTalkDeleteDataPage /></MainLayout>} />
 
       {/* Main Site Routes (Wrapped in MainLayout) */}
       <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
