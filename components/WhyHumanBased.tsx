@@ -9,7 +9,16 @@ const WhyHumanBased: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 md:mb-24">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">Why HumanBased?</h2>
-          <p className="text-base md:text-lg text-white/70">high quality results without compromise</p>
+          <p
+            className="silver-shimmer"
+            style={{
+              fontSize: '2.5rem',
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+            }}
+          >
+            Coding For Humanity
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
