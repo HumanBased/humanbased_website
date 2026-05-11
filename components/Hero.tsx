@@ -14,11 +14,12 @@ const Hero: React.FC = () => {
           className="w-full h-full object-cover object-[center_top_40%]"
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+            filter: 'brightness(1.35)'
           }}
         />
         {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/35 to-transparent z-[5]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/15 to-transparent z-[5]" />
       </div>
 
       {/* Content overlay */}
