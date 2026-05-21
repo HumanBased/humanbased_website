@@ -41,6 +41,9 @@ const BasedTalkTermsPage: React.FC = () => {
                 <li>Subscriptions (such as monthly credit plans) are managed by Apple or Google. Billing, taxes, and refunds are governed by their terms.</li>
                 <li>Promotional prices and bonuses (including launch discounts) may change at any time.</li>
               </ul>
+
+              <h3 className="font-playfair text-xl md:text-2xl font-semibold text-[#102A43] pt-4">Credit Accumulation and Expiry</h3>
+              <p>Unused credits from your monthly BasedTalk subscription carry over to the following month. Credits accumulate month to month and remain valid for 6 months from the date they were issued. Credits older than 6 months expire automatically and are not recoverable. At no point can a user accumulate more than 6 months worth of credits for their subscription tier (Seeker: 300 credits, Transmuter: 900 credits, Sovereign: 2,400 credits).</p>
             </section>
 
             <section className="space-y-6">
