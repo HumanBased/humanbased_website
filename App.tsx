@@ -16,6 +16,7 @@ import BasedTalkPrivacyPage from './pages/basedtalk/BasedTalkPrivacyPage';
 import BasedTalkTermsPage from './pages/basedtalk/BasedTalkTermsPage';
 import BasedTalkDeleteAccountPage from './pages/basedtalk/BasedTalkDeleteAccountPage';
 import BasedTalkDeleteDataPage from './pages/basedtalk/BasedTalkDeleteDataPage';
+import PurposeBasedPrivacyPage from './pages/purposebased/PurposeBasedPrivacyPage';
 import siteBg from './assets/images/site-bg.webp.png';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -58,6 +59,7 @@ const AppRoutes = () => {
 
       {/* Google Play required policy pages, served from this repo in HumanBased dark theme */}
       <Route path="/apps/basedtalk/privacy" element={<MainLayout><BasedTalkPrivacyPage /></MainLayout>} />
+      <Route path="/apps/purposebased/privacy" element={<MainLayout><PurposeBasedPrivacyPage /></MainLayout>} />
       <Route path="/apps/basedtalk/delete-account" element={<MainLayout><BasedTalkDeleteAccountPage /></MainLayout>} />
       <Route path="/apps/basedtalk/delete-data" element={<MainLayout><BasedTalkDeleteDataPage /></MainLayout>} />
 

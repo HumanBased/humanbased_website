@@ -6,6 +6,7 @@
     { "source": "/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
     { "source": "/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
     { "source": "/apps/basedtalk/privacy", "destination": "/index.html" },
+    { "source": "/apps/purposebased/privacy", "destination": "/index.html" },
     { "source": "/apps/basedtalk/delete-account", "destination": "/index.html" },
     { "source": "/apps/basedtalk/delete-data", "destination": "/index.html" },
     { "source": "/apps/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },

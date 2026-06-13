@@ -18,6 +18,7 @@ const ROUTES = [
   '/apps/basedtalk/privacy',
   '/apps/basedtalk/delete-account',
   '/apps/basedtalk/delete-data',
+  '/apps/purposebased/privacy',
 ];
 
 const MIME = {
