@@ -79,6 +79,30 @@ const LegalPage: React.FC = () => {
                     <span className="text-white/30">→</span> Privacy Policy
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/apps/purposebased/terms"
+                    className="text-sm text-white/60 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  >
+                    <span className="text-white/30">→</span> Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/apps/purposebased/delete-account"
+                    className="text-sm text-white/60 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  >
+                    <span className="text-white/30">→</span> Delete Account
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/apps/purposebased/delete-data"
+                    className="text-sm text-white/60 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  >
+                    <span className="text-white/30">→</span> Delete My Data
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

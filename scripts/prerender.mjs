@@ -19,6 +19,9 @@ const ROUTES = [
   '/apps/basedtalk/delete-account',
   '/apps/basedtalk/delete-data',
   '/apps/purposebased/privacy',
+  '/apps/purposebased/terms',
+  '/apps/purposebased/delete-account',
+  '/apps/purposebased/delete-data',
   '/legal',
 ];
 
