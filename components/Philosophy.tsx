@@ -5,7 +5,7 @@ const Philosophy: React.FC = () => {
   return (
     <section className="py-12 md:py-16 px-6 relative overflow-hidden flex flex-wrap">
       {/* Subtle light blobs */}
-      <div className="light-blob w-[400px] h-[400px] bg-indigo-600/10 top-0 left-0"></div>
+      <div className="light-blob w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] bg-indigo-600/10 top-0 left-0"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="glass rounded-[3rem] border-white/5 bg-white/[0.01]">

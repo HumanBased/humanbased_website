@@ -8,12 +8,12 @@ const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/5 mt-24">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 pb-40 md:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-12 mb-12">
           {/* Left: Logo + Tagline */}
           <div className="space-y-4 max-w-sm">
             <div className="flex items-center gap-3">
-              <LogoOrb className="h-20 w-20 md:h-24 md:w-24" />
-              <span className="font-semibold text-xl md:text-2xl tracking-tight text-white">HumanBased</span>
+              <LogoOrb className="h-16 w-16 sm:h-20 sm:w-20 xl:h-24 xl:w-24" />
+              <span className="font-semibold text-lg sm:text-xl xl:text-2xl tracking-tight text-white">HumanBased</span>
             </div>
             <p className="text-white/60 text-base leading-relaxed font-light">
               Technology in service of humanity. Human problems meet digital solutions.
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Middle: Company + Services */}
-          <div className="flex flex-col sm:flex-row gap-10 md:gap-16 justify-center">
+          <div className="flex flex-col sm:flex-row gap-10 md:gap-12 xl:gap-16 sm:justify-start lg:justify-center">
             <div className="flex flex-col gap-6">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Company</span>
               <Link to="/about" className="text-sm text-white/60 hover:text-amber-500 transition-colors">About</Link>
@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Right: Social Hub Wheel */}
-          <div className="relative w-full md:w-auto min-h-[224px] md:min-h-0">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 md:relative md:left-20 md:translate-x-0 md:bottom-auto md:ml-auto w-56 h-56 md:w-64 md:h-64 block">
+          <div className="relative w-full md:col-span-2 lg:col-span-1 lg:w-auto min-h-[224px] lg:min-h-0">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 lg:relative lg:left-0 xl:left-20 lg:translate-x-0 lg:bottom-auto lg:ml-auto w-56 h-56 xl:w-64 xl:h-64 block">
               <SocialHub size="compact" />
             </div>
           </div>

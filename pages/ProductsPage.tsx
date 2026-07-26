@@ -15,7 +15,7 @@ const ComingSoonCard: React.FC = () => (
         </span>
       </div>
     </div>
-    <div className="relative p-7 md:p-8 space-y-3">
+    <div className="relative p-6 sm:p-7 lg:p-8 space-y-3">
       <h3 className="font-serif text-2xl md:text-[26px] font-medium text-white/40">
         Coming Soon
       </h3>
@@ -36,10 +36,10 @@ const ProductsPage: React.FC = () => {
     <div className="flex-grow bg-transparent">
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
-        <div className="light-blob w-[600px] h-[600px] bg-amber-500/10 top-0 left-1/2 -translate-x-1/2"></div>
-        <div className="light-blob w-[500px] h-[500px] bg-indigo-500/10 bottom-0 right-0"></div>
+        <div className="light-blob w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] bg-amber-500/10 top-0 left-1/2 -translate-x-1/2"></div>
+        <div className="light-blob w-[70vw] h-[70vw] max-w-[500px] max-h-[500px] bg-indigo-500/10 bottom-0 right-0"></div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center space-y-6">
+        <div className="relative max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
           <p className="text-sm md:text-base font-medium tracking-[0.3em] uppercase text-amber-400">
             Our Products
           </p>
@@ -63,7 +63,7 @@ const ProductsPage: React.FC = () => {
       {/* Products grid */}
       <section className="pb-32">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {/* BasedTalk, active */}
             <div
               className="relative group cursor-pointer"
@@ -103,25 +103,25 @@ const ProductsPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
                 </div>
 
-                <div className="p-8 md:p-10 space-y-5">
+                <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <h3 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-white">
+                    <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
                       BasedTalk
                     </h3>
-                    <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
+                    <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
                       Relational Intelligence App
                     </p>
                   </div>
 
-                  <p className="text-white/70 text-base md:text-lg font-light leading-relaxed">
+                  <p className="text-white/70 text-base lg:text-lg font-light leading-relaxed">
                     Reveal patterns. Practice boundaries. Reclaim your power. Available now on Google Play.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 pt-2">
                     <Link
                       to="/apps/basedtalk"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-black text-xs md:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
+                      className="inline-flex items-center justify-center text-center bg-amber-500 hover:bg-amber-400 text-black text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
                     >
                       Explore BasedTalk
                     </Link>
@@ -130,7 +130,7 @@ const ProductsPage: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs md:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
+                      className="inline-flex items-center justify-center text-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
                     >
                       Get on Google Play
                     </a>

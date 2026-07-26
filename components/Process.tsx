@@ -36,7 +36,7 @@ const Process: React.FC = () => {
 
         <div className="max-w-5xl mx-auto mb-4 md:mb-6 pointer-events-none">
           {/* Diagonal connector arrows from the tagline into each card */}
-          <div className="hidden sm:flex justify-between px-4 md:px-8">
+          <div className="hidden lg:flex justify-between px-4 md:px-8">
             {/* Leftmost card arrow – diagonal down-left */}
             <div className="flex flex-col items-center origin-top rotate-[22deg]">
               <div className="h-8 md:h-10 w-px bg-gradient-to-b from-transparent via-amber-400/60 to-amber-400/90" />

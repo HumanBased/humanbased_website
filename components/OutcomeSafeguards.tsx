@@ -12,7 +12,7 @@ const OutcomeSafeguards: React.FC = () => {
           <img src={processCostImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Cost Reduction" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
         </div>
-        <div className="p-8 md:p-10 space-y-5">
+        <div className="p-6 sm:p-8 lg:p-10 space-y-5">
           <h3 className="font-serif text-2xl md:text-3xl font-medium">
             Cost Reduction
           </h3>
@@ -28,7 +28,7 @@ const OutcomeSafeguards: React.FC = () => {
           <img src={processQualityImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Uncompromising Quality" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
         </div>
-        <div className="p-8 md:p-10 space-y-5">
+        <div className="p-6 sm:p-8 lg:p-10 space-y-5">
           <h3 className="font-serif text-2xl md:text-3xl font-medium">
             Uncompromising Quality
           </h3>

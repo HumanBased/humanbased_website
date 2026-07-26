@@ -40,19 +40,19 @@ const BasedTalkLayout: React.FC<BasedTalkLayoutProps> = ({ children }) => {
       
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-[#4A90E2]/10">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-center sm:justify-between gap-x-4 gap-y-3">
           <Link to="/" className="flex items-center gap-2">
             <LogoOrb className="h-10 w-10 text-[#4A90E2]" />
-            <span className="font-semibold text-xl tracking-tight text-[#102A43]">HumanBased</span>
+            <span className="font-semibold text-lg sm:text-xl tracking-tight text-[#102A43]">HumanBased</span>
           </Link>
-          
-          <div className="flex items-center gap-4">
+
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
              <Link to="/apps/basedtalk" className="text-sm font-medium text-[#102A43]/70 hover:text-[#4A90E2] transition-colors">Home</Link>
              <Link to="/apps/basedtalk/privacy" className="text-sm font-medium text-[#102A43]/70 hover:text-[#4A90E2] transition-colors">Privacy</Link>
              <Link to="/apps/basedtalk/terms" className="text-sm font-medium text-[#102A43]/70 hover:text-[#4A90E2] transition-colors">Terms</Link>
              <a 
               href="#" 
-              className="basedtalk-btn-primary px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider ml-4"
+              className="basedtalk-btn-primary px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap lg:ml-4"
             >
               Open BasedTalk App
             </a>
@@ -61,7 +61,7 @@ const BasedTalkLayout: React.FC<BasedTalkLayoutProps> = ({ children }) => {
       </nav>
       
       {/* Content */}
-      <main className="pt-32 pb-20">
+      <main className="pt-40 sm:pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-6">
           {children}
         </div>
@@ -74,7 +74,7 @@ const BasedTalkLayout: React.FC<BasedTalkLayoutProps> = ({ children }) => {
             <LogoOrb className="h-8 w-8 text-[#4A90E2]" />
             <span className="font-medium text-sm text-[#102A43]">© 2026 HumanBased</span>
           </div>
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             <Link to="/apps/basedtalk/privacy" className="text-sm text-[#102A43]/60 hover:text-[#4A90E2]">Privacy Policy</Link>
             <Link to="/apps/basedtalk/terms" className="text-sm text-[#102A43]/60 hover:text-[#4A90E2]">Terms of Service</Link>
           </div>

@@ -5,7 +5,7 @@ const PrivacyPage: React.FC = () => {
   usePageTitle('Privacy & Data Governance – HumanBased');
   return (
     <div className="flex-grow bg-transparent">
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 sm:px-10 md:px-16">
         <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
             Privacy & Data Governance

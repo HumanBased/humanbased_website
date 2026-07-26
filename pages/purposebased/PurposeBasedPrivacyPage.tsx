@@ -6,7 +6,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
 
   return (
     <div className="flex-grow bg-transparent">
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 sm:px-10 md:px-16">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="space-y-3">
             <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-amber-400">

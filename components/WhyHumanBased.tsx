@@ -12,7 +12,7 @@ const WhyHumanBased: React.FC = () => {
           <p
             className="silver-shimmer"
             style={{
-              fontSize: '2.5rem',
+              fontSize: 'clamp(1.75rem, 7vw, 2.5rem)',
               fontWeight: 600,
               letterSpacing: '0.08em',
             }}
@@ -27,7 +27,7 @@ const WhyHumanBased: React.FC = () => {
               <img src={homeKpiImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing human connection, growth, and collective good" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
             </div>
-            <div className="p-10 space-y-4">
+            <div className="p-6 sm:p-8 lg:p-10 space-y-4">
               <h3 className="font-serif text-2xl font-medium">Our Ultimate KPI</h3>
               <p className="text-white/50 leading-relaxed font-light">
                 Our measure of success extends beyond quarterly reports or efficiency gains. We exist to elevate individuals, fortify teams, and advance the collective good. Our impact spans from the individual finding clarity and purpose, to teams achieving genuine collaboration, to society benefiting from more conscious, capable institutions. These aren't separate goals, they're interdependent imperatives.
@@ -40,7 +40,7 @@ const WhyHumanBased: React.FC = () => {
               <img src={resultsFirstImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing results-first approach and measurable impact" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
             </div>
-            <div className="p-10 space-y-4">
+            <div className="p-6 sm:p-8 lg:p-10 space-y-4">
               <h3 className="font-serif text-2xl font-medium">Results First</h3>
               <p className="text-white/50 leading-relaxed font-light">
                 Your outcomes are our singular focus. We don't traffic in theoretical possibilities or feature bloat. We deliver solutions that move hard numbers and generate measurable impact. If it doesn't create tangible value, we don't build it.

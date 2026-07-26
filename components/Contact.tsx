@@ -83,9 +83,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="px-6 relative">
+    <section className="px-6 relative overflow-hidden">
       {/* Light blob */}
-      <div className="light-blob w-[600px] h-[600px] bg-indigo-500/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="light-blob w-[90vw] h-[90vw] max-w-[600px] max-h-[600px] bg-indigo-500/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">

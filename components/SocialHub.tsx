@@ -149,7 +149,7 @@ const SocialHub: React.FC<SocialHubProps> = ({ size = 'full' }) => {
   return (
     <section className="py-32 px-6 relative bg-gradient-to-b from-black to-[#0a0a0a] overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[600px] max-h-[600px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center mb-24 space-y-4">

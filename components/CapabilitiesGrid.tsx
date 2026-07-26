@@ -44,7 +44,7 @@ const CapabilitiesGrid: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
             )}
           </div>
-          <div className="p-7 md:p-8">
+          <div className="p-6 sm:p-7 lg:p-8">
             <h3 className="font-serif text-[25px] md:text-2xl font-medium mb-4">{p.title}</h3>
             <p className="text-white/50 leading-relaxed font-light mb-6 text-sm md:text-base">
               {p.desc}

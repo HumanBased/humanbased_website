@@ -21,9 +21,9 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="glass rounded-[3rem] overflow-hidden bg-white/[0.01] border-white/5 p-2 relative">
             {/* Mobile Layout: Flex Column with Image on Top, Text Below */}
-            <div className="flex flex-col md:block">
-              {/* Top Half: Image (Mobile) */}
-              <div className="relative w-full h-64 md:hidden rounded-[2.8rem] overflow-hidden group">
+            <div className="flex flex-col lg:block">
+              {/* Top Half: Image (Mobile and tablet) */}
+              <div className="relative w-full h-56 sm:h-72 md:h-80 lg:hidden rounded-[2.8rem] overflow-hidden group">
                 <img
                   src={servicesHeroImg}
                   alt="Abstract holographic visualization representing services that create real impact"
@@ -32,8 +32,8 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Bottom Half: Text on Black Background (Mobile) */}
-              <div className="w-full pt-[50px] pb-[50px] px-6 bg-[#050509] md:hidden rounded-b-[2.8rem]">
-                <h4 className="font-serif text-2xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
+              <div className="w-full py-10 sm:py-12 px-6 sm:px-8 md:px-10 bg-[#050509] lg:hidden rounded-b-[2.8rem]">
+                <h4 className="font-serif text-2xl md:text-3xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
                 <p className="text-white font-light mb-4 text-base">
                   We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
                 </p>
@@ -43,7 +43,7 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Desktop Layout: Image with Overlay Text */}
-              <div className="hidden md:block md:h-[600px] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
+              <div className="hidden lg:block lg:h-[600px] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
                 <img
                   src={servicesHeroImg}
                   alt="Abstract holographic visualization representing services that create real impact"
@@ -54,9 +54,9 @@ const ServicesPage: React.FC = () => {
                   }}
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509] via-[#050509]/85 to-transparent"></div>
-                <div className="absolute inset-0 flex flex-col justify-center px-12 visual-overlay-transition z-10">
+                <div className="absolute inset-0 flex flex-col justify-center px-8 xl:px-12 visual-overlay-transition z-10">
                   <div className="max-w-md drop-shadow-lg relative z-10">
-                    <h4 className="font-serif text-3xl lg:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
+                    <h4 className="font-serif text-3xl xl:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
                     <p className="text-white font-light mb-4 text-lg">
                       We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
                     </p>
@@ -78,13 +78,13 @@ const ServicesPage: React.FC = () => {
             <span className="block">Services that move you</span>
             <span className="block">
               from{" "}
-              <span className="text-6xl md:text-7xl lg:text-8xl text-amber-300">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-300">
                 insight
               </span>
             </span>
             <span className="block">
               to{" "}
-              <span className="text-6xl md:text-7xl lg:text-8xl text-amber-300">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-300">
                 operational change.
               </span>
             </span>
@@ -104,8 +104,8 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6 space-y-12">
           {/* Organizational Development */}
           <Reveal delay={0}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row gap-10 items-stretch shadow-2xl group">
-            <div className="md:w-1/2 space-y-5">
+            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="lg:w-1/2 space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
                 Organizational
               </p>
@@ -133,7 +133,7 @@ const ServicesPage: React.FC = () => {
                 Explore Organizational Solutions &#8594;
               </button>
             </div>
-            <div className="md:w-1/2">
+            <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
                 <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Organizational Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
@@ -144,8 +144,8 @@ const ServicesPage: React.FC = () => {
 
           {/* Social Development */}
           <Reveal delay={90}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row gap-10 items-stretch shadow-2xl group">
-            <div className="md:w-1/2 space-y-5">
+            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="lg:w-1/2 space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
                 Social
               </p>
@@ -173,7 +173,7 @@ const ServicesPage: React.FC = () => {
                 See how we empower communities &#8594;
               </button>
             </div>
-            <div className="md:w-1/2">
+            <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
                 <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Social Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
@@ -184,8 +184,8 @@ const ServicesPage: React.FC = () => {
 
           {/* Personal Development */}
           <Reveal delay={180}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row gap-10 items-stretch shadow-2xl group">
-            <div className="md:w-1/2 space-y-5">
+            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="lg:w-1/2 space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
                 Personal
               </p>
@@ -213,7 +213,7 @@ const ServicesPage: React.FC = () => {
                 See our personal tools &#8594;
               </button>
             </div>
-            <div className="md:w-1/2">
+            <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
                 <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Personal Development" />
                 <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
@@ -365,7 +365,7 @@ const ServicesPage: React.FC = () => {
                 <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Expert Mission" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
-              <div className="p-8 md:p-10 space-y-5">
+              <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                 <h3 className="font-serif text-2xl md:text-3xl font-medium">
                   Expert Mission
                 </h3>
@@ -382,7 +382,7 @@ const ServicesPage: React.FC = () => {
                 <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="24/7 Intelligent Automation" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
-              <div className="p-8 md:p-10 space-y-5">
+              <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                 <h3 className="font-serif text-2xl md:text-3xl font-medium">
                   24/7 Intelligent Automation
                 </h3>

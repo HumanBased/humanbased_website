@@ -5,8 +5,8 @@ import BasedTalkLayout from '../../components/BasedTalkLayout';
 const BasedTalkTermsPage: React.FC = () => {
   return (
     <BasedTalkLayout>
-      <div className="max-w-4xl mx-auto py-20 px-6">
-        <div className="basedtalk-glass p-12 md:p-20 rounded-[3rem] shadow-2xl">
+      <div className="max-w-4xl mx-auto py-12 sm:py-16 lg:py-20">
+        <div className="basedtalk-glass p-6 sm:p-10 md:p-12 lg:p-20 rounded-[2rem] sm:rounded-[3rem] shadow-2xl">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-8 text-[#102A43]">Terms of Service</h1>
           <p className="text-[#102A43]/60 mb-12 italic">Last Updated: March 2026</p>
           

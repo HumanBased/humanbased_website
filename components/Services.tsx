@@ -3,9 +3,9 @@ import React from 'react';
 const Services: React.FC = () => {
 
   return (
-    <section className="py-24 md:py-32 px-6 relative">
+    <section className="py-24 md:py-32 px-6 relative overflow-hidden">
       {/* Background glow blobs */}
-      <div className="light-blob w-[500px] h-[500px] bg-purple-600/10 bottom-0 right-0"></div>
+      <div className="light-blob w-[70vw] h-[70vw] max-w-[500px] max-h-[500px] bg-purple-600/10 bottom-0 right-0"></div>
       
       <div className="max-w-7xl mx-auto">
         <div className="mb-24">

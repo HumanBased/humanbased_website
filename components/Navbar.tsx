@@ -40,25 +40,25 @@ const Navbar: React.FC = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 w-full bg-transparent pt-6 transition-all duration-300 transform ${
       isHidden ? '-translate-y-full' : 'translate-y-0'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="glass rounded-full px-6 py-3 flex items-center transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="glass rounded-full px-4 sm:px-6 py-3 flex items-center gap-2 transition-all duration-300">
           {/* Left column: Logo */}
-          <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-            <LogoOrb className="h-20 w-20 md:h-24 md:w-24" />
-            <span className="font-semibold text-xl md:text-2xl tracking-tight">HumanBased</span>
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink-0">
+            <LogoOrb className="h-16 w-16 sm:h-20 sm:w-20 lg:h-16 lg:w-16 xl:h-24 xl:w-24" />
+            <span className="font-semibold text-lg sm:text-xl xl:text-2xl tracking-tight">HumanBased</span>
           </Link>
 
           {/* Middle column: standalone primary nav item (desktop) */}
           <NavLink
             to="/products"
-            className="hidden md:flex flex-1 items-center justify-end pr-4 lg:pr-8 transition-opacity hover:opacity-90"
+            className="hidden lg:flex flex-1 min-w-0 items-center justify-end pr-2 xl:pr-8 transition-opacity hover:opacity-90"
           >
             <span className="flex flex-col leading-tight text-right">
               <span className="text-[10px] uppercase tracking-[0.25em] invisible" aria-hidden="true">
                 &nbsp;
               </span>
               <span
-                className="text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+                className="text-base lg:text-lg xl:text-xl font-bold uppercase tracking-[0.2em] whitespace-nowrap"
                 style={{
                   fontFamily: "'Cinzel', serif",
                   backgroundImage: 'linear-gradient(135deg, #C0C0C0 0%, #FFD700 40%, #FFF8DC 60%, #C0C0C0 100%)',
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           </NavLink>
 
           {/* Right column: Desktop Links and Button */}
-          <div className="hidden md:flex items-center gap-8 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-shrink-0">
             <NavLink
               to="/about"
               className="text-sm font-medium transition-colors uppercase tracking-widest"
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
                 }`}>
                   Why
                 </span>
-                <span className={`text-base md:text-lg font-medium ${
+                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
                   isAbout ? "text-amber-400" : "text-white/80"
                 }`}>
                   About
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                 }`}>
                   What
                 </span>
-                <span className={`text-base md:text-lg font-medium ${
+                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
                   isServices ? "text-amber-400" : "text-white/80"
                 }`}>
                   Services
@@ -119,22 +119,22 @@ const Navbar: React.FC = () => {
                 }`}>
                   How
                 </span>
-                <span className={`text-base md:text-lg font-medium ${
+                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
                   isProcess ? "text-amber-400" : "text-white/80"
                 }`}>
                   The Process
                 </span>
               </span>
             </NavLink>
-            <a href="/#contact" className="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider">
+            <a href="/#contact" className="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-4 xl:px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap">
               Get in Touch
             </a>
           </div>
-          
-          {/* Hamburger Menu Button - Mobile Only */}
+
+          {/* Hamburger Menu Button - Mobile and tablet */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden ml-auto text-white p-2"
+            className="lg:hidden ml-auto text-white p-2 flex-shrink-0"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-[#050509] flex flex-col items-center justify-center gap-8 md:hidden h-screen min-h-screen">
+        <div className="fixed inset-0 z-50 bg-[#050509] flex flex-col items-center justify-center gap-8 px-6 overflow-y-auto lg:hidden h-screen min-h-screen">
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-6 right-6 text-white p-2"
