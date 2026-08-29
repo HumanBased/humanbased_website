@@ -80,6 +80,9 @@ const PBHome: React.FC = () => {
     <div className="pbh" ref={rootRef}>
       {/* ============ SECTION 1 — HERO ============ */}
       <section id="home" className="pbh-hero">
+        <div className="pbh-hero-bg" aria-hidden="true">
+          {/* Hero BG: drop a wide landscape/cosmos image at public/images/pb-hero-bg.jpg and set background-image: url('/images/pb-hero-bg.jpg') center/cover no-repeat here, then set opacity 0.15 */}
+        </div>
         <div className="pbh-hero-glow-a" aria-hidden="true" />
         <div className="pbh-hero-glow-b" aria-hidden="true" />
         <div className="pbh-hero-grid">
@@ -117,9 +120,9 @@ const PBHome: React.FC = () => {
             <div className="pbh-phone">
               <div className="pbh-phone-screen">
                 <span className="pbh-phone-fallback">App screenshot</span>
-                {/* TODO: drop a PurposeBased app screenshot into /public/images/pb-mockup.jpg */}
+                {/* App screenshot lives at /public/images/pb-mockup.png */}
                 <img
-                  src="/images/pb-mockup.jpg"
+                  src="/images/pb-mockup.png"
                   alt="PurposeBased app"
                   className="pbh-phone-img"
                   onError={(e) => {
@@ -448,6 +451,12 @@ const PBHome: React.FC = () => {
           padding: 0 10% 72px;
           position: relative;
           overflow: hidden;
+        }
+        .pbh-hero-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
         }
         .pbh-hero-glow-a,
         .pbh-hero-glow-b {
