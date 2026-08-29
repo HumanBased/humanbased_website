@@ -1,125 +1,599 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
 
-const section: React.CSSProperties = {
-  maxWidth: '1180px',
-  margin: '0 auto',
-  padding: '90px 40px',
-};
+// PurposeBased home. Premium wellness/purpose landing page.
+// Cormorant for headings, DM Sans for body/labels. Colour tokens live in the
+// scoped <style> block below as CSS custom properties on .pbh.
 
-const h2: React.CSSProperties = {
-  fontFamily: "'Cormorant', Georgia, serif",
-  fontWeight: 500,
-  fontSize: '34px',
-  color: '#f3e9d6',
-  marginBottom: '18px',
-};
+const FEATURES: { n: string; title: string; body: string }[] = [
+  {
+    n: '01',
+    title: 'Know Thyself',
+    body:
+      'Your full analysis across nine frameworks, written as one reading. Not nine separate reports — one portrait of who you are.',
+  },
+  {
+    n: '02',
+    title: 'Purpose Guide',
+    body:
+      'A conversation that already holds your blueprint. Ask about a decision and get an answer grounded in your own structure, not generic advice.',
+  },
+  {
+    n: '03',
+    title: 'Know Where You Stand',
+    body:
+      'Daily alignment against the current sky. Short, specific, and tied to what you are actually working on right now.',
+  },
+  {
+    n: '04',
+    title: 'My People',
+    body:
+      'The people who matter, read alongside you. Understand the dynamic instead of guessing at it.',
+  },
+  {
+    n: '05',
+    title: 'Odyssey',
+    body:
+      'Your life as a long arc. Chapters, turning points, and the direction the whole thing is pointing.',
+  },
+];
 
-const body: React.CSSProperties = {
-  fontSize: '16px',
-  lineHeight: 1.7,
-  color: '#cadcf0',
-  maxWidth: '620px',
-};
-
-const card: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.04)',
-  border: '1px solid rgba(255,255,255,0.08)',
-  borderRadius: '14px',
-  padding: '28px',
-  backdropFilter: 'blur(8px)',
-  WebkitBackdropFilter: 'blur(8px)',
-};
+const PILLARS: { title: string; body: string }[] = [
+  { title: 'Depth', body: 'Nine frameworks read together, not one horoscope in isolation.' },
+  { title: 'Direction', body: 'A guide that knows your blueprint and speaks from it.' },
+  { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
+];
 
 const PBHome: React.FC = () => {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const sections = Array.from(root.querySelectorAll('.pb-section')) as HTMLElement[];
+
+    if (typeof IntersectionObserver === 'undefined') {
+      sections.forEach((s) => s.classList.add('pb-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pb-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div>
-      {/* Hero */}
-      <section style={{ ...section, paddingTop: '120px', paddingBottom: '120px', textAlign: 'center' }}>
-        <p
-          style={{
-            fontSize: '11px',
-            letterSpacing: '2px',
-            textTransform: 'uppercase',
-            color: '#ffc864',
-            marginBottom: '20px',
-          }}
-        >
-          A HumanBased Project
-        </p>
-        <h1
-          style={{
-            fontFamily: "'Cormorant', Georgia, serif",
-            fontWeight: 500,
-            fontSize: 'clamp(38px, 6vw, 68px)',
-            lineHeight: 1.1,
-            color: '#f3e9d6',
-            margin: '0 auto 24px',
-            maxWidth: '820px',
-          }}
-        >
-          Find the work that was always yours to do.
+    <div className="pbh" ref={rootRef}>
+      {/* ============ SECTION 1 — HERO ============ */}
+      <section className="pbh-hero">
+        <p className="pbh-label">A map of your own life</p>
+        <h1 className="pbh-h1">
+          Transform your <em>life</em>
+          <br />
+          through <strong>self-knowledge</strong>
         </h1>
-        <p style={{ ...body, margin: '0 auto 40px', textAlign: 'center' }}>
-          PurposeBased is a guided space for people rethinking how they spend their one working life —
-          placeholder copy for the finished narrative.
+        <p className="pbh-sub">
+          A blueprint drawn from nine traditions. Read together, and written for you alone.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link to="/purposebased/story" className="pb-btn-solid">
-            Read the story
-          </Link>
-          <Link to="/purposebased/library" className="pb-btn">
-            Explore the library
-          </Link>
+        <div className="pbh-cta-row">
+          <button type="button" className="pbh-btn pbh-btn--solid">
+            Start your blueprint
+          </button>
+          <button type="button" className="pbh-btn pbh-btn--glass">
+            See how it works
+          </button>
+        </div>
+        <span className="pbh-scroll" aria-hidden="true" />
+      </section>
+
+      {/* ============ SECTION 2 — PROBLEM ============ */}
+      <section className="pb-section pbh-sec">
+        <div className="pbh-wrap">
+          <p className="pbh-label">The problem</p>
+          <h2 className="pbh-h2" style={{ maxWidth: 700 }}>
+            Most people never sit down and <em>look at the whole thing</em>
+          </h2>
+          <hr className="pbh-rule" />
+          <p className="pbh-body" style={{ maxWidth: 620 }}>
+            Career here. Relationships there. Money somewhere else. Each part gets attention in
+            isolation, and the pattern connecting them stays invisible. Purpose is not a feeling you
+            wait for. It is a structure you can read.
+          </p>
         </div>
       </section>
 
-      {/* What it is */}
-      <section style={section}>
-        <h2 style={h2}>What PurposeBased is</h2>
-        <p style={body}>
-          Placeholder section. A short explanation of the offering, who it serves, and the change it
-          is meant to create will live here.
-        </p>
-      </section>
-
-      {/* Three pillars */}
-      <section style={section}>
-        <h2 style={h2}>How it works</h2>
-        <div
-          style={{
-            display: 'grid',
-            gap: '20px',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            marginTop: '8px',
-          }}
-        >
-          {['Reflect', 'Reframe', 'Act'].map((title, i) => (
-            <div key={title} style={card}>
-              <div
-                className="pb-font-serif"
-                style={{ fontSize: '24px', color: '#ffc864', marginBottom: '10px' }}
-              >
-                {`0${i + 1}`}
+      {/* ============ SECTION 3 — SOLUTION / THREE PILLARS ============ */}
+      <section className="pb-section pbh-sec">
+        <div className="pbh-wrap">
+          <p className="pbh-label">The solution</p>
+          <h2 className="pbh-h2">
+            Know yourself. <em>Then</em> move.
+          </h2>
+          <div className="pbh-pillars">
+            {PILLARS.map((p) => (
+              <div key={p.title} className="pbh-pill">
+                <h3 className="pbh-pill-title">{p.title}</h3>
+                <p className="pbh-pill-body">{p.body}</p>
               </div>
-              <h3 className="pb-font-serif" style={{ fontSize: '22px', color: '#f3e9d6', marginBottom: '8px' }}>
-                {title}
-              </h3>
-              <p style={{ ...body, fontSize: '14px' }}>Placeholder description for the {title.toLowerCase()} step.</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA band */}
-      <section style={{ ...section, textAlign: 'center' }}>
-        <h2 style={{ ...h2, textAlign: 'center' }}>Start where you are</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '12px' }}>
-          <Link to="/purposebased/partners" className="pb-btn">
-            See our partners
-          </Link>
+      {/* ============ SECTION 4 — FIVE FEATURES ============ */}
+      <section className="pb-section pbh-sec">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Features</p>
+          <h2 className="pbh-h2">Five ways in</h2>
+          <div className="pbh-features">
+            {FEATURES.map((f, i) => (
+              <div key={f.n} className={`pbh-frow${i % 2 === 1 ? ' pbh-frow--flip' : ''}`}>
+                <div className="pbh-ftext">
+                  <span className="pbh-fnum">{f.n}</span>
+                  <h3 className="pbh-ftitle">{f.title}</h3>
+                  <p className="pbh-body" style={{ fontSize: 15 }}>
+                    {f.body}
+                  </p>
+                </div>
+                <div className="pbh-fimg">[ image ]</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ============ SECTION 5 — PRICING ============ */}
+      <section className="pb-section pbh-sec">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Pricing</p>
+          <h2 className="pbh-h2">
+            Start free. <em>Go deeper when you want to.</em>
+          </h2>
+
+          <div className="pbh-founding">
+            <div className="pbh-founding-left">
+              <span className="pbh-badge">Founding offer</span>
+              <p className="pbh-founding-head">50% off every tier, for the first 1,000 members</p>
+              <p className="pbh-founding-note">
+                Locked in for as long as your subscription stays active. Ends 31 December 2026.
+              </p>
+            </div>
+            <button type="button" className="pbh-btn pbh-btn--solid">
+              Claim your place
+            </button>
+          </div>
+
+          <div className="pbh-tiers">
+            {/* Tier 1 — Seeker */}
+            <div className="pbh-tier">
+              <h3 className="pbh-tier-name">Seeker</h3>
+              <div className="pbh-price">€0</div>
+              <p className="pbh-price-note">Free, always</p>
+              <ul className="pbh-list">
+                <li>Full questionnaire</li>
+                <li>4 of 9 framework previews</li>
+                <li>My People, up to 5</li>
+                <li>1 Guide message per day</li>
+              </ul>
+              <button type="button" className="pbh-btn pbh-btn--glass pbh-btn--full">
+                Begin
+              </button>
+            </div>
+
+            {/* Tier 2 — Based (highlighted) */}
+            <div className="pbh-tier pbh-tier--featured">
+              <span className="pbh-badge pbh-badge--top">Most chosen</span>
+              <h3 className="pbh-tier-name">Based</h3>
+              <div className="pbh-price">
+                €6.50 <s className="pbh-price-was">€13</s>
+              </div>
+              <p className="pbh-price-note">per month · founding price</p>
+              <ul className="pbh-list">
+                <li>Full analysis, all nine frameworks</li>
+                <li>All framework readings</li>
+                <li>90 Guide messages per month</li>
+                <li>Living Chronicle</li>
+                <li>Odyssey</li>
+                <li>My People, up to 20</li>
+              </ul>
+              <button type="button" className="pbh-btn pbh-btn--solid pbh-btn--full">
+                Choose Based
+              </button>
+            </div>
+
+            {/* Tier 3 — Blissed */}
+            <div className="pbh-tier">
+              <h3 className="pbh-tier-name">Blissed</h3>
+              <div className="pbh-price">
+                €9 <s className="pbh-price-was">€18</s>
+              </div>
+              <p className="pbh-price-note">per month · founding price</p>
+              <p className="pbh-tier-plus">Everything in Based, plus</p>
+              <ul className="pbh-list">
+                <li>200 Guide messages per month</li>
+                <li>My People, up to 100</li>
+                <li>4 full analysis re-runs per month</li>
+                <li>Year Ahead</li>
+                <li>Priority support</li>
+              </ul>
+              <button type="button" className="pbh-btn pbh-btn--glass pbh-btn--full">
+                Choose Blissed
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SECTION 6 — CLOSING CTA ============ */}
+      <section className="pb-section pbh-close">
+        <h2 className="pbh-h2 pbh-h2--center">
+          The map is already there.
+          <br />
+          <em>You just have not read it yet.</em>
+        </h2>
+        <button type="button" className="pbh-btn pbh-btn--solid" style={{ marginTop: 34 }}>
+          Start your blueprint
+        </button>
+      </section>
+
+      <style>{`
+        .pbh {
+          --pb-gold: #ffc864;
+          --pb-navy: #0d1f3c;
+          --pb-text: #cadcf0;
+          --pb-muted: #7f97b1;
+          --pb-surface: rgba(255,255,255,0.035);
+          --pb-border: rgba(255,255,255,0.10);
+          --pb-border-gold: rgba(255,200,100,0.22);
+          font-family: 'DM Sans', system-ui, sans-serif;
+        }
+
+        /* ---------- shared type ---------- */
+        .pbh-label {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: var(--pb-gold);
+          margin: 0 0 18px;
+        }
+        .pbh-h2 {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: 44px;
+          line-height: 1.2;
+          color: #ffffff;
+          margin: 0;
+        }
+        .pbh-h2 em { font-style: italic; font-weight: 300; }
+        .pbh-h2--center { max-width: 560px; margin: 0 auto; text-align: center; }
+        .pbh-body {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.9;
+          color: var(--pb-text);
+        }
+        .pbh-rule {
+          width: 56px;
+          height: 1px;
+          background: var(--pb-gold);
+          opacity: 0.55;
+          border: 0;
+          margin: 28px 0;
+        }
+
+        /* ---------- buttons ---------- */
+        .pbh-btn {
+          position: relative;
+          overflow: hidden;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 14px 36px;
+          border-radius: 8px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          cursor: pointer;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+        .pbh-btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 40%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+          transform: skewX(-15deg);
+          transition: left 0.5s ease;
+        }
+        .pbh-btn:hover::before { left: 120%; }
+        .pbh-btn:hover { transform: translateY(-2px); }
+        .pbh-btn--solid {
+          background: linear-gradient(135deg, rgba(255,200,100,0.92), rgba(220,160,50,0.88));
+          border: 1px solid rgba(255,220,130,0.6);
+          color: #12283f;
+          box-shadow: 0 0 24px rgba(255,200,100,0.18);
+        }
+        .pbh-btn--glass {
+          background: linear-gradient(135deg, rgba(255,200,100,0.14), rgba(255,200,100,0.05));
+          border: 1px solid rgba(255,200,100,0.38);
+          color: var(--pb-gold);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+        .pbh-btn--full { width: 100%; margin-top: 22px; }
+
+        /* ---------- scroll reveal ---------- */
+        .pb-section {
+          opacity: 0;
+          transform: translateY(24px);
+          transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .pb-section.pb-visible { opacity: 1; transform: translateY(0); }
+
+        /* ---------- hero ---------- */
+        .pbh-hero {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 96px 24px;
+          position: relative;
+        }
+        .pbh-h1 {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: 64px;
+          line-height: 1.12;
+          color: #ffffff;
+          max-width: 820px;
+          margin: 0 0 24px;
+        }
+        .pbh-h1 em { font-style: italic; font-weight: 300; }
+        .pbh-h1 strong { font-weight: 600; }
+        .pbh-sub {
+          font-size: 16px;
+          line-height: 1.8;
+          color: var(--pb-muted);
+          max-width: 520px;
+          margin: 0 0 40px;
+        }
+        .pbh-cta-row {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .pbh-scroll {
+          position: absolute;
+          bottom: 34px;
+          left: 50%;
+          width: 7px;
+          height: 7px;
+          margin-left: -3.5px;
+          border-radius: 50%;
+          background: var(--pb-gold);
+          opacity: 0;
+          animation: pbh-fadein 0.7s ease 2s forwards, pbh-pulse 2.4s ease-in-out 2s infinite;
+        }
+        @keyframes pbh-fadein { to { opacity: 0.9; } }
+        @keyframes pbh-pulse {
+          0%, 100% { transform: translateY(0); opacity: 0.9; }
+          50% { transform: translateY(6px); opacity: 0.35; }
+        }
+
+        /* ---------- generic section ---------- */
+        .pbh-sec { padding: 96px 10%; }
+        .pbh-wrap { max-width: 1100px; margin: 0 auto; }
+        .pbh-close { padding: 96px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+        /* ---------- pillars ---------- */
+        .pbh-pillars {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+          margin-top: 40px;
+        }
+        .pbh-pill {
+          border: 1px solid var(--pb-border-gold);
+          border-radius: 10px;
+          padding: 28px 24px;
+          background: var(--pb-surface);
+          transition: all 0.3s ease;
+        }
+        .pbh-pill:hover {
+          border-color: rgba(255,200,100,0.5);
+          transform: translateY(-3px);
+        }
+        .pbh-pill-title {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: 26px;
+          color: #ffffff;
+          margin: 0;
+        }
+        .pbh-pill-body {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.75;
+          color: var(--pb-muted);
+          margin: 10px 0 0;
+        }
+
+        /* ---------- features ---------- */
+        .pbh-features { margin-top: 40px; }
+        .pbh-frow {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 52px;
+          align-items: center;
+          padding: 44px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .pbh-frow:last-child { border-bottom: none; }
+        .pbh-frow--flip .pbh-ftext { order: 2; }
+        .pbh-frow--flip .pbh-fimg { order: 1; }
+        .pbh-fnum {
+          font-size: 11px;
+          letter-spacing: 3px;
+          color: var(--pb-muted);
+        }
+        .pbh-ftitle {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 400;
+          font-size: 26px;
+          color: #ffffff;
+          margin: 10px 0 12px;
+        }
+        .pbh-fimg {
+          height: 220px;
+          border-radius: 10px;
+          border: 1px solid var(--pb-border-gold);
+          background: var(--pb-surface);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 15px;
+          color: var(--pb-muted);
+          transition: all 0.3s ease;
+        }
+        .pbh-fimg:hover {
+          border-color: rgba(255,200,100,0.4);
+          background: rgba(255,255,255,0.055);
+        }
+
+        /* ---------- pricing ---------- */
+        .pbh-founding {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
+          border: 1px solid rgba(255,200,100,0.35);
+          background: rgba(255,200,100,0.07);
+          border-radius: 10px;
+          padding: 20px 26px;
+          margin: 40px 0 34px;
+        }
+        .pbh-badge {
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background: #ffc864;
+          color: #12283f;
+          padding: 4px 12px;
+          border-radius: 3px;
+        }
+        .pbh-badge--top { margin-bottom: 14px; }
+        .pbh-founding-head {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 24px;
+          color: #ffffff;
+          margin: 12px 0 6px;
+        }
+        .pbh-founding-note {
+          font-size: 13px;
+          color: var(--pb-muted);
+          margin: 0;
+        }
+        .pbh-tiers {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+          gap: 20px;
+        }
+        .pbh-tier {
+          border: 1px solid var(--pb-border);
+          border-radius: 10px;
+          padding: 32px 26px;
+          background: var(--pb-surface);
+          transition: all 0.3s ease;
+        }
+        .pbh-tier:hover {
+          border-color: rgba(255,200,100,0.5);
+          transform: translateY(-3px);
+        }
+        .pbh-tier--featured {
+          border-color: #ffc864;
+          background: rgba(255,200,100,0.05);
+        }
+        .pbh-tier-name {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 400;
+          font-size: 24px;
+          color: #ffffff;
+          margin: 0 0 14px;
+        }
+        .pbh-price {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 42px;
+          color: var(--pb-gold);
+          line-height: 1;
+        }
+        .pbh-price-was {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 22px;
+          color: var(--pb-muted);
+          margin-left: 8px;
+        }
+        .pbh-price-note {
+          font-size: 13px;
+          color: var(--pb-muted);
+          margin: 8px 0 0;
+        }
+        .pbh-tier-plus {
+          font-family: 'Cormorant', Georgia, serif;
+          font-style: italic;
+          font-size: 19px;
+          color: var(--pb-gold);
+          margin: 14px 0 0;
+        }
+        .pbh-list {
+          list-style: none;
+          padding: 0;
+          margin: 18px 0 0;
+        }
+        .pbh-list li {
+          font-size: 13px;
+          font-weight: 300;
+          color: var(--pb-text);
+          padding: 7px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 900px) {
+          .pbh-h2 { font-size: 34px; }
+          .pbh-sec { padding: 80px 7%; }
+          .pbh-pillars { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+          .pbh-h1 { font-size: 40px; }
+          .pbh-frow { grid-template-columns: 1fr; gap: 20px; }
+          .pbh-frow--flip .pbh-ftext,
+          .pbh-frow--flip .pbh-fimg { order: 0; }
+          .pbh-founding { flex-direction: column; align-items: flex-start; }
+        }
+      `}</style>
     </div>
   );
 };
