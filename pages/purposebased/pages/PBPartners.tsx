@@ -30,34 +30,91 @@ const ADVANTAGES: { title: string; body: string }[] = [
   },
 ];
 
-const TIERS: {
-  label: string;
-  note?: string;
-  range: string;
-  amount: string;
-  body: string;
-  featured?: boolean;
-}[] = [
+const REWARD_ROWS: { sub: string; rate: string; earn: string }[] = [
+  { sub: '1 — 100 subscribers', rate: '€1.00 / subscriber', earn: 'Up to €100 / mo' },
+  { sub: '101 — 500 subscribers', rate: '€2.00 / subscriber', earn: 'Up to €1,000 / mo' },
+  { sub: '501 — 750 subscribers', rate: '€3.00 / subscriber', earn: 'Up to €2,250 / mo' },
+  { sub: '751 — 1,000 subscribers', rate: '€4.00 / subscriber', earn: 'Up to €4,000 / mo' },
+  { sub: '1,001+ subscribers', rate: '€5.00 / subscriber', earn: 'Uncapped' },
+];
+
+const STEPS: { title: string; body: string }[] = [
   {
-    label: 'EXPLORER',
-    range: '1 — 10 active subscribers',
-    amount: '€1',
-    body: 'Get started. Share your experience. Build your first referral base.',
+    title: 'Apply',
+    body:
+      'Fill in the application below. We review every submission personally and respond within 3 business days.',
   },
   {
-    label: 'BUILDER',
-    note: 'Most partners reach this',
-    range: '11 — 50 active subscribers',
-    amount: '€2',
-    body: 'Consistent referrals. Compounding income. Your audience is listening.',
-    featured: true,
+    title: 'Get your link',
+    body:
+      'Once accepted, you receive a unique referral link. Share it anywhere — no code needed, just the link.',
   },
   {
-    label: 'AMPLIFIER',
-    range: '51+ active subscribers',
-    amount: '€5',
-    body: 'Proven reach. Maximum reward. Direct access to the founding team.',
+    title: 'Share honestly',
+    body:
+      'Promote PurposeBased authentically to your audience. At least two mentions per month. No scripts, no pressure.',
   },
+  {
+    title: 'Get paid',
+    body:
+      'At the start of each month, review your Stripe dashboard, send an invoice, and receive payment within 30 days.',
+  },
+];
+
+const FAQ: { q: string; a: string }[] = [
+  {
+    q: 'Do I need a promo code, or just the link?',
+    a: 'Just the link. When someone clicks your unique referral link and subscribes, Stripe logs it automatically. No code entry needed. We also provide a promo code for cases where you mention PurposeBased verbally or in a caption.',
+  },
+  {
+    q: 'When and how do I get paid?',
+    a: 'At the start of each month, you check your Stripe dashboard to see your verified active subscribers. You then send us an invoice for that amount. We process payment within 30 days via Stripe transfer or bank wire.',
+  },
+  {
+    q: 'What counts as an active subscriber?',
+    a: 'A unique individual who subscribes using your link, completes their first full paid monthly billing cycle without cancellation or refund, and maintains an active paid subscription. Free trials, refunded accounts, and self-referrals do not count.',
+  },
+  {
+    q: 'Can I promote other products at the same time?',
+    a: 'Yes. This agreement is fully non-exclusive. You are free to promote other platforms, products, or services including direct competitors.',
+  },
+  {
+    q: 'Is there a minimum audience size to apply?',
+    a: 'No minimum. We look at fit and authenticity, not follower count. If you genuinely use and believe in PurposeBased, we want to hear from you.',
+  },
+  {
+    q: 'What do I need to disclose to my audience?',
+    a: 'You must clearly disclose the partnership on all promotional content — #ad, #partner, or a clear verbal disclosure. This is both a legal requirement and the right thing to do.',
+  },
+  {
+    q: 'Can I see my earnings independently?',
+    a: 'Yes. All conversions and earnings are tracked directly through Stripe. You have a direct view into your referral data — active subscribers, monthly earnings, subscription status — in real time. You never have to take our word for it.',
+  },
+];
+
+const PROVIDE_ITEMS: { title: string; body: string }[] = [
+  {
+    title: 'Unique referral link',
+    body: 'Tracked through Stripe. Share it anywhere. Works on any platform.',
+  },
+  {
+    title: 'Real-time dashboard',
+    body: 'See your active subscribers, monthly earnings, and conversion status at any time.',
+  },
+  {
+    title: 'Creative assets',
+    body: 'Product screenshots, brand materials, and copy templates ready to use.',
+  },
+  {
+    title: 'Direct support',
+    body: 'A dedicated line to the HumanBased team for questions, feedback, and feature requests.',
+  },
+];
+
+const ASK_ITEMS: string[] = [
+  'Use the product before promoting it. Authentic recommendations convert better and protect your audience.',
+  'At least two promotional mentions per calendar month.',
+  'Clear partnership disclosure on all content (#ad or #partner).',
 ];
 
 const PROMOTER_LIST = [
@@ -100,6 +157,7 @@ const PBPartners: React.FC = () => {
 
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -208,39 +266,66 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3 — THE DEAL ============ */}
+      {/* ============ SECTION 3 — THE REWARD STRUCTURE ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">The reward structure</p>
-          <h2 className="pbp-h2">Clear, transparent, and yours to verify.</h2>
+          <h2 className="pbp-h2">Performance-based. Transparent. Yours to verify.</h2>
           <hr className="pbp-rule" />
           <p className="pbp-body" style={{ maxWidth: 620 }}>
-            Every referral is tracked through Stripe — independently, not our numbers. You see exactly
-            what you earned, from which subscription, when. No black box.
+            Every euro is earned per active paid subscriber, per month. The more your audience grows,
+            the more you earn per referral. All tracked in real time through Stripe.
           </p>
 
-          <div className="pbp-tiers">
-            {TIERS.map((t) => (
+          <div className="pbp-rtable">
+            <div className="pbp-rtable-head">
+              <span>Active subscribers</span>
+              <span>Monthly rate</span>
+              <span>Your earnings*</span>
+            </div>
+            {REWARD_ROWS.map((r, i) => (
               <div
-                key={t.label}
-                className={`pbp-tier${t.featured ? ' pbp-tier--featured' : ''}`}
+                key={r.sub}
+                className={`pbp-rrow${i % 2 === 1 ? ' pbp-rrow--alt' : ''}${
+                  i === REWARD_ROWS.length - 1 ? ' pbp-rrow--top' : ''
+                }`}
               >
-                <div className="pbp-tier-labels">
-                  <span className="pbp-tier-label">{t.label}</span>
-                  {t.note && <span className="pbp-tier-note">{t.note}</span>}
-                </div>
-                <h3 className="pbp-tier-range">{t.range}</h3>
-                <div className="pbp-tier-amount">{t.amount}</div>
-                <p className="pbp-tier-unit">per active subscription, per month</p>
-                <p className="pbp-tier-body">{t.body}</p>
+                <span className="pbp-rrow-sub">{r.sub}</span>
+                <span className="pbp-rrow-rate">{r.rate}</span>
+                <span className="pbp-rrow-earn">{r.earn}</span>
               </div>
             ))}
           </div>
 
-          <p className="pbp-tiers-note">
-            All earnings tracked via Stripe. Partners at Amplifier level receive a personal dashboard
-            link. Payouts monthly via bank transfer or Stripe Connect.
-          </p>
+          <div className="pbp-rtable-notes">
+            <p className="pbp-rtable-note">
+              * Earnings shown are illustrative maximums per tier. Actual earnings depend on your
+              active subscriber count each month.
+            </p>
+            <p className="pbp-rtable-note">
+              Rates apply to new active paid subscribers per calendar month. Free trials, refunds, and
+              self-referrals are excluded.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SECTION 3A — HOW IT WORKS ============ */}
+      <section className="pb-section pbp-sec">
+        <div className="pbp-wrap">
+          <p className="pbp-label">How it works</p>
+          <h2 className="pbp-h2">Four steps from application to income.</h2>
+          <hr className="pbp-rule" />
+
+          <div className="pbp-steps">
+            {STEPS.map((s, i) => (
+              <div key={s.title} className="pbp-step">
+                <div className="pbp-step-num">{i + 1}</div>
+                <h3 className="pbp-step-title">{s.title}</h3>
+                <p className="pbp-step-body">{s.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -323,6 +408,64 @@ const PBPartners: React.FC = () => {
                 ))}
               </ul>
             </div>
+          </div>
+
+          <div className="pbp-get">
+            <p className="pbp-label">What you get</p>
+            <div className="pbp-get-grid">
+              {PROVIDE_ITEMS.map((item) => (
+                <div key={item.title} className="pbp-get-card">
+                  <h3 className="pbp-get-title">{item.title}</h3>
+                  <p className="pbp-get-body">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SECTION 4A — WHAT WE ASK ============ */}
+      <section className="pb-section pbp-sec">
+        <div className="pbp-wrap">
+          <p className="pbp-label">What we ask</p>
+          <div className="pbp-ask">
+            {ASK_ITEMS.map((item) => (
+              <div key={item} className="pbp-ask-row">
+                <span className="pbp-ask-bullet">✦</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SECTION 4B — FAQ ============ */}
+      <section className="pb-section pbp-sec">
+        <div className="pbp-wrap">
+          <p className="pbp-label">Common questions</p>
+          <h2 className="pbp-h2">Everything you need to know.</h2>
+          <hr className="pbp-rule" />
+
+          <div className="pbp-faq">
+            {FAQ.map((item, i) => {
+              const open = openFaq === i;
+              return (
+                <div key={item.q} className="pbp-faq-item">
+                  <button
+                    type="button"
+                    className="pbp-faq-q"
+                    aria-expanded={open}
+                    onClick={() => setOpenFaq(open ? null : i)}
+                  >
+                    <span>{item.q}</span>
+                    <span className="pbp-faq-toggle" aria-hidden="true">
+                      {open ? '−' : '+'}
+                    </span>
+                  </button>
+                  {open && <p className="pbp-faq-a">{item.a}</p>}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -632,88 +775,194 @@ const PBPartners: React.FC = () => {
           margin: 0;
         }
 
-        /* ---------- reward tiers ---------- */
-        .pbp-tiers {
+        /* ---------- reward structure table ---------- */
+        .pbp-rtable {
+          margin-top: 40px;
+          max-width: 760px;
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 12px;
+          overflow: hidden;
+        }
+        .pbp-rtable-head,
+        .pbp-rrow {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-          margin-top: 44px;
+          grid-template-columns: 2fr 1fr 1fr;
         }
-        .pbp-tier {
-          border: 1px solid var(--pb-border);
-          border-radius: 14px;
-          padding: 32px 28px;
-          background: var(--pb-surface);
-          transition: all 0.3s ease;
+        .pbp-rtable-head {
+          padding: 12px 20px;
+          border-bottom: 1px solid rgba(255,200,100,0.2);
         }
-        .pbp-tier:hover {
-          border-color: rgba(255,200,100,0.5);
-          transform: translateY(-3px);
-        }
-        .pbp-tier--featured {
-          border-color: var(--pb-gold);
-          background: rgba(255,200,100,0.05);
-        }
-        .pbp-tier-labels {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 14px;
-        }
-        .pbp-tier-label {
+        .pbp-rtable-head span {
+          font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 2px;
+          letter-spacing: 2.5px;
           text-transform: uppercase;
+          color: var(--pb-muted);
+        }
+        .pbp-rrow {
+          padding: 18px 20px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 14px;
+          align-items: baseline;
+        }
+        .pbp-rrow--alt { background: rgba(255,255,255,0.02); }
+        .pbp-rrow-sub { color: var(--pb-text); font-weight: 300; }
+        .pbp-rrow-rate {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 20px;
+          font-weight: 400;
           color: var(--pb-gold);
         }
-        .pbp-tier-note {
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          background: rgba(255,200,100,0.14);
-          border: 1px solid rgba(255,200,100,0.3);
-          color: var(--pb-gold);
-          padding: 3px 9px;
-          border-radius: 3px;
+        .pbp-rrow-earn { font-size: 13px; color: var(--pb-muted); }
+        .pbp-rrow--top {
+          border: 1px solid rgba(255,200,100,0.25);
+          border-radius: 8px;
         }
-        .pbp-tier-range {
+        .pbp-rrow--top .pbp-rrow-rate,
+        .pbp-rrow--top .pbp-rrow-earn { color: #ffd98a; }
+        .pbp-rtable-notes { margin-top: 18px; max-width: 760px; }
+        .pbp-rtable-note {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 12px;
+          font-style: italic;
+          line-height: 1.7;
+          color: var(--pb-muted);
+          margin: 6px 0 0;
+        }
+
+        /* ---------- how it works steps ---------- */
+        .pbp-steps {
+          margin-top: 44px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+        .pbp-step { position: relative; }
+        .pbp-step:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          top: 22px;
+          left: 22px;
+          width: calc(100% + 20px);
+          height: 1px;
+          background: rgba(255,200,100,0.25);
+          z-index: 0;
+        }
+        .pbp-step-num {
+          position: relative;
+          z-index: 1;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,200,100,0.4);
+          background: rgba(10,22,40,0.92);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 20px;
+          color: var(--pb-gold);
+          margin-bottom: 18px;
+        }
+        .pbp-step-title {
           font-family: 'Cormorant', Georgia, serif;
           font-weight: 400;
           font-size: 22px;
           color: #ffffff;
-          margin: 0 0 16px;
+          margin: 0 0 10px;
         }
-        .pbp-tier-amount {
-          font-family: 'Cormorant', Georgia, serif;
-          font-size: 46px;
+        .pbp-step-body {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.7;
+          color: var(--pb-muted);
+          margin: 0;
+        }
+
+        /* ---------- faq accordion ---------- */
+        .pbp-faq { margin-top: 36px; max-width: 760px; }
+        .pbp-faq-item {
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          padding: 20px 0;
+        }
+        .pbp-faq-q {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          background: none;
+          border: 0;
+          padding: 0;
+          text-align: left;
+          cursor: pointer;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 15px;
+          font-weight: 500;
+          color: #ffffff;
+        }
+        .pbp-faq-toggle {
+          flex-shrink: 0;
+          font-size: 18px;
           line-height: 1;
           color: var(--pb-gold);
         }
-        .pbp-tier-unit {
+        .pbp-faq-a {
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 14px;
+          line-height: 1.8;
           color: var(--pb-muted);
-          margin: 8px 0 0;
+          padding-top: 12px;
+          margin: 0;
+          max-width: 680px;
         }
-        .pbp-tier-body {
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 1.75;
-          color: var(--pb-text);
-          margin: 16px 0 0;
+
+        /* ---------- what you get ---------- */
+        .pbp-get { margin-top: 56px; }
+        .pbp-get-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          margin-top: 26px;
         }
-        .pbp-tiers-note {
+        .pbp-get-card {
+          border: 1px solid var(--pb-border-gold);
+          border-radius: 12px;
+          padding: 22px 24px;
+          background: var(--pb-surface);
+        }
+        .pbp-get-title {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 400;
+          font-size: 20px;
+          color: #ffffff;
+          margin: 0 0 8px;
+        }
+        .pbp-get-body {
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 13px;
-          font-style: italic;
+          font-weight: 300;
+          line-height: 1.7;
           color: var(--pb-muted);
-          text-align: center;
-          margin: 26px auto 0;
-          max-width: 620px;
+          margin: 0;
         }
+
+        /* ---------- what we ask ---------- */
+        .pbp-ask { margin-top: 24px; }
+        .pbp-ask-row {
+          display: flex;
+          gap: 12px;
+          align-items: flex-start;
+          padding: 11px 0;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.7;
+          color: var(--pb-text);
+          max-width: 680px;
+        }
+        .pbp-ask-bullet { color: var(--pb-gold); flex-shrink: 0; }
 
         /* ---------- two tracks ---------- */
         .pbp-tracks {
@@ -937,8 +1186,18 @@ const PBPartners: React.FC = () => {
           .pbp-stripe { padding: 56px 7%; }
           .pbp-stripe-grid { grid-template-columns: 1fr; gap: 36px; }
           .pbp-adv-grid { grid-template-columns: 1fr; }
-          .pbp-tiers { grid-template-columns: 1fr; }
           .pbp-tracks { grid-template-columns: 1fr; }
+          .pbp-get-grid { grid-template-columns: 1fr; }
+          .pbp-steps { grid-template-columns: 1fr; gap: 8px; }
+          .pbp-step:not(:last-child)::after { display: none; }
+          .pbp-step { padding-bottom: 6px; }
+          .pbp-rtable-head span { font-size: 10px; letter-spacing: 1.5px; }
+          .pbp-rtable-head,
+          .pbp-rrow { padding-left: 14px; padding-right: 14px; }
+        }
+        @media (max-width: 560px) {
+          .pbp-rrow-rate { font-size: 16px; }
+          .pbp-rrow { font-size: 13px; }
         }
       `}</style>
     </div>
