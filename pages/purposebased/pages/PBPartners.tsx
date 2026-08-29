@@ -244,6 +244,48 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
+      {/* ============ SECTION 3B — STRIPE TRANSPARENCY ============ */}
+      <section className="pb-section pbp-stripe">
+        <div className="pbp-stripe-grid">
+          <div className="pbp-stripe-text">
+            <p className="pbp-label">Transparency</p>
+            <h2 className="pbp-stripe-h2">Your earnings. Verified by Stripe, not by us.</h2>
+            <hr className="pbp-rule" />
+            <p className="pbp-body" style={{ maxWidth: 560 }}>
+              Every referral is tracked directly through Stripe — the same payment infrastructure used
+              by millions of businesses worldwide. When someone subscribes using your link, Stripe logs
+              it immediately and permanently.
+            </p>
+            <p className="pbp-body" style={{ maxWidth: 560, marginTop: 18 }}>
+              You get a direct view into your referral data. Active subscribers, monthly earnings,
+              subscription status — all in real time. You never have to take our word for it.
+            </p>
+            <p className="pbp-stripe-aside">
+              We chose this model deliberately. Transparency is not a feature — it is the foundation of
+              a partnership worth having.
+            </p>
+          </div>
+
+          <div className="pbp-stripe-card">
+            <p className="pbp-stripe-card-label">Your Stripe Dashboard</p>
+            <div className="pbp-stripe-stat">
+              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-stat-label">Active subscribers</span>
+            </div>
+            <div className="pbp-stripe-stat">
+              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-stat-label">Monthly earnings</span>
+            </div>
+            <div className="pbp-stripe-stat">
+              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-stat-label">This month&rsquo;s referrals</span>
+            </div>
+            <p className="pbp-stripe-live">Live data. Updated by Stripe in real time.</p>
+            <p className="pbp-stripe-powered">Powered by Stripe</p>
+          </div>
+        </div>
+      </section>
+
       {/* ============ SECTION 4 — TWO TRACKS ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
@@ -804,12 +846,96 @@ const PBPartners: React.FC = () => {
           justify-content: center;
         }
 
+        /* ---------- stripe transparency ---------- */
+        .pbp-stripe {
+          padding: 64px 10%;
+          background: linear-gradient(135deg, rgba(255,200,100,0.08) 0%, rgba(255,200,100,0.03) 100%);
+          border-top: 1px solid rgba(255,200,100,0.25);
+          border-bottom: 1px solid rgba(255,200,100,0.25);
+        }
+        .pbp-stripe-grid {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 0.6fr 0.4fr;
+          gap: 64px;
+          align-items: center;
+        }
+        .pbp-stripe-h2 {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: 40px;
+          line-height: 1.2;
+          color: #ffffff;
+          margin: 0;
+        }
+        .pbp-stripe-aside {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 300;
+          line-height: 1.8;
+          color: var(--pb-muted);
+          max-width: 560px;
+          margin: 22px 0 0;
+        }
+        .pbp-stripe-card {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,200,100,0.30);
+          border-radius: 14px;
+          padding: 32px 28px;
+        }
+        .pbp-stripe-card-label {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 10px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: var(--pb-muted);
+          margin: 0 0 8px;
+        }
+        .pbp-stripe-stat {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          padding: 18px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .pbp-stripe-num {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 32px;
+          line-height: 1;
+          color: var(--pb-gold);
+        }
+        .pbp-stripe-stat-label {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 12px;
+          color: var(--pb-muted);
+        }
+        .pbp-stripe-live {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 12px;
+          font-style: italic;
+          color: var(--pb-muted);
+          text-align: center;
+          margin: 20px 0 0;
+        }
+        .pbp-stripe-powered {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          color: var(--pb-muted);
+          text-align: center;
+          margin: 14px 0 0;
+        }
+
         /* ---------- responsive ---------- */
         @media (max-width: 900px) {
           .pbp-h1 { font-size: 40px; }
           .pbp-h1-sub { font-size: 25px; }
           .pbp-h2, .pbp-close-h2 { font-size: 34px; }
+          .pbp-stripe-h2 { font-size: 30px; }
           .pbp-sec { padding: 80px 7%; }
+          .pbp-stripe { padding: 56px 7%; }
+          .pbp-stripe-grid { grid-template-columns: 1fr; gap: 36px; }
           .pbp-adv-grid { grid-template-columns: 1fr; }
           .pbp-tiers { grid-template-columns: 1fr; }
           .pbp-tracks { grid-template-columns: 1fr; }
