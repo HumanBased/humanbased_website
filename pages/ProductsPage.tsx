@@ -139,8 +139,81 @@ const ProductsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Three Coming Soon placeholders */}
-            <ComingSoonCard />
+            {/* PurposeBased, in development */}
+            <div
+              className="relative group cursor-pointer"
+              role="link"
+              tabIndex={0}
+              onClick={() => { window.location.href = '/purposebased'; }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/purposebased';
+                }
+              }}
+              aria-label="Open PurposeBased"
+            >
+              <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
+                <div className="absolute top-4 left-4 z-10">
+                  <span
+                    className="rounded-full uppercase tracking-widest whitespace-nowrap border border-white/20 bg-white/[0.03] text-white/50"
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: 800,
+                      padding: '8px 18px',
+                    }}
+                  >
+                    In Development
+                  </span>
+                </div>
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#070713] to-[#050509]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,164,65,0.08),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(99,102,241,0.06),transparent_55%)]" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em] text-white/30 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+                      PurposeBased — coming soon
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
+                </div>
+
+                <div className="p-6 sm:p-8 lg:p-10 space-y-5">
+                  <div className="space-y-2">
+                    <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
+                      PurposeBased
+                    </h3>
+                    <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
+                      Purpose &amp; Self-Knowledge App
+                    </p>
+                  </div>
+
+                  <p className="text-white/70 text-base lg:text-lg font-light leading-relaxed">
+                    Understand your patterns. Find your direction. Live with intention.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 pt-2">
+                    <Link
+                      to="/purposebased"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center justify-center text-center bg-amber-500 hover:bg-amber-400 text-black text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
+                    >
+                      Explore PurposeBased
+                    </Link>
+                    <Link
+                      to="/purposebased#pricing"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center justify-center text-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
+                    >
+                      Join the Waitlist
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Two Coming Soon placeholders */}
             <ComingSoonCard />
             <ComingSoonCard />
           </div>
