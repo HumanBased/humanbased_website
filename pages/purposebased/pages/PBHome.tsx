@@ -76,24 +76,30 @@ const PBHome: React.FC = () => {
     <div className="pbh" ref={rootRef}>
       {/* ============ SECTION 1 — HERO ============ */}
       <section className="pbh-hero">
-        <p className="pbh-label">A map of your own life</p>
-        <h1 className="pbh-h1">
-          Transform your <em>life</em>
-          <br />
-          through <strong>self-knowledge</strong>
-        </h1>
-        <p className="pbh-sub">
-          A blueprint drawn from nine traditions. Read together, and written for you alone.
-        </p>
-        <div className="pbh-cta-row">
-          <button type="button" className="pbh-btn pbh-btn--solid">
-            Start your blueprint
-          </button>
-          <button type="button" className="pbh-btn pbh-btn--glass">
-            See how it works
-          </button>
+        <div className="pbh-hero-bg" aria-hidden="true">
+          <div className="pbh-hero-img" />
+          <div className="pbh-hero-veil" />
         </div>
-        <span className="pbh-scroll" aria-hidden="true" />
+        <div className="pbh-hero-content">
+          <p className="pbh-label">A map of your own life</p>
+          <h1 className="pbh-h1">
+            Transform your <em>life</em>
+            <br />
+            through <strong>self-knowledge</strong>
+          </h1>
+          <p className="pbh-sub">
+            A blueprint drawn from nine traditions. Read together, and written for you alone.
+          </p>
+          <div className="pbh-cta-row">
+            <button type="button" className="pbh-btn pbh-btn--solid">
+              Start your blueprint
+            </button>
+            <button type="button" className="pbh-btn pbh-btn--glass">
+              See how it works
+            </button>
+          </div>
+        </div>
+        <span className="pbh-chevron" aria-hidden="true" />
       </section>
 
       {/* ============ SECTION 2 — PROBLEM ============ */}
@@ -153,7 +159,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 5 — PRICING ============ */}
-      <section className="pb-section pbh-sec">
+      <section id="pricing" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Pricing</p>
           <h2 className="pbh-h2">
@@ -355,8 +361,50 @@ const PBHome: React.FC = () => {
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 96px 24px;
+          padding: 80px 24px 96px;
           position: relative;
+          overflow: hidden;
+        }
+        .pbh-hero-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+        }
+        .pbh-hero-img {
+          position: absolute;
+          inset: 0;
+          background: url('/images/pb-hero.jpg') center / cover no-repeat;
+          opacity: 0.22;
+        }
+        .pbh-hero-veil {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at center, transparent 30%, #0a1628 85%);
+        }
+        .pbh-hero-content {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .pbh-chevron {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          margin-left: -8px;
+          width: 15px;
+          height: 15px;
+          z-index: 2;
+          border-right: 2px solid var(--pb-gold);
+          border-bottom: 2px solid var(--pb-gold);
+          opacity: 0;
+          animation: pbh-chev-in 0.8s ease 2s forwards, pbh-chev-bounce 1.9s ease-in-out 2s infinite;
+        }
+        @keyframes pbh-chev-in { to { opacity: 0.85; } }
+        @keyframes pbh-chev-bounce {
+          0%, 100% { transform: rotate(45deg) translate(0, 0); }
+          50% { transform: rotate(45deg) translate(4px, 4px); }
         }
         .pbh-h1 {
           font-family: 'Cormorant', Georgia, serif;
@@ -382,24 +430,6 @@ const PBHome: React.FC = () => {
           flex-wrap: wrap;
           justify-content: center;
         }
-        .pbh-scroll {
-          position: absolute;
-          bottom: 34px;
-          left: 50%;
-          width: 7px;
-          height: 7px;
-          margin-left: -3.5px;
-          border-radius: 50%;
-          background: var(--pb-gold);
-          opacity: 0;
-          animation: pbh-fadein 0.7s ease 2s forwards, pbh-pulse 2.4s ease-in-out 2s infinite;
-        }
-        @keyframes pbh-fadein { to { opacity: 0.9; } }
-        @keyframes pbh-pulse {
-          0%, 100% { transform: translateY(0); opacity: 0.9; }
-          50% { transform: translateY(6px); opacity: 0.35; }
-        }
-
         /* ---------- generic section ---------- */
         .pbh-sec { padding: 96px 10%; }
         .pbh-wrap { max-width: 1100px; margin: 0 auto; }
@@ -411,17 +441,30 @@ const PBHome: React.FC = () => {
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
           margin-top: 40px;
+          perspective: 1000px;
         }
         .pbh-pill {
-          border: 1px solid var(--pb-border-gold);
-          border-radius: 10px;
+          position: relative;
+          border: 1px solid rgba(255,200,100,0.30);
+          border-radius: 14px;
           padding: 28px 24px;
-          background: var(--pb-surface);
-          transition: all 0.3s ease;
+          background: linear-gradient(135deg, rgba(255,200,100,0.08) 0%, rgba(255,200,100,0.03) 100%);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,200,100,0.08), inset 0 1px 0 rgba(255,255,255,0.08);
+          transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .pbh-pill::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 20%;
+          width: 60%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255,200,100,0.6), transparent);
         }
         .pbh-pill:hover {
-          border-color: rgba(255,200,100,0.5);
-          transform: translateY(-3px);
+          transform: translateY(-6px) rotateX(2deg);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 24px rgba(255,200,100,0.10), inset 0 1px 0 rgba(255,255,255,0.08);
+          border-color: rgba(255,200,100,0.55);
         }
         .pbh-pill-title {
           font-family: 'Cormorant', Georgia, serif;
@@ -429,6 +472,7 @@ const PBHome: React.FC = () => {
           font-size: 26px;
           color: #ffffff;
           margin: 0;
+          text-shadow: 0 0 20px rgba(255,200,100,0.3);
         }
         .pbh-pill-body {
           font-size: 14px;
@@ -522,19 +566,39 @@ const PBHome: React.FC = () => {
           gap: 20px;
         }
         .pbh-tier {
-          border: 1px solid var(--pb-border);
-          border-radius: 10px;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(255,200,100,0.20);
+          border-radius: 14px;
           padding: 32px 26px;
-          background: var(--pb-surface);
+          background: linear-gradient(145deg, rgba(255,200,100,0.07) 0%, rgba(255,200,100,0.02) 60%, rgba(100,140,255,0.03) 100%);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
           transition: all 0.3s ease;
         }
+        .pbh-tier::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,235,200,0.22), transparent);
+          transform: skewX(-20deg);
+          transition: left 0.6s ease;
+          pointer-events: none;
+        }
+        .pbh-tier:hover::before { left: 130%; }
         .pbh-tier:hover {
           border-color: rgba(255,200,100,0.5);
           transform: translateY(-3px);
         }
         .pbh-tier--featured {
-          border-color: #ffc864;
-          background: rgba(255,200,100,0.05);
+          border: 1px solid rgba(255,200,100,0.50);
+          background: linear-gradient(145deg, rgba(255,200,100,0.14) 0%, rgba(255,200,100,0.06) 60%, rgba(255,160,50,0.04) 100%);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 32px rgba(255,200,100,0.08), inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+        .pbh-tier--featured .pbh-badge--top {
+          text-shadow: 0 0 12px rgba(255,200,100,0.8);
         }
         .pbh-tier-name {
           font-family: 'Cormorant', Georgia, serif;
@@ -551,8 +615,9 @@ const PBHome: React.FC = () => {
         }
         .pbh-price-was {
           font-family: 'Cormorant', Georgia, serif;
-          font-size: 22px;
+          font-size: 28px;
           color: var(--pb-muted);
+          text-decoration: line-through;
           margin-left: 8px;
         }
         .pbh-price-note {
