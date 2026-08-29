@@ -59,32 +59,19 @@ const OrbitHub: React.FC = () => (
         marginTop: '-25px',
         marginLeft: '-25px',
         borderRadius: '50%',
-        overflow: 'hidden',
-        background: 'rgba(255,255,255,0.06)',
-        border: '1px solid rgba(255,200,100,0.25)',
+        background: 'linear-gradient(135deg, rgba(255,200,100,0.2), rgba(255,200,100,0.06))',
+        border: '1px solid rgba(255,200,100,0.5)',
+        boxShadow: '0 0 16px rgba(255,200,100,0.15)',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#ffc864',
-        fontSize: '16px',
-        letterSpacing: '1px',
+        lineHeight: 1,
       }}
     >
-      <span>HB</span>
-      <img
-        src="/images/hb-logo.png"
-        alt="HumanBased"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-        }}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-      />
+      {/* TODO: replace with <img src="/images/hb-logo.png"> when logo file is available */}
+      <span style={{ fontSize: '18px', fontWeight: 600, color: '#ffc864' }}>H</span>
+      <span style={{ fontSize: '10px', color: 'rgba(255,200,100,0.6)', letterSpacing: '2px' }}>B</span>
     </div>
 
     <div className="pb-orbit-spin" style={{ position: 'absolute', inset: 0 }}>

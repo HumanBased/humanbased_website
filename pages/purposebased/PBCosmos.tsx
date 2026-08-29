@@ -60,6 +60,94 @@ const buildShootKeyframes = (name: string, cycle: number): string => {
     }`;
 };
 
+// Decorative zodiac watermark, drifting slowly behind every PurposeBased page.
+const ZODIAC_GLYPHS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
+const GOLD = 'rgba(255,200,100,1)';
+
+const ZodiacWheel: React.FC = () => (
+  <div className="pb-zodiac" aria-hidden="true">
+    <svg width="600" height="600" viewBox="-300 -300 600 600">
+      {/* rings */}
+      <circle cx="0" cy="0" r="270" fill="none" stroke={GOLD} strokeWidth="0.8" />
+      <circle cx="0" cy="0" r="210" fill="none" stroke={GOLD} strokeWidth="0.8" />
+      <circle cx="0" cy="0" r="160" fill="none" stroke={GOLD} strokeWidth="0.8" />
+
+      {/* 12 segment lines + outer-ring dots */}
+      {Array.from({ length: 12 }).map((_, i) => {
+        const rad = (i * 30 * Math.PI) / 180;
+        const cos = Math.cos(rad);
+        const sin = Math.sin(rad);
+        return (
+          <g key={`seg-${i}`}>
+            <line
+              x1={(cos * 160).toFixed(2)}
+              y1={(sin * 160).toFixed(2)}
+              x2={(cos * 270).toFixed(2)}
+              y2={(sin * 270).toFixed(2)}
+              stroke={GOLD}
+              strokeWidth="0.8"
+            />
+            <circle cx={(cos * 270).toFixed(2)} cy={(sin * 270).toFixed(2)} r="3" fill={GOLD} />
+          </g>
+        );
+      })}
+
+      {/* 12 zodiac glyphs at segment midpoints */}
+      {ZODIAC_GLYPHS.map((glyph, i) => {
+        const rad = ((i * 30 + 15) * Math.PI) / 180;
+        return (
+          <text
+            key={`glyph-${i}`}
+            x={(Math.cos(rad) * 240).toFixed(2)}
+            y={(Math.sin(rad) * 240).toFixed(2)}
+            fontSize="14"
+            fill={GOLD}
+            textAnchor="middle"
+            dominantBaseline="central"
+          >
+            {glyph}
+          </text>
+        );
+      })}
+
+      {/* central star */}
+      <text
+        x="0"
+        y="0"
+        fontSize="20"
+        fill="rgba(255,200,100,0.5)"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        ✦
+      </text>
+    </svg>
+
+    <style>{`
+      .pb-zodiac {
+        position: fixed;
+        right: -180px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.07;
+      }
+      .pb-zodiac svg {
+        transform-origin: center;
+        animation: pb-zodiac-spin 120s linear infinite;
+      }
+      @keyframes pb-zodiac-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @media (max-width: 1023px) {
+        .pb-zodiac { display: none; }
+      }
+    `}</style>
+  </div>
+);
+
 const PBCosmos: React.FC = () => {
   const stars = useMemo<Star[]>(() => {
     const out: Star[] = [];
@@ -93,6 +181,7 @@ const PBCosmos: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div
       aria-hidden="true"
       style={{
@@ -150,6 +239,8 @@ const PBCosmos: React.FC = () => {
         ${shooters.map((sh) => buildShootKeyframes(sh.name, sh.cycle)).join('\n')}
       `}</style>
     </div>
+    <ZodiacWheel />
+    </>
   );
 };
 
