@@ -69,9 +69,30 @@ const OrbitHub: React.FC = () => (
         lineHeight: 1,
       }}
     >
-      {/* TODO: replace with <img src="/images/hb-logo.png"> when logo file is available */}
-      <span style={{ fontSize: '18px', fontWeight: 600, color: '#ffc864' }}>H</span>
-      <span style={{ fontSize: '10px', color: 'rgba(255,200,100,0.6)', letterSpacing: '2px' }}>B</span>
+      <img
+        src="/images/hb-logo.png"
+        alt="HumanBased"
+        style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }}
+        onError={(e) => {
+          const t = e.target as HTMLImageElement;
+          t.style.display = 'none';
+          const fallback = t.nextElementSibling as HTMLElement | null;
+          if (fallback) fallback.style.display = 'flex';
+        }}
+      />
+      <div style={{ display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <span style={{ fontFamily: 'Cormorant,serif', fontSize: '18px', color: '#ffc864', fontWeight: 600 }}>H</span>
+        <span
+          style={{
+            fontFamily: 'Cormorant,serif',
+            fontSize: '10px',
+            color: 'rgba(255,200,100,0.6)',
+            letterSpacing: '2px',
+          }}
+        >
+          B
+        </span>
+      </div>
     </div>
 
     <div className="pb-orbit-spin" style={{ position: 'absolute', inset: 0 }}>
@@ -133,27 +154,16 @@ const OrbitHub: React.FC = () => (
 const PBFooter: React.FC = () => {
   return (
     <footer style={{ background: '#08182a', color: '#cadcf0', position: 'relative', zIndex: 10 }}>
-      <div
-        style={{
-          maxWidth: '1180px',
-          margin: '0 auto',
-          padding: '64px 40px 0',
-          display: 'grid',
-          gap: '44px',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        }}
-      >
+      <div className="pbf-grid">
         {/* Brand column */}
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span
-              style={{
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                border: '1px dashed #ffc864',
-                display: 'inline-block',
-                flexShrink: 0,
+            <img
+              src="/images/pb-logo.png"
+              alt="PurposeBased"
+              style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
             <span className="pb-font-serif" style={{ fontSize: '22px', fontWeight: 500, color: '#f3e9d6' }}>
@@ -211,23 +221,54 @@ const PBFooter: React.FC = () => {
         </FooterColumn>
       </div>
 
-      <div
-        style={{
-          maxWidth: '1180px',
-          margin: '56px auto 0',
-          padding: '24px 40px',
-          borderTop: '1px solid rgba(255,255,255,0.08)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '12px',
-          fontSize: '12px',
-          color: '#8fa8c4',
-        }}
-      >
+      <div className="pbf-bottom">
         <span>© 2026 HumanBased ApS</span>
         <span>Coding for humanity</span>
       </div>
+
+      <style>{`
+        .pbf-grid {
+          max-width: 1180px;
+          margin: 0 auto;
+          padding: 64px 40px 0;
+          display: grid;
+          gap: 44px;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .pbf-bottom {
+          max-width: 1180px;
+          margin: 56px auto 0;
+          padding: 24px 40px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
+          font-size: 12px;
+          color: #8fa8c4;
+        }
+
+        /* ---------- tablet ---------- */
+        @media (max-width: 1024px) {
+          .pbf-grid { padding: 56px 7% 0; gap: 36px; }
+          .pbf-bottom { margin-top: 44px; padding: 22px 7%; }
+        }
+
+        /* ---------- mobile ---------- */
+        @media (max-width: 768px) {
+          .pbf-grid {
+            padding: 48px 5% 0;
+            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          }
+          .pbf-bottom { margin-top: 36px; padding: 20px 5%; }
+        }
+
+        @media (max-width: 480px) {
+          .pbf-grid { grid-template-columns: 1fr; }
+          .pbf-bottom { justify-content: flex-start; }
+        }
+      `}</style>
     </footer>
   );
 };

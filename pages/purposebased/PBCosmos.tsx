@@ -141,7 +141,7 @@ const ZodiacWheel: React.FC = () => (
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
-      @media (max-width: 1023px) {
+      @media (max-width: 1024px) {
         .pb-zodiac { display: none; }
       }
     `}</style>

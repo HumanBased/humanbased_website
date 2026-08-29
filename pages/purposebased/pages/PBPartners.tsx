@@ -738,9 +738,9 @@ const PBPartners: React.FC = () => {
         .pb-section.pb-visible { opacity: 1; transform: translateY(0); }
 
         /* ---------- layout ---------- */
-        .pbp-sec { padding: 96px 10%; }
+        .pbp-sec { padding: 80px 10%; }
         .pbp-wrap { max-width: 1100px; margin: 0 auto; }
-        .pbp-hero { padding-top: 130px; }
+        .pbp-hero { padding-top: 110px; }
 
         /* ---------- advantage pills ---------- */
         .pbp-adv-grid {
@@ -1064,7 +1064,7 @@ const PBPartners: React.FC = () => {
 
         /* ---------- closing ---------- */
         .pbp-close {
-          padding: 100px 24px;
+          padding: 80px 10%;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -1097,7 +1097,7 @@ const PBPartners: React.FC = () => {
 
         /* ---------- stripe transparency ---------- */
         .pbp-stripe {
-          padding: 64px 10%;
+          padding: 80px 10%;
           background: linear-gradient(135deg, rgba(255,200,100,0.08) 0%, rgba(255,200,100,0.03) 100%);
           border-top: 1px solid rgba(255,200,100,0.25);
           border-bottom: 1px solid rgba(255,200,100,0.25);
@@ -1176,28 +1176,76 @@ const PBPartners: React.FC = () => {
           margin: 14px 0 0;
         }
 
-        /* ---------- responsive ---------- */
-        @media (max-width: 900px) {
-          .pbp-h1 { font-size: 40px; }
-          .pbp-h1-sub { font-size: 25px; }
-          .pbp-h2, .pbp-close-h2 { font-size: 34px; }
-          .pbp-stripe-h2 { font-size: 30px; }
-          .pbp-sec { padding: 80px 7%; }
-          .pbp-stripe { padding: 56px 7%; }
+        /* ============================================================
+           RESPONSIVE
+           Desktop 1024px+ : 80px 10%  · 2-col cards · 4-col steps
+           Tablet  ≤1024px : 60px 7%   · 2-col cards · 2-col steps
+           Mobile  ≤768px  : 48px 5%   · single column throughout
+           ============================================================ */
+
+        /* ---------- tablet ---------- */
+        @media (max-width: 1024px) {
+          .pbp-h1 { font-size: 44px; }
+          .pbp-h1-sub { font-size: 27px; }
+          .pbp-h2, .pbp-close-h2 { font-size: 36px; }
+          .pbp-stripe-h2 { font-size: 32px; }
+          .pbp-sec { padding: 60px 7%; }
+          .pbp-hero { padding-top: 88px; }
+          .pbp-close { padding: 60px 7%; }
+          .pbp-stripe { padding: 60px 7%; }
           .pbp-stripe-grid { grid-template-columns: 1fr; gap: 36px; }
+          .pbp-steps { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+          .pbp-step:not(:last-child)::after { display: none; }
+          .pbp-track { padding: 32px 28px; }
+        }
+
+        /* ---------- mobile ---------- */
+        @media (max-width: 768px) {
+          .pbp-h1 { font-size: 36px; }
+          .pbp-h1-sub { font-size: 23px; }
+          .pbp-h2, .pbp-close-h2 { font-size: 30px; }
+          .pbp-stripe-h2 { font-size: 28px; }
+          .pbp-sec { padding: 48px 5%; }
+          .pbp-hero { padding-top: 64px; }
+          .pbp-close { padding: 48px 5%; }
+          .pbp-stripe { padding: 48px 5%; }
           .pbp-adv-grid { grid-template-columns: 1fr; }
           .pbp-tracks { grid-template-columns: 1fr; }
           .pbp-get-grid { grid-template-columns: 1fr; }
           .pbp-steps { grid-template-columns: 1fr; gap: 8px; }
-          .pbp-step:not(:last-child)::after { display: none; }
           .pbp-step { padding-bottom: 6px; }
+          .pbp-track { padding: 28px 22px; }
           .pbp-rtable-head span { font-size: 10px; letter-spacing: 1.5px; }
           .pbp-rtable-head,
           .pbp-rrow { padding-left: 14px; padding-right: 14px; }
+          .pbp-close-cta { align-self: stretch; }
         }
+
+        /* ---------- small mobile ---------- */
         @media (max-width: 560px) {
+          .pbp-h1 { font-size: 32px; }
+          .pbp-h1-sub { font-size: 21px; }
+          .pbp-h2, .pbp-close-h2 { font-size: 27px; }
+          .pbp-body { font-size: 15px; }
           .pbp-rrow-rate { font-size: 16px; }
           .pbp-rrow { font-size: 13px; }
+          /* The 3-column reward table cannot hold its columns this narrow,
+             so each row becomes a stacked block: range on its own line,
+             rate and earnings side by side beneath it. */
+          .pbp-rtable-head { display: none; }
+          .pbp-rrow {
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px;
+            align-items: center;
+          }
+          .pbp-rrow-sub { grid-column: 1 / -1; }
+          .pbp-stripe-card { padding: 24px 20px; }
+        }
+
+        @media (max-width: 480px) {
+          .pbp-close-cta { flex-direction: column; }
+          .pbp-close-cta .pbp-btn { width: 100%; }
+          .pbp-faq-q { font-size: 14px; gap: 12px; }
         }
       `}</style>
     </div>

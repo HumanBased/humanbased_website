@@ -567,7 +567,7 @@ const PBHome: React.FC = () => {
         }
 
         /* ---------- how it works ---------- */
-        .pbh-how { padding: 76px 10%; }
+        .pbh-how { padding: 80px 10%; }
         .pbh-journey {
           margin-top: 40px;
           display: grid;
@@ -661,9 +661,9 @@ const PBHome: React.FC = () => {
         }
 
         /* ---------- generic section ---------- */
-        .pbh-sec { padding: 96px 10%; }
+        .pbh-sec { padding: 80px 10%; }
         .pbh-wrap { max-width: 1100px; margin: 0 auto; }
-        .pbh-close { padding: 96px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .pbh-close { padding: 80px 10%; text-align: center; display: flex; flex-direction: column; align-items: center; }
 
         /* ---------- pillars ---------- */
         .pbh-pillars {
@@ -875,14 +875,25 @@ const PBHome: React.FC = () => {
           border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* ---------- responsive ---------- */
-        @media (max-width: 900px) {
-          .pbh-h2 { font-size: 34px; }
-          .pbh-sec { padding: 80px 7%; }
-          .pbh-hero { padding: 0 7% 72px; }
-          .pbh-hero-grid { gap: 40px; }
-          .pbh-how { padding: 64px 7%; }
-          .pbh-pillars { grid-template-columns: 1fr; }
+        /* ============================================================
+           RESPONSIVE
+           Desktop 1024px+ : 80px 10%  · hero 55/45 · pillars 3 cols
+           Tablet  ≤1024px : 60px 7%   · hero 50/50 · pillars 2 cols
+           Mobile  ≤768px  : 48px 5%   · hero stacked · single column
+           ============================================================ */
+
+        /* ---------- tablet ---------- */
+        @media (max-width: 1024px) {
+          .pbh-h1 { font-size: 48px; }
+          .pbh-h2 { font-size: 36px; }
+          .pbh-sec { padding: 60px 7%; }
+          .pbh-close { padding: 60px 7%; }
+          .pbh-how { padding: 60px 7%; }
+          .pbh-hero { padding: 0 7% 64px; }
+          .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 40px; }
+          .pbh-phone { width: 220px; }
+          .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
+          .pbh-frow { gap: 36px; }
           .pbh-journey {
             grid-template-columns: 1fr;
             justify-items: center;
@@ -903,17 +914,45 @@ const PBHome: React.FC = () => {
             transform: translateX(-50%) rotate(135deg);
           }
         }
+
+        /* ---------- mobile ---------- */
         @media (max-width: 768px) {
           .pbh-h1 { font-size: 38px; }
-          .pbh-hero { padding: 0 24px 72px; }
+          .pbh-h2 { font-size: 32px; }
+          .pbh-sec { padding: 48px 5%; }
+          .pbh-close { padding: 48px 5%; }
+          .pbh-how { padding: 48px 5%; }
+          .pbh-hero { padding: 0 5% 56px; }
           .pbh-hero-grid { grid-template-columns: 1fr; gap: 36px; }
           .pbh-hero-content { align-items: center; text-align: center; }
+          .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
           .pbh-phone { width: 200px; }
-          .pbh-frow { grid-template-columns: 1fr; gap: 20px; }
+          .pbh-pillars { grid-template-columns: 1fr; }
+          .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,
           .pbh-frow--flip .pbh-fimg { order: 0; }
+          .pbh-fimg { height: 180px; }
           .pbh-founding { flex-direction: column; align-items: flex-start; }
+          .pbh-founding .pbh-btn { width: 100%; }
+        }
+
+        /* ---------- pricing tiers stack ---------- */
+        @media (max-width: 600px) {
+          .pbh-tiers { grid-template-columns: 1fr; }
+        }
+
+        /* ---------- small mobile ---------- */
+        @media (max-width: 480px) {
+          .pbh-h1 { font-size: 32px; }
+          .pbh-h2 { font-size: 28px; }
+          .pbh-body { font-size: 15px; }
+          .pbh-price { font-size: 36px; }
+          .pbh-price-was { font-size: 22px; }
+          .pbh-cta-row { flex-direction: column; align-self: stretch; }
+          .pbh-cta-row .pbh-btn { width: 100%; }
+          .pbh-tier { padding: 26px 20px; }
+          .pbh-pill { padding: 24px 20px; }
         }
       `}</style>
     </div>
