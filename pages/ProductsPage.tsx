@@ -139,7 +139,7 @@ const ProductsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* PurposeBased, in development */}
+            {/* PurposeBased, coming soon */}
             <div
               className="relative group cursor-pointer"
               role="link"
@@ -157,14 +157,17 @@ const ProductsPage: React.FC = () => {
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
                 <div className="absolute top-4 left-4 z-10">
                   <span
-                    className="rounded-full uppercase tracking-widest whitespace-nowrap border border-white/20 bg-white/[0.03] text-white/50"
+                    className="rounded-full uppercase tracking-widest whitespace-nowrap"
                     style={{
                       fontSize: '13px',
                       fontWeight: 800,
                       padding: '8px 18px',
+                      border: '1px solid rgba(255,200,100,0.5)',
+                      color: 'rgba(255,200,100,0.8)',
+                      background: 'rgba(255,200,100,0.06)',
                     }}
                   >
-                    In Development
+                    Coming Soon
                   </span>
                 </div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
@@ -181,6 +184,14 @@ const ProductsPage: React.FC = () => {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
+                    <img
+                      src="/images/pb-logo.png"
+                      alt="PurposeBased"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                      style={{ height: '32px', objectFit: 'contain' }}
+                    />
                     <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
                       PurposeBased
                     </h3>

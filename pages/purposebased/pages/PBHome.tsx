@@ -43,6 +43,10 @@ const PILLARS: { title: string; body: string }[] = [
   { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
 ];
 
+const scrollToId = (id: string) => () => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
 const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -78,73 +82,92 @@ const PBHome: React.FC = () => {
       <section id="home" className="pbh-hero">
         <div className="pbh-hero-glow-a" aria-hidden="true" />
         <div className="pbh-hero-glow-b" aria-hidden="true" />
-        <svg
-          className="pbh-hero-wheel"
-          width="500"
-          height="500"
-          viewBox="-250 -250 500 500"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <circle cx="0" cy="0" r="220" fill="none" stroke="rgba(255,200,100,0.06)" strokeWidth="1" />
-          <circle cx="0" cy="0" r="160" fill="none" stroke="rgba(255,200,100,0.06)" strokeWidth="1" />
-          {Array.from({ length: 12 }).map((_, i) => {
-            const a = (i * 30 * Math.PI) / 180;
-            const cos = Math.cos(a);
-            const sin = Math.sin(a);
-            const x1 = (160 * cos).toFixed(2);
-            const y1 = (160 * sin).toFixed(2);
-            const x2 = (220 * cos).toFixed(2);
-            const y2 = (220 * sin).toFixed(2);
-            const dx = 220 * cos;
-            const dy = 220 * sin;
-            const d = 5;
-            const points = [
-              `${dx.toFixed(2)},${(dy - d).toFixed(2)}`,
-              `${(dx + d).toFixed(2)},${dy.toFixed(2)}`,
-              `${dx.toFixed(2)},${(dy + d).toFixed(2)}`,
-              `${(dx - d).toFixed(2)},${dy.toFixed(2)}`,
-            ].join(' ');
-            return (
-              <g key={i}>
-                <line
-                  x1={x1}
-                  y1={y1}
-                  x2={x2}
-                  y2={y2}
-                  stroke="rgba(255,200,100,0.06)"
-                  strokeWidth="1"
-                />
-                <polygon
-                  points={points}
-                  fill="none"
-                  stroke="rgba(255,200,100,0.08)"
-                  strokeWidth="1"
-                />
-              </g>
-            );
-          })}
-        </svg>
         <div className="pbh-hero-content">
-          <p className="pbh-label">A map of your own life</p>
+          <p className="pbh-label">Welcome, Seeker</p>
           <h1 className="pbh-h1">
-            Transform your <em>life</em>
+            You are about to find
             <br />
-            through <strong>self-knowledge</strong>
+            <em>your purpose</em>
           </h1>
           <p className="pbh-sub">
-            A blueprint drawn from nine traditions. Read together, and written for you alone.
+            Today might be the day everything becomes clear. Start the journey towards a life on
+            purpose.
           </p>
           <div className="pbh-cta-row">
-            <button type="button" className="pbh-btn pbh-btn--solid">
-              Start your blueprint
-            </button>
-            <button type="button" className="pbh-btn pbh-btn--glass">
-              See how it works
+            <a
+              href="https://www.purposebased.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pbh-btn pbh-btn--solid"
+            >
+              Start your journey
+            </a>
+            <button
+              type="button"
+              className="pbh-btn pbh-btn--glass"
+              onClick={scrollToId('how-it-works')}
+            >
+              How it works
             </button>
           </div>
         </div>
         <span className="pbh-chevron" aria-hidden="true" />
+      </section>
+
+      {/* ============ SECTION 1B — HOW IT WORKS ============ */}
+      <section id="how-it-works" className="pb-section pbh-how">
+        <div className="pbh-wrap">
+          <p className="pbh-label">The journey</p>
+          <h2 className="pbh-h2">
+            From <em>Know Thyself</em> to an <em>epic life,</em> on purpose.
+          </h2>
+          <hr className="pbh-rule" />
+
+          <div className="pbh-journey">
+            <div className="pbh-node">
+              <div className="pbh-node-circle">
+                <span className="pbh-node-num">01</span>
+              </div>
+              <h3 className="pbh-node-title">Know Thyself</h3>
+              <p className="pbh-node-body">
+                Nine frameworks read together reveal a pattern no single system can see. This is your
+                blueprint.
+              </p>
+            </div>
+
+            <div className="pbh-arrow">
+              <span className="pbh-arrow-line" />
+              <span className="pbh-arrow-label">understand →</span>
+            </div>
+
+            <div className="pbh-node">
+              <div className="pbh-node-circle">
+                <span className="pbh-node-num">02</span>
+              </div>
+              <h3 className="pbh-node-title">Find Your Purpose</h3>
+              <p className="pbh-node-body">
+                Your blueprint points to something. The Guide helps you read what it is saying about
+                the direction of your life.
+              </p>
+            </div>
+
+            <div className="pbh-arrow">
+              <span className="pbh-arrow-line" />
+              <span className="pbh-arrow-label">align →</span>
+            </div>
+
+            <div className="pbh-node">
+              <div className="pbh-node-circle pbh-node-circle--final">
+                <span className="pbh-node-star">✦</span>
+              </div>
+              <h3 className="pbh-node-title pbh-node-title--final">Epic life, on purpose</h3>
+              <p className="pbh-node-body">
+                Not a destination. A way of moving through the world — with clarity about who you are
+                and what you are here to do.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ============ SECTION 2 — PROBLEM ============ */}
@@ -400,13 +423,14 @@ const PBHome: React.FC = () => {
 
         /* ---------- hero ---------- */
         .pbh-hero {
-          min-height: 100vh;
+          min-height: calc(100vh - 70px);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 80px 24px 96px;
+          padding: 0 24px 72px;
+          padding-top: 0;
           position: relative;
           overflow: hidden;
         }
@@ -422,14 +446,6 @@ const PBHome: React.FC = () => {
         }
         .pbh-hero-glow-b {
           background: radial-gradient(ellipse 40% 30% at 50% 35%, rgba(255,200,100,0.06) 0%, transparent 60%);
-        }
-        .pbh-hero-wheel {
-          position: absolute;
-          right: -120px;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 1;
-          pointer-events: none;
         }
         .pbh-hero-content {
           position: relative;
@@ -471,7 +487,7 @@ const PBHome: React.FC = () => {
           font-size: 16px;
           line-height: 1.8;
           color: var(--pb-muted);
-          max-width: 520px;
+          max-width: 480px;
           margin: 0 0 40px;
         }
         .pbh-cta-row {
@@ -480,6 +496,101 @@ const PBHome: React.FC = () => {
           flex-wrap: wrap;
           justify-content: center;
         }
+
+        /* ---------- how it works ---------- */
+        .pbh-how { padding: 76px 10%; }
+        .pbh-journey {
+          margin-top: 40px;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr auto 1fr;
+          gap: 0 20px;
+          align-items: start;
+        }
+        .pbh-node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .pbh-node-circle {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          border: 2px solid rgba(255,200,100,0.6);
+          background: rgba(255,200,100,0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 18px;
+        }
+        .pbh-node-circle--final {
+          width: 64px;
+          height: 64px;
+          border-color: rgba(255,200,100,0.9);
+          box-shadow: 0 0 24px rgba(255,200,100,0.3);
+        }
+        .pbh-node-num {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 20px;
+          color: var(--pb-gold);
+        }
+        .pbh-node-star {
+          font-size: 24px;
+          line-height: 1;
+          color: var(--pb-gold);
+        }
+        .pbh-node-title {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 400;
+          font-size: 22px;
+          color: #ffffff;
+          margin: 0 0 10px;
+        }
+        .pbh-node-title--final {
+          font-size: 26px;
+          color: var(--pb-gold);
+        }
+        .pbh-node-body {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.7;
+          color: var(--pb-muted);
+          max-width: 240px;
+          margin: 0;
+        }
+        .pbh-arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 90px;
+          margin-top: 20px;
+        }
+        .pbh-arrow-line {
+          position: relative;
+          width: 100%;
+          height: 1px;
+          background: rgba(255,200,100,0.5);
+        }
+        .pbh-arrow-line::after {
+          content: '';
+          position: absolute;
+          right: -1px;
+          top: 50%;
+          width: 7px;
+          height: 7px;
+          border-top: 1px solid rgba(255,200,100,0.7);
+          border-right: 1px solid rgba(255,200,100,0.7);
+          transform: translateY(-50%) rotate(45deg);
+        }
+        .pbh-arrow-label {
+          margin-top: 12px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-style: italic;
+          color: var(--pb-gold);
+        }
+
         /* ---------- generic section ---------- */
         .pbh-sec { padding: 96px 10%; }
         .pbh-wrap { max-width: 1100px; margin: 0 auto; }
@@ -699,11 +810,30 @@ const PBHome: React.FC = () => {
         @media (max-width: 900px) {
           .pbh-h2 { font-size: 34px; }
           .pbh-sec { padding: 80px 7%; }
+          .pbh-how { padding: 64px 7%; }
           .pbh-pillars { grid-template-columns: 1fr; }
+          .pbh-journey {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 0;
+          }
+          .pbh-node { padding: 8px 0; }
+          .pbh-arrow {
+            min-width: 0;
+            width: auto;
+            margin: 6px 0;
+          }
+          .pbh-arrow-line { width: 1px; height: 40px; }
+          .pbh-arrow-line::after {
+            right: auto;
+            left: 50%;
+            top: auto;
+            bottom: -1px;
+            transform: translateX(-50%) rotate(135deg);
+          }
         }
         @media (max-width: 768px) {
-          .pbh-hero-wheel { display: none; }
-          .pbh-h1 { font-size: 40px; }
+          .pbh-h1 { font-size: 38px; }
           .pbh-frow { grid-template-columns: 1fr; gap: 20px; }
           .pbh-frow--flip .pbh-ftext,
           .pbh-frow--flip .pbh-fimg { order: 0; }
