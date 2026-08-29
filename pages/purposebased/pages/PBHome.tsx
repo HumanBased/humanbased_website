@@ -75,11 +75,56 @@ const PBHome: React.FC = () => {
   return (
     <div className="pbh" ref={rootRef}>
       {/* ============ SECTION 1 — HERO ============ */}
-      <section className="pbh-hero">
-        <div className="pbh-hero-bg" aria-hidden="true">
-          <div className="pbh-hero-img" />
-          <div className="pbh-hero-veil" />
-        </div>
+      <section id="home" className="pbh-hero">
+        <div className="pbh-hero-glow-a" aria-hidden="true" />
+        <div className="pbh-hero-glow-b" aria-hidden="true" />
+        <svg
+          className="pbh-hero-wheel"
+          width="500"
+          height="500"
+          viewBox="-250 -250 500 500"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle cx="0" cy="0" r="220" fill="none" stroke="rgba(255,200,100,0.06)" strokeWidth="1" />
+          <circle cx="0" cy="0" r="160" fill="none" stroke="rgba(255,200,100,0.06)" strokeWidth="1" />
+          {Array.from({ length: 12 }).map((_, i) => {
+            const a = (i * 30 * Math.PI) / 180;
+            const cos = Math.cos(a);
+            const sin = Math.sin(a);
+            const x1 = (160 * cos).toFixed(2);
+            const y1 = (160 * sin).toFixed(2);
+            const x2 = (220 * cos).toFixed(2);
+            const y2 = (220 * sin).toFixed(2);
+            const dx = 220 * cos;
+            const dy = 220 * sin;
+            const d = 5;
+            const points = [
+              `${dx.toFixed(2)},${(dy - d).toFixed(2)}`,
+              `${(dx + d).toFixed(2)},${dy.toFixed(2)}`,
+              `${dx.toFixed(2)},${(dy + d).toFixed(2)}`,
+              `${(dx - d).toFixed(2)},${dy.toFixed(2)}`,
+            ].join(' ');
+            return (
+              <g key={i}>
+                <line
+                  x1={x1}
+                  y1={y1}
+                  x2={x2}
+                  y2={y2}
+                  stroke="rgba(255,200,100,0.06)"
+                  strokeWidth="1"
+                />
+                <polygon
+                  points={points}
+                  fill="none"
+                  stroke="rgba(255,200,100,0.08)"
+                  strokeWidth="1"
+                />
+              </g>
+            );
+          })}
+        </svg>
         <div className="pbh-hero-content">
           <p className="pbh-label">A map of your own life</p>
           <h1 className="pbh-h1">
@@ -365,21 +410,26 @@ const PBHome: React.FC = () => {
           position: relative;
           overflow: hidden;
         }
-        .pbh-hero-bg {
+        .pbh-hero-glow-a,
+        .pbh-hero-glow-b {
           position: absolute;
           inset: 0;
           z-index: 1;
+          pointer-events: none;
         }
-        .pbh-hero-img {
-          position: absolute;
-          inset: 0;
-          background: url('/images/pb-hero.jpg') center / cover no-repeat;
-          opacity: 0.22;
+        .pbh-hero-glow-a {
+          background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(100,130,255,0.12) 0%, rgba(80,50,180,0.08) 35%, transparent 70%);
         }
-        .pbh-hero-veil {
+        .pbh-hero-glow-b {
+          background: radial-gradient(ellipse 40% 30% at 50% 35%, rgba(255,200,100,0.06) 0%, transparent 60%);
+        }
+        .pbh-hero-wheel {
           position: absolute;
-          inset: 0;
-          background: radial-gradient(ellipse at center, transparent 30%, #0a1628 85%);
+          right: -120px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+          pointer-events: none;
         }
         .pbh-hero-content {
           position: relative;
@@ -652,6 +702,7 @@ const PBHome: React.FC = () => {
           .pbh-pillars { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
+          .pbh-hero-wheel { display: none; }
           .pbh-h1 { font-size: 40px; }
           .pbh-frow { grid-template-columns: 1fr; gap: 20px; }
           .pbh-frow--flip .pbh-ftext,
