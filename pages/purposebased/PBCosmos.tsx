@@ -1,120 +1,96 @@
 import React, { useMemo } from 'react';
 
-// Shared animated cosmos backdrop for every PurposeBased page.
-// Fixed full-page layer that sits behind all content at z-index 0.
-
-const NEBULA_PAIRS: [string, string][] = [
-  ['#5b4bd6', '#8a6bff'],
-  ['#c2417a', '#ff7ab0'],
-  ['#2f6fb5', '#63a8e8'],
-  ['#6a3fa8', '#a878e8'],
-  ['#b4622a', '#ffb066'],
-  ['#2d5fa8', '#7fb4e8'],
-  ['#8e3a6e', '#e07ab0'],
-  ['#4a4bc0', '#8f8ef0'],
-  ['#2f7a94', '#6fc4d8'],
-  ['#7a3fa0', '#b47ae0'],
-  ['#b06a2a', '#ffc07a'],
-];
-
-const CORE_TONES: string[] = ['#ffd9a8', '#dcc4ff', '#ffc4dd', '#bcd9ff', '#ffd9a8'];
+// Shared backdrop for every PurposeBased page: a clean, homogeneous deep-navy
+// starfield. No nebulae, no coloured patches — just deep space.
+// Fixed full-page layer behind all content at z-index 0.
 
 const rand = (min: number, max: number): number => Math.random() * (max - min) + min;
 
-interface Nebula {
-  id: number;
-  c1: string;
-  c2: string;
-  size: number;
-  top: number;
-  left: number;
-  duration: number;
-  delay: number;
-  anim: string;
+interface StarLayer {
+  key: string;
+  count: number;
+  sizeMin: number;
+  sizeMax: number;
+  lo: number;
+  hi: number;
+  durMin: number;
+  durMax: number;
 }
 
-interface Core {
-  id: number;
-  tone: string;
-  size: number;
-  top: number;
-  left: number;
-  duration: number;
-}
+const LAYERS: StarLayer[] = [
+  { key: 'l1', count: 180, sizeMin: 0.4, sizeMax: 0.9, lo: 0.08, hi: 0.45, durMin: 4, durMax: 9 },
+  { key: 'l2', count: 80, sizeMin: 1.0, sizeMax: 1.6, lo: 0.15, hi: 0.7, durMin: 3, durMax: 7 },
+  { key: 'l3', count: 25, sizeMin: 1.8, sizeMax: 2.4, lo: 0.3, hi: 0.9, durMin: 2, durMax: 5 },
+];
 
 interface Star {
-  id: number;
+  id: string;
   size: number;
   top: number;
   left: number;
+  lo: number;
+  hi: number;
   duration: number;
   delay: number;
-  maxOpacity: number;
 }
 
-interface Shooting {
+interface Shooter {
   id: number;
+  name: string;
+  cycle: number;
+  length: number;
   top: number;
   left: number;
-  duration: number;
-  delay: number;
 }
 
+// Fires at `cycle` seconds, then repeats every `cycle` seconds. The visible
+// travel is a fixed 0.8s regardless of cycle length: fade in 0.2s, hold 0.3s,
+// fade out 0.3s, then idle (invisible) for the rest of the cycle.
+const buildShootKeyframes = (name: string, cycle: number): string => {
+  const pct = (s: number): string => `${((s / cycle) * 100).toFixed(3)}%`;
+  // Travel ~280px along a 35deg diagonal (top-left -> bottom-right).
+  const end = 'translate(229px, 161px) rotate(35deg)';
+  return `
+    @keyframes ${name} {
+      0% { opacity: 0; transform: translate(0, 0) rotate(35deg); }
+      ${pct(0.2)} { opacity: 1; }
+      ${pct(0.5)} { opacity: 1; transform: translate(143px, 101px) rotate(35deg); }
+      ${pct(0.8)} { opacity: 0; transform: ${end}; }
+      100% { opacity: 0; transform: ${end}; }
+    }`;
+};
+
 const PBCosmos: React.FC = () => {
-  const nebulae = useMemo<Nebula[]>(
-    () =>
-      NEBULA_PAIRS.map((pair, i) => ({
-        id: i,
-        c1: pair[0],
-        c2: pair[1],
-        size: rand(320, 620),
-        top: rand(-12, 88),
-        left: rand(-12, 88),
-        duration: rand(46, 62),
-        delay: rand(0, 18),
-        anim: `pb-drift${(i % 3) + 1}`,
-      })),
-    [],
-  );
+  const stars = useMemo<Star[]>(() => {
+    const out: Star[] = [];
+    for (const layer of LAYERS) {
+      for (let i = 0; i < layer.count; i++) {
+        out.push({
+          id: `${layer.key}-${i}`,
+          size: rand(layer.sizeMin, layer.sizeMax),
+          top: rand(0, 100),
+          left: rand(0, 100),
+          lo: layer.lo,
+          hi: layer.hi,
+          duration: rand(layer.durMin, layer.durMax),
+          delay: rand(0, 12),
+        });
+      }
+    }
+    return out;
+  }, []);
 
-  const cores = useMemo<Core[]>(
-    () =>
-      CORE_TONES.map((tone, i) => ({
-        id: i,
-        tone,
-        size: rand(180, 380),
-        top: rand(6, 78),
-        left: rand(6, 78),
-        duration: rand(50, 66),
-      })),
-    [],
-  );
-
-  const stars = useMemo<Star[]>(
-    () =>
-      Array.from({ length: 230 }, (_, i) => ({
-        id: i,
-        size: rand(0.4, 2.3),
-        top: rand(0, 100),
-        left: rand(0, 100),
-        duration: rand(4, 8),
-        delay: rand(0, 7),
-        maxOpacity: rand(0.35, 0.7),
-      })),
-    [],
-  );
-
-  const shooting = useMemo<Shooting[]>(
-    () =>
-      Array.from({ length: 5 }, (_, i) => ({
-        id: i,
-        top: rand(0, 55),
-        left: rand(0, 78),
-        duration: rand(12, 20),
-        delay: rand(6, 51),
-      })),
-    [],
-  );
+  const shooters = useMemo<Shooter[]>(() => {
+    const cycles = [8, 23, 41];
+    return cycles.map((cycle, i) => ({
+      id: i,
+      name: `pb-shoot-${i}`,
+      cycle,
+      length: rand(60, 90),
+      top: rand(0, 55),
+      left: rand(0, 65),
+    }));
+  }, []);
 
   return (
     <div
@@ -125,48 +101,12 @@ const PBCosmos: React.FC = () => {
         zIndex: 0,
         overflow: 'hidden',
         pointerEvents: 'none',
-        background: 'linear-gradient(140deg, #1a3a5c 0%, #0f2940 55%, #1a2f4d 100%)',
+        background: 'linear-gradient(180deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%)',
       }}
     >
-      {nebulae.map((n) => (
-        <div
-          key={`n${n.id}`}
-          style={{
-            position: 'absolute',
-            top: `${n.top}%`,
-            left: `${n.left}%`,
-            width: `${n.size}px`,
-            height: `${n.size}px`,
-            borderRadius: '50%',
-            opacity: 0.18,
-            filter: 'blur(70px)',
-            background: `radial-gradient(circle at 35% 35%, ${n.c1}, ${n.c2} 60%, transparent 78%)`,
-            animation: `${n.anim} ${n.duration}s ease-in-out ${n.delay}s infinite alternate`,
-          }}
-        />
-      ))}
-
-      {cores.map((c) => (
-        <div
-          key={`c${c.id}`}
-          style={{
-            position: 'absolute',
-            top: `${c.top}%`,
-            left: `${c.left}%`,
-            width: `${c.size}px`,
-            height: `${c.size}px`,
-            borderRadius: '50%',
-            opacity: 0.15,
-            filter: 'blur(60px)',
-            background: `radial-gradient(circle, ${c.tone}, transparent 70%)`,
-            animation: `pb-drift2 ${c.duration}s ease-in-out infinite alternate`,
-          }}
-        />
-      ))}
-
       {stars.map((s) => (
         <div
-          key={`s${s.id}`}
+          key={s.id}
           style={
             {
               position: 'absolute',
@@ -176,44 +116,38 @@ const PBCosmos: React.FC = () => {
               height: `${s.size}px`,
               borderRadius: '50%',
               background: '#ffffff',
-              '--pb-star-max': s.maxOpacity,
+              opacity: s.lo,
+              '--pb-lo': s.lo,
+              '--pb-hi': s.hi,
               animation: `pb-twinkle ${s.duration}s ease-in-out ${s.delay}s infinite`,
             } as React.CSSProperties
           }
         />
       ))}
 
-      {shooting.map((sh) => (
+      {shooters.map((sh) => (
         <div
-          key={`sh${sh.id}`}
+          key={sh.id}
           style={{
             position: 'absolute',
             top: `${sh.top}%`,
             left: `${sh.left}%`,
-            width: '140px',
-            height: '2px',
-            background: 'linear-gradient(90deg, rgba(255,255,255,0.9), transparent)',
+            width: `${sh.length}px`,
+            height: '1px',
+            background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.95))',
             opacity: 0,
-            animation: `pb-shoot ${sh.duration}s linear ${sh.delay}s infinite`,
+            animation: `${sh.name} ${sh.cycle}s linear ${sh.cycle}s infinite`,
           }}
         />
       ))}
 
       <style>{`
-        @keyframes pb-drift1 { 0% { transform: translate(0, 0); } 100% { transform: translate(24px, -21px); } }
-        @keyframes pb-drift2 { 0% { transform: translate(0, 0); } 100% { transform: translate(-22px, 26px); } }
-        @keyframes pb-drift3 { 0% { transform: translate(0, 0); } 100% { transform: translate(20px, 28px); } }
         @keyframes pb-twinkle {
-          0%, 100% { opacity: 0.1; }
-          50% { opacity: var(--pb-star-max, 0.6); }
+          0% { opacity: var(--pb-lo, 0.1); }
+          50% { opacity: var(--pb-hi, 0.6); }
+          100% { opacity: var(--pb-lo, 0.1); }
         }
-        @keyframes pb-shoot {
-          0%   { opacity: 0; transform: translate(0, 0) rotate(18deg); }
-          3%   { opacity: 1; }
-          9%   { opacity: 1; }
-          16%  { opacity: 0; transform: translate(440px, 150px) rotate(18deg); }
-          100% { opacity: 0; transform: translate(440px, 150px) rotate(18deg); }
-        }
+        ${shooters.map((sh) => buildShootKeyframes(sh.name, sh.cycle)).join('\n')}
       `}</style>
     </div>
   );
