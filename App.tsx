@@ -20,6 +20,7 @@ import PurposeBasedPrivacyPage from './pages/purposebased/PurposeBasedPrivacyPag
 import PurposeBasedTermsPage from './pages/purposebased/PurposeBasedTermsPage';
 import PurposeBasedDeleteAccountPage from './pages/purposebased/PurposeBasedDeleteAccountPage';
 import PurposeBasedDeleteDataPage from './pages/purposebased/PurposeBasedDeleteDataPage';
+import PurposeBased from './pages/purposebased';
 import siteBg from './assets/images/site-bg.webp.png';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -59,6 +60,12 @@ const AppRoutes = () => {
       {/* BasedTalk Routes (No MainLayout) */}
       <Route path="/apps/basedtalk" element={<BasedTalkLandingPage />} />
       <Route path="/apps/basedtalk/terms" element={<BasedTalkTermsPage />} />
+
+      {/* PurposeBased site-within-a-site (own nav / cosmos / footer, no MainLayout) */}
+      <Route path="/purposebased" element={<PurposeBased page="home" />} />
+      <Route path="/purposebased/story" element={<PurposeBased page="story" />} />
+      <Route path="/purposebased/library" element={<PurposeBased page="library" />} />
+      <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
 
       {/* Google Play required policy pages, served from this repo in HumanBased dark theme */}
       <Route path="/apps/basedtalk/privacy" element={<MainLayout><BasedTalkPrivacyPage /></MainLayout>} />

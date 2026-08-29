@@ -14,6 +14,8 @@
     { "source": "/apps/basedtalk/delete-data", "destination": "/index.html" },
     { "source": "/apps/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
     { "source": "/apps/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
+    { "source": "/purposebased", "destination": "/index.html" },
+    { "source": "/purposebased/:path*", "destination": "/index.html" },
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }
