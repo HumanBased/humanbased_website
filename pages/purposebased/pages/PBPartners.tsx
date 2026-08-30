@@ -570,13 +570,14 @@ const PBPartners: React.FC = () => {
 
               <div className="pbp-field">
                 <label className="pbp-field-label" htmlFor="pbp-reason">
-                  Why do you want to partner?
+                  Why do you want to partner with PurposeBased? (Tell us about your audience and
+                  vision)
                 </label>
                 <textarea
                   id="pbp-reason"
                   className="pbp-input pbp-textarea"
                   rows={4}
-                  placeholder="Tell us about your audience and why PurposeBased fits what you do"
+                  placeholder="E.g., My audience is coaches and therapists who help clients discover their purpose. I believe PurposeBased aligns perfectly with our mission to..."
                   value={form.reason}
                   onChange={update('reason')}
                 />
@@ -593,7 +594,7 @@ const PBPartners: React.FC = () => {
 
               {status === 'error' && (
                 <p className="pbp-form-error">
-                  Something went wrong. Please email us at partners@humanbased.org
+                  Something went wrong. Please email us at support@humanbased.org
                 </p>
               )}
             </div>
@@ -604,7 +605,7 @@ const PBPartners: React.FC = () => {
       {/* ============ SECTION 6 — CLOSING ============ */}
       <section className="pb-section pbp-close">
         <h2 className="pbp-close-h2">
-          The best affiliates are the ones who actually use it.
+          The best partners are the ones who actually use our products.
         </h2>
         <p className="pbp-close-body">
           Start with the free tier. See what the nine frameworks reveal. Then decide if it is worth
