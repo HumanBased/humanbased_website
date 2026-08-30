@@ -144,27 +144,46 @@ const ProductsPage: React.FC = () => {
               className="relative group cursor-pointer"
               role="link"
               tabIndex={0}
-              onClick={() => { window.location.href = 'https://www.purposebased.app'; }}
+              onClick={() => { window.location.href = '/purposebased'; }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  window.location.href = 'https://www.purposebased.app';
+                  window.location.href = '/purposebased';
                 }
               }}
               aria-label="Open PurposeBased"
             >
               <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
-                  <img
-                    src="/images/pb-logo.png"
-                    alt="PurposeBased"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                    className="absolute inset-0 h-full w-full object-contain p-10 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a0a14] mt-12">
+                  {/* PurposeBased website hero preview */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0e0b1e] via-[#0a0a14] to-[#050509]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_30%,rgba(217,164,65,0.16),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_82%,rgba(99,102,241,0.12),transparent_55%)]" />
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="pl-6 sm:pl-8 lg:pl-10 pr-2 max-w-[62%] space-y-1.5">
+                      <p className="text-[8px] sm:text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-400/80">
+                        Welcome, Seeker
+                      </p>
+                      <p className="font-serif text-base sm:text-xl lg:text-2xl font-medium leading-tight text-white">
+                        You are about to find{' '}
+                        <span className="italic text-amber-400">your purpose</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="absolute right-4 sm:right-7 lg:right-9 bottom-[-6%] h-[112%] w-auto rotate-[5deg] origin-bottom transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    <div className="h-full rounded-[1.6rem] border border-white/15 bg-[#0a0a14] p-1 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] ring-1 ring-amber-500/10">
+                      <img
+                        src="/images/pb-mockup.png"
+                        alt="PurposeBased app"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                        className="h-full w-auto rounded-[1.3rem] object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/60 via-transparent to-transparent" />
                 </div>
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
