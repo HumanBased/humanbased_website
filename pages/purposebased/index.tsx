@@ -6,14 +6,16 @@ import PBHome from './pages/PBHome';
 import PBStory from './pages/PBStory';
 import PBLibrary from './pages/PBLibrary';
 import PBPartners from './pages/PBPartners';
+import PBSeeHowItWorks from './pages/PBSeeHowItWorks';
 
-export type PBPage = 'home' | 'story' | 'library' | 'partners';
+export type PBPage = 'home' | 'story' | 'library' | 'partners' | 'how-it-works';
 
 const PAGES: Record<PBPage, React.FC> = {
   home: PBHome,
   story: PBStory,
   library: PBLibrary,
   partners: PBPartners,
+  'how-it-works': PBSeeHowItWorks,
 };
 
 interface PurposeBasedProps {

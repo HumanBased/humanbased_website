@@ -5,6 +5,7 @@ import type { PBPage } from './index';
 const LINKS: { label: string; page: PBPage; to: string }[] = [
   { label: 'Home', page: 'home', to: '/purposebased' },
   { label: 'Story', page: 'story', to: '/purposebased/story' },
+  { label: 'How It Works', page: 'how-it-works', to: '/purposebased/how-it-works' },
   { label: 'Library', page: 'library', to: '/purposebased/library' },
   { label: 'Partners', page: 'partners', to: '/purposebased/partners' },
 ];

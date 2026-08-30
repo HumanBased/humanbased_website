@@ -1,103 +1,172 @@
 import React from 'react';
 
-const PLACEHOLDER_ITEMS = [
-  'Essay — placeholder title one',
-  'Guide — placeholder title two',
-  'Exercise — placeholder title three',
-  'Conversation — placeholder title four',
-  'Essay — placeholder title five',
-  'Guide — placeholder title six',
+// PurposeBased — The Library.
+// Six traditions that shaped human meaning. Premium glass cards with a top
+// image slot (to be filled later) and modular, poetic copy.
+
+const TRADITIONS: { title: string; copy: string; img?: string }[] = [
+  {
+    title: 'Ikigai',
+    copy:
+      'From Japanese philosophy: your reason for being. Not career optimization, but the quiet alignment of daily routines, relationships, and community. Where natural skill, daily interest, and effort overlap. The practical execution layer of purpose.',
+  },
+  {
+    title: 'Dharma',
+    copy:
+      'Eastern wisdom: your personal duty. The distinct obligation dictated by your nature, stage of life, and environment. Not an external rulebook, but an expression of authentic responsibility. Living in alignment with Dharma generates maximum stability and output.',
+  },
+  {
+    title: 'Thelema',
+    copy:
+      'Your True Will. A 20th-century philosophical system centered on discovering and executing your inherent trajectory. Separates temporary impulses from genuine internal drive. Enables singular, uncompromised direction aligned with your baseline nature.',
+  },
+  {
+    title: 'Dao',
+    copy:
+      'The unnamable force behind all existence. Not about forcing outcomes, but Wu Wei: operating in harmony with natural dynamics. Working with your underlying psychological momentum. Aligning with your natural baseline allows progress to occur systematically.',
+  },
+  {
+    title: 'Eudaimonia',
+    copy:
+      'Human flourishing. From ancient Greece: not a feeling, but active practice. Realizing your highest potential through reason, wise choices, and self-actualization. Two pillars: Arete (excellence) and Phronesis (practical wisdom). A lifetime commitment to becoming.',
+  },
+  {
+    title: 'Tradition six',
+    copy: 'Copy to be added.',
+  },
 ];
 
 const PBLibrary: React.FC = () => {
   return (
     <section className="pbl">
-      <p className="pbl-label">The Library</p>
-      <h1 className="pbl-h1">Readings, prompts and practices</h1>
-      <p className="pbl-intro">
-        Placeholder intro. The finished library will be a browsable collection of material grouped by
-        theme and depth.
-      </p>
+      {/* ============ HERO ============ */}
+      <header className="pbl-hero">
+        <p className="pbl-label">The Library</p>
+        <h1 className="pbl-h1">Six traditions that shaped human meaning</h1>
+      </header>
 
+      {/* ============ TRADITION CARDS ============ */}
       <div className="pbl-grid">
-        {PLACEHOLDER_ITEMS.map((item) => (
-          <div key={item} className="pbl-card">
-            <h3 className="pb-font-serif pbl-card-title">{item}</h3>
-            <p className="pbl-card-body">Placeholder summary line for this library entry.</p>
-          </div>
+        {TRADITIONS.map((t) => (
+          <article key={t.title} className="pbl-card">
+            <div className="pbl-card-img">
+              {t.img ? (
+                <img src={t.img} alt={t.title} className="pbl-card-img-el" />
+              ) : (
+                <span className="pbl-card-img-note">Image to come</span>
+              )}
+            </div>
+            <div className="pbl-card-text">
+              <h3 className="pbl-card-title">{t.title}</h3>
+              <p className="pbl-card-body">{t.copy}</p>
+            </div>
+          </article>
         ))}
       </div>
 
       <style>{`
         .pbl {
+          --pb-gold: #ffc864;
+          --pb-text: #cadcf0;
+          --pb-muted: #7f97b1;
           display: block;
-          max-width: 1180px;
+          max-width: 1220px;
           margin: 0 auto;
-          padding: 80px 10%;
+          padding: 72px 8% 96px;
+          font-family: 'DM Sans', system-ui, sans-serif;
         }
+
+        /* ---------- hero ---------- */
+        .pbl-hero { max-width: 820px; margin-bottom: 56px; }
         .pbl-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
-          letter-spacing: 2px;
+          /* 4x the base label size, fluid */
+          font-size: clamp(22px, 4.6vw, 44px);
+          line-height: 1.15;
+          letter-spacing: 3px;
           text-transform: uppercase;
-          color: #ffc864;
-          margin: 0 0 18px;
+          color: var(--pb-gold);
+          margin: 0 0 20px;
         }
         .pbl-h1 {
           font-family: 'Cormorant', Georgia, serif;
-          font-weight: 500;
-          font-size: clamp(34px, 5vw, 52px);
+          font-weight: 300;
+          font-size: clamp(32px, 5vw, 50px);
           line-height: 1.15;
-          color: #f3e9d6;
-          margin: 0 0 16px;
+          color: #ffffff;
+          margin: 0;
         }
-        .pbl-intro {
-          font-size: 16px;
-          line-height: 1.7;
-          color: #cadcf0;
-          max-width: 620px;
-          margin: 0 0 44px;
-        }
+
+        /* ---------- grid ---------- */
         .pbl-grid {
           display: grid;
-          gap: 20px;
-          grid-template-columns: repeat(3, 1fr);
+          gap: 22px;
+          grid-template-columns: repeat(4, 1fr);
         }
         .pbl-card {
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 14px;
-          padding: 26px;
+          display: flex;
+          flex-direction: column;
+          background: linear-gradient(135deg, rgba(255,200,100,0.07), rgba(255,255,255,0.025));
+          border: 1px solid rgba(255,200,100,0.22);
+          border-radius: 16px;
+          overflow: hidden;
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
           transition: border-color 0.3s ease, transform 0.3s ease;
         }
         .pbl-card:hover {
-          border-color: rgba(255,200,100,0.4);
-          transform: translateY(-3px);
+          border-color: rgba(255,200,100,0.5);
+          transform: translateY(-4px);
         }
+        .pbl-card-img {
+          position: relative;
+          aspect-ratio: 16 / 9;
+          background: rgba(255,255,255,0.03);
+          border-bottom: 1px solid rgba(255,200,100,0.16);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .pbl-card-img-el {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .pbl-card-img-note {
+          font-family: 'Cormorant', Georgia, serif;
+          font-style: italic;
+          font-size: 14px;
+          color: var(--pb-muted);
+        }
+        .pbl-card-text { padding: 24px 24px 28px; }
         .pbl-card-title {
-          font-size: 20px;
-          color: #f3e9d6;
-          margin: 0 0 8px;
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 400;
+          font-size: 24px;
+          color: #ffffff;
+          margin: 0 0 12px;
         }
         .pbl-card-body {
+          font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 14px;
-          line-height: 1.6;
-          color: #cadcf0;
+          font-weight: 300;
+          line-height: 1.75;
+          color: var(--pb-text);
           margin: 0;
         }
 
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
-          .pbl { padding: 60px 7%; }
+          .pbl { padding: 60px 7% 80px; }
           .pbl-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-          .pbl { padding: 48px 5%; }
-          .pbl-intro { margin-bottom: 32px; }
-          .pbl-grid { grid-template-columns: 1fr; gap: 14px; }
-          .pbl-card { padding: 22px 20px; }
+          .pbl { padding: 48px 5% 64px; }
+          .pbl-hero { margin-bottom: 40px; }
+          .pbl-grid { grid-template-columns: 1fr; gap: 16px; }
+          .pbl-card-text { padding: 22px 20px 24px; }
         }
       `}</style>
     </section>

@@ -64,6 +64,7 @@ const AppRoutes = () => {
       {/* PurposeBased site-within-a-site (own nav / cosmos / footer, no MainLayout) */}
       <Route path="/purposebased" element={<PurposeBased page="home" />} />
       <Route path="/purposebased/story" element={<PurposeBased page="story" />} />
+      <Route path="/purposebased/how-it-works" element={<PurposeBased page="how-it-works" />} />
       <Route path="/purposebased/library" element={<PurposeBased page="library" />} />
       <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
 
