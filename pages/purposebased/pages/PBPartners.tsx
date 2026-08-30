@@ -619,7 +619,7 @@ const PBPartners: React.FC = () => {
         /* ---------- shared type ---------- */
         .pbp-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          font-size: 12px;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: var(--pb-gold);
@@ -765,7 +765,7 @@ const PBPartners: React.FC = () => {
           margin: 0 0 10px;
         }
         .pbp-pill-body {
-          font-size: 14px;
+          font-size: 15px;
           font-weight: 300;
           line-height: 1.75;
           color: var(--pb-muted);
@@ -791,7 +791,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-rtable-head span {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          font-size: 12px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
           color: var(--pb-muted);
@@ -799,7 +799,7 @@ const PBPartners: React.FC = () => {
         .pbp-rrow {
           padding: 18px 20px;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           align-items: baseline;
         }
         .pbp-rrow--alt { background: rgba(255,255,255,0.02); }
@@ -810,7 +810,7 @@ const PBPartners: React.FC = () => {
           font-weight: 400;
           color: var(--pb-gold);
         }
-        .pbp-rrow-earn { font-size: 13px; color: var(--pb-muted); }
+        .pbp-rrow-earn { font-size: 14px; color: var(--pb-muted); }
         .pbp-rrow--top {
           border: 1px solid rgba(255,200,100,0.25);
           border-radius: 8px;
@@ -820,7 +820,7 @@ const PBPartners: React.FC = () => {
         .pbp-rtable-notes { margin-top: 18px; max-width: 760px; }
         .pbp-rtable-note {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
+          font-size: 13px;
           font-style: italic;
           line-height: 1.7;
           color: var(--pb-muted);
@@ -870,7 +870,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-step-body {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 300;
           line-height: 1.7;
           color: var(--pb-muted);
@@ -895,7 +895,7 @@ const PBPartners: React.FC = () => {
           text-align: left;
           cursor: pointer;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 15px;
+          font-size: 16px;
           font-weight: 500;
           color: #ffffff;
         }
@@ -907,7 +907,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-faq-a {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           line-height: 1.8;
           color: var(--pb-muted);
           padding-top: 12px;
@@ -938,7 +938,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-get-body {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 300;
           line-height: 1.7;
           color: var(--pb-muted);
@@ -953,7 +953,7 @@ const PBPartners: React.FC = () => {
           align-items: flex-start;
           padding: 11px 0;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           font-weight: 300;
           line-height: 1.7;
           color: var(--pb-text);
@@ -981,7 +981,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-track-label {
           display: block;
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -1002,7 +1002,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-track-list li {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 300;
           color: var(--pb-text);
           padding: 11px 0;
@@ -1017,7 +1017,7 @@ const PBPartners: React.FC = () => {
         .pbp-field-label {
           display: block;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          font-size: 12px;
           letter-spacing: 2px;
           text-transform: uppercase;
           color: var(--pb-muted);
@@ -1027,7 +1027,7 @@ const PBPartners: React.FC = () => {
           width: 100%;
           box-sizing: border-box;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,200,100,0.25);
           border-radius: 8px;
@@ -1043,7 +1043,7 @@ const PBPartners: React.FC = () => {
         .pbp-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
         .pbp-field-help {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 300;
           color: var(--pb-muted);
           margin: -2px 0 14px;
@@ -1066,7 +1066,7 @@ const PBPartners: React.FC = () => {
           border: 0;
           padding: 0;
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          font-size: 12px;
           letter-spacing: 1px;
           text-transform: uppercase;
           color: var(--pb-muted);
@@ -1087,7 +1087,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-form-error {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 13px;
+          font-size: 14px;
           color: var(--pb-gold);
           margin: 14px 0 0;
         }
@@ -1162,7 +1162,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-stripe-aside {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           font-style: italic;
           font-weight: 300;
           line-height: 1.8;
@@ -1178,7 +1178,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-stripe-card-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 10px;
+          font-size: 11px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
           color: var(--pb-muted);
@@ -1199,12 +1199,12 @@ const PBPartners: React.FC = () => {
         }
         .pbp-stripe-stat-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
+          font-size: 13px;
           color: var(--pb-muted);
         }
         .pbp-stripe-live {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
+          font-size: 13px;
           font-style: italic;
           color: var(--pb-muted);
           text-align: center;
@@ -1212,7 +1212,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-stripe-powered {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          font-size: 12px;
           color: var(--pb-muted);
           text-align: center;
           margin: 14px 0 0;
@@ -1260,7 +1260,7 @@ const PBPartners: React.FC = () => {
           .pbp-channel-grid { grid-template-columns: 1fr; }
           .pbp-together { padding: 28px 22px; }
           .pbp-together .pbp-h2 { font-size: 28px; }
-          .pbp-rtable-head span { font-size: 10px; letter-spacing: 1.5px; }
+          .pbp-rtable-head span { font-size: 11px; letter-spacing: 1.5px; }
           .pbp-rtable-head,
           .pbp-rrow { padding-left: 14px; padding-right: 14px; }
           .pbp-close-cta { align-self: stretch; }
@@ -1273,7 +1273,7 @@ const PBPartners: React.FC = () => {
           .pbp-h2, .pbp-close-h2 { font-size: 27px; }
           .pbp-body { font-size: 15px; }
           .pbp-rrow-rate { font-size: 16px; }
-          .pbp-rrow { font-size: 13px; }
+          .pbp-rrow { font-size: 14px; }
           /* The 3-column reward table cannot hold its columns this narrow,
              so each row becomes a stacked block: range on its own line,
              rate and earnings side by side beneath it. */
@@ -1290,7 +1290,7 @@ const PBPartners: React.FC = () => {
         @media (max-width: 480px) {
           .pbp-close-cta { flex-direction: column; }
           .pbp-close-cta .pbp-btn { width: 100%; }
-          .pbp-faq-q { font-size: 14px; gap: 12px; }
+          .pbp-faq-q { font-size: 15px; gap: 12px; }
         }
       `}</style>
     </div>

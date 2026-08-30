@@ -199,7 +199,7 @@ const PBHome: React.FC = () => {
         <div className="pbh-wrap">
           <p className="pbh-label">The problem</p>
           <h2 className="pbh-h2" style={{ maxWidth: 700 }}>
-            Most people never sit down and <em>look at the whole thing</em>
+            Most will spend more time doing grocery lists than <em>planning for life.</em>
           </h2>
           <hr className="pbh-rule" />
           <p className="pbh-body" style={{ maxWidth: 620 }}>
@@ -479,7 +479,7 @@ const PBHome: React.FC = () => {
           width: 100%;
           display: grid;
           grid-template-columns: 55fr 45fr;
-          gap: 64px;
+          gap: 40px;
           align-items: center;
         }
         .pbh-hero-content {
@@ -490,17 +490,18 @@ const PBHome: React.FC = () => {
         }
         .pbh-hero-visual {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
+          margin-left: -16px;
           perspective: 1200px;
         }
         .pbh-phone-tilt {
           transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .pbh-phone-tilt:hover {
-          transform: rotateX(-8deg) rotateY(12deg) rotateZ(-2deg);
+          transform: rotateX(-8deg) rotateY(-12deg) rotateZ(2deg);
         }
         .pbh-phone {
-          width: 300px;
+          width: 420px;
           background: #0a0f1e;
           border-radius: 36px;
           padding: 12px;
@@ -510,7 +511,7 @@ const PBHome: React.FC = () => {
         }
         @keyframes pb-float-tilt {
           0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
-          50% { transform: translateY(-12px) rotateX(-4deg) rotateY(6deg); }
+          50% { transform: translateY(-12px) rotateX(-4deg) rotateY(-6deg); }
         }
         .pbh-phone-screen {
           position: relative;
@@ -581,7 +582,23 @@ const PBHome: React.FC = () => {
         }
 
         /* ---------- how it works ---------- */
-        .pbh-how { padding: 56px 10% 80px; }
+        .pbh-how { padding: 56px 10% 80px; position: relative; overflow: hidden; }
+        .pbh-how::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          background-image:
+            radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,0.4), transparent),
+            radial-gradient(1px 1px at 28% 68%, rgba(255,255,255,0.3), transparent),
+            radial-gradient(1.5px 1.5px at 58% 30%, rgba(255,224,182,0.4), transparent),
+            radial-gradient(1px 1px at 78% 58%, rgba(255,255,255,0.3), transparent),
+            radial-gradient(1px 1px at 90% 16%, rgba(255,255,255,0.25), transparent),
+            radial-gradient(1.5px 1.5px at 40% 88%, rgba(255,224,182,0.3), transparent);
+          opacity: 0.7;
+        }
+        .pbh-how > .pbh-wrap { position: relative; z-index: 1; }
         .pbh-journey {
           margin-top: 40px;
           display: grid;
@@ -596,6 +613,7 @@ const PBHome: React.FC = () => {
           text-align: center;
         }
         .pbh-node-circle {
+          position: relative;
           width: 56px;
           height: 56px;
           border-radius: 50%;
@@ -605,12 +623,21 @@ const PBHome: React.FC = () => {
           align-items: center;
           justify-content: center;
           margin-bottom: 18px;
+          box-shadow: 0 0 20px rgba(255,200,100,0.25), inset 0 0 12px rgba(255,200,100,0.14);
+        }
+        .pbh-node-circle::after {
+          content: '';
+          position: absolute;
+          inset: -6px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,200,100,0.22);
+          animation: pbh-halo 3.2s ease-in-out infinite;
         }
         .pbh-node-circle--final {
           width: 64px;
           height: 64px;
           border-color: rgba(255,200,100,0.9);
-          box-shadow: 0 0 24px rgba(255,200,100,0.3);
+          box-shadow: 0 0 36px rgba(255,200,100,0.45), inset 0 0 16px rgba(255,200,100,0.2);
         }
         .pbh-node-num {
           font-family: 'Cormorant', Georgia, serif;
@@ -621,6 +648,8 @@ const PBHome: React.FC = () => {
           font-size: 24px;
           line-height: 1;
           color: var(--pb-gold);
+          filter: drop-shadow(0 0 8px rgba(255,200,100,0.85));
+          animation: pbh-star-pulse 2.6s ease-in-out infinite;
         }
         .pbh-node-title {
           font-family: 'Cormorant', Georgia, serif;
@@ -643,35 +672,96 @@ const PBHome: React.FC = () => {
           margin: 0;
         }
         .pbh-arrow {
+          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
           min-width: 90px;
           margin-top: 20px;
         }
+        /* drifting energy particles around the connector */
+        .pbh-arrow::before {
+          content: '';
+          position: absolute;
+          inset: -14px 0 0;
+          pointer-events: none;
+          background-image:
+            radial-gradient(1.5px 1.5px at 18% 35%, rgba(255,222,158,0.9), transparent),
+            radial-gradient(1px 1px at 44% 68%, rgba(255,222,158,0.65), transparent),
+            radial-gradient(1.5px 1.5px at 68% 28%, rgba(255,222,158,0.8), transparent),
+            radial-gradient(1px 1px at 86% 60%, rgba(255,222,158,0.55), transparent);
+          animation: pbh-particle-drift 4.5s ease-in-out infinite alternate;
+        }
         .pbh-arrow-line {
           position: relative;
           width: 100%;
-          height: 1px;
-          background: rgba(255,200,100,0.5);
+          height: 2px;
+          border-radius: 2px;
+          background: linear-gradient(
+            90deg,
+            rgba(255,200,100,0) 0%,
+            rgba(255,200,100,0.65) 18%,
+            rgba(255,238,198,0.95) 50%,
+            rgba(255,200,100,0.65) 82%,
+            rgba(255,200,100,0) 100%
+          );
+          box-shadow: 0 0 12px rgba(255,200,100,0.55), 0 0 26px rgba(255,200,100,0.28);
+        }
+        /* travelling spark that flows toward the next phase */
+        .pbh-arrow-line::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -40%;
+          width: 38%;
+          height: 100%;
+          transform: translateY(-50%);
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
+          filter: blur(0.5px);
+          animation: pbh-spark 2.8s linear infinite;
         }
         .pbh-arrow-line::after {
           content: '';
           position: absolute;
-          right: -1px;
+          right: -2px;
           top: 50%;
-          width: 7px;
-          height: 7px;
-          border-top: 1px solid rgba(255,200,100,0.7);
-          border-right: 1px solid rgba(255,200,100,0.7);
+          width: 9px;
+          height: 9px;
+          border-top: 2px solid rgba(255,238,198,0.95);
+          border-right: 2px solid rgba(255,238,198,0.95);
           transform: translateY(-50%) rotate(45deg);
+          filter: drop-shadow(0 0 6px rgba(255,200,100,0.85));
         }
         .pbh-arrow-label {
-          margin-top: 12px;
+          margin-top: 14px;
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 11px;
           font-style: italic;
+          letter-spacing: 1px;
           color: var(--pb-gold);
+          text-shadow: 0 0 12px rgba(255,200,100,0.6);
+        }
+        @keyframes pbh-spark {
+          from { left: -40%; }
+          to { left: 100%; }
+        }
+        @keyframes pbh-particle-drift {
+          from { opacity: 0.35; transform: translateY(2px); }
+          to { opacity: 1; transform: translateY(-4px); }
+        }
+        @keyframes pbh-halo {
+          0%, 100% { transform: scale(1); opacity: 0.5; }
+          50% { transform: scale(1.18); opacity: 0.12; }
+        }
+        @keyframes pbh-star-pulse {
+          0%, 100% { transform: scale(1); opacity: 0.9; }
+          50% { transform: scale(1.16); opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .pbh-arrow-line::before,
+          .pbh-arrow::before,
+          .pbh-node-circle::after,
+          .pbh-node-star { animation: none; }
         }
 
         /* ---------- generic section ---------- */
@@ -904,8 +994,8 @@ const PBHome: React.FC = () => {
           .pbh-close { padding: 56px 7% 60px; }
           .pbh-how { padding: 56px 7% 60px; }
           .pbh-hero { padding: 40px 7% 56px; }
-          .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 40px; }
-          .pbh-phone { width: 240px; }
+          .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 32px; }
+          .pbh-phone { width: 320px; }
           .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
           .pbh-frow { gap: 36px; }
           .pbh-journey {
@@ -919,12 +1009,23 @@ const PBHome: React.FC = () => {
             width: auto;
             margin: 6px 0;
           }
-          .pbh-arrow-line { width: 1px; height: 40px; }
+          .pbh-arrow::before { display: none; }
+          .pbh-arrow-line {
+            width: 2px;
+            height: 44px;
+            background: linear-gradient(
+              180deg,
+              rgba(255,200,100,0) 0%,
+              rgba(255,238,198,0.95) 50%,
+              rgba(255,200,100,0) 100%
+            );
+          }
+          .pbh-arrow-line::before { display: none; }
           .pbh-arrow-line::after {
             right: auto;
             left: 50%;
             top: auto;
-            bottom: -1px;
+            bottom: -2px;
             transform: translateX(-50%) rotate(135deg);
           }
         }
@@ -939,9 +1040,10 @@ const PBHome: React.FC = () => {
           .pbh-hero { padding: 32px 5% 48px; }
           .pbh-hero-grid { grid-template-columns: 1fr; gap: 36px; }
           .pbh-hero-content { align-items: center; text-align: center; }
+          .pbh-hero-visual { justify-content: center; margin-left: 0; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
-          .pbh-phone { width: 220px; }
+          .pbh-phone { width: 260px; }
           .pbh-pillars { grid-template-columns: 1fr; }
           .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,
@@ -961,6 +1063,7 @@ const PBHome: React.FC = () => {
           .pbh-h1 { font-size: 32px; }
           .pbh-h2 { font-size: 28px; }
           .pbh-body { font-size: 15px; }
+          .pbh-phone { width: 220px; }
           .pbh-price { font-size: 36px; }
           .pbh-price-was { font-size: 22px; }
           .pbh-cta-row { flex-direction: column; align-self: stretch; }
