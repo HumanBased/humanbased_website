@@ -147,7 +147,7 @@ const INITIAL_FORM: FormState = {
   email: '',
   track: 'Creator / Influencer / Coach',
   platform: '',
-  audience: 'Under 1,000',
+  audience: '10,000 — 100,000',
   reason: '',
 };
 
