@@ -133,30 +133,10 @@ const ORG_LIST = [
   'Direct support from the HumanBased team',
 ];
 
-type FormState = {
-  name: string;
-  email: string;
-  track: string;
-  platform: string;
-  audience: string;
-  reason: string;
-};
-
-const INITIAL_FORM: FormState = {
-  name: '',
-  email: '',
-  track: 'Creator / Influencer / Coach',
-  platform: '',
-  audience: '10,000 — 100,000',
-  reason: '',
-};
-
 const PBPartners: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
-  const [form, setForm] = useState<FormState>(INITIAL_FORM);
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
@@ -185,47 +165,8 @@ const PBPartners: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const update = (key: keyof FormState) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-  ) => setForm((prev) => ({ ...prev, [key]: e.target.value }));
-
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  const handleSubmit = async () => {
-    if (status === 'submitting') return;
-    if (!form.name.trim() || !form.email.trim()) {
-      setStatus('error');
-      return;
-    }
-    setStatus('submitting');
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          track: form.track,
-          platform: form.platform,
-          audience_size: form.audience,
-          reason: form.reason,
-        }),
-      });
-      if (res.ok) {
-        setStatus('success');
-        setForm(INITIAL_FORM);
-        // Keep the success message up for 5s, then restore the empty form.
-        window.setTimeout(() => {
-          setStatus((prev) => (prev === 'success' ? 'idle' : prev));
-        }, 5000);
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
   };
 
   return (
@@ -486,119 +427,86 @@ const PBPartners: React.FC = () => {
             business days.
           </p>
 
-          {status === 'success' ? (
-            <p className="pbp-form-success">
-              Your application is on its way. We will be in touch.
-            </p>
-          ) : (
-            <div className="pbp-form">
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-name">
-                  Name
-                </label>
-                <input
-                  id="pbp-name"
-                  className="pbp-input"
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={update('name')}
-                />
-              </div>
-
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-email">
-                  Email
-                </label>
-                <input
-                  id="pbp-email"
-                  className="pbp-input"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={update('email')}
-                />
-              </div>
-
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-track">
-                  Track
-                </label>
-                <select
-                  id="pbp-track"
-                  className="pbp-input"
-                  value={form.track}
-                  onChange={update('track')}
-                >
-                  <option>Creator / Influencer / Coach</option>
-                  <option>Organization / Institution</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-platform">
-                  Platform or website
-                </label>
-                <input
-                  id="pbp-platform"
-                  className="pbp-input"
-                  type="text"
-                  placeholder="Your main platform, channel, or website URL"
-                  value={form.platform}
-                  onChange={update('platform')}
-                />
-              </div>
-
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-audience">
-                  Audience size
-                </label>
-                <select
-                  id="pbp-audience"
-                  className="pbp-input"
-                  value={form.audience}
-                  onChange={update('audience')}
-                >
-                  <option>Under 1,000</option>
-                  <option>1,000 — 10,000</option>
-                  <option>10,000 — 100,000</option>
-                  <option>Over 100,000</option>
-                  <option>Not applicable</option>
-                </select>
-              </div>
-
-              <div className="pbp-field">
-                <label className="pbp-field-label" htmlFor="pbp-reason">
-                  Why do you want to partner with PurposeBased? (Tell us about your audience and
-                  vision)
-                </label>
-                <textarea
-                  id="pbp-reason"
-                  className="pbp-input pbp-textarea"
-                  rows={4}
-                  placeholder="E.g., My audience is coaches and therapists who help clients discover their purpose. I believe PurposeBased aligns perfectly with our mission to..."
-                  value={form.reason}
-                  onChange={update('reason')}
-                />
-              </div>
-
-              <button
-                type="button"
-                className="pbp-btn pbp-btn--solid pbp-btn--full"
-                onClick={handleSubmit}
-                disabled={status === 'submitting'}
-              >
-                {status === 'submitting' ? 'Sending…' : 'Send application'}
-              </button>
-
-              {status === 'error' && (
-                <p className="pbp-form-error">
-                  Something went wrong. Please email us at support@humanbased.org
-                </p>
-              )}
+          <form action={FORMSPREE_ENDPOINT} method="POST" className="pbp-form">
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-name">
+                Name
+              </label>
+              <input id="pbp-name" name="name" className="pbp-input" type="text" required />
             </div>
-          )}
+
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-email">
+                Email
+              </label>
+              <input id="pbp-email" name="email" className="pbp-input" type="email" required />
+            </div>
+
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-track">
+                Track
+              </label>
+              <select
+                id="pbp-track"
+                name="track"
+                className="pbp-input"
+                defaultValue="Creator / Influencer / Coach"
+              >
+                <option>Creator / Influencer / Coach</option>
+                <option>Organization / Institution</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-platform">
+                Platform or website
+              </label>
+              <input
+                id="pbp-platform"
+                name="platform"
+                className="pbp-input"
+                type="text"
+                placeholder="Your main platform, channel, or website URL"
+              />
+            </div>
+
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-audience">
+                Audience size
+              </label>
+              <select
+                id="pbp-audience"
+                name="audience_size"
+                className="pbp-input"
+                defaultValue="10,000 — 100,000"
+              >
+                <option>Under 1,000</option>
+                <option>1,000 — 10,000</option>
+                <option>10,000 — 100,000</option>
+                <option>Over 100,000</option>
+                <option>Not applicable</option>
+              </select>
+            </div>
+
+            <div className="pbp-field">
+              <label className="pbp-field-label" htmlFor="pbp-reason">
+                Why do you want to partner with PurposeBased? (Tell us about your audience and
+                vision)
+              </label>
+              <textarea
+                id="pbp-reason"
+                name="reason"
+                className="pbp-input pbp-textarea"
+                rows={4}
+                placeholder="E.g., My audience is coaches and therapists who help clients discover their purpose. I believe PurposeBased aligns perfectly with our mission to..."
+              />
+            </div>
+
+            <button type="submit" className="pbp-btn pbp-btn--solid pbp-btn--full">
+              Send application
+            </button>
+          </form>
         </div>
       </section>
 
