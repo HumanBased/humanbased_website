@@ -48,8 +48,8 @@ const PILLARS: { title: string; body: string }[] = [
 // The two paid tiers point at Stripe Payment Links; swap the placeholders for
 // the real https://buy.stripe.com/... URLs from the Stripe dashboard.
 const APP_SIGNUP_URL = 'https://www.purposebased.app';
-const CHECKOUT_BASED = 'https://buy.stripe.com/REPLACE_WITH_BASED_LINK';
-const CHECKOUT_BLISSED = 'https://buy.stripe.com/REPLACE_WITH_BLISSED_LINK';
+const CHECKOUT_BASED = 'https://buy.stripe.com/dRmaEWcBwf2G1YucNX3F600';
+const CHECKOUT_BLISSED = 'https://buy.stripe.com/dRmcN49pkf2GfPk3dn3F601';
 
 const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -291,12 +291,24 @@ const PBHome: React.FC = () => {
               <div className="pbh-price">€0</div>
               <p className="pbh-price-note">Free, always</p>
               <ul className="pbh-list">
-                <li>Self-Evaluation Tool</li>
-                <li>Purpose Tracker</li>
-                <li>Daily Insight</li>
-                <li>Basic Framework Previews (4 of 9)</li>
-                <li>My People, up to 5</li>
-                <li>1 Guide message per day</li>
+                <li>Purpose Questionnaire &amp; Archetype Reveal</li>
+                <li>
+                  Framework previews (4 of 9: Astrology, Numerology, Chinese Astrology, Hierarchy of
+                  Values)
+                </li>
+                <li>Preferences &amp; Values tool</li>
+                <li>Skills &amp; Experience tool</li>
+                <li>The Guide (1 message/day)</li>
+                <li>Daily sacred-geometry visual + shareable cards</li>
+                <li>Share your analysis</li>
+                <li>
+                  Free Explore tiles (This Week&apos;s Sky, Today&apos;s Numerology, Season, Chinese
+                  Astrology)
+                </li>
+                <li>Library (in-app reference)</li>
+                <li>Referral &amp; friend invites</li>
+                <li>Mood Tracker (Purpose check-in self-rating)</li>
+                <li>Today&apos;s Cosmic Insight (daily shared cosmic reading)</li>
               </ul>
               <a
                 href={APP_SIGNUP_URL}
@@ -316,14 +328,24 @@ const PBHome: React.FC = () => {
                 €6.50 <s className="pbh-price-was">€13</s>
               </div>
               <p className="pbh-price-note">per month · founding price</p>
+              <p className="pbh-plus-heading">Everything on Seeker, plus:</p>
               <ul className="pbh-list">
-                <li className="pbh-li--gold">Full Analysis</li>
-                <li className="pbh-li--gold">9 Integrated Frameworks</li>
-                <li>All framework readings</li>
-                <li>90 Guide messages per month</li>
-                <li>Living Chronicle</li>
-                <li>Odyssey</li>
-                <li>My People, up to 20</li>
+                <li className="pbh-li--gold">Full Analysis (deep multi-section personal reading)</li>
+                <li>Full framework readings (Astrology, Human Design, Chinese Astrology)</li>
+                <li>Your Direction / Path insights (Domains, Drains, Growth Edge)</li>
+                <li>My People (compatibility readings, up to 7 people)</li>
+                <li>Daily Alignment (personal daily reading)</li>
+                <li>Self-Awareness Radar (self-evaluation chart)</li>
+                <li>Living Chronicle (reflections &amp; journal)</li>
+                <li>Odyssey (island map for life domains)</li>
+                <li>Weekly Review (guided check-in)</li>
+                <li>Supplemental questionnaires &amp; readings</li>
+                <li>
+                  Based Explore tiles (Shadow Work, Body Decides, Best Cities, Mind Wiring, People
+                  Dynamics, Today For Your People)
+                </li>
+                <li>The Guide (90 messages/month)</li>
+                <li>1 Full Analysis re-run/month</li>
               </ul>
               <a
                 href={CHECKOUT_BASED}
@@ -342,13 +364,17 @@ const PBHome: React.FC = () => {
                 €9 <s className="pbh-price-was">€18</s>
               </div>
               <p className="pbh-price-note">per month · founding price</p>
-              <p className="pbh-tier-plus">Everything in Based, plus</p>
+              <p className="pbh-plus-heading">Everything on Based, plus:</p>
               <ul className="pbh-list">
-                <li className="pbh-li--gold">4 full analysis re-runs per month</li>
-                <li>200 Guide messages per month</li>
-                <li>My People, up to 100</li>
-                <li>Year Ahead</li>
-                <li>Priority support</li>
+                <li className="pbh-li--gold">
+                  5 more framework readings (Enneagram, Hierarchy of Values deep, Gene Keys, Jungian
+                  Type, Holland Code — 9 frameworks total)
+                </li>
+                <li>Year Ahead (12-month personal reading)</li>
+                <li>Vocational Edge (career/purpose direction)</li>
+                <li>The Guide (200 messages/month)</li>
+                <li>Unlimited My People</li>
+                <li>4 Full Analysis re-runs/month</li>
               </ul>
               <a
                 href={CHECKOUT_BLISSED}
@@ -1030,12 +1056,15 @@ const PBHome: React.FC = () => {
           color: var(--pb-muted);
           margin: 8px 0 0;
         }
-        .pbh-tier-plus {
+        /* "Everything on X, plus:" heading — larger gold lead-in above the
+           bullet list, per tier. Bullets themselves stay at .pbh-list size. */
+        .pbh-plus-heading {
           font-family: 'Cormorant', Georgia, serif;
           font-style: italic;
-          font-size: 19px;
+          font-size: clamp(18px, 2.5vw, 28px);
+          line-height: 1.25;
           color: var(--pb-gold);
-          margin: 14px 0 0;
+          margin: 16px 0 12px;
         }
         .pbh-list {
           list-style: none;
