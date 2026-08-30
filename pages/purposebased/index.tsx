@@ -9,7 +9,13 @@ import PBPartners from './pages/PBPartners';
 import PBSeeHowItWorks from './pages/PBSeeHowItWorks';
 import PBFormspreeThankYou from './pages/PBFormspreeThankYou';
 
-export type PBPage = 'home' | 'story' | 'library' | 'partners' | 'how-it-works' | 'thank-you';
+export type PBPage =
+  | 'home'
+  | 'story'
+  | 'library'
+  | 'partners'
+  | 'how-it-works'
+  | 'receivedapplication';
 
 const PAGES: Record<PBPage, React.FC> = {
   home: PBHome,
@@ -17,7 +23,7 @@ const PAGES: Record<PBPage, React.FC> = {
   library: PBLibrary,
   partners: PBPartners,
   'how-it-works': PBSeeHowItWorks,
-  'thank-you': PBFormspreeThankYou,
+  receivedapplication: PBFormspreeThankYou,
 };
 
 interface PurposeBasedProps {
