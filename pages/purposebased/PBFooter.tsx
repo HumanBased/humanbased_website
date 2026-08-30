@@ -109,7 +109,8 @@ const PBFooter: React.FC = () => {
           margin: 0 auto;
           padding: 72px 40px 0;
           display: grid;
-          grid-template-columns: auto auto 1fr auto;
+          /* brand · flexible middle (entity centres here) · link columns · hub */
+          grid-template-columns: auto 1fr auto auto;
           align-items: start;
           gap: 56px;
         }
@@ -136,15 +137,18 @@ const PBFooter: React.FC = () => {
           margin: 12px 0 0;
         }
 
-        /* ---------- center-left / entity ---------- */
+        /* ---------- centre / entity (equidistant from logo and link columns) ---------- */
         .pbf-entity {
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 6px;
           font-size: 13px;
           line-height: 1.6;
+          text-align: center;
           color: var(--pb-muted);
           padding-top: 6px;
+          justify-self: center;
         }
         .pbf-entity span { display: block; }
 
@@ -154,7 +158,6 @@ const PBFooter: React.FC = () => {
           grid-template-columns: repeat(2, auto);
           gap: 32px 48px;
           justify-content: center;
-          justify-self: center;
         }
         .pbf-col {
           display: flex;

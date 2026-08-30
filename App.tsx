@@ -67,6 +67,7 @@ const AppRoutes = () => {
       <Route path="/purposebased/how-it-works" element={<PurposeBased page="how-it-works" />} />
       <Route path="/purposebased/library" element={<PurposeBased page="library" />} />
       <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
+      <Route path="/purposebased/thank-you" element={<PurposeBased page="thank-you" />} />
 
       {/* Google Play required policy pages, served from this repo in HumanBased dark theme */}
       <Route path="/apps/basedtalk/privacy" element={<MainLayout><BasedTalkPrivacyPage /></MainLayout>} />
