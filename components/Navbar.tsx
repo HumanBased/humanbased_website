@@ -40,12 +40,12 @@ const Navbar: React.FC = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 w-full bg-transparent pt-6 transition-all duration-300 transform ${
       isHidden ? '-translate-y-full' : 'translate-y-0'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-[86rem] mx-auto px-4 sm:px-6 relative z-10">
         <div className="glass rounded-full px-4 sm:px-6 py-3 flex items-center gap-2 transition-all duration-300">
           {/* Left column: Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-shrink-0">
-            <LogoOrb className="h-16 w-16 sm:h-20 sm:w-20 lg:h-16 lg:w-16 xl:h-24 xl:w-24" />
-            <span className="font-semibold text-lg sm:text-xl xl:text-2xl tracking-tight">HumanBased</span>
+          <Link to="/" className="flex items-center gap-3 min-w-0 flex-shrink-0">
+            <LogoOrb className="h-[4.5rem] w-[4.5rem] sm:h-24 sm:w-24 lg:h-20 lg:w-20 xl:h-24 xl:w-24" />
+            <span className="font-semibold text-xl sm:text-2xl lg:text-xl xl:text-2xl tracking-tight">HumanBased</span>
           </Link>
 
           {/* Middle column: standalone primary nav item (desktop) */}
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           </NavLink>
 
           {/* Right column: Desktop Links and Button */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-6 flex-shrink-0">
             <NavLink
               to="/about"
               className="text-sm font-medium transition-colors uppercase tracking-widest"
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
                 }`}>
                   Why
                 </span>
-                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
+                <span className={`text-base lg:text-lg xl:text-lg font-medium whitespace-nowrap ${
                   isAbout ? "text-amber-400" : "text-white/80"
                 }`}>
                   About
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                 }`}>
                   What
                 </span>
-                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
+                <span className={`text-base lg:text-lg xl:text-lg font-medium whitespace-nowrap ${
                   isServices ? "text-amber-400" : "text-white/80"
                 }`}>
                   Services
@@ -119,14 +119,14 @@ const Navbar: React.FC = () => {
                 }`}>
                   How
                 </span>
-                <span className={`text-base xl:text-lg font-medium whitespace-nowrap ${
+                <span className={`text-base lg:text-lg xl:text-lg font-medium whitespace-nowrap ${
                   isProcess ? "text-amber-400" : "text-white/80"
                 }`}>
                   The Process
                 </span>
               </span>
             </NavLink>
-            <a href="/#contact" className="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-4 xl:px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap">
+            <a href="/#contact" className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-4 xl:px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap">
               Get in Touch
             </a>
           </div>

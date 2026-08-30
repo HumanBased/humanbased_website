@@ -144,54 +144,31 @@ const ProductsPage: React.FC = () => {
               className="relative group cursor-pointer"
               role="link"
               tabIndex={0}
-              onClick={() => { window.location.href = '/purposebased'; }}
+              onClick={() => { window.location.href = 'https://www.purposebased.app'; }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  window.location.href = '/purposebased';
+                  window.location.href = 'https://www.purposebased.app';
                 }
               }}
               aria-label="Open PurposeBased"
             >
               <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
-                <div className="absolute top-4 left-4 z-10">
-                  <span
-                    className="rounded-full uppercase tracking-widest whitespace-nowrap"
-                    style={{
-                      fontSize: '13px',
-                      fontWeight: 800,
-                      padding: '8px 18px',
-                      border: '1px solid rgba(255,200,100,0.5)',
-                      color: 'rgba(255,200,100,0.8)',
-                      background: 'rgba(255,200,100,0.06)',
-                    }}
-                  >
-                    Coming Soon
-                  </span>
-                </div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#070713] to-[#050509]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,164,65,0.08),transparent_55%)]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(99,102,241,0.06),transparent_55%)]" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em] text-white/30 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
-                      PurposeBased — coming soon
-                    </span>
-                  </div>
+                  <img
+                    src="/images/pb-logo.png"
+                    alt="PurposeBased"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    className="absolute inset-0 h-full w-full object-contain p-10 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
                 </div>
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <img
-                      src="/images/pb-logo.png"
-                      alt="PurposeBased"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                      style={{ height: '32px', objectFit: 'contain' }}
-                    />
                     <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
                       PurposeBased
                     </h3>

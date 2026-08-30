@@ -359,11 +359,13 @@ const PBHome: React.FC = () => {
         /* ---------- shared type ---------- */
         .pbh-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
+          /* 4x the previous 11px, fluid so it scales down on small screens */
+          font-size: clamp(22px, 4.6vw, 44px);
+          line-height: 1.15;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: var(--pb-gold);
-          margin: 0 0 18px;
+          margin: 0 0 24px;
         }
         .pbh-h2 {
           font-family: 'Cormorant', Georgia, serif;
@@ -501,7 +503,7 @@ const PBHome: React.FC = () => {
           transform: rotateX(-8deg) rotateY(-12deg) rotateZ(2deg);
         }
         .pbh-phone {
-          width: 420px;
+          width: 336px;
           background: #0a0f1e;
           border-radius: 36px;
           padding: 12px;
@@ -559,20 +561,20 @@ const PBHome: React.FC = () => {
         .pbh-h1 {
           font-family: 'Cormorant', Georgia, serif;
           font-weight: 300;
-          font-size: 72px;
+          font-size: 58px;
           line-height: 1.12;
           color: #ffffff;
-          max-width: 820px;
-          margin: 0 0 24px;
+          max-width: 660px;
+          margin: 0 0 20px;
         }
         .pbh-h1 em { font-style: italic; font-weight: 300; }
         .pbh-h1 strong { font-weight: 600; }
         .pbh-sub {
-          font-size: 18px;
+          font-size: 14px;
           line-height: 1.8;
           color: var(--pb-muted);
-          max-width: 480px;
-          margin: 0 0 40px;
+          max-width: 384px;
+          margin: 0 0 32px;
         }
         .pbh-cta-row {
           display: flex;
@@ -683,14 +685,29 @@ const PBHome: React.FC = () => {
         .pbh-arrow::before {
           content: '';
           position: absolute;
-          inset: -14px 0 0;
+          inset: -22px 0 -10px;
           pointer-events: none;
           background-image:
-            radial-gradient(1.5px 1.5px at 18% 35%, rgba(255,222,158,0.9), transparent),
-            radial-gradient(1px 1px at 44% 68%, rgba(255,222,158,0.65), transparent),
-            radial-gradient(1.5px 1.5px at 68% 28%, rgba(255,222,158,0.8), transparent),
-            radial-gradient(1px 1px at 86% 60%, rgba(255,222,158,0.55), transparent);
+            radial-gradient(2px 2px at 10% 30%, rgba(255,238,196,0.95), transparent),
+            radial-gradient(1.5px 1.5px at 26% 70%, rgba(255,224,158,0.8), transparent),
+            radial-gradient(2px 2px at 44% 20%, rgba(255,246,214,0.95), transparent),
+            radial-gradient(1.5px 1.5px at 60% 74%, rgba(255,222,158,0.75), transparent),
+            radial-gradient(2px 2px at 78% 32%, rgba(255,238,196,0.9), transparent),
+            radial-gradient(1.5px 1.5px at 92% 58%, rgba(255,222,158,0.6), transparent);
+          filter: drop-shadow(0 0 4px rgba(255,200,100,0.6));
           animation: pbh-particle-drift 4.5s ease-in-out infinite alternate;
+        }
+        /* faster twinkling sparkle layer */
+        .pbh-arrow::after {
+          content: '';
+          position: absolute;
+          inset: -16px 0 -6px;
+          pointer-events: none;
+          background-image:
+            radial-gradient(1.5px 1.5px at 20% 52%, rgba(255,255,255,0.95), transparent),
+            radial-gradient(1px 1px at 52% 40%, rgba(255,255,255,0.8), transparent),
+            radial-gradient(1.5px 1.5px at 80% 62%, rgba(255,242,208,0.9), transparent);
+          animation: pbh-sparkle 2.1s ease-in-out infinite;
         }
         .pbh-arrow-line {
           position: relative;
@@ -700,37 +717,43 @@ const PBHome: React.FC = () => {
           background: linear-gradient(
             90deg,
             rgba(255,200,100,0) 0%,
-            rgba(255,200,100,0.65) 18%,
-            rgba(255,238,198,0.95) 50%,
-            rgba(255,200,100,0.65) 82%,
+            rgba(255,200,100,0.85) 16%,
+            rgba(255,248,220,1) 50%,
+            rgba(255,200,100,0.85) 84%,
             rgba(255,200,100,0) 100%
           );
-          box-shadow: 0 0 12px rgba(255,200,100,0.55), 0 0 26px rgba(255,200,100,0.28);
+          box-shadow:
+            0 0 10px rgba(255,216,146,0.9),
+            0 0 24px rgba(255,200,100,0.6),
+            0 0 48px rgba(255,200,100,0.32);
+          animation: pbh-beam-pulse 3s ease-in-out infinite;
         }
         /* travelling spark that flows toward the next phase */
         .pbh-arrow-line::before {
           content: '';
           position: absolute;
           top: 50%;
-          left: -40%;
-          width: 38%;
-          height: 100%;
+          left: -45%;
+          width: 45%;
+          height: 6px;
+          border-radius: 4px;
           transform: translateY(-50%);
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
-          filter: blur(0.5px);
-          animation: pbh-spark 2.8s linear infinite;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,1) 45%, rgba(255,238,196,0.9) 62%, transparent);
+          box-shadow: 0 0 14px rgba(255,246,214,0.95), 0 0 28px rgba(255,200,100,0.7);
+          filter: blur(0.3px);
+          animation: pbh-spark 2.6s linear infinite;
         }
         .pbh-arrow-line::after {
           content: '';
           position: absolute;
           right: -2px;
           top: 50%;
-          width: 9px;
-          height: 9px;
-          border-top: 2px solid rgba(255,238,198,0.95);
-          border-right: 2px solid rgba(255,238,198,0.95);
+          width: 10px;
+          height: 10px;
+          border-top: 2px solid rgba(255,248,220,1);
+          border-right: 2px solid rgba(255,248,220,1);
           transform: translateY(-50%) rotate(45deg);
-          filter: drop-shadow(0 0 6px rgba(255,200,100,0.85));
+          filter: drop-shadow(0 0 9px rgba(255,216,146,0.95));
         }
         .pbh-arrow-label {
           margin-top: 14px;
@@ -742,12 +765,24 @@ const PBHome: React.FC = () => {
           text-shadow: 0 0 12px rgba(255,200,100,0.6);
         }
         @keyframes pbh-spark {
-          from { left: -40%; }
+          from { left: -45%; }
           to { left: 100%; }
         }
         @keyframes pbh-particle-drift {
-          from { opacity: 0.35; transform: translateY(2px); }
-          to { opacity: 1; transform: translateY(-4px); }
+          from { opacity: 0.3; transform: translateY(3px); }
+          to { opacity: 1; transform: translateY(-5px); }
+        }
+        @keyframes pbh-sparkle {
+          0%, 100% { opacity: 0.15; }
+          50% { opacity: 1; }
+        }
+        @keyframes pbh-beam-pulse {
+          0%, 100% {
+            box-shadow: 0 0 10px rgba(255,216,146,0.7), 0 0 22px rgba(255,200,100,0.4), 0 0 40px rgba(255,200,100,0.22);
+          }
+          50% {
+            box-shadow: 0 0 16px rgba(255,228,164,1), 0 0 34px rgba(255,200,100,0.8), 0 0 64px rgba(255,200,100,0.45);
+          }
         }
         @keyframes pbh-halo {
           0%, 100% { transform: scale(1); opacity: 0.5; }
@@ -758,8 +793,10 @@ const PBHome: React.FC = () => {
           50% { transform: scale(1.16); opacity: 1; }
         }
         @media (prefers-reduced-motion: reduce) {
+          .pbh-arrow-line,
           .pbh-arrow-line::before,
           .pbh-arrow::before,
+          .pbh-arrow::after,
           .pbh-node-circle::after,
           .pbh-node-star { animation: none; }
         }
@@ -988,14 +1025,14 @@ const PBHome: React.FC = () => {
 
         /* ---------- tablet ---------- */
         @media (max-width: 1024px) {
-          .pbh-h1 { font-size: 52px; }
+          .pbh-h1 { font-size: 42px; }
           .pbh-h2 { font-size: 36px; }
           .pbh-sec { padding: 56px 7% 60px; }
           .pbh-close { padding: 56px 7% 60px; }
           .pbh-how { padding: 56px 7% 60px; }
           .pbh-hero { padding: 40px 7% 56px; }
           .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 32px; }
-          .pbh-phone { width: 320px; }
+          .pbh-phone { width: 256px; }
           .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
           .pbh-frow { gap: 36px; }
           .pbh-journey {
@@ -1009,16 +1046,18 @@ const PBHome: React.FC = () => {
             width: auto;
             margin: 6px 0;
           }
-          .pbh-arrow::before { display: none; }
+          .pbh-arrow::before,
+          .pbh-arrow::after { display: none; }
           .pbh-arrow-line {
             width: 2px;
-            height: 44px;
+            height: 48px;
             background: linear-gradient(
               180deg,
               rgba(255,200,100,0) 0%,
-              rgba(255,238,198,0.95) 50%,
+              rgba(255,248,220,1) 50%,
               rgba(255,200,100,0) 100%
             );
+            box-shadow: 0 0 10px rgba(255,216,146,0.9), 0 0 24px rgba(255,200,100,0.55);
           }
           .pbh-arrow-line::before { display: none; }
           .pbh-arrow-line::after {
@@ -1032,7 +1071,7 @@ const PBHome: React.FC = () => {
 
         /* ---------- mobile ---------- */
         @media (max-width: 768px) {
-          .pbh-h1 { font-size: 44px; }
+          .pbh-h1 { font-size: 36px; }
           .pbh-h2 { font-size: 32px; }
           .pbh-sec { padding: 48px 5%; }
           .pbh-close { padding: 48px 5%; }
@@ -1043,7 +1082,7 @@ const PBHome: React.FC = () => {
           .pbh-hero-visual { justify-content: center; margin-left: 0; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
-          .pbh-phone { width: 260px; }
+          .pbh-phone { width: 208px; }
           .pbh-pillars { grid-template-columns: 1fr; }
           .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,
@@ -1060,10 +1099,10 @@ const PBHome: React.FC = () => {
 
         /* ---------- small mobile ---------- */
         @media (max-width: 480px) {
-          .pbh-h1 { font-size: 32px; }
+          .pbh-h1 { font-size: 26px; }
           .pbh-h2 { font-size: 28px; }
           .pbh-body { font-size: 15px; }
-          .pbh-phone { width: 220px; }
+          .pbh-phone { width: 176px; }
           .pbh-price { font-size: 36px; }
           .pbh-price-was { font-size: 22px; }
           .pbh-cta-row { flex-direction: column; align-self: stretch; }
