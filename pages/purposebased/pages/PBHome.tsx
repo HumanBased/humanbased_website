@@ -117,18 +117,20 @@ const PBHome: React.FC = () => {
           </div>
 
           <div className="pbh-hero-visual">
-            <div className="pbh-phone">
-              <div className="pbh-phone-screen">
-                <span className="pbh-phone-fallback">App screenshot</span>
-                {/* App screenshot lives at /public/images/pb-mockup.png */}
-                <img
-                  src="/images/pb-mockup.png"
-                  alt="PurposeBased app"
-                  className="pbh-phone-img"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
+            <div className="pbh-phone-tilt">
+              <div className="pbh-phone">
+                <div className="pbh-phone-screen">
+                  <span className="pbh-phone-fallback">App screenshot</span>
+                  {/* App screenshot lives at /public/images/pb-mockup.png */}
+                  <img
+                    src="/images/pb-mockup.png"
+                    alt="PurposeBased app"
+                    className="pbh-phone-img"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -227,7 +229,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 4 — FIVE FEATURES ============ */}
-      <section className="pb-section pbh-sec">
+      <section id="features" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Features</p>
           <h2 className="pbh-h2">Five ways in</h2>
@@ -445,10 +447,10 @@ const PBHome: React.FC = () => {
 
         /* ---------- hero ---------- */
         .pbh-hero {
-          min-height: calc(100vh - 70px);
+          min-height: 65vh;
           display: flex;
           align-items: center;
-          padding: 0 10% 72px;
+          padding: 48px 10% 56px;
           position: relative;
           overflow: hidden;
         }
@@ -489,14 +491,26 @@ const PBHome: React.FC = () => {
         .pbh-hero-visual {
           display: flex;
           justify-content: center;
+          perspective: 1200px;
+        }
+        .pbh-phone-tilt {
+          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .pbh-phone-tilt:hover {
+          transform: rotateX(-8deg) rotateY(12deg) rotateZ(-2deg);
         }
         .pbh-phone {
-          width: 260px;
+          width: 300px;
           background: #0a0f1e;
           border-radius: 36px;
           padding: 12px;
           border: 1px solid rgba(255,200,100,0.15);
           box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+          animation: pb-float-tilt 6s ease-in-out infinite;
+        }
+        @keyframes pb-float-tilt {
+          0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+          50% { transform: translateY(-12px) rotateX(-4deg) rotateY(6deg); }
         }
         .pbh-phone-screen {
           position: relative;
@@ -544,7 +558,7 @@ const PBHome: React.FC = () => {
         .pbh-h1 {
           font-family: 'Cormorant', Georgia, serif;
           font-weight: 300;
-          font-size: 64px;
+          font-size: 72px;
           line-height: 1.12;
           color: #ffffff;
           max-width: 820px;
@@ -553,7 +567,7 @@ const PBHome: React.FC = () => {
         .pbh-h1 em { font-style: italic; font-weight: 300; }
         .pbh-h1 strong { font-weight: 600; }
         .pbh-sub {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.8;
           color: var(--pb-muted);
           max-width: 480px;
@@ -567,7 +581,7 @@ const PBHome: React.FC = () => {
         }
 
         /* ---------- how it works ---------- */
-        .pbh-how { padding: 80px 10%; }
+        .pbh-how { padding: 56px 10% 80px; }
         .pbh-journey {
           margin-top: 40px;
           display: grid;
@@ -661,9 +675,9 @@ const PBHome: React.FC = () => {
         }
 
         /* ---------- generic section ---------- */
-        .pbh-sec { padding: 80px 10%; }
+        .pbh-sec { padding: 56px 10% 80px; }
         .pbh-wrap { max-width: 1100px; margin: 0 auto; }
-        .pbh-close { padding: 80px 10%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .pbh-close { padding: 56px 10% 80px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 
         /* ---------- pillars ---------- */
         .pbh-pillars {
@@ -884,14 +898,14 @@ const PBHome: React.FC = () => {
 
         /* ---------- tablet ---------- */
         @media (max-width: 1024px) {
-          .pbh-h1 { font-size: 48px; }
+          .pbh-h1 { font-size: 52px; }
           .pbh-h2 { font-size: 36px; }
-          .pbh-sec { padding: 60px 7%; }
-          .pbh-close { padding: 60px 7%; }
-          .pbh-how { padding: 60px 7%; }
-          .pbh-hero { padding: 0 7% 64px; }
+          .pbh-sec { padding: 56px 7% 60px; }
+          .pbh-close { padding: 56px 7% 60px; }
+          .pbh-how { padding: 56px 7% 60px; }
+          .pbh-hero { padding: 40px 7% 56px; }
           .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 40px; }
-          .pbh-phone { width: 220px; }
+          .pbh-phone { width: 240px; }
           .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
           .pbh-frow { gap: 36px; }
           .pbh-journey {
@@ -917,17 +931,17 @@ const PBHome: React.FC = () => {
 
         /* ---------- mobile ---------- */
         @media (max-width: 768px) {
-          .pbh-h1 { font-size: 38px; }
+          .pbh-h1 { font-size: 44px; }
           .pbh-h2 { font-size: 32px; }
           .pbh-sec { padding: 48px 5%; }
           .pbh-close { padding: 48px 5%; }
           .pbh-how { padding: 48px 5%; }
-          .pbh-hero { padding: 0 5% 56px; }
+          .pbh-hero { padding: 32px 5% 48px; }
           .pbh-hero-grid { grid-template-columns: 1fr; gap: 36px; }
           .pbh-hero-content { align-items: center; text-align: center; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
-          .pbh-phone { width: 200px; }
+          .pbh-phone { width: 220px; }
           .pbh-pillars { grid-template-columns: 1fr; }
           .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,

@@ -40,7 +40,7 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
           <img
             src="/images/pb-logo.png"
             alt="PurposeBased"
-            style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+            style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
@@ -87,7 +87,7 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
           flex-shrink: 0;
         }
         .pbn-word {
-          font-size: 22px;
+          font-size: 24px;
           font-weight: 500;
           color: #f3e9d6;
           letter-spacing: 0.5px;
