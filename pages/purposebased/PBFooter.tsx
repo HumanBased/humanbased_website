@@ -24,249 +24,398 @@ const SOCIALS: { name: string; url: string; path: string }[] = [
   },
 ];
 
-const colHeadStyle: React.CSSProperties = {
-  fontSize: '11px',
-  letterSpacing: '1.6px',
-  textTransform: 'uppercase',
-  color: '#8fa8c4',
-  marginBottom: '16px',
-};
-
-const FooterColumn: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
-  <div>
-    <div style={colHeadStyle}>{title}</div>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>{children}</div>
-  </div>
-);
-
+// The orbit hub keeps its original 154px geometry. Responsive sizing is done
+// by scaling the whole thing from its top-left corner, with the wrapper sized
+// to the scaled result so it does not leave a hole in the grid.
 const OrbitHub: React.FC = () => (
-  <div style={{ position: 'relative', width: '154px', height: '154px', marginTop: '24px' }}>
-    <div
-      style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '1px solid rgba(255,200,100,0.16)' }}
-    />
-    <div
-      style={{ position: 'absolute', inset: '24px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)' }}
-    />
-
-    <div
-      className="pb-font-serif"
-      style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        width: '50px',
-        height: '50px',
-        marginTop: '-25px',
-        marginLeft: '-25px',
-        borderRadius: '50%',
-        background: 'linear-gradient(135deg, rgba(255,200,100,0.2), rgba(255,200,100,0.06))',
-        border: '1px solid rgba(255,200,100,0.5)',
-        boxShadow: '0 0 16px rgba(255,200,100,0.15)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        lineHeight: 1,
-      }}
-    >
-      <img
-        src="/images/hb-logo.png"
-        alt="HumanBased"
-        style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }}
-        onError={(e) => {
-          const t = e.target as HTMLImageElement;
-          t.style.display = 'none';
-          const fallback = t.nextElementSibling as HTMLElement | null;
-          if (fallback) fallback.style.display = 'flex';
-        }}
+  <div className="pbf-orbit-wrap">
+    <div className="pbf-orbit">
+      <div
+        style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '1px solid rgba(255,200,100,0.16)' }}
       />
-      <div style={{ display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ fontFamily: 'Cormorant,serif', fontSize: '18px', color: '#ffc864', fontWeight: 600 }}>H</span>
-        <span
-          style={{
-            fontFamily: 'Cormorant,serif',
-            fontSize: '10px',
-            color: 'rgba(255,200,100,0.6)',
-            letterSpacing: '2px',
-          }}
-        >
-          B
-        </span>
-      </div>
-    </div>
+      <div
+        style={{ position: 'absolute', inset: '24px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.06)' }}
+      />
 
-    <div className="pb-orbit-spin" style={{ position: 'absolute', inset: 0 }}>
-      {SOCIALS.map((s, i) => {
-        const angle = i * (360 / SOCIALS.length);
-        return (
-          <div
-            key={s.name}
+      <div
+        className="pb-font-serif"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '50px',
+          height: '50px',
+          marginTop: '-25px',
+          marginLeft: '-25px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, rgba(255,200,100,0.2), rgba(255,200,100,0.06))',
+          border: '1px solid rgba(255,200,100,0.5)',
+          boxShadow: '0 0 16px rgba(255,200,100,0.15)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          lineHeight: 1,
+        }}
+      >
+        <img
+          src="/images/hb-logo.png"
+          alt="HumanBased"
+          style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover' }}
+          onError={(e) => {
+            const t = e.target as HTMLImageElement;
+            t.style.display = 'none';
+            const fallback = t.nextElementSibling as HTMLElement | null;
+            if (fallback) fallback.style.display = 'flex';
+          }}
+        />
+        <div style={{ display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ fontFamily: 'Cormorant,serif', fontSize: '18px', color: '#ffc864', fontWeight: 600 }}>H</span>
+          <span
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '32px',
-              height: '32px',
-              marginTop: '-16px',
-              marginLeft: '-16px',
-              transform: `rotate(${angle}deg) translateX(59px) rotate(-${angle}deg)`,
+              fontFamily: 'Cormorant,serif',
+              fontSize: '10px',
+              color: 'rgba(255,200,100,0.6)',
+              letterSpacing: '2px',
             }}
           >
-            <div className="pb-orbit-spin-rev">
-              <a
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.name}
-                style={{
-                  display: 'flex',
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.14)',
-                  backdropFilter: 'blur(6px)',
-                  WebkitBackdropFilter: 'blur(6px)',
-                  color: '#cadcf0',
-                }}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d={s.path} />
-                </svg>
-              </a>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+            B
+          </span>
+        </div>
+      </div>
 
-    <style>{`
-      @keyframes pb-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-      @keyframes pb-orbit-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-      .pb-orbit-spin { animation: pb-orbit 34s linear infinite; }
-      .pb-orbit-spin-rev { animation: pb-orbit-rev 34s linear infinite; }
-    `}</style>
+      <div className="pb-orbit-spin" style={{ position: 'absolute', inset: 0 }}>
+        {SOCIALS.map((s, i) => {
+          const angle = i * (360 / SOCIALS.length);
+          return (
+            <div
+              key={s.name}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '32px',
+                height: '32px',
+                marginTop: '-16px',
+                marginLeft: '-16px',
+                transform: `rotate(${angle}deg) translateX(59px) rotate(-${angle}deg)`,
+              }}
+            >
+              <div className="pb-orbit-spin-rev">
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.name}
+                  style={{
+                    display: 'flex',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.14)',
+                    backdropFilter: 'blur(6px)',
+                    WebkitBackdropFilter: 'blur(6px)',
+                    color: '#cadcf0',
+                  }}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={s.path} />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   </div>
 );
 
 const PBFooter: React.FC = () => {
   return (
-    <footer style={{ background: '#08182a', color: '#cadcf0', position: 'relative', zIndex: 10 }}>
+    <footer className="pbf">
       <div className="pbf-grid">
-        {/* Brand column */}
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img
-              src="/images/pb-logo.png"
-              alt="PurposeBased"
-              style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-            <span className="pb-font-serif" style={{ fontSize: '22px', fontWeight: 500, color: '#f3e9d6' }}>
-              PurposeBased
-            </span>
+        {/* ---------- LEFT — brand ---------- */}
+        <div className="pbf-brand">
+          <img
+            src="/images/pb-logo.png"
+            alt="PurposeBased"
+            className="pbf-mark"
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+          />
+          <p className="pbf-wordmark">PurposeBased</p>
+          <p className="pbf-tagline">By HumanBased, a Copenhagen Social Enterprise</p>
+
+          <div className="pbf-socials">
+            {SOCIALS.map((s) => (
+              <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="pbf-social">
+                {s.name}
+              </a>
+            ))}
           </div>
-          <p style={{ fontSize: '13px', color: '#cadcf0', marginTop: '14px', maxWidth: '240px', lineHeight: 1.6 }}>
-            By HumanBased, a Copenhagen Social Enterprise
-          </p>
-          <OrbitHub />
         </div>
 
-        <FooterColumn title="Product">
-          <Link to="/purposebased" className="pb-foot-link">
-            Home
-          </Link>
-          <Link to="/purposebased/library" className="pb-foot-link">
-            Library
-          </Link>
-          <Link to="/purposebased#pricing" className="pb-foot-link">
-            Pricing
-          </Link>
-        </FooterColumn>
+        {/* ---------- MIDDLE — link columns ---------- */}
+        <div className="pbf-links">
+          <div className="pbf-col">
+            <div className="pbf-col-head">Product</div>
+            <Link to="/purposebased" className="pbf-link">
+              Home
+            </Link>
+            <Link to="/purposebased/library" className="pbf-link">
+              Library
+            </Link>
+            <Link to="/purposebased#pricing" className="pbf-link">
+              Pricing
+            </Link>
+            <Link to="/purposebased#features" className="pbf-link">
+              Features
+            </Link>
+          </div>
 
-        <FooterColumn title="Company">
-          <Link to="/purposebased/story" className="pb-foot-link">
-            Story
-          </Link>
-          <Link to="/purposebased/partners" className="pb-foot-link">
-            Partners
-          </Link>
-          <a
-            href="https://humanbased.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pb-foot-link"
-          >
-            HumanBased
-          </a>
-        </FooterColumn>
+          <div className="pbf-col">
+            <div className="pbf-col-head">Company</div>
+            <Link to="/purposebased/story" className="pbf-link">
+              Story
+            </Link>
+            <Link to="/purposebased/partners" className="pbf-link">
+              Partners
+            </Link>
+            <a href="https://humanbased.org" target="_blank" rel="noopener noreferrer" className="pbf-link">
+              HumanBased
+            </a>
+            <Link to="/about" className="pbf-link">
+              About
+            </Link>
+          </div>
+        </div>
 
-        <FooterColumn title="Legal">
-          <Link to="/apps/purposebased/privacy" className="pb-foot-link">
-            Privacy policy
-          </Link>
-          <Link to="/apps/purposebased/terms" className="pb-foot-link">
-            Terms
-          </Link>
-          <Link to="/apps/purposebased/delete-account" className="pb-foot-link">
-            Delete account
-          </Link>
-          <Link to="/apps/purposebased/delete-data" className="pb-foot-link">
-            Delete data
-          </Link>
-        </FooterColumn>
+        {/* ---------- RIGHT — orbit hub ---------- */}
+        <OrbitHub />
       </div>
 
-      <div className="pbf-bottom">
-        <span>© 2026 HumanBased ApS</span>
-        <span>Coding for humanity</span>
+      <div className="pbf-legal">
+        <div className="pbf-legal-links">
+          <Link to="/apps/purposebased/privacy" className="pbf-legal-link">
+            Privacy policy
+          </Link>
+          <Link to="/apps/purposebased/terms" className="pbf-legal-link">
+            Terms
+          </Link>
+          <Link to="/apps/purposebased/delete-account" className="pbf-legal-link">
+            Delete account
+          </Link>
+          <Link to="/apps/purposebased/delete-data" className="pbf-legal-link">
+            Delete data
+          </Link>
+        </div>
+        <div className="pbf-legal-row">
+          <span>© 2026 HumanBased ApS</span>
+          <span>Coding for humanity</span>
+        </div>
       </div>
 
       <style>{`
-        .pbf-grid {
-          max-width: 1180px;
-          margin: 0 auto;
-          padding: 64px 40px 0;
-          display: grid;
-          gap: 44px;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .pbf {
+          --pb-gold: #ffc864;
+          --pb-text: #cadcf0;
+          --pb-muted: #8fa8c4;
+          background: #08182a;
+          color: var(--pb-text);
+          position: relative;
+          z-index: 10;
+          font-family: 'DM Sans', system-ui, sans-serif;
         }
-        .pbf-bottom {
-          max-width: 1180px;
+
+        /* ---------- grid ---------- */
+        .pbf-grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 72px 40px 0;
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1.5fr;
+          gap: 80px;
+        }
+
+        /* ---------- left / brand ---------- */
+        .pbf-mark {
+          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: contain;
+        }
+        .pbf-wordmark {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: 28px;
+          color: #f3e9d6;
+          margin: 12px 0 0;
+        }
+        .pbf-tagline {
+          font-size: 13px;
+          line-height: 1.6;
+          color: var(--pb-muted);
+          max-width: 260px;
+          margin: 8px 0 0;
+        }
+        .pbf-socials {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 22px;
+        }
+        .pbf-social {
+          font-size: 13px;
+          color: var(--pb-text);
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .pbf-social:hover { color: var(--pb-gold); }
+
+        /* ---------- middle / link columns ---------- */
+        .pbf-links {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+        }
+        .pbf-col {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .pbf-col-head {
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--pb-muted);
+          margin-bottom: 4px;
+        }
+        .pbf-link {
+          font-size: 14px;
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .pbf-link:hover { color: var(--pb-gold); }
+
+        /* ---------- right / orbit hub ---------- */
+        .pbf-orbit-wrap {
+          position: relative;
+          width: 154px;
+          height: 154px;
+          justify-self: end;
+        }
+        .pbf-orbit {
+          position: relative;
+          width: 154px;
+          height: 154px;
+          transform-origin: top left;
+        }
+
+        /* ---------- legal footer ---------- */
+        .pbf-legal {
+          max-width: 1200px;
           margin: 56px auto 0;
-          padding: 24px 40px;
+          padding: 24px 40px 28px;
           border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .pbf-legal-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px 24px;
+          margin-bottom: 16px;
+        }
+        .pbf-legal-link {
+          font-size: 12px;
+          color: var(--pb-muted);
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .pbf-legal-link:hover { color: var(--pb-gold); }
+        .pbf-legal-row {
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
           gap: 12px;
           font-size: 12px;
-          color: #8fa8c4;
+          color: var(--pb-muted);
         }
 
-        /* ---------- tablet ---------- */
+        /* ---------- orbit animation ---------- */
+        @keyframes pb-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes pb-orbit-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+        .pb-orbit-spin { animation: pb-orbit 34s linear infinite; }
+        .pb-orbit-spin-rev { animation: pb-orbit-rev 34s linear infinite; }
+
+        /* ============================================================
+           TABLET ≤1024px — 2 columns, orbit hub under the link columns
+           ============================================================ */
         @media (max-width: 1024px) {
-          .pbf-grid { padding: 56px 7% 0; gap: 36px; }
-          .pbf-bottom { margin-top: 44px; padding: 22px 7%; }
+          .pbf-grid {
+            grid-template-columns: 1.5fr 1.5fr;
+            gap: 48px;
+            padding: 60px 7% 0;
+          }
+          .pbf-brand { grid-column: 1; grid-row: 1; }
+          .pbf-links { grid-column: 2; grid-row: 1; }
+          .pbf-orbit-wrap {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: start;
+            width: 62px;
+            height: 62px;
+            margin-top: -24px;
+          }
+          .pbf-orbit { transform: scale(0.4); }
+          .pbf-legal { margin-top: 44px; padding: 24px 7% 26px; }
         }
 
-        /* ---------- mobile ---------- */
+        /* ============================================================
+           MOBILE ≤768px — single centred column
+           ============================================================ */
         @media (max-width: 768px) {
           .pbf-grid {
-            padding: 48px 5% 0;
+            grid-template-columns: 1fr;
             gap: 32px;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            padding: 48px 5% 0;
+            justify-items: center;
+            text-align: center;
           }
-          .pbf-bottom { margin-top: 36px; padding: 20px 5%; }
-        }
-
-        @media (max-width: 480px) {
-          .pbf-grid { grid-template-columns: 1fr; }
-          .pbf-bottom { justify-content: flex-start; }
+          .pbf-brand {
+            grid-column: 1;
+            grid-row: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .pbf-mark { width: 60px; height: 60px; }
+          .pbf-tagline { max-width: 300px; }
+          .pbf-socials { align-items: center; }
+          .pbf-links {
+            grid-column: 1;
+            grid-row: auto;
+            gap: 24px 40px;
+            justify-items: center;
+          }
+          .pbf-col { align-items: center; }
+          .pbf-orbit-wrap {
+            grid-column: 1;
+            grid-row: auto;
+            justify-self: center;
+            width: 47px;
+            height: 47px;
+            margin-top: 0;
+          }
+          .pbf-orbit { transform: scale(0.3); }
+          .pbf-legal { margin-top: 36px; padding: 22px 5% 24px; text-align: center; }
+          .pbf-legal-links { justify-content: center; }
+          .pbf-legal-row { justify-content: center; gap: 6px 20px; }
         }
       `}</style>
     </footer>
