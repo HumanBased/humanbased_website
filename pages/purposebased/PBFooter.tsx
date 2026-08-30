@@ -86,7 +86,7 @@ const PBFooter: React.FC = () => {
           </Link>
         </div>
         <div className="pbf-legal-row">
-          <span>© 2025 HumanBased ApS</span>
+          <span>© 2025 HumanBased</span>
           <span>Coding for humanity</span>
         </div>
       </div>
@@ -118,8 +118,8 @@ const PBFooter: React.FC = () => {
         .pbf-brand {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          text-align: center;
+          align-items: flex-start;
+          text-align: left;
         }
         .pbf-mark {
           display: block;
@@ -153,11 +153,13 @@ const PBFooter: React.FC = () => {
           display: grid;
           grid-template-columns: repeat(2, auto);
           gap: 32px 48px;
-          justify-content: start;
+          justify-content: center;
+          justify-self: center;
         }
         .pbf-col {
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 12px;
         }
         .pbf-col-head {
@@ -166,6 +168,7 @@ const PBFooter: React.FC = () => {
           text-transform: uppercase;
           color: var(--pb-muted);
           margin-bottom: 4px;
+          text-align: center;
         }
         .pbf-link {
           font-size: 14px;
@@ -177,7 +180,7 @@ const PBFooter: React.FC = () => {
 
         /* ---------- far right / social hub ---------- */
         .pbf-hub {
-          justify-self: end;
+          justify-self: start;
           align-self: start;
         }
 
