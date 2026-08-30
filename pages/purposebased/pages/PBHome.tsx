@@ -43,6 +43,14 @@ const PILLARS: { title: string; body: string }[] = [
   { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
 ];
 
+// Checkout destinations.
+// Seeker is free, so it goes straight to signup in the app — not to Stripe.
+// The two paid tiers point at Stripe Payment Links; swap the placeholders for
+// the real https://buy.stripe.com/... URLs from the Stripe dashboard.
+const APP_SIGNUP_URL = 'https://www.purposebased.app';
+const CHECKOUT_BASED = 'https://buy.stripe.com/REPLACE_WITH_BASED_LINK';
+const CHECKOUT_BLISSED = 'https://buy.stripe.com/REPLACE_WITH_BLISSED_LINK';
+
 const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
@@ -266,9 +274,14 @@ const PBHome: React.FC = () => {
                 Locked in for as long as your subscription stays active. Ends 31 December 2026.
               </p>
             </div>
-            <button type="button" className="pbh-btn pbh-btn--solid">
+            <a
+              href={CHECKOUT_BASED}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pbh-btn pbh-btn--solid"
+            >
               Claim your place
-            </button>
+            </a>
           </div>
 
           <div className="pbh-tiers">
@@ -278,14 +291,21 @@ const PBHome: React.FC = () => {
               <div className="pbh-price">€0</div>
               <p className="pbh-price-note">Free, always</p>
               <ul className="pbh-list">
-                <li>Full questionnaire</li>
-                <li>4 of 9 framework previews</li>
+                <li>Self-Evaluation Tool</li>
+                <li>Purpose Tracker</li>
+                <li>Daily Insight</li>
+                <li>Basic Framework Previews (4 of 9)</li>
                 <li>My People, up to 5</li>
                 <li>1 Guide message per day</li>
               </ul>
-              <button type="button" className="pbh-btn pbh-btn--glass pbh-btn--full">
+              <a
+                href={APP_SIGNUP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pbh-btn pbh-btn--glass pbh-btn--full"
+              >
                 Begin
-              </button>
+              </a>
             </div>
 
             {/* Tier 2 — Based (highlighted) */}
@@ -297,16 +317,22 @@ const PBHome: React.FC = () => {
               </div>
               <p className="pbh-price-note">per month · founding price</p>
               <ul className="pbh-list">
-                <li>Full analysis, all nine frameworks</li>
+                <li className="pbh-li--gold">Full Analysis</li>
+                <li className="pbh-li--gold">9 Integrated Frameworks</li>
                 <li>All framework readings</li>
                 <li>90 Guide messages per month</li>
                 <li>Living Chronicle</li>
                 <li>Odyssey</li>
                 <li>My People, up to 20</li>
               </ul>
-              <button type="button" className="pbh-btn pbh-btn--solid pbh-btn--full">
+              <a
+                href={CHECKOUT_BASED}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pbh-btn pbh-btn--solid pbh-btn--full"
+              >
                 Choose Based
-              </button>
+              </a>
             </div>
 
             {/* Tier 3 — Blissed */}
@@ -318,15 +344,20 @@ const PBHome: React.FC = () => {
               <p className="pbh-price-note">per month · founding price</p>
               <p className="pbh-tier-plus">Everything in Based, plus</p>
               <ul className="pbh-list">
+                <li className="pbh-li--gold">4 full analysis re-runs per month</li>
                 <li>200 Guide messages per month</li>
                 <li>My People, up to 100</li>
-                <li>4 full analysis re-runs per month</li>
                 <li>Year Ahead</li>
                 <li>Priority support</li>
               </ul>
-              <button type="button" className="pbh-btn pbh-btn--glass pbh-btn--full">
+              <a
+                href={CHECKOUT_BLISSED}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pbh-btn pbh-btn--glass pbh-btn--full"
+              >
                 Choose Blissed
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -400,6 +431,9 @@ const PBHome: React.FC = () => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+          /* Explicit so the full-width <a> variants cannot overflow their card
+             if the global border-box reset ever goes away. */
+          box-sizing: border-box;
           padding: 14px 36px;
           border-radius: 8px;
           font-family: 'DM Sans', system-ui, sans-serif;
@@ -1014,6 +1048,11 @@ const PBHome: React.FC = () => {
           color: var(--pb-text);
           padding: 7px 0;
           border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        /* Key differentiator for the tier — carries the gold accent. */
+        .pbh-list li.pbh-li--gold {
+          color: var(--pb-gold);
+          font-weight: 400;
         }
 
         /* ============================================================
