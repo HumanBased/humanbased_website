@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Same design tokens, scroll-reveal, and premium card treatment as PBHome.
 // Scoped under .pbp — Cormorant for headings, DM Sans for body/labels.
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaqodbp';
 
 const ADVANTAGES: { title: string; body: string }[] = [
   {
@@ -156,7 +156,7 @@ const PBPartners: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
@@ -194,12 +194,12 @@ const PBPartners: React.FC = () => {
   };
 
   const handleSubmit = async () => {
-    if (status === 'sending') return;
+    if (status === 'submitting') return;
     if (!form.name.trim() || !form.email.trim()) {
       setStatus('error');
       return;
     }
-    setStatus('sending');
+    setStatus('submitting');
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
@@ -215,6 +215,11 @@ const PBPartners: React.FC = () => {
       });
       if (res.ok) {
         setStatus('success');
+        setForm(INITIAL_FORM);
+        // Keep the success message up for 5s, then restore the empty form.
+        window.setTimeout(() => {
+          setStatus((prev) => (prev === 'success' ? 'idle' : prev));
+        }, 5000);
       } else {
         setStatus('error');
       }
@@ -581,9 +586,9 @@ const PBPartners: React.FC = () => {
                 type="button"
                 className="pbp-btn pbp-btn--solid pbp-btn--full"
                 onClick={handleSubmit}
-                disabled={status === 'sending'}
+                disabled={status === 'submitting'}
               >
-                {status === 'sending' ? 'Sending…' : 'Send application'}
+                {status === 'submitting' ? 'Sending…' : 'Send application'}
               </button>
 
               {status === 'error' && (
