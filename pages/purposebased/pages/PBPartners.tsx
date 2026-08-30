@@ -138,6 +138,16 @@ const PBPartners: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [channels, setChannels] = useState<{ platform: string; link: string }[]>([
+    { platform: '', link: '' },
+  ]);
+
+  const addChannel = () =>
+    setChannels((prev) => [...prev, { platform: '', link: '' }]);
+  const removeChannel = (idx: number) =>
+    setChannels((prev) => prev.filter((_, i) => i !== idx));
+  const updateChannel = (idx: number, key: 'platform' | 'link', value: string) =>
+    setChannels((prev) => prev.map((c, i) => (i === idx ? { ...c, [key]: value } : c)));
 
   useEffect(() => {
     const root = rootRef.current;
@@ -196,9 +206,9 @@ const PBPartners: React.FC = () => {
             society.
           </p>
           <p className="pbp-body" style={{ maxWidth: 640, marginTop: 18 }}>
-            You earn recurring revenue on every active subscription you bring in. Not a one-off
-            payment. Not a fixed fee. A share of the ongoing value, for as long as your referrals stay
-            subscribed.
+            As an official PurposeBased promoter, you earn recurring revenue on every active
+            subscription you bring in. Not a one-off payment. Not a fixed fee. A share of the ongoing
+            value, for as long as your referrals stay subscribed.
           </p>
 
           <div className="pbp-adv-grid">
@@ -416,6 +426,27 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
+      {/* ============ SECTION 4C — BUILDING TOGETHER ============ */}
+      <section className="pb-section pbp-sec">
+        <div className="pbp-wrap">
+          <div className="pbp-together">
+            <p className="pbp-label">Building together</p>
+            <h2 className="pbp-h2">We are building this together.</h2>
+            <hr className="pbp-rule" />
+            <p className="pbp-body" style={{ maxWidth: 620 }}>
+              When you join, you become an official PurposeBased promoter. That is a real working
+              relationship, not a link in a spreadsheet. You get active support from our team, a
+              direct channel for feedback that shapes the product, and access to our Marketing
+              Training Program to help you share it well.
+            </p>
+            <p className="pbp-body" style={{ maxWidth: 620, marginTop: 16 }}>
+              We are standing by you the whole way. Your questions get answered, your ideas get
+              heard, and your growth is something we work on with you.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ============ SECTION 5 — APPLICATION FORM ============ */}
       <section className="pb-section pbp-sec" ref={formRef}>
         <div className="pbp-wrap pbp-form-wrap">
@@ -459,16 +490,60 @@ const PBPartners: React.FC = () => {
             </div>
 
             <div className="pbp-field">
-              <label className="pbp-field-label" htmlFor="pbp-platform">
-                Platform or website
-              </label>
-              <input
-                id="pbp-platform"
-                name="platform"
-                className="pbp-input"
-                type="text"
-                placeholder="Your main platform, channel, or website URL"
-              />
+              <label className="pbp-field-label">Channels</label>
+              <p className="pbp-field-help">Add all the channels where you plan to promote</p>
+
+              {channels.map((c, i) => (
+                <div key={i} className="pbp-channel">
+                  <div className="pbp-channel-grid">
+                    <div>
+                      <label className="pbp-field-label" htmlFor={`pbp-platform-${i}`}>
+                        Platform
+                      </label>
+                      <input
+                        id={`pbp-platform-${i}`}
+                        name="platform_name[]"
+                        className="pbp-input"
+                        type="text"
+                        placeholder="E.g., YouTube, Instagram, TikTok"
+                        value={c.platform}
+                        onChange={(e) => updateChannel(i, 'platform', e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label className="pbp-field-label" htmlFor={`pbp-link-${i}`}>
+                        Channel or page link
+                      </label>
+                      <input
+                        id={`pbp-link-${i}`}
+                        name="channel_link[]"
+                        className="pbp-input"
+                        type="url"
+                        placeholder="https://..."
+                        value={c.link}
+                        onChange={(e) => updateChannel(i, 'link', e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  {i > 0 && (
+                    <button
+                      type="button"
+                      className="pbp-channel-remove"
+                      onClick={() => removeChannel(i)}
+                    >
+                      Remove
+                    </button>
+                  )}
+                </div>
+              ))}
+
+              <button
+                type="button"
+                className="pbp-btn pbp-btn--outline"
+                onClick={addChannel}
+              >
+                Add channel
+              </button>
             </div>
 
             <div className="pbp-field">
@@ -516,8 +591,8 @@ const PBPartners: React.FC = () => {
           The best partners are the ones who actually use our products.
         </h2>
         <p className="pbp-close-body">
-          Start with the free tier. See what the nine frameworks reveal. Then decide if it is worth
-          sharing.
+          Start with the free tier. See what the nine frameworks reveal. Then join our official
+          promoter network and share it with the people who need it.
         </p>
         <div className="pbp-close-cta">
           <Link to="/purposebased" className="pbp-btn pbp-btn--solid">
@@ -642,6 +717,14 @@ const PBPartners: React.FC = () => {
           -webkit-backdrop-filter: blur(12px);
         }
         .pbp-btn--full { width: 100%; margin-top: 8px; }
+        .pbp-btn--outline {
+          background: transparent;
+          border: 1px solid var(--pb-gold);
+          color: var(--pb-gold);
+          padding: 11px 26px;
+          margin-top: 4px;
+        }
+        .pbp-btn--outline:hover { background: rgba(255,200,100,0.08); }
 
         /* ---------- scroll reveal ---------- */
         .pb-section {
@@ -958,6 +1041,39 @@ const PBPartners: React.FC = () => {
           outline: none;
         }
         .pbp-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+        .pbp-field-help {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 12px;
+          font-weight: 300;
+          color: var(--pb-muted);
+          margin: -2px 0 14px;
+        }
+        .pbp-channel {
+          border: 1px solid var(--pb-border);
+          border-radius: 10px;
+          padding: 18px 18px 16px;
+          margin-bottom: 14px;
+          background: rgba(255,255,255,0.02);
+        }
+        .pbp-channel-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
+        }
+        .pbp-channel-remove {
+          margin-top: 12px;
+          background: none;
+          border: 0;
+          padding: 0;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: var(--pb-muted);
+          cursor: pointer;
+          transition: color 0.2s ease;
+        }
+        .pbp-channel-remove:hover { color: var(--pb-gold); }
         select.pbp-input { appearance: none; -webkit-appearance: none; cursor: pointer; }
         select.pbp-input option { background: #0d1f3c; color: #ffffff; }
         .pbp-form-success {
@@ -975,6 +1091,18 @@ const PBPartners: React.FC = () => {
           color: var(--pb-gold);
           margin: 14px 0 0;
         }
+
+        /* ---------- building together card ---------- */
+        .pbp-together {
+          max-width: 780px;
+          border: 1px solid var(--pb-border-gold);
+          border-radius: 16px;
+          padding: 40px 36px;
+          background: linear-gradient(135deg, rgba(255,200,100,0.09), rgba(255,255,255,0.03));
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+        .pbp-together .pbp-h2 { font-size: 34px; }
 
         /* ---------- closing ---------- */
         .pbp-close {
@@ -1129,6 +1257,9 @@ const PBPartners: React.FC = () => {
           .pbp-steps { grid-template-columns: 1fr; gap: 8px; }
           .pbp-step { padding-bottom: 6px; }
           .pbp-track { padding: 28px 22px; }
+          .pbp-channel-grid { grid-template-columns: 1fr; }
+          .pbp-together { padding: 28px 22px; }
+          .pbp-together .pbp-h2 { font-size: 28px; }
           .pbp-rtable-head span { font-size: 10px; letter-spacing: 1.5px; }
           .pbp-rtable-head,
           .pbp-rrow { padding-left: 14px; padding-right: 14px; }
