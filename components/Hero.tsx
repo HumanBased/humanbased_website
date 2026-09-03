@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 import homeHeroImg from '../assets/images/home-hero.webp.png';
 
@@ -52,12 +53,12 @@ const Hero: React.FC = () => {
               >
                 Get in Touch
               </a>
-              <a 
-                href="#services" 
+              <Link
+                to="/services"
                 className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border border-white/20 bg-white/5 text-white/90 font-medium rounded-full hover:bg-white/10 hover:text-white transition-all text-center text-sm sm:text-base"
               >
                 View Services
-              </a>
+              </Link>
             </div>
             </div>
           </Reveal>
