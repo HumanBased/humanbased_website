@@ -122,6 +122,8 @@ const PBFooter: React.FC = () => {
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
+          /* nudge the mark/wordmark further left, toward the grid edge */
+          margin-left: -10px;
         }
         .pbf-mark {
           display: block;
@@ -149,8 +151,10 @@ const PBFooter: React.FC = () => {
           line-height: 1.6;
           text-align: left;
           color: var(--pb-muted);
-          padding-top: 6px;
           justify-self: center;
+          /* drop the entity block down so it sits vertically centered against the brand column */
+          align-self: center;
+          padding-top: 18px;
         }
         .pbf-entity span { display: block; }
 
