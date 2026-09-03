@@ -155,6 +155,20 @@ const ProductsPage: React.FC = () => {
             >
               <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
+                <div className="absolute top-4 left-4 z-10">
+                  <span
+                    className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: 800,
+                      padding: '8px 18px',
+                      color: '#000',
+                      boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
+                    }}
+                  >
+                    Available Now
+                  </span>
+                </div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a0a14] mt-12">
                   {/* PurposeBased website hero preview */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0e0b1e] via-[#0a0a14] to-[#050509]" />
