@@ -6,24 +6,25 @@ const PBFooter: React.FC = () => {
   return (
     <footer className="pbf">
       <div className="pbf-grid">
-        {/* ---------- LEFT — brand (logo centred with wordmark) ---------- */}
-        <div className="pbf-brand">
-          <img
-            src="/images/pb-logo.png"
-            alt="PurposeBased"
-            className="pbf-mark"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
-          />
-          <p className="pbf-wordmark">PurposeBased</p>
-        </div>
+        {/* ---------- LEFT — brand block: logo + wordmark, with legal entity stacked below ---------- */}
+        <div className="pbf-brand-block">
+          <div className="pbf-brand">
+            <img
+              src="/images/pb-logo.png"
+              alt="PurposeBased"
+              className="pbf-mark"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+            <p className="pbf-wordmark">PurposeBased</p>
+          </div>
 
-        {/* ---------- CENTER-LEFT — legal entity ---------- */}
-        <div className="pbf-entity">
-          <span>By HumanBased</span>
-          <span>A Social Enterprise</span>
-          <span>Copenhagen</span>
+          <div className="pbf-entity">
+            <span>By HumanBased</span>
+            <span>A Social Enterprise</span>
+            <span>Copenhagen</span>
+          </div>
         </div>
 
         {/* ---------- CENTER / RIGHT — link columns ---------- */}
@@ -115,15 +116,20 @@ const PBFooter: React.FC = () => {
           gap: 56px;
         }
 
-        /* ---------- left / brand ---------- */
-        .pbf-brand {
+        /* ---------- left / brand block — logo + wordmark, entity text stacked below as one unit ---------- */
+        .pbf-brand-block {
           grid-column: 1;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          text-align: left;
           /* nudge the mark/wordmark further left, toward the grid edge */
           margin-left: -10px;
+        }
+        .pbf-brand {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
         }
         .pbf-mark {
           display: block;
@@ -140,9 +146,8 @@ const PBFooter: React.FC = () => {
           margin: 12px 0 0;
         }
 
-        /* ---------- entity — left-aligned text, sitting in the gap between logo and center columns ---------- */
+        /* ---------- entity — left-aligned text, sitting directly below the logo/wordmark ---------- */
         .pbf-entity {
-          grid-column: 2;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -151,10 +156,7 @@ const PBFooter: React.FC = () => {
           line-height: 1.6;
           text-align: left;
           color: var(--pb-muted);
-          justify-self: center;
-          /* drop the entity block down so it sits vertically centered against the brand column */
-          align-self: center;
-          padding-top: 18px;
+          margin-top: 20px;
         }
         .pbf-entity span { display: block; }
 
@@ -230,11 +232,11 @@ const PBFooter: React.FC = () => {
         @media (max-width: 1024px) {
           .pbf-grid {
             grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto;
             gap: 40px 48px;
             padding: 60px 7% 0;
           }
-          .pbf-brand { grid-column: 1; grid-row: 1; }
-          .pbf-entity { grid-column: 1; grid-row: 2; align-items: center; text-align: center; }
+          .pbf-brand-block { grid-column: 1; grid-row: 1 / span 2; }
           .pbf-links { grid-column: 2; grid-row: 1; }
           .pbf-hub {
             grid-column: 2;
@@ -255,9 +257,10 @@ const PBFooter: React.FC = () => {
             justify-items: center;
             text-align: center;
           }
-          .pbf-brand { grid-column: 1; grid-row: auto; }
+          .pbf-brand-block { grid-column: 1; grid-row: auto; align-items: center; }
+          .pbf-brand { align-items: center; text-align: center; }
           .pbf-mark { width: 64px; height: 64px; }
-          .pbf-entity { grid-column: 1; grid-row: auto; align-items: center; text-align: center; }
+          .pbf-entity { align-items: center; text-align: center; }
           .pbf-links {
             grid-column: 1;
             grid-row: auto;
