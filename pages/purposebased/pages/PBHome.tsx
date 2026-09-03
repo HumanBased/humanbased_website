@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased home. Premium wellness/purpose landing page.
 // Cormorant for headings, DM Sans for body/labels. Colour tokens live in the
@@ -55,8 +56,51 @@ const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
+const PB_URL = 'https://humanbased.org/purposebased';
+const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+
 const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
+
+  usePageSeo({
+    title: 'PurposeBased | Discover Your Purpose Through Self-Knowledge',
+    description:
+      'Understand your patterns with 9 frameworks. Find your direction. Live with intention. Free self-knowledge app with AI guidance.',
+    canonical: PB_URL,
+    og: {
+      title: 'PurposeBased | Purpose & Self-Knowledge App',
+      description: 'Understand your patterns. Find your direction. Live with intention.',
+      image: PB_OG_IMAGE,
+      url: PB_URL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'PurposeBased | Purpose & Self-Knowledge App',
+      description: 'Understand your patterns. Find your direction.',
+      image: PB_OG_IMAGE,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'PurposeBased',
+      description:
+        'A self-knowledge app that reads your patterns across 9 frameworks, helps you find your direction, and supports living with intention through daily alignment and AI guidance.',
+      url: PB_URL,
+      image: PB_OG_IMAGE,
+      applicationCategory: 'LifestyleApplication',
+      operatingSystem: 'Web, iOS, Android',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'HumanBased',
+        url: 'https://humanbased.org',
+      },
+    },
+  });
 
   useEffect(() => {
     const root = rootRef.current;
