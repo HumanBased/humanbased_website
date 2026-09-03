@@ -109,14 +109,15 @@ const PBFooter: React.FC = () => {
           margin: 0 auto;
           padding: 72px 40px 0;
           display: grid;
-          /* brand · flexible middle (entity centres here) · link columns · hub */
-          grid-template-columns: auto 1fr auto auto;
+          /* brand · flexible gap (entity sits here) · centered link columns · flexible gap · hub */
+          grid-template-columns: auto 1fr auto 1fr auto;
           align-items: start;
           gap: 56px;
         }
 
         /* ---------- left / brand ---------- */
         .pbf-brand {
+          grid-column: 1;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -137,26 +138,28 @@ const PBFooter: React.FC = () => {
           margin: 12px 0 0;
         }
 
-        /* ---------- centre / entity (equidistant from logo and link columns) ---------- */
+        /* ---------- entity — left-aligned text, sitting in the gap between logo and center columns ---------- */
         .pbf-entity {
+          grid-column: 2;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           gap: 6px;
           font-size: 13px;
           line-height: 1.6;
-          text-align: center;
+          text-align: left;
           color: var(--pb-muted);
           padding-top: 6px;
           justify-self: center;
         }
         .pbf-entity span { display: block; }
 
-        /* ---------- center / link columns ---------- */
+        /* ---------- center / link columns (Product + Company, equal spacing between) ---------- */
         .pbf-links {
+          grid-column: 3;
           display: grid;
           grid-template-columns: repeat(2, auto);
-          gap: 32px 48px;
+          gap: 32px 64px;
           justify-content: center;
         }
         .pbf-col {
@@ -183,7 +186,8 @@ const PBFooter: React.FC = () => {
 
         /* ---------- far right / social hub ---------- */
         .pbf-hub {
-          justify-self: start;
+          grid-column: 5;
+          justify-self: end;
           align-self: start;
         }
 
