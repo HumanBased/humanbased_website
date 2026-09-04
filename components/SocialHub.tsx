@@ -31,7 +31,7 @@ const SocialHub: React.FC<SocialHubProps> = ({ size = 'full' }) => {
     },
     { 
       name: "Facebook",
-      url: "https://www.facebook.com/Humanbased_org",
+      url: "https://www.facebook.com/Humanbased.org",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.403h2.94v-2.511c0-2.91 1.777-4.493 4.373-4.493 1.243 0 2.312.092 2.623.134v3.042h-1.801c-1.412 0-1.685.671-1.685 1.655v2.173h3.368l-.438 3.403h-2.93v8.74h6.101c.732 0 1.325-.593 1.325-1.325v-21.351c0-.732-.593-1.325-1.325-1.325z"/>
