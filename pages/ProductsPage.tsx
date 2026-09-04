@@ -178,13 +178,13 @@ const ProductsPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/85 via-[#050509]/25 to-[#050509]/50" />
                   <div className="absolute inset-0 flex items-start justify-center pt-8 sm:pt-10 lg:pt-12">
                     <div className="mx-6 sm:mx-8 lg:mx-10 max-w-[80%] text-center space-y-1.5">
-                      <p className="text-[8px] sm:text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-400/90 [text-shadow:0_2px_6px_rgba(0,0,0,0.4)]">
+                      <p className="text-[8px] sm:text-[9px] lg:text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-400/90 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
                         Welcome, Seeker
                       </p>
-                      <p className="font-serif text-base sm:text-xl lg:text-2xl font-medium leading-tight text-white [text-shadow:0_2px_6px_rgba(0,0,0,0.4)]">
+                      <p className="font-serif text-base sm:text-xl lg:text-2xl font-medium leading-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
                         You are about to find
                       </p>
-                      <p className="font-serif italic text-xl sm:text-2xl lg:text-3xl font-medium leading-tight text-amber-400 [filter:drop-shadow(0_1px_2px_rgba(196,168,90,0.25))]">
+                      <p className="font-serif italic text-xl sm:text-2xl lg:text-3xl font-medium leading-tight text-amber-400 mt-4 sm:mt-6 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)] [filter:drop-shadow(0_1px_2px_rgba(196,168,90,0.25))]">
                         your purpose
                       </p>
                     </div>
