@@ -160,12 +160,12 @@ const PBLibrary: React.FC = () => {
         /* ---------- grid ---------- */
         .pbl-grid {
           display: grid;
-          gap: 28px;
-          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          grid-template-columns: 1fr;
         }
         .pbl-card {
-          display: flex;
-          flex-direction: row;
+          display: grid;
+          grid-template-columns: 40% 60%;
           text-decoration: none;
           color: inherit;
           background: linear-gradient(135deg, rgba(255,200,100,0.07), rgba(255,255,255,0.025));
@@ -174,17 +174,15 @@ const PBLibrary: React.FC = () => {
           overflow: hidden;
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
-          transition: border-color 0.3s ease, transform 0.3s ease;
+          transition: border-color 0.3s ease;
         }
         .pbl-card:hover {
           border-color: rgba(255,200,100,0.5);
-          transform: translateY(-4px);
         }
         .pbl-card-img {
           position: relative;
-          width: 50%;
-          flex-shrink: 0;
-          aspect-ratio: 1 / 1;
+          width: 100%;
+          aspect-ratio: 16 / 9;
           background: rgba(255,255,255,0.03);
           display: flex;
           align-items: center;
@@ -206,11 +204,11 @@ const PBLibrary: React.FC = () => {
           padding: 0 16px;
         }
         .pbl-card-text {
-          flex: 1;
           min-width: 0;
-          padding: 28px 28px 26px;
+          padding: 2rem;
           display: flex;
           flex-direction: column;
+          justify-content: center;
         }
         .pbl-card-title {
           font-family: 'Cormorant', Georgia, serif;
@@ -244,10 +242,10 @@ const PBLibrary: React.FC = () => {
         @media (max-width: 768px) {
           .pbl { padding: 48px 5% 64px; }
           .pbl-hero { margin-bottom: 40px; }
-          .pbl-grid { grid-template-columns: 1fr; gap: 18px; }
-          .pbl-card { flex-direction: column; }
+          .pbl-grid { gap: 18px; }
+          .pbl-card { grid-template-columns: 1fr; }
           .pbl-card-img { width: 100%; aspect-ratio: 16 / 9; }
-          .pbl-card-text { padding: 20px 20px 22px; }
+          .pbl-card-text { padding: 20px 20px 22px; justify-content: flex-start; }
           .pbl-card-body { -webkit-line-clamp: 2; }
           .pbl-card-link { margin-top: 1rem; }
         }
