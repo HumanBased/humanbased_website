@@ -156,7 +156,7 @@ const PBFooter: React.FC = () => {
           line-height: 1.6;
           text-align: left;
           color: var(--pb-muted);
-          margin-top: 20px;
+          margin-top: 16px;
         }
         .pbf-entity span { display: block; }
 
