@@ -5,6 +5,7 @@ import PBFooter from './PBFooter';
 import PBHome from './pages/PBHome';
 import PBStory from './pages/PBStory';
 import PBLibrary from './pages/PBLibrary';
+import PBTraditionDetail from './pages/PBTraditionDetail';
 import PBPartners from './pages/PBPartners';
 import PBSeeHowItWorks from './pages/PBSeeHowItWorks';
 import PBFormspreeThankYou from './pages/PBFormspreeThankYou';
@@ -13,6 +14,7 @@ export type PBPage =
   | 'home'
   | 'story'
   | 'library'
+  | 'tradition-detail'
   | 'partners'
   | 'how-it-works'
   | 'receivedapplication';
@@ -21,6 +23,7 @@ const PAGES: Record<PBPage, React.FC> = {
   home: PBHome,
   story: PBStory,
   library: PBLibrary,
+  'tradition-detail': PBTraditionDetail,
   partners: PBPartners,
   'how-it-works': PBSeeHowItWorks,
   receivedapplication: PBFormspreeThankYou,

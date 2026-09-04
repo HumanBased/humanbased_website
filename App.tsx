@@ -66,6 +66,10 @@ const AppRoutes = () => {
       <Route path="/purposebased/story" element={<PurposeBased page="story" />} />
       <Route path="/purposebased/how-it-works" element={<PurposeBased page="how-it-works" />} />
       <Route path="/purposebased/library" element={<PurposeBased page="library" />} />
+      <Route
+        path="/purposebased/library/:tradition"
+        element={<PurposeBased page="tradition-detail" />}
+      />
       <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
       <Route
         path="/purposebased/receivedapplication"
