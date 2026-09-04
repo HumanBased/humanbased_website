@@ -63,19 +63,19 @@ const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
 
   usePageSeo({
-    title: 'PurposeBased | Discover Your Purpose Through Self-Knowledge',
+    title: "PurposeBased | Become Who You're Meant To Be",
     description:
       'Understand your patterns with 9 frameworks. Find your direction. Live with intention. Free self-knowledge app with AI guidance.',
     canonical: PB_URL,
     og: {
-      title: 'PurposeBased | Purpose & Self-Knowledge App',
+      title: "PurposeBased | Become Who You're Meant To Be",
       description: 'Understand your patterns. Find your direction. Live with intention.',
       image: PB_OG_IMAGE,
       url: PB_URL,
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'PurposeBased | Purpose & Self-Knowledge App',
+      title: "PurposeBased | Become Who You're Meant To Be",
       description: 'Understand your patterns. Find your direction.',
       image: PB_OG_IMAGE,
     },
