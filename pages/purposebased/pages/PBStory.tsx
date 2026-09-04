@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased — Our Story.
 // Artful, modular mission narrative: highlighted lines carry the weight,
@@ -11,7 +12,40 @@ const STATS: { num: string; label: string; source: string }[] = [
   { num: '85%+', label: 'People who believe in finding deeper purpose', source: 'Lifeway Research, 2025' },
 ];
 
+const PB_URL = 'https://humanbased.org/purposebased';
+const STORY_URL = 'https://humanbased.org/purposebased/story';
+const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+
 const PBStory: React.FC = () => {
+  usePageSeo({
+    title: 'PurposeBased | Our Story | Purpose-Driven Social Enterprise',
+    description:
+      'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
+    canonical: STORY_URL,
+    og: {
+      title: 'PurposeBased | Our Story | Purpose-Driven Social Enterprise',
+      description:
+        'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
+      image: PB_OG_IMAGE,
+      url: STORY_URL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'PurposeBased | Our Story',
+      description:
+        'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
+      image: PB_OG_IMAGE,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'PurposeBased', item: PB_URL },
+        { '@type': 'ListItem', position: 2, name: 'Our Story', item: STORY_URL },
+      ],
+    },
+  });
+
   return (
     <article className="pbs">
       {/* ============ HERO ============ */}

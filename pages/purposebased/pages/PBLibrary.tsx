@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased — The Library.
 // Six traditions that shaped human meaning. Premium glass cards with a top
@@ -42,7 +43,40 @@ const TRADITIONS: { title: string; copy: string; img?: string }[] = [
   },
 ];
 
+const PB_URL = 'https://humanbased.org/purposebased';
+const LIBRARY_URL = 'https://humanbased.org/purposebased/library';
+const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+
 const PBLibrary: React.FC = () => {
+  usePageSeo({
+    title: 'PurposeBased | 7 Traditions of Purpose',
+    description:
+      'Explore 7 philosophical and spiritual traditions — Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy — that inform your purpose blueprint.',
+    canonical: LIBRARY_URL,
+    og: {
+      title: 'PurposeBased | 7 Traditions of Purpose',
+      description:
+        'Explore 7 philosophical and spiritual traditions — Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy — that inform your purpose blueprint.',
+      image: PB_OG_IMAGE,
+      url: LIBRARY_URL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'PurposeBased | 7 Traditions of Purpose',
+      description:
+        'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint.',
+      image: PB_OG_IMAGE,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'PurposeBased', item: PB_URL },
+        { '@type': 'ListItem', position: 2, name: 'The Library', item: LIBRARY_URL },
+      ],
+    },
+  });
+
   return (
     <section className="pbl">
       {/* ============ HERO ============ */}

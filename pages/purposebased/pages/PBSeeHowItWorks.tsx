@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased — See How It Works.
 // Three phases, one journey. Horizontal flow on desktop with connecting
@@ -30,7 +31,39 @@ const PHASES: { n: string; title: string; body: string; img?: string; note: stri
   },
 ];
 
+const PB_URL = 'https://humanbased.org/purposebased';
+const HOW_IT_WORKS_URL = 'https://humanbased.org/purposebased/how-it-works';
+const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+
 const PBSeeHowItWorks: React.FC = () => {
+  usePageSeo({
+    title: 'PurposeBased | How It Works',
+    description:
+      'Know yourself through 9 frameworks. Find your direction. Live with intention. See how PurposeBased guides your purpose journey in three phases.',
+    canonical: HOW_IT_WORKS_URL,
+    og: {
+      title: 'PurposeBased | How It Works',
+      description:
+        'Know yourself through 9 frameworks. Find your direction. Live with intention. See how PurposeBased guides your purpose journey in three phases.',
+      image: PB_OG_IMAGE,
+      url: HOW_IT_WORKS_URL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'PurposeBased | How It Works',
+      description: 'See how PurposeBased guides your purpose journey in three phases.',
+      image: PB_OG_IMAGE,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'PurposeBased', item: PB_URL },
+        { '@type': 'ListItem', position: 2, name: 'How It Works', item: HOW_IT_WORKS_URL },
+      ],
+    },
+  });
+
   return (
     <div className="pbw">
       {/* ============ HERO ============ */}
