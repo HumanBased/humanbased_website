@@ -5,36 +5,41 @@ import { usePageSeo } from '../../../hooks/usePageSeo';
 // Cormorant for headings, DM Sans for body/labels. Colour tokens live in the
 // scoped <style> block below as CSS custom properties on .pbh.
 
-const FEATURES: { n: string; title: string; body: string }[] = [
+const FEATURES: { n: string; title: string; body: string; img: string }[] = [
   {
     n: '01',
     title: 'Know Thyself',
     body:
       'Your full analysis across nine frameworks, written as one reading. Not nine separate reports, one portrait of who you are.',
+    img: '/images/features/know-thyself.png',
   },
   {
     n: '02',
     title: 'Purpose Guide',
     body:
       'A conversation that already holds your blueprint. Ask about a decision and get an answer grounded in your own structure, not generic advice.',
+    img: '/images/features/guide.png',
   },
   {
     n: '03',
     title: 'Know Where You Stand',
     body:
       'Daily alignment against the current sky. Short, specific, and tied to what you are actually working on right now.',
+    img: '/images/features/know-where-you-stand.png',
   },
   {
     n: '04',
     title: 'My People',
     body:
       'The people who matter, read alongside you. Understand the dynamic instead of guessing at it.',
+    img: '/images/features/my-people.png',
   },
   {
     n: '05',
     title: 'Odyssey',
     body:
       'Your life as a long arc. Chapters, turning points, and the direction the whole thing is pointing.',
+    img: '/images/features/odyssey.png',
   },
 ];
 
@@ -295,7 +300,9 @@ const PBHome: React.FC = () => {
                     {f.body}
                   </p>
                 </div>
-                <div className="pbh-fimg">[ image ]</div>
+                <div className="pbh-fimg">
+                  <img src={f.img} alt={f.title} className="pbh-fimg-el" />
+                </div>
               </div>
             ))}
           </div>
@@ -983,21 +990,23 @@ const PBHome: React.FC = () => {
           margin: 10px 0 12px;
         }
         .pbh-fimg {
+          position: relative;
           height: 220px;
           border-radius: 10px;
           border: 1px solid var(--pb-border-gold);
           background: var(--pb-surface);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: 'Cormorant', Georgia, serif;
-          font-size: 15px;
-          color: var(--pb-muted);
-          transition: all 0.3s ease;
+          overflow: hidden;
+          transition: border-color 0.3s ease;
         }
         .pbh-fimg:hover {
           border-color: rgba(255,200,100,0.4);
-          background: rgba(255,255,255,0.055);
+        }
+        .pbh-fimg-el {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         /* ---------- pricing ---------- */
