@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
-// PurposeBased — See How It Works.
+// PurposeBased - See How It Works.
 // Three phases, one journey. Horizontal flow on desktop with connecting
 // arrows, stacked on mobile. Image slots are placeholders for real app
 // screenshots. Same gold / navy / glass tokens as the other PB pages.

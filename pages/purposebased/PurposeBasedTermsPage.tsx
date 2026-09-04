@@ -94,7 +94,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 Cancelling or downgrading your subscription
               </h3>
               <p className="text-sm md:text-base text-white/60 leading-relaxed mb-3">
-                Cancelling stops future billing — it does not return money already
+                Cancelling stops future billing. It does not return money already
                 paid for the current period.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60 mb-6">
@@ -151,7 +151,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 Given the free access provided before any payment (the 24-hour
                 trial and the ability to explore the app before paying), and the
                 real, immediate cost of generating a Full Analysis, the €1.99
-                trial fee is non-refundable once the analysis has been generated —
+                trial fee is non-refundable once the analysis has been generated,
                 except under the genuine technical fault case above.
               </p>
 
@@ -177,8 +177,8 @@ const PurposeBasedTermsPage: React.FC = () => {
                 Promo codes are non-transferable and can only be applied toward a
                 paid subscription purchase. If a full refund is granted under the
                 technical fault case on a subscription purchased with a promo
-                code, you are refunded the amount you actually paid — the
-                discounted price — not the full undiscounted price.
+                code, you are refunded the amount you actually paid, the
+                discounted price, not the full undiscounted price.
               </p>
             </div>
 

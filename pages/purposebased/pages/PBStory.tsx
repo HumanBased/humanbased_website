@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
-// PurposeBased — Our Story.
+// PurposeBased - Our Story.
 // Artful, modular mission narrative: highlighted lines carry the weight,
 // supporting copy stays quiet, generous whitespace between every section.
 // Same gold / navy / glass tokens as the other PB pages.
@@ -246,7 +246,7 @@ const PBStory: React.FC = () => {
           text-shadow: 0 0 28px rgba(255,200,100,0.28);
         }
 
-        /* ---------- how we work — one phrase per line ---------- */
+        /* ---------- how we work - one phrase per line ---------- */
         .pbs-work {
           display: flex;
           flex-direction: column;

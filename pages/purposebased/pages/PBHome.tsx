@@ -10,7 +10,7 @@ const FEATURES: { n: string; title: string; body: string }[] = [
     n: '01',
     title: 'Know Thyself',
     body:
-      'Your full analysis across nine frameworks, written as one reading. Not nine separate reports — one portrait of who you are.',
+      'Your full analysis across nine frameworks, written as one reading. Not nine separate reports, one portrait of who you are.',
   },
   {
     n: '02',
@@ -45,7 +45,7 @@ const PILLARS: { title: string; body: string }[] = [
 ];
 
 // Checkout destinations.
-// Seeker is free, so it goes straight to signup in the app — not to Stripe.
+// Seeker is free, so it goes straight to signup in the app, not to Stripe.
 // The two paid tiers point at Stripe Payment Links; swap the placeholders for
 // the real https://buy.stripe.com/... URLs from the Stripe dashboard.
 const APP_SIGNUP_URL = 'https://www.purposebased.app';
@@ -130,7 +130,7 @@ const PBHome: React.FC = () => {
 
   return (
     <div className="pbh" ref={rootRef}>
-      {/* ============ SECTION 1 — HERO ============ */}
+      {/* ============ SECTION 1 - HERO ============ */}
       <section id="home" className="pbh-hero">
         <div className="pbh-hero-bg" aria-hidden="true">
           {/* Hero BG: drop a wide landscape/cosmos image at public/images/pb-hero-bg.jpg and set background-image: url('/images/pb-hero-bg.jpg') center/cover no-repeat here, then set opacity 0.15 */}
@@ -190,7 +190,7 @@ const PBHome: React.FC = () => {
         <span className="pbh-chevron" aria-hidden="true" />
       </section>
 
-      {/* ============ SECTION 1B — HOW IT WORKS ============ */}
+      {/* ============ SECTION 1B - HOW IT WORKS ============ */}
       <section id="how-it-works" className="pb-section pbh-how">
         <div className="pbh-wrap">
           <p className="pbh-label">The journey</p>
@@ -238,7 +238,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title pbh-node-title--final">Epic life, on purpose</h3>
               <p className="pbh-node-body">
-                Not a destination. A way of moving through the world — with clarity about who you are
+                Not a destination. A way of moving through the world, with clarity about who you are
                 and what you are here to do.
               </p>
             </div>
@@ -246,7 +246,7 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 2 — PROBLEM ============ */}
+      {/* ============ SECTION 2 - PROBLEM ============ */}
       <section className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">The problem</p>
@@ -262,7 +262,7 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3 — SOLUTION / THREE PILLARS ============ */}
+      {/* ============ SECTION 3 - SOLUTION / THREE PILLARS ============ */}
       <section className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">The solution</p>
@@ -280,7 +280,7 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 4 — FIVE FEATURES ============ */}
+      {/* ============ SECTION 4 - FIVE FEATURES ============ */}
       <section id="features" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Features</p>
@@ -302,7 +302,7 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 5 — PRICING ============ */}
+      {/* ============ SECTION 5 - PRICING ============ */}
       <section id="pricing" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Pricing</p>
@@ -329,7 +329,7 @@ const PBHome: React.FC = () => {
           </div>
 
           <div className="pbh-tiers">
-            {/* Tier 1 — Seeker */}
+            {/* Tier 1 - Seeker */}
             <div className="pbh-tier">
               <h3 className="pbh-tier-name">Seeker</h3>
               <div className="pbh-price">€0</div>
@@ -364,7 +364,7 @@ const PBHome: React.FC = () => {
               </a>
             </div>
 
-            {/* Tier 2 — Based (highlighted) */}
+            {/* Tier 2 - Based (highlighted) */}
             <div className="pbh-tier pbh-tier--featured">
               <span className="pbh-badge pbh-badge--top">Most chosen</span>
               <h3 className="pbh-tier-name">Based</h3>
@@ -401,7 +401,7 @@ const PBHome: React.FC = () => {
               </a>
             </div>
 
-            {/* Tier 3 — Blissed */}
+            {/* Tier 3 - Blissed */}
             <div className="pbh-tier">
               <h3 className="pbh-tier-name">Blissed</h3>
               <div className="pbh-price">
@@ -412,7 +412,7 @@ const PBHome: React.FC = () => {
               <ul className="pbh-list">
                 <li className="pbh-li--gold">
                   5 more framework readings (Enneagram, Hierarchy of Values deep, Gene Keys, Jungian
-                  Type, Holland Code — 9 frameworks total)
+                  Type, Holland Code - 9 frameworks total)
                 </li>
                 <li>Year Ahead (12-month personal reading)</li>
                 <li>Vocational Edge (career/purpose direction)</li>
@@ -433,7 +433,7 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 6 — CLOSING CTA ============ */}
+      {/* ============ SECTION 6 - CLOSING CTA ============ */}
       <section className="pb-section pbh-close">
         <h2 className="pbh-h2 pbh-h2--center">
           The map is already there.
@@ -1100,7 +1100,7 @@ const PBHome: React.FC = () => {
           color: var(--pb-muted);
           margin: 8px 0 0;
         }
-        /* "Everything on X, plus:" heading — larger gold lead-in above the
+        /* "Everything on X, plus:" heading - larger gold lead-in above the
            bullet list, per tier. Bullets themselves stay at .pbh-list size. */
         .pbh-plus-heading {
           font-family: 'Cormorant', Georgia, serif;
@@ -1122,7 +1122,7 @@ const PBHome: React.FC = () => {
           padding: 7px 0;
           border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-        /* Key differentiator for the tier — carries the gold accent. */
+        /* Key differentiator for the tier - carries the gold accent. */
         .pbh-list li.pbh-li--gold {
           color: var(--pb-gold);
           font-weight: 400;

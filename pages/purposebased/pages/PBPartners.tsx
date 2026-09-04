@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // PurposeBased affiliate / partner program sell page.
 // Same design tokens, scroll-reveal, and premium card treatment as PBHome.
-// Scoped under .pbp — Cormorant for headings, DM Sans for body/labels.
+// Scoped under .pbp, Cormorant for headings, DM Sans for body/labels.
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaqodbp';
 
@@ -21,7 +21,7 @@ const ADVANTAGES: { title: string; body: string }[] = [
   {
     title: 'Direct product influence',
     body:
-      'Active partners get a direct line to our product team. Your feedback shapes the roadmap. You are not just promoting the product — you are helping build it.',
+      'Active partners get a direct line to our product team. Your feedback shapes the roadmap. You are not just promoting the product. You are helping build it.',
   },
   {
     title: 'Track record that opens doors',
@@ -31,10 +31,10 @@ const ADVANTAGES: { title: string; body: string }[] = [
 ];
 
 const REWARD_ROWS: { sub: string; rate: string; earn: string }[] = [
-  { sub: '1 — 100 subscribers', rate: '€1.00 / subscriber', earn: 'Up to €100 / mo' },
-  { sub: '101 — 500 subscribers', rate: '€2.00 / subscriber', earn: 'Up to €1,000 / mo' },
-  { sub: '501 — 750 subscribers', rate: '€3.00 / subscriber', earn: 'Up to €2,250 / mo' },
-  { sub: '751 — 1,000 subscribers', rate: '€4.00 / subscriber', earn: 'Up to €4,000 / mo' },
+  { sub: '1-100 subscribers', rate: '€1.00 / subscriber', earn: 'Up to €100 / mo' },
+  { sub: '101-500 subscribers', rate: '€2.00 / subscriber', earn: 'Up to €1,000 / mo' },
+  { sub: '501-750 subscribers', rate: '€3.00 / subscriber', earn: 'Up to €2,250 / mo' },
+  { sub: '751-1,000 subscribers', rate: '€4.00 / subscriber', earn: 'Up to €4,000 / mo' },
   { sub: '1,001+ subscribers', rate: '€5.00 / subscriber', earn: 'Uncapped' },
 ];
 
@@ -47,7 +47,7 @@ const STEPS: { title: string; body: string }[] = [
   {
     title: 'Get your link',
     body:
-      'Once accepted, you receive a unique referral link. Share it anywhere — no code needed, just the link.',
+      'Once accepted, you receive a unique referral link. Share it anywhere, no code needed, just the link.',
   },
   {
     title: 'Share honestly',
@@ -84,11 +84,11 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'What do I need to disclose to my audience?',
-    a: 'You must clearly disclose the partnership on all promotional content — #ad, #partner, or a clear verbal disclosure. This is both a legal requirement and the right thing to do.',
+    a: 'You must clearly disclose the partnership on all promotional content: #ad, #partner, or a clear verbal disclosure. This is both a legal requirement and the right thing to do.',
   },
   {
     q: 'Can I see my earnings independently?',
-    a: 'Yes. All conversions and earnings are tracked directly through Stripe. You have a direct view into your referral data — active subscribers, monthly earnings, subscription status — in real time. You never have to take our word for it.',
+    a: 'Yes. All conversions and earnings are tracked directly through Stripe. You have a direct view into your referral data: active subscribers, monthly earnings, subscription status, in real time. You never have to take our word for it.',
   },
 ];
 
@@ -181,7 +181,7 @@ const PBPartners: React.FC = () => {
 
   return (
     <div className="pbp" ref={rootRef}>
-      {/* ============ SECTION 1 — HERO ============ */}
+      {/* ============ SECTION 1 - HERO ============ */}
       <section className="pb-section pbp-sec pbp-hero">
         <div className="pbp-wrap">
           <p className="pbp-label">Partner program</p>
@@ -193,7 +193,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 2 — WHY THIS IS DIFFERENT ============ */}
+      {/* ============ SECTION 2 - WHY THIS IS DIFFERENT ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">A better offer</p>
@@ -202,7 +202,7 @@ const PBPartners: React.FC = () => {
           <p className="pbp-body" style={{ maxWidth: 640 }}>
             Most social media affiliate programs ask you to push low-value products, forced
             sponsorships, or temporary hype. Partnering with PurposeBased gives you a tangible, deeply
-            useful tool to recommend — backed by a social enterprise that reinvests profits into
+            useful tool to recommend, backed by a social enterprise that reinvests profits into
             society.
           </p>
           <p className="pbp-body" style={{ maxWidth: 640, marginTop: 18 }}>
@@ -222,7 +222,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3 — THE REWARD STRUCTURE ============ */}
+      {/* ============ SECTION 3 - THE REWARD STRUCTURE ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">The reward structure</p>
@@ -266,7 +266,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3A — HOW IT WORKS ============ */}
+      {/* ============ SECTION 3A - HOW IT WORKS ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">How it works</p>
@@ -285,7 +285,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3B — STRIPE TRANSPARENCY ============ */}
+      {/* ============ SECTION 3B - STRIPE TRANSPARENCY ============ */}
       <section className="pb-section pbp-stripe">
         <div className="pbp-stripe-grid">
           <div className="pbp-stripe-text">
@@ -293,16 +293,16 @@ const PBPartners: React.FC = () => {
             <h2 className="pbp-stripe-h2">Your earnings. Verified by Stripe, not by us.</h2>
             <hr className="pbp-rule" />
             <p className="pbp-body" style={{ maxWidth: 560 }}>
-              Every referral is tracked directly through Stripe — the same payment infrastructure used
+              Every referral is tracked directly through Stripe, the same payment infrastructure used
               by millions of businesses worldwide. When someone subscribes using your link, Stripe logs
               it immediately and permanently.
             </p>
             <p className="pbp-body" style={{ maxWidth: 560, marginTop: 18 }}>
               You get a direct view into your referral data. Active subscribers, monthly earnings,
-              subscription status — all in real time. You never have to take our word for it.
+              subscription status, all in real time. You never have to take our word for it.
             </p>
             <p className="pbp-stripe-aside">
-              We chose this model deliberately. Transparency is not a feature — it is the foundation of
+              We chose this model deliberately. Transparency is not a feature. It is the foundation of
               a partnership worth having.
             </p>
           </div>
@@ -310,15 +310,15 @@ const PBPartners: React.FC = () => {
           <div className="pbp-stripe-card">
             <p className="pbp-stripe-card-label">Your Stripe Dashboard</p>
             <div className="pbp-stripe-stat">
-              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-num">-</span>
               <span className="pbp-stripe-stat-label">Active subscribers</span>
             </div>
             <div className="pbp-stripe-stat">
-              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-num">-</span>
               <span className="pbp-stripe-stat-label">Monthly earnings</span>
             </div>
             <div className="pbp-stripe-stat">
-              <span className="pbp-stripe-num">—</span>
+              <span className="pbp-stripe-num">-</span>
               <span className="pbp-stripe-stat-label">This month&rsquo;s referrals</span>
             </div>
             <p className="pbp-stripe-live">Live data. Updated by Stripe in real time.</p>
@@ -327,7 +327,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 4 — TWO TRACKS ============ */}
+      {/* ============ SECTION 4 - TWO TRACKS ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">Two ways to partner</p>
@@ -339,7 +339,7 @@ const PBPartners: React.FC = () => {
               <span className="pbp-track-label">FOR CREATORS, COACHES &amp; INFLUENCERS</span>
               <h3 className="pbp-track-title">Share what you discover.</h3>
               <p className="pbp-body" style={{ fontSize: 15 }}>
-                You have an audience that trusts you. PurposeBased gives you something real to share —
+                You have an audience that trusts you. PurposeBased gives you something real to share:
                 a tool you have actually used, that does something meaningful. Share your experience,
                 your unique referral link, and earn recurring revenue every month.
               </p>
@@ -380,7 +380,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 4A — WHAT WE ASK ============ */}
+      {/* ============ SECTION 4A - WHAT WE ASK ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">What we ask</p>
@@ -395,7 +395,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 4B — FAQ ============ */}
+      {/* ============ SECTION 4B - FAQ ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <p className="pbp-label">Common questions</p>
@@ -426,7 +426,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 4C — BUILDING TOGETHER ============ */}
+      {/* ============ SECTION 4C - BUILDING TOGETHER ============ */}
       <section className="pb-section pbp-sec">
         <div className="pbp-wrap">
           <div className="pbp-together">
@@ -447,7 +447,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 5 — APPLICATION FORM ============ */}
+      {/* ============ SECTION 5 - APPLICATION FORM ============ */}
       <section className="pb-section pbp-sec" ref={formRef}>
         <div className="pbp-wrap pbp-form-wrap">
           <p className="pbp-label">Apply to partner</p>
@@ -554,11 +554,11 @@ const PBPartners: React.FC = () => {
                 id="pbp-audience"
                 name="audience_size"
                 className="pbp-input"
-                defaultValue="10,000 — 100,000"
+                defaultValue="10,000-100,000"
               >
                 <option>Under 1,000</option>
-                <option>1,000 — 10,000</option>
-                <option>10,000 — 100,000</option>
+                <option>1,000-10,000</option>
+                <option>10,000-100,000</option>
                 <option>Over 100,000</option>
                 <option>Not applicable</option>
               </select>
@@ -585,7 +585,7 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 6 — CLOSING ============ */}
+      {/* ============ SECTION 6 - CLOSING ============ */}
       <section className="pb-section pbp-close">
         <h2 className="pbp-close-h2">
           The best partners are the ones who actually use our products.

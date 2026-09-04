@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
-// PurposeBased — The Library.
+// PurposeBased - The Library.
 // Seven traditions that shaped human meaning. Big image-left/text-right cards
 // on desktop, image-top/text-below on mobile. Each card opens its own detail page.
 
@@ -25,7 +25,7 @@ export const TRADITIONS: Tradition[] = [
     slug: 'dharma',
     title: 'Dharma',
     copy:
-      "Your sacred duty and purpose in life. From Hindu and Buddhist philosophy: the cosmic law and order, and your role in maintaining it. Dharma isn't imposed—it's discovered through understanding your nature, talents, and the needs of your community.",
+      "Your sacred duty and purpose in life. From Hindu and Buddhist philosophy: the cosmic law and order, and your role in maintaining it. Dharma isn't imposed. It's discovered through understanding your nature, talents, and the needs of your community.",
     img: '/images/library/dharma.png',
   },
   {
@@ -39,7 +39,7 @@ export const TRADITIONS: Tradition[] = [
     slug: 'dao',
     title: 'Dao',
     copy:
-      'The way or path. From Chinese philosophy: the underlying flow of the universe. Your purpose is found by understanding your place within this flow—not by forcing, but by moving with what naturally wants to happen through you.',
+      'The way or path. From Chinese philosophy: the underlying flow of the universe. Your purpose is found by understanding your place within this flow, not by forcing, but by moving with what naturally wants to happen through you.',
     img: '/images/library/dao.png',
   },
   {
@@ -71,12 +71,12 @@ const PBLibrary: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | 7 Traditions of Purpose',
     description:
-      'Explore 7 philosophical and spiritual traditions — Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy — that inform your purpose blueprint.',
+      'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy.',
     canonical: LIBRARY_URL,
     og: {
       title: 'PurposeBased | 7 Traditions of Purpose',
       description:
-        'Explore 7 philosophical and spiritual traditions — Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy — that inform your purpose blueprint.',
+        'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy.',
       image: PB_OG_IMAGE,
       url: LIBRARY_URL,
     },

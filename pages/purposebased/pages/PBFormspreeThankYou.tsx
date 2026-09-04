@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Custom Formspree redirect target for the PB Partner Application.
 // Formspree Settings → Redirect → https://humanbased.org/purposebased/receivedapplication
-// Same design tokens as PBHome / PBPartners — scoped under .pbty.
+// Same design tokens as PBHome / PBPartners, scoped under .pbty.
 const APP_URL = 'https://www.purposebased.app';
 
 const PBFormspreeThankYou: React.FC = () => {

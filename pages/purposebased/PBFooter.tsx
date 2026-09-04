@@ -6,7 +6,7 @@ const PBFooter: React.FC = () => {
   return (
     <footer className="pbf">
       <div className="pbf-grid">
-        {/* ---------- LEFT — brand block: logo + wordmark, with legal entity stacked below ---------- */}
+        {/* ---------- LEFT - brand block: logo + wordmark, with legal entity stacked below ---------- */}
         <div className="pbf-brand-block">
           <div className="pbf-brand">
             <img
@@ -27,7 +27,7 @@ const PBFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* ---------- CENTER / RIGHT — link columns ---------- */}
+        {/* ---------- CENTER / RIGHT - link columns ---------- */}
         <div className="pbf-links">
           <div className="pbf-col">
             <div className="pbf-col-head">Product</div>
@@ -65,7 +65,7 @@ const PBFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* ---------- FAR RIGHT — social media hub (same as HumanBased footer) ---------- */}
+        {/* ---------- FAR RIGHT - social media hub (same as HumanBased footer) ---------- */}
         <div className="pbf-hub">
           <SocialHub size="compact" />
         </div>
@@ -116,7 +116,7 @@ const PBFooter: React.FC = () => {
           gap: 56px;
         }
 
-        /* ---------- left / brand block — logo + wordmark, entity text stacked below as one unit ---------- */
+        /* ---------- left / brand block - logo + wordmark, entity text stacked below as one unit ---------- */
         .pbf-brand-block {
           grid-column: 1;
           display: flex;
@@ -146,7 +146,7 @@ const PBFooter: React.FC = () => {
           margin: 12px 0 0;
         }
 
-        /* ---------- entity — left-aligned text, sitting directly below the logo/wordmark ---------- */
+        /* ---------- entity - left-aligned text, sitting directly below the logo/wordmark ---------- */
         .pbf-entity {
           display: flex;
           flex-direction: column;
@@ -227,7 +227,7 @@ const PBFooter: React.FC = () => {
         }
 
         /* ============================================================
-           TABLET ≤1024px — 2 columns, hub drops under the link columns
+           TABLET ≤1024px - 2 columns, hub drops under the link columns
            ============================================================ */
         @media (max-width: 1024px) {
           .pbf-grid {
@@ -247,7 +247,7 @@ const PBFooter: React.FC = () => {
         }
 
         /* ============================================================
-           MOBILE ≤768px — single centred column
+           MOBILE ≤768px - single centred column
            ============================================================ */
         @media (max-width: 768px) {
           .pbf-grid {

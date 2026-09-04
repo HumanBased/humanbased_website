@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 // Shared backdrop for every PurposeBased page: a clean, homogeneous deep-navy
-// starfield. No nebulae, no coloured patches — just deep space.
+// starfield. No nebulae, no coloured patches, just deep space.
 // Fixed full-page layer behind all content at z-index 0.
 
 const rand = (min: number, max: number): number => Math.random() * (max - min) + min;
