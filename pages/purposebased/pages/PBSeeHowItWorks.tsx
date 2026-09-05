@@ -3,31 +3,46 @@ import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased - See How It Works.
-// Three phases, one journey. Horizontal flow on desktop with connecting
-// arrows, stacked on mobile. Image slots are placeholders for real app
-// screenshots. Same gold / navy / glass tokens as the other PB pages.
+// A five-step journey down a central gold timeline: text and image alternate
+// sides around the line on desktop, stacking into a single centered column on
+// mobile. Image slots fall back to a titled placeholder until the real art
+// lands in /public/images/how-it-works/.
 
-const PHASES: { n: string; title: string; body: string; img?: string; note: string }[] = [
+const STEPS: { n: string; title: string; body: string; img: string }[] = [
   {
-    n: '01',
-    title: 'Know Thyself',
+    n: 'Step 1',
+    title: 'Realization',
     body:
-      'Nine frameworks read together reveal a pattern no single system can see. Your Blueprint emerges. This is your foundation. Not a label. A mirror that reflects what was always there.',
-    note: 'App screenshot: Know Thyself reading',
+      "You sense the power of purpose. Alignment, focus, clarity, there's something more you're meant for. The journey begins with knowing there's more to discover.",
+    img: '/images/how-it-works/step-1-realization.png',
   },
   {
-    n: '02',
-    title: 'Find Your Purpose',
+    n: 'Step 2',
+    title: 'Search',
     body:
-      'Your Blueprint points to something deeper. The Guide helps you read what it is saying about the direction of your life. Not prescriptive. Revelatory. It points. You choose.',
-    note: 'App screenshot: Purpose Questionnaire / Reveal',
+      'You begin looking. Nine frameworks converge to reveal your unique patterns, your blueprint, your direction. The convergence shows what no single system could alone.',
+    img: '/images/how-it-works/step-2-search.png',
   },
   {
-    n: '03',
-    title: 'Epic Life, On Purpose',
+    n: 'Step 3',
+    title: 'Discovery',
     body:
-      'Not a destination. A way of moving through the world with clarity about who you are and what you are here to do. Daily practices. Intentional living. The architecture of an epic life, built by you.',
-    note: 'App screenshot: Path / Daily Clarity screen',
+      "You find it. Your purpose emerges clearly. Not handed to you, but revealed through understanding yourself. The clarity arrives when you're ready to see it.",
+    img: '/images/how-it-works/step-3-discovery.png',
+  },
+  {
+    n: 'Step 4',
+    title: 'Conquest',
+    body:
+      'You pursue it. Day after day, you align your actions with your purpose. You live it intentionally. This is where purpose becomes practice, where knowing becomes doing.',
+    img: '/images/how-it-works/step-4-conquest.png',
+  },
+  {
+    n: 'Step 5',
+    title: 'Tend the Garden',
+    body:
+      'You nurture it. Purpose is never finished. It needs to be watered and tended, deepened over a lifetime. The most important work is the daily care that keeps it alive.',
+    img: '/images/how-it-works/step-5-tend.png',
   },
 ];
 
@@ -39,19 +54,19 @@ const PBSeeHowItWorks: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | How It Works',
     description:
-      'Know yourself through 9 frameworks. Find your direction. Live with intention. See how PurposeBased guides your purpose journey in three phases.',
+      'Realization, search, discovery, conquest, and tending the garden. See how PurposeBased guides your purpose journey across five steps.',
     canonical: HOW_IT_WORKS_URL,
     og: {
       title: 'PurposeBased | How It Works',
       description:
-        'Know yourself through 9 frameworks. Find your direction. Live with intention. See how PurposeBased guides your purpose journey in three phases.',
+        'Realization, search, discovery, conquest, and tending the garden. See how PurposeBased guides your purpose journey across five steps.',
       image: PB_OG_IMAGE,
       url: HOW_IT_WORKS_URL,
     },
     twitter: {
       card: 'summary_large_image',
       title: 'PurposeBased | How It Works',
-      description: 'See how PurposeBased guides your purpose journey in three phases.',
+      description: 'See how PurposeBased guides your purpose journey across five steps.',
       image: PB_OG_IMAGE,
     },
     jsonLd: {
@@ -69,32 +84,31 @@ const PBSeeHowItWorks: React.FC = () => {
       {/* ============ HERO ============ */}
       <header className="pbw-hero">
         <p className="pbw-label">See How It Works</p>
-        <h1 className="pbw-h1">Three phases. One journey.</h1>
+        <h1 className="pbw-h1">Five steps. One journey.</h1>
       </header>
 
-      {/* ============ THREE-PHASE FLOW ============ */}
-      <div className="pbw-flow">
-        {PHASES.map((p, i) => (
-          <React.Fragment key={p.n}>
-            <section className="pbw-phase">
-              <div className="pbw-phase-img">
-                {p.img ? (
-                  <img src={p.img} alt={p.title} className="pbw-phase-img-el" />
-                ) : (
-                  <span className="pbw-phase-img-note">{p.note}</span>
-                )}
-              </div>
-              <span className="pbw-phase-num">{p.n}</span>
-              <h2 className="pbw-phase-title">{p.title}</h2>
-              <p className="pbw-phase-body">{p.body}</p>
-            </section>
-
-            {i < PHASES.length - 1 && (
-              <div className="pbw-arrow" aria-hidden="true">
-                <span className="pbw-arrow-line" />
-              </div>
-            )}
-          </React.Fragment>
+      {/* ============ FIVE-STEP JOURNEY ============ */}
+      <div className="pbw-journey">
+        {STEPS.map((s, i) => (
+          <div key={s.n} className={`pbw-step${i % 2 === 1 ? ' pbw-step--flip' : ''}`}>
+            <div className="pbw-step-text">
+              <span className="pbw-step-num">{s.n}</span>
+              <h2 className="pbw-step-title">{s.title}</h2>
+              <p className="pbw-step-desc">{s.body}</p>
+            </div>
+            <div className="pbw-step-dot" aria-hidden="true" />
+            <div className="pbw-step-img">
+              <span className="pbw-step-img-note">{s.title}</span>
+              <img
+                src={s.img}
+                alt={s.title}
+                className="pbw-step-img-el"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+          </div>
         ))}
       </div>
 
@@ -118,6 +132,7 @@ const PBSeeHowItWorks: React.FC = () => {
           --pb-gold: #ffc864;
           --pb-text: #cadcf0;
           --pb-muted: #7f97b1;
+          --pb-surface: rgba(255,255,255,0.04);
           display: block;
           max-width: 1200px;
           margin: 0 auto;
@@ -129,7 +144,6 @@ const PBSeeHowItWorks: React.FC = () => {
         .pbw-hero { max-width: 820px; margin-bottom: 60px; }
         .pbw-label {
           font-family: 'DM Sans', system-ui, sans-serif;
-          /* 4x the base label size, fluid */
           font-size: clamp(22px, 4.6vw, 44px);
           line-height: 1.15;
           letter-spacing: 3px;
@@ -146,97 +160,115 @@ const PBSeeHowItWorks: React.FC = () => {
           margin: 0;
         }
 
-        /* ---------- flow ---------- */
-        .pbw-flow {
-          display: grid;
-          grid-template-columns: 1fr auto 1fr auto 1fr;
-          gap: 0 20px;
-          align-items: start;
-        }
-        .pbw-phase {
+        /* ---------- journey ---------- */
+        .pbw-journey {
+          position: relative;
           display: flex;
           flex-direction: column;
+          gap: 4rem;
+        }
+        .pbw-journey::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: 12px;
+          bottom: 12px;
+          width: 3px;
+          transform: translateX(-50%);
+          background: var(--pb-gold);
+        }
+
+        .pbw-step {
+          display: grid;
+          grid-template-columns: 1fr 48px 1fr;
+          gap: 2rem;
+          align-items: start;
+        }
+        .pbw-step-text {
+          grid-row: 1;
+          grid-column: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          text-align: right;
+        }
+        .pbw-step--flip .pbw-step-text {
+          grid-column: 3;
           align-items: flex-start;
           text-align: left;
         }
-        .pbw-phase-img {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 4 / 3;
-          border-radius: 14px;
-          border: 1px solid rgba(255,200,100,0.22);
-          background: linear-gradient(135deg, rgba(255,200,100,0.07), rgba(255,255,255,0.025));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          margin-bottom: 22px;
+        .pbw-step-num {
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: var(--pb-gold);
         }
-        .pbw-phase-img-el {
+        .pbw-step-title {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 18px;
+          font-weight: 500;
+          color: #ffffff;
+          margin: 8px 0 10px;
+        }
+        .pbw-step-desc {
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.6;
+          color: var(--pb-text);
+          max-width: 380px;
+          margin: 0;
+        }
+
+        .pbw-step-dot {
+          grid-row: 1;
+          grid-column: 2;
+          justify-self: center;
+          margin-top: 2px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: var(--pb-gold);
+          border: 5px solid #ffffff;
+          box-shadow: 0 0 0 1px rgba(255,200,100,0.35), 0 4px 14px rgba(0,0,0,0.45);
+          position: relative;
+          z-index: 1;
+        }
+
+        .pbw-step-img {
+          grid-row: 1;
+          grid-column: 3;
+          justify-self: start;
+          position: relative;
+          width: 140px;
+          height: 140px;
+          border-radius: 12px;
+          background: var(--pb-surface);
+          overflow: hidden;
+        }
+        .pbw-step--flip .pbw-step-img {
+          grid-column: 1;
+          justify-self: end;
+        }
+        .pbw-step-img-el {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-        .pbw-phase-img-note {
-          font-family: 'Cormorant', Georgia, serif;
-          font-style: italic;
-          font-size: 14px;
-          line-height: 1.5;
-          color: var(--pb-muted);
-          text-align: center;
-          padding: 0 20px;
-        }
-        .pbw-phase-num {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
-          letter-spacing: 3px;
-          color: var(--pb-muted);
-        }
-        .pbw-phase-title {
-          font-family: 'Cormorant', Georgia, serif;
-          font-weight: 400;
-          font-size: 26px;
-          color: #ffffff;
-          margin: 10px 0 12px;
-        }
-        .pbw-phase-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 1.8;
-          color: var(--pb-text);
-          margin: 0;
-        }
-
-        /* ---------- connecting arrow ---------- */
-        .pbw-arrow {
+        .pbw-step-img-note {
+          position: absolute;
+          inset: 0;
           display: flex;
           align-items: center;
           justify-content: center;
-          min-width: 60px;
-          height: 100%;
-          padding-top: 90px;
-        }
-        .pbw-arrow-line {
-          position: relative;
-          width: 100%;
-          min-width: 40px;
-          height: 2px;
-          background: linear-gradient(90deg, rgba(255,200,100,0) 0%, rgba(255,200,100,0.85) 40%, rgba(255,248,220,1) 100%);
-          box-shadow: 0 0 10px rgba(255,216,146,0.7);
-        }
-        .pbw-arrow-line::after {
-          content: '';
-          position: absolute;
-          right: -2px;
-          top: 50%;
-          width: 9px;
-          height: 9px;
-          border-top: 2px solid rgba(255,248,220,1);
-          border-right: 2px solid rgba(255,248,220,1);
-          transform: translateY(-50%) rotate(45deg);
+          padding: 0 12px;
+          font-family: 'Cormorant', Georgia, serif;
+          font-style: italic;
+          font-size: 14px;
+          text-align: center;
+          color: var(--pb-muted);
         }
 
         /* ---------- closing cta ---------- */
@@ -281,35 +313,35 @@ const PBSeeHowItWorks: React.FC = () => {
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
           .pbw { padding: 60px 7% 80px; }
-          .pbw-phase-title { font-size: 24px; }
         }
         @media (max-width: 768px) {
           .pbw { padding: 48px 5% 64px; }
           .pbw-hero { margin-bottom: 44px; }
-          .pbw-flow {
+          .pbw-journey { gap: 2.75rem; }
+          .pbw-journey::before { display: none; }
+          .pbw-step,
+          .pbw-step--flip {
             grid-template-columns: 1fr;
-            gap: 0;
+            gap: 1rem;
+            justify-items: center;
           }
-          .pbw-phase { padding: 8px 0; }
-          .pbw-phase-img { aspect-ratio: 16 / 10; margin-bottom: 18px; }
-          .pbw-arrow {
-            min-width: 0;
-            width: auto;
-            height: auto;
-            padding: 14px 0;
+          .pbw-step-dot { display: none; }
+          .pbw-step-text,
+          .pbw-step--flip .pbw-step-text {
+            grid-row: auto;
+            grid-column: 1;
+            align-items: center;
+            text-align: center;
           }
-          .pbw-arrow-line {
-            width: 2px;
-            min-width: 0;
-            height: 44px;
-            background: linear-gradient(180deg, rgba(255,200,100,0) 0%, rgba(255,200,100,0.85) 40%, rgba(255,248,220,1) 100%);
-          }
-          .pbw-arrow-line::after {
-            right: auto;
-            left: 50%;
-            top: auto;
-            bottom: -2px;
-            transform: translateX(-50%) rotate(135deg);
+          .pbw-step-desc { max-width: none; }
+          .pbw-step-img,
+          .pbw-step--flip .pbw-step-img {
+            grid-row: auto;
+            grid-column: 1;
+            justify-self: stretch;
+            width: 100%;
+            height: 180px;
+            order: -1;
           }
           .pbw-cta { margin-top: 56px; }
         }
