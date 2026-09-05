@@ -178,13 +178,13 @@ const ProductsPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/85 via-[#050509]/25 to-[#050509]/50" />
                   <div className="absolute inset-0 flex items-start justify-center pt-8 sm:pt-10 lg:pt-12">
                     <div className="mx-6 sm:mx-8 lg:mx-10 max-w-[80%] text-center">
-                      <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold uppercase tracking-[0.3em] text-amber-400/90 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
+                      <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-semibold uppercase tracking-[0.3em] text-amber-400/90 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
                         Welcome, Seeker
                       </p>
-                      <p className="mt-1.5 font-serif text-[19px] sm:text-[24px] lg:text-[29px] font-medium leading-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
+                      <p className="mt-1.5 font-serif text-[23px] sm:text-[29px] lg:text-[35px] font-medium leading-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
                         You are about to find
                       </p>
-                      <p className="mt-8 sm:mt-10 lg:mt-12 font-serif italic text-[24px] sm:text-[29px] lg:text-[36px] font-medium leading-tight text-amber-400 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)] [filter:drop-shadow(0_1px_2px_rgba(196,168,90,0.25))]">
+                      <p className="mt-[3.75rem] sm:mt-[4.25rem] lg:mt-[4.75rem] font-serif italic text-[29px] sm:text-[35px] lg:text-[43px] font-medium leading-tight text-amber-400 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)] [filter:drop-shadow(0_1px_2px_rgba(196,168,90,0.25))]">
                         your purpose
                       </p>
                     </div>
