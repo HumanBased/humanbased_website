@@ -3,45 +3,41 @@ import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased - See How It Works.
-// A five-step journey down a hairline gold timeline: text and image alternate
+// A five-step journey down a softly glowing gold timeline with ornamental
+// glassmorphic dots. Each step reads "Name / phrase". Text and image alternate
 // sides around the line on desktop, collapse to a two-column grid on tablet,
 // and stack into a single centered column on mobile. Image slots fall back to
 // a titled placeholder until the real art lands in /public/images/how-it-works/.
 
-const STEPS: { n: string; title: string; body: string; img: string }[] = [
+const STEPS: { n: string; name: string; phrase: string; img: string }[] = [
   {
     n: 'Step 1',
-    title: 'Realization',
-    body:
-      "You sense the power of purpose. Alignment, focus, clarity, there's something more you're meant for. The journey begins with knowing there's more to discover.",
+    name: 'Realization',
+    phrase: 'Awakening to the unique resonance and direction within',
     img: '/images/how-it-works/step-1-realization.png',
   },
   {
     n: 'Step 2',
-    title: 'Search',
-    body:
-      'You begin looking. Nine frameworks converge to reveal your unique patterns, your blueprint, your direction. The convergence shows what no single system could alone.',
+    name: 'Search',
+    phrase: 'Mapping the inner terrain and charting a course',
     img: '/images/how-it-works/step-2-search.png',
   },
   {
     n: 'Step 3',
-    title: 'Discovery',
-    body:
-      "You find it. Your purpose emerges clearly. Not handed to you, but revealed through understanding yourself. The clarity arrives when you're ready to see it.",
+    name: 'Discovery',
+    phrase: 'Cultivating skills and inner resources for expansion',
     img: '/images/how-it-works/step-3-discovery.png',
   },
   {
     n: 'Step 4',
-    title: 'Conquest',
-    body:
-      'You pursue it. Day after day, you align your actions with your purpose. You live it intentionally. This is where purpose becomes practice, where knowing becomes doing.',
+    name: 'Conquest',
+    phrase: 'Moving with aligned intention and deliberate expression',
     img: '/images/how-it-works/step-4-conquest.png',
   },
   {
     n: 'Step 5',
-    title: 'Tend the Garden',
-    body:
-      'You nurture it. Purpose is never finished. It needs to be watered and tended, deepened over a lifetime. The most important work is the daily care that keeps it alive.',
+    name: 'Tend the garden',
+    phrase: 'Embodying wisdom, balance, and purposeful existence',
     img: '/images/how-it-works/step-5-tend.png',
   },
 ];
@@ -93,15 +89,17 @@ const PBSeeHowItWorks: React.FC = () => {
           <div key={s.n} className={`pbw-step${i % 2 === 1 ? ' pbw-step--flip' : ''}`}>
             <div className="pbw-step-text">
               <span className="pbw-step-num">{s.n}</span>
-              <h2 className="pbw-step-title">{s.title}</h2>
-              <p className="pbw-step-desc">{s.body}</p>
+              <h2 className="pbw-step-name">
+                {s.name} <span className="pbw-step-slash">/</span>
+              </h2>
+              <p className="pbw-step-phrase">{s.phrase}</p>
             </div>
             <div className="pbw-step-dot" aria-hidden="true" />
             <div className="pbw-step-img">
-              <span className="pbw-step-img-note">{s.title}</span>
+              <span className="pbw-step-img-note">{s.name}</span>
               <img
                 src={s.img}
-                alt={s.title}
+                alt={s.name}
                 className="pbw-step-img-el"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -177,6 +175,7 @@ const PBSeeHowItWorks: React.FC = () => {
           width: 1px;
           transform: translateX(-50%);
           background: #C4A85A;
+          filter: drop-shadow(0 0 8px rgba(196,168,90,0.3));
         }
 
         .pbw-step {
@@ -205,19 +204,25 @@ const PBSeeHowItWorks: React.FC = () => {
           letter-spacing: 1px;
           color: var(--pb-gold);
         }
-        .pbw-step-title {
+        .pbw-step-name {
           font-family: 'Cormorant', Georgia, serif;
           font-size: 20px;
           font-weight: 500;
-          color: #ffffff;
+          color: #C4A85A;
           margin: 8px 0 10px;
         }
-        .pbw-step-desc {
+        .pbw-step-slash {
+          color: #C4A85A;
+          opacity: 0.7;
+          margin-left: 2px;
+        }
+        .pbw-step-phrase {
+          font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 14px;
           font-weight: 300;
-          line-height: 1.6;
+          line-height: 1.7;
           color: var(--pb-text);
-          max-width: 320px;
+          max-width: 340px;
           margin: 0;
         }
 
@@ -226,13 +231,14 @@ const PBSeeHowItWorks: React.FC = () => {
           grid-column: 2;
           justify-self: center;
           margin-top: 6px;
-          width: 8px;
-          height: 8px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
-          background: rgba(196,168,90,0.15);
-          border: 1px solid #ffffff;
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
+          background: rgba(196,168,90,0.1);
+          border: 1.5px solid #C4A85A;
+          box-shadow: 0 0 12px rgba(196,168,90,0.2), inset 0 0 8px rgba(196,168,90,0.1);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           position: relative;
           z-index: 1;
         }
@@ -245,6 +251,7 @@ const PBSeeHowItWorks: React.FC = () => {
           width: 240px;
           height: 240px;
           border-radius: 16px;
+          border: 1px solid rgba(196,168,90,0.2);
           background: var(--pb-surface);
           overflow: hidden;
         }
@@ -332,7 +339,7 @@ const PBSeeHowItWorks: React.FC = () => {
           .pbw-step--flip .pbw-step-text {
             grid-column: 2;
           }
-          .pbw-step-desc { max-width: none; }
+          .pbw-step-phrase { max-width: none; }
           .pbw-step-img {
             grid-column: 2;
             justify-self: end;
