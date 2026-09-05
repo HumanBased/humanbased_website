@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased - See How It Works.
-// A five-step journey down a central gold timeline: text and image alternate
-// sides around the line on desktop, stacking into a single centered column on
-// mobile. Image slots fall back to a titled placeholder until the real art
-// lands in /public/images/how-it-works/.
+// A five-step journey down a hairline gold timeline: text and image alternate
+// sides around the line on desktop, collapse to a two-column grid on tablet,
+// and stack into a single centered column on mobile. Image slots fall back to
+// a titled placeholder until the real art lands in /public/images/how-it-works/.
 
 const STEPS: { n: string; title: string; body: string; img: string }[] = [
   {
@@ -165,22 +165,23 @@ const PBSeeHowItWorks: React.FC = () => {
           position: relative;
           display: flex;
           flex-direction: column;
-          gap: 3rem;
+          gap: 4rem;
+          padding: 2rem 0;
         }
         .pbw-journey::before {
           content: '';
           position: absolute;
           left: 50%;
-          top: 6px;
-          bottom: 6px;
+          top: 2rem;
+          bottom: 2rem;
           width: 1px;
           transform: translateX(-50%);
-          background: linear-gradient(180deg, #C4A85A 0%, rgba(196,168,90,0.3) 100%);
+          background: #C4A85A;
         }
 
         .pbw-step {
           display: grid;
-          grid-template-columns: 1fr 48px 1fr;
+          grid-template-columns: 2fr 1fr 2fr;
           gap: 2rem;
           align-items: start;
         }
@@ -205,18 +206,18 @@ const PBSeeHowItWorks: React.FC = () => {
           color: var(--pb-gold);
         }
         .pbw-step-title {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 18px;
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 20px;
           font-weight: 500;
           color: #ffffff;
           margin: 8px 0 10px;
         }
         .pbw-step-desc {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 300;
           line-height: 1.6;
           color: var(--pb-text);
-          max-width: 380px;
+          max-width: 320px;
           margin: 0;
         }
 
@@ -225,14 +226,13 @@ const PBSeeHowItWorks: React.FC = () => {
           grid-column: 2;
           justify-self: center;
           margin-top: 6px;
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
-          background: rgba(196,168,90,0.2);
+          background: rgba(196,168,90,0.15);
           border: 1px solid #ffffff;
-          box-shadow: inset 0 0 4px rgba(196,168,90,0.3);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
           position: relative;
           z-index: 1;
         }
@@ -242,9 +242,9 @@ const PBSeeHowItWorks: React.FC = () => {
           grid-column: 3;
           justify-self: start;
           position: relative;
-          width: 140px;
-          height: 140px;
-          border-radius: 12px;
+          width: 240px;
+          height: 240px;
+          border-radius: 16px;
           background: var(--pb-surface);
           overflow: hidden;
         }
@@ -315,19 +315,43 @@ const PBSeeHowItWorks: React.FC = () => {
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
           .pbw { padding: 60px 7% 80px; }
+          .pbw-journey { gap: 3rem; padding: 1rem 0; }
+          .pbw-journey::before { display: none; }
+          .pbw-step-dot { display: none; }
+          .pbw-step,
+          .pbw-step--flip {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+          }
+          .pbw-step-text {
+            grid-column: 1;
+            align-items: flex-start;
+            text-align: left;
+          }
+          .pbw-step--flip .pbw-step-text {
+            grid-column: 2;
+          }
+          .pbw-step-desc { max-width: none; }
+          .pbw-step-img {
+            grid-column: 2;
+            justify-self: end;
+          }
+          .pbw-step--flip .pbw-step-img {
+            grid-column: 1;
+            justify-self: start;
+          }
         }
         @media (max-width: 768px) {
           .pbw { padding: 48px 5% 64px; }
           .pbw-hero { margin-bottom: 44px; }
           .pbw-journey { gap: 2.75rem; }
-          .pbw-journey::before { display: none; }
           .pbw-step,
           .pbw-step--flip {
             grid-template-columns: 1fr;
             gap: 1rem;
             justify-items: center;
           }
-          .pbw-step-dot { display: none; }
           .pbw-step-text,
           .pbw-step--flip .pbw-step-text {
             grid-row: auto;
@@ -335,14 +359,13 @@ const PBSeeHowItWorks: React.FC = () => {
             align-items: center;
             text-align: center;
           }
-          .pbw-step-desc { max-width: none; }
           .pbw-step-img,
           .pbw-step--flip .pbw-step-img {
             grid-row: auto;
             grid-column: 1;
             justify-self: stretch;
             width: 100%;
-            height: 180px;
+            height: 280px;
             order: -1;
           }
           .pbw-cta { margin-top: 56px; }
