@@ -165,17 +165,17 @@ const PBSeeHowItWorks: React.FC = () => {
           position: relative;
           display: flex;
           flex-direction: column;
-          gap: 4rem;
+          gap: 3rem;
         }
         .pbw-journey::before {
           content: '';
           position: absolute;
           left: 50%;
-          top: 12px;
-          bottom: 12px;
-          width: 3px;
+          top: 6px;
+          bottom: 6px;
+          width: 1px;
           transform: translateX(-50%);
-          background: var(--pb-gold);
+          background: linear-gradient(180deg, #C4A85A 0%, rgba(196,168,90,0.3) 100%);
         }
 
         .pbw-step {
@@ -224,13 +224,15 @@ const PBSeeHowItWorks: React.FC = () => {
           grid-row: 1;
           grid-column: 2;
           justify-self: center;
-          margin-top: 2px;
-          width: 24px;
-          height: 24px;
+          margin-top: 6px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
-          background: var(--pb-gold);
-          border: 5px solid #ffffff;
-          box-shadow: 0 0 0 1px rgba(255,200,100,0.35), 0 4px 14px rgba(0,0,0,0.45);
+          background: rgba(196,168,90,0.2);
+          border: 1px solid #ffffff;
+          box-shadow: inset 0 0 4px rgba(196,168,90,0.3);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           position: relative;
           z-index: 1;
         }
