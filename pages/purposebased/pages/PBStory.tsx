@@ -165,6 +165,80 @@ const PBStory: React.FC = () => {
         </section>
       </div>
 
+      {/* ============ YOU CAN DO ANYTHING, JUST NOT EVERYTHING ============ */}
+      <section className="pbs-fw">
+        <p className="pbs-fw-label">The World We Live In</p>
+        <h2 className="pbs-fw-title">You can do anything, just not everything</h2>
+        <p className="pbs-fw-intro">
+          We live in unprecedented times. More possibilities are available to us than ever before.
+          You can learn almost any skill, build a business, connect with people across the world,
+          and create opportunities that were unimaginable a generation ago.
+        </p>
+        <div className="pbs-fw-body">
+          <p>
+            But here’s the paradox: when everything is possible, everything becomes a pull on your
+            attention, your energy, and your time.
+          </p>
+          <p>
+            You could become a designer, a writer, an entrepreneur, a scholar, a healer, a builder.
+            You could travel, create, build wealth, cultivate relationships, master disciplines. The
+            wants are endless, and they scatter like light through a prism.
+          </p>
+          <p>
+            This freedom, paradoxically, can become a source of frustration. Because{' '}
+            <span className="pbs-fw-gold">you cannot do everything at once</span>. And without a
+            clear sense of direction, without choosing a lane of development, you risk pouring your
+            effort in too many directions at once, becoming a master of none, reaching nowhere,
+            scattered across possibilities. The work, then, is not to find the perfect path. It is
+            to choose one. To stay in a lane of focus, even knowing what you’re leaving behind. To
+            understand that depth requires trade-offs.
+          </p>
+          <p>
+            That is where purpose comes in. It is not about infinite possibility. It is about{' '}
+            <span className="pbs-fw-gold">intentional choice</span>.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ PURPOSE? THE WORD IS OVERLOADED ============ */}
+      <section className="pbs-fw pbs-fw--tinted">
+        <p className="pbs-fw-label">On Words and Meaning</p>
+        <h2 className="pbs-fw-title">
+          <span className="pbs-fw-gold">Purpose? The word is overloaded</span>
+        </h2>
+        <p className="pbs-fw-intro">
+          Purpose has become a cliché. It is everywhere, and often used carelessly. It has been
+          stripped of meaning through overuse, or inflated by expectations that no single word can
+          carry.
+        </p>
+        <div className="pbs-fw-body">
+          <p>
+            But the concept it points to, the search for meaning, for a reason to live, for an
+            understanding of why you’re here and what you’re meant to do, that search is ancient and
+            urgent.
+          </p>
+          <p>
+            So we use the word <span className="pbs-fw-gold">purpose</span>, even knowing its
+            limitations, because it is the closest we have to capturing this sentiment. And because
+            it is familiar, people know what we mean when we say it.
+          </p>
+          <p>But understand: when we say purpose, we mean all of this:</p>
+          <ul className="pbs-fw-tags">
+            {['Calling', 'Direction', 'Meaning', 'Fulfillment', 'Mastery', 'Clarity', 'Belonging', 'Alignment', 'Impact'].map(
+              (tag) => (
+                <li key={tag} className="pbs-fw-tag">
+                  {tag}
+                </li>
+              ),
+            )}
+          </ul>
+          <p>
+            The word is a doorway. What matters is not the label, but what lies behind it: an
+            understanding of who you are, and what you are here to do.
+          </p>
+        </div>
+      </section>
+
       <style>{`
         .pbs {
           --pb-gold: #ffc864;
@@ -317,6 +391,76 @@ const PBStory: React.FC = () => {
           margin-top: auto;
         }
 
+        /* ---------- full-width sections ---------- */
+        .pbs-fw {
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          margin-left: -50vw;
+          margin-top: 72px;
+          padding: 4rem 2rem;
+        }
+        .pbs-fw--tinted {
+          background: rgba(12, 31, 60, 0.3);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+        }
+        .pbs-fw-label {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1.2px;
+          color: #C4A85A;
+          margin: 0 0 12px;
+        }
+        .pbs-fw-title {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 1.2;
+          color: #ffffff;
+          margin: 0 0 20px;
+        }
+        .pbs-fw-intro {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 16px;
+          line-height: 1.7;
+          color: var(--pb-text);
+          margin: 0 0 20px;
+        }
+        .pbs-fw-body p {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 14px;
+          line-height: 1.8;
+          color: var(--pb-text);
+          margin: 0 0 16px;
+        }
+        .pbs-fw-body p:last-child { margin-bottom: 0; }
+        .pbs-fw-gold {
+          color: #C4A85A;
+          font-weight: 500;
+        }
+        .pbs-fw-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          list-style: none;
+          margin: 20px 0;
+          padding: 0;
+        }
+        .pbs-fw-tag {
+          display: inline-flex;
+          align-items: center;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 13px;
+          padding: 6px 12px;
+          background: rgba(196,168,90,0.1);
+          border: 1px solid rgba(196,168,90,0.2);
+          border-radius: 20px;
+          color: var(--pb-text);
+        }
+
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
           .pbs { padding: 60px 7% 88px; }
@@ -331,6 +475,8 @@ const PBStory: React.FC = () => {
           .pbs-block-body { font-size: 16px; }
           .pbs-work { gap: 20px; }
           .pbs-stats { grid-template-columns: 1fr; gap: 14px; margin-bottom: 32px; }
+          .pbs-fw { padding: 3rem 1.5rem; margin-top: 52px; }
+          .pbs-fw-title { font-size: 28px; }
         }
       `}</style>
     </article>
