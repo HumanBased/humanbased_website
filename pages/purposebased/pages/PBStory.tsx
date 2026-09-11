@@ -2,15 +2,10 @@ import React from 'react';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased - Our Story.
-// Artful, modular mission narrative: highlighted lines carry the weight,
-// supporting copy stays quiet, generous whitespace between every section.
-// Same gold / navy / glass tokens as the other PB pages.
-
-const STATS: { num: string; label: string; source: string }[] = [
-  { num: '332M', label: 'People living with depression globally', source: 'WHO, 2021' },
-  { num: '58%', label: 'Young adults lacking meaning or purpose', source: 'Harvard GSE, Psychiatry.org' },
-  { num: '85%+', label: 'People who believe in finding deeper purpose', source: 'Lifeway Research, 2025' },
-];
+// Full extended narrative, built from a uniform section pattern: gold label,
+// Cormorant title, DM Sans body. Sections alternate a plain ground and a
+// tinted navy/glass band for rhythm. Same gold / navy / glass tokens as the
+// other PB pages.
 
 const PB_URL = 'https://humanbased.org/purposebased';
 const STORY_URL = 'https://humanbased.org/purposebased/story';
@@ -54,116 +49,44 @@ const PBStory: React.FC = () => {
         <h1 className="pbs-h1">Why we’re building this</h1>
       </header>
 
-      <div className="pbs-narrative">
-        {/* ============ THE CHALLENGE ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">The challenge</h2>
-
-          <div className="pbs-stats">
-            {STATS.map((stat) => (
-              <div key={stat.num} className="pbs-stat">
-                <span className="pbs-stat-num">{stat.num}</span>
-                <span className="pbs-stat-label">{stat.label}</span>
-                <span className="pbs-stat-source">{stat.source}</span>
-              </div>
-            ))}
-          </div>
-
-          <p className="pbs-block-body">
-            Around 332 million people worldwide live with depression.
+      {/* ============ WHY WE'RE BUILDING THIS ============ */}
+      <section className="pbs-fw">
+        <p className="pbs-fw-label">Our Story</p>
+        <h2 className="pbs-fw-title">Why we’re building this</h2>
+        <div className="pbs-fw-body">
+          <p>
+            We wanted to build products that genuinely make a difference in people’s lives. In that
+            process, we kept coming back to one thing that felt missing: purpose. People have been
+            asking what makes life meaningful for thousands of years. Religions, philosophies, and
+            entire cultures have tried to answer it. Yet today, with more freedom, technology, and
+            opportunity than ever, many people still feel lost, disconnected, or unsure about what
+            they are here to do. We are living through a meaning crisis. Mental health challenges
+            are widespread, and many people, especially young people, struggle to find a sense of
+            meaning and direction. Most of us are never really taught how to understand ourselves or
+            figure out what makes our lives meaningful.
           </p>
-          <p className="pbs-highlight">
-            More than half of young adults lack meaning or purpose in their lives.
+          <h3 className="pbs-fw-sub">The Crisis Is Real</h3>
+          <p>
+            332 million people worldwide live with depression. More than half of young adults report
+            lacking meaning or purpose in their lives. Over 85% of people believe in finding a deeper
+            purpose, yet fewer than one in ten actively pursue it. We saw this, and we couldn’t look
+            away.
           </p>
-          <p className="pbs-block-body">We saw this crisis. We could not look away.</p>
-          <p className="pbs-block-source">WHO, 2021 · Harvard Graduate School of Education</p>
-        </section>
-
-        {/* ============ WHY NOW ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">Why now</h2>
-          <p className="pbs-block-body">
-            The technological revolution is here. We asked ourselves:
+          <h3 className="pbs-fw-sub">The Opportunity of Our Time</h3>
+          <p>
+            We are also at a unique moment in history. Technology is opening up more possibilities
+            than ever. We can learn almost anything, work with people anywhere in the world, build
+            things ourselves, and create opportunities that were unimaginable a few decades ago. At
+            the same time, automation is changing the way we work. The old path of simply getting an
+            education, finding a job, and following a career may no longer be enough.
           </p>
-          <p className="pbs-highlight">
-            Where are the conscious, humanist enterprises using this power for humanity’s benefit?
+          <p>
+            So we asked ourselves: where are the tools that help people truly understand themselves
+            and build a life that feels meaningful? We couldn’t find the answer. So we decided to
+            build it ourselves.
           </p>
-          <p className="pbs-block-body">We decided. We will do it ourselves.</p>
-        </section>
-
-        {/* ============ BASED IN COPENHAGEN ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">Based in Copenhagen</h2>
-          <p className="pbs-block-body">
-            We chose Copenhagen because it is where we want to build.
-          </p>
-          <p className="pbs-block-body">
-            It is a place where fair, equal societies are the ground you stand on, not a line in a
-            manifesto. Humans and nature sit at the center of the table here. The work culture leaves
-            room for a life, and the people building things tend to do it with conscience.
-          </p>
-          <p className="pbs-block-body">
-            We wanted to do this work from somewhere we actually believe in. So we came here.
-          </p>
-        </section>
-
-        {/* ============ THE SOCIAL ENTERPRISE MOVEMENT ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">The social enterprise movement</h2>
-          <p className="pbs-block-body">
-            And the social enterprise movement is thriving in Denmark, thanks to pioneers like SED
-            (Social Enterprise Denmark) and countless conscious entrepreneurs who refused to
-            compromise. We stand with them.
-          </p>
-        </section>
-
-        {/* ============ HOW WE WORK ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">How we work</h2>
-          <div className="pbs-work">
-            <p className="pbs-work-line">
-              <span className="g">Impact</span>, not shortcuts.
-            </p>
-            <p className="pbs-work-line">
-              <span className="g">Ultra transparency.</span>
-            </p>
-            <p className="pbs-work-line">
-              Data and attention treated as <span className="g">precious</span>, not commodities.
-            </p>
-            <p className="pbs-work-line">
-              We only build products of <span className="g">high impact</span>, even if they are hard
-              to make, hard to sell, too novel for an unprepared market.
-            </p>
-            <p className="pbs-work-line">
-              We do that work <span className="g">anyway</span>. That service. That mission.
-            </p>
-          </div>
-        </section>
-
-        {/* ============ BEYOND PRODUCT ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">Beyond product</h2>
-          <p className="pbs-block-body">
-            We do not only build responsibly and sustainably, we actively support individuals and
-            organizations on their path of human development.
-          </p>
-          <p className="pbs-block-body">
-            We share what we learn, openly, and we stand with the people doing the slow work of
-            growth.
-          </p>
-          <p className="pbs-block-body">
-            Purpose discovery is our north star. Everything we build is meant to serve it.
-          </p>
-        </section>
-
-        {/* ============ THE HONOUR ============ */}
-        <section className="pbs-block">
-          <h2 className="pbs-block-head">The honour</h2>
-          <p className="pbs-highlight pbs-highlight--close">
-            The time is now. The honour is ours.
-          </p>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* ============ YOU CAN DO ANYTHING, JUST NOT EVERYTHING ============ */}
       <section className="pbs-fw">
@@ -239,6 +162,121 @@ const PBStory: React.FC = () => {
         </div>
       </section>
 
+      {/* ============ WHY PURPOSEBASED MATTERS ============ */}
+      <section className="pbs-fw">
+        <p className="pbs-fw-label">Why PurposeBased Matters</p>
+        <h2 className="pbs-fw-title">The Product We Built</h2>
+        <div className="pbs-fw-body">
+          <p>
+            We went to the source. We studied traditions, frameworks, and practices that have helped
+            people understand themselves and find direction, as well as what already exists in the
+            market and where the gaps are. We built PurposeBased to bring these different
+            perspectives together in one place. It combines ancient traditions such as Astrology,
+            Numerology, Chinese Astrology, and Enneagram with modern frameworks including Human
+            Design, Gene Keys, Jungian Type, Holland Code, and Hierarchy of Values.
+          </p>
+          <p>
+            Together, they help reveal: who you are and what drives you / what naturally energizes
+            you / where your strengths and talents lie / what kind of work may fit you / how you
+            relate to other people and the world.
+          </p>
+          <p>
+            But PurposeBased goes beyond self-knowledge. It includes daily check-ins, journaling and
+            reflection, relationship mapping, and an AI Guide that uses your personal information to
+            offer ongoing, personalized guidance.
+          </p>
+          <p>
+            The result is not just a label or a test score. It is a living picture of who you are,
+            what matters to you, and where you might go next.
+          </p>
+        </div>
+        <h3 className="pbs-fw-sub">The Journey: From Self-Knowledge to Fulfillment</h3>
+        <div className="pbs-fw-body">
+          <p>
+            It starts with understanding yourself: your values, motivations, strengths, experiences,
+            and what gives your life meaning. From there comes alignment: bringing your choices,
+            goals, and everyday life closer to what genuinely matters to you. And from alignment
+            comes fulfillment. Not a perfect life, but a life with more awareness, direction, and
+            purpose.
+          </p>
+          <p className="pbs-fw-emphasis">Know yourself. Align your life. Live your purpose.</p>
+        </div>
+      </section>
+
+      {/* ============ WHY THIS MATTERS NOW ============ */}
+      <section className="pbs-fw pbs-fw--tinted">
+        <p className="pbs-fw-label">Why This Matters Now</p>
+        <h2 className="pbs-fw-title">The Historical Moment</h2>
+        <div className="pbs-fw-body">
+          <p>
+            We live in a time of enormous change. Automation and AI are transforming traditional
+            employment. The old idea of finding one job, keeping it for decades, and retiring is
+            becoming less certain. People increasingly have to think about what they want to do with
+            their time, skills, and lives. Purpose is no longer a luxury. It is becoming a necessity.
+          </p>
+          <p>
+            At the same time, we have more freedom and opportunity than ever. We can learn almost
+            anything, connect with people anywhere, build businesses, develop skills, and create work
+            around what we care about. But the systems around us have not caught up. Education and
+            career guidance often give people little help in understanding themselves or choosing a
+            meaningful direction.
+          </p>
+          <p>
+            People need better tools to navigate this changing world. We cannot wait for institutions
+            to catch up. The time is now.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ OUR BIGGER VISION ============ */}
+      <section className="pbs-fw">
+        <p className="pbs-fw-label">Our Bigger Vision</p>
+        <h2 className="pbs-fw-title">Humanity United</h2>
+        <div className="pbs-fw-body">
+          <p>
+            This is just the beginning. Our goal is to reach people around the world and help them
+            develop a deeper understanding of their purpose and how to live a purpose-based life. We
+            believe in a Humanity United, where people understand not only who they are, but how they
+            can contribute to something larger than themselves.
+          </p>
+          <p>
+            But that unity cannot be imposed. It has to begin with individuals. Each person can
+            discover their own purpose, understand their strengths, and find what they are here to
+            contribute. When millions of people do this and begin to align their lives accordingly,
+            something greater becomes possible.
+          </p>
+          <p>Each of us is a piece of the puzzle. Our work is to help people find theirs.</p>
+        </div>
+      </section>
+
+      {/* ============ THE COMMITMENT ============ */}
+      <section className="pbs-fw pbs-fw--tinted">
+        <p className="pbs-fw-label">The Commitment</p>
+        <h2 className="pbs-fw-title">Why We Do This</h2>
+        <div className="pbs-fw-body">
+          <p>
+            We are not here to maximize engagement, create dependence, or profit from people’s
+            confusion. We are here because purpose matters. It shapes how we spend our time, how we
+            treat others, and the kind of world we create.
+          </p>
+          <p>
+            People deserve clarity. They deserve tools that genuinely help them understand
+            themselves. This moment matters. Technology is changing society quickly, and the choices
+            we make now will shape what comes next.
+          </p>
+          <p>
+            We can do better. We can build technology that supports human growth rather than
+            exploiting attention. So we are building. And we will keep improving until everyone has a
+            chance to better understand their purpose and learn how to live it.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ THE HONOUR ============ */}
+      <section className="pbs-honour">
+        <p className="pbs-honour-text">The time is now. The honour is ours.</p>
+      </section>
+
       <style>{`
         .pbs {
           --pb-gold: #ffc864;
@@ -272,134 +310,12 @@ const PBStory: React.FC = () => {
           margin: 0;
         }
 
-        /* ---------- modular narrative ---------- */
-        .pbs-narrative {
-          display: flex;
-          flex-direction: column;
-          gap: 72px;
-        }
-        .pbs-block-head {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          color: var(--pb-gold);
-          margin: 0 0 22px;
-        }
-        .pbs-block-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 17px;
-          font-weight: 300;
-          line-height: 1.85;
-          color: var(--pb-text);
-          max-width: 620px;
-          margin: 0 0 18px;
-        }
-        .pbs-block-body:last-child { margin-bottom: 0; }
-        .pbs-block-source {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 12px;
-          font-style: italic;
-          letter-spacing: 0.5px;
-          color: var(--pb-muted);
-          margin: 18px 0 0;
-        }
-
-        /* ---------- highlighted lines ---------- */
-        .pbs-highlight {
-          font-family: 'Cormorant', Georgia, serif;
-          font-weight: 300;
-          font-size: clamp(25px, 3.8vw, 40px);
-          line-height: 1.28;
-          color: var(--pb-gold);
-          max-width: 780px;
-          margin: 26px 0;
-        }
-        .pbs-highlight--close {
-          margin: 0;
-          text-shadow: 0 0 28px rgba(255,200,100,0.28);
-        }
-
-        /* ---------- how we work - one phrase per line ---------- */
-        .pbs-work {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-          max-width: 780px;
-        }
-        .pbs-work-line {
-          font-family: 'Cormorant', Georgia, serif;
-          font-weight: 300;
-          font-size: clamp(19px, 2.5vw, 27px);
-          line-height: 1.4;
-          color: #f3e9d6;
-          margin: 0;
-          padding-left: 20px;
-          border-left: 2px solid rgba(255,200,100,0.4);
-        }
-        .pbs-work-line .g {
-          color: var(--pb-gold);
-          font-style: italic;
-        }
-        @media (min-width: 769px) {
-          .pbs-work-line:nth-child(even) {
-            align-self: flex-end;
-            text-align: right;
-            padding-left: 0;
-            padding-right: 20px;
-            border-left: 0;
-            border-right: 2px solid rgba(255,200,100,0.4);
-          }
-        }
-
-        /* ---------- stats grid ---------- */
-        .pbs-stats {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-          margin: 0 0 40px;
-        }
-        .pbs-stat {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          border: 1px solid rgba(255,200,100,0.22);
-          border-radius: 14px;
-          padding: 30px 26px;
-          background: linear-gradient(135deg, rgba(255,200,100,0.08), rgba(255,255,255,0.03));
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-        }
-        .pbs-stat-num {
-          font-family: 'Cormorant', Georgia, serif;
-          font-size: 44px;
-          line-height: 1;
-          color: var(--pb-gold);
-        }
-        .pbs-stat-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 1.6;
-          color: var(--pb-text);
-        }
-        .pbs-stat-source {
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 11px;
-          font-style: italic;
-          color: var(--pb-muted);
-          margin-top: auto;
-        }
-
-        /* ---------- full-width sections ---------- */
+        /* ---------- uniform content sections ---------- */
         .pbs-fw {
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          margin-left: -50vw;
-          margin-top: 72px;
           padding: 4rem 2rem;
+          margin-top: 72px;
         }
+        .pbs-fw:first-of-type { margin-top: 0; }
         .pbs-fw--tinted {
           background: rgba(12, 31, 60, 0.3);
           backdrop-filter: blur(4px);
@@ -422,6 +338,14 @@ const PBStory: React.FC = () => {
           color: #ffffff;
           margin: 0 0 20px;
         }
+        .pbs-fw-sub {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 1.3;
+          color: #ffffff;
+          margin: 32px 0 14px;
+        }
         .pbs-fw-intro {
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 16px;
@@ -437,6 +361,14 @@ const PBStory: React.FC = () => {
           margin: 0 0 16px;
         }
         .pbs-fw-body p:last-child { margin-bottom: 0; }
+        .pbs-fw-emphasis {
+          font-family: 'Cormorant', Georgia, serif !important;
+          font-size: 20px !important;
+          font-weight: 500;
+          line-height: 1.5 !important;
+          color: #C4A85A !important;
+          margin-top: 8px !important;
+        }
         .pbs-fw-gold {
           color: #C4A85A;
           font-weight: 500;
@@ -461,22 +393,32 @@ const PBStory: React.FC = () => {
           color: var(--pb-text);
         }
 
+        /* ---------- closing honour ---------- */
+        .pbs-honour {
+          padding: 4rem 2rem;
+          margin-top: 72px;
+          text-align: center;
+        }
+        .pbs-honour-text {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: clamp(28px, 4vw, 44px);
+          line-height: 1.3;
+          color: var(--pb-gold);
+          text-shadow: 0 0 28px rgba(255,200,100,0.28);
+          margin: 0;
+        }
+
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
           .pbs { padding: 60px 7% 88px; }
-          .pbs-narrative { gap: 60px; }
-          .pbs-stat { padding: 24px 20px; }
-          .pbs-stat-num { font-size: 38px; }
         }
         @media (max-width: 768px) {
           .pbs { padding: 48px 5% 72px; }
           .pbs-hero { margin-bottom: 48px; }
-          .pbs-narrative { gap: 52px; }
-          .pbs-block-body { font-size: 16px; }
-          .pbs-work { gap: 20px; }
-          .pbs-stats { grid-template-columns: 1fr; gap: 14px; margin-bottom: 32px; }
-          .pbs-fw { padding: 3rem 1.5rem; margin-top: 52px; }
+          .pbs-fw, .pbs-honour { padding: 3rem 1.5rem; margin-top: 52px; }
           .pbs-fw-title { font-size: 28px; }
+          .pbs-fw-sub { font-size: 20px; }
         }
       `}</style>
     </article>
