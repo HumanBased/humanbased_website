@@ -6,8 +6,9 @@ import { usePageSeo } from '../../../hooks/usePageSeo';
 // A five-step journey down a softly glowing gold timeline with ornamental
 // glassmorphic dots. Each step reads "Name / phrase". Text and image alternate
 // sides around the line on desktop, collapse to a two-column grid on tablet,
-// and stack into a single centered column on mobile. Image slots fall back to
-// a titled placeholder until the real art lands in /public/images/how-it-works/.
+// and stack into a single centered column on mobile. Art lives in
+// /public/images/how-it-works/; the titled note behind each image is a
+// fallback shown only if an image fails to load.
 
 const STEPS: { n: string; name: string; phrase: string; img: string }[] = [
   {
