@@ -249,8 +249,8 @@ const PBSeeHowItWorks: React.FC = () => {
           grid-column: 3;
           justify-self: start;
           position: relative;
-          width: 240px;
-          height: 240px;
+          width: 288px;
+          height: 288px;
           border-radius: 16px;
           border: 1px solid rgba(196,168,90,0.2);
           background: var(--pb-surface);
@@ -373,7 +373,7 @@ const PBSeeHowItWorks: React.FC = () => {
             grid-column: 1;
             justify-self: stretch;
             width: 100%;
-            height: 280px;
+            height: 336px;
             order: -1;
           }
           .pbw-cta { margin-top: 56px; }
