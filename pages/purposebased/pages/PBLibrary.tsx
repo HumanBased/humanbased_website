@@ -54,12 +54,14 @@ export const TRADITIONS: Tradition[] = [
     title: 'Magnum Opus',
     copy:
       "Your 'Great Work.' From classical and alchemical tradition: the fullest expression of your creative, intellectual, and life capacity. Not simply a career milestone or résumé builder, but the defining work you bring into the world. It is the long-term channeling of your core energy into something meaningful that can outlast you.",
+    img: '/images/library/magnumopus.png',
   },
   {
     slug: 'logotherapy',
     title: 'Logotherapy',
     copy:
       "The will to meaning. From Viktor Frankl's existential framework: the search for meaning as a fundamental human drive, beyond pleasure or power. It starts from the idea that life can retain meaning even in difficult circumstances. Purpose is discovered through responsibility, service, relationships, and the challenges we choose to engage with.",
+    img: '/images/library/logotherapy.png',
   },
 ];
 
