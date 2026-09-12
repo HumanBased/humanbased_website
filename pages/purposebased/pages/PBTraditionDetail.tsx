@@ -72,7 +72,9 @@ const PBTraditionDetail: React.FC = () => {
         }
 
         .pbtd-content {
-          max-width: 640px;
+          /* Wide enough to let the 650px card (plus its side padding) breathe;
+             body copy rides along at a still-comfortable measure. */
+          max-width: 720px;
           margin: 0 auto;
           padding: 72px 2rem 96px;
         }
@@ -89,7 +91,7 @@ const PBTraditionDetail: React.FC = () => {
         .pbtd-card {
           position: relative;
           width: 100%;
-          max-width: 500px;
+          max-width: 650px;
           aspect-ratio: 16 / 9;
           margin: 0 auto 28px;
           border-radius: 12px;
