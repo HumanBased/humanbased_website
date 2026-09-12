@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased affiliate / partner program sell page.
 // Same design tokens, scroll-reveal, and premium card treatment as PBHome.
 // Scoped under .pbp, Cormorant for headings, DM Sans for body/labels.
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaqodbp';
+
+const PB_URL = 'https://humanbased.org/purposebased';
+const PARTNERS_URL = 'https://humanbased.org/purposebased/partners';
+const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
 
 const ADVANTAGES: { title: string; body: string }[] = [
   {
@@ -134,6 +139,35 @@ const ORG_LIST = [
 ];
 
 const PBPartners: React.FC = () => {
+  usePageSeo({
+    title: 'PurposeBased | Partner Program',
+    description:
+      'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe, with real product influence and support.',
+    canonical: PARTNERS_URL,
+    og: {
+      title: 'PurposeBased | Partner Program',
+      description:
+        'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe, with real product influence and support.',
+      image: PB_OG_IMAGE,
+      url: PARTNERS_URL,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'PurposeBased | Partner Program',
+      description:
+        'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe.',
+      image: PB_OG_IMAGE,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'PurposeBased', item: PB_URL },
+        { '@type': 'ListItem', position: 2, name: 'Partner Program', item: PARTNERS_URL },
+      ],
+    },
+  });
+
   const rootRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 

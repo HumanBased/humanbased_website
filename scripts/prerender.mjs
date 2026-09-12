@@ -17,6 +17,7 @@ const ROUTES = [
   '/products',
   '/purposebased',
   '/purposebased/story',
+  '/purposebased/how-it-works',
   '/purposebased/library',
   '/purposebased/partners',
   '/apps/basedtalk/privacy',
