@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { usePageTitle } from '../hooks/usePageTitle';
+import { usePageSeo } from '../hooks/usePageSeo';
 
 const ComingSoonCard: React.FC = () => (
   <div className="relative glass rounded-[2.5rem] border-white/5 bg-white/[0.015] overflow-hidden shadow-2xl">
@@ -30,7 +30,12 @@ const ComingSoonCard: React.FC = () => (
 );
 
 const ProductsPage: React.FC = () => {
-  usePageTitle('Our Products, HumanBased');
+  usePageSeo({
+    title: 'Our Products – HumanBased',
+    description:
+      'Explore HumanBased products: BasedTalk, a relational intelligence app available now on Google Play, and PurposeBased, our purpose and self-knowledge app.',
+    canonical: 'https://humanbased.org/products',
+  });
 
   return (
     <div className="flex-grow bg-transparent">

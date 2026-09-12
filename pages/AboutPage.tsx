@@ -1,11 +1,16 @@
 import React from 'react';
-import { usePageTitle } from '../hooks/usePageTitle';
+import { usePageSeo } from '../hooks/usePageSeo';
 import Philosophy from '../components/Philosophy';
 import CapabilitiesGrid from '../components/CapabilitiesGrid';
 import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
-  usePageTitle('About – HumanBased');
+  usePageSeo({
+    title: 'About – HumanBased',
+    description:
+      'HumanBased is a social enterprise built on one conviction: technology should serve humanity. See our mission, philosophy, and human-first approach.',
+    canonical: 'https://humanbased.org/about',
+  });
   return (
     <div className="flex-grow bg-transparent">
       {/* Section 1 – Hero */}

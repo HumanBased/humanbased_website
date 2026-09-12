@@ -20,6 +20,7 @@ const ROUTES = [
   '/purposebased/library',
   '/purposebased/partners',
   '/apps/basedtalk/privacy',
+  '/apps/basedtalk/terms',
   '/apps/basedtalk/delete-account',
   '/apps/basedtalk/delete-data',
   '/apps/purposebased/privacy',

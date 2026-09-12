@@ -1,12 +1,17 @@
 import React from 'react';
-import { usePageTitle } from '../hooks/usePageTitle';
+import { usePageSeo } from '../hooks/usePageSeo';
 import Process from '../components/Process';
 import WhyHumanBased from '../components/WhyHumanBased';
 import OutcomeSafeguards from '../components/OutcomeSafeguards';
 import processHeroImg from '../assets/images/process-hero.webp.png';
 
 const ProcessPage: React.FC = () => {
-  usePageTitle('The Process – HumanBased');
+  usePageSeo({
+    title: 'The Process – HumanBased',
+    description:
+      'Our four-step method, discover, design, build, evolve, keeps clients in control and protects the outcomes that matter: productivity, cost, and satisfaction.',
+    canonical: 'https://humanbased.org/process',
+  });
   return (
     <div className="flex-grow bg-transparent">
       {/* Hero Section */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePageTitle } from '../hooks/usePageTitle';
+import { usePageSeo } from '../hooks/usePageSeo';
 import Reveal from '../components/Reveal';
 import impactProductivityImg from '../assets/images/services-impact-productivity.webp.png';
 import impactCostImg from '../assets/images/services-impact-cost-reduction.webp.png';
@@ -13,7 +13,12 @@ import expertMissionImg from '../assets/images/services-expert-mission.webp.png'
 import automationImg from '../assets/images/services-automation.webp.png';
 
 const ServicesPage: React.FC = () => {
-  usePageTitle('Services – HumanBased');
+  usePageSeo({
+    title: 'Services – HumanBased',
+    description:
+      'Organizational, social, and personal development services from HumanBased: custom digital platforms that cut costs, boost productivity, and drive real impact.',
+    canonical: 'https://humanbased.org/services',
+  });
 
   return (
     <div className="flex-grow bg-transparent">
