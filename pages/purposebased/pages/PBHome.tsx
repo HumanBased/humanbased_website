@@ -544,9 +544,14 @@ const PBHome: React.FC = () => {
           padding: 48px 10% 56px;
           position: relative;
           overflow: hidden;
-          /* Revealed where .pbh-hero-bg masks to transparent at the bottom
-             edge, so the image fades into the page instead of cutting off. */
-          background-color: var(--pb-navy);
+          /* Revealed where .pbh-hero-bg masks to transparent at the top and
+             bottom edges, so the image fades into the nav above and the page
+             below instead of cutting off either way. The nav itself is
+             transparent, so the true "nav background" is the cosmos backdrop
+             showing through it (PBCosmos.tsx) - #0a1628 near the top of the
+             page, deepening toward #0d1f3c further down, which is what this
+             short top gradient approximates. */
+          background: linear-gradient(180deg, #0a1628 0%, var(--pb-navy) 25%, var(--pb-navy) 100%);
         }
         .pbh-hero-bg {
           position: absolute;
@@ -554,8 +559,8 @@ const PBHome: React.FC = () => {
           z-index: 0;
           pointer-events: none;
           background: url('/images/purposebased/hero-bg.webp') center/cover no-repeat;
-          mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
-          -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%);
         }
         .pbh-hero-scrim {
           position: absolute;
