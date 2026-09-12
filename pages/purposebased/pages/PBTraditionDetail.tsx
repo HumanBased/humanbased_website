@@ -44,22 +44,21 @@ const PBTraditionDetail: React.FC = () => {
 
   return (
     <section className="pbtd">
-      <div className="pbtd-hero">
-        {entry.img ? (
-          <img src={entry.img} alt={entry.title} className="pbtd-hero-img" />
-        ) : (
-          <div className="pbtd-hero-placeholder" />
-        )}
-        <div className="pbtd-hero-overlay" />
-        <div className="pbtd-hero-title-wrap">
-          <h1 className="pbtd-hero-title">{entry.title}</h1>
-        </div>
-      </div>
-
       <div className="pbtd-content">
+        <h1 className="pbtd-title">{entry.title}</h1>
+
+        <div className="pbtd-card">
+          {entry.img ? (
+            <img src={entry.img} alt={entry.title} className="pbtd-card-img" />
+          ) : (
+            <div className="pbtd-card-placeholder" />
+          )}
+        </div>
+
         <Link to="/purposebased/library" className="pbtd-back">
           ← Back to Library
         </Link>
+
         <p className="pbtd-body">{entry.copy}</p>
       </div>
 
@@ -72,50 +71,47 @@ const PBTraditionDetail: React.FC = () => {
           font-family: 'DM Sans', system-ui, sans-serif;
         }
 
-        .pbtd-hero {
+        .pbtd-content {
+          max-width: 640px;
+          margin: 0 auto;
+          padding: 72px 2rem 96px;
+        }
+        .pbtd-title {
+          font-family: 'Cormorant', Georgia, serif;
+          font-weight: 300;
+          font-size: clamp(28px, 4vw, 40px);
+          line-height: 1.15;
+          color: #ffffff;
+          margin: 0 0 28px;
+        }
+
+        /* Compact framed artwork - same card treatment as the library grid. */
+        .pbtd-card {
           position: relative;
           width: 100%;
+          max-width: 500px;
           aspect-ratio: 16 / 9;
+          margin: 0 auto 28px;
+          border-radius: 12px;
+          border: 0.5px solid rgba(255,200,100,0.22);
+          background: linear-gradient(135deg, rgba(255,200,100,0.07), rgba(255,255,255,0.025));
           overflow: hidden;
-          background: rgba(255,255,255,0.03);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
         }
-        .pbtd-hero-img {
+        .pbtd-card-img {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-        .pbtd-hero-placeholder {
+        .pbtd-card-placeholder {
           position: absolute;
           inset: 0;
           background: linear-gradient(135deg, rgba(255,200,100,0.12), rgba(10,22,40,0.6));
         }
-        .pbtd-hero-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to top, rgba(8,18,32,0.85) 0%, rgba(8,18,32,0.15) 55%, transparent 100%);
-        }
-        .pbtd-hero-title-wrap {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          padding: 8% 6%;
-        }
-        .pbtd-hero-title {
-          font-family: 'Cormorant', Georgia, serif;
-          font-weight: 300;
-          font-size: clamp(36px, 6vw, 72px);
-          line-height: 1.1;
-          color: #ffffff;
-          margin: 0;
-        }
 
-        .pbtd-content {
-          max-width: 640px;
-          margin: 0 auto;
-          padding: 2rem;
-        }
         .pbtd-back {
           display: inline-block;
           font-size: 13px;
@@ -125,14 +121,16 @@ const PBTraditionDetail: React.FC = () => {
         }
         .pbtd-back:hover { opacity: 0.8; }
         .pbtd-body {
-          font-size: 16px;
-          line-height: 1.7;
+          font-size: 20px;
+          line-height: 1.75;
           color: var(--pb-text);
           margin: 0;
         }
 
         @media (max-width: 768px) {
-          .pbtd-content { padding: 1.5rem 1.25rem 2.5rem; }
+          .pbtd-content { padding: 48px 1.25rem 64px; }
+          .pbtd-card { max-width: 100%; }
+          .pbtd-body { font-size: 18px; }
         }
       `}</style>
     </section>
