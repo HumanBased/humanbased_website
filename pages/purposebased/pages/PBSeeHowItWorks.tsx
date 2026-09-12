@@ -95,7 +95,6 @@ const PBSeeHowItWorks: React.FC = () => {
               </h2>
               <p className="pbw-step-phrase">{s.phrase}</p>
             </div>
-            <div className="pbw-step-dot" aria-hidden="true" />
             <div className="pbw-step-img">
               <span className="pbw-step-img-note">{s.name}</span>
               <img
@@ -183,7 +182,7 @@ const PBSeeHowItWorks: React.FC = () => {
           display: grid;
           grid-template-columns: 2fr 1fr 2fr;
           gap: 2rem;
-          align-items: start;
+          align-items: center;
         }
         .pbw-step-text {
           grid-row: 1;
@@ -199,15 +198,15 @@ const PBSeeHowItWorks: React.FC = () => {
           text-align: left;
         }
         .pbw-step-num {
-          font-size: 11px;
+          font-size: 14px;
           font-weight: 600;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           color: var(--pb-gold);
         }
         .pbw-step-name {
           font-family: 'Cormorant', Georgia, serif;
-          font-size: 20px;
+          font-size: 34px;
           font-weight: 500;
           color: #C4A85A;
           margin: 8px 0 10px;
@@ -219,29 +218,12 @@ const PBSeeHowItWorks: React.FC = () => {
         }
         .pbw-step-phrase {
           font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: 14px;
+          font-size: 18px;
           font-weight: 300;
           line-height: 1.7;
           color: var(--pb-text);
           max-width: 340px;
           margin: 0;
-        }
-
-        .pbw-step-dot {
-          grid-row: 1;
-          grid-column: 2;
-          justify-self: center;
-          margin-top: 6px;
-          width: 16px;
-          height: 16px;
-          border-radius: 50%;
-          background: rgba(196,168,90,0.1);
-          border: 1.5px solid #C4A85A;
-          box-shadow: 0 0 12px rgba(196,168,90,0.2), inset 0 0 8px rgba(196,168,90,0.1);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          position: relative;
-          z-index: 1;
         }
 
         .pbw-step-img {
@@ -325,7 +307,6 @@ const PBSeeHowItWorks: React.FC = () => {
           .pbw { padding: 60px 7% 80px; }
           .pbw-journey { gap: 3rem; padding: 1rem 0; }
           .pbw-journey::before { display: none; }
-          .pbw-step-dot { display: none; }
           .pbw-step,
           .pbw-step--flip {
             grid-template-columns: 1fr 1fr;
@@ -367,6 +348,7 @@ const PBSeeHowItWorks: React.FC = () => {
             align-items: center;
             text-align: center;
           }
+          .pbw-step-name { font-size: 26px; }
           .pbw-step-img,
           .pbw-step--flip .pbw-step-img {
             grid-row: auto;
