@@ -137,59 +137,37 @@ const PBHome: React.FC = () => {
     <div className="pbh" ref={rootRef}>
       {/* ============ SECTION 1 - HERO ============ */}
       <section id="home" className="pbh-hero">
-        <div className="pbh-hero-bg" aria-hidden="true">
-          {/* Hero BG: drop a wide landscape/cosmos image at public/images/pb-hero-bg.jpg and set background-image: url('/images/pb-hero-bg.jpg') center/cover no-repeat here, then set opacity 0.15 */}
-        </div>
+        <div className="pbh-hero-bg" aria-hidden="true" />
+        <div className="pbh-hero-scrim" aria-hidden="true" />
         <div className="pbh-hero-glow-a" aria-hidden="true" />
         <div className="pbh-hero-glow-b" aria-hidden="true" />
-        <div className="pbh-hero-grid">
-          <div className="pbh-hero-content">
-            <p className="pbh-label">Welcome, Seeker</p>
-            <h1 className="pbh-h1">
-              You are about to find
-              <br />
-              <em>your purpose</em>
-            </h1>
-            <p className="pbh-sub">
-              Today might be the day everything becomes clear. Start the journey towards a life on
-              purpose.
-            </p>
-            <div className="pbh-cta-row">
-              <a
-                href="https://www.purposebased.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pbh-btn pbh-btn--solid"
-              >
-                Start your journey
-              </a>
-              <button
-                type="button"
-                className="pbh-btn pbh-btn--glass"
-                onClick={scrollToId('how-it-works')}
-              >
-                How it works
-              </button>
-            </div>
-          </div>
-
-          <div className="pbh-hero-visual">
-            <div className="pbh-phone-tilt">
-              <div className="pbh-phone">
-                <div className="pbh-phone-screen">
-                  <span className="pbh-phone-fallback">App screenshot</span>
-                  {/* App screenshot lives at /public/images/pb-mockup.png */}
-                  <img
-                    src="/images/pb-mockup.png"
-                    alt="PurposeBased app"
-                    className="pbh-phone-img"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
+        <div className="pbh-hero-content">
+          <p className="pbh-label">Welcome, Seeker</p>
+          <h1 className="pbh-h1">
+            You are about to find
+            <br />
+            <em>your purpose</em>
+          </h1>
+          <p className="pbh-sub">
+            Today might be the day everything becomes clear. Start the journey towards a life on
+            purpose.
+          </p>
+          <div className="pbh-cta-row">
+            <a
+              href="https://www.purposebased.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pbh-btn pbh-btn--solid"
+            >
+              Start your journey
+            </a>
+            <button
+              type="button"
+              className="pbh-btn pbh-btn--glass"
+              onClick={scrollToId('how-it-works')}
+            >
+              How it works
+            </button>
           </div>
         </div>
         <span className="pbh-chevron" aria-hidden="true" />
@@ -572,6 +550,14 @@ const PBHome: React.FC = () => {
           inset: 0;
           z-index: 0;
           pointer-events: none;
+          background: url('/images/purposebased/hero-bg.webp') center/cover no-repeat;
+        }
+        .pbh-hero-scrim {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+          background: linear-gradient(100deg, rgba(6,12,26,0.7) 0%, rgba(6,12,26,0.42) 40%, rgba(6,12,26,0.08) 70%);
         }
         .pbh-hero-glow-a,
         .pbh-hero-glow-b {
@@ -586,70 +572,19 @@ const PBHome: React.FC = () => {
         .pbh-hero-glow-b {
           background: radial-gradient(ellipse 40% 30% at 50% 35%, rgba(255,200,100,0.06) 0%, transparent 60%);
         }
-        .pbh-hero-grid {
+        .pbh-hero-content {
           position: relative;
           z-index: 2;
-          width: 100%;
-          display: grid;
-          grid-template-columns: 55fr 45fr;
-          gap: 40px;
-          align-items: center;
-        }
-        .pbh-hero-content {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
+          max-width: 600px;
         }
-        .pbh-hero-visual {
-          display: flex;
-          justify-content: flex-start;
-          margin-left: -16px;
-          perspective: 1200px;
-        }
-        .pbh-phone-tilt {
-          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .pbh-phone-tilt:hover {
-          transform: rotateX(-8deg) rotateY(-12deg) rotateZ(2deg);
-        }
-        .pbh-phone {
-          width: 336px;
-          background: #0a0f1e;
-          border-radius: 36px;
-          padding: 12px;
-          border: 1px solid rgba(255,200,100,0.15);
-          box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
-          animation: pb-float-tilt 6s ease-in-out infinite;
-        }
-        @keyframes pb-float-tilt {
-          0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
-          50% { transform: translateY(-12px) rotateX(-4deg) rotateY(-6deg); }
-        }
-        .pbh-phone-screen {
-          position: relative;
-          border-radius: 28px;
-          overflow: hidden;
-          aspect-ratio: 9 / 19;
-          background: #0d1f3c;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .pbh-phone-fallback {
-          font-family: 'Cormorant', Georgia, serif;
-          font-style: italic;
-          font-size: 18px;
-          color: var(--pb-muted);
-          text-align: center;
-          padding: 0 20px;
-        }
-        .pbh-phone-img {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .pbh-hero-content .pbh-label,
+        .pbh-hero-content .pbh-h1,
+        .pbh-hero-content .pbh-sub {
+          text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
         .pbh-chevron {
           position: absolute;
@@ -1139,9 +1074,9 @@ const PBHome: React.FC = () => {
 
         /* ============================================================
            RESPONSIVE
-           Desktop 1024px+ : 80px 10%  · hero 55/45 · pillars 3 cols
-           Tablet  ≤1024px : 60px 7%   · hero 50/50 · pillars 2 cols
-           Mobile  ≤768px  : 48px 5%   · hero stacked · single column
+           Desktop 1024px+ : 80px 10%  · hero text left third · pillars 3 cols
+           Tablet  ≤1024px : 60px 7%   · hero text left third · pillars 2 cols
+           Mobile  ≤768px  : 48px 5%   · hero stacked/centered · single column
            ============================================================ */
 
         /* ---------- tablet ---------- */
@@ -1152,8 +1087,6 @@ const PBHome: React.FC = () => {
           .pbh-close { padding: 56px 7% 60px; }
           .pbh-how { padding: 56px 7% 60px; }
           .pbh-hero { padding: 40px 7% 56px; }
-          .pbh-hero-grid { grid-template-columns: 50fr 50fr; gap: 32px; }
-          .pbh-phone { width: 256px; }
           .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
           .pbh-frow { gap: 36px; }
           .pbh-journey {
@@ -1198,12 +1131,9 @@ const PBHome: React.FC = () => {
           .pbh-close { padding: 48px 5%; }
           .pbh-how { padding: 48px 5%; }
           .pbh-hero { padding: 32px 5% 48px; }
-          .pbh-hero-grid { grid-template-columns: 1fr; gap: 36px; }
-          .pbh-hero-content { align-items: center; text-align: center; }
-          .pbh-hero-visual { justify-content: center; margin-left: 0; }
+          .pbh-hero-content { align-items: center; text-align: center; max-width: none; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
-          .pbh-phone { width: 208px; }
           .pbh-pillars { grid-template-columns: 1fr; }
           .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,
@@ -1223,7 +1153,6 @@ const PBHome: React.FC = () => {
           .pbh-h1 { font-size: 26px; }
           .pbh-h2 { font-size: 28px; }
           .pbh-body { font-size: 15px; }
-          .pbh-phone { width: 176px; }
           .pbh-price { font-size: 36px; }
           .pbh-price-was { font-size: 22px; }
           .pbh-cta-row { flex-direction: column; align-self: stretch; }
