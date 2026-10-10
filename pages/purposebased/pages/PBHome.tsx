@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 
 // PurposeBased home. Premium wellness/purpose landing page.
@@ -47,6 +48,112 @@ const PILLARS: { title: string; body: string }[] = [
   { title: 'Depth', body: 'A full convergence reading, not one horoscope in isolation.' },
   { title: 'Direction', body: 'A guide that knows your blueprint and speaks from it.' },
   { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
+];
+
+// App screenshots for the "What a reading looks like" section. `src` stays null
+// until the WebP exists in public/images/purposebased/ (the source PNGs were not in
+// the repo); a null src renders a clearly labelled placeholder, not a broken image.
+// Both frames share one aspect ratio so the phones always match.
+const SHOT_WIDTH = 390;
+const SHOT_HEIGHT = 844;
+const READING_SHOTS: { src: string | null; alt: string; placeholder: string }[] = [
+  {
+    src: null, // '/images/purposebased/app-reading.webp'
+    alt: 'The reading screen in the PurposeBased app, showing your main pattern written for you.',
+    placeholder: 'Reading screen',
+  },
+  {
+    src: null, // '/images/purposebased/app-vision.webp'
+    alt: 'The vision screen in the PurposeBased app.',
+    placeholder: 'Vision screen',
+  },
+];
+
+// Every statement below is lifted from a published page (privacy, delete-account, Story).
+const DATA_POINTS: { title: string; body: string }[] = [
+  {
+    title: 'Privacy by default',
+    body: 'Built to minimize data collection and maximize your privacy from day one.',
+  },
+  {
+    title: 'Delete anytime',
+    body: 'Delete your account in the app and your personal data is permanently removed within 30 days.',
+  },
+  {
+    title: 'No engagement games',
+    body: 'We are not here to maximize engagement or profit from confusion.',
+  },
+];
+
+const PRIVACY_PATH = '/apps/purposebased/privacy';
+const DELETE_ACCOUNT_PATH = '/apps/purposebased/delete-account';
+const STORY_PATH = '/purposebased/story';
+
+const FAQ: { q: string; a: React.ReactNode }[] = [
+  {
+    q: 'Is it free?',
+    a: (
+      <p>
+        Yes. PurposeBased has a free tier, so you can start without paying. The plans above show
+        what each tier includes.
+      </p>
+    ),
+  },
+  {
+    q: 'What do I need to start?',
+    a: (
+      <p>
+        An account, your date, time and place of birth, and a few questions during onboarding.
+        Your birth details are used to calculate your astrological and numerological placements.
+      </p>
+    ),
+  },
+  {
+    q: 'Is it only astrology?',
+    a: (
+      <p>
+        No. Astrology is one lens among several. PurposeBased combines ancient traditions such as
+        Numerology and Chinese Astrology with modern frameworks such as Hierarchy of Values, and
+        reads them together as one pattern.
+      </p>
+    ),
+  },
+  {
+    q: 'How is my data used, and can I delete it?',
+    a: (
+      <>
+        <p>
+          Your birth data and answers are used only to generate your reading and your Guide
+          conversations. We do not sell, rent or share your personal data for advertising,
+          marketing or model training.
+        </p>
+        <p>
+          You can delete your account in the app, under Settings, then Delete Account. Your
+          personal data is permanently removed within 30 days. Read the{' '}
+          <Link to={PRIVACY_PATH}>privacy policy</Link> or the{' '}
+          <Link to={DELETE_ACCOUNT_PATH}>delete account page</Link>.
+        </p>
+      </>
+    ),
+  },
+  {
+    q: 'Can I cancel?',
+    a: (
+      <p>
+        Yes, anytime. Go to Settings, then Manage Subscription. You keep access until the end of
+        your current billing period and will not be charged again after that.
+      </p>
+    ),
+  },
+  {
+    q: 'What is the Guide?',
+    a: (
+      <p>
+        A conversation that already holds your blueprint. Ask about a decision and get an answer
+        grounded in your own structure, not generic advice.
+      </p>
+    ),
+  },
 ];
 
 // Checkout destinations.
@@ -169,8 +276,49 @@ const PBHome: React.FC = () => {
               How it works
             </button>
           </div>
+          <p className="pbh-hero-note">
+            Free to start · Delete your data anytime · Built in Copenhagen, where people are at the
+            center
+          </p>
         </div>
         <span className="pbh-chevron" aria-hidden="true" />
+      </section>
+
+      {/* ============ SECTION 1A - WHAT A READING LOOKS LIKE ============ */}
+      <section id="reading" className="pb-section pbh-sec pbh-reading" aria-labelledby="reading-h">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Example reading</p>
+          <h2 className="pbh-h2" id="reading-h">
+            What a <em>reading</em> looks like
+          </h2>
+          <p className="pbh-body pbh-reading-line">
+            A real screen from the app: your main pattern, written for you.
+          </p>
+          <div className="pbh-phones">
+            {READING_SHOTS.map((shot) => (
+              <div key={shot.placeholder} className="pbh-phone">
+                <div className="pbh-phone-screen">
+                  {shot.src ? (
+                    <img
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={SHOT_WIDTH}
+                      height={SHOT_HEIGHT}
+                      loading="lazy"
+                      decoding="async"
+                      className="pbh-phone-img"
+                    />
+                  ) : (
+                    <div className="pbh-phone-ph" role="img" aria-label={`Placeholder: ${shot.alt}`}>
+                      <span>{shot.placeholder}</span>
+                      <span className="pbh-phone-ph-note">Screenshot coming soon</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ============ SECTION 1B - HOW IT WORKS ============ */}
@@ -189,7 +337,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title">Know Thyself</h3>
               <p className="pbh-node-body">
-                A full convergence reading reveals a pattern no single system can see. This is your
+                A full convergence reading reveals the pattern no single system can see: your
                 blueprint.
               </p>
             </div>
@@ -205,8 +353,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title">Find Your Purpose</h3>
               <p className="pbh-node-body">
-                Your blueprint points to something. The Guide helps you read what it is saying about
-                the direction of your life.
+                The Guide helps you read what your blueprint says about the direction of your life.
               </p>
             </div>
 
@@ -221,8 +368,8 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title pbh-node-title--final">Epic life, on purpose</h3>
               <p className="pbh-node-body">
-                Not a destination. A way of moving through the world, with clarity about who you are
-                and what you are here to do.
+                A way of moving through the world with clarity about who you are and what you are
+                here to do.
               </p>
             </div>
           </div>
@@ -237,11 +384,18 @@ const PBHome: React.FC = () => {
             Most will spend more time doing grocery lists than <em>planning for life.</em>
           </h2>
           <hr className="pbh-rule" />
-          <p className="pbh-body" style={{ maxWidth: 620 }}>
-            Career here. Relationships there. Money somewhere else. Each part gets attention in
-            isolation, and the pattern connecting them stays invisible. Purpose is not a feeling you
-            wait for. It is a structure you can read.
-          </p>
+          <div className="pbh-problem">
+            <p className="pbh-body" style={{ maxWidth: 620 }}>
+              Career here. Relationships there. Money somewhere else. Each part gets attention in
+              isolation, and the pattern connecting them stays invisible. Purpose is not a feeling
+              you wait for. It is a structure you can read.
+            </p>
+            <div className="pbh-stat">
+              <span className="pbh-stat-num">58%</span>
+              <span className="pbh-stat-label">Young adults lacking meaning or purpose</span>
+              <span className="pbh-stat-source">Harvard GSE, Psychiatry.org</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -426,6 +580,47 @@ const PBHome: React.FC = () => {
         </div>
       </section>
 
+      {/* ============ SECTION 5B - YOUR DATA ============ */}
+      <section id="your-data" className="pb-section pbh-sec" aria-labelledby="your-data-h">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Your data</p>
+          <h2 className="pbh-h2" id="your-data-h">
+            Yours to <em>keep,</em> yours to <em>delete.</em>
+          </h2>
+          <div className="pbh-pillars">
+            {DATA_POINTS.map((d) => (
+              <div key={d.title} className="pbh-pill">
+                <h3 className="pbh-pill-title">{d.title}</h3>
+                <p className="pbh-pill-body">{d.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="pbh-links">
+            <Link to={PRIVACY_PATH}>Privacy policy</Link>
+            <span aria-hidden="true">·</span>
+            <Link to={DELETE_ACCOUNT_PATH}>Delete your account</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* ============ SECTION 5C - FAQ ============ */}
+      <section id="faq" className="pb-section pbh-sec" aria-labelledby="faq-h">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Questions</p>
+          <h2 className="pbh-h2" id="faq-h">
+            Good to <em>know</em>
+          </h2>
+          <div className="pbh-faq">
+            {FAQ.map((item) => (
+              <details key={item.q} className="pbh-faq-item">
+                <summary className="pbh-faq-q">{item.q}</summary>
+                <div className="pbh-faq-a">{item.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ============ SECTION 6 - CLOSING CTA ============ */}
       <section className="pb-section pbh-close">
         <h2 className="pbh-h2 pbh-h2--center">
@@ -436,6 +631,11 @@ const PBHome: React.FC = () => {
         <button type="button" className="pbh-btn pbh-btn--solid" style={{ marginTop: 34 }}>
           Start your blueprint
         </button>
+        <p className="pbh-founders">
+          <Link to={STORY_PATH}>
+            Built by the founding team of HumanBased, a social enterprise in Copenhagen.
+          </Link>
+        </p>
       </section>
 
       <style>{`
@@ -645,6 +845,71 @@ const PBHome: React.FC = () => {
           gap: 16px;
           flex-wrap: wrap;
           justify-content: flex-start;
+        }
+
+        .pbh-hero-note {
+          font-size: 12px;
+          line-height: 1.7;
+          color: var(--pb-muted);
+          max-width: 440px;
+          margin: 20px 0 0;
+          text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* ---------- reading (phone frames) ---------- */
+        .pbh-reading-line { max-width: 520px; margin: 18px 0 0; }
+        .pbh-phones {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          margin-top: 44px;
+        }
+        .pbh-phone {
+          width: 240px;
+          padding: 9px;
+          border-radius: 38px;
+          background: linear-gradient(160deg, #1b2c4a, #0a1424);
+          border: 1px solid rgba(255,200,100,0.28);
+          box-shadow: 0 18px 48px rgba(0,0,0,0.5), 0 0 32px rgba(255,200,100,0.07);
+        }
+        .pbh-phone-screen {
+          position: relative;
+          aspect-ratio: 390 / 844;
+          border-radius: 30px;
+          overflow: hidden;
+          background: #0a1424;
+        }
+        .pbh-phone-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+        .pbh-phone-ph {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 16px;
+          text-align: center;
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 22px;
+          color: var(--pb-gold);
+          border: 1px dashed rgba(255,200,100,0.4);
+          border-radius: 30px;
+          background: rgba(255,200,100,0.04);
+        }
+        .pbh-phone-ph-note {
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--pb-muted);
         }
 
         /* ---------- how it works ---------- */
@@ -870,6 +1135,39 @@ const PBHome: React.FC = () => {
         .pbh-wrap { max-width: 1100px; margin: 0 auto; }
         .pbh-close { padding: 56px 10% 80px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 
+        /* ---------- problem stat (mirrors Story page stat cards) ---------- */
+        .pbh-problem {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 48px;
+        }
+        .pbh-stat {
+          flex: 0 0 280px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+          text-align: center;
+          padding: 2.25rem 1.75rem;
+          background: rgba(196,168,90,0.08);
+          border: 1px solid rgba(196,168,90,0.25);
+          border-radius: 20px;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+        }
+        .pbh-stat-num {
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 56px;
+          font-weight: 600;
+          line-height: 1;
+          color: var(--pb-gold);
+        }
+        .pbh-stat-label { font-size: 15px; line-height: 1.5; color: var(--pb-text); }
+        .pbh-stat-source { font-size: 11px; font-style: italic; color: var(--pb-muted); }
+
         /* ---------- pillars ---------- */
         .pbh-pillars {
           display: grid;
@@ -1090,6 +1388,67 @@ const PBHome: React.FC = () => {
           font-weight: 400;
         }
 
+        /* ---------- your data links, faq, founders ---------- */
+        .pbh-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px;
+          margin: 28px 0 0;
+          font-size: 14px;
+          color: var(--pb-muted);
+        }
+        .pbh-links a,
+        .pbh-faq-a a,
+        .pbh-founders a {
+          color: var(--pb-gold);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+        .pbh-links a:hover,
+        .pbh-faq-a a:hover,
+        .pbh-founders a:hover { color: #ffe0a0; }
+        .pbh-links a:focus-visible,
+        .pbh-faq-a a:focus-visible,
+        .pbh-founders a:focus-visible,
+        .pbh-faq-q:focus-visible {
+          outline: 2px solid var(--pb-gold);
+          outline-offset: 3px;
+          border-radius: 4px;
+        }
+        .pbh-faq { margin-top: 36px; max-width: 760px; }
+        .pbh-faq-item { border-bottom: 1px solid rgba(255,255,255,0.10); }
+        .pbh-faq-q {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 20px 0;
+          cursor: pointer;
+          list-style: none;
+          font-family: 'Cormorant', Georgia, serif;
+          font-size: 24px;
+          color: #ffffff;
+        }
+        .pbh-faq-q::-webkit-details-marker { display: none; }
+        .pbh-faq-q::after {
+          content: '+';
+          flex: none;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 22px;
+          color: var(--pb-gold);
+        }
+        .pbh-faq-item[open] > .pbh-faq-q::after { content: '\\2212'; }
+        .pbh-faq-a { padding: 0 0 22px; max-width: 640px; }
+        .pbh-faq-a p {
+          font-size: 15px;
+          font-weight: 300;
+          line-height: 1.8;
+          color: var(--pb-text);
+          margin: 0 0 12px;
+        }
+        .pbh-faq-a p:last-child { margin-bottom: 0; }
+        .pbh-founders { margin: 40px 0 0; font-size: 14px; color: var(--pb-muted); }
+
         /* ============================================================
            RESPONSIVE
            Desktop 1024px+ : 80px 10%  · hero text left third · pillars 3 cols
@@ -1107,6 +1466,8 @@ const PBHome: React.FC = () => {
           .pbh-hero { padding: 40px 7% 56px; }
           .pbh-pillars { grid-template-columns: repeat(2, 1fr); }
           .pbh-frow { gap: 36px; }
+          .pbh-problem { flex-direction: column; align-items: flex-start; gap: 32px; }
+          .pbh-stat { flex: none; width: 100%; max-width: 320px; }
           .pbh-journey {
             grid-template-columns: 1fr;
             justify-items: center;
@@ -1152,6 +1513,12 @@ const PBHome: React.FC = () => {
           .pbh-hero-content { align-items: center; text-align: center; max-width: none; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
+          .pbh-hero-note { text-align: center; }
+          .pbh-phones { gap: 20px; }
+          .pbh-phone { width: 44vw; max-width: 240px; padding: 6px; border-radius: 28px; }
+          .pbh-phone-screen { border-radius: 22px; }
+          .pbh-phone-ph { border-radius: 22px; font-size: 18px; }
+          .pbh-faq-q { font-size: 21px; }
           .pbh-pillars { grid-template-columns: 1fr; }
           .pbh-frow { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
           .pbh-frow--flip .pbh-ftext,
