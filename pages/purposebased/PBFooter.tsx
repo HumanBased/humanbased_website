@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SocialHub from '../../components/SocialHub';
+import { BUILD_YEAR, COMPANY_LINE, SUPPORT_EMAIL } from '../../config/site';
 
 const PBFooter: React.FC = () => {
   return (
@@ -86,8 +87,14 @@ const PBFooter: React.FC = () => {
             Delete data
           </Link>
         </div>
+        <p className="pbf-company">
+          {COMPANY_LINE} ·{' '}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="pbf-legal-link">
+            {SUPPORT_EMAIL}
+          </a>
+        </p>
         <div className="pbf-legal-row">
-          <span>© 2025 HumanBased</span>
+          <span>© {BUILD_YEAR} HumanBased</span>
           <span>Coding for humanity</span>
         </div>
       </div>
@@ -217,6 +224,11 @@ const PBFooter: React.FC = () => {
           transition: color 0.2s ease;
         }
         .pbf-legal-link:hover { color: var(--pb-gold); }
+        .pbf-company {
+          font-size: 12px;
+          color: var(--pb-muted);
+          margin: 0 0 12px;
+        }
         .pbf-legal-row {
           display: flex;
           justify-content: space-between;

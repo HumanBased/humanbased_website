@@ -3,6 +3,7 @@ import { usePageSeo } from '../hooks/usePageSeo';
 import Philosophy from '../components/Philosophy';
 import CapabilitiesGrid from '../components/CapabilitiesGrid';
 import { Link } from 'react-router-dom';
+import TeamBlock from '../components/TeamBlock';
 
 const AboutPage: React.FC = () => {
   usePageSeo({
@@ -61,6 +62,11 @@ const AboutPage: React.FC = () => {
           systems that actually work for people.
         </p>
       </div>
+
+      {/* Who is behind HumanBased */}
+
+      <TeamBlock />
+
 
       {/* Section 2 – Philosophy */}
       <Philosophy />

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { ogImageFor } from '../config/site';
 
 // Runtime <head> management for SEO. The build's prerender step (scripts/prerender.mjs)
 // snapshots the live DOM per route with Puppeteer, so meta tags written here end up
@@ -73,6 +74,46 @@ export function upsertLink(rel: string, href: string): () => void {
   return () => el.remove();
 }
 
+export interface ShareMeta {
+  title: string;
+  description: string;
+  url?: string;
+  image?: string;
+  type?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterCard?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+}
+
+// Open Graph and Twitter tags. Unless overridden, they carry the page's own
+// title and description so share previews never fall back to the home values.
+export function applyShareMeta(m: ShareMeta): Array<() => void> {
+  const out: Array<() => void> = [];
+  const og: Record<string, string | undefined> = {
+    'og:type': m.type ?? 'website',
+    'og:title': m.ogTitle ?? m.title,
+    'og:description': m.ogDescription ?? (m.description || undefined),
+    'og:image': m.image,
+    'og:url': m.url,
+  };
+  for (const [k, v] of Object.entries(og)) {
+    if (v) out.push(upsertMeta({ attr: 'property', key: k }, v));
+  }
+  const tw: Record<string, string | undefined> = {
+    'twitter:card': m.twitterCard ?? 'summary_large_image',
+    'twitter:title': m.twitterTitle ?? m.ogTitle ?? m.title,
+    'twitter:description': m.twitterDescription ?? m.ogDescription ?? (m.description || undefined),
+    'twitter:image': m.twitterImage ?? m.image,
+  };
+  for (const [k, v] of Object.entries(tw)) {
+    if (v) out.push(upsertMeta({ attr: 'name', key: k }, v));
+  }
+  return out;
+}
+
 export function usePageSeo(seo: PageSeo): void {
   // Serialise so the effect re-runs on any content change without a new object
   // reference triggering it every render.
@@ -99,28 +140,21 @@ export function usePageSeo(seo: PageSeo): void {
       cleanups.push(upsertLink('canonical', seo.canonical));
     }
 
-    const og = seo.og ?? {};
-    const ogTags: Record<string, string | undefined> = {
-      'og:type': og.type ?? 'website',
-      'og:title': og.title ?? seo.title,
-      'og:description': og.description ?? seo.description,
-      'og:image': og.image,
-      'og:url': og.url ?? seo.canonical,
-    };
-    for (const [k, v] of Object.entries(ogTags)) {
-      if (v) cleanups.push(upsertMeta({ attr: 'property', key: k }, v));
-    }
-
-    const tw = seo.twitter ?? {};
-    const twTags: Record<string, string | undefined> = {
-      'twitter:card': tw.card ?? 'summary_large_image',
-      'twitter:title': tw.title ?? og.title ?? seo.title,
-      'twitter:description': tw.description ?? og.description ?? seo.description,
-      'twitter:image': tw.image ?? og.image,
-    };
-    for (const [k, v] of Object.entries(twTags)) {
-      if (v) cleanups.push(upsertMeta({ attr: 'name', key: k }, v));
-    }
+    cleanups.push(
+      ...applyShareMeta({
+        title: seo.title,
+        description: seo.description,
+        url: seo.og?.url ?? seo.canonical,
+        image: seo.og?.image ?? (seo.canonical ? ogImageFor(new URL(seo.canonical).pathname) : undefined),
+        type: seo.og?.type,
+        ogTitle: seo.og?.title,
+        ogDescription: seo.og?.description,
+        twitterCard: seo.twitter?.card,
+        twitterTitle: seo.twitter?.title,
+        twitterDescription: seo.twitter?.description,
+        twitterImage: seo.twitter?.image,
+      }),
+    );
 
     if (seo.jsonLd) {
       const script = document.createElement('script');

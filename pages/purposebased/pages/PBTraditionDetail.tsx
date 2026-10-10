@@ -3,7 +3,6 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 import { TRADITIONS } from './PBLibrary';
 
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 // Hand-written meta descriptions (<= 160 chars); the on-page copy is longer.
 const SEO_DESCRIPTIONS: Record<string, string> = {
@@ -31,18 +30,6 @@ const PBTraditionDetail: React.FC = () => {
     description,
     canonical: url,
     robots: 'noindex,follow',
-    og: {
-      title,
-      description,
-      image: PB_OG_IMAGE,
-      url,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      image: PB_OG_IMAGE,
-    },
   });
 
   if (!entry) {

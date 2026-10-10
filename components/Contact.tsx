@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { SUPPORT_EMAIL } from '../config/site';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -95,6 +96,10 @@ const Contact: React.FC = () => {
             </h2>
             <p className="text-sm md:text-base text-white/70 max-w-xl">
               We work with organizations ready to modernize operations, communities seeking better ways to connect and govern, and individuals committed to personal growth and purposeful living. Share a bit about your context and we will reply with thoughtful next steps.
+            </p>
+            <p className="text-sm text-white/60">
+              Prefer email? Write to{' '}
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-amber-400 hover:text-amber-300 transition-colors">{SUPPORT_EMAIL}</a>.
             </p>
           </div>
           

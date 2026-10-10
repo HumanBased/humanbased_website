@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { siteUrl } from '../config/site';
-import { upsertLink, upsertMeta } from './usePageSeo';
+import { ogImageFor, siteUrl } from '../config/site';
+import { applyShareMeta, upsertLink, upsertMeta } from './usePageSeo';
 
 // Sets the document title and, when given, a self-referencing canonical, a
-// matching og:url on the www host, and a page-specific meta description.
+// page-specific meta description, and Open Graph / Twitter tags that carry the
+// same title, description and URL plus the right share image for the route.
 export function usePageTitle(title: string, canonicalPath?: string, description?: string) {
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -13,17 +14,18 @@ export function usePageTitle(title: string, canonicalPath?: string, description?
 
   useEffect(() => {
     if (typeof document === 'undefined' || !canonicalPath) return;
-    const url = siteUrl(canonicalPath);
-    const revertLink = upsertLink('canonical', url);
-    const revertOgUrl = upsertMeta({ attr: 'property', key: 'og:url' }, url);
+    const cleanups: Array<() => void> = [upsertLink('canonical', siteUrl(canonicalPath))];
+    if (description) cleanups.push(upsertMeta({ attr: 'name', key: 'description' }, description));
+    cleanups.push(
+      ...applyShareMeta({
+        title,
+        description: description ?? '',
+        url: siteUrl(canonicalPath),
+        image: ogImageFor(canonicalPath),
+      }),
+    );
     return () => {
-      revertOgUrl();
-      revertLink();
+      for (let i = cleanups.length - 1; i >= 0; i -= 1) cleanups[i]();
     };
-  }, [canonicalPath]);
-
-  useEffect(() => {
-    if (typeof document === 'undefined' || !description) return;
-    return upsertMeta({ attr: 'name', key: 'description' }, description);
-  }, [description]);
+  }, [title, canonicalPath, description]);
 }

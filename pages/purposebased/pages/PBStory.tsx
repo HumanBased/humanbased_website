@@ -28,7 +28,6 @@ const PURPOSE_WORDS = [
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
 const STORY_URL = 'https://www.humanbased.org/purposebased/story';
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBStory: React.FC = () => {
   usePageSeo({
@@ -36,20 +35,6 @@ const PBStory: React.FC = () => {
     description:
       'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
     canonical: STORY_URL,
-    og: {
-      title: 'PurposeBased | Our Story | Purpose-Driven Social Enterprise',
-      description:
-        'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
-      image: PB_OG_IMAGE,
-      url: STORY_URL,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'PurposeBased | Our Story',
-      description:
-        'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
-      image: PB_OG_IMAGE,
-    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

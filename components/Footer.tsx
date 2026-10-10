@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoOrb from './LogoOrb';
 import SocialHub from './SocialHub';
+import { BUILD_YEAR, COMPANY_LINE, SUPPORT_EMAIL } from '../config/site';
 
 const Footer: React.FC = () => {
   return (
@@ -47,8 +48,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
+        <p className="pb-6 text-center md:text-left text-xs text-white/40">
+          {COMPANY_LINE} ·{' '}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-amber-500 transition-colors">{SUPPORT_EMAIL}</a>
+        </p>
+        
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/10">
-          <span>© 2025 HumanBased. All rights reserved.</span>
+          <span>© {BUILD_YEAR} HumanBased. All rights reserved.</span>
           <div className="flex gap-10">
             <span className="cursor-pointer hover:text-white/30 transition-colors">Cookie Settings</span>
             <span className="cursor-pointer hover:text-white/30 transition-colors">Accessibility</span>

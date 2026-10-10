@@ -10,7 +10,7 @@ const FEATURES: { n: string; title: string; body: string; img: string }[] = [
     n: '01',
     title: 'Know Thyself',
     body:
-      'Your full analysis across nine frameworks, written as one reading. Not nine separate reports, one portrait of who you are.',
+      'Your Know Thyself reading: a full convergence reading, written as one. Not separate reports, one portrait of who you are.',
     img: '/images/features/know-thyself.png',
   },
   {
@@ -44,7 +44,7 @@ const FEATURES: { n: string; title: string; body: string; img: string }[] = [
 ];
 
 const PILLARS: { title: string; body: string }[] = [
-  { title: 'Depth', body: 'Nine frameworks read together, not one horoscope in isolation.' },
+  { title: 'Depth', body: 'A full convergence reading, not one horoscope in isolation.' },
   { title: 'Direction', body: 'A guide that knows your blueprint and speaks from it.' },
   { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
 ];
@@ -62,7 +62,6 @@ const scrollToId = (id: string) => () => {
 };
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -70,35 +69,24 @@ const PBHome: React.FC = () => {
   usePageSeo({
     title: "PurposeBased | Become Who You're Meant To Be",
     description:
-      'Understand your patterns with 9 frameworks. Find your direction. Live with intention. Free self-knowledge app with AI guidance.',
+      'The most comprehensive tool to not only find your purpose but follow it, and live a more meaningful life. Start free.',
     canonical: PB_URL,
     og: {
-      title: "PurposeBased | Become Who You're Meant To Be",
-      description: 'Understand your patterns. Find your direction. Live with intention.',
-      image: PB_OG_IMAGE,
+      description: 'Find your purpose, and follow it.',
       url: PB_URL,
     },
     twitter: {
-      card: 'summary_large_image',
-      title: "PurposeBased | Become Who You're Meant To Be",
-      description: 'Understand your patterns. Find your direction.',
-      image: PB_OG_IMAGE,
+      description: 'Find your purpose, and follow it.',
     },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       name: 'PurposeBased',
       description:
-        'A self-knowledge app that reads your patterns across 9 frameworks, helps you find your direction, and supports living with intention through daily alignment and AI guidance.',
+        'A self-knowledge app that reads your patterns in a full convergence reading, helps you find your direction, and supports living with intention.',
       url: PB_URL,
-      image: PB_OG_IMAGE,
+      image: 'https://www.humanbased.org/images/og/og-purposebased.jpg',
       applicationCategory: 'LifestyleApplication',
-      operatingSystem: 'Web, iOS, Android',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'EUR',
-      },
       publisher: {
         '@type': 'Organization',
         name: 'HumanBased',
@@ -189,7 +177,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title">Know Thyself</h3>
               <p className="pbh-node-body">
-                Nine frameworks read together reveal a pattern no single system can see. This is your
+                A full convergence reading reveals a pattern no single system can see. This is your
                 blueprint.
               </p>
             </div>
@@ -322,7 +310,7 @@ const PBHome: React.FC = () => {
               <ul className="pbh-list">
                 <li>Purpose Questionnaire &amp; Archetype Reveal</li>
                 <li>
-                  Framework previews (4 of 9: Astrology, Numerology, Chinese Astrology, Hierarchy of
+                  Preview 4 frameworks (Astrology, Numerology, Chinese Astrology, Hierarchy of
                   Values)
                 </li>
                 <li>Preferences &amp; Values tool</li>
@@ -359,8 +347,8 @@ const PBHome: React.FC = () => {
               <p className="pbh-price-note">per month · founding price</p>
               <p className="pbh-plus-heading">Everything on Seeker, plus:</p>
               <ul className="pbh-list">
-                <li className="pbh-li--gold">Full Analysis (deep multi-section personal reading)</li>
-                <li>Full framework readings (Astrology, Human Design, Chinese Astrology)</li>
+                <li className="pbh-li--gold">Know Thyself (deep multi-section personal reading)</li>
+                <li>Know-thyself reading (Astrology, Human Design, Chinese Astrology)</li>
                 <li>Your Direction / Path insights (Domains, Drains, Growth Edge)</li>
                 <li>My People (compatibility readings, up to 7 people)</li>
                 <li>Daily Alignment (personal daily reading)</li>
@@ -374,7 +362,7 @@ const PBHome: React.FC = () => {
                   Dynamics, Today For Your People)
                 </li>
                 <li>The Guide (90 messages/month)</li>
-                <li>1 Full Analysis re-run/month</li>
+                <li>1 Know Thyself re-run/month</li>
               </ul>
               <a
                 href={CHECKOUT_BASED}
@@ -397,13 +385,13 @@ const PBHome: React.FC = () => {
               <ul className="pbh-list">
                 <li className="pbh-li--gold">
                   5 more framework readings (Enneagram, Hierarchy of Values deep, Gene Keys, Jungian
-                  Type, Holland Code - 9 frameworks total)
+                  Type, Holland Code, completing the full convergence reading)
                 </li>
                 <li>Year Ahead (12-month personal reading)</li>
                 <li>Vocational Edge (career/purpose direction)</li>
                 <li>The Guide (200 messages/month)</li>
                 <li>Unlimited My People</li>
-                <li>4 Full Analysis re-runs/month</li>
+                <li>4 Know Thyself re-runs/month</li>
               </ul>
               <a
                 href={CHECKOUT_BLISSED}

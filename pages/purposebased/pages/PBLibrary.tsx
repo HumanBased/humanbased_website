@@ -67,7 +67,6 @@ export const TRADITIONS: Tradition[] = [
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
 const LIBRARY_URL = 'https://www.humanbased.org/purposebased/library';
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBLibrary: React.FC = () => {
   usePageSeo({
@@ -75,20 +74,6 @@ const PBLibrary: React.FC = () => {
     description:
       'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy.',
     canonical: LIBRARY_URL,
-    og: {
-      title: 'PurposeBased | 7 Traditions of Purpose',
-      description:
-        'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy.',
-      image: PB_OG_IMAGE,
-      url: LIBRARY_URL,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'PurposeBased | 7 Traditions of Purpose',
-      description:
-        'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint.',
-      image: PB_OG_IMAGE,
-    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

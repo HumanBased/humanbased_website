@@ -95,7 +95,9 @@ async function prerender() {
   const browser = await puppeteer.launch(await launchOptions());
 
   try {
-    for (const route of ROUTES) {
+    // "/" is written to dist/index.html, which is also the static server's fallback for
+    // every other route, so it must go last or later pages inherit its head tags.
+    for (const route of [...ROUTES.filter((r) => r !== '/'), '/']) {
       const page = await browser.newPage();
       const url = baseUrl + route;
       console.log(`[prerender] rendering ${route}`);

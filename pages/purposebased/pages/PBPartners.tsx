@@ -10,7 +10,6 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaqodbp';
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
 const PARTNERS_URL = 'https://www.humanbased.org/purposebased/partners';
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const ADVANTAGES: { title: string; body: string }[] = [
   {
@@ -144,20 +143,6 @@ const PBPartners: React.FC = () => {
     description:
       'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe, with real product influence and support.',
     canonical: PARTNERS_URL,
-    og: {
-      title: 'PurposeBased | Partner Program',
-      description:
-        'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe, with real product influence and support.',
-      image: PB_OG_IMAGE,
-      url: PARTNERS_URL,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'PurposeBased | Partner Program',
-      description:
-        'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe.',
-      image: PB_OG_IMAGE,
-    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -625,7 +610,7 @@ const PBPartners: React.FC = () => {
           The best partners are the ones who actually use our products.
         </h2>
         <p className="pbp-close-body">
-          Start with the free tier. See what the nine frameworks reveal. Then join our official
+          Start with the free tier. See what the full convergence reading reveals. Then join our official
           promoter network and share it with the people who need it.
         </p>
         <div className="pbp-close-cta">

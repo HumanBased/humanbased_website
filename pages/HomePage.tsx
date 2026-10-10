@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
+import { useJsonLd } from '../hooks/useJsonLd';
 import Hero from '../components/Hero';
 import WhyHumanBased from '../components/WhyHumanBased';
 import Impact from '../components/Impact';
 import Contact from '../components/Contact';
 
 const HomePage: React.FC = () => {
-  usePageTitle('HumanBased – Human problems. Digital solutions.', '/');
+  usePageTitle(
+    'HumanBased – Human problems. Digital solutions.',
+    '/',
+    'HumanBased builds custom mobile apps and AI systems for social impact, co-designing secure, scalable solutions that automate workflows and empower teams.',
+  );
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'HumanBased',
+    url: 'https://www.humanbased.org/',
+  });
   return (
     <div className="flex-grow">
       <Hero />

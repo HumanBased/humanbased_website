@@ -45,7 +45,6 @@ const STEPS: { n: string; name: string; phrase: string; img: string }[] = [
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
 const HOW_IT_WORKS_URL = 'https://www.humanbased.org/purposebased/how-it-works';
-const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBSeeHowItWorks: React.FC = () => {
   usePageSeo({
@@ -53,19 +52,6 @@ const PBSeeHowItWorks: React.FC = () => {
     description:
       'Realization, search, discovery, conquest, and tending the garden. See how PurposeBased guides your purpose journey across five steps.',
     canonical: HOW_IT_WORKS_URL,
-    og: {
-      title: 'PurposeBased | How It Works',
-      description:
-        'Realization, search, discovery, conquest, and tending the garden. See how PurposeBased guides your purpose journey across five steps.',
-      image: PB_OG_IMAGE,
-      url: HOW_IT_WORKS_URL,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'PurposeBased | How It Works',
-      description: 'See how PurposeBased guides your purpose journey across five steps.',
-      image: PB_OG_IMAGE,
-    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
