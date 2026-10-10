@@ -128,7 +128,9 @@ const PBSeeHowItWorks: React.FC = () => {
         </Link>
       </section>
 
-      <style>{`
+      {/* href + precedence: React hoists this into <head>, so the prerendered
+          HTML styles the page before its markup paints (no unstyled first frame). */}
+      <style href="pb-how-it-works" precedence="pb">{`
         .pbw {
           --pb-gold: #ffc864;
           --pb-text: #cadcf0;

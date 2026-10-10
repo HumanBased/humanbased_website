@@ -79,7 +79,9 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
 
       {open && <nav className="pbn-drop">{renderLinks()}</nav>}
 
-      <style>{`
+      {/* href + precedence: React hoists this into <head>, so the prerendered
+          HTML styles the page before its markup paints (no unstyled first frame). */}
+      <style href="pb-nav" precedence="pb">{`
         .pbn {
           position: sticky;
           top: 0;

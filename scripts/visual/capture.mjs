@@ -37,11 +37,13 @@ try {
       // Scroll the whole page so scroll-triggered reveals fire before the capture.
       await page.evaluate(async () => {
         const step = window.innerHeight * 0.6;
+        // 'instant': the site sets scroll-behavior: smooth, which would otherwise
+        // leave the capture lagging behind its own scroll positions.
         for (let y = 0; y < document.body.scrollHeight; y += step) {
-          window.scrollTo(0, y);
-          await new Promise((r) => setTimeout(r, 120));
+          window.scrollTo({ top: y, behavior: 'instant' });
+          await new Promise((r) => setTimeout(r, 160));
         }
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'instant' });
         await new Promise((r) => setTimeout(r, 900));
       });
       const png = await page.screenshot({ fullPage: true });

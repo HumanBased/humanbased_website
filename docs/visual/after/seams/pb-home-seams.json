@@ -1,0 +1,410 @@
+[
+  {
+    "vw": 390,
+    "scroll": "0",
+    "edge": "top",
+    "heroProfileStep": 0.05,
+    "pageProfileStep": 24.19,
+    "worstPixelAcrossBoundary": 18.4,
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "0",
+    "edge": "bottom",
+    "heroProfileStep": 0.05,
+    "pageProfileStep": 0.95,
+    "worstPixelAcrossBoundary": 33.9,
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "0",
+    "edge": "left",
+    "heroProfileStep": 0.04,
+    "pageProfileStep": 88.16,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "0",
+    "edge": "right",
+    "heroProfileStep": 0.84,
+    "pageProfileStep": 15.27,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "300",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 390,
+    "scroll": "300",
+    "edge": "bottom",
+    "heroProfileStep": 0.04,
+    "pageProfileStep": 1.17,
+    "worstPixelAcrossBoundary": 16.2,
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "300",
+    "edge": "left",
+    "heroProfileStep": 0.07,
+    "pageProfileStep": 152.61,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "300",
+    "edge": "right",
+    "heroProfileStep": 1.1,
+    "pageProfileStep": 22.15,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "bottom",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 390,
+    "scroll": "bottom",
+    "edge": "bottom",
+    "heroProfileStep": 0.04,
+    "pageProfileStep": 1.17,
+    "worstPixelAcrossBoundary": 16.2,
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "bottom",
+    "edge": "left",
+    "heroProfileStep": 0.04,
+    "pageProfileStep": 137.66,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 390,
+    "scroll": "bottom",
+    "edge": "right",
+    "heroProfileStep": 1.05,
+    "pageProfileStep": 16.68,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "0",
+    "edge": "top",
+    "heroProfileStep": 0.09,
+    "pageProfileStep": 7.88,
+    "worstPixelAcrossBoundary": 0.9,
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "0",
+    "edge": "bottom",
+    "heroProfileStep": 0.25,
+    "pageProfileStep": 2.76,
+    "worstPixelAcrossBoundary": 75.1,
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "0",
+    "edge": "left",
+    "heroProfileStep": 0.02,
+    "pageProfileStep": 0.5,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "0",
+    "edge": "right",
+    "heroProfileStep": 0.07,
+    "pageProfileStep": 0.73,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "bottom",
+    "heroProfileStep": 0.13,
+    "pageProfileStep": 5.81,
+    "worstPixelAcrossBoundary": 172.3,
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "left",
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.55,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "right",
+    "heroProfileStep": 0.22,
+    "pageProfileStep": 0.71,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "bottom",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 1440,
+    "scroll": "bottom",
+    "edge": "bottom",
+    "heroProfileStep": 0.17,
+    "pageProfileStep": 5.18,
+    "worstPixelAcrossBoundary": 173.2,
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "bottom",
+    "edge": "left",
+    "heroProfileStep": 0.02,
+    "pageProfileStep": 0.55,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "bottom",
+    "edge": "right",
+    "heroProfileStep": 0.13,
+    "pageProfileStep": 0.78,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "0",
+    "edge": "top",
+    "heroProfileStep": 0.07,
+    "pageProfileStep": 6.48,
+    "worstPixelAcrossBoundary": 1,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "0",
+    "edge": "bottom",
+    "heroProfileStep": 0.17,
+    "pageProfileStep": 1.52,
+    "worstPixelAcrossBoundary": 74.1,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "0",
+    "edge": "left",
+    "heroProfileStep": 0.02,
+    "pageProfileStep": 0.71,
+    "worstPixelAcrossBoundary": 1.8,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "0",
+    "edge": "right",
+    "heroProfileStep": 0.09,
+    "pageProfileStep": 0.81,
+    "worstPixelAcrossBoundary": 2.4,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "300",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 1920,
+    "scroll": "300",
+    "edge": "bottom",
+    "heroProfileStep": 0.16,
+    "pageProfileStep": 4.01,
+    "worstPixelAcrossBoundary": 171.5,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "300",
+    "edge": "left",
+    "heroProfileStep": 0.01,
+    "pageProfileStep": 0.66,
+    "worstPixelAcrossBoundary": 2.3,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "300",
+    "edge": "right",
+    "heroProfileStep": 0.19,
+    "pageProfileStep": 0.69,
+    "worstPixelAcrossBoundary": 2.1,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "bottom",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 1920,
+    "scroll": "bottom",
+    "edge": "bottom",
+    "heroProfileStep": 0.19,
+    "pageProfileStep": 4.21,
+    "worstPixelAcrossBoundary": 173.2,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "bottom",
+    "edge": "left",
+    "heroProfileStep": 0.03,
+    "pageProfileStep": 0.65,
+    "worstPixelAcrossBoundary": 1.7,
+    "pass": true
+  },
+  {
+    "vw": 1920,
+    "scroll": "bottom",
+    "edge": "right",
+    "heroProfileStep": 0.13,
+    "pageProfileStep": 0.7,
+    "worstPixelAcrossBoundary": 2.1,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "0",
+    "edge": "top",
+    "heroProfileStep": 0.01,
+    "pageProfileStep": 3.07,
+    "worstPixelAcrossBoundary": 0.9,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "0",
+    "edge": "bottom",
+    "heroProfileStep": 0.02,
+    "pageProfileStep": 1.69,
+    "worstPixelAcrossBoundary": 74.5,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "0",
+    "edge": "left",
+    "heroProfileStep": 0.05,
+    "pageProfileStep": 6.13,
+    "worstPixelAcrossBoundary": 183.5,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "0",
+    "edge": "right",
+    "heroProfileStep": 0.17,
+    "pageProfileStep": 0.67,
+    "worstPixelAcrossBoundary": 1.6,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "300",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 2560,
+    "scroll": "300",
+    "edge": "bottom",
+    "heroProfileStep": 0.01,
+    "pageProfileStep": 4.33,
+    "worstPixelAcrossBoundary": 172.6,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "300",
+    "edge": "left",
+    "heroProfileStep": 0.08,
+    "pageProfileStep": 7.32,
+    "worstPixelAcrossBoundary": 184.5,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "300",
+    "edge": "right",
+    "heroProfileStep": 0.24,
+    "pageProfileStep": 0.71,
+    "worstPixelAcrossBoundary": 1.5,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "bottom",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 2560,
+    "scroll": "bottom",
+    "edge": "bottom",
+    "heroProfileStep": 0.01,
+    "pageProfileStep": 5.1,
+    "worstPixelAcrossBoundary": 173.2,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "bottom",
+    "edge": "left",
+    "heroProfileStep": 0.07,
+    "pageProfileStep": 6.64,
+    "worstPixelAcrossBoundary": 184.3,
+    "pass": true
+  },
+  {
+    "vw": 2560,
+    "scroll": "bottom",
+    "edge": "right",
+    "heroProfileStep": 0.21,
+    "pageProfileStep": 0.7,
+    "worstPixelAcrossBoundary": 1.9,
+    "pass": true
+  }
+]

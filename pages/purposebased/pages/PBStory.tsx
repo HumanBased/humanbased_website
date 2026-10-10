@@ -310,7 +310,9 @@ const PBStory: React.FC = () => {
         </blockquote>
       </section>
 
-      <style>{`
+      {/* href + precedence: React hoists this into <head>, so the prerendered
+          HTML styles the page before its markup paints (no unstyled first frame). */}
+      <style href="pb-story" precedence="pb">{`
         .pbs {
           --pb-gold: #C4A85A;
           --pb-navy: #0d1f3c;

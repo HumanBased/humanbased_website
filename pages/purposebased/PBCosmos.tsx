@@ -123,7 +123,7 @@ const ZodiacWheel: React.FC = () => (
       </text>
     </svg>
 
-    <style>{`
+    <style href="pb-zodiac" precedence="pb">{`
       .pb-zodiac {
         position: fixed;
         right: -180px;

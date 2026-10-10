@@ -628,7 +628,9 @@ const PBHome: React.FC = () => {
         </p>
       </section>
 
-      <style>{`
+      {/* href + precedence: React hoists this into <head>, so the prerendered
+          HTML styles the page before its markup paints (no unstyled first frame). */}
+      <style href="pb-home" precedence="pb">{`
         .pbh {
           --pb-gold: #ffc864;
           --pb-navy: #0d1f3c;

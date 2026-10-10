@@ -103,7 +103,9 @@ const PBFooter: React.FC = () => {
         </div>
       </div>
 
-      <style>{`
+      {/* href + precedence: React hoists this into <head>, so the prerendered
+          HTML styles the page before its markup paints (no unstyled first frame). */}
+      <style href="pb-footer" precedence="pb">{`
         .pbf {
           --pb-gold: #ffc864;
           --pb-text: #cadcf0;

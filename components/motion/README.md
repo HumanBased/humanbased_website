@@ -5,13 +5,15 @@ One folder, no dependencies: CSS plus about 3KB of TypeScript (gzipped). Mounted
 
 ## Contract
 
-- **Static HTML is final.** Nothing here is required to read a page. Hidden starting
+- **Static HTML is final.** Nothing here is required to read a page. An element is hidden
+  only while the engine holds it as `data-mx-pending` and observes it, so nodes it does not
+  know about (no JS, or fresh nodes from a React re-render) are always visible. Hidden starting
   states only apply under `html.motion-ok`, which the engine adds *after* marking every
   element already on screen as revealed (`data-revealed="static"`). No flash, no delayed
   LCP, and the page reads fully with JavaScript off.
 - **The prerender never bakes motion.** `scripts/prerender.mjs` emulates
   `prefers-reduced-motion: reduce`, then strips `motion-ok`, `data-revealed`,
-  `data-counted`, `--parallax-y`, `--scroll-progress` and every `.mx-journey`.
+  `data-counted`, `data-mx-pending`, `--parallax-y`, `--scroll-progress` and every `.mx-journey`.
 - **Reduced motion means static.** Engine skips reveals and count-ups; CSS removes
   parallax, draws journey lines fully and drops hover lifts. The global rule in
   `index.html` already zeroes animation and transition durations.

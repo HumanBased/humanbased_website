@@ -12,13 +12,14 @@
 
 /* ---------- scroll reveal ----------
    A keyframe animation rather than a transition, so it never overrides an
-   element's own hover transitions. Elements already on screen when the engine
+   element's own hover transitions. Only elements the engine is actively holding
+   (data-mx-pending) are hidden; elements already on screen when the engine
    starts are marked data-revealed="static" and do not animate at all. */
-html.motion-ok [data-reveal]:not([data-revealed]) {
+html.motion-ok [data-reveal][data-mx-pending] {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
 }
-html.motion-ok [data-reveal='fade']:not([data-revealed]) { transform: none; }
+html.motion-ok [data-reveal='fade'][data-mx-pending] { transform: none; }
 html.motion-ok [data-reveal][data-revealed=''] {
   animation: mx-reveal var(--mx-reveal-ms) var(--mx-ease) var(--mx-delay, 0ms) backwards;
 }
@@ -39,8 +40,8 @@ html.motion-ok [data-reveal='fade'][data-revealed=''] { animation-name: mx-fade;
 }
 
 /* ---------- self-drawing path: pathLength="1" on the SVG path ---------- */
-html.motion-ok [data-draw]:not([data-revealed]) path,
-html.motion-ok [data-draw]:not([data-revealed]) line {
+html.motion-ok [data-draw][data-mx-pending] path,
+html.motion-ok [data-draw][data-mx-pending] line {
   stroke-dashoffset: 1;
 }
 [data-draw] path,

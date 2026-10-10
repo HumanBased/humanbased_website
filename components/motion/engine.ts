@@ -2,12 +2,14 @@
 // rAF-throttled scroll reader for progress, parallax and journey lines.
 // See components/motion/README.md for the attribute API.
 //
-// Static-HTML contract: nothing here is needed to read the page. Hidden starting
-// states only apply under html.motion-ok, which is added after everything already
-// on screen has been marked revealed, so there is no flash and no delayed LCP.
+// Static-HTML contract: nothing here is needed to read the page. An element is
+// only ever hidden while this engine holds it as pending (data-mx-pending) and is
+// observing it, so any node the engine does not know about (static HTML, no JS,
+// or a fresh node from a React re-render) is always visible. Elements already on
+// screen are never hidden, so there is no flash and no delayed LCP.
 
 const REDUCED_QUERY = '(prefers-reduced-motion: reduce)';
-const REVEAL_SELECTOR = '[data-reveal]:not([data-revealed])';
+const REVEAL_SELECTOR = '[data-reveal]:not([data-revealed]):not([data-mx-pending])';
 const COUNT_SELECTOR = '[data-countup]:not([data-counted])';
 const PARALLAX_SELECTOR = '[data-parallax]';
 const COUNT_DURATION_MS = 1400;
@@ -65,7 +67,10 @@ const onIntersect: IntersectionObserverCallback = (entries) => {
     if (!entry.isIntersecting) continue;
     const el = entry.target as HTMLElement;
     observer?.unobserve(el);
-    if (el.hasAttribute('data-reveal')) el.setAttribute('data-revealed', '');
+    if (el.hasAttribute('data-reveal')) {
+      el.removeAttribute('data-mx-pending');
+      el.setAttribute('data-revealed', '');
+    }
     if (el.hasAttribute('data-countup')) runCountUp(el);
   }
 };
@@ -109,8 +114,12 @@ export const onMotionFrame = (listener: FrameListener): (() => void) => {
 export const scanMotionTargets = (): void => {
   if (!observer) return;
   document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => {
-    if (isInViewport(el)) el.setAttribute('data-revealed', 'static');
-    else observer?.observe(el);
+    if (isInViewport(el)) {
+      el.setAttribute('data-revealed', 'static');
+      return;
+    }
+    el.setAttribute('data-mx-pending', '');
+    observer?.observe(el);
   });
   document.querySelectorAll<HTMLElement>(COUNT_SELECTOR).forEach((el) => {
     if (isInViewport(el)) el.setAttribute('data-counted', '');
@@ -140,7 +149,17 @@ export const startMotion = (): void => {
     entries.forEach((e) => e.target.toggleAttribute('data-offscreen', !e.isIntersecting));
   });
   observer = new IntersectionObserver(onIntersect, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-  scanMotionTargets();
-  // Only now may off-screen elements take their hidden starting state.
   document.documentElement.classList.add('motion-ok');
+  scanMotionTargets();
+  // React may replace DOM nodes after the first scan (for example a client
+  // re-render after a hydration mismatch): scan whatever gets added.
+  let scanQueued = false;
+  new MutationObserver(() => {
+    if (scanQueued) return;
+    scanQueued = true;
+    requestAnimationFrame(() => {
+      scanQueued = false;
+      scanMotionTargets();
+    });
+  }).observe(document.body, { childList: true, subtree: true });
 };

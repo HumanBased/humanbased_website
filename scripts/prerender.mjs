@@ -117,6 +117,20 @@ async function prerender() {
         document.querySelectorAll('[data-revealed]').forEach((el) => el.removeAttribute('data-revealed'));
         document.querySelectorAll('[data-counted]').forEach((el) => el.removeAttribute('data-counted'));
         document.querySelectorAll('[data-offscreen]').forEach((el) => el.removeAttribute('data-offscreen'));
+        document.querySelectorAll('[data-mx-pending]').forEach((el) => el.removeAttribute('data-mx-pending'));
+        // React's server renderer separates adjacent text nodes with <!-- -->;
+        // a serialised client DOM merges them into one, so hydrateRoot sees a
+        // text mismatch (error #418) and throws the whole page away to re-render
+        // on the client. Re-insert the separators React expects.
+        const root = document.getElementById('root');
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const texts = [];
+        while (walker.nextNode()) texts.push(walker.currentNode);
+        texts.forEach((node) => {
+          if (node.nextSibling && node.nextSibling.nodeType === Node.TEXT_NODE) {
+            node.parentNode.insertBefore(document.createComment(' '), node.nextSibling);
+          }
+        });
         document.querySelectorAll('[data-parallax]').forEach((el) => el.style.removeProperty('--parallax-y'));
       });
       const html = await page.content();
