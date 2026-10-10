@@ -54,6 +54,8 @@ const PILLARS: { title: string; body: string }[] = [
 // until the WebP exists in public/images/purposebased/ (the source PNGs were not in
 // the repo); a null src renders a clearly labelled placeholder, not a broken image.
 // Both frames share one aspect ratio so the phones always match.
+// Flip to true once the WebPs below exist; the section is skipped entirely until then.
+const SHOW_READING = false;
 const SHOT_WIDTH = 390;
 const SHOT_HEIGHT = 844;
 const READING_SHOTS: { src: string | null; alt: string; placeholder: string }[] = [
@@ -284,7 +286,8 @@ const PBHome: React.FC = () => {
         <span className="pbh-chevron" aria-hidden="true" />
       </section>
 
-      {/* ============ SECTION 1A - WHAT A READING LOOKS LIKE ============ */}
+      {/* ============ SECTION 1A - WHAT A READING LOOKS LIKE (hidden by SHOW_READING) ============ */}
+      {SHOW_READING && (
       <section id="reading" className="pb-section pbh-sec pbh-reading" aria-labelledby="reading-h">
         <div className="pbh-wrap">
           <p className="pbh-label">Example reading</p>
@@ -320,6 +323,7 @@ const PBHome: React.FC = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* ============ SECTION 1B - HOW IT WORKS ============ */}
       <section id="how-it-works" className="pb-section pbh-how">
@@ -460,9 +464,9 @@ const PBHome: React.FC = () => {
           <div className="pbh-founding">
             <div className="pbh-founding-left">
               <span className="pbh-badge">Founding offer</span>
-              <p className="pbh-founding-head">50% off every tier, for the first 1,000 members</p>
+              <p className="pbh-founding-head">50% off your first 6 months, for the first 1,000 members.</p>
               <p className="pbh-founding-note">
-                Locked in for as long as your subscription stays active. Ends 31 December 2026.
+                Claim by 31 December 2026.
               </p>
             </div>
             <a
@@ -518,7 +522,7 @@ const PBHome: React.FC = () => {
               <div className="pbh-price">
                 €6.50 <s className="pbh-price-was">€13</s>
               </div>
-              <p className="pbh-price-note">per month · founding price</p>
+              <p className="pbh-price-note">per month for 6 months · founding price</p>
               <p className="pbh-plus-heading">Everything on Seeker, plus:</p>
               <ul className="pbh-list">
                 <li className="pbh-li--gold">Know Thyself (deep multi-section personal reading)</li>
@@ -554,7 +558,7 @@ const PBHome: React.FC = () => {
               <div className="pbh-price">
                 €9 <s className="pbh-price-was">€18</s>
               </div>
-              <p className="pbh-price-note">per month · founding price</p>
+              <p className="pbh-price-note">per month for 6 months · founding price</p>
               <p className="pbh-plus-heading">Everything on Based, plus:</p>
               <ul className="pbh-list">
                 <li className="pbh-li--gold">
@@ -628,9 +632,15 @@ const PBHome: React.FC = () => {
           <br />
           <em>You just have not read it yet.</em>
         </h2>
-        <button type="button" className="pbh-btn pbh-btn--solid" style={{ marginTop: 34 }}>
+        <a
+          href={APP_SIGNUP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pbh-btn pbh-btn--solid"
+          style={{ marginTop: 34 }}
+        >
           Start your blueprint
-        </button>
+        </a>
         <p className="pbh-founders">
           <Link to={STORY_PATH}>
             Built by the founding team of HumanBased, a social enterprise in Copenhagen.
@@ -850,10 +860,10 @@ const PBHome: React.FC = () => {
         .pbh-hero-note {
           font-size: 12px;
           line-height: 1.7;
-          color: var(--pb-muted);
+          color: rgba(255,255,255,0.85);
           max-width: 440px;
           margin: 20px 0 0;
-          text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+          text-shadow: 0 1px 3px rgba(0,0,0,0.65), 0 2px 12px rgba(0,0,0,0.55);
         }
 
         /* ---------- reading (phone frames) ---------- */
