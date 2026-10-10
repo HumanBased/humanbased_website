@@ -32,7 +32,7 @@ export const OG_LOCALE = 'en_US';
 // shows, including the text rendered in it.
 const OG_IMAGE_ALTS: Record<string, string> = {
   'og-humanbased.jpg':
-    'HumanBased wordmark and the line "Technology in service of humanity" over a dark night sky with glowing translucent screens and a golden orbit around a small city.',
+    'HumanBased wordmark and the line "Technology in service of humanity" over Earth at night seen from orbit, with golden city lights and a thin blue atmosphere.',
   'og-purposebased.jpg':
     'PurposeBased wordmark and the line "Become who you\'re meant to be" over a starry night landscape where a glowing golden road leads to a bright star.',
   'og-story.jpg':

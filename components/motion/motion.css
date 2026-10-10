@@ -10,17 +10,26 @@
   --mx-reveal-ms: 820ms;
 }
 
-/* ---------- scroll reveal ---------- */
+/* ---------- scroll reveal ----------
+   A keyframe animation rather than a transition, so it never overrides an
+   element's own hover transitions. Elements already on screen when the engine
+   starts are marked data-revealed="static" and do not animate at all. */
 html.motion-ok [data-reveal]:not([data-revealed]) {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
 }
 html.motion-ok [data-reveal='fade']:not([data-revealed]) { transform: none; }
-html.motion-ok [data-reveal] {
-  transition:
-    opacity var(--mx-reveal-ms) var(--mx-ease),
-    transform var(--mx-reveal-ms) var(--mx-ease);
-  transition-delay: var(--mx-delay, 0ms);
+html.motion-ok [data-reveal][data-revealed=''] {
+  animation: mx-reveal var(--mx-reveal-ms) var(--mx-ease) var(--mx-delay, 0ms) backwards;
+}
+html.motion-ok [data-reveal='fade'][data-revealed=''] { animation-name: mx-fade; }
+@keyframes mx-reveal {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mx-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ---------- layered parallax (engine writes --parallax-y) ---------- */

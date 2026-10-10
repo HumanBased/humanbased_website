@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
+import Journey from '../../../components/motion/Journey';
+import { PB_JOURNEY } from '../../../components/motion/journeys';
 
 // PurposeBased - The Library.
 // Seven traditions that shaped human meaning. Big image-left/text-right cards
@@ -101,7 +103,13 @@ const PBLibrary: React.FC = () => {
   });
 
   return (
-    <section className="pbl">
+    <section className="pbl" style={{ position: 'relative' }}>
+      <Journey
+        start=".pbl-hero"
+        milestones={PB_JOURNEY(['.pbl-hero', '.pbl-grid', '.pbl-card:last-child'])}
+        end=".pbl-grid"
+        left="max(10px, calc(50% - 650px))"
+      />
       {/* ============ HERO ============ */}
       <header className="pbl-hero">
         <p className="pbl-label">The Library</p>
@@ -110,8 +118,14 @@ const PBLibrary: React.FC = () => {
 
       {/* ============ TRADITION CARDS ============ */}
       <div className="pbl-grid">
-        {TRADITIONS.map((t) => (
-          <Link key={t.slug} to={`/purposebased/library/${t.slug}`} className="pbl-card">
+        {TRADITIONS.map((t, i) => (
+          <Link
+            key={t.slug}
+            to={`/purposebased/library/${t.slug}`}
+            className="pbl-card"
+            data-reveal=""
+            style={{ ['--mx-delay' as string]: `${(i % 3) * 90}ms` }}
+          >
             <div className="pbl-card-img">
               {t.img ? (
                 <img

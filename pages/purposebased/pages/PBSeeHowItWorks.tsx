@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
+import Journey from '../../../components/motion/Journey';
+import { PB_JOURNEY } from '../../../components/motion/journeys';
 
 // PurposeBased - See How It Works.
 // A five-step journey down a softly glowing gold timeline with ornamental
@@ -73,7 +75,12 @@ const PBSeeHowItWorks: React.FC = () => {
   });
 
   return (
-    <div className="pbw">
+    <div className="pbw" style={{ position: 'relative' }}>
+      <Journey
+        start=".pbw-hero"
+        milestones={PB_JOURNEY(['.pbw-step:nth-child(1)', '.pbw-step:nth-child(3)', '.pbw-cta'])}
+        end=".pbw-cta"
+      />
       {/* ============ HERO ============ */}
       <header className="pbw-hero">
         <p className="pbw-label">See How It Works</p>
@@ -83,7 +90,7 @@ const PBSeeHowItWorks: React.FC = () => {
       {/* ============ FIVE-STEP JOURNEY ============ */}
       <div className="pbw-journey">
         {STEPS.map((s, i) => (
-          <div key={s.n} className={`pbw-step${i % 2 === 1 ? ' pbw-step--flip' : ''}`}>
+          <div key={s.n} className={`pbw-step${i % 2 === 1 ? ' pbw-step--flip' : ''}`} data-reveal="">
             <div className="pbw-step-text">
               <span className="pbw-step-num">{s.n}</span>
               <h2 className="pbw-step-name">

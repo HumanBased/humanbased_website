@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
+import Journey from '../../../components/motion/Journey';
+import { PB_JOURNEY } from '../../../components/motion/journeys';
 
 // PurposeBased home. Premium wellness/purpose landing page.
 // Cormorant for headings, DM Sans for body/labels. Colour tokens live in the
@@ -217,7 +219,11 @@ const PBHome: React.FC = () => {
   });
 
   return (
-    <div className="pbh" ref={rootRef}>
+    <div className="pbh" ref={rootRef} style={{ position: 'relative' }}>
+      <Journey
+        start=".pbh-hero-content"
+        milestones={PB_JOURNEY(['#how-it-works', '#features', '.pbh-close'])}
+      />
       {/* ============ SECTION 1 - HERO ============ */}
       <section id="home" className="pbh-hero">
         <div className="pbh-hero-bg" aria-hidden="true" />
@@ -369,7 +375,7 @@ const PBHome: React.FC = () => {
               you wait for. It is a structure you can read.
             </p>
             <div className="pbh-stat">
-              <span className="pbh-stat-num">58%</span>
+              <span className="pbh-stat-num" data-countup="">58%</span>
               <span className="pbh-stat-label">Young adults lacking meaning or purpose</span>
               <span className="pbh-stat-source">Harvard GSE, Psychiatry.org</span>
             </div>

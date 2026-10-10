@@ -109,7 +109,7 @@ const AboutPage: React.FC = () => {
                 </a>
                 <Link
                   to="/services"
-                  className="ed-btn ed-btn--ghost"
+                  className="ed-btn ed-btn--ghost normal-case tracking-normal"
                 >
                   View Services
                 </Link>

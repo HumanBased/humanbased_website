@@ -1,5 +1,7 @@
 import React from 'react';
 import { usePageSeo } from '../../../hooks/usePageSeo';
+import Journey from '../../../components/motion/Journey';
+import { PB_JOURNEY } from '../../../components/motion/journeys';
 
 // PurposeBased - Our Story.
 // Editorial layout: full-bleed sections over three content widths (narrow 680
@@ -46,7 +48,12 @@ const PBStory: React.FC = () => {
   });
 
   return (
-    <article className="pbs">
+    <article className="pbs" style={{ position: 'relative' }}>
+      <Journey
+        start=".pbs-hero"
+        milestones={PB_JOURNEY(['#story-why', '#story-product', '#story-commitment'])}
+        end=".pbs-sec--close"
+      />
       {/* ============ HERO (the only place the label and H1 appear) ============ */}
       <header className="pbs-hero">
         <div className="pbs-wide">
@@ -56,8 +63,8 @@ const PBStory: React.FC = () => {
       </header>
 
       {/* ============ 1. WHY WE'RE BUILDING THIS - plain ============ */}
-      <section className="pbs-sec">
-        <div className="pbs-narrow pbs-body">
+      <section className="pbs-sec" id="story-why">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             We wanted to build something that genuinely changes lives, and kept returning to the one
             thing that felt missing: purpose.
@@ -74,11 +81,11 @@ const PBStory: React.FC = () => {
           </p>
         </div>
 
-        <blockquote className="pbs-wide pbs-quote">
+        <blockquote className="pbs-wide pbs-quote" data-reveal="">
           We saw this, and we could not look away.
         </blockquote>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <h2 className="pbs-sub pbs-sub--first">The opportunity of our time</h2>
           <p>
             Technology lets us learn almost anything, work with anyone, and build things ourselves.
@@ -100,8 +107,8 @@ const PBStory: React.FC = () => {
         <div className="pbs-full">
           <div className="pbs-stats">
             {STATS.map((stat) => (
-              <div key={stat.num} className="pbs-stat">
-                <span className="pbs-stat-num">{stat.num}</span>
+              <div key={stat.num} className="pbs-stat" data-reveal="">
+                <span className="pbs-stat-num" data-countup="">{stat.num}</span>
                 <span className="pbs-stat-label">{stat.label}</span>
                 <span className="pbs-stat-source">{stat.source}</span>
               </div>
@@ -112,12 +119,12 @@ const PBStory: React.FC = () => {
 
       {/* ============ 3. YOU CAN DO ANYTHING - tinted ============ */}
       <section className="pbs-sec pbs-sec--tint">
-        <div className="pbs-wide pbs-head">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">The World We Live In</p>
           <h2 className="pbs-title">The paradox of infinite possibility</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             More is available to us than ever before. Learn any skill, build a business, reach
             anyone, create what was once unimaginable.
@@ -128,11 +135,11 @@ const PBStory: React.FC = () => {
           </p>
         </div>
 
-        <blockquote className="pbs-wide pbs-quote">
+        <blockquote className="pbs-wide pbs-quote" data-reveal="">
           You can do anything, just not everything.
         </blockquote>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p>
             Without direction, effort scatters and depth never arrives. The work is not to find the
             perfect path. It is to choose one, knowing what you leave behind.
@@ -146,12 +153,12 @@ const PBStory: React.FC = () => {
 
       {/* ============ 4. THE WORD IS OVERLOADED - plain ============ */}
       <section className="pbs-sec">
-        <div className="pbs-wide pbs-head">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">On Words and Meaning</p>
           <h2 className="pbs-title">Purpose is an overloaded word</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             Purpose has become a cliché, stripped of meaning by overuse and inflated by expectations
             no single word can carry.
@@ -174,21 +181,21 @@ const PBStory: React.FC = () => {
           </ul>
         </div>
 
-        <blockquote className="pbs-wide pbs-quote">The word is a doorway.</blockquote>
+        <blockquote className="pbs-wide pbs-quote" data-reveal="">The word is a doorway.</blockquote>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p>What matters is not the label, but what lies behind it.</p>
         </div>
       </section>
 
       {/* ============ 5. WHY PURPOSEBASED MATTERS - tinted ============ */}
-      <section className="pbs-sec pbs-sec--tint">
-        <div className="pbs-wide pbs-head">
+      <section className="pbs-sec pbs-sec--tint" id="story-product">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">Why PurposeBased Matters</p>
           <h2 className="pbs-title">The product we built</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             We went to the source: the traditions, frameworks, and practices that help people
             understand themselves, and the gaps in what already exists.
@@ -215,30 +222,30 @@ const PBStory: React.FC = () => {
           </p>
         </div>
 
-        <blockquote className="pbs-wide pbs-quote">
+        <blockquote className="pbs-wide pbs-quote" data-reveal="">
           Know yourself. Align your life. Live your purpose.
         </blockquote>
       </section>
 
       {/* ============ 6. WHY THIS MATTERS NOW - plain ============ */}
       <section className="pbs-sec">
-        <div className="pbs-wide pbs-head">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">Why This Matters Now</p>
           <h2 className="pbs-title">The historical moment</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             We live in a time of enormous change. Automation is transforming employment, and the old
             idea of one job for decades is becoming less certain.
           </p>
         </div>
 
-        <blockquote className="pbs-wide pbs-quote">
+        <blockquote className="pbs-wide pbs-quote" data-reveal="">
           Purpose is no longer a luxury. It is becoming a necessity.
         </blockquote>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p>
             At the same time we have more freedom than ever to learn, connect, build, and shape work
             around what we care about. The systems around us have not caught up. Education and
@@ -252,12 +259,12 @@ const PBStory: React.FC = () => {
 
       {/* ============ 7. OUR BIGGER VISION - tinted ============ */}
       <section className="pbs-sec pbs-sec--tint">
-        <div className="pbs-wide pbs-head">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">Our Bigger Vision</p>
           <h2 className="pbs-title">Humanity united</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             This is the beginning. Our goal is to reach people worldwide and help them understand
             their purpose and how to live it.
@@ -272,13 +279,13 @@ const PBStory: React.FC = () => {
       </section>
 
       {/* ============ 8. THE COMMITMENT - plain ============ */}
-      <section className="pbs-sec">
-        <div className="pbs-wide pbs-head">
+      <section className="pbs-sec" id="story-commitment">
+        <div className="pbs-wide pbs-head" data-reveal="">
           <p className="pbs-label">The Commitment</p>
           <h2 className="pbs-title">Why we do this</h2>
         </div>
 
-        <div className="pbs-narrow pbs-body">
+        <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
             We are not here to maximize engagement or profit from confusion. We are here because
             purpose shapes how we spend our time and the world we create.

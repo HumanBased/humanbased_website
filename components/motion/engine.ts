@@ -107,7 +107,7 @@ export const onMotionFrame = (listener: FrameListener): (() => void) => {
 export const scanMotionTargets = (): void => {
   if (!observer) return;
   document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => {
-    if (isInViewport(el)) el.setAttribute('data-revealed', '');
+    if (isInViewport(el)) el.setAttribute('data-revealed', 'static');
     else observer?.observe(el);
   });
   document.querySelectorAll<HTMLElement>(COUNT_SELECTOR).forEach((el) => {
