@@ -2,7 +2,8 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedDeleteDataPage: React.FC = () => {
-  usePageTitle('Delete PurposeBased Data, HumanBased', '/apps/purposebased/delete-data');
+  usePageTitle('Delete PurposeBased Data, HumanBased', '/apps/purposebased/delete-data',
+    'How to request deletion of the personal data PurposeBased holds about you, in the app or by email to HumanBased support.');
 
   return (
     <div className="flex-grow bg-transparent">

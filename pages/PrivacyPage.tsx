@@ -2,7 +2,8 @@ import React from "react";
 import { usePageTitle } from '../hooks/usePageTitle';
 
 const PrivacyPage: React.FC = () => {
-  usePageTitle('Privacy & Data Governance – HumanBased', '/privacy');
+  usePageTitle('Privacy & Data Governance – HumanBased', '/privacy',
+    'How HumanBased approaches privacy and data governance: GDPR compliance, privacy by default, transparency and security in our applications.');
   return (
     <div className="flex-grow bg-transparent">
       <section className="pt-32 pb-20 px-6 sm:px-10 md:px-16">

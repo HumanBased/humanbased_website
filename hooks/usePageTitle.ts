@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { siteUrl } from '../config/site';
 import { upsertLink, upsertMeta } from './usePageSeo';
 
-// Sets the document title and, when a path is given, a self-referencing
-// canonical plus a matching og:url on the www host.
-export function usePageTitle(title: string, canonicalPath?: string) {
+// Sets the document title and, when given, a self-referencing canonical, a
+// matching og:url on the www host, and a page-specific meta description.
+export function usePageTitle(title: string, canonicalPath?: string, description?: string) {
   useEffect(() => {
     if (typeof document !== 'undefined') {
       document.title = title;
@@ -21,4 +21,9 @@ export function usePageTitle(title: string, canonicalPath?: string) {
       revertLink();
     };
   }, [canonicalPath]);
+
+  useEffect(() => {
+    if (typeof document === 'undefined' || !description) return;
+    return upsertMeta({ attr: 'name', key: 'description' }, description);
+  }, [description]);
 }

@@ -16,9 +16,9 @@ const ComingSoonCard: React.FC = () => (
       </div>
     </div>
     <div className="relative p-6 sm:p-7 lg:p-8 space-y-3">
-      <h3 className="font-serif text-2xl md:text-[26px] font-medium text-white/40">
+      <h2 className="font-serif text-2xl md:text-[26px] font-medium text-white/40">
         Coming Soon
-      </h3>
+      </h2>
       <p className="text-xs uppercase tracking-[0.25em] text-white/25">
         Next HumanBased Product
       </p>
@@ -110,9 +110,9 @@ const ProductsPage: React.FC = () => {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
+                    <h2 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
                       BasedTalk
-                    </h3>
+                    </h2>
                     <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
                       Relational Intelligence App
                     </p>
@@ -198,9 +198,9 @@ const ProductsPage: React.FC = () => {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <h3 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
+                    <h2 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
                       PurposeBased
-                    </h3>
+                    </h2>
                     <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
                       Purpose &amp; Self-Knowledge App
                     </p>

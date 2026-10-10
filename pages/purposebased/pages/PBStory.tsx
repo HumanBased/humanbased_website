@@ -82,7 +82,7 @@ const PBStory: React.FC = () => {
             freedom and opportunity than ever, many still feel lost. We are living through a meaning
             crisis, and most of us were never taught how to navigate it.
           </p>
-          <h3 className="pbs-sub">The crisis is real</h3>
+          <h2 className="pbs-sub">The crisis is real</h2>
           <p>
             Belief in purpose is nearly universal. The pursuit of it is rare. Behind every figure
             below is someone who was never handed the tools to look.
@@ -94,7 +94,7 @@ const PBStory: React.FC = () => {
         </blockquote>
 
         <div className="pbs-narrow pbs-body">
-          <h3 className="pbs-sub pbs-sub--first">The opportunity of our time</h3>
+          <h2 className="pbs-sub pbs-sub--first">The opportunity of our time</h2>
           <p>
             Technology lets us learn almost anything, work with anyone, and build things ourselves.
             At the same time, automation is reshaping work, and the old path of education, job,

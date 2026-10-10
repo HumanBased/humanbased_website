@@ -5,9 +5,15 @@ import { TRADITIONS } from './PBLibrary';
 
 const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
-const firstSentences = (text: string, count: number): string => {
-  const parts = text.split(/(?<=[.?!])\s+/).slice(0, count);
-  return parts.join(' ');
+// Hand-written meta descriptions (<= 160 chars); the on-page copy is longer.
+const SEO_DESCRIPTIONS: Record<string, string> = {
+  ikigai: 'Ikigai, the reason for being: purpose found where what you love, what you are good at, what the world needs and what sustains you meet.',
+  dharma: 'Dharma, from Hindu and Buddhist philosophy: your duty and purpose in life, discovered through your nature, talents and the needs of your community.',
+  thelema: "Thelema, from Aleister Crowley's philosophy: true will as your authentic purpose, aligned with the universe rather than selfish desire.",
+  dao: 'Dao, the way, from Chinese philosophy: finding purpose by understanding your place in the underlying flow of the universe and moving with it.',
+  eudaimonia: "Eudaimonia, from Aristotle's ethics: flourishing through virtue, where purpose is the ongoing practice of excellence in a meaningful life.",
+  'magnum-opus': 'Magnum Opus, the Great Work from classical and alchemical tradition: the defining work you bring into the world with your fullest capacity.',
+  logotherapy: "Logotherapy, from Viktor Frankl's framework: the will to meaning as a human drive, and the idea that life can keep meaning in hard circumstances.",
 };
 
 const PBTraditionDetail: React.FC = () => {
@@ -16,7 +22,7 @@ const PBTraditionDetail: React.FC = () => {
 
   const title = entry ? `PurposeBased | ${entry.title}` : 'PurposeBased | The Library';
   const description = entry
-    ? firstSentences(entry.copy, 3)
+    ? (SEO_DESCRIPTIONS[entry.slug] ?? entry.title)
     : 'Explore the traditions that shape your purpose blueprint.';
   const url = `https://www.humanbased.org/purposebased/library/${tradition ?? ''}`;
 
@@ -24,6 +30,7 @@ const PBTraditionDetail: React.FC = () => {
     title,
     description,
     canonical: url,
+    robots: 'noindex,follow',
     og: {
       title,
       description,

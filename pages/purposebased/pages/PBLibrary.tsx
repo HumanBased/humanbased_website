@@ -119,7 +119,7 @@ const PBLibrary: React.FC = () => {
               )}
             </div>
             <div className="pbl-card-text">
-              <h3 className="pbl-card-title">{t.title}</h3>
+              <h2 className="pbl-card-title">{t.title}</h2>
               <p className="pbl-card-body">{t.copy}</p>
               <span className="pbl-card-link">Explore</span>
             </div>

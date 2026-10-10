@@ -79,7 +79,7 @@ const Process: React.FC = () => {
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
               </div>
-              <h3 className="font-serif text-xl font-medium mb-4">{step.title}</h3>
+              <h2 className="font-serif text-xl font-medium mb-4">{step.title}</h2>
               <p className="text-white/40 text-sm leading-relaxed font-light">
                 {step.desc}
               </p>

@@ -2,7 +2,8 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedTermsPage: React.FC = () => {
-  usePageTitle('PurposeBased Terms & Conditions, HumanBased', '/apps/purposebased/terms');
+  usePageTitle('PurposeBased Terms & Conditions, HumanBased', '/apps/purposebased/terms',
+    'The terms and conditions for using the PurposeBased app, published by HumanBased in Copenhagen, Denmark.');
 
   return (
     <div className="flex-grow bg-transparent">

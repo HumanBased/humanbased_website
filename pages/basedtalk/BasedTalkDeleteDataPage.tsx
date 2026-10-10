@@ -2,7 +2,8 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const BasedTalkDeleteDataPage: React.FC = () => {
-  usePageTitle('Delete Your BasedTalk Data, HumanBased', '/apps/basedtalk/delete-data');
+  usePageTitle('Delete Your BasedTalk Data, HumanBased', '/apps/basedtalk/delete-data',
+    'How to request deletion of all personal data BasedTalk holds about you, in the app or by email, completed within 30 days.');
 
   return (
     <div className="flex-grow bg-transparent">

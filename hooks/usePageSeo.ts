@@ -89,6 +89,10 @@ export function usePageSeo(seo: PageSeo): void {
 
     cleanups.push(upsertMeta({ attr: 'name', key: 'description' }, seo.description));
 
+    if (seo.robots) {
+      cleanups.push(upsertMeta({ attr: 'name', key: 'robots' }, seo.robots));
+    }
+
     if (seo.canonical) {
       cleanups.push(upsertLink('canonical', seo.canonical));
     }
