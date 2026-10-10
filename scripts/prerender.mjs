@@ -92,17 +92,7 @@ async function prerender() {
   const baseUrl = `http://127.0.0.1:${port}`;
   console.log(`[prerender] serving ${distDir} at ${baseUrl}`);
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--no-first-run',
-      '--no-zygote',
-    ],
-  });
+  const browser = await puppeteer.launch(await launchOptions());
 
   try {
     for (const route of ROUTES) {
