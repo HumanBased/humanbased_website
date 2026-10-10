@@ -31,7 +31,7 @@ export const ROUTE_ENTRIES = [
 // Library detail pages are prerendered (own title, description, self canonical,
 // noindex,follow) but kept out of the sitemap while their content is thin.
 export const NOINDEX_ROUTES = [
-  'ikigai', 'dharma', 'thelema', 'dao', 'eudaimonia', 'magnum-opus', 'logotherapy',
+  'ikigai', 'dharma', 'thelema', 'tao', 'eudaimonia', 'magnum-opus', 'logotherapy',
 ].map((slug) => '/purposebased/library/' + slug);
 
 export const ROUTES = [...ROUTE_ENTRIES.map((r) => r.path), ...NOINDEX_ROUTES];

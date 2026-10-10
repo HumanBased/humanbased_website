@@ -44,11 +44,11 @@ export const TRADITIONS: Tradition[] = [
     imgHeight: 941,
   },
   {
-    slug: 'dao',
-    title: 'Dao',
+    slug: 'tao',
+    title: 'Tao - The Way',
     copy:
       'The way or path. From Chinese philosophy: the underlying flow of the universe. Your purpose is found by understanding your place within this flow, not by forcing, but by moving with what naturally wants to happen through you.',
-    img: '/images/library/dao.webp',
+    img: '/images/library/tao.webp',
     imgWidth: 1672,
     imgHeight: 941,
   },
@@ -88,7 +88,7 @@ const PBLibrary: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | 7 Traditions of Purpose',
     description:
-      'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Dao, Eudaimonia, Magnum Opus, Logotherapy.',
+      'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Tao, Eudaimonia, Magnum Opus, Logotherapy.',
     canonical: LIBRARY_URL,
     jsonLd: {
       '@context': 'https://schema.org',

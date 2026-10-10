@@ -13,10 +13,11 @@ export default defineConfig(({ mode }) => {
       plugins: [react()],
       define: {
         __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
-        // Team photos are optional: shown on /about only if the file exists at build time.
+        // Team photos are optional: shown on /about only if scripts/team-photos.mjs
+        // produced public/images/team/<key>.webp before this build.
         __TEAM_PHOTOS__: JSON.stringify({
-          luis: existsSync(path.resolve(__dirname, 'public/images/team/luis.jpg')),
-          alexina: existsSync(path.resolve(__dirname, 'public/images/team/alexina.jpg')),
+          luis: existsSync(path.resolve(__dirname, 'public/images/team/luis.webp')),
+          alexina: existsSync(path.resolve(__dirname, 'public/images/team/alexina.webp')),
         }),
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)

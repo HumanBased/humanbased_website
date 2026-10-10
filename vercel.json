@@ -15,6 +15,11 @@
       "statusCode": 301
     },
     {
+      "source": "/purposebased/library/dao",
+      "destination": "/purposebased/library/tao",
+      "statusCode": 301
+    },
+    {
       "source": "/basedtalk",
       "destination": "/apps/basedtalk",
       "statusCode": 301

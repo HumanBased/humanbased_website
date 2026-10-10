@@ -125,6 +125,7 @@ const Contact: React.FC = () => {
                     type="text"
                     id="name"
                     name="name"
+                    maxLength={100}
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full bg-white/[0.03] border rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20 ${
@@ -144,6 +145,7 @@ const Contact: React.FC = () => {
                     type="text"
                     id="company"
                     name="company"
+                    maxLength={120}
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20"
@@ -158,6 +160,7 @@ const Contact: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
+                    maxLength={254}
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full bg-white/[0.03] border rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20 ${
@@ -176,6 +179,7 @@ const Contact: React.FC = () => {
                   <textarea
                     id="message"
                     name="message"
+                    maxLength={5000}
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}

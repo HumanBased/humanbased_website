@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ogImageFor, siteUrl } from '../config/site';
+import { ogImageFor, siteNameFor, siteUrl } from '../config/site';
 import { applyShareMeta, upsertLink, upsertMeta } from './usePageSeo';
 
 // Sets the document title and, when given, a self-referencing canonical, a
@@ -22,6 +22,7 @@ export function usePageTitle(title: string, canonicalPath?: string, description?
         description: description ?? '',
         url: siteUrl(canonicalPath),
         image: ogImageFor(canonicalPath),
+        siteName: siteNameFor(canonicalPath),
       }),
     );
     return () => {

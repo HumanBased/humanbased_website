@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/team-photos.mjs",
     "build": "vite build",
-    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/prerender.mjs && node scripts/team-photos.mjs --clean-dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "puppeteer": "^24.42.0",
+    "sharp": "^0.35.5",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   },

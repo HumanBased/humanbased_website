@@ -9,11 +9,14 @@ const SEO_DESCRIPTIONS: Record<string, string> = {
   ikigai: 'Ikigai, the reason for being: purpose found where what you love, what you are good at, what the world needs and what sustains you meet.',
   dharma: 'Dharma, from Hindu and Buddhist philosophy: your duty and purpose in life, discovered through your nature, talents and the needs of your community.',
   thelema: "Thelema, from Aleister Crowley's philosophy: true will as your authentic purpose, aligned with the universe rather than selfish desire.",
-  dao: 'Dao, the way, from Chinese philosophy: finding purpose by understanding your place in the underlying flow of the universe and moving with it.',
+  tao: 'Tao - The Way, from Chinese philosophy: finding purpose by understanding your place in the underlying flow of the universe and moving with it.',
   eudaimonia: "Eudaimonia, from Aristotle's ethics: flourishing through virtue, where purpose is the ongoing practice of excellence in a meaningful life.",
   'magnum-opus': 'Magnum Opus, the Great Work from classical and alchemical tradition: the defining work you bring into the world with your fullest capacity.',
   logotherapy: "Logotherapy, from Viktor Frankl's framework: the will to meaning as a human drive, and the idea that life can keep meaning in hard circumstances.",
 };
+
+// Slugs that were renamed; the old URL is also 301-redirected in vercel.json.
+const RENAMED_SLUGS: Record<string, string> = { dao: 'tao' };
 
 const PBTraditionDetail: React.FC = () => {
   const { tradition } = useParams<{ tradition: string }>();
@@ -33,6 +36,8 @@ const PBTraditionDetail: React.FC = () => {
   });
 
   if (!entry) {
+    const renamed = tradition ? RENAMED_SLUGS[tradition] : undefined;
+    if (renamed) return <Navigate to={`/purposebased/library/${renamed}`} replace />;
     return <Navigate to="/purposebased/library" replace />;
   }
 

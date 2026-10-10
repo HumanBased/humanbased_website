@@ -18,8 +18,8 @@ const initials = (name: string): string =>
     .map((part) => part[0])
     .join('');
 
-// Names and roles only. A photo is shown only if /images/team/<key>.jpg existed
-// at build time (see vite.config.ts); otherwise an initials badge keeps the layout.
+// Names and roles only. A photo is shown only if /images/team/<key>.webp existed
+// at build time (made by scripts/team-photos.mjs from a png/jpg/webp source); otherwise an initials badge keeps the layout.
 const TeamBlock: React.FC = () => (
   <section className="pb-4" aria-labelledby="team-heading">
     <div className="max-w-3xl mx-auto px-6 text-center space-y-8">
@@ -32,10 +32,10 @@ const TeamBlock: React.FC = () => (
           <li key={person.key} className="flex flex-col items-center gap-3">
             {TEAM_PHOTOS[person.key] ? (
               <img
-                src={`/images/team/${person.key}.jpg`}
-                alt={person.name}
-                width={96}
-                height={96}
+                src={`/images/team/${person.key}.webp`}
+                alt={`${person.name}, ${person.role}`}
+                width={600}
+                height={600}
                 loading="lazy"
                 decoding="async"
                 className="h-24 w-24 rounded-full object-cover border border-white/10"

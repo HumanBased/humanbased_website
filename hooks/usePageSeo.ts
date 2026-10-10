@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ogImageFor } from '../config/site';
+import { OG_LOCALE, ogImageAltFor, ogImageFor, siteNameFor } from '../config/site';
 
 // Runtime <head> management for SEO. The build's prerender step (scripts/prerender.mjs)
 // snapshots the live DOM per route with Puppeteer, so meta tags written here end up
@@ -20,7 +20,10 @@ export interface PageSeo {
     title?: string;
     description?: string;
     image?: string;
+    /** Alt text for og:image. Defaults to the known alt for the share image. */
+    imageAlt?: string;
     url?: string;
+    siteName?: string;
   };
   twitter?: {
     card?: string;
@@ -79,6 +82,9 @@ export interface ShareMeta {
   description: string;
   url?: string;
   image?: string;
+  imageAlt?: string;
+  siteName?: string;
+  locale?: string;
   type?: string;
   ogTitle?: string;
   ogDescription?: string;
@@ -97,7 +103,10 @@ export function applyShareMeta(m: ShareMeta): Array<() => void> {
     'og:title': m.ogTitle ?? m.title,
     'og:description': m.ogDescription ?? (m.description || undefined),
     'og:image': m.image,
+    'og:image:alt': m.image ? (m.imageAlt ?? ogImageAltFor(m.image)) : undefined,
     'og:url': m.url,
+    'og:site_name': m.siteName,
+    'og:locale': m.locale ?? OG_LOCALE,
   };
   for (const [k, v] of Object.entries(og)) {
     if (v) out.push(upsertMeta({ attr: 'property', key: k }, v));
@@ -123,6 +132,7 @@ export function usePageSeo(seo: PageSeo): void {
     if (typeof document === 'undefined') return;
 
     const cleanups: Array<() => void> = [];
+    const pathname = seo.canonical ? new URL(seo.canonical).pathname : undefined;
 
     const prevTitle = document.title;
     document.title = seo.title;
@@ -145,7 +155,9 @@ export function usePageSeo(seo: PageSeo): void {
         title: seo.title,
         description: seo.description,
         url: seo.og?.url ?? seo.canonical,
-        image: seo.og?.image ?? (seo.canonical ? ogImageFor(new URL(seo.canonical).pathname) : undefined),
+        image: seo.og?.image ?? (pathname ? ogImageFor(pathname) : undefined),
+        imageAlt: seo.og?.imageAlt,
+        siteName: seo.og?.siteName ?? (pathname ? siteNameFor(pathname) : undefined),
         type: seo.og?.type,
         ogTitle: seo.og?.title,
         ogDescription: seo.og?.description,
