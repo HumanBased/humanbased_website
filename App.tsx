@@ -23,6 +23,8 @@ import PurposeBasedDeleteAccountPage from './pages/purposebased/PurposeBasedDele
 import PurposeBasedDeleteDataPage from './pages/purposebased/PurposeBasedDeleteDataPage';
 import PurposeBased from './pages/purposebased';
 import siteBg from './assets/images/site-bg.webp';
+import { useMotion } from './components/motion/useMotion';
+import './components/motion/motion.css';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -41,9 +43,18 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {/* Dark Overlay to ensure text readability */}
         <div className="absolute inset-0 bg-[#050509]/70" />
       </div>
-      <div className="relative bg-transparent min-h-screen flex flex-col overflow-hidden">
+      {/* Pulled up over the html/body header padding (2 x --nav-height) so the
+          aurora also lights the strip under the navigation; without this a
+          darker 60px band showed where the nav meets the hero. */}
+      <div
+        className="relative bg-transparent min-h-screen flex flex-col overflow-hidden"
+        style={{ marginTop: 'calc(-2 * var(--nav-height))', paddingTop: 'calc(2 * var(--nav-height))' }}
+      >
         <AuroraBackground />
-        <div className="relative z-10 flex flex-col min-h-screen">
+        {/* No z-index here: a stacking context would isolate the home hero's
+            screen blend from the fixed background it has to merge into. Tree
+            order alone keeps this content above the aurora layer. */}
+        <div className="relative flex flex-col min-h-screen">
           <Navbar />
           <main className="bg-transparent text-white">
             {children}
@@ -101,10 +112,16 @@ const AppRoutes = () => {
   );
 };
 
+const MotionMount: React.FC = () => {
+  useMotion();
+  return null;
+};
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollHandler />
+      <MotionMount />
       <AppRoutes />
     </BrowserRouter>
   );

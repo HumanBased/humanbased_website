@@ -7,7 +7,7 @@
     "dev": "vite",
     "prebuild": "node scripts/team-photos.mjs",
     "build": "vite build",
-    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/prerender.mjs && node scripts/team-photos.mjs --clean-dist",
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/prerender.mjs && node scripts/team-photos.mjs --clean-dist && node scripts/hero-images.mjs --clean-dist",
     "preview": "vite preview"
   },
   "dependencies": {

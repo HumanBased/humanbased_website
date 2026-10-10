@@ -6,6 +6,8 @@ import Hero from '../components/Hero';
 import WhyHumanBased from '../components/WhyHumanBased';
 import Impact from '../components/Impact';
 import Contact from '../components/Contact';
+import Journey from '../components/motion/Journey';
+import { HB_JOURNEY } from '../components/motion/journeys';
 
 const HomePage: React.FC = () => {
   usePageTitle(
@@ -20,7 +22,12 @@ const HomePage: React.FC = () => {
     url: 'https://www.humanbased.org/',
   });
   return (
-    <div className="flex-grow">
+    <div className="flex-grow relative">
+      <Journey
+        start=".hb-hero-copy"
+        end="#contact"
+        milestones={HB_JOURNEY(['#hero', '#about', '#process', '#contact'])}
+      />
       <Hero />
       <div id="about">
         <WhyHumanBased />

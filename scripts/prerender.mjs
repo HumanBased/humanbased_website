@@ -20,6 +20,7 @@ const MIME = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
+  '.avif': 'image/avif',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
@@ -101,8 +102,22 @@ async function prerender() {
       const page = await browser.newPage();
       const url = baseUrl + route;
       console.log(`[prerender] rendering ${route}`);
+      // Reduced motion makes the motion engine leave every element in its final,
+      // visible state, so no animation frame is ever baked into the HTML.
+      await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
       await page.waitForSelector('#root > *', { timeout: 30000 });
+      // Client-only decoration (journey lines measure the live layout) and any
+      // runtime motion state must not reach the static HTML.
+      await page.evaluate(() => {
+        document.documentElement.classList.remove('motion-ok');
+        document.documentElement.removeAttribute('data-tab-hidden');
+        document.documentElement.style.removeProperty('--scroll-progress');
+        document.querySelectorAll('.mx-journey').forEach((el) => el.remove());
+        document.querySelectorAll('[data-revealed]').forEach((el) => el.removeAttribute('data-revealed'));
+        document.querySelectorAll('[data-counted]').forEach((el) => el.removeAttribute('data-counted'));
+        document.querySelectorAll('[data-parallax]').forEach((el) => el.style.removeProperty('--parallax-y'));
+      });
       const html = await page.content();
       await page.close();
 

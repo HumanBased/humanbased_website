@@ -50,9 +50,10 @@ const PurposeBased: React.FC<PurposeBasedProps> = ({ page = 'home' }) => {
     >
       <PBCosmos />
       <div
+        // No zIndex: it would isolate hero blend modes from the fixed cosmos.
+        // Tree order keeps this above PBCosmos (z-index 0).
         style={{
           position: 'relative',
-          zIndex: 10,
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',

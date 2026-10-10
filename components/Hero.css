@@ -1,0 +1,150 @@
+/* HumanBased home hero. The section is transparent; the photo dissolves into the
+   real page background (fixed starfield + veil + aurora, see App.tsx) through
+   1. a four-sided mask (vertical x horizontal, intersected) on the moving layer,
+   2. mix-blend-mode: screen, where the photo's black (0,0,0 after the black-point
+      correction in scripts/hero-images.mjs) leaves the background untouched.
+   Nothing between this layer and the page background may create a stacking
+   context, or the blend would only see transparency. */
+
+.hb-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.hb-hero-media,
+.hb-hero-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Long eased fades: ~24% top, ~35% bottom, ~10% each side. */
+  --hb-fade-y: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.05) 4%,
+    rgba(0, 0, 0, 0.2) 9%,
+    rgba(0, 0, 0, 0.48) 14%,
+    rgba(0, 0, 0, 0.78) 19%,
+    #000 24%,
+    #000 65%,
+    rgba(0, 0, 0, 0.84) 71%,
+    rgba(0, 0, 0, 0.58) 79%,
+    rgba(0, 0, 0, 0.3) 87%,
+    rgba(0, 0, 0, 0.1) 94%,
+    transparent 100%
+  );
+  --hb-fade-x: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 2.5%,
+    rgba(0, 0, 0, 0.55) 5.5%,
+    rgba(0, 0, 0, 0.86) 8%,
+    #000 10.5%,
+    #000 89.5%,
+    rgba(0, 0, 0, 0.86) 92%,
+    rgba(0, 0, 0, 0.55) 94.5%,
+    rgba(0, 0, 0, 0.18) 97.5%,
+    transparent 100%
+  );
+  -webkit-mask-image: var(--hb-fade-y), var(--hb-fade-x);
+  mask-image: var(--hb-fade-y), var(--hb-fade-x);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.hb-hero-media {
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+/* Without blend modes, draw the photo plainly but slightly dimmer so its black
+   reads as part of the dark page rather than a lifted panel. */
+@supports not (mix-blend-mode: screen) {
+  .hb-hero-media { opacity: 0.9; }
+}
+
+.hb-hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 58%;
+  transform-origin: 70% 70%;
+  animation: hb-hero-drift 30s ease-in-out infinite alternate;
+}
+
+@keyframes hb-hero-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+
+/* Legibility: a soft navy wash from the left, faded on the same edges. */
+.hb-hero-veil {
+  z-index: 0;
+  -webkit-mask-image: var(--hb-fade-y);
+  mask-image: var(--hb-fade-y);
+  background: linear-gradient(90deg, rgba(5, 8, 18, 0.55) 0%, rgba(5, 8, 18, 0.32) 32%, rgba(5, 8, 18, 0) 62%);
+}
+
+.hb-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 48px 96px;
+}
+
+.hb-hero-copy {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hb-hero-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* Mobile: copy sits in the dark sky at the top; the planet is a wide crop along
+   the bottom, so the curve and the city lights stay in view. */
+@media (max-width: 767px) {
+  .hb-hero { align-items: flex-start; }
+  .hb-hero-media {
+    top: auto;
+    height: 112vw;
+    /* 10% of a phone is ~40px, too steep for the bright limb: fade ~20% instead. */
+    --hb-fade-x: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 4%,
+      rgba(0, 0, 0, 0.26) 8%,
+      rgba(0, 0, 0, 0.52) 12%,
+      rgba(0, 0, 0, 0.78) 16%,
+      #000 21%,
+      #000 84%,
+      rgba(0, 0, 0, 0.7) 89%,
+      rgba(0, 0, 0, 0.35) 94%,
+      transparent 100%
+    );
+  }
+  .hb-hero-veil { display: none; }
+  .hb-hero-img { object-position: 74% 50%; }
+  .hb-hero-content { padding: 132px 24px calc(112vw - 40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-hero-img { animation: none; }
+}

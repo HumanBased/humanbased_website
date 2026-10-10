@@ -1,0 +1,190 @@
+/* Motion system styles. Every hidden starting state is scoped to html.motion-ok,
+   which only exists once JS has run and marked what is already on screen, so the
+   prerendered HTML and no-JS visitors always see the final state. */
+
+:root {
+  --mx-gold: #c4a85a;
+  --mx-gold-bright: #e6c87a;
+  --mx-line: rgba(255, 255, 255, 0.09);
+  --mx-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mx-reveal-ms: 820ms;
+}
+
+/* ---------- scroll reveal ---------- */
+html.motion-ok [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+html.motion-ok [data-reveal='fade']:not([data-revealed]) { transform: none; }
+html.motion-ok [data-reveal] {
+  transition:
+    opacity var(--mx-reveal-ms) var(--mx-ease),
+    transform var(--mx-reveal-ms) var(--mx-ease);
+  transition-delay: var(--mx-delay, 0ms);
+}
+
+/* ---------- layered parallax (engine writes --parallax-y) ---------- */
+[data-parallax] {
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
+}
+
+/* ---------- self-drawing path: pathLength="1" on the SVG path ---------- */
+html.motion-ok [data-draw]:not([data-revealed]) path,
+html.motion-ok [data-draw]:not([data-revealed]) line {
+  stroke-dashoffset: 1;
+}
+[data-draw] path,
+[data-draw] line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s var(--mx-ease);
+}
+
+/* ---------- refined card ---------- */
+.mx-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  transition:
+    border-color 0.45s var(--mx-ease),
+    transform 0.45s var(--mx-ease),
+    background-color 0.45s var(--mx-ease);
+}
+.mx-card::before {
+  /* hairline that lights along the top edge on hover */
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mx-gold), transparent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.45s var(--mx-ease), transform 0.6s var(--mx-ease);
+  pointer-events: none;
+}
+.mx-card:hover,
+.mx-card:focus-within {
+  border-color: rgba(196, 168, 90, 0.32);
+  transform: translateY(-3px);
+}
+.mx-card:hover::before,
+.mx-card:focus-within::before {
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
+/* ---------- section dissolve: hairline divider that fades at both ends ---------- */
+.mx-divider {
+  height: 1px;
+  border: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.10) 20%, rgba(255, 255, 255, 0.10) 80%, transparent);
+}
+
+/* ---------- journey line ---------- */
+.mx-journey {
+  position: absolute;
+  z-index: 2;
+  width: 1px;
+  pointer-events: none;
+}
+.mx-journey-track,
+.mx-journey-fill {
+  position: absolute;
+  inset: 0;
+  width: 1px;
+}
+.mx-journey-track {
+  background: linear-gradient(180deg, transparent, var(--mx-line) 6%, var(--mx-line) 94%, transparent);
+}
+.mx-journey-fill {
+  transform-origin: top;
+  transform: scaleY(var(--journey-progress, 0));
+  background: linear-gradient(180deg, rgba(196, 168, 90, 0), var(--mx-gold) 8%, var(--mx-gold-bright));
+  box-shadow: 0 0 6px rgba(196, 168, 90, 0.35);
+}
+.mx-journey[data-intro] .mx-journey-fill { transition: transform 780ms var(--mx-ease); }
+.mx-journey-node {
+  position: absolute;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: #070a12;
+  transition: border-color 0.6s var(--mx-ease), background-color 0.6s var(--mx-ease), box-shadow 0.6s var(--mx-ease);
+}
+.mx-journey-node[data-lit] {
+  border-color: var(--mx-gold-bright);
+  background: var(--mx-gold);
+  box-shadow: 0 0 0 4px rgba(196, 168, 90, 0.12);
+}
+.mx-journey-label {
+  position: absolute;
+  left: 16px;
+  top: -7px;
+  font: 500 10px/1.4 'Inter', 'DM Sans', system-ui, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.32);
+  transition: color 0.6s var(--mx-ease);
+}
+.mx-journey-node[data-lit] .mx-journey-label { color: var(--mx-gold-bright); }
+@media (max-width: 1279px) {
+  .mx-journey-label { display: none; }
+}
+@media (max-width: 767px) {
+  .mx-journey-node { width: 7px; height: 7px; margin: -3px 0 0 -3px; }
+}
+
+/* ---------- navigation scroll progress ---------- */
+.mx-nav-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  transform-origin: left;
+  transform: scaleX(var(--scroll-progress, 0));
+  background: linear-gradient(90deg, rgba(196, 168, 90, 0.2), var(--mx-gold));
+  pointer-events: none;
+}
+@supports (animation-timeline: scroll()) {
+  .mx-nav-progress {
+    transform: scaleX(0);
+    animation: mx-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+  @keyframes mx-progress {
+    to { transform: scaleX(1); }
+  }
+}
+
+/* ---------- intro: decorative only, never gates content ---------- */
+@keyframes mx-settle {
+  from { transform: translate3d(0, 10px, 0); }
+  to { transform: none; }
+}
+html.motion-ok .mx-intro { animation: mx-settle 700ms var(--mx-ease) both; }
+
+/* ---------- pause work when hidden ---------- */
+html[data-tab-hidden] *,
+[data-offscreen] *,
+[data-offscreen] {
+  animation-play-state: paused !important;
+}
+
+/* ---------- reduced motion: everything in its final state ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] { transform: none !important; }
+  .mx-journey-fill { transform: scaleY(1) !important; }
+  .mx-card:hover,
+  .mx-card:focus-within { transform: none; }
+}
