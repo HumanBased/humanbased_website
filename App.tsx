@@ -11,6 +11,7 @@ import ProcessPage from './pages/ProcessPage';
 import ProductsPage from './pages/ProductsPage';
 import LegalPage from './pages/LegalPage';
 import PrivacyPage from './pages/PrivacyPage';
+import NotFoundPage from './pages/NotFoundPage';
 import BasedTalkLandingPage from './pages/basedtalk/BasedTalkLandingPage';
 import BasedTalkPrivacyPage from './pages/basedtalk/BasedTalkPrivacyPage';
 import BasedTalkTermsPage from './pages/basedtalk/BasedTalkTermsPage';
@@ -21,7 +22,7 @@ import PurposeBasedTermsPage from './pages/purposebased/PurposeBasedTermsPage';
 import PurposeBasedDeleteAccountPage from './pages/purposebased/PurposeBasedDeleteAccountPage';
 import PurposeBasedDeleteDataPage from './pages/purposebased/PurposeBasedDeleteDataPage';
 import PurposeBased from './pages/purposebased';
-import siteBg from './assets/images/site-bg.webp.png';
+import siteBg from './assets/images/site-bg.webp';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -94,8 +95,8 @@ const AppRoutes = () => {
       <Route path="/legal" element={<MainLayout><LegalPage /></MainLayout>} />
       <Route path="/privacy" element={<MainLayout><PrivacyPage /></MainLayout>} />
       
-      {/* Fallback to Home */}
-      <Route path="*" element={<MainLayout><HomePage /></MainLayout>} />
+      {/* Unknown URLs: real 404 page (Vercel serves the prerendered dist/404.html with status 404) */}
+      <Route path="*" element={<MainLayout><NotFoundPage /></MainLayout>} />
     </Routes>
   );
 };

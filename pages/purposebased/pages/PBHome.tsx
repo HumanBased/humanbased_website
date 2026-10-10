@@ -11,35 +11,35 @@ const FEATURES: { n: string; title: string; body: string; img: string }[] = [
     title: 'Know Thyself',
     body:
       'Your Know Thyself reading: a full convergence reading, written as one. Not separate reports, one portrait of who you are.',
-    img: '/images/features/know-thyself.png',
+    img: '/images/features/know-thyself.webp',
   },
   {
     n: '02',
     title: 'Purpose Guide',
     body:
       'A conversation that already holds your blueprint. Ask about a decision and get an answer grounded in your own structure, not generic advice.',
-    img: '/images/features/guide.png',
+    img: '/images/features/guide.webp',
   },
   {
     n: '03',
     title: 'Know Where You Stand',
     body:
       'Daily alignment against the current sky. Short, specific, and tied to what you are actually working on right now.',
-    img: '/images/features/know-where-you-stand.png',
+    img: '/images/features/know-where-you-stand.webp',
   },
   {
     n: '04',
     title: 'My People',
     body:
       'The people who matter, read alongside you. Understand the dynamic instead of guessing at it.',
-    img: '/images/features/my-people.png',
+    img: '/images/features/my-people.webp',
   },
   {
     n: '05',
     title: 'Odyssey',
     body:
       'Your life as a long arc. Chapters, turning points, and the direction the whole thing is pointing.',
-    img: '/images/features/odyssey.png',
+    img: '/images/features/odyssey.webp',
   },
 ];
 
@@ -65,6 +65,18 @@ const PB_URL = 'https://www.humanbased.org/purposebased';
 
 const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
+
+  // The hero artwork is a CSS background, so give the browser an early, high-priority
+  // fetch for it (the prerendered HTML keeps this link in <head>).
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = '/images/purposebased/hero-bg.webp';
+    link.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(link);
+    return () => link.remove();
+  }, []);
 
   usePageSeo({
     title: "PurposeBased | Become Who You're Meant To Be",
@@ -267,7 +279,15 @@ const PBHome: React.FC = () => {
                   </p>
                 </div>
                 <div className="pbh-fimg">
-                  <img src={f.img} alt={f.title} className="pbh-fimg-el" />
+                  <img
+                    src={f.img}
+                    alt=""
+                    width={1672}
+                    height={941}
+                    loading="lazy"
+                    decoding="async"
+                    className="pbh-fimg-el"
+                  />
                 </div>
               </div>
             ))}

@@ -3,7 +3,7 @@ import { usePageSeo } from '../hooks/usePageSeo';
 import Process from '../components/Process';
 import WhyHumanBased from '../components/WhyHumanBased';
 import OutcomeSafeguards from '../components/OutcomeSafeguards';
-import processHeroImg from '../assets/images/process-hero.webp.png';
+import processHeroImg from '../assets/images/process-hero.webp';
 
 const ProcessPage: React.FC = () => {
   usePageSeo({
@@ -20,12 +20,15 @@ const ProcessPage: React.FC = () => {
         <div className="absolute inset-0 bg-transparent">
           <img
             src={processHeroImg}
-            alt="Abstract visualization representing the process of building"
+            alt=""
             className="w-full h-full object-cover"
             style={{
               maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
               WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
             }}
+            width={1376}
+            height={768}
+            decoding="async"
           />
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-transparent" />

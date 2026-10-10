@@ -39,12 +39,15 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
       <div className="pbn-bar">
         <Link to="/purposebased" className="pbn-brand" onClick={() => setOpen(false)}>
           <img
-            src="/images/pb-logo.png"
+            src="/images/pb-logo.webp"
             alt="PurposeBased"
             style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
+            width={48}
+            height={48}
+            decoding="async"
           />
           <span className="pb-font-serif pbn-word">PurposeBased</span>
         </Link>

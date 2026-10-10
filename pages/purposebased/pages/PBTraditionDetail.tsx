@@ -43,7 +43,14 @@ const PBTraditionDetail: React.FC = () => {
 
         <div className="pbtd-card">
           {entry.img ? (
-            <img src={entry.img} alt={entry.title} className="pbtd-card-img" />
+            <img
+              src={entry.img}
+              alt=""
+              width={entry.imgWidth}
+              height={entry.imgHeight}
+              decoding="async"
+              className="pbtd-card-img"
+            />
           ) : (
             <div className="pbtd-card-placeholder" />
           )}

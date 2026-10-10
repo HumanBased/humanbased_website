@@ -1,6 +1,6 @@
 import React from 'react';
-import resultsFirstImg from '../assets/images/home-results-first.webp.png';
-import homeKpiImg from '../assets/images/home-kpi.webp.png';
+import resultsFirstImg from '../assets/images/home-results-first.webp';
+import homeKpiImg from '../assets/images/home-kpi.webp';
 
 const WhyHumanBased: React.FC = () => {
 
@@ -24,7 +24,7 @@ const WhyHumanBased: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="glass group rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:scale-[1.01] hover:border-white/20 bg-white/[0.02]">
             <div className="aspect-video relative bg-black/40 overflow-hidden">
-              <img src={homeKpiImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing human connection, growth, and collective good" />
+              <img src={homeKpiImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="" width={1184} height={864} loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
             </div>
             <div className="p-6 sm:p-8 lg:p-10 space-y-4">
@@ -37,7 +37,7 @@ const WhyHumanBased: React.FC = () => {
 
           <div className="glass group rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:scale-[1.01] hover:border-white/20 bg-white/[0.02]">
             <div className="aspect-video relative bg-black/40 overflow-hidden">
-              <img src={resultsFirstImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Abstract holographic visualization representing results-first approach and measurable impact" />
+              <img src={resultsFirstImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="" width={1184} height={864} loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
             </div>
             <div className="p-6 sm:p-8 lg:p-10 space-y-4">

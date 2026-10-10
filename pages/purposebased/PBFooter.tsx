@@ -11,12 +11,16 @@ const PBFooter: React.FC = () => {
         <div className="pbf-brand-block">
           <div className="pbf-brand">
             <img
-              src="/images/pb-logo.png"
+              src="/images/pb-logo.webp"
               alt="PurposeBased"
               className="pbf-mark"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
             />
             <p className="pbf-wordmark">PurposeBased</p>
           </div>

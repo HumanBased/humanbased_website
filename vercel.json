@@ -13,10 +13,46 @@
       ],
       "destination": "https://www.humanbased.org/:path*",
       "statusCode": 301
+    },
+    {
+      "source": "/basedtalk",
+      "destination": "/apps/basedtalk",
+      "statusCode": 301
+    },
+    {
+      "source": "/basedtalk/",
+      "destination": "/apps/basedtalk",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+        }
+      ]
     }
   ],
   "rewrites": [
-    { "source": "/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
     { "source": "/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
     { "source": "/apps/basedtalk/privacy", "destination": "/index.html" },
     { "source": "/apps/basedtalk/terms", "destination": "/index.html" },
@@ -28,6 +64,7 @@
     { "source": "/apps/basedtalk/delete-data", "destination": "/index.html" },
     { "source": "/apps/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
     { "source": "/apps/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" },
+    { "source": "/purposebased/receivedapplication", "destination": "/index.html" }
   ]
 }

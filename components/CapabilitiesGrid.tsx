@@ -1,8 +1,8 @@
 import React from 'react';
-import ethicalIntelligenceImg from '../assets/images/about-ethical-intelligence.webp.png';
-import organizationalEnablementImg from '../assets/images/about-organizational-enablement.webp.png';
-import strategicDiscoveryImg from '../assets/images/about-strategic-discovery.webp.png';
-import responsiblePlatformsImg from '../assets/images/about-responsible-platforms.webp.png';
+import ethicalIntelligenceImg from '../assets/images/about-ethical-intelligence.webp';
+import organizationalEnablementImg from '../assets/images/about-organizational-enablement.webp';
+import strategicDiscoveryImg from '../assets/images/about-strategic-discovery.webp';
+import responsiblePlatformsImg from '../assets/images/about-responsible-platforms.webp';
 
 const pillars = [
   { 
@@ -36,7 +36,9 @@ const CapabilitiesGrid: React.FC = () => {
             <img 
               src={p.image} 
               className={`visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02] ${p.title === "Organizational Enablement" ? "brightness-125" : ""}`}
-              alt={`Abstract holographic visualization representing ${p.title.toLowerCase()}`}
+              alt=""
+              loading="lazy"
+              decoding="async"
             />
             {p.title === "Organizational Enablement" ? (
               <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/30 to-transparent"></div>

@@ -7,7 +7,8 @@ const Contact: React.FC = () => {
     name: '',
     company: '',
     email: '',
-    message: ''
+    message: '',
+    website: '' // honeypot: real visitors never see or fill this
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -61,7 +62,7 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setIsSuccess(true);
-        setFormData({ name: '', company: '', email: '', message: '' });
+        setFormData({ name: '', company: '', email: '', message: '', website: '' });
         setErrors({});
         form.reset();
       } else {
@@ -111,6 +112,10 @@ const Contact: React.FC = () => {
             </p>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+                <label htmlFor="website">Leave this field empty</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 ml-1">

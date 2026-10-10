@@ -41,3 +41,6 @@ export const ROUTES = [...ROUTE_ENTRIES.map((r) => r.path), ...NOINDEX_ROUTES];
 export const EXTERNAL_SITEMAP_ENTRIES = [
   { path: '/apps/basedtalk', priority: 0.9 },
 ];
+
+// Any path with no route: rendered by the SPA's catch-all and written to dist/404.html.
+export const NOT_FOUND_ROUTE = '/__not-found__';

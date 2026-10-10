@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/generate-sitemap.mjs && (node scripts/prerender.mjs || echo 'Prerender failed, continuing without prerender')",
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,5 +23,8 @@
     "puppeteer": "^24.42.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
+  },
+  "overrides": {
+    "rollup": "4.54.0"
   }
 }

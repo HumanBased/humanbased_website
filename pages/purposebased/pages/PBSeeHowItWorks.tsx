@@ -10,36 +10,46 @@ import { usePageSeo } from '../../../hooks/usePageSeo';
 // /public/images/how-it-works/; the titled note behind each image is a
 // fallback shown only if an image fails to load.
 
-const STEPS: { n: string; name: string; phrase: string; img: string }[] = [
+const STEPS: { n: string; name: string; phrase: string; img: string; w: number; h: number }[] = [
   {
     n: 'Step 1',
     name: 'Realization',
     phrase: 'Awakening to the unique resonance and direction within',
-    img: '/images/how-it-works/step-1-realization.png',
+    img: '/images/how-it-works/step-1-realization.webp',
+    w: 1330,
+    h: 1183,
   },
   {
     n: 'Step 2',
     name: 'Search',
     phrase: 'Mapping the inner terrain and charting a course',
-    img: '/images/how-it-works/step-2-search.png',
+    img: '/images/how-it-works/step-2-search.webp',
+    w: 1254,
+    h: 1254,
   },
   {
     n: 'Step 3',
     name: 'Discovery',
     phrase: 'Cultivating skills and inner resources for expansion',
-    img: '/images/how-it-works/step-3-discovery.png',
+    img: '/images/how-it-works/step-3-discovery.webp',
+    w: 1330,
+    h: 1183,
   },
   {
     n: 'Step 4',
     name: 'Conquest',
     phrase: 'Moving with aligned intention and deliberate expression',
-    img: '/images/how-it-works/step-4-conquest.png',
+    img: '/images/how-it-works/step-4-conquest.webp',
+    w: 1254,
+    h: 1254,
   },
   {
     n: 'Step 5',
     name: 'Tend the garden',
     phrase: 'Embodying wisdom, balance, and purposeful existence',
-    img: '/images/how-it-works/step-5-tend.png',
+    img: '/images/how-it-works/step-5-tend.webp',
+    w: 1254,
+    h: 1254,
   },
 ];
 
@@ -85,7 +95,7 @@ const PBSeeHowItWorks: React.FC = () => {
               <span className="pbw-step-img-note">{s.name}</span>
               <img
                 src={s.img}
-                alt={s.name}
+                alt=""
                 className="pbw-step-img-el"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';

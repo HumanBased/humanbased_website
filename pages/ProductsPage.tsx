@@ -74,11 +74,11 @@ const ProductsPage: React.FC = () => {
               className="relative group cursor-pointer"
               role="link"
               tabIndex={0}
-              onClick={() => { window.location.href = '/basedtalk'; }}
+              onClick={() => { window.location.href = '/apps/basedtalk'; }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  window.location.href = '/basedtalk';
+                  window.location.href = '/apps/basedtalk';
                 }
               }}
               aria-label="Open BasedTalk"
@@ -101,9 +101,13 @@ const ProductsPage: React.FC = () => {
                 </div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 mt-12">
                   <img
-                    src="/bt-banner.png"
+                    src="/bt-banner.webp"
                     alt="BasedTalk app banner"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    width={1024}
+                    height={500}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/70 via-transparent to-transparent" />
                 </div>
@@ -178,7 +182,7 @@ const ProductsPage: React.FC = () => {
                   {/* PurposeBased hero image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    style={{ backgroundImage: "url('/images/purposebased/pb-card-hero.png')" }}
+                    style={{ backgroundImage: "url('/images/purposebased/pb-card-hero.webp')" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/85 via-[#050509]/25 to-[#050509]/50" />
                   <div className="absolute inset-0 flex items-start justify-center pt-8 sm:pt-10 lg:pt-12">

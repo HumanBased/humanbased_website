@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
-import homeHeroImg from '../assets/images/home-hero.webp.png';
+import homeHeroImg from '../assets/images/home-hero.webp';
 
 const Hero: React.FC = () => {
   return (
@@ -11,13 +11,17 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 top-0 bg-transparent">
         <img
           src={homeHeroImg}
-          alt="Abstract holographic technology scene representing human problems and digital solutions"
+          alt=""
           className="w-full h-full object-cover object-[center_top_40%]"
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             opacity: 0.25
           }}
+          width={1184}
+          height={864}
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Gradient overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/15 to-transparent z-[5]" />

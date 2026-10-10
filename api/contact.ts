@@ -9,7 +9,12 @@ export default async function handler(req: Request) {
 
   try {
     const body = await req.json();
-    const { name, company, email, message } = body;
+    const { name, company, email, message, website } = body;
+
+    // Honeypot: bots fill the hidden field. Pretend success and send nothing.
+    if (website) {
+      return new Response(JSON.stringify({ success: true }), { status: 200 });
+    }
 
     if (!name || !email || !message) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });

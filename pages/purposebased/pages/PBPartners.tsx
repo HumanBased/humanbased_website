@@ -478,6 +478,8 @@ const PBPartners: React.FC = () => {
           </p>
 
           <form action={FORMSPREE_ENDPOINT} method="POST" className="pbp-form">
+            {/* Honeypot: Formspree discards submissions where _gotcha is filled in. */}
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
             <div className="pbp-field">
               <label className="pbp-field-label" htmlFor="pbp-name">
                 Name

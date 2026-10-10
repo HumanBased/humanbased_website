@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import { existsSync, createReadStream, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
-import { ROUTES } from './routes.mjs';
+import { ROUTES, NOT_FOUND_ROUTE } from './routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
@@ -97,7 +97,7 @@ async function prerender() {
   try {
     // "/" is written to dist/index.html, which is also the static server's fallback for
     // every other route, so it must go last or later pages inherit its head tags.
-    for (const route of [...ROUTES.filter((r) => r !== '/'), '/']) {
+    for (const route of [...ROUTES.filter((r) => r !== '/'), NOT_FOUND_ROUTE, '/']) {
       const page = await browser.newPage();
       const url = baseUrl + route;
       console.log(`[prerender] rendering ${route}`);
@@ -106,6 +106,11 @@ async function prerender() {
       const html = await page.content();
       await page.close();
 
+      if (route === NOT_FOUND_ROUTE) {
+        await fs.writeFile(path.join(distDir, '404.html'), html, 'utf8');
+        console.log('[prerender]   -> 404.html');
+        continue;
+      }
       const outDir = route === '/'
         ? distDir
         : path.join(distDir, ...route.split('/').filter(Boolean));
