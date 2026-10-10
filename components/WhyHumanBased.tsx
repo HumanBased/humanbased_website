@@ -1,56 +1,50 @@
 import React from 'react';
 import resultsFirstImg from '../assets/images/home-results-first.webp';
 import homeKpiImg from '../assets/images/home-kpi.webp';
+import Reveal from './Reveal';
 
-const WhyHumanBased: React.FC = () => {
+const CARDS = [
+  {
+    title: 'Our Ultimate KPI',
+    img: homeKpiImg,
+    body:
+      "Our measure of success extends beyond quarterly reports or efficiency gains. We exist to elevate individuals, fortify teams, and advance the collective good. Our impact spans from the individual finding clarity and purpose, to teams achieving genuine collaboration, to society benefiting from more conscious, capable institutions. These aren't separate goals, they're interdependent imperatives.",
+  },
+  {
+    title: 'Results First',
+    img: resultsFirstImg,
+    body:
+      "Your outcomes are our singular focus. We don't traffic in theoretical possibilities or feature bloat. We deliver solutions that move hard numbers and generate measurable impact. If it doesn't create tangible value, we don't build it.",
+  },
+];
 
-  return (
-    <section className="pt-10 md:pt-14 pb-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 md:mb-24">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">Why HumanBased?</h2>
-          <p
-            className="silver-shimmer"
-            style={{
-              fontSize: 'clamp(1.75rem, 7vw, 2.5rem)',
-              fontWeight: 600,
-              letterSpacing: '0.08em',
-            }}
-          >
-            Coding For Humanity
-          </p>
-        </div>
+const WhyHumanBased: React.FC = () => (
+  <section className="ed-sec">
+    <div className="ed-wide text-center ed-stack mb-14 md:mb-20">
+      <Reveal>
+        <h2 className="font-serif ed-title">Why HumanBased?</h2>
+      </Reveal>
+      <Reveal delay={80}>
+        <p className="font-serif text-2xl md:text-3xl tracking-[0.06em] text-white/60">Coding For Humanity</p>
+      </Reveal>
+    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="glass group rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:scale-[1.01] hover:border-white/20 bg-white/[0.02]">
-            <div className="aspect-video relative bg-black/40 overflow-hidden">
-              <img src={homeKpiImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="" width={1184} height={864} loading="lazy" decoding="async" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
+    <div className="ed-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      {CARDS.map((card, i) => (
+        <Reveal key={card.title} delay={i * 120}>
+          <article className="mx-card h-full">
+            <div className="ed-card-media">
+              <img src={card.img} alt="" width={1184} height={864} loading="lazy" decoding="async" />
             </div>
-            <div className="p-6 sm:p-8 lg:p-10 space-y-4">
-              <h3 className="font-serif text-2xl font-medium">Our Ultimate KPI</h3>
-              <p className="text-white/50 leading-relaxed font-light">
-                Our measure of success extends beyond quarterly reports or efficiency gains. We exist to elevate individuals, fortify teams, and advance the collective good. Our impact spans from the individual finding clarity and purpose, to teams achieving genuine collaboration, to society benefiting from more conscious, capable institutions. These aren't separate goals, they're interdependent imperatives.
-              </p>
+            <div className="ed-card-body ed-stack">
+              <h3 className="font-serif ed-subtitle">{card.title}</h3>
+              <p className="ed-body">{card.body}</p>
             </div>
-          </div>
-
-          <div className="glass group rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:scale-[1.01] hover:border-white/20 bg-white/[0.02]">
-            <div className="aspect-video relative bg-black/40 overflow-hidden">
-              <img src={resultsFirstImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="" width={1184} height={864} loading="lazy" decoding="async" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent visual-overlay-transition"></div>
-            </div>
-            <div className="p-6 sm:p-8 lg:p-10 space-y-4">
-              <h3 className="font-serif text-2xl font-medium">Results First</h3>
-              <p className="text-white/50 leading-relaxed font-light">
-                Your outcomes are our singular focus. We don't traffic in theoretical possibilities or feature bloat. We deliver solutions that move hard numbers and generate measurable impact. If it doesn't create tangible value, we don't build it.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+          </article>
+        </Reveal>
+      ))}
+    </div>
+  </section>
+);
 
 export default WhyHumanBased;

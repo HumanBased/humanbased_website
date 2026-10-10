@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { onMotionFrame } from '../../components/motion/engine';
 import { Link } from 'react-router-dom';
 import type { PBPage } from './index';
 
@@ -16,6 +17,16 @@ interface PBNavProps {
 
 const PBNav: React.FC<PBNavProps> = ({ page }) => {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Transparent over the hero; translucent navy once the page has scrolled.
+  useEffect(
+    () =>
+      onMotionFrame(() => {
+        headerRef.current?.toggleAttribute('data-scrolled', window.scrollY > 24);
+      }),
+    [],
+  );
 
   // Close the mobile dropdown whenever the active page changes.
   useEffect(() => {
@@ -35,7 +46,8 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
     ));
 
   return (
-    <header className="pbn">
+    <header className="pbn" ref={headerRef}>
+      <span className="mx-nav-progress" aria-hidden="true" />
       <div className="pbn-bar">
         <Link to="/purposebased" className="pbn-brand" onClick={() => setOpen(false)}>
           <img
@@ -73,6 +85,12 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
           top: 0;
           z-index: 20;
           background: transparent;
+          transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+        }
+        .pbn[data-scrolled] {
+          background: rgba(10, 22, 40, 0.72);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
         }
         .pbn-bar {
           max-width: 1180px;

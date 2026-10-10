@@ -1,6 +1,8 @@
 import React from 'react';
 import { usePageSeo } from '../hooks/usePageSeo';
 import Reveal from '../components/Reveal';
+import Journey from '../components/motion/Journey';
+import { HB_JOURNEY } from '../components/motion/journeys';
 import impactProductivityImg from '../assets/images/services-impact-productivity.webp';
 import impactCostImg from '../assets/images/services-impact-cost-reduction.webp';
 import impactParticipationImg from '../assets/images/services-impact-participation.webp';
@@ -21,14 +23,17 @@ const ServicesPage: React.FC = () => {
   });
 
   return (
-    <div className="flex-grow bg-transparent">
-      <section className="pb-12 pt-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="glass rounded-[3rem] overflow-hidden bg-white/[0.01] border-white/5 p-2 relative">
+    <div className="flex-grow bg-transparent relative">
+      <Journey
+        milestones={HB_JOURNEY(['#services-intro', '#services-areas', '#services-impact', '#services-delivery'])}
+      />
+      <section className="ed-sec--first pb-12" id="services-intro">
+        <div className="ed-full">
+          <div className="mx-card overflow-hidden p-2 relative mx-intro">
             {/* Mobile Layout: Flex Column with Image on Top, Text Below */}
             <div className="flex flex-col lg:block">
               {/* Top Half: Image (Mobile and tablet) */}
-              <div className="relative w-full h-56 sm:h-72 md:h-80 lg:hidden rounded-[2.8rem] overflow-hidden group">
+              <div className="relative w-full h-56 sm:h-72 md:h-80 lg:hidden rounded-[12px] overflow-hidden group">
                 <img
                   src={servicesHeroImg}
                   alt=""
@@ -40,7 +45,7 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Bottom Half: Text on Black Background (Mobile) */}
-              <div className="w-full py-10 sm:py-12 px-6 sm:px-8 md:px-10 bg-[#050509] lg:hidden rounded-b-[2.8rem]">
+              <div className="w-full py-10 sm:py-12 px-6 sm:px-8 md:px-10 bg-[#050509] lg:hidden rounded-b-[12px]">
                 <h4 className="font-serif text-2xl md:text-3xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
                 <p className="text-white font-light mb-4 text-base">
                   We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
@@ -51,7 +56,7 @@ const ServicesPage: React.FC = () => {
               </div>
               
               {/* Desktop Layout: Image with Overlay Text */}
-              <div className="hidden lg:block lg:h-[600px] w-full bg-transparent rounded-[2.8rem] overflow-hidden group relative">
+              <div className="hidden lg:block lg:h-[600px] w-full bg-transparent rounded-[12px] overflow-hidden group relative">
                 <img
                   src={servicesHeroImg}
                   alt=""
@@ -83,19 +88,19 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Section 1 – Intro */}
-      <section className="pt-24 pb-10">
-        <div className="max-w-6xl mx-auto px-6 space-y-4">
-          <h1 className="font-serif text-4xl md:text-5xl font-medium tracking-tight mb-16">
+      <section className="ed-sec pb-10">
+        <div className="ed-full space-y-4" data-reveal="">
+          <h1 className="font-serif ed-title mb-16">
             <span className="block">Services that move you</span>
             <span className="block">
               from{" "}
-              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-300">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-400">
                 insight
               </span>
             </span>
             <span className="block">
               to{" "}
-              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-300">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-400">
                 operational change.
               </span>
             </span>
@@ -104,23 +109,23 @@ const ServicesPage: React.FC = () => {
             We design, build, and operationalize digital platforms that deliver measurable outcomes:
           </p>
           <div className="max-w-5xl mx-auto space-y-1 text-center">
-            <p className="text-white font-bold uppercase mt-4 text-xl">REDUCED COSTS | INCREASED PRODUCTIVITY</p>
-            <p className="text-white font-bold uppercase text-xl">STRONGER PARTICIPATION | HIGHER SATISFACTION</p>
+            <p className="text-white/85 font-semibold uppercase tracking-[0.16em] mt-4 text-sm md:text-base">REDUCED COSTS | INCREASED PRODUCTIVITY</p>
+            <p className="text-white/85 font-semibold uppercase tracking-[0.16em] text-sm md:text-base">STRONGER PARTICIPATION | HIGHER SATISFACTION</p>
           </div>
         </div>
       </section>
 
       {/* Section 2 – Three development cards */}
-      <section className="pb-16">
-        <div className="max-w-6xl mx-auto px-6 space-y-12">
+      <section className="pb-16" id="services-areas">
+        <div className="ed-full space-y-10">
           {/* Organizational Development */}
           <Reveal delay={0}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="mx-card px-6 py-10 md:px-10 md:py-12 lg:px-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch group">
             <div className="lg:w-1/2 space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+              <p className="ed-label">
                 Organizational
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+              <h2 className="font-serif ed-title">
                 Organizational Development
               </h2>
               <p className="text-white/60 text-base md:text-lg font-light">
@@ -145,9 +150,9 @@ const ServicesPage: React.FC = () => {
               </button>
             </div>
             <div className="lg:w-1/2">
-              <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Organizational Development" width={1280} height={800} loading="lazy" decoding="async" />
-                <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
+              <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
+                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Organizational Development" width={1280} height={800} loading="lazy" decoding="async" />
+                <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
             </div>
@@ -155,12 +160,12 @@ const ServicesPage: React.FC = () => {
 
           {/* Social Development */}
           <Reveal delay={90}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="mx-card px-6 py-10 md:px-10 md:py-12 lg:px-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch group">
             <div className="lg:w-1/2 space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+              <p className="ed-label">
                 Social
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+              <h2 className="font-serif ed-title">
                 Social Development
               </h2>
               <p className="text-white/60 text-base md:text-lg font-light">
@@ -185,9 +190,9 @@ const ServicesPage: React.FC = () => {
               </button>
             </div>
             <div className="lg:w-1/2">
-              <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Social Development" width={1344} height={768} loading="lazy" decoding="async" />
-                <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
+              <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
+                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Social Development" width={1344} height={768} loading="lazy" decoding="async" />
+                <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
             </div>
@@ -195,12 +200,12 @@ const ServicesPage: React.FC = () => {
 
           {/* Personal Development */}
           <Reveal delay={180}>
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 px-6 py-10 md:px-8 md:py-12 lg:px-10 flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch shadow-2xl group">
+            <div className="mx-card px-6 py-10 md:px-10 md:py-12 lg:px-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch group">
             <div className="lg:w-1/2 space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+              <p className="ed-label">
                 Personal
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+              <h2 className="font-serif ed-title">
                 Personal Development
               </h2>
               <p className="text-white/60 text-base md:text-lg font-light">
@@ -225,9 +230,9 @@ const ServicesPage: React.FC = () => {
               </button>
             </div>
             <div className="lg:w-1/2">
-              <div className="relative w-full h-full min-h-[220px] rounded-[2rem] bg-black/40 overflow-hidden border border-white/10">
-                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Personal Development" width={1344} height={768} loading="lazy" decoding="async" />
-                <div className="absolute inset-0 border border-white/5 rounded-[2rem] pointer-events-none" />
+              <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
+                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Personal Development" width={1344} height={768} loading="lazy" decoding="async" />
+                <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
             </div>
@@ -236,9 +241,9 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Section 3 – Creating Solutions Tailored to Needs */}
-      <section className="pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6 text-center space-y-6">
-          <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+      <section className="ed-sec pb-16">
+        <div className="ed-wide text-center space-y-6" data-reveal="">
+          <h2 className="font-serif ed-title">
             Creating Solutions Tailored to Needs
           </h2>
           <p className="text-white/60 text-lg md:text-xl font-light max-w-3xl mx-auto">
@@ -250,11 +255,11 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Section 4 – Metric-driven case studies */}
-      <section className="pb-20">
-        <div className="max-w-6xl mx-auto px-6 space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <section className="pb-20" id="services-impact">
+        <div className="ed-full space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal="">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+              <h2 className="font-serif ed-title">
                 Real Impact for Real Businesses
               </h2>
               <p className="text-white/50 text-sm md:text-base font-light max-w-xl mt-3">
@@ -266,12 +271,12 @@ const ServicesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card A – Productivity */}
-            <div className="glass rounded-[2rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-[16/10] bg-black/40 overflow-hidden">
                 <img
                   src={impactProductivityImg}
                   alt=""
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
                   width={1024}
                   height={1024}
                   loading="lazy"
@@ -280,11 +285,11 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+                <p className="ed-label">
                   Operations Productivity
                 </p>
-                <h3 className="font-serif text-2xl font-medium">Productivity Up</h3>
-                <p className="text-white/60 text-sm font-light">
+                <h3 className="font-serif ed-subtitle">Productivity Up</h3>
+                <p className="ed-body text-[15px]">
                   Streamlined approval chains, automated status updates, and unified dashboards reduced decision latency and
                   manual handoffs across teams.
                 </p>
@@ -292,12 +297,12 @@ const ServicesPage: React.FC = () => {
             </div>
 
             {/* Card B – Cost Reduction */}
-            <div className="glass rounded-[2rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-[16/10] bg-black/40 overflow-hidden">
                 <img
                   src={impactCostImg}
                   alt=""
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
                   width={1248}
                   height={832}
                   loading="lazy"
@@ -306,11 +311,11 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+                <p className="ed-label">
                   Cost Optimization
                 </p>
-                <h3 className="font-serif text-2xl font-medium">Cost Reduction</h3>
-                <p className="text-white/60 text-sm font-light">
+                <h3 className="font-serif ed-subtitle">Cost Reduction</h3>
+                <p className="ed-body text-[15px]">
                   Intelligent automation and demand-aware infrastructure reduced operational overhead while preserving
                   service quality and reliability.
                 </p>
@@ -318,12 +323,12 @@ const ServicesPage: React.FC = () => {
             </div>
 
             {/* Card C – Participation */}
-            <div className="glass rounded-[2rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-[16/10] bg-black/40 overflow-hidden">
                 <img
                   src={impactParticipationImg}
                   alt=""
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
                   width={1344}
                   height={768}
                   loading="lazy"
@@ -332,11 +337,11 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+                <p className="ed-label">
                   Internal Communications
                 </p>
-                <h3 className="font-serif text-2xl font-medium">Participation Increased</h3>
-                <p className="text-white/60 text-sm font-light">
+                <h3 className="font-serif ed-subtitle">Participation Increased</h3>
+                <p className="ed-body text-[15px]">
                   Purpose-built channels, prompts, and feedback loops brought more voices into important decisions without
                   overwhelming the signal.
                 </p>
@@ -344,12 +349,12 @@ const ServicesPage: React.FC = () => {
             </div>
 
             {/* Card D – Satisfaction */}
-            <div className="glass rounded-[2rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-[16/10] bg-black/40 overflow-hidden">
                 <img
                   src={impactSatisfactionImg}
                   alt=""
-                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]"
+                  className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
                   width={1344}
                   height={768}
                   loading="lazy"
@@ -358,11 +363,11 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-500/80">
+                <p className="ed-label">
                   Customer &amp; Staff Experience
                 </p>
-                <h3 className="font-serif text-2xl font-medium">Satisfaction Improved</h3>
-                <p className="text-white/60 text-sm font-light">
+                <h3 className="font-serif ed-subtitle">Satisfaction Improved</h3>
+                <p className="ed-body text-[15px]">
                   Thoughtful journeys, clearer communication, and responsive support created better days for the people who
                   use and deliver your services.
                 </p>
@@ -373,10 +378,10 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Section 5 – How we deliver */}
-      <section className="pb-32">
-        <div className="max-w-6xl mx-auto px-6 space-y-8">
-          <div className="text-center space-y-3">
-            <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
+      <section className="ed-sec" id="services-delivery">
+        <div className="ed-full space-y-10">
+          <div className="text-center space-y-4" data-reveal="">
+            <h2 className="font-serif ed-title">
               How We Deliver
             </h2>
             <p className="text-white/60 text-sm md:text-base font-light max-w-2xl mx-auto">
@@ -387,13 +392,13 @@ const ServicesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Expert Mission */}
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="Expert Mission" width={1248} height={832} loading="lazy" decoding="async" />
+                <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Expert Mission" width={1248} height={832} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8 lg:p-10 space-y-5">
-                <h3 className="font-serif text-2xl md:text-3xl font-medium">
+                <h3 className="font-serif ed-subtitle">
                   Expert Mission
                 </h3>
                 <p className="text-white/60 text-sm md:text-base font-light">
@@ -404,13 +409,13 @@ const ServicesPage: React.FC = () => {
             </div>
 
             {/* 24/7 Intelligent Automation */}
-            <div className="glass rounded-[2.5rem] bg-white/[0.02] border border-white/10 overflow-hidden shadow-2xl group">
+            <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02] active:brightness-110 active:scale-[1.02]" alt="24/7 Intelligent Automation" width={1408} height={768} loading="lazy" decoding="async" />
+                <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="24/7 Intelligent Automation" width={1408} height={768} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8 lg:p-10 space-y-5">
-                <h3 className="font-serif text-2xl md:text-3xl font-medium">
+                <h3 className="font-serif ed-subtitle">
                   24/7 Intelligent Automation
                 </h3>
                 <p className="text-white/60 text-sm md:text-base font-light">

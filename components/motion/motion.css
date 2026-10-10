@@ -188,3 +188,40 @@ html[data-tab-hidden] *,
   .mx-card:hover,
   .mx-card:focus-within { transform: none; }
 }
+
+/* HumanBased floating nav pill: denser glass once scrolled; the progress line
+   runs along the pill's straight bottom edge, clear of the rounded ends. */
+.mx-nav--scrolled {
+  background: rgba(8, 10, 18, 0.72) !important;
+}
+.mx-nav-progress--pill {
+  left: 40px;
+  right: 40px;
+}
+
+/* ---------- dissolve: a raster or wash that fades out on all four edges ----------
+   Same mask as the home hero (components/Hero.css), for any secondary hero. The
+   element itself must have no background colour behind the image. */
+.hb-dissolve {
+  pointer-events: none;
+  --dz-y: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 4%, rgba(0,0,0,0.24) 9%, rgba(0,0,0,0.55) 14%, rgba(0,0,0,0.84) 19%, #000 24%, #000 65%, rgba(0,0,0,0.82) 71%, rgba(0,0,0,0.55) 79%, rgba(0,0,0,0.27) 87%, rgba(0,0,0,0.08) 94%, transparent 100%);
+  --dz-x: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 2.5%, rgba(0,0,0,0.58) 5.5%, rgba(0,0,0,0.88) 8%, #000 10.5%, #000 89.5%, rgba(0,0,0,0.88) 92%, rgba(0,0,0,0.58) 94.5%, rgba(0,0,0,0.2) 97.5%, transparent 100%);
+  -webkit-mask-image: var(--dz-y), var(--dz-x);
+  mask-image: var(--dz-y), var(--dz-x);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.hb-dissolve--veil {
+  -webkit-mask-image: var(--dz-y);
+  mask-image: var(--dz-y);
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(5, 5, 9, 0.62), rgba(5, 5, 9, 0.35) 60%, rgba(5, 5, 9, 0) 100%);
+}
+@media (max-width: 767px) {
+  .hb-dissolve {
+    --dz-x: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.26) 8%, rgba(0,0,0,0.6) 13%, #000 21%, #000 79%, rgba(0,0,0,0.6) 87%, rgba(0,0,0,0.26) 92%, transparent 100%);
+  }
+}

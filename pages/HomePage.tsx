@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useJsonLd } from '../hooks/useJsonLd';
 import Hero from '../components/Hero';
+import Reveal from '../components/Reveal';
 import WhyHumanBased from '../components/WhyHumanBased';
-import Impact from '../components/Impact';
 import Contact from '../components/Contact';
 import Journey from '../components/motion/Journey';
 import { HB_JOURNEY } from '../components/motion/journeys';
@@ -32,35 +32,26 @@ const HomePage: React.FC = () => {
       <div id="about">
         <WhyHumanBased />
       </div>
-      <Impact />
-      <section id="process" className="pt-8 pb-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="space-y-3 max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.25em] text-amber-400/80">
-              How
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight">
-              Our Process
-            </h2>
-            <p className="text-white/60 text-base md:text-lg">
+      <hr className="mx-divider" />
+      <section id="process" className="ed-sec--tight">
+        <Reveal className="ed-full flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="ed-stack max-w-3xl">
+            <p className="ed-label">How</p>
+            <h2 className="font-serif ed-title">Our Process</h2>
+            <p className="ed-lead text-white/65">
               We follow a rigorous path from immersion and insight to continuous evolution,
               so every engagement moves from understanding to lasting impact.
             </p>
           </div>
           <div className="shrink-0">
-            <Link
-              to="/process"
-              className="inline-flex items-center bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-6 py-2.5 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-wider"
-            >
+            <Link to="/process" className="ed-btn ed-btn--primary">
               Explore the process
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
-      <section
-        id="contact"
-        className="scroll-mt-24 pt-10 pb-10 md:pt-12 md:pb-12 lg:pt-14 lg:pb-14"
-      >
+      <hr className="mx-divider" />
+      <section id="contact" className="scroll-mt-24 ed-sec">
         <Contact />
       </section>
     </div>

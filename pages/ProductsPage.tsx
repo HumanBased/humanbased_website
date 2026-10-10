@@ -1,28 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePageSeo } from '../hooks/usePageSeo';
+import Journey from '../components/motion/Journey';
+import { HB_JOURNEY } from '../components/motion/journeys';
 
-const ComingSoonCard: React.FC = () => (
-  <div className="relative glass rounded-[2.5rem] border-white/5 bg-white/[0.015] overflow-hidden shadow-2xl">
-    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.01] pointer-events-none" />
-    <div className="relative aspect-[16/9] w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#070713] to-[#050509]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,164,65,0.08),transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(99,102,241,0.06),transparent_55%)]" />
+const ComingSoonCard: React.FC<{ id?: string }> = ({ id }) => (
+  <div className="mx-card overflow-hidden" data-reveal="" id={id}>
+    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-[13px]">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em] text-white/30 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/55 px-3 py-1.5 rounded-full border border-white/15">
           In Development
         </span>
       </div>
     </div>
     <div className="relative p-6 sm:p-7 lg:p-8 space-y-3">
-      <h2 className="font-serif text-2xl md:text-[26px] font-medium text-white/40">
+      <h2 className="font-serif ed-subtitle text-white/70">
         Coming Soon
       </h2>
-      <p className="text-xs uppercase tracking-[0.25em] text-white/25">
+      <p className="text-xs uppercase tracking-[0.25em] text-white/50">
         Next HumanBased Product
       </p>
-      <p className="text-sm text-white/30 font-light leading-relaxed">
+      <p className="ed-body text-[15px] text-white/55">
         We are building the next chapter of HumanBased. Quietly, deliberately, with humans at the center.
       </p>
     </div>
@@ -38,36 +37,37 @@ const ProductsPage: React.FC = () => {
   });
 
   return (
-    <div className="flex-grow bg-transparent">
+    <div className="flex-grow bg-transparent relative">
+      <Journey
+        milestones={HB_JOURNEY(['#products-hero', '#products-grid', '#product-next', '#products-end'])}
+        end="#products-end"
+      />
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
-        <div className="light-blob w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] bg-amber-500/10 top-0 left-1/2 -translate-x-1/2"></div>
-        <div className="light-blob w-[70vw] h-[70vw] max-w-[500px] max-h-[500px] bg-indigo-500/10 bottom-0 right-0"></div>
-
-        <div className="relative max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
-          <p className="text-sm md:text-base font-medium tracking-[0.3em] uppercase text-amber-400">
+      <section className="ed-sec--first pb-20 md:pb-24" id="products-hero">
+        <div className="relative ed-wide text-center space-y-6 mx-intro">
+          <p className="ed-label">
             Our Products
           </p>
-          <h1 className="font-serif tracking-tight leading-[1.05] text-white space-y-2 md:space-y-3">
-            <span className="block font-light text-3xl sm:text-4xl md:text-5xl text-white/90">
+          <h1 className="font-serif ed-display text-white space-y-2 md:space-y-3">
+            <span className="block font-light text-white/90">
               Our technology is built on
             </span>
-            <span className="block font-light text-3xl sm:text-4xl md:text-5xl text-white/90">
+            <span className="block font-light text-white/90">
               one simple truth
             </span>
-            <span className="block font-bold text-amber-500 text-3xl sm:text-4xl md:text-5xl">
+            <span className="block font-medium text-amber-500">
               Humanity comes first.
             </span>
           </h1>
-          <p className="font-sans text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-white max-w-2xl mx-auto leading-relaxed pt-2">
+          <p className="font-sans text-xs md:text-sm font-medium uppercase tracking-[0.28em] text-white/75 max-w-2xl mx-auto leading-relaxed pt-4">
             Empowering people through technology that serves their needs.
           </p>
         </div>
       </section>
 
       {/* Products grid */}
-      <section className="pb-32">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="pb-32" id="products-grid">
+        <div className="ed-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {/* BasedTalk, active */}
             <div
@@ -83,19 +83,9 @@ const ProductsPage: React.FC = () => {
               }}
               aria-label="Open BasedTalk"
             >
-              <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
+              <div className="mx-card overflow-hidden h-full" data-reveal="">
                 <div className="absolute top-4 left-4 z-10">
-                  <span
-                    className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
-                    style={{
-                      fontSize: '13px',
-                      fontWeight: 800,
-                      padding: '8px 18px',
-                      color: '#000',
-                      boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
-                    }}
-                  >
+                  <span className="rounded-full uppercase tracking-[0.2em] whitespace-nowrap bg-[#c4a85a] text-black text-[11px] font-bold px-4 py-2">
                     Available Now
                   </span>
                 </div>
@@ -114,15 +104,15 @@ const ProductsPage: React.FC = () => {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <h2 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
+                    <h2 className="font-serif ed-title text-white">
                       BasedTalk
                     </h2>
-                    <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
+                    <p className="ed-label">
                       Relational Intelligence App
                     </p>
                   </div>
 
-                  <p className="text-white/70 text-base lg:text-lg font-light leading-relaxed">
+                  <p className="ed-lead text-white/70">
                     Reveal patterns. Practice boundaries. Reclaim your power. Available now on Google Play.
                   </p>
 
@@ -130,7 +120,7 @@ const ProductsPage: React.FC = () => {
                     <Link
                       to="/apps/basedtalk"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center text-center bg-amber-500 hover:bg-amber-400 text-black text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
+                      className="ed-btn ed-btn--primary"
                     >
                       Explore BasedTalk
                     </Link>
@@ -139,7 +129,7 @@ const ProductsPage: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center text-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
+                      className="ed-btn ed-btn--ghost"
                     >
                       Get on Google Play
                     </a>
@@ -162,19 +152,9 @@ const ProductsPage: React.FC = () => {
               }}
               aria-label="Open PurposeBased"
             >
-              <div className="absolute -inset-px rounded-[2.5rem] bg-gradient-to-br from-amber-500/40 via-amber-400/10 to-indigo-500/30 opacity-70 blur-[2px] group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="relative glass rounded-[2.5rem] border border-amber-500/20 bg-[#0a0a14]/80 overflow-hidden shadow-2xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-amber-500/40">
+              <div className="mx-card overflow-hidden h-full" data-reveal="">
                 <div className="absolute top-4 left-4 z-10">
-                  <span
-                    className="gold-shimmer rounded-full uppercase tracking-widest whitespace-nowrap"
-                    style={{
-                      fontSize: '13px',
-                      fontWeight: 800,
-                      padding: '8px 18px',
-                      color: '#000',
-                      boxShadow: '0 2px 12px rgba(240,185,11,0.45)',
-                    }}
-                  >
+                  <span className="rounded-full uppercase tracking-[0.2em] whitespace-nowrap bg-[#c4a85a] text-black text-[11px] font-bold px-4 py-2">
                     Available Now
                   </span>
                 </div>
@@ -202,15 +182,15 @@ const ProductsPage: React.FC = () => {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                   <div className="space-y-2">
-                    <h2 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight text-white">
+                    <h2 className="font-serif ed-title text-white">
                       PurposeBased
                     </h2>
-                    <p className="text-xs lg:text-sm uppercase tracking-[0.25em] text-amber-400/90 font-semibold">
+                    <p className="ed-label">
                       Purpose &amp; Self-Knowledge App
                     </p>
                   </div>
 
-                  <p className="text-white/70 text-base lg:text-lg font-light leading-relaxed">
+                  <p className="ed-lead text-white/70">
                     Understand your patterns. Find your direction. Live with intention.
                   </p>
 
@@ -218,14 +198,14 @@ const ProductsPage: React.FC = () => {
                     <Link
                       to="/purposebased"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center text-center bg-amber-500 hover:bg-amber-400 text-black text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider shadow-xl shadow-amber-500/10"
+                      className="ed-btn ed-btn--primary"
                     >
                       Explore PurposeBased
                     </Link>
                     <Link
                       to="/purposebased#pricing"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center justify-center text-center border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 hover:text-white text-xs lg:text-sm font-bold px-6 py-3 rounded-full transition-all uppercase tracking-wider"
+                      className="ed-btn ed-btn--ghost"
                     >
                       Join the Waitlist
                     </Link>
@@ -235,9 +215,10 @@ const ProductsPage: React.FC = () => {
             </div>
 
             {/* Two Coming Soon placeholders */}
-            <ComingSoonCard />
+            <ComingSoonCard id="product-next" />
             <ComingSoonCard />
           </div>
+          <div id="products-end" />
         </div>
       </section>
     </div>

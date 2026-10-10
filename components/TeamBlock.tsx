@@ -22,8 +22,8 @@ const initials = (name: string): string =>
 // at build time (made by scripts/team-photos.mjs from a png/jpg/webp source); otherwise an initials badge keeps the layout.
 const TeamBlock: React.FC = () => (
   <section className="pb-4" aria-labelledby="team-heading">
-    <div className="max-w-3xl mx-auto px-6 text-center space-y-8">
-      <h2 id="team-heading" className="font-serif text-2xl md:text-3xl font-medium tracking-tight">
+    <div className="ed-wide text-center space-y-10" data-reveal="">
+      <h2 id="team-heading" className="font-serif ed-subtitle">
         Who is behind HumanBased
       </h2>
 
@@ -56,7 +56,7 @@ const TeamBlock: React.FC = () => (
         ))}
       </ul>
 
-      <p className="text-sm text-white/50">Copenhagen, Denmark · Founded 2025 · CVR DK45998576</p>
+      <p className="ed-small">Copenhagen, Denmark · Founded 2025 · CVR DK45998576</p>
     </div>
   </section>
 );

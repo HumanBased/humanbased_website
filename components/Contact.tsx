@@ -1,4 +1,5 @@
 
+import TrustLine from './TrustLine';
 import React, { useState } from 'react';
 import { SUPPORT_EMAIL } from '../config/site';
 
@@ -85,28 +86,25 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="px-6 relative overflow-hidden">
-      {/* Light blob */}
-      <div className="light-blob w-[90vw] h-[90vw] max-w-[600px] max-h-[600px] bg-indigo-500/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-          <div className="space-y-4">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
+    <div className="relative">
+      <div className="ed-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
+          <div className="ed-stack lg:sticky lg:top-36" data-reveal="">
+            <h2 className="font-serif ed-title">
               Let us explore what we can <span className="text-amber-500">build together</span>.
             </h2>
-            <p className="text-sm md:text-base text-white/70 max-w-xl">
+            <p className="ed-lead text-white/70 max-w-xl">
               We work with organizations ready to modernize operations, communities seeking better ways to connect and govern, and individuals committed to personal growth and purposeful living. Share a bit about your context and we will reply with thoughtful next steps.
             </p>
-            <p className="text-sm text-white/60">
+            <p className="ed-body">
               Prefer email? Write to{' '}
               <a href={`mailto:${SUPPORT_EMAIL}`} className="text-amber-400 hover:text-amber-300 transition-colors">{SUPPORT_EMAIL}</a>.
             </p>
           </div>
           
-          <div className="glass p-6 md:p-7 lg:p-8 rounded-[3rem] border-white/5 bg-white/[0.02] shadow-2xl">
-            <h3 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3">Get in Touch</h3>
-            <p className="text-xs md:text-sm text-white/60 max-w-xl mb-6">
+          <div className="mx-card p-6 md:p-9" data-reveal="" style={{ ['--mx-delay' as string]: '120ms' }}>
+            <h3 className="font-serif ed-subtitle mb-3">Get in Touch</h3>
+            <p className="ed-small max-w-xl mb-8">
               Share a bit about what you&apos;re working on. We&apos;ll get in touch within the next 24h
               with a short note or a proposal for a first conversation.
             </p>
@@ -116,9 +114,9 @@ const Contact: React.FC = () => {
                 <label htmlFor="website">Leave this field empty</label>
                 <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 ml-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <div>
+                  <label htmlFor="name" className="ed-field-label">
                     Full name
                   </label>
                   <input
@@ -128,17 +126,16 @@ const Contact: React.FC = () => {
                     maxLength={100}
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full bg-white/[0.03] border rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20 ${
-                      errors.name ? 'border-red-400/50' : 'border-white/5'
-                    }`}
+                    className="ed-field"
+                    aria-invalid={Boolean(errors.name)}
                     placeholder="Jane Doe"
                   />
                   {errors.name && (
                     <p className="text-xs text-red-400 ml-1">{errors.name}</p>
                   )}
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 ml-1">
+                <div>
+                  <label htmlFor="company" className="ed-field-label">
                     Company or team
                   </label>
                   <input
@@ -148,12 +145,12 @@ const Contact: React.FC = () => {
                     maxLength={120}
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20"
+                    className="ed-field"
                     placeholder="Your organization"
                   />
                 </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 ml-1">
+                <div className="md:col-span-2">
+                  <label htmlFor="email" className="ed-field-label">
                     Work email
                   </label>
                   <input
@@ -163,17 +160,16 @@ const Contact: React.FC = () => {
                     maxLength={254}
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full bg-white/[0.03] border rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20 ${
-                      errors.email ? 'border-red-400/50' : 'border-white/5'
-                    }`}
+                    className="ed-field"
+                    aria-invalid={Boolean(errors.email)}
                     placeholder="you@company.com"
                   />
                   {errors.email && (
                     <p className="text-xs text-red-400 ml-1">{errors.email}</p>
                   )}
                 </div>
-                <div className="md:col-span-2 space-y-2">
-                  <label htmlFor="message" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 ml-1">
+                <div className="md:col-span-2">
+                  <label htmlFor="message" className="ed-field-label">
                     How can we help?
                   </label>
                   <textarea
@@ -183,9 +179,8 @@ const Contact: React.FC = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full bg-white/[0.03] border rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-500 focus:bg-white/[0.05] transition-all text-sm md:text-base text-white placeholder:text-white/20 resize-none ${
-                      errors.message ? 'border-red-400/50' : 'border-white/5'
-                    }`}
+                    className="ed-field resize-none"
+                    aria-invalid={Boolean(errors.message)}
                     placeholder="Tell us briefly about your context, goals, and timelines."
                   />
                   {errors.message && (
@@ -209,15 +204,17 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full md:w-auto px-8 py-3 bg-amber-500 text-black font-bold rounded-xl hover:bg-amber-400 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm md:text-base uppercase tracking-widest shadow-xl shadow-amber-500/10 text-center"
+                className="ed-btn ed-btn--primary w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? 'Sending…' : 'Send message'}
               </button>
             </form>
           </div>
         </div>
+        <hr className="mx-divider mt-16 mb-8" />
+        <TrustLine className="justify-center" />
       </div>
-    </section>
+    </div>
   );
 };
 

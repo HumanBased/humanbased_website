@@ -25,6 +25,7 @@ import PurposeBased from './pages/purposebased';
 import siteBg from './assets/images/site-bg.webp';
 import { useMotion } from './components/motion/useMotion';
 import './components/motion/motion.css';
+import './components/editorial.css';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

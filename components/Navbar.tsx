@@ -41,7 +41,13 @@ const Navbar: React.FC = () => {
       isHidden ? '-translate-y-full' : 'translate-y-0'
     }`}>
       <div className="max-w-[86rem] mx-auto px-4 sm:px-6 relative z-10">
-        <div className="glass rounded-full px-4 sm:px-6 py-3 flex items-center gap-2 transition-all duration-300">
+        <div
+          className={`glass relative rounded-full px-4 sm:px-6 py-3 flex items-center gap-2 transition-colors duration-500 ${
+            isScrolled ? 'mx-nav--scrolled' : ''
+          }`}
+        >
+          {/* Thin gold reading-progress line along the bottom of the pill. */}
+          <span className="mx-nav-progress mx-nav-progress--pill" aria-hidden="true" />
           {/* Left column: Logo */}
           <Link to="/" className="flex items-center gap-3 min-w-0 flex-shrink-0">
             <LogoOrb className="h-[4.5rem] w-[4.5rem] sm:h-24 sm:w-24 lg:h-20 lg:w-20 xl:h-24 xl:w-24" />
