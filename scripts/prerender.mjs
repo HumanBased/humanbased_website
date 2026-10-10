@@ -4,32 +4,11 @@ import fs from 'node:fs/promises';
 import { existsSync, createReadStream, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
+import { ROUTES } from './routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
 const publicDir = path.resolve(__dirname, '..', 'public');
-
-const ROUTES = [
-  '/',
-  '/about',
-  '/services',
-  '/process',
-  '/products',
-  '/purposebased',
-  '/purposebased/story',
-  '/purposebased/how-it-works',
-  '/purposebased/library',
-  '/purposebased/partners',
-  '/apps/basedtalk/privacy',
-  '/apps/basedtalk/terms',
-  '/apps/basedtalk/delete-account',
-  '/apps/basedtalk/delete-data',
-  '/apps/purposebased/privacy',
-  '/apps/purposebased/terms',
-  '/apps/purposebased/delete-account',
-  '/apps/purposebased/delete-data',
-  '/legal',
-];
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',

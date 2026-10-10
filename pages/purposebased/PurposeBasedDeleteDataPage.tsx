@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedDeleteDataPage: React.FC = () => {
-  usePageTitle('Delete PurposeBased Data, HumanBased');
+  usePageTitle('Delete PurposeBased Data, HumanBased', '/apps/purposebased/delete-data');
 
   return (
     <div className="flex-grow bg-transparent">

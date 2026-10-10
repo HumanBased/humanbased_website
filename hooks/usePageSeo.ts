@@ -31,7 +31,7 @@ export interface PageSeo {
 
 type MetaSelector = { attr: 'name' | 'property'; key: string };
 
-function upsertMeta({ attr, key }: MetaSelector, content: string): () => void {
+export function upsertMeta({ attr, key }: MetaSelector, content: string): () => void {
   const selector = `meta[${attr}="${key}"]`;
   const existing = document.head.querySelector<HTMLMetaElement>(selector);
 
@@ -51,7 +51,7 @@ function upsertMeta({ attr, key }: MetaSelector, content: string): () => void {
   return () => el.remove();
 }
 
-function upsertLink(rel: string, href: string): () => void {
+export function upsertLink(rel: string, href: string): () => void {
   const selector = `link[rel="${rel}"]`;
   const existing = document.head.querySelector<HTMLLinkElement>(selector);
 
@@ -99,7 +99,7 @@ export function usePageSeo(seo: PageSeo): void {
       'og:title': og.title ?? seo.title,
       'og:description': og.description ?? seo.description,
       'og:image': og.image,
-      'og:url': og.url,
+      'og:url': og.url ?? seo.canonical,
     };
     for (const [k, v] of Object.entries(ogTags)) {
       if (v) cleanups.push(upsertMeta({ attr: 'property', key: k }, v));

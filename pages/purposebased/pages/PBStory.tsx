@@ -26,9 +26,9 @@ const PURPOSE_WORDS = [
   'Impact',
 ];
 
-const PB_URL = 'https://humanbased.org/purposebased';
-const STORY_URL = 'https://humanbased.org/purposebased/story';
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_URL = 'https://www.humanbased.org/purposebased';
+const STORY_URL = 'https://www.humanbased.org/purposebased/story';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBStory: React.FC = () => {
   usePageSeo({

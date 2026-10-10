@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const BasedTalkDeleteDataPage: React.FC = () => {
-  usePageTitle('Delete Your BasedTalk Data, HumanBased');
+  usePageTitle('Delete Your BasedTalk Data, HumanBased', '/apps/basedtalk/delete-data');
 
   return (
     <div className="flex-grow bg-transparent">

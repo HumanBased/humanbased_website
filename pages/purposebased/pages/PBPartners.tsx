@@ -8,9 +8,9 @@ import { usePageSeo } from '../../../hooks/usePageSeo';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaqodbp';
 
-const PB_URL = 'https://humanbased.org/purposebased';
-const PARTNERS_URL = 'https://humanbased.org/purposebased/partners';
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_URL = 'https://www.humanbased.org/purposebased';
+const PARTNERS_URL = 'https://www.humanbased.org/purposebased/partners';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const ADVANTAGES: { title: string; body: string }[] = [
   {

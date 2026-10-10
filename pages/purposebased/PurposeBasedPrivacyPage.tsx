@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedPrivacyPage: React.FC = () => {
-  usePageTitle('PurposeBased Privacy Policy, HumanBased');
+  usePageTitle('PurposeBased Privacy Policy, HumanBased', '/apps/purposebased/privacy');
 
   return (
     <div className="flex-grow bg-transparent">

@@ -43,9 +43,9 @@ const STEPS: { n: string; name: string; phrase: string; img: string }[] = [
   },
 ];
 
-const PB_URL = 'https://humanbased.org/purposebased';
-const HOW_IT_WORKS_URL = 'https://humanbased.org/purposebased/how-it-works';
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_URL = 'https://www.humanbased.org/purposebased';
+const HOW_IT_WORKS_URL = 'https://www.humanbased.org/purposebased/how-it-works';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBSeeHowItWorks: React.FC = () => {
   usePageSeo({

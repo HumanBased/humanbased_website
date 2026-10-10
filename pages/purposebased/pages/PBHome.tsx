@@ -61,8 +61,8 @@ const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
-const PB_URL = 'https://humanbased.org/purposebased';
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_URL = 'https://www.humanbased.org/purposebased';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBHome: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -102,7 +102,7 @@ const PBHome: React.FC = () => {
       publisher: {
         '@type': 'Organization',
         name: 'HumanBased',
-        url: 'https://humanbased.org',
+        url: 'https://www.humanbased.org',
       },
     },
   });

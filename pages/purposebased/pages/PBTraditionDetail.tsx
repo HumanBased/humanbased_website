@@ -3,7 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 import { TRADITIONS } from './PBLibrary';
 
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const firstSentences = (text: string, count: number): string => {
   const parts = text.split(/(?<=[.?!])\s+/).slice(0, count);
@@ -18,7 +18,7 @@ const PBTraditionDetail: React.FC = () => {
   const description = entry
     ? firstSentences(entry.copy, 3)
     : 'Explore the traditions that shape your purpose blueprint.';
-  const url = `https://humanbased.org/purposebased/library/${tradition ?? ''}`;
+  const url = `https://www.humanbased.org/purposebased/library/${tradition ?? ''}`;
 
   usePageSeo({
     title,

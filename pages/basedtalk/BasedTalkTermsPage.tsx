@@ -4,7 +4,7 @@ import BasedTalkLayout from '../../components/BasedTalkLayout';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const BasedTalkTermsPage: React.FC = () => {
-  usePageTitle('BasedTalk Terms of Service – HumanBased');
+  usePageTitle('BasedTalk Terms of Service – HumanBased', '/apps/basedtalk/terms');
   return (
     <BasedTalkLayout>
       <div className="max-w-4xl mx-auto py-12 sm:py-16 lg:py-20">

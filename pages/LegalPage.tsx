@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 
 const LegalPage: React.FC = () => {
-  usePageTitle('Legal & Privacy – HumanBased');
+  usePageTitle('Legal & Privacy – HumanBased', '/legal');
 
   return (
     <div className="flex-grow bg-transparent">

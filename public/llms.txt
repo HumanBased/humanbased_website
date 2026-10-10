@@ -1,0 +1,17 @@
+# HumanBased
+
+> HumanBased is a social enterprise based in Copenhagen, Denmark, founded on a core conviction: technology exists to serve humanity, to advance social progress and improve life on Earth. HumanBased builds custom mobile apps and AI systems for social impact, co-designing secure, scalable solutions that automate workflows and empower teams to do more.
+
+## HumanBased
+
+- [About](https://www.humanbased.org/about): Our mission, philosophy, and human-first approach.
+- [Services](https://www.humanbased.org/services): Organizational, social, and personal development services: custom digital platforms that cut costs, boost productivity, and drive real impact.
+- [Process](https://www.humanbased.org/process): Our four-step method (discover, design, build, evolve) keeps clients in control and protects the outcomes that matter: productivity, cost, and satisfaction.
+- [Products](https://www.humanbased.org/products): HumanBased products: BasedTalk and PurposeBased.
+
+## Products
+
+- [BasedTalk](https://www.humanbased.org/apps/basedtalk): A relational intelligence app that turns everyday speech into training reps for healthier, non-toxic communication.
+- [PurposeBased](https://www.humanbased.org/purposebased): A free self-knowledge app with AI guidance. Understand your patterns. Find your direction. Live with intention.
+- [PurposeBased Story](https://www.humanbased.org/purposebased/story): How PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.
+- [How It Works](https://www.humanbased.org/purposebased/how-it-works): Realization, search, discovery, conquest, and tending the garden: how PurposeBased guides your purpose journey across five steps.

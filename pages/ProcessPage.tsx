@@ -10,7 +10,7 @@ const ProcessPage: React.FC = () => {
     title: 'The Process – HumanBased',
     description:
       'Our four-step method, discover, design, build, evolve, keeps clients in control and protects the outcomes that matter: productivity, cost, and satisfaction.',
-    canonical: 'https://humanbased.org/process',
+    canonical: 'https://www.humanbased.org/process',
   });
   return (
     <div className="flex-grow bg-transparent">

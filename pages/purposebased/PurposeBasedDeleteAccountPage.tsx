@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedDeleteAccountPage: React.FC = () => {
-  usePageTitle('Delete PurposeBased Account, HumanBased');
+  usePageTitle('Delete PurposeBased Account, HumanBased', '/apps/purposebased/delete-account');
 
   return (
     <div className="flex-grow bg-transparent">

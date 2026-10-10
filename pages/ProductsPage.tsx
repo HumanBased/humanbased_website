@@ -34,7 +34,7 @@ const ProductsPage: React.FC = () => {
     title: 'Our Products – HumanBased',
     description:
       'Explore HumanBased products: BasedTalk, a relational intelligence app available now on Google Play, and PurposeBased, our purpose and self-knowledge app.',
-    canonical: 'https://humanbased.org/products',
+    canonical: 'https://www.humanbased.org/products',
   });
 
   return (

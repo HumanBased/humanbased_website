@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 const BasedTalkPrivacyPage: React.FC = () => {
-  usePageTitle('BasedTalk Privacy Policy, HumanBased');
+  usePageTitle('BasedTalk Privacy Policy, HumanBased', '/apps/basedtalk/privacy');
 
   return (
     <div className="flex-grow bg-transparent">

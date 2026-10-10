@@ -17,7 +17,7 @@ const ServicesPage: React.FC = () => {
     title: 'Services – HumanBased',
     description:
       'Organizational, social, and personal development services from HumanBased: custom digital platforms that cut costs, boost productivity, and drive real impact.',
-    canonical: 'https://humanbased.org/services',
+    canonical: 'https://www.humanbased.org/services',
   });
 
   return (

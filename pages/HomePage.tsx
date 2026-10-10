@@ -7,7 +7,7 @@ import Impact from '../components/Impact';
 import Contact from '../components/Contact';
 
 const HomePage: React.FC = () => {
-  usePageTitle('HumanBased – Human problems. Digital solutions.');
+  usePageTitle('HumanBased – Human problems. Digital solutions.', '/');
   return (
     <div className="flex-grow">
       <Hero />

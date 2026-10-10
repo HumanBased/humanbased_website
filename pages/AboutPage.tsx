@@ -9,7 +9,7 @@ const AboutPage: React.FC = () => {
     title: 'About – HumanBased',
     description:
       'HumanBased is a social enterprise built on one conviction: technology should serve humanity. See our mission, philosophy, and human-first approach.',
-    canonical: 'https://humanbased.org/about',
+    canonical: 'https://www.humanbased.org/about',
   });
   return (
     <div className="flex-grow bg-transparent">

@@ -2,6 +2,19 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "humanbased.org"
+        }
+      ],
+      "destination": "https://www.humanbased.org/:path*",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     { "source": "/basedtalk", "destination": "https://basedtalk-website.vercel.app/basedtalk" },
     { "source": "/basedtalk/:path*", "destination": "https://basedtalk-website.vercel.app/basedtalk/:path*" },

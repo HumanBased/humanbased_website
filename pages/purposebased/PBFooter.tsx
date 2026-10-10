@@ -56,7 +56,7 @@ const PBFooter: React.FC = () => {
             <Link to="/purposebased/partners" className="pbf-link">
               Partners
             </Link>
-            <a href="https://humanbased.org" target="_blank" rel="noopener noreferrer" className="pbf-link">
+            <a href="https://www.humanbased.org" target="_blank" rel="noopener noreferrer" className="pbf-link">
               HumanBased
             </a>
             <Link to="/about" className="pbf-link">

@@ -65,9 +65,9 @@ export const TRADITIONS: Tradition[] = [
   },
 ];
 
-const PB_URL = 'https://humanbased.org/purposebased';
-const LIBRARY_URL = 'https://humanbased.org/purposebased/library';
-const PB_OG_IMAGE = 'https://humanbased.org/images/pb-mockup.png';
+const PB_URL = 'https://www.humanbased.org/purposebased';
+const LIBRARY_URL = 'https://www.humanbased.org/purposebased/library';
+const PB_OG_IMAGE = 'https://www.humanbased.org/images/pb-mockup.png';
 
 const PBLibrary: React.FC = () => {
   usePageSeo({
