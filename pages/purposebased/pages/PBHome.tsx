@@ -216,32 +216,6 @@ const PBHome: React.FC = () => {
     },
   });
 
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const sections = Array.from(root.querySelectorAll('.pb-section')) as HTMLElement[];
-
-    if (typeof IntersectionObserver === 'undefined') {
-      sections.forEach((s) => s.classList.add('pb-visible'));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('pb-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 },
-    );
-
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="pbh" ref={rootRef}>
       {/* ============ SECTION 1 - HERO ============ */}
@@ -288,7 +262,7 @@ const PBHome: React.FC = () => {
 
       {/* ============ SECTION 1A - WHAT A READING LOOKS LIKE (hidden by SHOW_READING) ============ */}
       {SHOW_READING && (
-      <section id="reading" className="pb-section pbh-sec pbh-reading" aria-labelledby="reading-h">
+      <section id="reading" data-reveal="" className="pb-section pbh-sec pbh-reading" aria-labelledby="reading-h">
         <div className="pbh-wrap">
           <p className="pbh-label">Example reading</p>
           <h2 className="pbh-h2" id="reading-h">
@@ -326,7 +300,7 @@ const PBHome: React.FC = () => {
       )}
 
       {/* ============ SECTION 1B - HOW IT WORKS ============ */}
-      <section id="how-it-works" className="pb-section pbh-how">
+      <section id="how-it-works" data-reveal="" className="pb-section pbh-how">
         <div className="pbh-wrap">
           <p className="pbh-label">The journey</p>
           <h2 className="pbh-h2">
@@ -381,7 +355,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 2 - PROBLEM ============ */}
-      <section className="pb-section pbh-sec">
+      <section data-reveal="" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">The problem</p>
           <h2 className="pbh-h2" style={{ maxWidth: 700 }}>
@@ -404,7 +378,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 3 - SOLUTION / THREE PILLARS ============ */}
-      <section className="pb-section pbh-sec">
+      <section data-reveal="" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">The solution</p>
           <h2 className="pbh-h2">
@@ -422,7 +396,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 4 - FIVE FEATURES ============ */}
-      <section id="features" className="pb-section pbh-sec">
+      <section id="features" data-reveal="" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Features</p>
           <h2 className="pbh-h2">Five ways in</h2>
@@ -454,7 +428,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 5 - PRICING ============ */}
-      <section id="pricing" className="pb-section pbh-sec">
+      <section id="pricing" data-reveal="" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Pricing</p>
           <h2 className="pbh-h2">
@@ -585,7 +559,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 5B - YOUR DATA ============ */}
-      <section id="your-data" className="pb-section pbh-sec" aria-labelledby="your-data-h">
+      <section id="your-data" data-reveal="" className="pb-section pbh-sec" aria-labelledby="your-data-h">
         <div className="pbh-wrap">
           <p className="pbh-label">Your data</p>
           <h2 className="pbh-h2" id="your-data-h">
@@ -608,7 +582,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 5C - FAQ ============ */}
-      <section id="faq" className="pb-section pbh-sec" aria-labelledby="faq-h">
+      <section id="faq" data-reveal="" className="pb-section pbh-sec" aria-labelledby="faq-h">
         <div className="pbh-wrap">
           <p className="pbh-label">Questions</p>
           <h2 className="pbh-h2" id="faq-h">
@@ -626,7 +600,7 @@ const PBHome: React.FC = () => {
       </section>
 
       {/* ============ SECTION 6 - CLOSING CTA ============ */}
-      <section className="pb-section pbh-close">
+      <section data-reveal="" className="pb-section pbh-close">
         <h2 className="pbh-h2 pbh-h2--center">
           The map is already there.
           <br />
@@ -746,13 +720,8 @@ const PBHome: React.FC = () => {
         }
         .pbh-btn--full { width: 100%; margin-top: 22px; }
 
-        /* ---------- scroll reveal ---------- */
-        .pb-section {
-          opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .pb-section.pb-visible { opacity: 1; transform: translateY(0); }
+        /* Scroll reveal: sections carry data-reveal and are driven by the shared
+           motion engine (components/motion), which never hides them in static HTML. */
 
         /* ---------- hero ---------- */
         .pbh-hero {
@@ -762,23 +731,49 @@ const PBHome: React.FC = () => {
           padding: 48px 10% 56px;
           position: relative;
           overflow: hidden;
-          /* Revealed where .pbh-hero-bg masks to transparent at the top and
-             bottom edges, so the image fades into the nav above and the page
-             below instead of cutting off either way. The nav itself is
-             transparent, so the true "nav background" is the cosmos backdrop
-             showing through it (PBCosmos.tsx) - #0a1628 near the top of the
-             page, deepening toward #0d1f3c further down, which is what this
-             short top gradient approximates. */
-          background: linear-gradient(180deg, #0a1628 0%, var(--pb-navy) 25%, var(--pb-navy) 100%);
+          /* Transparent on purpose: the real page background is PBCosmos (a
+             fixed #0a1628 -> #0d1f3c -> #0a1628 gradient plus starfield, see
+             PBCosmos.tsx), which no flat colour here could match. Every layer
+             below fades out on its own edges instead. */
+          background: transparent;
+          /* Long eased fades: ~22% top, ~35% bottom, ~10% sides. */
+          --pbh-fade-y: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 4%, rgba(0,0,0,0.24) 9%, rgba(0,0,0,0.55) 14%, rgba(0,0,0,0.84) 18%, #000 22%, #000 65%, rgba(0,0,0,0.82) 71%, rgba(0,0,0,0.55) 79%, rgba(0,0,0,0.27) 87%, rgba(0,0,0,0.08) 94%, transparent 100%);
+          --pbh-fade-x: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 2.5%, rgba(0,0,0,0.58) 5.5%, rgba(0,0,0,0.88) 8%, #000 10.5%, #000 89.5%, rgba(0,0,0,0.88) 92%, rgba(0,0,0,0.58) 94.5%, rgba(0,0,0,0.2) 97.5%, transparent 100%);
         }
         .pbh-hero-bg {
           position: absolute;
-          inset: 0;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          /* The artwork is 1692x929: never draw it wider than that. On larger
+             screens the side fades dissolve it into the cosmos instead. */
+          width: min(100%, 1692px);
+          max-height: 929px;
+          margin: auto 0;
+          transform: translateX(-50%);
           z-index: 0;
           pointer-events: none;
           background: url('/images/purposebased/hero-bg.webp') center/cover no-repeat;
-          mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%);
-          -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%);
+          /* lighten: where the artwork is darker than the cosmos (its navy edges),
+             the cosmos shows; where it is brighter, the artwork shows. */
+          mix-blend-mode: lighten;
+          -webkit-mask-image: var(--pbh-fade-y), var(--pbh-fade-x);
+          mask-image: var(--pbh-fade-y), var(--pbh-fade-x);
+          -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+        }
+        @supports not (mix-blend-mode: lighten) {
+          .pbh-hero-bg { mix-blend-mode: normal; }
+        }
+        .pbh-hero-scrim,
+        .pbh-hero-glow-a,
+        .pbh-hero-glow-b {
+          -webkit-mask-image: var(--pbh-fade-y);
+          mask-image: var(--pbh-fade-y);
         }
         .pbh-hero-scrim {
           position: absolute;
@@ -1520,6 +1515,10 @@ const PBHome: React.FC = () => {
           .pbh-close { padding: 48px 5%; }
           .pbh-how { padding: 48px 5%; }
           .pbh-hero { padding: 32px 5% 48px; }
+          /* ~10% of a phone is ~40px, too steep beside the bright star: fade ~22%. */
+          .pbh-hero {
+            --pbh-fade-x: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.08) 4%, rgba(0,0,0,0.26) 8%, rgba(0,0,0,0.52) 12%, rgba(0,0,0,0.78) 17%, #000 22%, #000 78%, rgba(0,0,0,0.78) 83%, rgba(0,0,0,0.52) 88%, rgba(0,0,0,0.26) 92%, rgba(0,0,0,0.08) 96%, transparent 100%);
+          }
           .pbh-hero-content { align-items: center; text-align: center; max-width: none; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }

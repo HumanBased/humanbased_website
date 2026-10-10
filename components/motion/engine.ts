@@ -133,7 +133,7 @@ export const startMotion = (): void => {
     requestFrame();
     return;
   }
-  observer = new IntersectionObserver(onIntersect, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  observer = new IntersectionObserver(onIntersect, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
   scanMotionTargets();
   // Only now may off-screen elements take their hidden starting state.
   document.documentElement.classList.add('motion-ok');
