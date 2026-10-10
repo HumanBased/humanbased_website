@@ -12,6 +12,8 @@ export interface PageSeo {
   title: string;
   description: string;
   canonical?: string;
+  /** Value for <meta name="robots">, e.g. "noindex,follow". Omitted = no tag. */
+  robots?: string;
   og?: {
     type?: string;
     title?: string;
