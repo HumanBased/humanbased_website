@@ -17,6 +17,7 @@
     "resend": "^6.12.2"
   },
   "devDependencies": {
+    "@sparticuz/chromium": "^153.0.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "puppeteer": "^24.42.0",

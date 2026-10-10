@@ -60,6 +60,28 @@ async function copyPublicMissing() {
   }
 }
 
+// Vercel's build image lacks Chrome's shared libraries (libnspr4 etc.), so on
+// Linux we use @sparticuz/chromium, which bundles them. Locally (Windows/macOS)
+// puppeteer's own Chrome is used.
+async function launchOptions() {
+  const baseArgs = [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu',
+    '--no-first-run',
+    '--no-zygote',
+  ];
+  if (process.platform !== 'linux') return { headless: true, args: baseArgs };
+  process.env.AWS_EXECUTION_ENV ??= 'AWS_Lambda_nodejs22.x'; // makes the package unpack its bundled libs
+  const { default: chromium } = await import('@sparticuz/chromium');
+  return {
+    headless: 'shell',
+    args: [...chromium.args, ...baseArgs],
+    executablePath: await chromium.executablePath(),
+  };
+}
+
 async function prerender() {
   if (!existsSync(distDir)) {
     throw new Error(`dist directory not found at ${distDir}`);
