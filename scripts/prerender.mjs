@@ -116,6 +116,7 @@ async function prerender() {
         document.querySelectorAll('.mx-journey').forEach((el) => el.remove());
         document.querySelectorAll('[data-revealed]').forEach((el) => el.removeAttribute('data-revealed'));
         document.querySelectorAll('[data-counted]').forEach((el) => el.removeAttribute('data-counted'));
+        document.querySelectorAll('[data-offscreen]').forEach((el) => el.removeAttribute('data-offscreen'));
         document.querySelectorAll('[data-parallax]').forEach((el) => el.style.removeProperty('--parallax-y'));
       });
       const html = await page.content();

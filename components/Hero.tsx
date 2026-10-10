@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
   });
 
   return (
-    <section className="hb-hero" id="hero">
+    <section className="hb-hero" id="hero" data-pause-offscreen="">
       <div className="hb-hero-media" data-parallax="0.16" aria-hidden="true">
         <picture>
           <source type="image/avif" srcSet={srcSet('avif')} sizes={HERO_SIZES} />

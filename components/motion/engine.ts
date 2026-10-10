@@ -17,6 +17,8 @@ type FrameListener = (viewportHeight: number) => void;
 
 const frameListeners = new Set<FrameListener>();
 let observer: IntersectionObserver | null = null;
+// Marks [data-pause-offscreen] elements so CSS can pause their animations.
+let pauseObserver: IntersectionObserver | null = null;
 let frameRequested = false;
 let started = false;
 
@@ -114,6 +116,7 @@ export const scanMotionTargets = (): void => {
     if (isInViewport(el)) el.setAttribute('data-counted', '');
     else observer?.observe(el);
   });
+  document.querySelectorAll<HTMLElement>('[data-pause-offscreen]').forEach((el) => pauseObserver?.observe(el));
   requestFrame();
 };
 
@@ -133,6 +136,9 @@ export const startMotion = (): void => {
     requestFrame();
     return;
   }
+  pauseObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => e.target.toggleAttribute('data-offscreen', !e.isIntersecting));
+  });
   observer = new IntersectionObserver(onIntersect, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
   scanMotionTargets();
   // Only now may off-screen elements take their hidden starting state.
