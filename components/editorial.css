@@ -60,18 +60,18 @@
 .ed-lead {
   font-size: clamp(18px, 1.45vw, 21px);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
 }
 .ed-body {
   font-size: 16px;
   line-height: 1.75;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.94);
 }
 .ed-small {
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.88);
 }
 .ed-quote {
   font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
@@ -148,7 +148,7 @@
   gap: 8px 20px;
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.88);
 }
 .ed-trust > * + *::before {
   content: '';
@@ -160,7 +160,7 @@
   background: var(--ed-gold);
   vertical-align: middle;
 }
-.ed-trust a { color: rgba(255, 255, 255, 0.75); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(217, 164, 65, 0.5); }
+.ed-trust a { color: rgba(255, 255, 255, 0.95); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(217, 164, 65, 0.5); }
 .ed-trust a:hover { color: #fff; }
 
 /* ---------- form fields ---------- */
@@ -184,5 +184,11 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Brighter gold for small gold labels on the lighter lower part of a page, where
+   #d9a441 falls toward 4.5:1 (scripts/visual/contrast-audit.mjs). */
+.ed-label--lower {
+  color: #d8bc6e;
 }

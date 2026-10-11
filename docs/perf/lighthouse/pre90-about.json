@@ -1,0 +1,158 @@
+[
+  {
+    "run": 1,
+    "perf": 70,
+    "a11y": 96,
+    "fcp": 3.66,
+    "lcp": 5.78,
+    "cls": 0,
+    "tbt": 6,
+    "lcpElement": "div.flex-grow > section#about-why > div.hb-prose > p.hb-lead",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 768
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 855
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 442
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Style & Layout 717ms",
+      "Other 715ms",
+      "Rendering 223ms",
+      "Script Evaluation 168ms",
+      "Parse HTML & CSS 22ms",
+      "Garbage Collection 13ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "perf": 71,
+    "a11y": 96,
+    "fcp": 3.6,
+    "lcp": 5.69,
+    "cls": 0,
+    "tbt": 12,
+    "lcpElement": "div.flex-grow > section#about-why > div.hb-prose > p.hb-lead",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 844
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 841
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 435
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 696ms",
+      "Style & Layout 653ms",
+      "Rendering 248ms",
+      "Script Evaluation 184ms",
+      "Parse HTML & CSS 16ms",
+      "Garbage Collection 10ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "perf": 71,
+    "a11y": 96,
+    "fcp": 3.29,
+    "lcp": 6.37,
+    "cls": 0,
+    "tbt": 37,
+    "lcpElement": "div.flex-grow > section#about-why > div.hb-prose > p.hb-lead",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 780
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 855
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 443
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 688ms",
+      "Style & Layout 619ms",
+      "Rendering 209ms",
+      "Script Evaluation 201ms",
+      "Parse HTML & CSS 17ms",
+      "Garbage Collection 9ms",
+      "Script Parsing & Compilation 5ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  }
+]

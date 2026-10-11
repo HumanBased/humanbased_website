@@ -145,7 +145,7 @@ const ServicesPage: React.FC = () => {
                   <span>Legacy system modernization</span>
                 </li>
               </ul>
-              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-amber-500 hover:text-amber-400 transition-colors">
+              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-[#d8bc6e] hover:text-amber-300 transition-colors">
                 Explore Organizational Solutions &#8594;
               </button>
             </div>
@@ -185,7 +185,7 @@ const ServicesPage: React.FC = () => {
                   <span>Feedback and deliberation tools</span>
                 </li>
               </ul>
-              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-amber-500 hover:text-amber-400 transition-colors">
+              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-[#d8bc6e] hover:text-amber-300 transition-colors">
                 See how we empower communities &#8594;
               </button>
             </div>
@@ -225,7 +225,7 @@ const ServicesPage: React.FC = () => {
                   <span>Personal analytics that respect privacy</span>
                 </li>
               </ul>
-              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-amber-500 hover:text-amber-400 transition-colors">
+              <button className="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-[0.25em] text-[#d8bc6e] hover:text-amber-300 transition-colors">
                 See our personal tools &#8594;
               </button>
             </div>
@@ -285,7 +285,7 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="ed-label">
+                <p className="ed-label ed-label--lower">
                   Operations Productivity
                 </p>
                 <h3 className="font-serif ed-subtitle">Productivity Up</h3>
@@ -311,7 +311,7 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="ed-label">
+                <p className="ed-label ed-label--lower">
                   Cost Optimization
                 </p>
                 <h3 className="font-serif ed-subtitle">Cost Reduction</h3>
@@ -337,7 +337,7 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="ed-label">
+                <p className="ed-label ed-label--lower">
                   Internal Communications
                 </p>
                 <h3 className="font-serif ed-subtitle">Participation Increased</h3>
@@ -363,7 +363,7 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
-                <p className="ed-label">
+                <p className="ed-label ed-label--lower">
                   Customer &amp; Staff Experience
                 </p>
                 <h3 className="font-serif ed-subtitle">Satisfaction Improved</h3>

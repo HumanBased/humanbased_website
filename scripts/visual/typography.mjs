@@ -26,7 +26,7 @@ const lum = (r, g, b) => 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * ch
 const HERO_LINES = [
   { sel: '.hb-hero-line1', color: [255, 255, 255], alpha: 0.96, label: 'line 1 (Garamond 400)' },
   { sel: '.hb-hero-line2', color: [0xea, 0xdf, 0xbd], alpha: 1, label: 'line 2 (italic, cream)' },
-  { sel: '.hb-hero-line3', color: [0xc4, 0xa8, 0x5a], alpha: 1, label: 'line 3 (Inter, gold)' },
+  { sel: '.hb-hero-line3', color: [0xd8, 0xbc, 0x6e], alpha: 1, label: 'line 3 (Inter, gold)' },
 ];
 
 // contrast of `line` text over every pixel inside its line boxes of the raw RGB image

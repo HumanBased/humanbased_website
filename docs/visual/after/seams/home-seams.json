@@ -4,8 +4,8 @@
     "scroll": "0",
     "edge": "top",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 51.84,
-    "worstPixelAcrossBoundary": 45.6,
+    "pageProfileStep": 75.9,
+    "worstPixelAcrossBoundary": 71.1,
     "pass": true
   },
   {
@@ -18,8 +18,8 @@
     "vw": 390,
     "scroll": "0",
     "edge": "left",
-    "heroProfileStep": 0.36,
-    "pageProfileStep": 33.93,
+    "heroProfileStep": 0.28,
+    "pageProfileStep": 23.01,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -27,8 +27,8 @@
     "vw": 390,
     "scroll": "0",
     "edge": "right",
-    "heroProfileStep": 0.77,
-    "pageProfileStep": 1.65,
+    "heroProfileStep": 0.78,
+    "pageProfileStep": 2.25,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -37,25 +37,25 @@
     "scroll": "300",
     "edge": "top",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 22.33,
-    "worstPixelAcrossBoundary": 27.3,
+    "pageProfileStep": 40.95,
+    "worstPixelAcrossBoundary": 47.1,
     "pass": true
   },
   {
     "vw": 390,
     "scroll": "300",
     "edge": "bottom",
-    "heroProfileStep": 0.37,
-    "pageProfileStep": 0.41,
-    "worstPixelAcrossBoundary": 13.4,
+    "heroProfileStep": 0.32,
+    "pageProfileStep": 1.47,
+    "worstPixelAcrossBoundary": 3.9,
     "pass": true
   },
   {
     "vw": 390,
     "scroll": "300",
     "edge": "left",
-    "heroProfileStep": 0.71,
-    "pageProfileStep": 107.9,
+    "heroProfileStep": 0.48,
+    "pageProfileStep": 95.13,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -63,8 +63,8 @@
     "vw": 390,
     "scroll": "300",
     "edge": "right",
-    "heroProfileStep": 0.68,
-    "pageProfileStep": 0.99,
+    "heroProfileStep": 0.62,
+    "pageProfileStep": 1.01,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -73,25 +73,25 @@
     "scroll": "bottom",
     "edge": "top",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 17.57,
-    "worstPixelAcrossBoundary": 22.9,
+    "pageProfileStep": 40.6,
+    "worstPixelAcrossBoundary": 0.7,
     "pass": true
   },
   {
     "vw": 390,
     "scroll": "bottom",
     "edge": "bottom",
-    "heroProfileStep": 0.37,
-    "pageProfileStep": 0.55,
-    "worstPixelAcrossBoundary": 33.1,
+    "heroProfileStep": 0.36,
+    "pageProfileStep": 1.18,
+    "worstPixelAcrossBoundary": 58.8,
     "pass": true
   },
   {
     "vw": 390,
     "scroll": "bottom",
     "edge": "left",
-    "heroProfileStep": 0.69,
-    "pageProfileStep": 139.6,
+    "heroProfileStep": 0.73,
+    "pageProfileStep": 126.99,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -99,8 +99,8 @@
     "vw": 390,
     "scroll": "bottom",
     "edge": "right",
-    "heroProfileStep": 0.71,
-    "pageProfileStep": 0.91,
+    "heroProfileStep": 0.61,
+    "pageProfileStep": 1.11,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -109,7 +109,7 @@
     "scroll": "0",
     "edge": "top",
     "heroProfileStep": 0,
-    "pageProfileStep": 26.08,
+    "pageProfileStep": 23.45,
     "worstPixelAcrossBoundary": 97.9,
     "pass": true
   },
@@ -123,50 +123,50 @@
     "vw": 1440,
     "scroll": "0",
     "edge": "left",
-    "heroProfileStep": 0.03,
-    "pageProfileStep": 0.41,
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.66,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
   {
     "vw": 1440,
     "scroll": "0",
-    "edge": "right",
-    "heroProfileStep": 0.24,
-    "pageProfileStep": 0.34,
-    "worstPixelAcrossBoundary": "viewport edge",
-    "pass": true
-  },
-  {
-    "vw": 1440,
-    "scroll": "300",
-    "edge": "top",
-    "note": "off-screen"
-  },
-  {
-    "vw": 1440,
-    "scroll": "300",
-    "edge": "bottom",
-    "heroProfileStep": 0.03,
-    "pageProfileStep": 0.23,
-    "worstPixelAcrossBoundary": 17.3,
-    "pass": true
-  },
-  {
-    "vw": 1440,
-    "scroll": "300",
-    "edge": "left",
-    "heroProfileStep": 0.03,
-    "pageProfileStep": 0.36,
-    "worstPixelAcrossBoundary": "viewport edge",
-    "pass": true
-  },
-  {
-    "vw": 1440,
-    "scroll": "300",
     "edge": "right",
     "heroProfileStep": 0.29,
-    "pageProfileStep": 0.35,
+    "pageProfileStep": 0.77,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "top",
+    "note": "off-screen"
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "bottom",
+    "heroProfileStep": 0.03,
+    "pageProfileStep": 1.03,
+    "worstPixelAcrossBoundary": 4.7,
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "left",
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.78,
+    "worstPixelAcrossBoundary": "viewport edge",
+    "pass": true
+  },
+  {
+    "vw": 1440,
+    "scroll": "300",
+    "edge": "right",
+    "heroProfileStep": 0.34,
+    "pageProfileStep": 0.67,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -181,16 +181,16 @@
     "scroll": "bottom",
     "edge": "bottom",
     "heroProfileStep": 0.03,
-    "pageProfileStep": 0.29,
-    "worstPixelAcrossBoundary": 29.1,
+    "pageProfileStep": 1.06,
+    "worstPixelAcrossBoundary": 1,
     "pass": true
   },
   {
     "vw": 1440,
     "scroll": "bottom",
     "edge": "left",
-    "heroProfileStep": 0.01,
-    "pageProfileStep": 0.4,
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.75,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -198,8 +198,8 @@
     "vw": 1440,
     "scroll": "bottom",
     "edge": "right",
-    "heroProfileStep": 0.35,
-    "pageProfileStep": 0.39,
+    "heroProfileStep": 0.38,
+    "pageProfileStep": 0.73,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -208,7 +208,7 @@
     "scroll": "0",
     "edge": "top",
     "heroProfileStep": 0,
-    "pageProfileStep": 19.53,
+    "pageProfileStep": 17.44,
     "worstPixelAcrossBoundary": 97.9,
     "pass": true
   },
@@ -222,8 +222,8 @@
     "vw": 1920,
     "scroll": "0",
     "edge": "left",
-    "heroProfileStep": 0.01,
-    "pageProfileStep": 0.39,
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.67,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -231,8 +231,8 @@
     "vw": 1920,
     "scroll": "0",
     "edge": "right",
-    "heroProfileStep": 0.14,
-    "pageProfileStep": 0.21,
+    "heroProfileStep": 0.15,
+    "pageProfileStep": 0.51,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -246,17 +246,17 @@
     "vw": 1920,
     "scroll": "300",
     "edge": "bottom",
-    "heroProfileStep": 0.02,
-    "pageProfileStep": 0.22,
-    "worstPixelAcrossBoundary": 20.7,
+    "heroProfileStep": 0.01,
+    "pageProfileStep": 1.03,
+    "worstPixelAcrossBoundary": 41.5,
     "pass": true
   },
   {
     "vw": 1920,
     "scroll": "300",
     "edge": "left",
-    "heroProfileStep": 0.01,
-    "pageProfileStep": 0.43,
+    "heroProfileStep": 0,
+    "pageProfileStep": 0.65,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -264,8 +264,8 @@
     "vw": 1920,
     "scroll": "300",
     "edge": "right",
-    "heroProfileStep": 0.15,
-    "pageProfileStep": 0.25,
+    "heroProfileStep": 0.18,
+    "pageProfileStep": 0.7,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -280,8 +280,8 @@
     "scroll": "bottom",
     "edge": "bottom",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 0.24,
-    "worstPixelAcrossBoundary": 27.9,
+    "pageProfileStep": 1.09,
+    "worstPixelAcrossBoundary": 58.6,
     "pass": true
   },
   {
@@ -289,7 +289,7 @@
     "scroll": "bottom",
     "edge": "left",
     "heroProfileStep": 0,
-    "pageProfileStep": 0.47,
+    "pageProfileStep": 0.65,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -298,7 +298,7 @@
     "scroll": "bottom",
     "edge": "right",
     "heroProfileStep": 0.2,
-    "pageProfileStep": 0.3,
+    "pageProfileStep": 0.57,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -307,7 +307,7 @@
     "scroll": "0",
     "edge": "top",
     "heroProfileStep": 0,
-    "pageProfileStep": 14.67,
+    "pageProfileStep": 13.08,
     "worstPixelAcrossBoundary": 97.9,
     "pass": true
   },
@@ -322,7 +322,7 @@
     "scroll": "0",
     "edge": "left",
     "heroProfileStep": 0,
-    "pageProfileStep": 0.37,
+    "pageProfileStep": 0.7,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -331,7 +331,7 @@
     "scroll": "0",
     "edge": "right",
     "heroProfileStep": 0.11,
-    "pageProfileStep": 0.19,
+    "pageProfileStep": 0.57,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -346,8 +346,8 @@
     "scroll": "300",
     "edge": "bottom",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 0.12,
-    "worstPixelAcrossBoundary": 11.1,
+    "pageProfileStep": 1.05,
+    "worstPixelAcrossBoundary": 84,
     "pass": true
   },
   {
@@ -355,7 +355,7 @@
     "scroll": "300",
     "edge": "left",
     "heroProfileStep": 0,
-    "pageProfileStep": 0.39,
+    "pageProfileStep": 0.65,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -364,7 +364,7 @@
     "scroll": "300",
     "edge": "right",
     "heroProfileStep": 0.12,
-    "pageProfileStep": 0.2,
+    "pageProfileStep": 0.6,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -379,8 +379,8 @@
     "scroll": "bottom",
     "edge": "bottom",
     "heroProfileStep": 0.01,
-    "pageProfileStep": 0.18,
-    "worstPixelAcrossBoundary": 13.9,
+    "pageProfileStep": 1.02,
+    "worstPixelAcrossBoundary": 25.9,
     "pass": true
   },
   {
@@ -388,7 +388,7 @@
     "scroll": "bottom",
     "edge": "left",
     "heroProfileStep": 0,
-    "pageProfileStep": 0.39,
+    "pageProfileStep": 0.65,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   },
@@ -396,8 +396,8 @@
     "vw": 2560,
     "scroll": "bottom",
     "edge": "right",
-    "heroProfileStep": 0.16,
-    "pageProfileStep": 0.27,
+    "heroProfileStep": 0.15,
+    "pageProfileStep": 0.45,
     "worstPixelAcrossBoundary": "viewport edge",
     "pass": true
   }

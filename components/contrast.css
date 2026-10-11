@@ -1,0 +1,31 @@
+/* Text contrast on the twilight background (HumanBased pages, .hb-site).
+   The page gradient ends at #1d4373, lighter than the old near-black, so the muted
+   white tiers used across the pages (white/10 .. white/75) no longer reach 7:1.
+   They are raised once here, by class, instead of editing ~200 call sites. Hover
+   utilities still win (same specificity, later in the cascade). white/80 and above
+   already pass. Measured by scripts/visual/contrast-audit.mjs. */
+.hb-site {
+  --hb-ink-body: rgba(255, 255, 255, 0.95);
+  --hb-ink-label: rgba(255, 255, 255, 0.95);
+}
+.hb-site .text-white\/50,
+.hb-site .text-white\/55,
+.hb-site .text-white\/60,
+.hb-site .text-white\/65,
+.hb-site .text-white\/70,
+.hb-site .text-white\/75 {
+  color: var(--hb-ink-body);
+}
+/* Small labels, separators and the footer legal row (were 10 to 40%). */
+.hb-site .text-white\/10,
+.hb-site .text-white\/30,
+.hb-site .text-white\/40 {
+  color: var(--hb-ink-label);
+}
+
+/* The footer sits on the brightest part of the gradient and carries the smallest
+   type (10 to 14px), so its muted whites go to full white. :where() keeps the
+   specificity low enough for the hover colours to still win. */
+.hb-site :where(footer) [class*='text-white/'] {
+  color: #fff;
+}

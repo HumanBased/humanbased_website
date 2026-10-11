@@ -228,7 +228,7 @@ html[data-tab-hidden] *,
 .hb-dissolve--veil {
   -webkit-mask-image: var(--dz-y);
   mask-image: var(--dz-y);
-  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(5, 5, 9, 0.62), rgba(5, 5, 9, 0.35) 60%, rgba(5, 5, 9, 0) 100%);
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(5, 8, 16, 0.78), rgba(5, 8, 16, 0.5) 62%, rgba(5, 8, 16, 0) 100%);
 }
 @media (max-width: 767px) {
   .hb-dissolve {

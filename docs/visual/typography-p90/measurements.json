@@ -1,0 +1,726 @@
+{
+  "contrast": [
+    {
+      "viewport": 1920,
+      "line": "line 1 (Garamond 400)",
+      "flat": {
+        "min": 6.12,
+        "p5": 7.7,
+        "median": 17.52,
+        "bins": [
+          12.6,
+          13.4,
+          15.3,
+          15.6,
+          14.2,
+          6.9,
+          6.5,
+          6.1
+        ],
+        "x": [
+          408,
+          1038
+        ]
+      },
+      "halo": {
+        "min": 6.12,
+        "p5": 8.81,
+        "median": 17.54,
+        "bins": [
+          12.8,
+          13.6,
+          15.3,
+          15.6,
+          14.8,
+          7.1,
+          7,
+          6.1
+        ],
+        "x": [
+          408,
+          1038
+        ]
+      }
+    },
+    {
+      "viewport": 1920,
+      "line": "line 2 (italic, cream)",
+      "flat": {
+        "min": 7.16,
+        "p5": 9.19,
+        "median": 12.38,
+        "bins": [
+          14.1,
+          13.6,
+          9.3,
+          7.2,
+          7.8,
+          7.5,
+          8.7,
+          9.7
+        ],
+        "x": [
+          408,
+          726
+        ]
+      },
+      "halo": {
+        "min": 7.58,
+        "p5": 9.5,
+        "median": 12.87,
+        "bins": [
+          14.1,
+          13.7,
+          9.4,
+          8.3,
+          7.9,
+          7.6,
+          8.8,
+          10.1
+        ],
+        "x": [
+          408,
+          726
+        ]
+      }
+    },
+    {
+      "viewport": 1920,
+      "line": "line 3 (Inter, gold)",
+      "flat": {
+        "min": 5.45,
+        "p5": 7.11,
+        "median": 9.28,
+        "bins": [
+          5.4,
+          5.5,
+          6.1,
+          7.7,
+          7.8,
+          6.9,
+          6.8,
+          8
+        ],
+        "x": [
+          408,
+          694
+        ]
+      },
+      "halo": {
+        "min": 5.71,
+        "p5": 7.48,
+        "median": 9.47,
+        "bins": [
+          5.8,
+          5.7,
+          6.3,
+          7.7,
+          7.9,
+          7,
+          6.9,
+          8.5
+        ],
+        "x": [
+          408,
+          694
+        ]
+      }
+    },
+    {
+      "viewport": 1440,
+      "line": "line 1 (Garamond 400)",
+      "flat": {
+        "min": 6.02,
+        "p5": 8.34,
+        "median": 17.68,
+        "bins": [
+          11.4,
+          14.2,
+          10.2,
+          17.5,
+          13.2,
+          7.4,
+          6.7,
+          6
+        ],
+        "x": [
+          168,
+          798
+        ]
+      },
+      "halo": {
+        "min": 6.02,
+        "p5": 9.46,
+        "median": 17.75,
+        "bins": [
+          12.6,
+          14.3,
+          10.4,
+          17.6,
+          13.5,
+          7.6,
+          7.3,
+          6
+        ],
+        "x": [
+          168,
+          798
+        ]
+      }
+    },
+    {
+      "viewport": 1440,
+      "line": "line 2 (italic, cream)",
+      "flat": {
+        "min": 8.21,
+        "p5": 9.76,
+        "median": 14.14,
+        "bins": [
+          14.4,
+          13,
+          14.1,
+          12.7,
+          8.3,
+          8.5,
+          8.2,
+          9.5
+        ],
+        "x": [
+          168,
+          486
+        ]
+      },
+      "halo": {
+        "min": 8.21,
+        "p5": 10.11,
+        "median": 14.23,
+        "bins": [
+          14.4,
+          13.1,
+          14.2,
+          12.7,
+          8.6,
+          8.8,
+          8.2,
+          9.5
+        ],
+        "x": [
+          168,
+          486
+        ]
+      }
+    },
+    {
+      "viewport": 1440,
+      "line": "line 3 (Inter, gold)",
+      "flat": {
+        "min": 6.88,
+        "p5": 7.92,
+        "median": 9.72,
+        "bins": [
+          10.1,
+          9.8,
+          7.1,
+          6.9,
+          8,
+          8.2,
+          6.9,
+          8.3
+        ],
+        "x": [
+          168,
+          454
+        ]
+      },
+      "halo": {
+        "min": 6.98,
+        "p5": 8.29,
+        "median": 9.83,
+        "bins": [
+          10.1,
+          9.9,
+          7.5,
+          7,
+          8.1,
+          8.3,
+          7.8,
+          8.6
+        ],
+        "x": [
+          168,
+          454
+        ]
+      }
+    },
+    {
+      "viewport": 390,
+      "line": "line 1 (Garamond 400)",
+      "flat": {
+        "min": 1.99,
+        "p5": 13.34,
+        "median": 13.47,
+        "bins": [
+          7.6,
+          13.2,
+          2,
+          3.1,
+          12.3,
+          13.3,
+          13.5,
+          6.9
+        ],
+        "x": [
+          24,
+          350
+        ]
+      },
+      "halo": {
+        "min": 2.06,
+        "p5": 13.5,
+        "median": 13.77,
+        "bins": [
+          8.8,
+          13.3,
+          2.1,
+          3.5,
+          12.3,
+          13.5,
+          13.5,
+          7
+        ],
+        "x": [
+          24,
+          350
+        ]
+      }
+    },
+    {
+      "viewport": 390,
+      "line": "line 2 (italic, cream)",
+      "flat": {
+        "min": 1.44,
+        "p5": 10.71,
+        "median": 10.91,
+        "bins": [
+          10.7,
+          10.7,
+          2,
+          2.8,
+          1.4,
+          10.8,
+          10.8,
+          10.8
+        ],
+        "x": [
+          24,
+          269
+        ]
+      },
+      "halo": {
+        "min": 1.5,
+        "p5": 10.91,
+        "median": 11.14,
+        "bins": [
+          10.8,
+          10.8,
+          2.2,
+          4.8,
+          1.5,
+          10.8,
+          10.8,
+          10.8
+        ],
+        "x": [
+          24,
+          269
+        ]
+      }
+    },
+    {
+      "viewport": 390,
+      "line": "line 3 (Inter, gold)",
+      "flat": {
+        "min": 1.43,
+        "p5": 7.68,
+        "median": 7.82,
+        "bins": [
+          7.7,
+          7.7,
+          1.5,
+          7.7,
+          7.7,
+          2.5,
+          1.4,
+          7.7
+        ],
+        "x": [
+          24,
+          310
+        ]
+      },
+      "halo": {
+        "min": 1.8,
+        "p5": 7.87,
+        "median": 8.13,
+        "bins": [
+          7.9,
+          7.8,
+          1.8,
+          7.8,
+          7.9,
+          2.6,
+          4.3,
+          7.8
+        ],
+        "x": [
+          24,
+          310
+        ]
+      }
+    }
+  ],
+  "cpl": [
+    {
+      "viewport": 1920,
+      "paras": [
+        {
+          "kind": "lead",
+          "lines": 3,
+          "cpl": 52,
+          "size": "38px",
+          "weight": "300",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "51.3px",
+          "color": "rgb(255, 255, 255)"
+        },
+        {
+          "kind": "body",
+          "lines": 4,
+          "cpl": 66,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 3,
+          "cpl": 54,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 3,
+          "cpl": 67,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 61,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 50,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 63,
+          "size": "27px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "43.2px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "closing",
+          "lines": 3,
+          "cpl": 64,
+          "size": "36px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "52.2px",
+          "color": "rgb(234, 223, 189)"
+        }
+      ],
+      "heading": {
+        "size": "42px",
+        "weight": "500",
+        "family": "\"Cormorant Garamond\", "
+      },
+      "proseWidth": 832,
+      "scrollW": 1920
+    },
+    {
+      "viewport": 1440,
+      "paras": [
+        {
+          "kind": "lead",
+          "lines": 3,
+          "cpl": 52,
+          "size": "38px",
+          "weight": "300",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "51.3px",
+          "color": "rgb(255, 255, 255)"
+        },
+        {
+          "kind": "body",
+          "lines": 4,
+          "cpl": 66,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 82,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 3,
+          "cpl": 67,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 61,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 50,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 2,
+          "cpl": 63,
+          "size": "24.88px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "39.808px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "closing",
+          "lines": 3,
+          "cpl": 64,
+          "size": "36px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "52.2px",
+          "color": "rgb(234, 223, 189)"
+        }
+      ],
+      "heading": {
+        "size": "42px",
+        "weight": "500",
+        "family": "\"Cormorant Garamond\", "
+      },
+      "proseWidth": 832,
+      "scrollW": 1440
+    },
+    {
+      "viewport": 390,
+      "paras": [
+        {
+          "kind": "lead",
+          "lines": 6,
+          "cpl": 29,
+          "size": "28px",
+          "weight": "300",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "37.8px",
+          "color": "rgb(255, 255, 255)"
+        },
+        {
+          "kind": "body",
+          "lines": 8,
+          "cpl": 36,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 5,
+          "cpl": 37,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 6,
+          "cpl": 38,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 4,
+          "cpl": 37,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 3,
+          "cpl": 37,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "body",
+          "lines": 4,
+          "cpl": 39,
+          "size": "21px",
+          "weight": "400",
+          "align": "left",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "33.6px",
+          "color": "rgba(255, 255, 255, 0.95)"
+        },
+        {
+          "kind": "closing",
+          "lines": 5,
+          "cpl": 35,
+          "size": "26px",
+          "weight": "400",
+          "align": "center",
+          "family": "\"Cormorant Garamond\", ",
+          "lh": "37.7px",
+          "color": "rgb(234, 223, 189)"
+        }
+      ],
+      "heading": {
+        "size": "32px",
+        "weight": "500",
+        "family": "\"Cormorant Garamond\", "
+      },
+      "proseWidth": 390,
+      "scrollW": 390
+    }
+  ],
+  "fonts": [
+    {
+      "viewport": 1920,
+      "loaded": [
+        "Cinzel normal 700",
+        "Cormorant Garamond normal 300 500",
+        "Cormorant Garamond italic 400",
+        "Inter normal 100 900"
+      ],
+      "line1Size": "30px",
+      "line2Size": "26px",
+      "line3Size": "12px"
+    },
+    {
+      "viewport": 1440,
+      "loaded": [
+        "Cinzel normal 700",
+        "Cormorant Garamond normal 300 500",
+        "Cormorant Garamond italic 400",
+        "Cormorant Garamond Fallback italic normal",
+        "Inter normal 100 900"
+      ],
+      "line1Size": "30px",
+      "line2Size": "26px",
+      "line3Size": "12px"
+    },
+    {
+      "viewport": 390,
+      "loaded": [
+        "Cormorant Garamond normal 300 500",
+        "Cormorant Garamond italic 400",
+        "Cormorant Garamond Fallback normal normal",
+        "Cormorant Garamond Fallback italic normal",
+        "Inter normal 100 900",
+        "Inter Fallback normal 100 599",
+        "Inter Fallback normal 600 900"
+      ],
+      "line1Size": "22px",
+      "line2Size": "20px",
+      "line3Size": "12px"
+    }
+  ]
+}

@@ -28,6 +28,9 @@ import { useMotion } from './components/motion/useMotion';
 import './components/motion/motion.css';
 import './components/editorial.css';
 import './components/typography.css';
+import './components/twilight.css';
+import './components/contrast.css';
+import TwilightBackground from './components/TwilightBackground';
 
 // Latin-subset files the first screen of every HumanBased page uses. Preloaded here,
 // not in index.html, so PurposeBased pages (DM Sans / Cormorant) do not fetch them.
@@ -41,20 +44,24 @@ const MainLayout: React.FC<{ children: React.ReactNode; legal?: boolean }> = ({ 
   if (!legal) preload(GARAMOND_FONT, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
   return (
     <div className={legal ? 'hb-legal' : 'hb-site'}>
-      {/* Fixed site background layer */}
-      <div className="fixed inset-0 z-[-1]">
-        <div 
-          className="absolute inset-0 opacity-100 animate-star-drift"
-          style={{
-            backgroundImage: `url(${siteBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
-        {/* Dark Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-[#050509]/70" />
-      </div>
+      {/* App-store legal pages keep the original fixed starfield image; every other
+          HumanBased page uses the twilight gradient + CSS starfield inside the page
+          wrapper below. */}
+      {legal && (
+        <div className="fixed inset-0 z-[-1]">
+          <div
+            className="absolute inset-0 opacity-100 animate-star-drift"
+            style={{
+              backgroundImage: `url(${siteBg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+          {/* Dark Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-[#050509]/70" />
+        </div>
+      )}
       {/* Pulled up over the html/body header padding (2 x --nav-height) so the
           aurora also lights the strip under the navigation; without this a
           darker 60px band showed where the nav meets the hero. */}
@@ -62,6 +69,7 @@ const MainLayout: React.FC<{ children: React.ReactNode; legal?: boolean }> = ({ 
         className="relative bg-transparent min-h-screen flex flex-col overflow-hidden"
         style={{ marginTop: 'calc(-2 * var(--nav-height))', paddingTop: 'calc(2 * var(--nav-height))' }}
       >
+        {!legal && <TwilightBackground />}
         <AuroraBackground />
         {/* No z-index here: a stacking context would isolate the home hero's
             screen blend from the fixed background it has to merge into. Tree

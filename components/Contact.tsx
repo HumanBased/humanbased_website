@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
           <div className="ed-stack lg:sticky lg:top-36" data-reveal="">
             <h2 className="font-serif ed-title">
-              Let us explore what we can <span className="text-amber-500">build together</span>.
+              Let us explore what we can <span className="text-[#d8bc6e]">build together</span>.
             </h2>
             <p className="ed-lead text-white/70 max-w-xl">
               We work with organizations ready to modernize operations, communities seeking better ways to connect and govern, and individuals committed to personal growth and purposeful living. Share a bit about your context and we will reply with thoughtful next steps.

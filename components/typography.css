@@ -82,6 +82,8 @@
   --hb-ink: rgba(255, 255, 255, 0.95);
   --hb-cream: #eadfbd;
   --hb-gold: #c4a85a;
+  /* Brighter gold for small gold text where the page is lighter or the photo is busy. */
+  --hb-gold-bright: #d8bc6e;
 }
 
 .font-serif,
@@ -276,7 +278,8 @@
   line-height: 1.6;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--hb-gold);
+  /* Lightened from #c4a85a so it reaches 7:1 over the limb of the Earth photo. */
+  color: var(--hb-gold-bright);
   margin-top: 6px;
 }
 .hb-hero-line1,

@@ -52,7 +52,7 @@ const CapabilitiesGrid: React.FC = () => {
               {p.desc}
             </p>
             <div className="h-px w-full bg-white/5 mb-6"></div>
-            <button className="text-xs font-bold uppercase tracking-widest text-amber-500 hover:text-amber-400 transition-colors">
+            <button className="text-xs font-bold uppercase tracking-widest text-[#d8bc6e] hover:text-amber-300 transition-colors">
               Explore Solutions →
             </button>
           </div>
