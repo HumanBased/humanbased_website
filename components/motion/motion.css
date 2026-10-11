@@ -96,41 +96,31 @@ html.motion-ok [data-draw][data-mx-pending] line {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.10) 20%, rgba(255, 255, 255, 0.10) 80%, transparent);
 }
 
-/* ---------- journey line ----------
-   Journey.tsx supplies --j-top / --j-height (page offset and length of the line),
-   --n-y per node, and --journey-progress (0..1) per frame. Everything moves by
-   transform only: no layout property changes after first paint, so the line can
-   never cause layout shift. */
+/* ---------- journey line ---------- */
 .mx-journey {
   position: absolute;
-  top: 0;
   z-index: 2;
   width: 1px;
-  height: 0;
   pointer-events: none;
 }
 .mx-journey-track,
 .mx-journey-fill {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 1px;
-  height: 1px;
-  transform-origin: 0 0;
 }
 .mx-journey-track {
-  transform: translate3d(0, var(--j-top, 0px), 0) scale(1, var(--j-height, 0));
   background: linear-gradient(180deg, transparent, var(--mx-line) 6%, var(--mx-line) 94%, transparent);
 }
 .mx-journey-fill {
-  transform: translate3d(0, var(--j-top, 0px), 0) scale(1, calc(var(--j-height, 0) * var(--journey-progress, 0)));
+  transform-origin: top;
+  transform: scaleY(var(--journey-progress, 0));
   background: linear-gradient(180deg, rgba(196, 168, 90, 0), var(--mx-gold) 8%, var(--mx-gold-bright));
   box-shadow: 0 0 6px rgba(196, 168, 90, 0.35);
 }
 .mx-journey[data-intro] .mx-journey-fill { transition: transform 780ms var(--mx-ease); }
 .mx-journey-node {
   position: absolute;
-  top: 0;
   left: 0;
   width: 9px;
   height: 9px;
@@ -138,7 +128,6 @@ html.motion-ok [data-draw][data-mx-pending] line {
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: #070a12;
-  transform: translate3d(0, var(--n-y, 0px), 0);
   transition: border-color 0.6s var(--mx-ease), background-color 0.6s var(--mx-ease), box-shadow 0.6s var(--mx-ease);
 }
 .mx-journey-node[data-lit] {
@@ -205,7 +194,7 @@ html[data-tab-hidden] *,
 /* ---------- reduced motion: everything in its final state ---------- */
 @media (prefers-reduced-motion: reduce) {
   [data-parallax] { transform: none !important; }
-  .mx-journey { --journey-progress: 1 !important; }
+  .mx-journey-fill { transform: scaleY(1) !important; }
   .mx-card:hover,
   .mx-card:focus-within { transform: none; }
 }

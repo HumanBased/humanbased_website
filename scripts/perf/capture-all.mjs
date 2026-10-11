@@ -24,7 +24,9 @@ await fs.mkdir(docsDir, { recursive: true });
 await fs.mkdir(workDir, { recursive: true });
 
 const SIZES = [[1440, 900], [390, 844]];
-const PAGES = [...ROUTES, '/this-page-does-not-exist'];
+const ALL_PAGES = [...ROUTES, '/this-page-does-not-exist'];
+// ONLY=/a,/b limits the run to those routes (used to recapture flaky pages).
+const PAGES = process.env.ONLY ? ALL_PAGES.filter((r) => process.env.ONLY.split(',').includes(r)) : ALL_PAGES;
 const slug = (r) => (r === '/' ? 'home' : r.replace(/^\//, '').replace(/\//g, '-'));
 
 const PROPS = [

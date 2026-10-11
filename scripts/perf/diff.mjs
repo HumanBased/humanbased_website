@@ -17,7 +17,8 @@ const diffDir = path.join(root, `diff-${beforeName}-${afterName}`);
 await fs.mkdir(diffDir, { recursive: true });
 const CHANNEL_TOLERANCE = 8;
 
-const names = (await fs.readdir(A)).filter((f) => f.endsWith('.png')).map((f) => f.replace(/\.png$/, ''));
+const inB = new Set(await fs.readdir(B));
+const names = (await fs.readdir(A)).filter((f) => f.endsWith('.png') && inB.has(f)).map((f) => f.replace(/\.png$/, ''));
 const rows = [];
 let over = 0;
 for (const n of names) {
@@ -28,6 +29,7 @@ for (const n of names) {
   const w = Math.min(a.info.width, b.info.width);
   const h = Math.min(a.info.height, b.info.height);
   let diff = 0;
+  let lumaDiff = 0;
   const mask = Buffer.alloc(w * h * 3);
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
@@ -35,6 +37,11 @@ for (const n of names) {
       const ib = (y * b.info.width + x) * 3;
       const d = Math.max(Math.abs(a.data[ia] - b.data[ib]), Math.abs(a.data[ia + 1] - b.data[ib + 1]), Math.abs(a.data[ia + 2] - b.data[ib + 2]));
       const o = (y * w + x) * 3;
+      // Luminance-only comparison: sub-pixel (LCD) vs grayscale text anti-aliasing moves
+      // colour between channels but leaves luminance almost unchanged.
+      const la = 0.2126 * a.data[ia] + 0.7152 * a.data[ia + 1] + 0.0722 * a.data[ia + 2];
+      const lb = 0.2126 * b.data[ib] + 0.7152 * b.data[ib + 1] + 0.0722 * b.data[ib + 2];
+      if (Math.abs(la - lb) > CHANNEL_TOLERANCE) lumaDiff++;
       if (d > CHANNEL_TOLERANCE) {
         diff++;
         mask[o] = 255;
@@ -46,6 +53,7 @@ for (const n of names) {
     }
   }
   const pct = (diff / (w * h)) * 100;
+  const lumaPct = (lumaDiff / (w * h)) * 100;
   const heightDelta = b.info.height - a.info.height;
 
   // computed-style fingerprint
@@ -83,7 +91,7 @@ for (const n of names) {
     await sharp(mask, { raw: { width: w, height: h, channels: 3 } }).jpeg({ quality: 60 }).toFile(path.join(diffDir, n + '.jpg'));
   }
   if (pct > Number(thr)) over++;
-  rows.push({ page: n, pixelDiffPct: +pct.toFixed(3), heightDelta, stylesChanged: `${styleChanged}/${styleTotal}`, sample: samples[0] || '' });
+  rows.push({ page: n, pixelDiffPct: +pct.toFixed(3), lumaDiffPct: +lumaPct.toFixed(3), heightDelta, stylesChanged: `${styleChanged}/${styleTotal}`, sample: samples[0] || '' });
 }
 console.table(rows.map((r) => ({ ...r, sample: r.sample.slice(0, 110) })));
 console.log(`pages: ${rows.length}, over ${thr}% pixel diff: ${over}, with style changes: ${rows.filter((r) => !r.stylesChanged.startsWith('0/')).length}, height changes: ${rows.filter((r) => r.heightDelta).length}`);
