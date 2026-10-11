@@ -1,0 +1,6 @@
+/* Tailwind entry. Imported last in index.tsx so its output follows every other
+   stylesheet in the bundle, exactly as the runtime CDN's <style> (appended to the
+   end of <head>) did, so utilities keep winning ties against component CSS. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,212 @@
+[
+  {
+    "run": 1,
+    "perf": 64,
+    "a11y": 95,
+    "fcp": 4.08,
+    "lcp": 8.25,
+    "cls": 0.0061,
+    "tbt": 56,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "wastedMs": 789
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9…",
+        "wastedMs": 771
+      },
+      {
+        "url": "http://localhost:4173/assets/index-A7Ge2Bdf.css",
+        "wastedMs": 857
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 444
+      }
+    ],
+    "tailwindThreadMs": [
+      {
+        "host": "cdn.tailwindcss.com/",
+        "scripting": 116,
+        "total": 137
+      }
+    ],
+    "mainThread": [
+      "Script Evaluation 867ms",
+      "Style & Layout 723ms",
+      "Other 671ms",
+      "Rendering 208ms",
+      "Garbage Collection 35ms",
+      "Script Parsing & Compilation 25ms",
+      "Parse HTML & CSS 21ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "https://cdn.tailwindcss.com/",
+        "kb": 0.4
+      },
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-EBauZy8x.js",
+        "kb": 135.7
+      },
+      {
+        "url": "/assets/index-A7Ge2Bdf.css",
+        "kb": 3.5
+      },
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "kb": 123.9
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "perf": 63,
+    "a11y": 95,
+    "fcp": 4.18,
+    "lcp": 8.4,
+    "cls": 0.0061,
+    "tbt": 45,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "wastedMs": 754
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9…",
+        "wastedMs": 773
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 155
+      },
+      {
+        "url": "http://localhost:4173/assets/index-A7Ge2Bdf.css",
+        "wastedMs": 854
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 442
+      }
+    ],
+    "tailwindThreadMs": [
+      {
+        "host": "cdn.tailwindcss.com/",
+        "scripting": 93,
+        "total": 121
+      }
+    ],
+    "mainThread": [
+      "Style & Layout 751ms",
+      "Other 729ms",
+      "Script Evaluation 653ms",
+      "Rendering 241ms",
+      "Script Parsing & Compilation 33ms",
+      "Garbage Collection 22ms",
+      "Parse HTML & CSS 17ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "https://cdn.tailwindcss.com/",
+        "kb": 0.5
+      },
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-EBauZy8x.js",
+        "kb": 135.7
+      },
+      {
+        "url": "/assets/index-A7Ge2Bdf.css",
+        "kb": 3.5
+      },
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "kb": 123.9
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "perf": 63,
+    "a11y": 95,
+    "fcp": 4.11,
+    "lcp": 8.24,
+    "cls": 0.0061,
+    "tbt": 40,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "wastedMs": 751
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9…",
+        "wastedMs": 782
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 160
+      },
+      {
+        "url": "http://localhost:4173/assets/index-A7Ge2Bdf.css",
+        "wastedMs": 836
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 433
+      }
+    ],
+    "tailwindThreadMs": [
+      {
+        "host": "cdn.tailwindcss.com/",
+        "scripting": 95,
+        "total": 126
+      }
+    ],
+    "mainThread": [
+      "Style & Layout 776ms",
+      "Other 732ms",
+      "Script Evaluation 640ms",
+      "Rendering 232ms",
+      "Script Parsing & Compilation 36ms",
+      "Garbage Collection 22ms",
+      "Parse HTML & CSS 19ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "https://cdn.tailwindcss.com/",
+        "kb": 0.4
+      },
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-EBauZy8x.js",
+        "kb": 135.7
+      },
+      {
+        "url": "/assets/index-A7Ge2Bdf.css",
+        "kb": 3.5
+      },
+      {
+        "url": "https://cdn.tailwindcss.com/3.4.17",
+        "kb": 123.9
+      }
+    ]
+  }
+]

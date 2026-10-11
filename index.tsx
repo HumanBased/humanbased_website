@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+// Last on purpose: see styles/tailwind.css.
+import './styles/tailwind.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
