@@ -31,5 +31,13 @@
   },
   "overrides": {
     "rollup": "4.54.0"
-  }
+  },
+  "browserslist": [
+    "chrome >= 100",
+    "edge >= 100",
+    "firefox >= 100",
+    "safari >= 14",
+    "ios_saf >= 14",
+    "not dead"
+  ]
 }

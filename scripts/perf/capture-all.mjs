@@ -66,7 +66,22 @@ try {
         await document.fonts.ready;
         await new Promise((r) => setTimeout(r, 400));
       });
-      const png = await page.screenshot({ fullPage: true });
+      // Very tall full-page screenshots occasionally come back with an unpainted
+      // block (a compositor tile race, seen on both builds). Retake until two
+      // consecutive shots agree on a coarse thumbnail, so flakes cannot read as diffs.
+      const thumb = async (buf) => (await sharp(buf).resize(96, 400, { fit: 'fill' }).greyscale().raw().toBuffer());
+      const meanDiff = (x, y) => x.reduce((acc, v, i) => acc + Math.abs(v - y[i]), 0) / x.length;
+      let png = await page.screenshot({ fullPage: true });
+      let prev = await thumb(png);
+      for (let attempt = 0; attempt < 5; attempt++) {
+        const next = await page.screenshot({ fullPage: true });
+        const cur = await thumb(next);
+        const d = meanDiff(prev, cur);
+        png = next;
+        prev = cur;
+        if (d < 0.35) break;
+        console.log(`  retake ${route} ${w} (thumbnail drift ${d.toFixed(2)})`);
+      }
       const base = `${slug(route)}-${w}`;
       await fs.writeFile(path.join(workDir, `${base}.png`), png);
       await sharp(png).jpeg({ quality: 74, mozjpeg: true }).toFile(path.join(docsDir, `${base}.jpg`));
