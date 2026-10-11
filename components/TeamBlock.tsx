@@ -56,7 +56,6 @@ const TeamBlock: React.FC = () => (
         ))}
       </ul>
 
-      <p className="ed-small">Copenhagen, Denmark · Founded 2025 · CVR DK45998576</p>
     </div>
   </section>
 );
