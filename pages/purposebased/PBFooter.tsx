@@ -114,7 +114,7 @@ const PBFooter: React.FC = () => {
           color: var(--pb-text);
           position: relative;
           z-index: 10;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         /* ---------- grid ---------- */
@@ -152,7 +152,7 @@ const PBFooter: React.FC = () => {
           object-fit: contain;
         }
         .pbf-wordmark {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 26px;
           color: #f3e9d6;

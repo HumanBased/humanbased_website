@@ -39,7 +39,7 @@ const PBFormspreeThankYou: React.FC = () => {
           --pb-navy: #0d1f3c;
           --pb-text: #cadcf0;
           --pb-muted: #7f97b1;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           display: flex;
           min-height: 70vh;
         }
@@ -78,7 +78,7 @@ const PBFormspreeThankYou: React.FC = () => {
         }
 
         .pbty-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: clamp(22px, 4.6vw, 44px);
           line-height: 1.15;
           letter-spacing: 3px;
@@ -87,7 +87,7 @@ const PBFormspreeThankYou: React.FC = () => {
           margin: 0 0 22px;
         }
         .pbty-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 40px;
           line-height: 1.2;
@@ -95,7 +95,7 @@ const PBFormspreeThankYou: React.FC = () => {
           margin: 0 0 20px;
         }
         .pbty-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 16px;
           font-weight: 300;
           line-height: 1.85;
@@ -120,7 +120,7 @@ const PBFormspreeThankYou: React.FC = () => {
           box-sizing: border-box;
           padding: 14px 32px;
           border-radius: 8px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 500;
           letter-spacing: 1.8px;

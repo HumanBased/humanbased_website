@@ -161,13 +161,13 @@ const PBLibrary: React.FC = () => {
           max-width: 1220px;
           margin: 0 auto;
           padding: 72px 8% 96px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         /* ---------- hero ---------- */
         .pbl-hero { max-width: 820px; margin-bottom: 56px; }
         .pbl-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: clamp(22px, 4.6vw, 44px);
           line-height: 1.15;
           letter-spacing: 3px;
@@ -176,7 +176,7 @@ const PBLibrary: React.FC = () => {
           margin: 0 0 20px;
         }
         .pbl-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: clamp(32px, 5vw, 50px);
           line-height: 1.15;
@@ -223,7 +223,7 @@ const PBLibrary: React.FC = () => {
           object-fit: cover;
         }
         .pbl-card-img-note {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-style: italic;
           font-size: 22px;
           color: var(--pb-muted);
@@ -238,14 +238,14 @@ const PBLibrary: React.FC = () => {
           justify-content: center;
         }
         .pbl-card-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 500;
           font-size: 20px;
           color: #ffffff;
           margin: 0 0 12px;
         }
         .pbl-card-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           font-weight: 300;
           line-height: 1.7;

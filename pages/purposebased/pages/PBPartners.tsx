@@ -634,12 +634,12 @@ const PBPartners: React.FC = () => {
           --pb-surface: rgba(255,255,255,0.035);
           --pb-border: rgba(255,255,255,0.10);
           --pb-border-gold: rgba(255,200,100,0.22);
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         /* ---------- shared type ---------- */
         .pbp-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 12px;
           letter-spacing: 3px;
           text-transform: uppercase;
@@ -647,7 +647,7 @@ const PBPartners: React.FC = () => {
           margin: 0 0 18px;
         }
         .pbp-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 54px;
           line-height: 1.14;
@@ -656,7 +656,7 @@ const PBPartners: React.FC = () => {
           max-width: 860px;
         }
         .pbp-h1-sub {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-style: italic;
           font-weight: 300;
           font-size: 32px;
@@ -666,7 +666,7 @@ const PBPartners: React.FC = () => {
           max-width: 720px;
         }
         .pbp-h2 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 44px;
           line-height: 1.2;
@@ -674,7 +674,7 @@ const PBPartners: React.FC = () => {
           margin: 0;
         }
         .pbp-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 16px;
           font-weight: 300;
           line-height: 1.9;
@@ -700,7 +700,7 @@ const PBPartners: React.FC = () => {
           justify-content: center;
           padding: 14px 36px;
           border-radius: 8px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 500;
           letter-spacing: 1.8px;
@@ -779,7 +779,7 @@ const PBPartners: React.FC = () => {
           transform: translateY(-3px);
         }
         .pbp-pill-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 24px;
           color: #ffffff;
@@ -811,7 +811,7 @@ const PBPartners: React.FC = () => {
           border-bottom: 1px solid rgba(255,200,100,0.2);
         }
         .pbp-rtable-head span {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 12px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
@@ -819,14 +819,14 @@ const PBPartners: React.FC = () => {
         }
         .pbp-rrow {
           padding: 18px 20px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 15px;
           align-items: baseline;
         }
         .pbp-rrow--alt { background: rgba(255,255,255,0.02); }
         .pbp-rrow-sub { color: var(--pb-text); font-weight: 300; }
         .pbp-rrow-rate {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 20px;
           font-weight: 400;
           color: var(--pb-gold);
@@ -840,7 +840,7 @@ const PBPartners: React.FC = () => {
         .pbp-rrow--top .pbp-rrow-earn { color: #ffd98a; }
         .pbp-rtable-notes { margin-top: 18px; max-width: 760px; }
         .pbp-rtable-note {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           font-style: italic;
           line-height: 1.7;
@@ -877,20 +877,20 @@ const PBPartners: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 20px;
           color: var(--pb-gold);
           margin-bottom: 18px;
         }
         .pbp-step-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 22px;
           color: #ffffff;
           margin: 0 0 10px;
         }
         .pbp-step-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 14px;
           font-weight: 300;
           line-height: 1.7;
@@ -915,7 +915,7 @@ const PBPartners: React.FC = () => {
           padding: 0;
           text-align: left;
           cursor: pointer;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 16px;
           font-weight: 500;
           color: #ffffff;
@@ -927,7 +927,7 @@ const PBPartners: React.FC = () => {
           color: var(--pb-gold);
         }
         .pbp-faq-a {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 15px;
           line-height: 1.8;
           color: var(--pb-muted);
@@ -951,14 +951,14 @@ const PBPartners: React.FC = () => {
           background: var(--pb-surface);
         }
         .pbp-get-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 20px;
           color: #ffffff;
           margin: 0 0 8px;
         }
         .pbp-get-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 14px;
           font-weight: 300;
           line-height: 1.7;
@@ -973,7 +973,7 @@ const PBPartners: React.FC = () => {
           gap: 12px;
           align-items: flex-start;
           padding: 11px 0;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 15px;
           font-weight: 300;
           line-height: 1.7;
@@ -1010,7 +1010,7 @@ const PBPartners: React.FC = () => {
           margin-bottom: 14px;
         }
         .pbp-track-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 30px;
           color: #ffffff;
@@ -1022,7 +1022,7 @@ const PBPartners: React.FC = () => {
           margin: 22px 0 0;
         }
         .pbp-track-list li {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 14px;
           font-weight: 300;
           color: var(--pb-text);
@@ -1037,7 +1037,7 @@ const PBPartners: React.FC = () => {
         .pbp-field { margin-bottom: 20px; }
         .pbp-field-label {
           display: block;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 12px;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -1047,7 +1047,7 @@ const PBPartners: React.FC = () => {
         .pbp-input {
           width: 100%;
           box-sizing: border-box;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 15px;
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,200,100,0.25);
@@ -1063,7 +1063,7 @@ const PBPartners: React.FC = () => {
         }
         .pbp-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
         .pbp-field-help {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           font-weight: 300;
           color: var(--pb-muted);
@@ -1086,7 +1086,7 @@ const PBPartners: React.FC = () => {
           background: none;
           border: 0;
           padding: 0;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 12px;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -1098,7 +1098,7 @@ const PBPartners: React.FC = () => {
         select.pbp-input { appearance: none; -webkit-appearance: none; cursor: pointer; }
         select.pbp-input option { background: #0d1f3c; color: #ffffff; }
         .pbp-form-success {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-style: italic;
           font-size: 28px;
           color: #ffffff;
@@ -1107,7 +1107,7 @@ const PBPartners: React.FC = () => {
           max-width: 460px;
         }
         .pbp-form-error {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 14px;
           color: var(--pb-gold);
           margin: 14px 0 0;
@@ -1134,7 +1134,7 @@ const PBPartners: React.FC = () => {
           align-items: center;
         }
         .pbp-close-h2 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 44px;
           line-height: 1.2;
@@ -1143,7 +1143,7 @@ const PBPartners: React.FC = () => {
           max-width: 620px;
         }
         .pbp-close-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 16px;
           font-weight: 300;
           line-height: 1.8;
@@ -1174,7 +1174,7 @@ const PBPartners: React.FC = () => {
           align-items: center;
         }
         .pbp-stripe-h2 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 40px;
           line-height: 1.2;
@@ -1182,7 +1182,7 @@ const PBPartners: React.FC = () => {
           margin: 0;
         }
         .pbp-stripe-aside {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 15px;
           font-style: italic;
           font-weight: 300;
@@ -1198,7 +1198,7 @@ const PBPartners: React.FC = () => {
           padding: 32px 28px;
         }
         .pbp-stripe-card-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
@@ -1213,18 +1213,18 @@ const PBPartners: React.FC = () => {
           border-bottom: 1px solid rgba(255,255,255,0.06);
         }
         .pbp-stripe-num {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 32px;
           line-height: 1;
           color: var(--pb-gold);
         }
         .pbp-stripe-stat-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           color: var(--pb-muted);
         }
         .pbp-stripe-live {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           font-style: italic;
           color: var(--pb-muted);
@@ -1232,7 +1232,7 @@ const PBPartners: React.FC = () => {
           margin: 20px 0 0;
         }
         .pbp-stripe-powered {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 12px;
           color: var(--pb-muted);
           text-align: center;

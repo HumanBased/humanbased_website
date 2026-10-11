@@ -72,6 +72,8 @@ function boundaryPixelStep(img, axis, pos, a, b) {
   return max;
 }
 
+// File prefix: 'home' for /, 'pb-home' for /purposebased(/), else the route slug.
+const pageTag = route === '/' ? 'home' : route.replace(/\W+/g, '-').replace(/^-|-$/g, '').replace(/^purposebased$/, 'pb-home');
 await fs.mkdir(outDir, { recursive: true });
 const browser = await puppeteer.launch({ headless: true });
 const rows = [];
@@ -147,7 +149,7 @@ try {
           .extract({ left: Math.max(0, cx - (axis === 'y' ? CROP / 2 : 0)), top: Math.max(0, cy - (axis === 'x' ? CROP / 2 : 0)), width: CROP, height: CROP })
           .resize(CROP * 4, CROP * 4, { kernel: 'nearest' })
           .png()
-          .toFile(path.join(outDir, `${route === '/' ? 'home' : route.replace(/\W+/g, '-').replace(/^-/, '')}-${vw}-scroll${tag}-${edge}.png`));
+          .toFile(path.join(outDir, `${pageTag}-${vw}-scroll${tag}-${edge}.png`));
       }
     }
     await page.close();
@@ -160,5 +162,5 @@ console.table(rows);
 const measured = rows.filter((r) => r.pass !== undefined);
 const failed = measured.filter((r) => !r.pass);
 console.log(`edges measured: ${measured.length}, failed: ${failed.length}, worst hero profile step: ${Math.max(...measured.map((r) => r.heroProfileStep)).toFixed(2)}`);
-await fs.writeFile(path.join(outDir, `${route === '/' ? 'home' : 'pb-home'}-seams.json`), JSON.stringify(rows, null, 2));
+await fs.writeFile(path.join(outDir, `${pageTag}-seams.json`), JSON.stringify(rows, null, 2));
 process.exitCode = failed.length ? 1 : 0;

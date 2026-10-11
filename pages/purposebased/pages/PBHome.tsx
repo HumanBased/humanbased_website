@@ -639,12 +639,12 @@ const PBHome: React.FC = () => {
           --pb-surface: rgba(255,255,255,0.035);
           --pb-border: rgba(255,255,255,0.10);
           --pb-border-gold: rgba(255,200,100,0.22);
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         /* ---------- shared type ---------- */
         .pbh-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           /* 4x the previous 11px, fluid so it scales down on small screens */
           font-size: clamp(22px, 4.6vw, 44px);
           line-height: 1.15;
@@ -654,7 +654,7 @@ const PBHome: React.FC = () => {
           margin: 0 0 24px;
         }
         .pbh-h2 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 44px;
           line-height: 1.2;
@@ -664,7 +664,7 @@ const PBHome: React.FC = () => {
         .pbh-h2 em { font-style: italic; font-weight: 300; }
         .pbh-h2--center { max-width: 560px; margin: 0 auto; text-align: center; }
         .pbh-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 16px;
           font-weight: 300;
           line-height: 1.9;
@@ -691,7 +691,7 @@ const PBHome: React.FC = () => {
           box-sizing: border-box;
           padding: 14px 36px;
           border-radius: 8px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 500;
           letter-spacing: 1.8px;
@@ -836,7 +836,7 @@ const PBHome: React.FC = () => {
           50% { transform: rotate(45deg) translate(4px, 4px); }
         }
         .pbh-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 58px;
           line-height: 1.12;
@@ -910,7 +910,7 @@ const PBHome: React.FC = () => {
           gap: 8px;
           padding: 16px;
           text-align: center;
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 22px;
           color: var(--pb-gold);
           border: 1px dashed rgba(255,200,100,0.4);
@@ -918,7 +918,7 @@ const PBHome: React.FC = () => {
           background: rgba(255,200,100,0.04);
         }
         .pbh-phone-ph-note {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
@@ -984,7 +984,7 @@ const PBHome: React.FC = () => {
           box-shadow: 0 0 36px rgba(255,200,100,0.45), inset 0 0 16px rgba(255,200,100,0.2);
         }
         .pbh-node-num {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 20px;
           color: var(--pb-gold);
         }
@@ -996,7 +996,7 @@ const PBHome: React.FC = () => {
           animation: pbh-star-pulse 2.6s ease-in-out infinite;
         }
         .pbh-node-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 22px;
           color: #ffffff;
@@ -1007,7 +1007,7 @@ const PBHome: React.FC = () => {
           color: var(--pb-gold);
         }
         .pbh-node-body {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 13px;
           font-weight: 300;
           line-height: 1.7;
@@ -1099,7 +1099,7 @@ const PBHome: React.FC = () => {
         }
         .pbh-arrow-label {
           margin-top: 14px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           font-style: italic;
           letter-spacing: 1px;
@@ -1172,7 +1172,7 @@ const PBHome: React.FC = () => {
           box-shadow: 0 8px 32px rgba(0,0,0,0.35);
         }
         .pbh-stat-num {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 56px;
           font-weight: 600;
           line-height: 1;
@@ -1213,7 +1213,7 @@ const PBHome: React.FC = () => {
           border-color: rgba(255,200,100,0.55);
         }
         .pbh-pill-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: 26px;
           color: #ffffff;
@@ -1247,7 +1247,7 @@ const PBHome: React.FC = () => {
           color: var(--pb-muted);
         }
         .pbh-ftitle {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 26px;
           color: #ffffff;
@@ -1298,7 +1298,7 @@ const PBHome: React.FC = () => {
         }
         .pbh-badge--top { margin-bottom: 14px; }
         .pbh-founding-head {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 24px;
           color: #ffffff;
           margin: 12px 0 6px;
@@ -1349,20 +1349,20 @@ const PBHome: React.FC = () => {
           text-shadow: 0 0 12px rgba(255,200,100,0.8);
         }
         .pbh-tier-name {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 24px;
           color: #ffffff;
           margin: 0 0 14px;
         }
         .pbh-price {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 42px;
           color: var(--pb-gold);
           line-height: 1;
         }
         .pbh-price-was {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 28px;
           color: var(--pb-muted);
           text-decoration: line-through;
@@ -1376,7 +1376,7 @@ const PBHome: React.FC = () => {
         /* "Everything on X, plus:" heading - larger gold lead-in above the
            bullet list, per tier. Bullets themselves stay at .pbh-list size. */
         .pbh-plus-heading {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-style: italic;
           font-size: clamp(18px, 2.5vw, 28px);
           line-height: 1.25;
@@ -1438,7 +1438,7 @@ const PBHome: React.FC = () => {
           padding: 20px 0;
           cursor: pointer;
           list-style: none;
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 24px;
           color: #ffffff;
         }
@@ -1446,7 +1446,7 @@ const PBHome: React.FC = () => {
         .pbh-faq-q::after {
           content: '+';
           flex: none;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 22px;
           color: var(--pb-gold);
         }

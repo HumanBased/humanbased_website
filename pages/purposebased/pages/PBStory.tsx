@@ -321,7 +321,7 @@ const PBStory: React.FC = () => {
           --pb-lead: rgba(255,255,255,0.85);
           display: block;
           width: 100%;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
         .pbs *, .pbs *::before, .pbs *::after { box-sizing: border-box; }
 
@@ -357,7 +357,7 @@ const PBStory: React.FC = () => {
           margin: 0 0 1.5rem;
         }
         .pbs-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 500;
           font-size: 80px;
           line-height: 1.05;
@@ -370,7 +370,7 @@ const PBStory: React.FC = () => {
         .pbs-head { margin-bottom: 2.5rem; }   /* title to first paragraph */
         .pbs-head--compact { margin-bottom: 2rem; }
         .pbs-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 500;
           font-size: 56px;
           line-height: 1.1;
@@ -379,7 +379,7 @@ const PBStory: React.FC = () => {
           margin: 0;
         }
         .pbs-sub {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 500;
           font-size: 30px;
           line-height: 1.25;
@@ -405,7 +405,7 @@ const PBStory: React.FC = () => {
 
         /* ---------- pull quotes ---------- */
         .pbs-quote {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 400;
           font-size: 40px;
           line-height: 1.25;
@@ -445,7 +445,7 @@ const PBStory: React.FC = () => {
           box-shadow: 0 8px 32px rgba(0,0,0,0.35);
         }
         .pbs-stat-num {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 56px;
           font-weight: 600;
           line-height: 1;

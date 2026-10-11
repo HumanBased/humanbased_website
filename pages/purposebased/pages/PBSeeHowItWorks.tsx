@@ -140,13 +140,13 @@ const PBSeeHowItWorks: React.FC = () => {
           max-width: 1200px;
           margin: 0 auto;
           padding: 72px 8% 96px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         /* ---------- hero ---------- */
         .pbw-hero { max-width: 820px; margin-bottom: 60px; }
         .pbw-label {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: clamp(22px, 4.6vw, 44px);
           line-height: 1.15;
           letter-spacing: 3px;
@@ -155,7 +155,7 @@ const PBSeeHowItWorks: React.FC = () => {
           margin: 0 0 20px;
         }
         .pbw-h1 {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: clamp(32px, 5vw, 50px);
           line-height: 1.15;
@@ -210,7 +210,7 @@ const PBSeeHowItWorks: React.FC = () => {
           color: var(--pb-gold);
         }
         .pbw-step-name {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-size: 34px;
           font-weight: 500;
           color: #C4A85A;
@@ -222,7 +222,7 @@ const PBSeeHowItWorks: React.FC = () => {
           margin-left: 2px;
         }
         .pbw-step-phrase {
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 18px;
           font-weight: 300;
           line-height: 1.7;
@@ -261,7 +261,7 @@ const PBSeeHowItWorks: React.FC = () => {
           align-items: center;
           justify-content: center;
           padding: 0 12px;
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-style: italic;
           font-size: 14px;
           text-align: center;
@@ -283,7 +283,7 @@ const PBSeeHowItWorks: React.FC = () => {
           justify-content: center;
           padding: 14px 36px;
           border-radius: 8px;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 500;
           letter-spacing: 1.8px;

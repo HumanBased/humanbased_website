@@ -74,7 +74,7 @@ const PBTraditionDetail: React.FC = () => {
           --pb-text: #cadcf0;
           --pb-muted: #7f97b1;
           display: block;
-          font-family: 'DM Sans', system-ui, sans-serif;
+          font-family: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
         }
 
         .pbtd-content {
@@ -85,7 +85,7 @@ const PBTraditionDetail: React.FC = () => {
           padding: 72px 2rem 96px;
         }
         .pbtd-title {
-          font-family: 'Cormorant', Georgia, serif;
+          font-family: 'Cormorant', 'Cormorant Fallback', Georgia, serif;
           font-weight: 300;
           font-size: clamp(28px, 4vw, 40px);
           line-height: 1.15;
