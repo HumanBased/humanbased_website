@@ -108,10 +108,14 @@ const Journey: React.FC<JourneyProps> = (props) => {
       className="mx-journey"
       data-intro=""
       aria-hidden="true"
+      // Zero-size anchor. Everything inside is placed with transforms (set through
+      // custom properties), never top/height, so re-measuring after fonts or images
+      // settle cannot register as a layout shift. Hidden until first measured.
       style={{
         left: props.left ?? 'max(14px, calc(50% - 640px))',
-        top: layout?.top ?? 0,
-        height: layout?.height ?? 0,
+        visibility: layout ? 'visible' : 'hidden',
+        ['--j-top' as string]: `${layout?.top ?? 0}px`,
+        ['--j-height' as string]: layout?.height ?? 0,
       }}
     >
       <div className="mx-journey-track" />
@@ -120,7 +124,10 @@ const Journey: React.FC<JourneyProps> = (props) => {
         <div
           key={m.label}
           className="mx-journey-node"
-          style={{ top: layout && layout.nodes[i] >= 0 ? layout.nodes[i] : -9999 }}
+          style={{
+            display: layout && layout.nodes[i] >= 0 ? undefined : 'none',
+            ['--n-y' as string]: `${(layout?.top ?? 0) + Math.max(0, layout?.nodes[i] ?? 0)}px`,
+          }}
         >
           <span className="mx-journey-label">{m.label}</span>
         </div>
