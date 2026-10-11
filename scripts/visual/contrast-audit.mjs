@@ -21,7 +21,7 @@ const outDir = path.resolve(process.argv[2] || 'docs/visual/contrast');
 const baseUrl = process.argv[3] || 'http://localhost:4173';
 await fs.mkdir(outDir, { recursive: true });
 
-const ROUTES = ['/', '/about/', '/services/', '/process/', '/products/', '/legal/', '/privacy/', '/this-page-does-not-exist/'];
+const ROUTES = process.env.ONLY ? process.env.ONLY.split(',') : ['/', '/about/', '/services/', '/process/', '/products/', '/legal/', '/privacy/', '/this-page-does-not-exist/'];
 const VIEWPORTS = [[1440, 900], [390, 844]];
 const TARGET = { body: 7, gold: 4.5, large: 4.5, control: 4.5 };
 

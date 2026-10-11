@@ -5,7 +5,7 @@ import CapabilitiesGrid from '../components/CapabilitiesGrid';
 import { Link } from 'react-router-dom';
 import TeamBlock from '../components/TeamBlock';
 import Journey from '../components/motion/Journey';
-import { HB_JOURNEY } from '../components/motion/journeys';
+import { HB_JOURNEY, ABOUT_LABELS } from '../components/motion/journeys';
 
 const AboutPage: React.FC = () => {
   usePageSeo({
@@ -17,13 +17,13 @@ const AboutPage: React.FC = () => {
   return (
     <div className="flex-grow bg-transparent relative">
       <Journey
-        milestones={HB_JOURNEY(['#about-why', '#team-heading', '#about-philosophy', '#about-capabilities'])}
+        milestones={HB_JOURNEY(['#about-why', '#team-heading', '#about-capabilities', '#about-card'], ABOUT_LABELS)}
         end="#about-card"
       />
       {/* Section 1 – Hero */}
       <section className="ed-sec--first pb-0" id="about-why">
         <div className="ed-narrow text-center ed-stack">
-          <p className="ed-label mx-intro">OUR WHY</p>
+          <p className="ed-label ed-eyebrow mx-intro">OUR WHY</p>
           <h1 className="font-serif ed-display mx-intro pb-4">About HumanBased</h1>
         </div>
 

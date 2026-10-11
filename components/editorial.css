@@ -192,3 +192,14 @@
 .ed-label--lower {
   color: #d8bc6e;
 }
+
+/* Large page eyebrow ("OUR WHY", "Our Products") at the top of About and Products.
+   14px to the heading below; the sibling margin beats the stack utilities. */
+.ed-label.ed-eyebrow {
+  font-size: clamp(18px, 1.1vw + 10px, 26px);
+  letter-spacing: 0.3em;
+  color: #d8bc6e;
+}
+.ed-label.ed-eyebrow + * {
+  margin-top: 14px !important;
+}

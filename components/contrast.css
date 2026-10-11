@@ -29,3 +29,21 @@
 .hb-site :where(footer) [class*='text-white/'] {
   color: #fff;
 }
+
+/* Products page: the PurposeBased card caption sits on a photo, not on the page
+   background. Halo (same family as --hb-halo, a little tighter and stronger) plus a
+   soft elliptical scrim behind the three lines, 45% at the centre fading to nothing.
+   The scrim is out of flow, so the text does not move. */
+.hb-site .hb-caption-halo {
+  text-shadow: 0 0 1px rgba(3, 8, 18, 0.7), 0 1px 3px rgba(3, 8, 18, 0.65), 0 0 16px rgba(3, 8, 18, 0.6);
+}
+.pb-caption-scrim {
+  position: absolute;
+  z-index: -1;
+  left: -22%;
+  right: -22%;
+  top: -18%;
+  bottom: -26%;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(3, 8, 18, 0.45) 0%, rgba(3, 8, 18, 0.45) 62%, rgba(3, 8, 18, 0) 100%);
+}
