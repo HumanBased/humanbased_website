@@ -13,6 +13,8 @@ const srcSet = (ext: string) =>
 const HERO_SIZES = '(max-width: 767px) 200vw, 100vw';
 
 const Hero: React.FC = () => {
+  // The italic line sits on the first screen; the upright face is preloaded by MainLayout.
+  preload('/fonts/cormorant-garamond-latin-italic.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
   // Hoisted into <head> (and so into the prerendered HTML) as the LCP image.
   preload('/images/hero/hero-hb-1680.avif', {
     as: 'image',
@@ -48,9 +50,9 @@ const Hero: React.FC = () => {
           </h1>
 
           <div className="hb-hero-lines">
-            <p>We are on a mission to transform how Humanity lives and works.</p>
-            <p>Technology in service of humanity.</p>
-            <p>Purpose built. Human focused.</p>
+            <p className="hb-hero-line1">We are on a mission to transform how Humanity lives and works.</p>
+            <p className="hb-hero-line2">Technology in service of humanity.</p>
+            <p className="hb-hero-line3">Purpose built. Human focused.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

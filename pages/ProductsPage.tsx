@@ -21,7 +21,7 @@ const ComingSoonCard: React.FC<{ id?: string }> = ({ id }) => (
       <p className="text-xs uppercase tracking-[0.25em] text-white/50">
         Next HumanBased Product
       </p>
-      <p className="ed-body text-[15px] text-white/55">
+      <p className="hb-body hb-body--card">
         We are building the next chapter of HumanBased. Quietly, deliberately, with humans at the center.
       </p>
     </div>
@@ -112,7 +112,7 @@ const ProductsPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <p className="ed-lead text-white/70">
+                  <p className="hb-body hb-body--card">
                     Reveal patterns. Practice boundaries. Reclaim your power. Available now on Google Play.
                   </p>
 
@@ -190,7 +190,7 @@ const ProductsPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <p className="ed-lead text-white/70">
+                  <p className="hb-body hb-body--card">
                     Understand your patterns. Find your direction. Live with intention.
                   </p>
 

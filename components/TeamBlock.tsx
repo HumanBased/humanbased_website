@@ -23,7 +23,7 @@ const initials = (name: string): string =>
 const TeamBlock: React.FC = () => (
   <section className="pb-4" aria-labelledby="team-heading">
     <div className="ed-wide text-center space-y-10" data-reveal="">
-      <h2 id="team-heading" className="font-serif ed-subtitle">
+      <h2 id="team-heading" className="hb-heading">
         Who is behind HumanBased
       </h2>
 

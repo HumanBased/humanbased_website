@@ -67,7 +67,7 @@ const Process: React.FC = () => {
               <p className="text-white/65 text-sm leading-relaxed font-light">
                 {step.desc}
               </p>
-              <div className="absolute top-4 right-6 text-4xl font-serif font-semibold text-white/[0.03] group-hover:text-amber-500/[0.05] transition-colors">
+              <div className="absolute top-4 right-6 text-4xl font-serif font-medium text-white/[0.03] group-hover:text-amber-500/[0.05] transition-colors">
                 0{idx + 1}
               </div>
               </div>

@@ -1,0 +1,288 @@
+/* HumanBased typography: Cormorant Garamond for prose and headings, a faint text
+   halo for legibility over the starfield, and the About / hero text styles.
+   Cormorant Garamond has small letters: nothing set in it goes below 20px. */
+
+/* ---------- font faces (self-hosted, latin subset only) ----------
+   Weights 300, 400, 500 upright and 400 italic. One variable file per style.
+   `font-synthesis: none` below stops the browser faking a bold or italic. */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-latin-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Size-adjusted fallbacks: Times New Roman scaled to Cormorant Garamond's measured
+   width (96.9% upright, 87.9% italic, over real site prose) and vertical metrics, so the
+   swap does not re-wrap lines or move anything. */
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Times New Roman'), local('TimesNewRomanPSMT');
+  font-style: normal;
+  size-adjust: 96.9%;
+  ascent-override: 94.9%;
+  descent-override: 29.9%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Times New Roman Italic'), local('TimesNewRomanPS-ItalicMT');
+  font-style: italic;
+  size-adjust: 87.9%;
+  ascent-override: 104.7%;
+  descent-override: 33%;
+  line-gap-override: 0%;
+}
+
+/* Inter, self-hosted (latin subset, variable weight). Google serves a different file
+   name to desktop and Android Chrome, so a hard-coded preload could only ever match
+   one of them and the other downloaded the font twice. A local file is one URL for
+   everyone and can be preloaded exactly. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Arial scaled to Inter's measured width and vertical metrics (regular and bold). */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('ArialMT');
+  font-weight: 100 599;
+  size-adjust: 107.3%;
+  ascent-override: 90.4%;
+  descent-override: 22.4%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT');
+  font-weight: 600 900;
+  size-adjust: 102.2%;
+  ascent-override: 94.9%;
+  descent-override: 23.5%;
+  line-gap-override: 0%;
+}
+
+:root {
+  /* Faint dark glow that separates letters from stars. Never a visible drop shadow. */
+  --hb-halo: 0 0 1px rgba(6, 14, 30, 0.55), 0 1px 3px rgba(6, 14, 30, 0.5), 0 0 18px rgba(6, 14, 30, 0.45);
+  --hb-halo-lg: 0 2px 24px rgba(6, 14, 30, 0.6);
+  --hb-ink: rgba(255, 255, 255, 0.95);
+  --hb-cream: #eadfbd;
+  --hb-gold: #c4a85a;
+}
+
+.font-serif,
+.hb-serif {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- halo on long text, HumanBased pages only ----------
+   .hb-site wraps every page except the app-store legal pages (.hb-legal). */
+.hb-site main p,
+.hb-site main li,
+.hb-site main blockquote {
+  text-shadow: var(--hb-halo);
+}
+.hb-site main h1,
+.hb-site main h2 {
+  text-shadow: var(--hb-halo-lg);
+}
+/* Text on opaque buttons and inputs must not glow. */
+.hb-site main a.ed-btn,
+.hb-site main button,
+.hb-site main input,
+.hb-site main textarea,
+.hb-site main label {
+  text-shadow: none;
+}
+
+/* The app-store legal pages keep the site's previous serif exactly. */
+.hb-legal .font-serif {
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+/* ---------- prose: Services, Process, Products, About ---------- */
+.hb-site .hb-lead,
+.hb-site .hb-body,
+.hb-site .hb-closing,
+.hb-site .hb-heading {
+  font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.hb-site .hb-body {
+  font-weight: 400;
+  font-size: clamp(22px, 1.45vw + 4px, 27px);
+  line-height: 1.6;
+  color: var(--hb-ink);
+}
+.hb-site .hb-lead {
+  font-weight: 300;
+  font-size: clamp(28px, 2.2vw + 9px, 38px);
+  line-height: 1.35;
+  color: #fff;
+}
+/* Body copy inside cards: same face and colour, sized for a narrower column. */
+.hb-site .hb-body--card {
+  font-size: 21px;
+  line-height: 1.55;
+}
+.hb-site .hb-heading {
+  font-weight: 500;
+  font-size: clamp(32px, 2.4vw + 10px, 42px);
+  line-height: 1.15;
+  color: #fff;
+}
+.hb-site .hb-closing {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 2.2vw + 8px, 36px);
+  line-height: 1.45;
+  color: var(--hb-cream);
+  text-align: center;
+  max-width: 56rem;
+  margin-inline: auto;
+  margin-top: clamp(88px, 6vw + 12px, 104px);
+  margin-bottom: 56px;
+  padding-inline: 24px;
+}
+.hb-site .hb-closing::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin: 0 auto 32px;
+  background: var(--hb-gold);
+}
+
+/* Paragraph rhythm and measure for a centred prose column. */
+.hb-prose {
+  margin-inline: auto;
+  width: 90%;
+}
+.hb-prose > p + p {
+  margin-top: 1.3em;
+}
+.hb-prose > .hb-lead + .hb-body {
+  margin-top: 1.3em;
+}
+@media (min-width: 1200px) {
+  .hb-prose {
+    max-width: 52rem;
+    width: 100%;
+    text-align: center;
+  }
+  .hb-prose > p {
+    text-wrap: balance;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hb-prose {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .hb-prose {
+    width: auto;
+    padding-inline: 24px;
+    text-align: left;
+  }
+  .hb-site .hb-body {
+    font-size: 21px;
+  }
+  .hb-site .hb-lead {
+    font-size: 28px;
+  }
+}
+
+/* Inter inside a Garamond paragraph (the Process hero's method line). */
+.hb-site .hb-sans {
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  font-synthesis: weight;
+}
+
+/* ---------- home hero text ---------- */
+.hb-hero-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-shadow: var(--hb-halo);
+}
+.hb-hero-lines p {
+  margin: 0;
+}
+
+/* Soft elliptical scrim directly behind the three lines (desktop and tablet): the
+   bright atmosphere limb crosses them over the Earth photo. At most 55% opacity,
+   fading to nothing; the image, its fades and its edge blending are untouched.
+   Measured by scripts/visual/typography.mjs (WCAG contrast of each line over the
+   rendered pixels behind it). Phones need none: the text sits in dark sky there. */
+@media (min-width: 768px) {
+  .hb-hero-lines {
+    position: relative;
+  }
+  .hb-hero-lines::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -120px -320px -140px -200px;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse closest-side,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.55) 62%,
+      rgba(0, 0, 0, 0.25) 85%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
+.hb-hero-line1 {
+  font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(22px, 1.6vw + 8px, 30px);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.96);
+}
+.hb-hero-line2 {
+  font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 1.4vw + 8px, 26px);
+  line-height: 1.4;
+  color: var(--hb-cream);
+}
+.hb-hero-line3 {
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--hb-gold);
+  margin-top: 6px;
+}
+.hb-hero-line1,
+.hb-hero-line2 {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

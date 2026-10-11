@@ -1,6 +1,6 @@
 /* HumanBased editorial system: one type scale, one spacing rhythm, and the three
    content widths from the PurposeBased Story page (narrow 680 for reading, wide
-   980 for titles and quotes, full 1200 for grids). Display: Fraunces (.font-serif);
+   980 for titles and quotes, full 1200 for grids). Display: Cormorant Garamond (.font-serif);
    UI and body: Inter. See docs/visual-direction.md. */
 
 :root {
@@ -33,7 +33,7 @@
 
 /* ---------- type scale ---------- */
 .ed-label {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.28em;
@@ -74,7 +74,7 @@
   color: rgba(255, 255, 255, 0.55);
 }
 .ed-quote {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(22px, 2.3vw, 32px);

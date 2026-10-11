@@ -9,7 +9,7 @@ import puppeteer from 'puppeteer';
 
 const [tag, runs = '3', baseUrl = 'http://localhost:4173'] = process.argv.slice(2);
 if (!tag) throw new Error('usage: lh.mjs <tag> [runs] [baseUrl]');
-const PAGES = [['home', '/'], ['pb', '/purposebased/']];
+const PAGES = [['home', '/'], ['about', '/about/'], ['pb', '/purposebased/']];
 const outDir = path.resolve('docs/perf/lighthouse');
 fs.mkdirSync(outDir, { recursive: true });
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'lh-'));

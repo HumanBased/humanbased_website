@@ -16,7 +16,7 @@ const OutcomeSafeguards: React.FC = () => {
           <h3 className="font-serif ed-subtitle">
             Cost Reduction
           </h3>
-          <p className="ed-body">
+          <p className="hb-body hb-body--card">
             We design systems that reduce operational overhead while preserving service quality and reliability. Intelligent automation and demand-aware infrastructure help you do more with less, without cutting corners.
           </p>
         </div>
@@ -32,7 +32,7 @@ const OutcomeSafeguards: React.FC = () => {
           <h3 className="font-serif ed-subtitle">
             Uncompromising Quality
           </h3>
-          <p className="ed-body">
+          <p className="hb-body hb-body--card">
             We never sacrifice quality for speed or cost. Every solution is built with rigorous engineering, thorough testing, and long-term maintainability in mind. Quality is not negotiable, it's foundational.
           </p>
         </div>

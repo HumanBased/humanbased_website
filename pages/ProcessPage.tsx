@@ -41,10 +41,10 @@ const ProcessPage: React.FC = () => {
           <h1 className="font-serif ed-display">
             How We Build
           </h1>
-          <p className="text-base md:text-lg text-white/70">
+          <p className="hb-body">
             With us, you keep the control during the whole process through our method
             <br />
-            <span className="inline-block text-xl md:text-2xl font-semibold">
+            <span className="hb-sans inline-block text-xl md:text-2xl font-semibold">
               DISCOVER → DESIGN → BUILD → EVOLVE.
             </span>
             <br />
@@ -68,7 +68,7 @@ const ProcessPage: React.FC = () => {
             <h2 className="font-serif ed-title">
               Outcomes We Protect
             </h2>
-            <p className="ed-lead text-white/65 max-w-2xl">
+            <p className="hb-body max-w-2xl">
               Our process is designed to improve what matters most: productivity, cost, participation, and satisfaction.
             </p>
           </div>
@@ -87,7 +87,7 @@ const ProcessPage: React.FC = () => {
             <h3 className="font-serif ed-title">
               Ready to work with a human‑first partner?
             </h3>
-            <p className="ed-lead text-white/65 max-w-xl">
+            <p className="hb-body max-w-xl">
               Tell us about your organization, community, or product. We'll map a path
               from today's complexity to measurable, human‑centered outcomes.
             </p>

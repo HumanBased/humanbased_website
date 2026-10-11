@@ -47,10 +47,10 @@ const ServicesPage: React.FC = () => {
               {/* Bottom Half: Text on Black Background (Mobile) */}
               <div className="w-full py-10 sm:py-12 px-6 sm:px-8 md:px-10 bg-[#050509] lg:hidden rounded-b-[12px]">
                 <h4 className="font-serif text-2xl md:text-3xl font-medium mb-4 text-white">We Serve for Real Impact</h4>
-                <p className="text-white font-light mb-4 text-base">
+                <p className="hb-body hb-body--card mb-4">
                   We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
                 </p>
-                <p className="text-white font-light text-base">
+                <p className="hb-body hb-body--card">
                   Your needs drive every decision. Your results define our success. Real impact, tangible results, customer-first always.
                 </p>
               </div>
@@ -73,10 +73,10 @@ const ServicesPage: React.FC = () => {
                 <div className="absolute inset-0 flex flex-col justify-center px-8 xl:px-12 visual-overlay-transition z-10">
                   <div className="max-w-md drop-shadow-lg relative z-10">
                     <h4 className="font-serif text-3xl xl:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
-                    <p className="text-white font-light mb-4 text-lg">
+                    <p className="hb-body hb-body--card mb-4">
                       We develop transformative solutions with one relentless focus: your success. Every product we create is customer-centered and outcomes-driven, fundamentally shifting what is possible for your organization and the people you serve.
                     </p>
-                    <p className="text-white font-light mb-8 text-lg">
+                    <p className="hb-body hb-body--card mb-8">
                       Your needs drive every decision. Your results define our success. Real impact, tangible results, customer-first always.
                     </p>
                   </div>
@@ -105,7 +105,7 @@ const ServicesPage: React.FC = () => {
               </span>
             </span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl font-light max-w-5xl mx-auto text-center mb-12">
+          <p className="hb-body max-w-5xl mx-auto text-center mb-12">
             We design, build, and operationalize digital platforms that deliver measurable outcomes:
           </p>
           <div className="max-w-5xl mx-auto space-y-1 text-center">
@@ -128,7 +128,7 @@ const ServicesPage: React.FC = () => {
               <h2 className="font-serif ed-title">
                 Organizational Development
               </h2>
-              <p className="text-white/60 text-base md:text-lg font-light">
+              <p className="hb-body hb-body--card">
                 We map the real behaviors, frictions, and constraints in your organization so we solve the right problem, not just the visible symptoms. From there, we build systems that reduce busywork and let your teams focus on high-leverage work.
               </p>
               <ul className="space-y-2 text-white/60 text-sm md:text-base font-light">
@@ -168,7 +168,7 @@ const ServicesPage: React.FC = () => {
               <h2 className="font-serif ed-title">
                 Social Development
               </h2>
-              <p className="text-white/60 text-base md:text-lg font-light">
+              <p className="hb-body hb-body--card">
                 We turn your insights into platforms, workflows, and interfaces that people adopt quickly because they feel built for them. The result: real connection, transparent governance, and inclusive decision-making across your ecosystem.
               </p>
               <ul className="space-y-2 text-white/60 text-sm md:text-base font-light">
@@ -208,7 +208,7 @@ const ServicesPage: React.FC = () => {
               <h2 className="font-serif ed-title">
                 Personal Development
               </h2>
-              <p className="text-white/60 text-base md:text-lg font-light">
+              <p className="hb-body hb-body--card">
                 We turn insights into companion tools that people actually use. From learning experiences to wellbeing support, we build systems that respect privacy while helping individuals grow skills and stay focused on what matters.
               </p>
               <ul className="space-y-2 text-white/60 text-sm md:text-base font-light">
@@ -246,7 +246,7 @@ const ServicesPage: React.FC = () => {
           <h2 className="font-serif ed-title">
             Creating Solutions Tailored to Needs
           </h2>
-          <p className="text-white/60 text-lg md:text-xl font-light max-w-3xl mx-auto">
+          <p className="hb-body max-w-3xl mx-auto">
             Every organization, community, and individual operates within a unique ecosystem. We use the full potential of
             emerging technology to architect solutions that honor your constraints, amplify your strengths, and meet people
             where they are.
@@ -262,7 +262,7 @@ const ServicesPage: React.FC = () => {
               <h2 className="font-serif ed-title">
                 Real Impact for Real Businesses
               </h2>
-              <p className="text-white/50 text-sm md:text-base font-light max-w-xl mt-3">
+              <p className="hb-body hb-body--card max-w-xl mt-3">
                 No hype, just measurable change. We design interventions that move the metrics that matter for your
                 operations, finances, participation, and experience.
               </p>
@@ -289,7 +289,7 @@ const ServicesPage: React.FC = () => {
                   Operations Productivity
                 </p>
                 <h3 className="font-serif ed-subtitle">Productivity Up</h3>
-                <p className="ed-body text-[15px]">
+                <p className="hb-body hb-body--card">
                   Streamlined approval chains, automated status updates, and unified dashboards reduced decision latency and
                   manual handoffs across teams.
                 </p>
@@ -315,7 +315,7 @@ const ServicesPage: React.FC = () => {
                   Cost Optimization
                 </p>
                 <h3 className="font-serif ed-subtitle">Cost Reduction</h3>
-                <p className="ed-body text-[15px]">
+                <p className="hb-body hb-body--card">
                   Intelligent automation and demand-aware infrastructure reduced operational overhead while preserving
                   service quality and reliability.
                 </p>
@@ -341,7 +341,7 @@ const ServicesPage: React.FC = () => {
                   Internal Communications
                 </p>
                 <h3 className="font-serif ed-subtitle">Participation Increased</h3>
-                <p className="ed-body text-[15px]">
+                <p className="hb-body hb-body--card">
                   Purpose-built channels, prompts, and feedback loops brought more voices into important decisions without
                   overwhelming the signal.
                 </p>
@@ -367,7 +367,7 @@ const ServicesPage: React.FC = () => {
                   Customer &amp; Staff Experience
                 </p>
                 <h3 className="font-serif ed-subtitle">Satisfaction Improved</h3>
-                <p className="ed-body text-[15px]">
+                <p className="hb-body hb-body--card">
                   Thoughtful journeys, clearer communication, and responsive support created better days for the people who
                   use and deliver your services.
                 </p>
@@ -384,7 +384,7 @@ const ServicesPage: React.FC = () => {
             <h2 className="font-serif ed-title">
               How We Deliver
             </h2>
-            <p className="text-white/60 text-sm md:text-base font-light max-w-2xl mx-auto">
+            <p className="hb-body hb-body--card max-w-2xl mx-auto">
               We combine focused human expertise with always-on intelligent systems so your organization can move with
               confidence, clarity, and care.
             </p>
@@ -401,7 +401,7 @@ const ServicesPage: React.FC = () => {
                 <h3 className="font-serif ed-subtitle">
                   Expert Mission
                 </h3>
-                <p className="text-white/60 text-sm md:text-base font-light">
+                <p className="hb-body hb-body--card">
                   We work with a dedicated team whose only mission is to understand your world and solve the problems that
                   matter most, strategists, designers, and engineers aligned around your outcomes.
                 </p>
@@ -418,7 +418,7 @@ const ServicesPage: React.FC = () => {
                 <h3 className="font-serif ed-subtitle">
                   24/7 Intelligent Automation
                 </h3>
-                <p className="text-white/60 text-sm md:text-base font-light">
+                <p className="hb-body hb-body--card">
                   We design always-on automation that extends your capacity while keeping humans firmly in control, so your
                   systems keep working, even when your team is offline.
                 </p>

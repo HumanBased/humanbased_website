@@ -139,7 +139,7 @@ html.motion-ok [data-draw][data-mx-pending] line {
   position: absolute;
   left: 16px;
   top: -7px;
-  font: 500 10px/1.4 'Inter', 'DM Sans', system-ui, sans-serif;
+  font: 500 10px/1.4 'Inter', 'Inter Fallback', 'DM Sans', system-ui, sans-serif;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   white-space: nowrap;

@@ -1,0 +1,158 @@
+[
+  {
+    "run": 1,
+    "perf": 63,
+    "a11y": 95,
+    "fcp": 3.97,
+    "lcp": 7.44,
+    "cls": 0,
+    "tbt": 156,
+    "lcpElement": "main > div.pbh > section#home > div.pbh-hero-bg",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 778
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 861
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 445
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 2045ms",
+      "Style & Layout 1353ms",
+      "Rendering 346ms",
+      "Script Evaluation 201ms",
+      "Parse HTML & CSS 35ms",
+      "Garbage Collection 25ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "perf": 63,
+    "a11y": 95,
+    "fcp": 3.97,
+    "lcp": 7.65,
+    "cls": 0,
+    "tbt": 149,
+    "lcpElement": "main > div.pbh > section#home > div.pbh-hero-bg",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 764
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 862
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 446
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 2099ms",
+      "Style & Layout 1317ms",
+      "Rendering 350ms",
+      "Script Evaluation 196ms",
+      "Parse HTML & CSS 29ms",
+      "Garbage Collection 20ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "perf": 63,
+    "a11y": 95,
+    "fcp": 4.06,
+    "lcp": 7.29,
+    "cls": 0.0022,
+    "tbt": 160,
+    "lcpElement": "main > div.pbh > section#home > div.pbh-hero-bg",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 798
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 870
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 450
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 2202ms",
+      "Style & Layout 1440ms",
+      "Rendering 376ms",
+      "Script Evaluation 195ms",
+      "Parse HTML & CSS 34ms",
+      "Garbage Collection 26ms",
+      "Script Parsing & Compilation 5ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  }
+]

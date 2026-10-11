@@ -18,6 +18,12 @@ export default {
   safelist: [],
   theme: {
     extend: {
+      // Cormorant Garamond (self-hosted, components/typography.css) with its
+      // size-adjusted fallback, then Georgia. Replaces the default serif stack,
+      // which is what `font-serif` effectively rendered as before.
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', '"Cormorant Garamond Fallback"', 'Georgia', 'serif'],
+      },
       colors: {
         amber: {
           400: '#d9a441',

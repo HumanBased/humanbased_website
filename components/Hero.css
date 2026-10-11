@@ -74,7 +74,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% 58%;
+  /* Focal point: image pushed right (was 62%) so the brightest city lights sit
+     right of the text block. Desktop and tablet; phones set their own below. */
+  object-position: 30% 58%;
   transform-origin: 70% 70%;
   animation: hb-hero-drift 30s ease-in-out infinite alternate;
 }
@@ -108,15 +110,7 @@
   gap: 28px;
 }
 
-.hb-hero-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: clamp(15px, 1.2vw, 18px);
-  font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.86);
-}
+/* Hero text lines: see .hb-hero-lines in components/typography.css. */
 
 /* Mobile: copy sits in the dark sky at the top; the planet is a wide crop along
    the bottom, so the curve and the city lights stay in view. */

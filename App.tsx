@@ -1,4 +1,5 @@
 import React from 'react';
+import { preload } from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -26,10 +27,20 @@ import siteBg from './assets/images/site-bg.webp';
 import { useMotion } from './components/motion/useMotion';
 import './components/motion/motion.css';
 import './components/editorial.css';
+import './components/typography.css';
 
-const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+// Latin-subset files the first screen of every HumanBased page uses. Preloaded here,
+// not in index.html, so PurposeBased pages (DM Sans / Cormorant) do not fetch them.
+const INTER_FONT = '/fonts/inter-latin.woff2';
+const GARAMOND_FONT = '/fonts/cormorant-garamond-latin.woff2';
+
+// `legal` marks the app-store legal pages: they keep the site's previous serif and no
+// text halo, so they render exactly as before the typography change.
+const MainLayout: React.FC<{ children: React.ReactNode; legal?: boolean }> = ({ children, legal = false }) => {
+  preload(INTER_FONT, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
+  if (!legal) preload(GARAMOND_FONT, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
   return (
-    <>
+    <div className={legal ? 'hb-legal' : 'hb-site'}>
       {/* Fixed site background layer */}
       <div className="fixed inset-0 z-[-1]">
         <div 
@@ -63,7 +74,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -90,13 +101,13 @@ const AppRoutes = () => {
       />
 
       {/* Google Play required policy pages, served from this repo in HumanBased dark theme */}
-      <Route path="/apps/basedtalk/privacy" element={<MainLayout><BasedTalkPrivacyPage /></MainLayout>} />
-      <Route path="/apps/purposebased/privacy" element={<MainLayout><PurposeBasedPrivacyPage /></MainLayout>} />
-      <Route path="/apps/purposebased/terms" element={<MainLayout><PurposeBasedTermsPage /></MainLayout>} />
-      <Route path="/apps/purposebased/delete-account" element={<MainLayout><PurposeBasedDeleteAccountPage /></MainLayout>} />
-      <Route path="/apps/purposebased/delete-data" element={<MainLayout><PurposeBasedDeleteDataPage /></MainLayout>} />
-      <Route path="/apps/basedtalk/delete-account" element={<MainLayout><BasedTalkDeleteAccountPage /></MainLayout>} />
-      <Route path="/apps/basedtalk/delete-data" element={<MainLayout><BasedTalkDeleteDataPage /></MainLayout>} />
+      <Route path="/apps/basedtalk/privacy" element={<MainLayout legal><BasedTalkPrivacyPage /></MainLayout>} />
+      <Route path="/apps/purposebased/privacy" element={<MainLayout legal><PurposeBasedPrivacyPage /></MainLayout>} />
+      <Route path="/apps/purposebased/terms" element={<MainLayout legal><PurposeBasedTermsPage /></MainLayout>} />
+      <Route path="/apps/purposebased/delete-account" element={<MainLayout legal><PurposeBasedDeleteAccountPage /></MainLayout>} />
+      <Route path="/apps/purposebased/delete-data" element={<MainLayout legal><PurposeBasedDeleteDataPage /></MainLayout>} />
+      <Route path="/apps/basedtalk/delete-account" element={<MainLayout legal><BasedTalkDeleteAccountPage /></MainLayout>} />
+      <Route path="/apps/basedtalk/delete-data" element={<MainLayout legal><BasedTalkDeleteDataPage /></MainLayout>} />
 
       {/* Main Site Routes (Wrapped in MainLayout) */}
       <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />

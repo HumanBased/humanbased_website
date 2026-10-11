@@ -1,0 +1,158 @@
+[
+  {
+    "run": 1,
+    "perf": 69,
+    "a11y": 95,
+    "fcp": 3.28,
+    "lcp": 7.1,
+    "cls": 0,
+    "tbt": 14,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 763
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 843
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 437
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 657ms",
+      "Style & Layout 485ms",
+      "Script Evaluation 200ms",
+      "Rendering 179ms",
+      "Parse HTML & CSS 28ms",
+      "Garbage Collection 16ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "perf": 68,
+    "a11y": 95,
+    "fcp": 3.43,
+    "lcp": 6.92,
+    "cls": 0,
+    "tbt": 58,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 803
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 872
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 451
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 724ms",
+      "Style & Layout 558ms",
+      "Rendering 228ms",
+      "Script Evaluation 190ms",
+      "Parse HTML & CSS 16ms",
+      "Garbage Collection 13ms",
+      "Script Parsing & Compilation 4ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "perf": 69,
+    "a11y": 95,
+    "fcp": 3.26,
+    "lcp": 7.23,
+    "cls": 0,
+    "tbt": 21,
+    "lcpElement": "section#hero > div.hb-hero-media > picture > img.hb-hero-img",
+    "renderBlocking": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,6…",
+        "wastedMs": 773
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&f…",
+        "wastedMs": 150
+      },
+      {
+        "url": "http://localhost:4173/assets/index-B1ijuzaE.css",
+        "wastedMs": 859
+      },
+      {
+        "url": "http://localhost:4173/index.css",
+        "wastedMs": 444
+      }
+    ],
+    "tailwindThreadMs": [],
+    "mainThread": [
+      "Other 642ms",
+      "Style & Layout 483ms",
+      "Script Evaluation 193ms",
+      "Rendering 187ms",
+      "Parse HTML & CSS 18ms",
+      "Garbage Collection 16ms",
+      "Script Parsing & Compilation 5ms"
+    ],
+    "jsCssRequests": [
+      {
+        "url": "/index.css",
+        "kb": 2.1
+      },
+      {
+        "url": "/assets/index-DdU75Vdy.js",
+        "kb": 136
+      },
+      {
+        "url": "/assets/index-B1ijuzaE.css",
+        "kb": 11.2
+      }
+    ]
+  }
+]
