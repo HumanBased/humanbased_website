@@ -816,6 +816,7 @@ const PBHome: React.FC = () => {
         .pbh-hero-content .pbh-h1,
         .pbh-hero-content .pbh-sub {
           text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+          color: #cadcf0;
         }
         .pbh-chevron {
           position: absolute;
@@ -1527,6 +1528,7 @@ const PBHome: React.FC = () => {
           .pbh-hero {
             --pbh-fade-x: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.08) 4%, rgba(0,0,0,0.26) 8%, rgba(0,0,0,0.52) 12%, rgba(0,0,0,0.78) 17%, #000 22%, #000 78%, rgba(0,0,0,0.78) 83%, rgba(0,0,0,0.52) 88%, rgba(0,0,0,0.26) 92%, rgba(0,0,0,0.08) 96%, transparent 100%);
           }
+          .pbh-hero-bg { background-position: 80% center; }
           .pbh-hero-content { align-items: center; text-align: center; max-width: none; }
           .pbh-sub { margin-bottom: 32px; }
           .pbh-cta-row { justify-content: center; }
