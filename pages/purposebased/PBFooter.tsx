@@ -11,7 +11,7 @@ const PBFooter: React.FC = () => {
         <div className="pbf-brand-block">
           <div className="pbf-brand">
             <img
-              src="/images/pb-logo.webp"
+              src="/images/pb-logo-192.webp"
               alt="PurposeBased"
               className="pbf-mark"
               onError={(e) => {

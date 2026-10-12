@@ -7,7 +7,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className = 'h-12 w-auto md:h-16' }) => {
   return (
     <img
-      src="/edited-cropped-1766269142825.png"
+      src="/images/hb-logo-340.webp"
       alt="HumanBased logo"
       className={className}
     />

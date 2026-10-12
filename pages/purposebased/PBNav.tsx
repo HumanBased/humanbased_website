@@ -51,7 +51,7 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
       <div className="pbn-bar">
         <Link to="/purposebased" className="pbn-brand" onClick={() => setOpen(false)}>
           <img
-            src="/images/pb-logo.webp"
+            src="/images/pb-logo-192.webp"
             alt="PurposeBased"
             style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
             onError={(e) => {

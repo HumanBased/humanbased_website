@@ -102,11 +102,24 @@ async function prerender() {
       const page = await browser.newPage();
       const url = baseUrl + route;
       console.log(`[prerender] rendering ${route}`);
+      // Page chunks the route loaded (React.lazy in App.tsx). Written into the static
+      // HTML as modulepreload so a visitor's browser fetches them alongside the entry
+      // script rather than after it (see the injection below).
+      const loadedChunks = new Set();
+      page.on('response', (res) => {
+        const p = new URL(res.url()).pathname;
+        if (p.startsWith('/assets/') && p.endsWith('.js')) loadedChunks.add(p);
+      });
       // Reduced motion makes the motion engine leave every element in its final,
       // visible state, so no animation frame is ever baked into the HTML.
       await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
       await page.waitForSelector('#root > *', { timeout: 30000 });
+      // Pages are lazy chunks: the layout can mount before the page inside <main> does.
+      await page.waitForFunction(() => {
+        const main = document.querySelector('main');
+        return !main || main.children.length > 0;
+      }, { timeout: 30000 });
       // Client-only decoration (journey lines measure the live layout) and any
       // runtime motion state must not reach the static HTML.
       await page.evaluate(() => {
@@ -132,9 +145,21 @@ async function prerender() {
           }
         });
         document.querySelectorAll('[data-parallax]').forEach((el) => el.style.removeProperty('--parallax-y'));
+        // AppRoutes is wrapped in one <Suspense> (pages are lazy chunks). React's server
+        // renderer marks a resolved boundary with these comments and hydrateRoot looks
+        // for them; a serialised client DOM has none, which would be a mismatch.
+        root.insertBefore(document.createComment('$'), root.firstChild);
+        root.appendChild(document.createComment('/$'));
       });
-      const html = await page.content();
+      let html = await page.content();
       await page.close();
+      // The entry script is already a <script type="module">; every other chunk this
+      // route needed gets a modulepreload link unless Vite's own preload already added one.
+      const preloads = [...loadedChunks]
+        .filter((p) => !html.includes(`src="${p}"`) && !html.includes(`href="${p}"`))
+        .sort()
+        .map((p) => `<link rel="modulepreload" crossorigin href="${p}">`);
+      if (preloads.length) html = html.replace('</head>', `${preloads.join('')}</head>`);
 
       if (route === NOT_FOUND_ROUTE) {
         await fs.writeFile(path.join(distDir, '404.html'), html, 'utf8');

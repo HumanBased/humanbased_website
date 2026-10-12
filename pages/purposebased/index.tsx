@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { preload } from 'react-dom';
 import PBCosmos from './PBCosmos';
 import PBNav from './PBNav';
 import PBFooter from './PBFooter';
-import PBHome from './pages/PBHome';
-import PBStory from './pages/PBStory';
-import PBLibrary from './pages/PBLibrary';
-import PBTraditionDetail from './pages/PBTraditionDetail';
-import PBPartners from './pages/PBPartners';
-import PBSeeHowItWorks from './pages/PBSeeHowItWorks';
-import PBFormspreeThankYou from './pages/PBFormspreeThankYou';
+
+// One chunk per sub-page: /purposebased/ no longer downloads the Partners form, the
+// Story page and the rest. The route's chunks are modulepreloaded by the prerendered
+// HTML (scripts/prerender.mjs), and the Suspense boundary is in App.tsx.
+const PBHome = lazy(() => import('./pages/PBHome'));
+const PBStory = lazy(() => import('./pages/PBStory'));
+const PBLibrary = lazy(() => import('./pages/PBLibrary'));
+const PBTraditionDetail = lazy(() => import('./pages/PBTraditionDetail'));
+const PBPartners = lazy(() => import('./pages/PBPartners'));
+const PBSeeHowItWorks = lazy(() => import('./pages/PBSeeHowItWorks'));
+const PBFormspreeThankYou = lazy(() => import('./pages/PBFormspreeThankYou'));
 
 export type PBPage =
   | 'home'
@@ -20,7 +24,7 @@ export type PBPage =
   | 'how-it-works'
   | 'receivedapplication';
 
-const PAGES: Record<PBPage, React.FC> = {
+const PAGES: Record<PBPage, React.ComponentType> = {
   home: PBHome,
   story: PBStory,
   library: PBLibrary,
@@ -31,9 +35,9 @@ const PAGES: Record<PBPage, React.FC> = {
 };
 
 const PB_FONT_FILES = [
-  'https://fonts.gstatic.com/s/cormorant/v24/H4clBXOCl9bbnla_nHIq75u9qKS-aw.woff2',
-  'https://fonts.gstatic.com/s/cormorant/v24/H4cjBXOCl9bbnla_nHIq6qu_oqOcaThr.woff2',
-  'https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2',
+  '/fonts/cormorant-latin.woff2',
+  '/fonts/cormorant-latin-italic.woff2',
+  '/fonts/dm-sans-latin.woff2',
 ];
 
 interface PurposeBasedProps {
@@ -45,12 +49,10 @@ interface PurposeBasedProps {
 const PurposeBased: React.FC<PurposeBasedProps> = ({ page = 'home' }) => {
   const ActivePage = PAGES[page];
 
-  // Fetch the display and body faces in parallel with the Google Fonts CSS, so they
-  // are usually in place at first paint and the swap from the metric-matched
-  // fallback (public/index.css) moves nothing. The URLs are the latin-subset files
-  // Chrome requests from the CSS in index.html; if Google rotates them the preload
-  // simply stops matching (a wasted request, no breakage), so re-check after any
-  // font URL change. Hoisted into <head> of PurposeBased pages only.
+  // Fetch the display and body faces up front (self-hosted latin subsets, declared in
+  // public/index.css), so they are usually in place at first paint and the swap from
+  // the metric-matched fallback moves nothing. Hoisted into <head> of PurposeBased
+  // pages only.
   PB_FONT_FILES.forEach((href) => preload(href, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' }));
 
   return (

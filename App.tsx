@@ -1,28 +1,10 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { preload } from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollHandler from './components/ScrollHandler';
 import AuroraBackground from './components/AuroraBackground';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ProcessPage from './pages/ProcessPage';
-import ProductsPage from './pages/ProductsPage';
-import LegalPage from './pages/LegalPage';
-import PrivacyPage from './pages/PrivacyPage';
-import NotFoundPage from './pages/NotFoundPage';
-import BasedTalkLandingPage from './pages/basedtalk/BasedTalkLandingPage';
-import BasedTalkPrivacyPage from './pages/basedtalk/BasedTalkPrivacyPage';
-import BasedTalkTermsPage from './pages/basedtalk/BasedTalkTermsPage';
-import BasedTalkDeleteAccountPage from './pages/basedtalk/BasedTalkDeleteAccountPage';
-import BasedTalkDeleteDataPage from './pages/basedtalk/BasedTalkDeleteDataPage';
-import PurposeBasedPrivacyPage from './pages/purposebased/PurposeBasedPrivacyPage';
-import PurposeBasedTermsPage from './pages/purposebased/PurposeBasedTermsPage';
-import PurposeBasedDeleteAccountPage from './pages/purposebased/PurposeBasedDeleteAccountPage';
-import PurposeBasedDeleteDataPage from './pages/purposebased/PurposeBasedDeleteDataPage';
-import PurposeBased from './pages/purposebased';
 import siteBg from './assets/images/site-bg.webp';
 import { useMotion } from './components/motion/useMotion';
 import './components/motion/motion.css';
@@ -31,6 +13,34 @@ import './components/typography.css';
 import './components/twilight.css';
 import './components/contrast.css';
 import TwilightBackground from './components/TwilightBackground';
+
+// Every page is its own chunk, so a visitor downloads the shared shell plus the one
+// page they opened. scripts/prerender.mjs writes a modulepreload link for that page's
+// chunks into each static HTML file, so the chunk loads in parallel with this entry
+// script instead of after it. The single null-fallback Suspense boundary in AppRoutes
+// is deliberate: during hydration the prerendered markup stays on screen until the
+// chunk arrives, and router navigations run in a transition, which keeps the previous
+// page up until the next one is ready. scripts/prerender.mjs adds the matching
+// <!--$--> ... <!--/$--> markers around #root's content, because it serialises a
+// client-rendered DOM and React needs them to hydrate a Suspense boundary.
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ProcessPage = lazy(() => import('./pages/ProcessPage'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
+const LegalPage = lazy(() => import('./pages/LegalPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const BasedTalkLandingPage = lazy(() => import('./pages/basedtalk/BasedTalkLandingPage'));
+const BasedTalkPrivacyPage = lazy(() => import('./pages/basedtalk/BasedTalkPrivacyPage'));
+const BasedTalkTermsPage = lazy(() => import('./pages/basedtalk/BasedTalkTermsPage'));
+const BasedTalkDeleteAccountPage = lazy(() => import('./pages/basedtalk/BasedTalkDeleteAccountPage'));
+const BasedTalkDeleteDataPage = lazy(() => import('./pages/basedtalk/BasedTalkDeleteDataPage'));
+const PurposeBasedPrivacyPage = lazy(() => import('./pages/purposebased/PurposeBasedPrivacyPage'));
+const PurposeBasedTermsPage = lazy(() => import('./pages/purposebased/PurposeBasedTermsPage'));
+const PurposeBasedDeleteAccountPage = lazy(() => import('./pages/purposebased/PurposeBasedDeleteAccountPage'));
+const PurposeBasedDeleteDataPage = lazy(() => import('./pages/purposebased/PurposeBasedDeleteDataPage'));
+const PurposeBased = lazy(() => import('./pages/purposebased'));
 
 // Latin-subset files the first screen of every HumanBased page uses. Preloaded here,
 // not in index.html, so PurposeBased pages (DM Sans / Cormorant) do not fetch them.
@@ -88,6 +98,7 @@ const MainLayout: React.FC<{ children: React.ReactNode; legal?: boolean }> = ({ 
 
 const AppRoutes = () => {
   return (
+    <Suspense fallback={null}>
     <Routes>
       {/* BasedTalk Routes (No MainLayout) */}
       <Route path="/apps/basedtalk" element={<BasedTalkLandingPage />} />
@@ -129,6 +140,7 @@ const AppRoutes = () => {
       {/* Unknown URLs: real 404 page (Vercel serves the prerendered dist/404.html with status 404) */}
       <Route path="*" element={<MainLayout><NotFoundPage /></MainLayout>} />
     </Routes>
+    </Suspense>
   );
 };
 
