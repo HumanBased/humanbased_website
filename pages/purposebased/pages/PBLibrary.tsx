@@ -5,7 +5,7 @@ import Journey from '../../../components/motion/Journey';
 import { PB_JOURNEY } from '../../../components/motion/journeys';
 
 // PurposeBased - The Library.
-// Seven traditions that shaped human meaning. Big image-left/text-right cards
+// Ten traditions that shaped human meaning. Big image-left/text-right cards
 // on desktop, image-top/text-below on mobile. Each card opens its own detail page.
 
 export interface Tradition {
@@ -81,6 +81,25 @@ export const TRADITIONS: Tradition[] = [
     imgWidth: 1200,
     imgHeight: 800,
   },
+  // The three cards below have no artwork yet; they use the CSS-only placeholder.
+  {
+    slug: 'know-thyself',
+    title: 'Know Thyself',
+    copy:
+      "The inscription at the door of the Oracle at Delphi, and the root of Socrates' life work. Before you ask your question, know who is asking. The examined life is the one lived on purpose; everything else is drift.",
+  },
+  {
+    slug: 'anamnesis',
+    title: 'Anamnesis',
+    copy:
+      "Plato's idea that learning is recollection. The soul forgets when it enters a body, and the work of a life is to remember. The journey from shadows to light is a journey from forgetting to remembering.",
+  },
+  {
+    slug: 'exile-and-return',
+    title: 'The Exile and the Return',
+    copy:
+      "From Sufi philosophy: we are in exile from a home we half remember, and the longing we feel is a compass. The path is not toward something new, but a journey home, with companions who have walked part of it.",
+  },
 ];
 
 const PB_URL = 'https://www.humanbased.org/purposebased';
@@ -88,9 +107,9 @@ const LIBRARY_URL = 'https://www.humanbased.org/purposebased/library';
 
 const PBLibrary: React.FC = () => {
   usePageSeo({
-    title: 'PurposeBased | 7 Traditions of Purpose',
+    title: 'PurposeBased | 10 Traditions of Purpose',
     description:
-      'Explore 7 philosophical and spiritual traditions that inform your purpose blueprint: Ikigai, Dharma, Thelema, Tao, Eudaimonia, Magnum Opus, Logotherapy.',
+      'Explore 10 philosophical and spiritual traditions behind PurposeBased, from Ikigai and Dharma to Know Thyself, Anamnesis and the Sufi Exile and Return.',
     canonical: LIBRARY_URL,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -113,7 +132,7 @@ const PBLibrary: React.FC = () => {
       {/* ============ HERO ============ */}
       <header className="pbl-hero">
         <p className="pbl-label">The Library</p>
-        <h1 className="pbl-h1">Seven traditions that shaped human meaning</h1>
+        <h1 className="pbl-h1">Ten traditions that shaped human meaning</h1>
       </header>
 
       {/* ============ TRADITION CARDS ============ */}
@@ -126,7 +145,7 @@ const PBLibrary: React.FC = () => {
             data-reveal=""
             style={{ ['--mx-delay' as string]: `${(i % 3) * 90}ms` }}
           >
-            <div className="pbl-card-img">
+            <div className={t.img ? 'pbl-card-img' : 'pbl-card-img pbl-card-img--art'}>
               {t.img ? (
                 <img
                   src={t.img}
@@ -214,6 +233,9 @@ const PBLibrary: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+        .pbl-card-img--art {
+          background: linear-gradient(135deg, rgba(255,200,100,0.12), rgba(10,22,40,0.6));
         }
         .pbl-card-img-el {
           position: absolute;

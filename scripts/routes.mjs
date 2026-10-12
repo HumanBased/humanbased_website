@@ -32,6 +32,7 @@ export const ROUTE_ENTRIES = [
 // noindex,follow) but kept out of the sitemap while their content is thin.
 export const NOINDEX_ROUTES = [
   'ikigai', 'dharma', 'thelema', 'tao', 'eudaimonia', 'magnum-opus', 'logotherapy',
+  'know-thyself', 'anamnesis', 'exile-and-return',
 ].map((slug) => '/purposebased/library/' + slug);
 
 export const ROUTES = [...ROUTE_ENTRIES.map((r) => r.path), ...NOINDEX_ROUTES];
