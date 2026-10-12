@@ -736,7 +736,7 @@ const PBHome: React.FC = () => {
           min-height: 65vh;
           display: flex;
           align-items: center;
-          padding: 48px 10% 56px;
+          padding: 48px 10% 56px max(10%, calc(max(14px, 50% - 640px) + 64px));
           position: relative;
           overflow: hidden;
           /* Transparent on purpose: the real page background is PBCosmos (a
