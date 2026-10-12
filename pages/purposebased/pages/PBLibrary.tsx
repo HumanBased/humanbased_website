@@ -81,15 +81,21 @@ export const TRADITIONS: Tradition[] = [
     imgWidth: 1200,
     imgHeight: 800,
   },
-  // The three cards below have no artwork yet; they use the CSS-only placeholder.
+  // Exile and Return has no artwork yet; it uses the CSS-only placeholder.
   {
     slug: 'know-thyself',
+    img: '/images/library/know-thyself.webp',
+    imgWidth: 1200,
+    imgHeight: 675,
     title: 'Know Thyself',
     copy:
       "The inscription at the door of the Oracle at Delphi, and the root of Socrates' life work. Before you ask your question, know who is asking. The examined life is the one lived on purpose; everything else is drift.",
   },
   {
     slug: 'anamnesis',
+    img: '/images/library/anamnesis.webp',
+    imgWidth: 1200,
+    imgHeight: 675,
     title: 'Anamnesis',
     copy:
       "Plato's idea that learning is recollection. The soul forgets when it enters a body, and the work of a life is to remember. The journey from shadows to light is a journey from forgetting to remembering.",
