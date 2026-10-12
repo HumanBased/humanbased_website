@@ -9,8 +9,8 @@ const OutcomeSafeguards: React.FC = () => {
       {/* Cost Reduction */}
       <div className="mx-card group overflow-hidden" data-reveal="">
         <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-          <img src={processCostImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Cost Reduction" width={1360} height={784} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
+          <img src={processCostImg} className="visual-card-img vc-lit transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Cost Reduction" width={1200} height={692} loading="lazy" decoding="async" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/40 to-transparent"></div>
         </div>
         <div className="p-6 sm:p-8 lg:p-10 space-y-5">
           <h3 className="font-serif ed-subtitle">
@@ -25,8 +25,8 @@ const OutcomeSafeguards: React.FC = () => {
       {/* Uncompromising Quality */}
       <div className="mx-card group overflow-hidden" data-reveal="">
         <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-          <img src={processQualityImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Uncompromising Quality" width={1344} height={768} loading="lazy" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
+          <img src={processQualityImg} className="visual-card-img vc-lit transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Uncompromising Quality" width={1200} height={686} loading="lazy" decoding="async" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/40 to-transparent"></div>
         </div>
         <div className="p-6 sm:p-8 lg:p-10 space-y-5">
           <h3 className="font-serif ed-subtitle">

@@ -69,7 +69,7 @@ const ServicesPage: React.FC = () => {
                   height={848}
                   decoding="async"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509] via-[#050509]/85 to-transparent"></div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050509]/95 via-[#050509]/55 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col justify-center px-8 xl:px-12 visual-overlay-transition z-10">
                   <div className="max-w-md drop-shadow-lg relative z-10">
                     <h4 className="font-serif text-3xl xl:text-4xl font-medium mb-6 text-white">We Serve for Real Impact</h4>
@@ -151,7 +151,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
-                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Organizational Development" width={1280} height={800} loading="lazy" decoding="async" />
+                <img src={orgDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Organizational Development" width={1200} height={750} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
@@ -191,7 +191,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
-                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Social Development" width={1344} height={768} loading="lazy" decoding="async" />
+                <img src={socialDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Social Development" width={1200} height={686} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
@@ -231,7 +231,7 @@ const ServicesPage: React.FC = () => {
             </div>
             <div className="lg:w-1/2">
               <div className="relative w-full h-full min-h-[220px] rounded-[10px] bg-black/40 overflow-hidden border border-white/10">
-                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Personal Development" width={1344} height={768} loading="lazy" decoding="async" />
+                <img src={personalDevImg} className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Personal Development" width={1200} height={686} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 border border-white/5 rounded-[10px] pointer-events-none" />
               </div>
             </div>
@@ -277,8 +277,8 @@ const ServicesPage: React.FC = () => {
                   src={impactProductivityImg}
                   alt=""
                   className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
-                  width={1024}
-                  height={1024}
+                  width={1000}
+                  height={1000}
                   loading="lazy"
                   decoding="async"
                 />
@@ -303,8 +303,8 @@ const ServicesPage: React.FC = () => {
                   src={impactCostImg}
                   alt=""
                   className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
-                  width={1248}
-                  height={832}
+                  width={1000}
+                  height={667}
                   loading="lazy"
                   decoding="async"
                 />
@@ -329,12 +329,12 @@ const ServicesPage: React.FC = () => {
                   src={impactParticipationImg}
                   alt=""
                   className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
-                  width={1344}
-                  height={768}
+                  width={1000}
+                  height={571}
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/35 via-transparent to-transparent" />
               </div>
               <div className="p-8 space-y-4">
                 <p className="ed-label ed-label--lower">
@@ -355,8 +355,8 @@ const ServicesPage: React.FC = () => {
                   src={impactSatisfactionImg}
                   alt=""
                   className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]"
-                  width={1344}
-                  height={768}
+                  width={1000}
+                  height={571}
                   loading="lazy"
                   decoding="async"
                 />
@@ -394,8 +394,8 @@ const ServicesPage: React.FC = () => {
             {/* Expert Mission */}
             <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={expertMissionImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Expert Mission" width={1248} height={832} loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
+                <img src={expertMissionImg} className="visual-card-img vc-lit transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="Expert Mission" width={1200} height={800} loading="lazy" decoding="async" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/40 to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                 <h3 className="font-serif ed-subtitle">
@@ -411,8 +411,8 @@ const ServicesPage: React.FC = () => {
             {/* 24/7 Intelligent Automation */}
             <div className="mx-card overflow-hidden group" data-reveal="">
               <div className="relative aspect-video w-full bg-black/40 overflow-hidden">
-                <img src={automationImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="24/7 Intelligent Automation" width={1408} height={768} loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050509] to-transparent"></div>
+                <img src={automationImg} className="visual-card-img vc-lit transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt="24/7 Intelligent Automation" width={1200} height={655} loading="lazy" decoding="async" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050509]/40 to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8 lg:p-10 space-y-5">
                 <h3 className="font-serif ed-subtitle">
