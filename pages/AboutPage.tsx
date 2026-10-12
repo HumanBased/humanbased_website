@@ -109,7 +109,6 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <p className="ed-small mt-10 text-left">Copenhagen, Denmark · Founded 2025 · CVR DK45998576</p>
         </div>
       </section>
     </div>

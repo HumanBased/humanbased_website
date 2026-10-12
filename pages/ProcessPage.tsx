@@ -63,7 +63,7 @@ const ProcessPage: React.FC = () => {
 
       {/* Section 2 – Outcome Safeguards */}
       <section className="ed-sec pt-8" id="process-outcomes">
-        <div className="ed-full space-y-10">
+        <div className="ed-full space-y-14">
           <div className="ed-stack" data-reveal="">
             <h2 className="font-serif ed-title">
               Outcomes We Protect

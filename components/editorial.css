@@ -5,7 +5,7 @@
 
 :root {
   --ed-gutter: 24px;
-  --ed-section: clamp(72px, 9vw, 128px);
+  --ed-section: clamp(88px, 10.5vw, 152px);
   --ed-gold: #d9a441;
 }
 @media (min-width: 768px) {

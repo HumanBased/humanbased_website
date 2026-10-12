@@ -117,7 +117,7 @@ const ServicesPage: React.FC = () => {
 
       {/* Section 2 – Three development cards */}
       <section className="pb-16" id="services-areas">
-        <div className="ed-full space-y-10">
+        <div className="ed-full space-y-14">
           {/* Organizational Development */}
           <Reveal delay={0}>
             <div className="mx-card px-6 py-10 md:px-10 md:py-12 lg:px-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch group">
@@ -256,7 +256,7 @@ const ServicesPage: React.FC = () => {
 
       {/* Section 4 – Metric-driven case studies */}
       <section className="pb-20" id="services-impact">
-        <div className="ed-full space-y-10">
+        <div className="ed-full space-y-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal="">
             <div>
               <h2 className="font-serif ed-title">
@@ -379,7 +379,7 @@ const ServicesPage: React.FC = () => {
 
       {/* Section 5 – How we deliver */}
       <section className="ed-sec" id="services-delivery">
-        <div className="ed-full space-y-10">
+        <div className="ed-full space-y-14">
           <div className="text-center space-y-4" data-reveal="">
             <h2 className="font-serif ed-title">
               How We Deliver
