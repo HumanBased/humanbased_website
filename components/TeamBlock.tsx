@@ -38,12 +38,12 @@ const TeamBlock: React.FC = () => (
                 height={600}
                 loading="lazy"
                 decoding="async"
-                className="h-24 w-24 rounded-full object-cover border border-white/10"
+                className="h-[120px] w-[120px] rounded-full object-cover border border-white/10"
               />
             ) : (
               <span
                 aria-hidden="true"
-                className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 font-serif text-2xl text-amber-400"
+                className="flex h-[120px] w-[120px] items-center justify-center rounded-full border border-white/10 bg-white/5 font-serif text-3xl text-amber-400"
               >
                 {initials(person.name)}
               </span>
