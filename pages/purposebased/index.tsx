@@ -10,6 +10,10 @@ import PBTraditionDetail from './pages/PBTraditionDetail';
 import PBPartners from './pages/PBPartners';
 import PBSeeHowItWorks from './pages/PBSeeHowItWorks';
 import PBFormspreeThankYou from './pages/PBFormspreeThankYou';
+import PBArticlesIndex from './articles/PBArticlesIndex';
+import PBArticleWhatIsMyPurpose from './articles/PBArticleWhatIsMyPurpose';
+import PBArticleHowToFindYourself from './articles/PBArticleHowToFindYourself';
+import PBSelfDiscoveryJournal from './articles/PBSelfDiscoveryJournal';
 
 export type PBPage =
   | 'home'
@@ -18,7 +22,11 @@ export type PBPage =
   | 'tradition-detail'
   | 'partners'
   | 'how-it-works'
-  | 'receivedapplication';
+  | 'receivedapplication'
+  | 'articles'
+  | 'article-purpose'
+  | 'article-yourself'
+  | 'journal';
 
 const PAGES: Record<PBPage, React.FC> = {
   home: PBHome,
@@ -28,6 +36,10 @@ const PAGES: Record<PBPage, React.FC> = {
   partners: PBPartners,
   'how-it-works': PBSeeHowItWorks,
   receivedapplication: PBFormspreeThankYou,
+  articles: PBArticlesIndex,
+  'article-purpose': PBArticleWhatIsMyPurpose,
+  'article-yourself': PBArticleHowToFindYourself,
+  journal: PBSelfDiscoveryJournal,
 };
 
 const PB_FONT_FILES = [

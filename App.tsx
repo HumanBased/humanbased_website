@@ -103,6 +103,10 @@ const AppRoutes = () => {
         element={<PurposeBased page="tradition-detail" />}
       />
       <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
+      <Route path="/purposebased/articles" element={<PurposeBased page="articles" />} />
+      <Route path="/purposebased/articles/what-is-my-purpose" element={<PurposeBased page="article-purpose" />} />
+      <Route path="/purposebased/articles/how-to-find-yourself" element={<PurposeBased page="article-yourself" />} />
+      <Route path="/purposebased/self-discovery-journal" element={<PurposeBased page="journal" />} />
       <Route
         path="/purposebased/receivedapplication"
         element={<PurposeBased page="receivedapplication" />}

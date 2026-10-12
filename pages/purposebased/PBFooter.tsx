@@ -77,6 +77,22 @@ const PBFooter: React.FC = () => {
       </div>
 
       <div className="pbf-legal">
+        <div className="pbf-legal-links pbf-read">
+          <span className="pbf-read-label">Read</span>
+          <Link to="/purposebased/articles/what-is-my-purpose" className="pbf-legal-link">
+            What is my purpose?
+          </Link>
+          <Link to="/purposebased/articles/how-to-find-yourself" className="pbf-legal-link">
+            How to find yourself
+          </Link>
+          <span className="pbf-read-label">Free tool</span>
+          <Link to="/purposebased/self-discovery-journal" className="pbf-legal-link">
+            Self-discovery journal
+          </Link>
+          <Link to="/purposebased/articles" className="pbf-legal-link">
+            All articles
+          </Link>
+        </div>
         <div className="pbf-legal-links">
           <Link to="/apps/purposebased/privacy" className="pbf-legal-link">
             Privacy policy
@@ -230,6 +246,8 @@ const PBFooter: React.FC = () => {
           transition: color 0.2s ease;
         }
         .pbf-legal-link:hover { color: var(--pb-gold); }
+        .pbf-read { align-items: baseline; }
+        .pbf-read-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--pb-muted); }
         .pbf-company {
           font-size: 12px;
           color: var(--pb-muted);
