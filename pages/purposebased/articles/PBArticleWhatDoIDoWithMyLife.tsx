@@ -82,18 +82,9 @@ const PBArticleWhatDoIDoWithMyLife: React.FC = () => {
           <h2 className="pba-h2">Get good at something, deeply</h2>
           <p>
             The first of the three is mastery: becoming so skilled at something that when you do it,
-            time seems to disappear. Psychologists call that state flow, and the researcher who gave
-            it its name, Mihaly Csikszentmihalyi, spent his career asking when people feel most
-            alive. In <em>Flow: The Psychology of Optimal Experience</em> he wrote that the best
-            moments in life do not come from relaxing or drifting.
-          </p>
-          <Quote by="Mihaly Csikszentmihalyi" source="Flow: The Psychology of Optimal Experience">
-            “The best moments usually occur when a person’s body or mind is stretched to its limits…”
-          </Quote>
-          <p>
-            He went on to describe a voluntary effort toward something difficult and worthwhile. The
-            point holds for most of us: absorption comes from effort that is demanding but within
-            reach, repeated until you are good at it.
+            time seems to disappear. Psychologists call that state flow, and it tends to come from
+            effort that is demanding but within reach, repeated until you are good at it. It rarely
+            comes from relaxing or drifting.
           </p>
           <p>
             This is useful when you are lost, because it turns an enormous question into a smaller
@@ -178,7 +169,7 @@ const PBArticleWhatDoIDoWithMyLife: React.FC = () => {
             <ul>
               <li>Three things combine to answer the question: mastery, contribution and self-knowledge.</li>
               <li>Start with knowing yourself, so the choice fits your values, strengths and what you are drawn to.</li>
-              <li>Mastery means getting so good at something that time seems to disappear while you do it. Csikszentmihalyi called this flow.</li>
+              <li>Mastery means getting so good at something that time seems to disappear while you do it. Psychologists call this flow.</li>
               <li>Contribution means adding your part to what earlier generations built and future ones will rely on. It can be small and ordinary.</li>
               <li>You do not have to decide everything. A six-month experiment beats waiting for certainty.</li>
             </ul>

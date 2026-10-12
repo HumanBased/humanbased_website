@@ -32,7 +32,6 @@ Files: `pages/purposebased/articles/` (PBArticleKit.tsx shared styles and JSON-L
 6. Henry David Thoreau, *Walden*, "Economy" (1854): "The mass of men lead lives of quiet desperation." Checked against etc.usf.edu/lit2go (Walden, Economy).
 7. "Know thyself" at Delphi: stated as an inscription on the Temple of Apollo, reported by ancient writers such as Plato. Checked against the Wikipedia article "Know thyself" (which names Plato and Pliny the Elder, not Pausanias, so Pausanias is not mentioned).
 
-8. Mihaly Csikszentmihalyi, *Flow: The Psychology of Optimal Experience*: only the opening fragment "The best moments usually occur when a person's body or mind is stretched to its limits" is quoted. It was confirmed from a Goodreads quote listing that attributes it to the book (an aggregator, not a primary source), so check it against a printed copy if you can. The rest of the sentence (voluntary effort toward something difficult and worthwhile) is paraphrased.
 9. Viktor Frankl, same book as above, in the third article: fragment "the tasks which it constantly sets for each individual", plus prose references to doing a deed and responsibility toward an unfinished work, all from the religiousnaturalism.org excerpts page.
 
 Plain markdown copies of all three articles, with meta title, description and sources, are in `docs/seo/articles/`.

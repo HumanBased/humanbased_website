@@ -19,13 +19,7 @@ Two related pieces go deeper into this ground: [how to find yourself](https://ww
 
 ## Get good at something, deeply
 
-The first of the three is mastery: becoming so skilled at something that when you do it, time seems to disappear. Psychologists call that state flow, and the researcher who gave it its name, Mihaly Csikszentmihalyi, spent his career asking when people feel most alive. In *Flow: The Psychology of Optimal Experience* he wrote that the best moments in life do not come from relaxing or drifting.
-
-> “The best moments usually occur when a person’s body or mind is stretched to its limits…”
->
-> Mihaly Csikszentmihalyi, *Flow: The Psychology of Optimal Experience*
-
-He went on to describe a voluntary effort toward something difficult and worthwhile. The point holds for most of us: absorption comes from effort that is demanding but within reach, repeated until you are good at it.
+The first of the three is mastery: becoming so skilled at something that when you do it, time seems to disappear. Psychologists call that state flow, and it tends to come from effort that is demanding but within reach, repeated until you are good at it. It rarely comes from relaxing or drifting.
 
 This is useful when you are lost, because it turns an enormous question into a smaller one. You do not need to know what to do with your whole life to start getting good at one thing. Pick something that already holds your attention a little: a craft, a language, a way of solving problems, caring for people, building things. Give it regular, focused time for a year. Mastery is slow and mostly unglamorous, and it has a way of showing you what you actually enjoy, which no amount of imagining can do.
 
@@ -61,7 +55,7 @@ At the end of the six months, ask what gave you energy, what dragged, and what y
 
 - Three things combine to answer the question: mastery, contribution and self-knowledge.
 - Start with knowing yourself, so the choice fits your values, strengths and what you are drawn to.
-- Mastery means getting so good at something that time seems to disappear while you do it. Csikszentmihalyi called this flow.
+- Mastery means getting so good at something that time seems to disappear while you do it. Psychologists call this flow.
 - Contribution means adding your part to what earlier generations built and future ones will rely on. It can be small and ordinary.
 - You do not have to decide everything. A six-month experiment beats waiting for certainty.
 ## Why we built PurposeBased
@@ -73,5 +67,4 @@ See [how it works](https://www.humanbased.org/purposebased/how-it-works), or sta
 
 ## Sources for quotes
 
-- Mihaly Csikszentmihalyi, Flow: The Psychology of Optimal Experience: opening fragment only, as listed on goodreads.com/quotes/tag/flow. The rest of the sentence is paraphrased, not quoted, because only the opening wording was confirmed.
 - Viktor Frankl, Man's Search for Meaning: fragment "the tasks which it constantly sets for each individual" (religiousnaturalism.org/mans-search-for-meaning). "Doing a deed" and responsibility toward "an unfinished work" are also from that page.
