@@ -13,6 +13,7 @@ import PBFormspreeThankYou from './pages/PBFormspreeThankYou';
 import PBArticlesIndex from './articles/PBArticlesIndex';
 import PBArticleWhatIsMyPurpose from './articles/PBArticleWhatIsMyPurpose';
 import PBArticleHowToFindYourself from './articles/PBArticleHowToFindYourself';
+import PBArticleWhatDoIDoWithMyLife from './articles/PBArticleWhatDoIDoWithMyLife';
 import PBSelfDiscoveryJournal from './articles/PBSelfDiscoveryJournal';
 
 export type PBPage =
@@ -26,6 +27,7 @@ export type PBPage =
   | 'articles'
   | 'article-purpose'
   | 'article-yourself'
+  | 'article-life'
   | 'journal';
 
 const PAGES: Record<PBPage, React.FC> = {
@@ -39,6 +41,7 @@ const PAGES: Record<PBPage, React.FC> = {
   articles: PBArticlesIndex,
   'article-purpose': PBArticleWhatIsMyPurpose,
   'article-yourself': PBArticleHowToFindYourself,
+  'article-life': PBArticleWhatDoIDoWithMyLife,
   journal: PBSelfDiscoveryJournal,
 };
 

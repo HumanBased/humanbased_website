@@ -19,6 +19,7 @@ export const ROUTE_ENTRIES = [
   { path: '/purposebased/articles', priority: 0.7 },
   { path: '/purposebased/articles/what-is-my-purpose', priority: 0.7 },
   { path: '/purposebased/articles/how-to-find-yourself', priority: 0.7 },
+  { path: '/purposebased/articles/what-do-i-do-with-my-life', priority: 0.7 },
   { path: '/purposebased/self-discovery-journal', priority: 0.7 },
   { path: '/apps/basedtalk/privacy', priority: 0.5 },
   { path: '/apps/basedtalk/terms', priority: 0.5 },

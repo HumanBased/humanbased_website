@@ -8,10 +8,11 @@ Branch: `articles-tool`. All pages are indexable, in the sitemap, prerendered (l
 | --- | --- | --- |
 | /purposebased/articles/what-is-my-purpose | what is my purpose | BreadcrumbList + Article |
 | /purposebased/articles/how-to-find-yourself | how to find yourself | BreadcrumbList + Article |
+| /purposebased/articles/what-do-i-do-with-my-life | what do I do with my life | BreadcrumbList + Article |
 | /purposebased/articles | index of the three pages | BreadcrumbList + CollectionPage |
 | /purposebased/self-discovery-journal | self discovery journal, journal prompts | BreadcrumbList + WebPage |
 
-Both articles: datePublished and dateModified 2026-10-12, author and publisher HumanBased (Organization). The first two sentences of each article answer the query directly.
+All three articles: datePublished and dateModified 2026-10-12, author and publisher HumanBased (Organization). The first two sentences of each article answer the query directly.
 
 Footer: a small "Read / Free tool" link row was added above the legal links in `pages/purposebased/PBFooter.tsx` (shows on every PurposeBased page). No other existing copy was changed. Legal pages and vercel.json rewrites are untouched.
 
@@ -30,6 +31,11 @@ Files: `pages/purposebased/articles/` (PBArticleKit.tsx shared styles and JSON-L
 5. Socrates in Plato's *Apology* 38a: "The unexamined life is not worth living." Checked against thegreats.org (Apology reading page), which gives the 38a reference but no translator. Wording varies slightly between translations, so no translator is credited.
 6. Henry David Thoreau, *Walden*, "Economy" (1854): "The mass of men lead lives of quiet desperation." Checked against etc.usf.edu/lit2go (Walden, Economy).
 7. "Know thyself" at Delphi: stated as an inscription on the Temple of Apollo, reported by ancient writers such as Plato. Checked against the Wikipedia article "Know thyself" (which names Plato and Pliny the Elder, not Pausanias, so Pausanias is not mentioned).
+
+8. Mihaly Csikszentmihalyi, *Flow: The Psychology of Optimal Experience*: only the opening fragment "The best moments usually occur when a person's body or mind is stretched to its limits" is quoted. It was confirmed from a Goodreads quote listing that attributes it to the book (an aggregator, not a primary source), so check it against a printed copy if you can. The rest of the sentence (voluntary effort toward something difficult and worthwhile) is paraphrased.
+9. Viktor Frankl, same book as above, in the third article: fragment "the tasks which it constantly sets for each individual", plus prose references to doing a deed and responsibility toward an unfinished work, all from the religiousnaturalism.org excerpts page.
+
+Plain markdown copies of all three articles, with meta title, description and sources, are in `docs/seo/articles/`.
 
 ## Paraphrased on purpose (no quotation marks)
 

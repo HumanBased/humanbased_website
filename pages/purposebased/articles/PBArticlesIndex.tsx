@@ -21,6 +21,12 @@ const ITEMS = [
     text: 'Why knowing your traits and strengths comes first, and how what you do shapes who you are.',
   },
   {
+    to: '/purposebased/articles/what-do-i-do-with-my-life',
+    label: 'Article',
+    title: 'What do I do with my life?',
+    text: 'Mastery, contribution and self-knowledge: three places to start when the question feels too big.',
+  },
+  {
     to: '/purposebased/self-discovery-journal',
     label: 'Free tool',
     title: 'Self-discovery journal',
@@ -59,7 +65,7 @@ const PBArticlesIndex: React.FC = () => {
       <section className="pba-sec">
         <div className="pba-narrow pba-body">
           <p className="pba-lead">
-            Two articles and one free tool, written to help you ask better questions about your
+            Three articles and one free tool, written to help you ask better questions about your
             purpose and about yourself.
           </p>
         </div>

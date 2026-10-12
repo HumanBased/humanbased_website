@@ -106,6 +106,7 @@ const AppRoutes = () => {
       <Route path="/purposebased/articles" element={<PurposeBased page="articles" />} />
       <Route path="/purposebased/articles/what-is-my-purpose" element={<PurposeBased page="article-purpose" />} />
       <Route path="/purposebased/articles/how-to-find-yourself" element={<PurposeBased page="article-yourself" />} />
+      <Route path="/purposebased/articles/what-do-i-do-with-my-life" element={<PurposeBased page="article-life" />} />
       <Route path="/purposebased/self-discovery-journal" element={<PurposeBased page="journal" />} />
       <Route
         path="/purposebased/receivedapplication"

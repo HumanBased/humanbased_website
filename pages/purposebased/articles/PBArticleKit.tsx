@@ -12,6 +12,7 @@ export const HOW_URL = `${ORIGIN}/purposebased/how-it-works`;
 export const ARTICLES_URL = `${ORIGIN}/purposebased/articles`;
 export const PURPOSE_URL = `${ORIGIN}/purposebased/articles/what-is-my-purpose`;
 export const YOURSELF_URL = `${ORIGIN}/purposebased/articles/how-to-find-yourself`;
+export const LIFE_URL = `${ORIGIN}/purposebased/articles/what-do-i-do-with-my-life`;
 export const JOURNAL_URL = `${ORIGIN}/purposebased/self-discovery-journal`;
 export const APP_URL = 'https://www.purposebased.app';
 export const PUBLISHED = '2026-10-12';
@@ -139,7 +140,7 @@ export const AppCta: React.FC<{ title: string; children: React.ReactNode }> = ({
   </section>
 );
 
-export const KeepReading: React.FC<{ current: 'purpose' | 'yourself' | 'journal' }> = ({ current }) => (
+export const KeepReading: React.FC<{ current: 'purpose' | 'yourself' | 'life' | 'journal' }> = ({ current }) => (
   <section className="pba-sec" aria-labelledby="pba-more-title">
     <div className="pba-narrow">
       <h2 className="pba-h3" id="pba-more-title">
@@ -156,6 +157,12 @@ export const KeepReading: React.FC<{ current: 'purpose' | 'yourself' | 'journal'
           <li>
             <Link to="/purposebased/articles/how-to-find-yourself">How to find yourself</Link>
             <span>Why what you do and who you are belong together.</span>
+          </li>
+        )}
+        {current !== 'life' && (
+          <li>
+            <Link to="/purposebased/articles/what-do-i-do-with-my-life">What do I do with my life?</Link>
+            <span>Mastery, contribution and self-knowledge as three places to start.</span>
           </li>
         )}
         {current !== 'journal' && (
