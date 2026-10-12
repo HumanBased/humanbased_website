@@ -420,8 +420,8 @@ const PBHome: React.FC = () => {
                   <img
                     src={f.img}
                     alt=""
-                    width={1672}
-                    height={941}
+                    width={1200}
+                    height={675}
                     loading="lazy"
                     decoding="async"
                     className="pbh-fimg-el"

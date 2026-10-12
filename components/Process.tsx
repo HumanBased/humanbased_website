@@ -53,13 +53,13 @@ const Process: React.FC = () => {
               <div className="mx-card h-full p-6 md:p-7 group overflow-hidden">
               <div className="aspect-[4/3] md:aspect-[5/4] w-full rounded-[10px] overflow-hidden mb-8 bg-black/20 relative">
                 {step.title === "Deep Discovery & Insight" ? (
-                  <img src={processDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1344} height={768} loading="lazy" decoding="async" />
+                  <img src={processDiscoveryImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1200} height={686} loading="lazy" decoding="async" />
                 ) : step.title === "Co-Design & Validation" ? (
-                  <img src={processCodesignImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1376} height={768} loading="lazy" decoding="async" />
+                  <img src={processCodesignImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1200} height={670} loading="lazy" decoding="async" />
                 ) : step.title === "Ethical, Auditable Engineering" ? (
-                  <img src={processEthicalImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1344} height={768} loading="lazy" decoding="async" />
+                  <img src={processEthicalImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1200} height={686} loading="lazy" decoding="async" />
                 ) : step.title === "Continuous Improvement & Capability Building" ? (
-                  <img src={processImprovementImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1376} height={768} loading="lazy" decoding="async" />
+                  <img src={processImprovementImg} className="visual-card-img transition-all duration-500 ease-out group-hover:brightness-110 group-hover:scale-[1.02]" alt={step.title} width={1200} height={670} loading="lazy" decoding="async" />
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
               </div>

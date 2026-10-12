@@ -24,8 +24,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "The reason for being. Purpose found at the intersection of what you love, what you're good at, what the world needs, and what sustains you. It's the convergence point where passion meets skill, demand meets reward.",
     img: '/images/library/ikigai.webp',
-    imgWidth: 1546,
-    imgHeight: 1017,
+    imgWidth: 1200,
+    imgHeight: 789,
   },
   {
     slug: 'dharma',
@@ -33,8 +33,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "Your sacred duty and purpose in life. From Hindu and Buddhist philosophy: the cosmic law and order, and your role in maintaining it. Dharma isn't imposed. It's discovered through understanding your nature, talents, and the needs of your community.",
     img: '/images/library/dharma.webp',
-    imgWidth: 1672,
-    imgHeight: 941,
+    imgWidth: 1200,
+    imgHeight: 675,
   },
   {
     slug: 'thelema',
@@ -42,8 +42,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "Do what thou wilt shall be the whole of the Law. From Aleister Crowley's magical philosophy: true will is not selfish desire, but your authentic purpose aligned with the universe. It's about discovering and living your genuine nature, unbound by external expectations.",
     img: '/images/library/thelema.webp',
-    imgWidth: 1672,
-    imgHeight: 941,
+    imgWidth: 1200,
+    imgHeight: 675,
   },
   {
     slug: 'tao',
@@ -51,8 +51,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       'The way or path. From Chinese philosophy: the underlying flow of the universe. Your purpose is found by understanding your place within this flow, not by forcing, but by moving with what naturally wants to happen through you.',
     img: '/images/library/tao.webp',
-    imgWidth: 1672,
-    imgHeight: 941,
+    imgWidth: 1200,
+    imgHeight: 675,
   },
   {
     slug: 'eudaimonia',
@@ -60,8 +60,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "Flourishing through virtue. From Aristotle's ethics: happiness is not pleasure, but the actualization of your highest potential. Purpose is the ongoing practice of excellence, the development of your capabilities in service of a meaningful life.",
     img: '/images/library/eudaimonia.webp',
-    imgWidth: 1672,
-    imgHeight: 941,
+    imgWidth: 1200,
+    imgHeight: 675,
   },
   {
     slug: 'magnum-opus',
@@ -69,8 +69,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "Your 'Great Work.' From classical and alchemical tradition: the fullest expression of your creative, intellectual, and life capacity. Not simply a career milestone or résumé builder, but the defining work you bring into the world. It is the long-term channeling of your core energy into something meaningful that can outlast you.",
     img: '/images/library/magnumopus.webp',
-    imgWidth: 1536,
-    imgHeight: 1024,
+    imgWidth: 1200,
+    imgHeight: 800,
   },
   {
     slug: 'logotherapy',
@@ -78,8 +78,8 @@ export const TRADITIONS: Tradition[] = [
     copy:
       "The will to meaning. From Viktor Frankl's existential framework: the search for meaning as a fundamental human drive, beyond pleasure or power. It starts from the idea that life can retain meaning even in difficult circumstances. Purpose is discovered through responsibility, service, relationships, and the challenges we choose to engage with.",
     img: '/images/library/logotherapy.webp',
-    imgWidth: 1536,
-    imgHeight: 1024,
+    imgWidth: 1200,
+    imgHeight: 800,
   },
 ];
 

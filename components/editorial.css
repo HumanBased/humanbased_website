@@ -138,6 +138,14 @@
   background: linear-gradient(to top, rgba(5, 5, 9, 0.85), transparent 55%);
   pointer-events: none;
 }
+/* Lighter variant: less dark wash for cards whose art reads too dim. */
+.ed-card-media--lit img { opacity: 1; }
+.ed-card-media--lit::after {
+  background: linear-gradient(to top, rgba(5, 5, 9, 0.38), transparent 40%);
+}
+/* Lighter variant of the shared .visual-card-img (defined in index.html). */
+.visual-card-img.vc-lit { opacity: 1; filter: saturate(1) brightness(1); }
+.group:hover .visual-card-img.vc-lit { filter: saturate(1.1) brightness(1.08); }
 .ed-card-body { padding: clamp(24px, 3vw, 36px); }
 
 /* ---------- trust line ---------- */

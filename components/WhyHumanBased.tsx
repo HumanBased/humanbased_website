@@ -34,7 +34,7 @@ const WhyHumanBased: React.FC = () => (
         <Reveal key={card.title} delay={i * 120}>
           <article className="mx-card h-full">
             <div className="ed-card-media">
-              <img src={card.img} alt="" width={1184} height={864} loading="lazy" decoding="async" />
+              <img src={card.img} alt="" width={1000} height={730} loading="lazy" decoding="async" />
             </div>
             <div className="ed-card-body ed-stack">
               <h3 className="font-serif ed-subtitle">{card.title}</h3>

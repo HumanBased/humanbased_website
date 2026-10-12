@@ -8,22 +8,26 @@ const pillars = [
   { 
     title: "Strategic Discovery", 
     desc: "We map the intersection of organizational goals and human needs. Before writing code, we validate the problem space to ensure every initiative targets a measurable social or operational outcome.",
-    image: strategicDiscoveryImg
+    image: strategicDiscoveryImg,
+    w: 1200, h: 655
   },
   { 
     title: "Responsible Platforms", 
     desc: "We build robust, scalable digital environments designed to respect user attention. Our engineering prioritizes accessibility, privacy, and long-term maintainability over fleeting trends.",
-    image: responsiblePlatformsImg
+    image: responsiblePlatformsImg,
+    w: 1200, h: 686
   },
   { 
     title: "Ethical Intelligence", 
     desc: "We architect infrastructure that turns raw data into actionable social insight. From bias-aware algorithms to privacy-first analytics, we help you measure what truly matters for your mission.",
-    image: ethicalIntelligenceImg
+    image: ethicalIntelligenceImg,
+    w: 1200, h: 627
   },
   { 
     title: "Organizational Enablement", 
     desc: "Technology fails without adoption. We train your teams and redesign workflows to ensure new systems amplify human capability rather than replacing it.",
-    image: organizationalEnablementImg
+    image: organizationalEnablementImg,
+    w: 640, h: 388
   }
 ];
 
@@ -37,11 +41,12 @@ const CapabilitiesGrid: React.FC = () => {
           data-reveal=""
           style={{ ['--mx-delay' as string]: `${(i % 2) * 100}ms` }}
         >
-          <div className="ed-card-media">
+          <div className={p.title === "Responsible Platforms" || p.title === "Organizational Enablement" ? "ed-card-media ed-card-media--lit" : "ed-card-media"}>
             <img
               src={p.image}
-              className={p.title === "Organizational Enablement" ? "brightness-125" : undefined}
               alt=""
+              width={p.w}
+              height={p.h}
               loading="lazy"
               decoding="async"
             />
