@@ -81,7 +81,6 @@ export const TRADITIONS: Tradition[] = [
     imgWidth: 1200,
     imgHeight: 800,
   },
-  // Exile and Return has no artwork yet; it uses the CSS-only placeholder.
   {
     slug: 'know-thyself',
     img: '/images/library/know-thyself.webp',
@@ -102,6 +101,9 @@ export const TRADITIONS: Tradition[] = [
   },
   {
     slug: 'exile-and-return',
+    img: '/images/library/exile-and-return.webp',
+    imgWidth: 1200,
+    imgHeight: 675,
     title: 'The Exile and the Return',
     copy:
       "From Sufi philosophy: we are in exile from a home we half remember, and the longing we feel is a compass. The path is not toward something new, but a journey home, with companions who have walked part of it.",

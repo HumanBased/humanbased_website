@@ -17,9 +17,20 @@ export function siteUrl(path: string): string {
 }
 
 // Share-preview images (1200x630), chosen by route.
+const OG_BY_PATH: Record<string, string> = {
+  '/about': 'og-about.jpg',
+  '/services': 'og-services.jpg',
+  '/process': 'og-process.jpg',
+  '/products': 'og-products.jpg',
+  '/purposebased/story': 'og-story.jpg',
+  '/purposebased/how-it-works': 'og-how-it-works.jpg',
+  '/purposebased/library': 'og-library.jpg',
+  '/purposebased/partners': 'og-partners.jpg',
+};
+
 export function ogImageFor(path: string): string {
   const p = path.replace(/\/+$/, '');
-  if (p === '/purposebased/story') return siteUrl('/images/og/og-story.jpg');
+  if (OG_BY_PATH[p]) return siteUrl('/images/og/' + OG_BY_PATH[p]);
   if (p.startsWith('/purposebased') || p.startsWith('/apps/purposebased')) {
     return siteUrl('/images/og/og-purposebased.jpg');
   }
@@ -35,6 +46,13 @@ const OG_IMAGE_ALTS: Record<string, string> = {
     'HumanBased wordmark and the line "Technology in service of humanity" over Earth at night seen from orbit, with golden city lights and a thin blue atmosphere.',
   'og-purposebased.jpg':
     'PurposeBased wordmark and the line "Become who you\'re meant to be" over a starry night landscape where a glowing golden road leads to a bright star.',
+  'og-about.jpg': 'HumanBased "About" title over a dark control room image with golden light.',
+  'og-services.jpg': 'HumanBased "Services" title over three professionals around a golden holographic table in a dark control room.',
+  'og-process.jpg': 'HumanBased "Our Process" title over a dark, golden-lit technology scene.',
+  'og-products.jpg': 'HumanBased "Products" title over Europe at night seen from orbit with golden city lights.',
+  'og-how-it-works.jpg': 'PurposeBased "How it works" title over a starry night landscape with a golden road.',
+  'og-library.jpg': 'PurposeBased "The Library" title beside a golden winding path inside a circle at night.',
+  'og-partners.jpg': 'PurposeBased "Partners" title over a starry night landscape with a faint circular wheel.',
   'og-story.jpg':
     'PurposeBased "Our Story" title over a starry night landscape with a winding golden road and a faint circular zodiac-style wheel.',
 };
