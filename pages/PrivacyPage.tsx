@@ -28,6 +28,15 @@ const PrivacyPage: React.FC = () => {
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Website Analytics
+              </h2>
+              <p className="text-sm md:text-base text-white/60">
+                With your consent, this website uses Google Analytics 4 to understand which pages are useful. It sets cookies and sends usage data to Google only if you choose Accept in the cookie banner. If you decline, nothing is loaded. You can change your choice at any time with Cookie Settings in the footer. IP addresses are anonymised.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
                 Full Transparency
               </h2>
               <p className="text-sm md:text-base text-white/60">

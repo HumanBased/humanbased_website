@@ -13,6 +13,7 @@ import './components/typography.css';
 import './components/twilight.css';
 import './components/contrast.css';
 import TwilightBackground from './components/TwilightBackground';
+import Analytics from './components/Analytics';
 
 // Every page is its own chunk, so a visitor downloads the shared shell plus the one
 // page they opened. scripts/prerender.mjs writes a modulepreload link for that page's
@@ -155,6 +156,7 @@ const App: React.FC = () => {
       <ScrollHandler />
       <MotionMount />
       <AppRoutes />
+      <Analytics />
     </BrowserRouter>
   );
 };

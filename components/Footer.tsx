@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoOrb from './LogoOrb';
 import SocialHub from './SocialHub';
+import { OPEN_COOKIE_SETTINGS } from './Analytics';
 import { BUILD_YEAR, COMPANY_LINE, SUPPORT_EMAIL } from '../config/site';
 
 const Footer: React.FC = () => {
@@ -56,7 +57,7 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/10">
           <span>© {BUILD_YEAR} HumanBased. All rights reserved.</span>
           <div className="flex gap-10">
-            <span className="cursor-pointer hover:text-white/30 transition-colors">Cookie Settings</span>
+            <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="uppercase tracking-[0.2em] font-bold cursor-pointer hover:text-white/30 transition-colors">Cookie Settings</button>
             <span className="cursor-pointer hover:text-white/30 transition-colors">Accessibility</span>
           </div>
         </div>
