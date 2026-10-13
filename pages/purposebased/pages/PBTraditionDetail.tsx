@@ -181,7 +181,6 @@ const PBTraditionDetail: React.FC = () => {
     title,
     description,
     canonical: url,
-    robots: 'noindex,follow',
   });
 
   if (!entry) {
