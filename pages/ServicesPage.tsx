@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { usePageSeo } from '../hooks/usePageSeo';
 import Reveal from '../components/Reveal';
 import Journey from '../components/motion/Journey';
@@ -14,12 +15,46 @@ import personalDevImg from '../assets/images/services-card-personal.webp';
 import expertMissionImg from '../assets/images/services-expert-mission.webp';
 import automationImg from '../assets/images/services-automation.webp';
 
+const FAQ: { q: string; a: string }[] = [
+  {
+    "q": "What does HumanBased actually build?",
+    "a": "Custom mobile apps, web platforms and AI-assisted systems for organizations, communities and individuals. That can be an internal dashboard that replaces a tangle of spreadsheets, a member portal, a participation and decision-making tool, or a personal companion app. We also build our own products, PurposeBased and BasedTalk."
+  },
+  {
+    "q": "Who do you work with?",
+    "a": "Social enterprises, associations, public-interest organizations and teams that want technology to serve people, not the other way round. If your work depends on trust, participation or wellbeing, we are probably a good fit. We are a small Copenhagen team, so we take on a limited number of projects at a time."
+  },
+  {
+    "q": "How does a project start?",
+    "a": "With listening. We spend the first weeks mapping how work really happens in your organization: where time is lost, where people disagree, what they avoid. Only then do we propose what to build. You can read the full sequence on our process page."
+  },
+  {
+    "q": "How do you handle privacy and data?",
+    "a": "Privacy by default. We collect only what a system needs, we design for GDPR from the first sketch, and the people who use a product keep control of their information. Decisions that affect people stay with people, and automation is there to support them."
+  },
+  {
+    "q": "What does it cost, and how long does it take?",
+    "a": "It depends on scope, so we do not publish fixed prices. A small, focused tool can be ready in weeks. A platform that changes how a whole organization works takes longer and is built in stages, so you see something useful early. Write to us with a short description and we will tell you honestly what we would do and what it takes."
+  }
+];
+
+const FAQ_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
 const ServicesPage: React.FC = () => {
   usePageSeo({
     title: 'Services – HumanBased',
     description:
-      'Organizational, social, and personal development services from HumanBased: custom digital platforms that cut costs, boost productivity, and drive real impact.',
+      'What HumanBased builds and for whom: custom apps, platforms and AI-assisted systems for organizational, social and personal development, designed with the people who use them.',
     canonical: 'https://www.humanbased.org/services',
+    jsonLd: FAQ_JSONLD,
   });
 
   return (
@@ -254,6 +289,24 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Section 3b – What we build, and for whom (plain-language text for visitors and search) */}
+      <section className="pb-16" id="services-what">
+        <div className="ed-wide space-y-8" data-reveal="">
+          <h2 className="font-serif ed-title text-center">What we build, and for whom</h2>
+          <div className="mx-auto max-w-3xl space-y-5">
+            <p className="hb-body">
+              HumanBased is a Copenhagen social enterprise that designs and builds digital tools for organizations, communities and individuals. Our work falls into three areas. Organizational development is about the systems a team runs on: workflows, dashboards and automation that remove busywork. Social development is about how people take part together: portals, feedback tools and decision-making that include more voices. Personal development is about companion tools for learning, focus and wellbeing that respect the privacy of the person using them.
+            </p>
+            <p className="hb-body">
+              Most of our clients arrive with a symptom: reports that take too long, members who stop engaging, a process nobody trusts anymore. We start by finding the cause, because a new app on top of the wrong problem only adds one more thing to maintain. We then co-design the solution with the people who will use it, build it in small steps, and keep improving it after launch. Our <Link to="/process" className="underline decoration-white/30 hover:text-amber-400">process</Link> page shows each stage.
+            </p>
+            <p className="hb-body">
+              We combine human expertise with AI where it genuinely helps, for example sorting information, drafting, forecasting or running routine tasks around the clock. We keep a person in charge of every decision that matters. Our own products, PurposeBased and BasedTalk, are built the same way. You can see them on the <Link to="/products" className="underline decoration-white/30 hover:text-amber-400">products</Link> page, and learn who is behind the company on the <Link to="/about" className="underline decoration-white/30 hover:text-amber-400">about</Link> page.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Section 4 – Metric-driven case studies */}
       <section className="pb-20" id="services-impact">
         <div className="ed-full space-y-14">
@@ -424,6 +477,23 @@ const ServicesPage: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Section 6 – Questions we hear */}
+      <section className="ed-sec pb-16" id="services-faq">
+        <div className="ed-wide space-y-10">
+          <h2 className="font-serif ed-title text-center" data-reveal="">Questions we hear</h2>
+          <div className="mx-auto max-w-3xl space-y-8">
+            {FAQ.map(({ q, a }) => (
+              <div key={q} data-reveal="">
+                <h3 className="font-serif ed-subtitle mb-2">{q}</h3>
+                <p className="hb-body hb-body--card">{a}</p>
+              </div>
+            ))}
+            <p className="hb-body hb-body--card text-center pt-4">
+              Have a different question? <a href="/#contact" className="underline decoration-white/30 hover:text-amber-400">Get in touch</a>.
+            </p>
           </div>
         </div>
       </section>
