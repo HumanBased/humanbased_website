@@ -16,7 +16,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC_DIR = path.join(ROOT, 'public/images/team');
 const DIST_DIR = path.join(ROOT, 'dist/images/team');
 const EXTS = ['webp', 'png', 'jpg', 'jpeg'];
-const SIZE = 600;
+const SIZE = 360;
 const MAX_BYTES = 80 * 1024;
 
 // Where the face sits as a fraction of the source (x, y of its centre). Faces
