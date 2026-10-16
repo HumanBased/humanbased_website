@@ -10,7 +10,7 @@ export const BUILD_YEAR: number = __BUILD_YEAR__;
 export const TEAM_PHOTOS: Record<string, boolean> = __TEAM_PHOTOS__;
 
 export const SUPPORT_EMAIL = 'support@humanbased.org';
-export const COMPANY_LINE = 'Founded 2025 · Copenhagen, Denmark · CVR DK45998576';
+export const COMPANY_LINE = 'Est. 2025 · Copenhagen, Denmark · CVR DK45998576';
 
 export function siteUrl(path: string): string {
   return `${SITE_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`;
