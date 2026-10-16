@@ -52,6 +52,11 @@ const HowWeWork: React.FC = () => {
   // The button the visitor pressed can disappear (Next on the last step, Back on the
   // first), so focus is handed to the control that took its place.
   const focusAfter = useRef<FocusTarget>(null);
+  // Progressive enhancement: the static HTML (and the first client render, so hydration
+  // matches) lists all four steps; one-step-at-a-time only starts once JavaScript runs.
+  // scripts/prerender.mjs strips the enhanced state from the snapshot.
+  const [isEnhanced, setIsEnhanced] = useState(false);
+  useEffect(() => setIsEnhanced(true), []);
 
   useEffect(() => {
     const target = focusAfter.current;
@@ -87,7 +92,7 @@ const HowWeWork: React.FC = () => {
           </p>
         </header>
 
-        <div className="mx-card" data-reveal="">
+        <div className="mx-card hh-how" data-reveal="" data-enhanced={isEnhanced ? '' : undefined}>
           <div className="px-5 pt-5 md:px-7 md:pt-7">
             <ol className="hh-steps-track" aria-label="Steps">
               {STEPS.map((s, i) => (
@@ -110,8 +115,8 @@ const HowWeWork: React.FC = () => {
                   key={s.name}
                   className="hh-step"
                   data-active={isActive ? 'true' : 'false'}
-                  aria-hidden={!isActive}
-                  inert={!isActive}
+                  aria-hidden={isEnhanced ? !isActive : undefined}
+                  inert={isEnhanced && !isActive}
                   role="group"
                   aria-label={`Step ${i + 1} of ${STEPS.length}: ${s.name}`}
                 >

@@ -116,17 +116,6 @@
   object-fit: contain;
   background: #e7f4fd;
 }
-.hh-badge {
-  display: inline-block;
-  border-radius: 999px;
-  background: #c4a85a;
-  color: #000;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 6px 12px;
-}
 .hh-product-body {
   display: flex;
   flex: 1;
@@ -284,11 +273,21 @@
   align-content: start;
   padding: 20px;
 }
-.hh-step[data-active='false'] {
+.hh-how[data-enhanced] .hh-step[data-active='false'] {
   visibility: hidden;
 }
-.hh-step[data-active='true'] {
+.hh-how[data-enhanced] .hh-step[data-active='true'] {
   animation: hh-step-in 0.35s ease both;
+}
+/* Without JavaScript: every step is listed one under the other, readable, and the
+   step controls (which need JavaScript) are not shown. */
+.hh-how:not([data-enhanced]) .hh-step {
+  grid-area: auto;
+}
+.hh-how:not([data-enhanced]) .hh-steps-track,
+.hh-how:not([data-enhanced]) .hh-controls,
+.hh-how:not([data-enhanced]) [aria-live] {
+  display: none;
 }
 @keyframes hh-step-in {
   from { opacity: 0; transform: translateY(6px); }
@@ -394,7 +393,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hh-step[data-active='true'] {
+  .hh-how[data-enhanced] .hh-step[data-active='true'] {
     animation: none;
   }
 }

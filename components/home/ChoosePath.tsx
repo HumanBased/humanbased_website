@@ -19,8 +19,12 @@ const ProductCard: React.FC<{
   <li className="mx-card hh-product">
     <div className="hh-product-media">{media}</div>
     <div className="hh-product-body">
+      {/* Same status pill as the Products page (pages/ProductsPage.tsx). */}
       <p>
-        <span className="hh-badge">Available now</span>
+        <span className="inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-[rgba(212,168,67,0.55)] bg-[rgba(8,16,34,0.62)] py-2 pl-[13px] pr-4 text-[12px] font-medium uppercase tracking-[0.16em] text-white/95 shadow-[0_4px_18px_rgba(0,0,0,0.35)] backdrop-blur-[10px]">
+          <span aria-hidden="true" className="h-[7px] w-[7px] rounded-full bg-[#4ade80] shadow-[0_0_0_3px_rgba(74,222,128,0.2),0_0_10px_#4ade80]" />
+          Available now
+        </span>
       </p>
       <h4 className="hh-product-name">{name}</h4>
       <p className="ed-label">{label}</p>

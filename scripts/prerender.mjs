@@ -131,6 +131,13 @@ async function prerender() {
         document.querySelectorAll('[data-counted]').forEach((el) => el.removeAttribute('data-counted'));
         document.querySelectorAll('[data-offscreen]').forEach((el) => el.removeAttribute('data-offscreen'));
         document.querySelectorAll('[data-mx-pending]').forEach((el) => el.removeAttribute('data-mx-pending'));
+        // Progressively enhanced widgets (home "How we work" stepper): keep the plain,
+        // all-visible markup that the first client render also produces.
+        document.querySelectorAll('[data-enhanced]').forEach((el) => {
+          el.removeAttribute('data-enhanced');
+          el.querySelectorAll('[inert]').forEach((n) => n.removeAttribute('inert'));
+          el.querySelectorAll('.hh-step[aria-hidden]').forEach((n) => n.removeAttribute('aria-hidden'));
+        });
         // React's server renderer separates adjacent text nodes with <!-- -->;
         // a serialised client DOM merges them into one, so hydrateRoot sees a
         // text mismatch (error #418) and throws the whole page away to re-render
