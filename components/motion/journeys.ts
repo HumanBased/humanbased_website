@@ -14,6 +14,14 @@ export const HB_JOURNEY = (
   labels: string[] = HB_STAGES,
 ): JourneyMilestone[] => pair(labels, targets);
 
+/** Home page: five milestones named after what each section answers. Discover /
+ *  Design / Build / Evolve are left to the home "How we work" stepper. */
+const HOME_STAGES = ['Why', 'Who', 'What', 'How', 'Contact'];
+
+export const HOME_JOURNEY = (
+  targets: [string, string, string, string, string],
+): JourneyMilestone[] => pair(HOME_STAGES, targets);
+
 /** About page: the milestones carry the page's own section names. */
 export const ABOUT_LABELS = ['Our Why', 'Founding Team', 'What We Stand For', 'Get in Touch'];
 

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useJsonLd } from '../hooks/useJsonLd';
 import Hero from '../components/Hero';
-import Reveal from '../components/Reveal';
 import WhyHumanBased from '../components/WhyHumanBased';
 import Contact from '../components/Contact';
 import Journey from '../components/motion/Journey';
-import { HB_JOURNEY } from '../components/motion/journeys';
+import { HOME_JOURNEY } from '../components/motion/journeys';
+import ChoosePath from '../components/home/ChoosePath';
+import People from '../components/home/People';
+import HowWeWork from '../components/home/HowWeWork';
+import '../components/home/home.css';
 
 const HomePage: React.FC = () => {
   usePageTitle(
@@ -22,37 +24,26 @@ const HomePage: React.FC = () => {
     url: 'https://www.humanbased.org/',
   });
   return (
-    <div className="flex-grow relative">
+    <div className="flex-grow relative hb-home">
       <Journey
         start=".hb-hero-copy"
         end="#contact"
-        milestones={HB_JOURNEY(['#hero', '#about', '#process', '#contact'])}
+        milestones={HOME_JOURNEY(['#hero', '#people', '#paths', '#how-we-work', '#contact'])}
       />
       <Hero />
       <div id="about">
         <WhyHumanBased />
       </div>
       <hr className="mx-divider" />
-      <section id="process" className="ed-sec--tight">
-        <Reveal className="ed-full flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <div className="ed-stack max-w-3xl">
-            <p className="ed-label">How</p>
-            <h2 className="font-serif ed-title">Our Process</h2>
-            <p className="ed-lead text-white/65">
-              We follow a rigorous path from immersion and insight to continuous evolution,
-              so every engagement moves from understanding to lasting impact.
-            </p>
-          </div>
-          <div className="shrink-0">
-            <Link to="/process" className="ed-btn ed-btn--primary">
-              Explore the process
-            </Link>
-          </div>
-        </Reveal>
-      </section>
+      <People />
+      <hr className="mx-divider" />
+      <ChoosePath />
+      <hr className="mx-divider" />
+      <HowWeWork />
       <hr className="mx-divider" />
       <section id="contact" className="scroll-mt-24 ed-sec">
-        <Contact />
+        {/* The founders are introduced in "The people", so no founders credit here. */}
+        <Contact showTrustLine={false} />
       </section>
     </div>
   );

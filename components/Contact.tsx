@@ -3,7 +3,12 @@ import TrustLine from './TrustLine';
 import React, { useState } from 'react';
 import { SUPPORT_EMAIL } from '../config/site';
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  /** Founders credit under the form (components/TrustLine). Default on. */
+  showTrustLine?: boolean;
+}
+
+const Contact: React.FC<ContactProps> = ({ showTrustLine = true }) => {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -211,8 +216,12 @@ const Contact: React.FC = () => {
             </form>
           </div>
         </div>
-        <hr className="mx-divider mt-16 mb-8" />
-        <TrustLine className="justify-center" />
+        {showTrustLine && (
+          <>
+            <hr className="mx-divider mt-16 mb-8" />
+            <TrustLine className="justify-center" />
+          </>
+        )}
       </div>
     </div>
   );
