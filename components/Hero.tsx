@@ -1,6 +1,5 @@
 import React from 'react';
 import { preload } from 'react-dom';
-import { Link } from 'react-router-dom';
 import './Hero.css';
 
 // Earth at night from orbit (public/images/hero, built by scripts/hero-images.mjs).
@@ -55,20 +54,12 @@ const Hero: React.FC = () => {
             <p className="hb-hero-line3">Purpose built. Human focused.</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-400 transition-colors text-center text-sm sm:text-base"
-            >
-              Get in Touch
-            </a>
-            <Link
-              to="/services"
-              className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border border-white/20 bg-white/5 text-white/90 font-medium rounded-full hover:bg-white/10 hover:border-white/35 hover:text-white transition-colors text-center text-sm sm:text-base"
-            >
-              View Services
-            </Link>
-          </div>
+          {/* No call-to-action buttons here on purpose: the hero is for the picture and the
+              message. Contact lives in the header menu and the sections below. */}
+          <a href="#about" className="hb-hero-scroll" aria-label="Scroll to the next section">
+            <span className="hb-hero-scroll-label">Scroll</span>
+            <span className="hb-hero-scroll-line" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
