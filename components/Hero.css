@@ -112,13 +112,31 @@
 
 /* Hero text lines: see .hb-hero-lines in components/typography.css. */
 
-/* Mobile: copy sits in the dark sky at the top; the planet is a wide crop along
-   the bottom, so the curve and the city lights stay in view. */
+/* Mobile: the photo is a wide crop (planet curve and city lights) that sits BEHIND
+   the copy. It is anchored to the bottom of the section and rises to about the
+   middle of the headline block, so the text overlaps the planet's glow. A navy
+   wash under the copy keeps it readable. */
 @media (max-width: 767px) {
   .hb-hero { align-items: flex-start; }
   .hb-hero-media {
-    top: auto;
-    height: 112vw;
+    /* Starts a quarter of the way down, so the planet's bright edge and the city
+       lights sit right behind the copy. Shorter top fade so the edge shows early. */
+    top: 24vh;
+    bottom: auto;
+    height: 128vw;
+    --hb-fade-y: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 6%,
+      rgba(0, 0, 0, 0.75) 12%,
+      #000 18%,
+      #000 66%,
+      rgba(0, 0, 0, 0.84) 72%,
+      rgba(0, 0, 0, 0.58) 80%,
+      rgba(0, 0, 0, 0.3) 88%,
+      rgba(0, 0, 0, 0.1) 95%,
+      transparent 100%
+    );
     /* 10% of a phone is ~40px, too steep for the bright limb: fade ~20% instead. */
     --hb-fade-x: linear-gradient(
       to right,
@@ -134,9 +152,15 @@
       transparent 100%
     );
   }
-  .hb-hero-veil { display: none; }
+  /* Soft navy wash behind the copy, strongest at the top where the text starts. */
+  .hb-hero-veil {
+    display: block;
+    -webkit-mask-image: var(--hb-fade-y);
+    mask-image: var(--hb-fade-y);
+    background: linear-gradient(180deg, rgba(5, 8, 18, 0.62) 0%, rgba(5, 8, 18, 0.5) 38%, rgba(5, 8, 18, 0) 72%);
+  }
   .hb-hero-img { object-position: 74% 50%; }
-  .hb-hero-content { padding: 132px 24px calc(112vw - 40px); }
+  .hb-hero-content { padding: 132px 24px 72px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
