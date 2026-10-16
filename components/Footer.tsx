@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
         </p>
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-bold uppercase tracking-[0.2em] text-white/55">
-          <span className="text-center font-normal normal-case tracking-normal text-sm">© {BUILD_YEAR} HumanBased. All rights reserved.</span>
+          <span className="text-center font-normal">© {BUILD_YEAR} HumanBased. All rights reserved.</span>
           <div className="flex gap-10">
             <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="uppercase tracking-[0.2em] font-bold cursor-pointer py-2 hover:text-white/80 transition-colors">Cookie Settings</button>
             <span className="cursor-pointer py-2 hover:text-white/80 transition-colors">Accessibility</span>
