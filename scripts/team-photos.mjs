@@ -22,7 +22,7 @@ const MAX_BYTES = 80 * 1024;
 // Where the face sits as a fraction of the source (x, y of its centre). Faces
 // in portraits sit in the upper part, so the default biases the crop upward.
 const FOCUS = {
-  luis: { x: 0.46, y: 0.3 },
+  luis: { x: 0.50, y: 0.3 },
   alexina: { x: 0.5, y: 0.33 },
 };
 const CROP_SHARE = 0.9; // fraction of the short side kept, leaves some shoulder
