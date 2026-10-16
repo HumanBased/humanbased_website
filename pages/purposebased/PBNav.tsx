@@ -137,7 +137,7 @@ const PBNav: React.FC<PBNavProps> = ({ page }) => {
           display: none;
           background: none;
           border: 0;
-          padding: 4px 6px;
+          padding: 12px 14px; margin: -8px -8px -8px 0;
           font-size: 22px;
           line-height: 1;
           color: #ffc864;

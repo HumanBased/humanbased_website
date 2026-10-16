@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               <LogoOrb className="h-16 w-16 sm:h-20 sm:w-20 xl:h-24 xl:w-24" />
               <span className="font-semibold text-lg sm:text-xl xl:text-2xl tracking-tight text-white">HumanBased</span>
             </div>
-            <p className="text-white/60 text-base leading-relaxed font-light">
+            <p className="text-white/80 text-base leading-relaxed font-light">
               Technology in service of humanity. Human problems meet digital solutions.
             </p>
           </div>
@@ -25,19 +25,19 @@ const Footer: React.FC = () => {
           {/* Middle: Company + Services */}
           <div className="flex flex-col sm:flex-row gap-10 md:gap-12 xl:gap-16 sm:justify-start lg:justify-center">
             <div className="flex flex-col gap-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Company</span>
-              <Link to="/about" className="text-sm text-white/60 hover:text-amber-500 transition-colors">About</Link>
-              <a href="/#contact" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Contact</a>
-              <Link to="/privacy" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Privacy</Link>
-              <Link to="/legal" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Legal</Link>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/65">Company</span>
+              <Link to="/about" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">About</Link>
+              <a href="/#contact" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Contact</a>
+              <Link to="/privacy" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Privacy</Link>
+              <Link to="/legal" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Legal</Link>
             </div>
             
             <div className="flex flex-col gap-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Work</span>
-              <Link to="/services" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Services</Link>
-              <Link to="/products" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Our Products</Link>
-              <Link to="/process" className="text-sm text-white/60 hover:text-amber-500 transition-colors">The Process</Link>
-              <a href="/#contact" className="text-sm text-white/60 hover:text-amber-500 transition-colors">Get in Touch</a>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/65">Work</span>
+              <Link to="/services" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Services</Link>
+              <Link to="/products" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Our Products</Link>
+              <Link to="/process" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">The Process</Link>
+              <a href="/#contact" className="inline-block py-2 -my-2 text-base md:text-sm text-white/80 hover:text-amber-500 transition-colors">Get in Touch</a>
             </div>
           </div>
 
@@ -49,16 +49,16 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <p className="pb-6 text-center md:text-left text-xs text-white/40">
+        <p className="pb-6 text-center md:text-left text-xs text-white/70">
           {COMPANY_LINE} ·{' '}
-          <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-amber-500 transition-colors">{SUPPORT_EMAIL}</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="inline-block py-2 hover:text-amber-500 transition-colors">{SUPPORT_EMAIL}</a>
         </p>
         
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/10">
-          <span>© {BUILD_YEAR} HumanBased. All rights reserved.</span>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-bold uppercase tracking-[0.2em] text-white/55">
+          <span className="text-center">© {BUILD_YEAR} HumanBased. All rights reserved.</span>
           <div className="flex gap-10">
-            <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="uppercase tracking-[0.2em] font-bold cursor-pointer hover:text-white/30 transition-colors">Cookie Settings</button>
-            <span className="cursor-pointer hover:text-white/30 transition-colors">Accessibility</span>
+            <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="uppercase tracking-[0.2em] font-bold cursor-pointer py-2 hover:text-white/80 transition-colors">Cookie Settings</button>
+            <span className="cursor-pointer py-2 hover:text-white/80 transition-colors">Accessibility</span>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@
    screen-blended onto whatever is painted behind it, so it has to see these layers. */
 
 /* Vertical gradient over the full document height (not per page). Eased with many
-   stops: #0b1a33 at the top, #122a4f at two thirds, #173761 at the bottom (option A, P93). */
+   stops: #081529 at the top, #0e2242 at two thirds, #112a4e at the bottom (darkened in the phone-contrast pass). */
 .hb-twilight {
   position: absolute;
   inset: 0;
@@ -12,16 +12,16 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    #0b1a33 0%,
-    #0c1d38 12%,
-    #0e203d 24%,
-    #0f2342 36%,
-    #102647 48%,
-    #11284c 58%,
-    #122a4f 66%,
-    #142f55 78%,
-    #16335c 90%,
-    #173761 100%
+    #081529 0%,
+    #09182e 12%,
+    #0a1a33 24%,
+    #0b1c37 36%,
+    #0c1e3b 48%,
+    #0d203f 58%,
+    #0e2242 66%,
+    #0f2546 78%,
+    #10274a 90%,
+    #112a4e 100%
   );
 }
 
