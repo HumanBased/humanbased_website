@@ -52,6 +52,17 @@ const PrivacyPage: React.FC = () => {
                 For organizations with sensitive needs, we offer bespoke privacy models, including on-premise hosting and hardened encryption configurations, so your data remains under your direct control.
               </p>
             </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                When We Contact You
+              </h2>
+              <p className="text-sm md:text-base text-white/60">
+                If we contact you as a business or professional, we use only the contact details that you or your organisation have made publicly available, such as on your website. We use them to write to you about HumanBased and our products, based on our legitimate interest in sharing relevant work with professionals, and we never sell or pass on your details. You can ask us to stop contacting you, or to delete your details, at any time by writing to{' '}
+                <a href="mailto:support@humanbased.org" className="inline-block py-2 -my-2 text-amber-500 hover:text-amber-400 underline underline-offset-2">support@humanbased.org</a>
+                , and we will do so promptly.
+              </p>
+            </div>
           </div>
 
           <p className="text-sm md:text-base text-white/60 mt-8">
