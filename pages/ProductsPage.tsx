@@ -156,8 +156,8 @@ const ProductsPage: React.FC = () => {
               <div className="mx-card overflow-hidden h-full" data-reveal="">
                 <div className="absolute top-4 left-4 z-10">
                   <span className="inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-[rgba(212,168,67,0.55)] bg-[rgba(8,16,34,0.62)] py-2 pl-[13px] pr-4 text-[12px] font-medium uppercase tracking-[0.16em] text-white/95 shadow-[0_4px_18px_rgba(0,0,0,0.35)] backdrop-blur-[10px]">
-                    <span aria-hidden="true" className="h-[7px] w-[7px] rounded-full bg-[#4ade80] shadow-[0_0_0_3px_rgba(74,222,128,0.2),0_0_10px_#4ade80]" />
-                    Available now
+                    <span aria-hidden="true" className="h-[7px] w-[7px] rounded-full bg-[#d4a843] shadow-[0_0_0_3px_rgba(212,168,67,0.2),0_0_10px_#d4a843]" />
+                    Coming to the App Store
                   </span>
                 </div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a0a14] mt-12">
@@ -205,15 +205,7 @@ const ProductsPage: React.FC = () => {
                     >
                       Explore PurposeBased
                     </Link>
-                    <a
-                      href="https://www.purposebased.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="ed-btn ed-btn--ghost"
-                    >
-                      Start free
-                    </a>
+                    {/* TODO(Lui): add a link to the App Store, or to the purposebased.app landing page, when it is live. */}
                   </div>
                 </div>
               </div>

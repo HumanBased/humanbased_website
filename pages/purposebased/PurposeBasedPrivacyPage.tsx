@@ -1,9 +1,10 @@
 import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
+// TODO(Lui): set the "Last updated" date to the publishing date, and decide whether to add a postal address (the GDPR asks for the controller's contact details). Text follows claude/Legal_Privacy_Policy_draft.md, adapted to no account, confirmed by Lui on 2026-10-27.
 const PurposeBasedPrivacyPage: React.FC = () => {
   usePageTitle('PurposeBased Privacy Policy, HumanBased', '/apps/purposebased/privacy',
-    'The PurposeBased privacy policy: what data the app collects, how HumanBased uses and protects it, and how to contact us about your data.');
+    'The PurposeBased privacy policy: everything stays on your phone, there is no account, and we collect no data. How to contact us and delete your data.');
 
   return (
     <div className="flex-grow bg-transparent">
@@ -16,237 +17,140 @@ const PurposeBasedPrivacyPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: June 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 27 October 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
-            PurposeBased is a self-knowledge and life coaching application developed by
-            HumanBased, based in Copenhagen, Denmark. This policy explains what we
-            collect, why we collect it, how it is processed, and the rights you have
-            over your information. We follow the European General Data Protection
-            Regulation (GDPR) and apply the same standards to all users worldwide.
+            PurposeBased is an iPhone app by HumanBased, based in Copenhagen, Denmark. This policy explains what happens to your information, and the rights you have over it. It follows the iPhone app, which has no account and keeps everything on your phone.
           </p>
 
           <div className="space-y-10 mt-4">
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                1. Information we collect
+                The short version
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>
-                  <strong className="text-white/80">Full name and email address</strong>,
-                  when you create an account.
-                </li>
-                <li>
-                  <strong className="text-white/80">Date, time, and place of birth</strong>,
-                  used to calculate astrological and numerological placements. This data
-                  is sensitive and is treated with the highest level of care.
-                </li>
-                <li>
-                  <strong className="text-white/80">Questionnaire answers</strong>,
-                  provided during onboarding, used to generate your personal Blueprint
-                  and inform your coaching experience.
-                </li>
-                <li>
-                  <strong className="text-white/80">Your Blueprint and Full Analysis</strong>,
-                  a synthesised profile generated from your birth data and questionnaire
-                  answers, stored so you do not need to regenerate it.
-                </li>
-                <li>
-                  <strong className="text-white/80">Coaching conversations</strong>, the
-                  messages you exchange with your AI coach, stored to provide continuity
-                  within a session.
-                </li>
-                <li>
-                  <strong className="text-white/80">Profile photo</strong>, if you choose
-                  to upload one.
-                </li>
-                <li>
-                  <strong className="text-white/80">Subscription and payment status</strong>,
-                  to determine which features you can access. We do not store payment
-                  details.
-                </li>
-                <li>
-                  <strong className="text-white/80">App interactions and crash logs</strong>,
-                  used to improve the app experience and fix technical problems.
-                </li>
+                <li>Everything you answer in the app stays on your phone: your cards, profile, birth details if you add them, journal, missions, calendar and notes.</li>
+                <li>There is no account and no sign-in. We collect no data.</li>
+                <li>Purchases go through Apple. We never see your payment details.</li>
+                <li>No ads, no tracking, no selling of data.</li>
+                <li>You can delete everything at any time: Settings, then Delete all my data.</li>
               </ul>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                2. No third-party data sharing
+                Who is responsible
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                We do not sell, rent, or share your personal data with third parties
-                for advertising, marketing, or model training. The only entities that
-                process your data are the infrastructure providers we use to operate
-                the app, listed below as data processors. They act under contract on
-                our behalf and may not use your data for their own purposes.
+                HumanBased, a social enterprise based in Copenhagen, Denmark, is the data controller for the app. Write to <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a> for anything about your data. We apply the GDPR to every user, wherever you live.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                3. Data processors
+                What stays on your phone
               </h2>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mb-3">
-                <strong className="text-white/80">Supabase</strong> provides our
-                authentication and database infrastructure. Your account data, birth
-                data, questionnaire answers, Blueprint, and coaching conversations are
-                stored on Supabase servers in the European Union. Data is encrypted in
-                transit using TLS and at rest using AES-256. Row-level security ensures
-                each account can only access its own data.
-              </p>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mb-3">
-                <strong className="text-white/80">OpenRouter</strong> provides access to
-                the AI models used to generate your Full Analysis and power your coaching
-                conversations. Your birth data and questionnaire answers are transmitted
-                to OpenRouter solely to generate your analysis. OpenRouter does not
-                retain this data for training purposes under our agreement.
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                Your answers to the cards, your profile, your birth date, time and place if you add them, your journal, missions, calendar, notes, points and settings. They are stored only on your device. We cannot see them and we do not hold a copy.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                <strong className="text-white/80">Stripe</strong> handles subscription
-                payments. When you subscribe, you are directed to Stripe's secure payment
-                page. We never see or store your card details. Stripe may retain payment
-                records as required by financial regulations.
+                If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                4. A note on sensitive data
+                What we collect
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Your birth data and personal questionnaire answers are used exclusively
-                to generate your Blueprint and coaching experience within the app. They
-                are never used for advertising, shared with other users, or sold. We
-                treat this information with the same care as health or financial data.
+                Nothing, through the app. The app does not send your answers, birth details or journal anywhere in this version.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                5. Legal basis (GDPR)
+                Purchases
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                Blissed is a subscription sold through the App Store. Apple handles the payment and the app checks your plan on your phone. We never see your name, card or payment details. Apple's own privacy policy applies to the purchase.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Support emails
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                If you write to us, we keep the conversation to help you. Our support email runs on Google Workspace. Legal basis: legitimate interest.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                A future feature: the Purpose Coach
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                A future version may offer the Purpose Coach, a coach trained on purpose, meaningful careers and talent management, which uses an AI provider to write replies. Before it is switched on, we will update this policy and ask for your consent in the app. Nothing is sent to an AI provider in this version.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                How long we keep data
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>
-                  <strong className="text-white/80">Contract</strong>, to create and
-                  maintain your account and deliver the features you use.
-                </li>
-                <li>
-                  <strong className="text-white/80">Legitimate interest</strong>, to
-                  diagnose crashes and improve performance.
-                </li>
-                <li>
-                  <strong className="text-white/80">Consent</strong>, for any optional
-                  feature where consent is requested.
-                </li>
-                <li>
-                  <strong className="text-white/80">Legal obligation</strong>, where
-                  retention is required by law.
-                </li>
+                <li>On your phone: until you delete it or delete the app.</li>
+                <li>Support emails: up to 2 years after the last message.</li>
+                <li>Sales records from Apple: as long as accounting law requires.</li>
               </ul>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                6. Your rights
-              </h2>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mb-3">
-                If you are located in the European Economic Area, you have the following
-                rights regarding your personal data:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>Right of access, to request a copy of the data we hold about you.</li>
-                <li>Right to rectification, to correct inaccurate data.</li>
-                <li>Right to erasure, to request deletion of your personal data.</li>
-                <li>Right to data portability, to receive your data in a structured, machine-readable format.</li>
-                <li>Right to restrict processing of your data.</li>
-                <li>Right to object to processing for certain purposes.</li>
-                <li>Right to lodge a complaint with your local data protection authority.</li>
-              </ul>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mt-3">
-                We extend these rights to all PurposeBased users, regardless of where
-                you are located.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                7. Right to deletion
-              </h2>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mb-3">
-                You can delete your account and all associated personal data at any
-                time. In the app, open <strong className="text-white/80">Settings</strong>,
-                then tap <strong className="text-white/80">Delete Account</strong>. This
-                triggers a full wipe of your account, birth data, questionnaire answers,
-                Blueprint, and coaching conversations from our systems within 30 days.
-              </p>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                If you cannot access the app, email{' '}
-                <a
-                  href="mailto:support@humanbased.org"
-                  className="text-amber-400 hover:text-amber-300 underline"
-                >
-                  support@humanbased.org
-                </a>{' '}
-                from the address associated with your account and we will process the
-                deletion within 30 days.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                8. Data retention
-              </h2>
-              <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>Account data: kept while your account is active, removed within 30 days of deletion.</li>
-                <li>Birth data and questionnaire answers: kept while your account is active, removed within 30 days of deletion.</li>
-                <li>Blueprint and Full Analysis: kept while your account is active, removed within 30 days of deletion.</li>
-                <li>Coaching conversations: kept while your account is active, removed within 30 days of deletion.</li>
-                <li>Profile photo: kept while your account is active, removed within 30 days of deletion.</li>
-                <li>Crash logs: kept up to 90 days, then automatically removed.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                9. Children
+                Your rights
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                PurposeBased is intended for users aged 16 and older. We do not
-                knowingly collect data from children under 16. If you believe a child
-                under 16 has provided personal data, contact us and we will remove it.
+                You can ask to see, correct, export or delete your data, to restrict or object to processing, and to withdraw consent. Write to <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>. You can also complain to your data protection authority. In Denmark that is Datatilsynet.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                10. Changes to this policy
+                Deleting your data
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                We may update this policy from time to time. When we make material
-                changes we will update the date at the top of this page and notify
-                registered users by email where appropriate.
+                In the app: Settings, then Delete all my data. This removes everything on your phone. Subscriptions are managed by Apple: cancel them in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                11. Contact
+                Children
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                HumanBased, Copenhagen, Denmark.<br />
-                Email:{' '}
-                <a
-                  href="mailto:support@humanbased.org"
-                  className="text-amber-400 hover:text-amber-300 underline"
-                >
-                  support@humanbased.org
-                </a>
+                The app is for people aged 16 and over. If you believe a younger person is using it, write to us and we will help.
               </p>
             </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Changes
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                We update the date at the top when this policy changes, and tell you in the app about important changes.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Contact
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                HumanBased, Copenhagen, Denmark. <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>
+              </p>
+            </div>
+
           </div>
         </div>
       </section>

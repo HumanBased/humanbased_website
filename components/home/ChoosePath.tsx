@@ -4,10 +4,9 @@ import servicesImg from '../../assets/images/services-hero.webp';
 
 // Home "Choose your path". Product names, labels, body lines, images and URLs are
 // taken from pages/ProductsPage.tsx and the PurposeBased home (APP_SIGNUP_URL); the
-// Products page itself is not changed. PurposeBased is a live web app, so the home
-// shows "Available now" and "Start free" and no waitlist button.
+// Products page itself is not changed. PurposeBased is an iPhone app coming to the App
+// Store, so its card shows that status and no purposebased.app button.
 const BASEDTALK_PLAY_URL = 'https://play.google.com/store/apps/details?id=org.humanbased.basedtalk';
-const PURPOSEBASED_APP_URL = 'https://www.purposebased.app';
 
 const ProductCard: React.FC<{
   name: string;
@@ -15,15 +14,23 @@ const ProductCard: React.FC<{
   body: string;
   media: React.ReactNode;
   actions: React.ReactNode;
-}> = ({ name, label, body, media, actions }) => (
+  status?: string;
+}> = ({ name, label, body, media, actions, status = 'Available now' }) => (
   <li className="mx-card hh-product">
     <div className="hh-product-media">{media}</div>
     <div className="hh-product-body">
       {/* Same status pill as the Products page (pages/ProductsPage.tsx). */}
       <p>
         <span className="inline-flex items-center gap-[9px] whitespace-nowrap rounded-full border border-[rgba(212,168,67,0.55)] bg-[rgba(8,16,34,0.62)] py-2 pl-[13px] pr-4 text-[12px] font-medium uppercase tracking-[0.16em] text-white/95 shadow-[0_4px_18px_rgba(0,0,0,0.35)] backdrop-blur-[10px]">
-          <span aria-hidden="true" className="h-[7px] w-[7px] rounded-full bg-[#4ade80] shadow-[0_0_0_3px_rgba(74,222,128,0.2),0_0_10px_#4ade80]" />
-          Available now
+          <span
+            aria-hidden="true"
+            className={
+              status === 'Available now'
+                ? 'h-[7px] w-[7px] rounded-full bg-[#4ade80] shadow-[0_0_0_3px_rgba(74,222,128,0.2),0_0_10px_#4ade80]'
+                : 'h-[7px] w-[7px] rounded-full bg-[#d4a843] shadow-[0_0_0_3px_rgba(212,168,67,0.2),0_0_10px_#d4a843]'
+            }
+          />
+          {status}
         </span>
       </p>
       <h4 className="hh-product-name">{name}</h4>
@@ -131,18 +138,11 @@ const ChoosePath: React.FC = () => (
               label="Purpose & Self-Knowledge App"
               body="Understand your patterns. Find your direction. Live with intention."
               media={<PurposeBasedMedia />}
+              status="Coming to the App Store"
               actions={
                 <>
-                  <a
-                    href={PURPOSEBASED_APP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ed-btn ed-btn--primary"
-                  >
-                    Start free
-                    <span className="hh-sr-only"> with PurposeBased (opens in a new tab)</span>
-                  </a>
-                  <Link to="/purposebased" className="ed-btn ed-btn--ghost">
+                  {/* TODO(Lui): add the App Store (or purposebased.app landing) button when live. */}
+                  <Link to="/purposebased" className="ed-btn ed-btn--primary">
                     Explore PurposeBased
                   </Link>
                 </>

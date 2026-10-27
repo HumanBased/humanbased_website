@@ -142,6 +142,17 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     ),
   },
   {
+    q: 'What is the Purpose Coach?',
+    a: (
+      <p>
+        {/* TODO(Lui): confirm the coach name and whether it is in the first release. It is described as a later version, in line with the privacy policy. */}
+        The Purpose Coach is a coach trained on purpose, meaningful careers and talent
+        management. It is planned for a later version. Before it arrives, we will update the
+        privacy policy and ask for your consent in the app.
+      </p>
+    ),
+  },
+  {
     q: 'Can I cancel?',
     a: (
       <p>

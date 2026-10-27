@@ -49,9 +49,9 @@ const STEPS: { title: string; body: string }[] = [
       'Fill in the application below. We review every submission personally and respond within 3 business days.',
   },
   {
-    title: 'Get your link',
+    title: 'Get your code',
     body:
-      'Once accepted, you receive a unique referral link. Share it anywhere, no code needed, just the link.',
+      'Once accepted, you receive a unique App Store promo code with your name on it. Share it anywhere your audience is.',
   },
   {
     title: 'Share honestly',
@@ -61,22 +61,22 @@ const STEPS: { title: string; body: string }[] = [
   {
     title: 'Get paid',
     body:
-      'At the start of each month, review your Stripe dashboard, send an invoice, and receive payment within 30 days.',
+      'At the start of each month, we send you the verified redemptions for your code from our App Store reports. You send an invoice and receive payment within 30 days.',
   },
 ];
 
 const FAQ: { q: string; a: string }[] = [
   {
-    q: 'Do I need a promo code, or just the link?',
-    a: 'Just the link. When someone clicks your unique referral link and subscribes, Stripe logs it automatically. No code entry needed. We also provide a promo code for cases where you mention PurposeBased verbally or in a caption.',
+    q: 'How does my code work?',
+    a: 'Your audience enters your promo code in the App Store when they subscribe to the PurposeBased iPhone app. Apple records every redemption against your code, so there is nothing for you to set up.',
   },
   {
     q: 'When and how do I get paid?',
-    a: 'At the start of each month, you check your Stripe dashboard to see your verified active subscribers. You then send us an invoice for that amount. We process payment within 30 days via Stripe transfer or bank wire.',
+    a: 'At the start of each month, we send you the verified redemptions for your code, taken from our App Store reports. You then send us an invoice for that amount. We process payment within 30 days by bank transfer.',
   },
   {
     q: 'What counts as an active subscriber?',
-    a: 'A unique individual who subscribes using your link, completes their first full paid monthly billing cycle without cancellation or refund, and maintains an active paid subscription. Free trials, refunded accounts, and self-referrals do not count.',
+    a: 'A unique individual who subscribes using your code, completes their first full paid monthly billing cycle without cancellation or refund, and maintains an active paid subscription. Free trials, refunded accounts, and self-referrals do not count.',
   },
   {
     q: 'Can I promote other products at the same time?',
@@ -92,18 +92,18 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Can I see my earnings independently?',
-    a: 'Yes. All conversions and earnings are tracked directly through Stripe. You have a direct view into your referral data: active subscribers, monthly earnings, subscription status, in real time. You never have to take our word for it.',
+    a: 'Yes, in part. Apple records every redemption of your code, and we send you the figures from our App Store reports every month, so you can check them against your own audience numbers. We cannot give you a live dashboard, because App Store reports are only available to our team.',
   },
 ];
 
 const PROVIDE_ITEMS: { title: string; body: string }[] = [
   {
-    title: 'Unique referral link',
-    body: 'Tracked through Stripe. Share it anywhere. Works on any platform.',
+    title: 'Unique promo code',
+    body: 'Tracked through the App Store. Share it anywhere. Works on any platform.',
   },
   {
-    title: 'Real-time dashboard',
-    body: 'See your active subscribers, monthly earnings, and conversion status at any time.',
+    title: 'Monthly report',
+    body: 'Every month you receive your verified redemptions and earnings, taken from our App Store reports.',
   },
   {
     title: 'Creative assets',
@@ -122,7 +122,7 @@ const ASK_ITEMS: string[] = [
 ];
 
 const PROMOTER_LIST = [
-  'Custom referral link tracked through Stripe',
+  'Personal promo code tracked through the App Store',
   'Honest review encouraged, no scripts provided',
   'Monthly recurring earnings per active subscriber',
   'Direct feedback line to the product team',
@@ -141,7 +141,7 @@ const PBPartners: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | Partner Program',
     description:
-      'Join the PurposeBased partner program: earn recurring commissions for honest referrals, verified through Stripe, with real product influence and support.',
+      'Join the PurposeBased partner program: earn recurring commissions for honest referrals, tracked through the App Store, with real product influence and support.',
     canonical: PARTNERS_URL,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -249,7 +249,7 @@ const PBPartners: React.FC = () => {
           <hr className="pbp-rule" />
           <p className="pbp-body" style={{ maxWidth: 620 }}>
             Every euro is earned per active paid subscriber, per month. The more your audience grows,
-            the more you earn per referral. All tracked in real time through Stripe.
+            the more you earn per referral. All tracked through App Store reports.
           </p>
 
           <div className="pbp-rtable">
@@ -304,21 +304,23 @@ const PBPartners: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ SECTION 3B - STRIPE TRANSPARENCY ============ */}
+      {/* ============ SECTION 3B - APP STORE TRANSPARENCY ============ */}
+      {/* TODO(Lui): confirm with the dev team how partner earnings are verified (see the dev-team questions), and review the reward rates, which assumed Stripe prices and monthly billing. */}
       <section className="pb-section pbp-stripe">
         <div className="pbp-stripe-grid">
           <div className="pbp-stripe-text">
             <p className="pbp-label">Transparency</p>
-            <h2 className="pbp-stripe-h2">Your earnings. Verified by Stripe, not by us.</h2>
+            <h2 className="pbp-stripe-h2">Your earnings. Counted by Apple, not by us.</h2>
             <hr className="pbp-rule" />
             <p className="pbp-body" style={{ maxWidth: 560 }}>
-              Every referral is tracked directly through Stripe, the same payment infrastructure used
-              by millions of businesses worldwide. When someone subscribes using your link, Stripe logs
-              it immediately and permanently.
+              Every subscription that comes through your code is recorded by Apple, the App Store
+              that sells the app. When someone subscribes with your promo code, Apple counts the
+              redemption against your code.
             </p>
             <p className="pbp-body" style={{ maxWidth: 560, marginTop: 18 }}>
-              You get a direct view into your referral data. Active subscribers, monthly earnings,
-              subscription status, all in real time. You never have to take our word for it.
+              Every month we send you the figures from our App Store reports, so you can check them
+              against what you see in your own audience. App Store reports are only open to our
+              team, so this is a monthly statement, not a live dashboard.
             </p>
             <p className="pbp-stripe-aside">
               We chose this model deliberately. Transparency is not a feature. It is the foundation of
@@ -327,7 +329,7 @@ const PBPartners: React.FC = () => {
           </div>
 
           <div className="pbp-stripe-card">
-            <p className="pbp-stripe-card-label">Your Stripe Dashboard</p>
+            <p className="pbp-stripe-card-label">Your monthly report</p>
             <div className="pbp-stripe-stat">
               <span className="pbp-stripe-num">-</span>
               <span className="pbp-stripe-stat-label">Active subscribers</span>
@@ -338,10 +340,10 @@ const PBPartners: React.FC = () => {
             </div>
             <div className="pbp-stripe-stat">
               <span className="pbp-stripe-num">-</span>
-              <span className="pbp-stripe-stat-label">This month&rsquo;s referrals</span>
+              <span className="pbp-stripe-stat-label">This month&rsquo;s redemptions</span>
             </div>
-            <p className="pbp-stripe-live">Live data. Updated by Stripe in real time.</p>
-            <p className="pbp-stripe-powered">Powered by Stripe</p>
+            <p className="pbp-stripe-live">Sent monthly from our App Store reports.</p>
+            <p className="pbp-stripe-powered">Counted by Apple</p>
           </div>
         </div>
       </section>
@@ -360,7 +362,7 @@ const PBPartners: React.FC = () => {
               <p className="pbp-body" style={{ fontSize: 15 }}>
                 You have an audience that trusts you. PurposeBased gives you something real to share:
                 a tool you have actually used, that does something meaningful. Share your experience,
-                your unique referral link, and earn recurring revenue every month.
+                your personal promo code, and earn recurring revenue every month.
               </p>
               <ul className="pbp-track-list">
                 {PROMOTER_LIST.map((item) => (

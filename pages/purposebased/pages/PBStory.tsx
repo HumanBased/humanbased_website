@@ -35,7 +35,7 @@ const PBStory: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | Our Story | Purpose-Driven Social Enterprise',
     description:
-      'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge frameworks.',
+      'Learn how PurposeBased was built by HumanBased to help people discover meaning through self-knowledge.',
     canonical: STORY_URL,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -197,22 +197,24 @@ const PBStory: React.FC = () => {
 
         <div className="pbs-narrow pbs-body" data-reveal="">
           <p className="pbs-lead">
-            We went to the source: the traditions, frameworks, and practices that help people
-            understand themselves, and the gaps in what already exists.
+            We went to the source: the practices that help people understand themselves, and the
+            gaps in what already exists.
           </p>
           <p>
-            PurposeBased combines ancient traditions, Astrology, Numerology, Chinese Astrology and
-            Enneagram, with modern frameworks like Human Design, Gene Keys, Jungian Type, Holland
-            Code, and Hierarchy of Values.
+            PurposeBased is an iPhone app. Seven short cards build your picture, career directions
+            grow out of your answers, and missions turn ideas into small real-world tests.
           </p>
           <p>
-            Together they reveal who you are and what drives you, what naturally energizes you,
-            where your strengths lie, what work may fit, and how you relate to other people.
+            Together they help you see who you are and what drives you, where your strengths lie,
+            and what work may fit.
           </p>
           <p>
-            Beyond self-knowledge there are daily check-ins, journaling, relationship mapping, and a
-            Guide offering ongoing, personalized direction. The result is not a test score. It is a
-            living picture of who you are and where you might go next.
+            Along the way there is a journal, a learn section and a path in five stages, so you
+            always know where you are. Everything stays on your phone, and nothing is collected.
+            {/* TODO(Lui): confirm the coach name and timing. It is described as a later version. */}
+            A later version will add the Purpose Coach, a coach trained on purpose, meaningful
+            careers and talent management. The result is not a test score. It is a living picture
+            of who you are and where you might go next.
           </p>
           <h3 className="pbs-sub">From self-knowledge to fulfillment</h3>
           <p>
