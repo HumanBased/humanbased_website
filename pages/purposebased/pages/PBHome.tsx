@@ -145,11 +145,11 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'What is the Purpose Coach?',
     a: (
       <p>
-        {/* TODO(Lui): confirm the coach name and timing. Dev team: not in the first release (hidden), planned as rule-based with no network. Your wording says "trained"; check it matches. */}
+        {/* TODO(Lui): confirm the coach name and timing. Dev team: not in the first release (hidden), planned as rule-based with no network. Lui confirmed 2026-10-27 that "trained on purpose, meaningful careers and talent management" describes its job. */}
         The Purpose Coach is a coach trained on purpose, meaningful careers and talent
-        management. It is planned for a later version. Before it arrives, we will update the
-        privacy policy, and we will ask for your consent in the app if it needs to send anything
-        off your phone.
+        management. It is planned for a later version and designed to work on your phone, with
+        no network. Before it arrives, we will update the privacy policy, and we will ask for
+        your consent in the app if it ever needs to send anything off your phone.
       </p>
     ),
   },

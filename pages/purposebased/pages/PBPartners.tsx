@@ -18,9 +18,9 @@ const ADVANTAGES: { title: string; body: string }[] = [
       'Recommend PurposeBased exactly as you experience it. We do not ask you to sell. We ask you to share. Authentic referrals convert better and build more trust with your audience.',
   },
   {
-    title: 'Recurring revenue',
+    title: 'A commission for every new subscriber',
     body:
-      'Unlike a sponsored post that disappears in 24 hours, recurring commissions compound over time. As your audience grows, your income grows with it.',
+      'Unlike a sponsored post that disappears in 24 hours, you earn a commission for every new subscriber your audience brings. As your audience grows, your income grows with it.',
   },
   {
     title: 'Direct product influence',
@@ -35,10 +35,10 @@ const ADVANTAGES: { title: string; body: string }[] = [
 ];
 
 const REWARD_ROWS: { sub: string; rate: string; earn: string }[] = [
-  { sub: '1-100 subscribers', rate: '€1.00 / subscriber', earn: 'Up to €100 / mo' },
-  { sub: '101-500 subscribers', rate: '€2.00 / subscriber', earn: 'Up to €1,000 / mo' },
-  { sub: '501-750 subscribers', rate: '€3.00 / subscriber', earn: 'Up to €2,250 / mo' },
-  { sub: '751-1,000 subscribers', rate: '€4.00 / subscriber', earn: 'Up to €4,000 / mo' },
+  { sub: '1-100 subscribers', rate: '€1.00 / subscriber', earn: 'Up to €100 in a month' },
+  { sub: '101-500 subscribers', rate: '€2.00 / subscriber', earn: 'Up to €1,000 in a month' },
+  { sub: '501-750 subscribers', rate: '€3.00 / subscriber', earn: 'Up to €2,250 in a month' },
+  { sub: '751-1,000 subscribers', rate: '€4.00 / subscriber', earn: 'Up to €4,000 in a month' },
   { sub: '1,001+ subscribers', rate: '€5.00 / subscriber', earn: 'Uncapped' },
 ];
 
@@ -75,8 +75,9 @@ const FAQ: { q: string; a: string }[] = [
     a: 'At the start of each month, we send you the verified redemptions for your code, taken from our App Store reports. You then send us an invoice for that amount. We process payment within 30 days by bank transfer.',
   },
   {
-    q: 'What counts as an active subscriber?',
-    a: 'A unique individual who subscribes using your code, completes their first full paid monthly billing cycle without cancellation or refund, and maintains an active paid subscription. Free trials, refunded accounts, and self-referrals do not count.',
+    q: 'What counts as a new subscriber?',
+    // TODO(Lui): confirm when a new subscriber counts (at redemption, or after the first full paid period). Apple's reports count redemptions and events, not individual payments.
+    a: 'A unique individual who redeems your code and subscribes for the first time, completes their first full paid billing period without cancellation or refund, and stays subscribed through it. You earn one commission for each new subscriber, once. Free trials, refunded subscriptions, and self-referrals do not count.',
   },
   {
     q: 'Can I promote other products at the same time?',
@@ -92,7 +93,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Can I see my earnings independently?',
-    a: 'Yes, in part. Apple records every redemption of your code, and we send you the figures from our App Store reports every month, so you can check them against your own audience numbers. We cannot give you a live dashboard, because App Store reports are only available to our team.',
+    a: 'Yes, in part. Apple records how many people redeem your code, not how many euros that was. Every month we send you that count from our App Store reports, and your commission is the count multiplied by your rate. We cannot give you a live dashboard, because App Store reports are only available to our team.',
   },
 ];
 
@@ -124,7 +125,7 @@ const ASK_ITEMS: string[] = [
 const PROMOTER_LIST = [
   'Personal promo code tracked through the App Store',
   'Honest review encouraged, no scripts provided',
-  'Monthly recurring earnings per active subscriber',
+  'One commission for each new subscriber, paid once',
   'Direct feedback line to the product team',
   'Access to visual assets and partner materials',
 ];
@@ -141,7 +142,7 @@ const PBPartners: React.FC = () => {
   usePageSeo({
     title: 'PurposeBased | Partner Program',
     description:
-      'Join the PurposeBased partner program: earn recurring commissions for honest referrals, tracked through the App Store, with real product influence and support.',
+      'Join the PurposeBased partner program: earn a commission for every new subscriber you bring, tracked through the App Store, with real product influence and support.',
     canonical: PARTNERS_URL,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -225,9 +226,9 @@ const PBPartners: React.FC = () => {
             society.
           </p>
           <p className="pbp-body" style={{ maxWidth: 640, marginTop: 18 }}>
-            As an official PurposeBased promoter, you earn recurring revenue on every active
-            subscription you bring in. Not a one-off payment. Not a fixed fee. A share of the ongoing
-            value, for as long as your referrals stay subscribed.
+            As an official PurposeBased promoter, you earn a commission on every new subscriber you
+            bring in. One commission for each new subscriber, paid once. Not a fixed fee. It grows
+            with your audience.
           </p>
 
           <div className="pbp-adv-grid">
@@ -248,14 +249,14 @@ const PBPartners: React.FC = () => {
           <h2 className="pbp-h2">Performance-based. Transparent. Yours to verify.</h2>
           <hr className="pbp-rule" />
           <p className="pbp-body" style={{ maxWidth: 620 }}>
-            Every euro is earned per active paid subscriber, per month. The more your audience grows,
-            the more you earn per referral. All tracked through App Store reports.
+            Every euro is earned per new paid subscriber, once. The more new subscribers you bring
+            in a month, the higher your rate. All tracked through App Store reports.
           </p>
 
           <div className="pbp-rtable">
             <div className="pbp-rtable-head">
-              <span>Active subscribers</span>
-              <span>Monthly rate</span>
+              <span>New subscribers</span>
+              <span>Commission each</span>
               <span>Your earnings*</span>
             </div>
             {REWARD_ROWS.map((r, i) => (
@@ -274,11 +275,11 @@ const PBPartners: React.FC = () => {
 
           <div className="pbp-rtable-notes">
             <p className="pbp-rtable-note">
-              * Earnings shown are illustrative maximums per tier. Actual earnings depend on your
-              active subscriber count each month.
+              * Earnings shown are illustrative maximums per tier. Actual earnings depend on how many
+              new subscribers you bring in each month.
             </p>
             <p className="pbp-rtable-note">
-              Rates apply to new active paid subscribers per calendar month. Free trials, refunds, and
+              Rates apply to new paid subscribers per calendar month. Free trials, refunds, and
               self-referrals are excluded.
             </p>
           </div>
@@ -305,7 +306,7 @@ const PBPartners: React.FC = () => {
       </section>
 
       {/* ============ SECTION 3B - APP STORE TRANSPARENCY ============ */}
-      {/* TODO(Lui): confirm with the dev team how partner earnings are verified (see the dev-team questions), and review the reward rates, which assumed Stripe prices and monthly billing. */}
+      {/* TODO(Lui): confirm in App Store Connect that redemptions per custom code can be counted, and decide the tier basis (new subscribers per calendar month, as the table says). */}
       <section className="pb-section pbp-stripe">
         <div className="pbp-stripe-grid">
           <div className="pbp-stripe-text">
@@ -318,9 +319,10 @@ const PBPartners: React.FC = () => {
               redemption against your code.
             </p>
             <p className="pbp-body" style={{ maxWidth: 560, marginTop: 18 }}>
-              Every month we send you the figures from our App Store reports, so you can check them
-              against what you see in your own audience. App Store reports are only open to our
-              team, so this is a monthly statement, not a live dashboard.
+              Apple reports how many people redeemed your code, not how many euros that was. Every
+              month we send you that count from our App Store reports, and your commission is the
+              count multiplied by your rate. App Store reports are only open to our team, so this is
+              a monthly statement, not a live dashboard.
             </p>
             <p className="pbp-stripe-aside">
               We chose this model deliberately. Transparency is not a feature. It is the foundation of
@@ -332,11 +334,11 @@ const PBPartners: React.FC = () => {
             <p className="pbp-stripe-card-label">Your monthly report</p>
             <div className="pbp-stripe-stat">
               <span className="pbp-stripe-num">-</span>
-              <span className="pbp-stripe-stat-label">Active subscribers</span>
+              <span className="pbp-stripe-stat-label">New subscribers</span>
             </div>
             <div className="pbp-stripe-stat">
               <span className="pbp-stripe-num">-</span>
-              <span className="pbp-stripe-stat-label">Monthly earnings</span>
+              <span className="pbp-stripe-stat-label">Commission earned</span>
             </div>
             <div className="pbp-stripe-stat">
               <span className="pbp-stripe-num">-</span>
@@ -362,7 +364,7 @@ const PBPartners: React.FC = () => {
               <p className="pbp-body" style={{ fontSize: 15 }}>
                 You have an audience that trusts you. PurposeBased gives you something real to share:
                 a tool you have actually used, that does something meaningful. Share your experience,
-                your personal promo code, and earn recurring revenue every month.
+                your personal promo code, and earn a commission for every new subscriber.
               </p>
               <ul className="pbp-track-list">
                 {PROMOTER_LIST.map((item) => (
