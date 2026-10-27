@@ -31,9 +31,10 @@ const PurposeBasedPrivacyPage: React.FC = () => {
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>Everything you answer in the app stays on your phone: your cards, profile, birth details if you add them, journal, missions, calendar and notes.</li>
-                <li>There is no account and no sign-in. We collect no data.</li>
+                <li>There is no account, no sign-in and no server. The app makes no network calls of its own.</li>
+                <li>We collect no data.</li>
                 <li>Purchases go through Apple. We never see your payment details.</li>
-                <li>No ads, no tracking, no selling of data.</li>
+                <li>No analytics, no crash reporting, no ads, no tracking, no selling of data.</li>
                 <li>You can delete everything at any time: Settings, then Delete my data.</li>
               </ul>
             </div>
@@ -55,7 +56,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Your answers to the cards, your profile, your birth date, time and place if you add them, your journal, missions, calendar, notes, points and settings. They are stored only on your device. We cannot see them and we do not hold a copy.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Reminders are scheduled on your phone too. You can also export your profile as a file; that file is yours to keep or delete. If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
+                Reminders are local notifications on your phone. They do not pass through any server. You can also export your profile as a file; that file is yours to keep or delete. If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
               </p>
             </div>
 
@@ -65,6 +66,9 @@ const PurposeBasedPrivacyPage: React.FC = () => {
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
                 Nothing, through the app. The app does not send your answers, birth details or journal anywhere in this version.
+              </p>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                The app has no analytics, no crash reporting, no advertising and no tracking of any kind.
               </p>
             </div>
 
@@ -82,7 +86,16 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Support emails
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                If you write to us, we keep the conversation to help you. Our support email runs on Google Workspace. Legal basis: legitimate interest.
+                Feedback and support in the app open your own email app. We only receive what you choose to send to support@humanbased.org. If you write to us, we keep the conversation to help you. Our support email runs on Google Workspace. Legal basis: legitimate interest.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Links that open in your browser
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                The privacy and terms pages open in your browser, outside the app. That is a normal website visit, and it is separate from the app, which sends nothing.
               </p>
             </div>
 
