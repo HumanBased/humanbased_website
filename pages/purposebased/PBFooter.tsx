@@ -84,6 +84,9 @@ const PBFooter: React.FC = () => {
           <Link to="/apps/purposebased/terms" className="pbf-legal-link">
             Terms
           </Link>
+          <Link to="/apps/purposebased/support" className="pbf-legal-link">
+            Support
+          </Link>
           <Link to="/apps/purposebased/delete-account" className="pbf-legal-link">
             Delete account
           </Link>

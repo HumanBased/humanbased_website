@@ -39,6 +39,7 @@ const BasedTalkDeleteAccountPage = lazy(() => import('./pages/basedtalk/BasedTal
 const BasedTalkDeleteDataPage = lazy(() => import('./pages/basedtalk/BasedTalkDeleteDataPage'));
 const PurposeBasedPrivacyPage = lazy(() => import('./pages/purposebased/PurposeBasedPrivacyPage'));
 const PurposeBasedTermsPage = lazy(() => import('./pages/purposebased/PurposeBasedTermsPage'));
+const PurposeBasedSupportPage = lazy(() => import('./pages/purposebased/PurposeBasedSupportPage'));
 const PurposeBasedDeleteAccountPage = lazy(() => import('./pages/purposebased/PurposeBasedDeleteAccountPage'));
 const PurposeBasedDeleteDataPage = lazy(() => import('./pages/purposebased/PurposeBasedDeleteDataPage'));
 const PurposeBased = lazy(() => import('./pages/purposebased'));
@@ -124,6 +125,7 @@ const AppRoutes = () => {
       <Route path="/apps/basedtalk/privacy" element={<MainLayout legal><BasedTalkPrivacyPage /></MainLayout>} />
       <Route path="/apps/purposebased/privacy" element={<MainLayout legal><PurposeBasedPrivacyPage /></MainLayout>} />
       <Route path="/apps/purposebased/terms" element={<MainLayout legal><PurposeBasedTermsPage /></MainLayout>} />
+      <Route path="/apps/purposebased/support" element={<MainLayout legal><PurposeBasedSupportPage /></MainLayout>} />
       <Route path="/apps/purposebased/delete-account" element={<MainLayout legal><PurposeBasedDeleteAccountPage /></MainLayout>} />
       <Route path="/apps/purposebased/delete-data" element={<MainLayout legal><PurposeBasedDeleteDataPage /></MainLayout>} />
       <Route path="/apps/basedtalk/delete-account" element={<MainLayout legal><BasedTalkDeleteAccountPage /></MainLayout>} />

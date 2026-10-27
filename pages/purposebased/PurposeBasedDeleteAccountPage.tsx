@@ -3,7 +3,7 @@ import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedDeleteAccountPage: React.FC = () => {
   usePageTitle('Delete PurposeBased Account, HumanBased', '/apps/purposebased/delete-account',
-    'How to delete your PurposeBased account and its associated personal data, in the app or by email to HumanBased support.');
+    'PurposeBased has no account. Everything stays on your phone, and Delete all my data in the app settings erases it.');
 
   return (
     <div className="flex-grow bg-transparent">
@@ -19,8 +19,9 @@ const PurposeBasedDeleteAccountPage: React.FC = () => {
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
-            You can delete your PurposeBased account and all associated personal data at
-            any time. There are two ways to do it.
+            PurposeBased has no account and no sign-in, so there is no account to close.
+            Everything you add stays on your phone, and we do not hold a copy. You can erase it
+            all at any time.
           </p>
 
           <div className="space-y-10 mt-4">
@@ -29,31 +30,31 @@ const PurposeBasedDeleteAccountPage: React.FC = () => {
                 In the app
               </h2>
               <ol className="list-decimal pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>Open the PurposeBased app on your device.</li>
+                <li>Open the PurposeBased app on your iPhone.</li>
                 <li>Go to <strong className="text-white/80">Settings</strong>.</li>
-                <li>Tap <strong className="text-white/80">Delete Account</strong>.</li>
+                <li>Tap <strong className="text-white/80">Delete all my data</strong>.</li>
                 <li>Confirm the action when prompted.</li>
               </ol>
               <p className="text-sm md:text-base text-white/60 leading-relaxed mt-4">
-                Once confirmed, your account is closed immediately and all of your
-                personal data is permanently removed from our systems within 30 days.
+                This erases everything the app holds on your phone.
               </p>
             </div>
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                If you cannot access the app
+                If you no longer have the app
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Email{' '}
+                Deleting the app from your phone removes its data from the phone. Copies inside your
+                own iPhone or iCloud backups are yours to manage in your iPhone settings. Questions?
+                Write to{' '}
                 <a
-                  href="mailto:support@humanbased.org?subject=Delete%20my%20PurposeBased%20account"
+                  href="mailto:support@humanbased.org"
                   className="text-amber-400 hover:text-amber-300 underline"
                 >
                   support@humanbased.org
-                </a>{' '}
-                from the address associated with your account and ask us to delete it.
-                We will verify the request and complete the deletion within 30 days.
+                </a>
+                .
               </p>
             </div>
 
@@ -62,18 +63,11 @@ const PurposeBasedDeleteAccountPage: React.FC = () => {
                 What gets deleted
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>Your account and login credentials.</li>
-                <li>Your date, time, and place of birth.</li>
-                <li>Your questionnaire answers.</li>
-                <li>Your Blueprint and Full Analysis.</li>
-                <li>Your coaching conversations.</li>
-                <li>Your profile photo, if you uploaded one.</li>
+                <li>Your answers and cards.</li>
+                <li>Your profile, and your birth details if you added them.</li>
+                <li>Your journal, missions, calendar and notes.</li>
+                <li>Your points and settings.</li>
               </ul>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed mt-4">
-                Crash logs that cannot be linked to your identity may be retained for
-                up to 90 days for technical troubleshooting and are then automatically
-                removed.
-              </p>
             </div>
           </div>
         </div>

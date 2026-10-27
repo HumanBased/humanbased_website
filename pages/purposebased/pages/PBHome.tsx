@@ -8,48 +8,52 @@ import { PB_JOURNEY } from '../../../components/motion/journeys';
 // Cormorant for headings, DM Sans for body/labels. Colour tokens live in the
 // scoped <style> block below as CSS custom properties on .pbh.
 
+// What the first release (iPhone app) has: six rows, the first one is the seven short cards.
+// Images reuse existing site art (how-it-works steps and the islands picture), because the old
+// feature images showed the removed features. TODO(Lui): replace with new art when you have it.
 const FEATURES: { n: string; title: string; body: string; img: string }[] = [
   {
     n: '01',
-    title: 'Know Thyself',
-    body:
-      'Your Know Thyself reading: a full convergence reading, written as one. Not separate reports, one portrait of who you are.',
-    img: '/images/features/know-thyself.webp',
+    title: 'Seven short cards',
+    body: 'Seven short cards that build your picture of who you are.',
+    img: '/images/how-it-works/step-1-realization.webp',
   },
   {
     n: '02',
-    title: 'Purpose Guide',
-    body:
-      'A conversation that already holds your blueprint. Ask about a decision and get an answer grounded in your own structure, not generic advice.',
-    img: '/images/features/guide.webp',
+    title: 'Career directions',
+    body: 'Directions that grow out of your own answers, so you can see where your work could go next.',
+    img: '/images/how-it-works/step-2-search.webp',
   },
   {
     n: '03',
-    title: 'Know Where You Stand',
-    body:
-      'Daily alignment against the current sky. Short, specific, and tied to what you are actually working on right now.',
-    img: '/images/features/know-where-you-stand.webp',
+    title: 'Missions',
+    body: 'Small real-world tests. Try something, notice how it feels, and learn what fits.',
+    img: '/images/how-it-works/step-4-conquest.webp',
   },
   {
     n: '04',
-    title: 'My People',
-    body:
-      'The people who matter, read alongside you. Understand the dynamic instead of guessing at it.',
-    img: '/images/features/my-people.webp',
+    title: 'A path in five stages',
+    body: 'Your journey runs through five stages, so you always know where you are and what comes next.',
+    img: '/images/features/odyssey.webp',
   },
   {
     n: '05',
-    title: 'Odyssey',
-    body:
-      'Your life as a long arc. Chapters, turning points, and the direction the whole thing is pointing.',
-    img: '/images/features/odyssey.webp',
+    title: 'A journal',
+    body: 'A private place to write down what you notice along the way. It stays on your phone.',
+    img: '/images/how-it-works/step-3-discovery.webp',
+  },
+  {
+    n: '06',
+    title: 'A learn section',
+    body: 'Short reads that help you understand yourself and the path you are on.',
+    img: '/images/how-it-works/step-5-tend.webp',
   },
 ];
 
 const PILLARS: { title: string; body: string }[] = [
-  { title: 'Depth', body: 'A full convergence reading, not one horoscope in isolation.' },
-  { title: 'Direction', body: 'A guide that knows your blueprint and speaks from it.' },
-  { title: 'Practice', body: 'Daily alignment you can act on, not content you scroll past.' },
+  { title: 'Depth', body: 'Seven short cards build a picture of who you are, not a one-size answer.' },
+  { title: 'Direction', body: 'Career directions that grow out of your own answers.' },
+  { title: 'Practice', body: 'Missions turn ideas into small real-world tests you can act on.' },
 ];
 
 // App screenshots for the "What a reading looks like" section. `src` stays null
@@ -73,15 +77,15 @@ const READING_SHOTS: { src: string | null; alt: string; placeholder: string }[] 
   },
 ];
 
-// Every statement below is lifted from a published page (privacy, delete-account, Story).
+// Statements below follow the iPhone app: no account, no network calls, everything stays on the phone.
 const DATA_POINTS: { title: string; body: string }[] = [
   {
     title: 'Privacy by default',
-    body: 'Built to minimize data collection and maximize your privacy from day one.',
+    body: 'Everything stays on your phone. Nothing is collected.',
   },
   {
     title: 'Delete anytime',
-    body: 'Delete your account in the app and your personal data is permanently removed within 30 days.',
+    body: 'There is no account. Open Settings in the app and tap Delete all my data to erase everything on your phone.',
   },
   {
     title: 'No engagement games',
@@ -90,7 +94,8 @@ const DATA_POINTS: { title: string; body: string }[] = [
 ];
 
 const PRIVACY_PATH = '/apps/purposebased/privacy';
-const DELETE_ACCOUNT_PATH = '/apps/purposebased/delete-account';
+const DELETE_DATA_PATH = '/apps/purposebased/delete-data';
+const SUPPORT_PATH = '/apps/purposebased/support';
 const STORY_PATH = '/purposebased/story';
 
 const FAQ: { q: string; a: React.ReactNode }[] = [
@@ -98,8 +103,16 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Is it free?',
     a: (
       <p>
-        Yes. PurposeBased has a free tier, so you can start without paying. The plans above show
-        what each tier includes.
+        Yes. Based is free. Blissed is a subscription at €18 a month or €120 a year, which saves
+        44%. The App Store sets the price in your country.
+      </p>
+    ),
+  },
+  {
+    q: 'Where can I get it?',
+    a: (
+      <p>
+        PurposeBased is an iPhone app, coming to the App Store.
       </p>
     ),
   },
@@ -107,18 +120,8 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'What do I need to start?',
     a: (
       <p>
-        An account, your date, time and place of birth, and a few questions during onboarding.
-        Your birth details are used to calculate your astrological and numerological placements.
-      </p>
-    ),
-  },
-  {
-    q: 'Is it only astrology?',
-    a: (
-      <p>
-        No. Astrology is one lens among several. PurposeBased combines ancient traditions such as
-        Numerology and Chinese Astrology with modern frameworks such as Hierarchy of Values, and
-        reads them together as one pattern.
+        An iPhone. There is no account and no sign-in. You answer a few short cards in the app and
+        everything stays on your phone.
       </p>
     ),
   },
@@ -127,15 +130,13 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         <p>
-          Your birth data and answers are used only to generate your reading and your Guide
-          conversations. We do not sell, rent or share your personal data for advertising,
-          marketing or model training.
+          Everything you add stays on your phone and nothing is collected. We do not sell it or
+          share it.
         </p>
         <p>
-          You can delete your account in the app, under Settings, then Delete Account. Your
-          personal data is permanently removed within 30 days. Read the{' '}
-          <Link to={PRIVACY_PATH}>privacy policy</Link> or the{' '}
-          <Link to={DELETE_ACCOUNT_PATH}>delete account page</Link>.
+          There is no account to close. To erase everything, open Settings in the app and tap
+          Delete all my data. Read the <Link to={PRIVACY_PATH}>privacy policy</Link> or the{' '}
+          <Link to={DELETE_DATA_PATH}>delete data page</Link>.
         </p>
       </>
     ),
@@ -144,29 +145,18 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Can I cancel?',
     a: (
       <p>
-        Yes, anytime. Go to Settings, then Manage Subscription. You keep access until the end of
-        your current billing period and will not be charged again after that.
-      </p>
-    ),
-  },
-  {
-    q: 'What is the Guide?',
-    a: (
-      <p>
-        A conversation that already holds your blueprint. Ask about a decision and get an answer
-        grounded in your own structure, not generic advice.
+        Yes, anytime. Open the Settings app on your iPhone, go to your Apple Account, then
+        Subscriptions, and choose PurposeBased. You keep Blissed until the end of the period you
+        paid for.
       </p>
     ),
   },
 ];
 
-// Checkout destinations.
-// Seeker is free, so it goes straight to signup in the app, not to Stripe.
-// The two paid tiers point at Stripe Payment Links; swap the placeholders for
-// the real https://buy.stripe.com/... URLs from the Stripe dashboard.
-const APP_SIGNUP_URL = 'https://www.purposebased.app';
-const CHECKOUT_BASED = 'https://buy.stripe.com/dRmaEWcBwf2G1YucNX3F600';
-const CHECKOUT_BLISSED = 'https://buy.stripe.com/dRmcN49pkf2GfPk3dn3F601';
+// TODO(Lui): add the App Store link here when the app is live, then turn every
+// "Coming to the App Store" placeholder on /purposebased pages into a link. Purchases go
+// through Apple, so there are no payment links on this site.
+const APP_STORE_LABEL = 'Coming to the App Store';
 
 const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -192,7 +182,7 @@ const PBHome: React.FC = () => {
   usePageSeo({
     title: "PurposeBased | Become Who You're Meant To Be",
     description:
-      'The most comprehensive tool to not only find your purpose but follow it, and live a more meaningful life. Start free.',
+      'The most comprehensive tool to not only find your purpose but follow it, and live a more meaningful life. An iPhone app, free to start.',
     canonical: PB_URL,
     og: {
       description: 'Find your purpose, and follow it.',
@@ -206,7 +196,7 @@ const PBHome: React.FC = () => {
       '@type': 'SoftwareApplication',
       name: 'PurposeBased',
       description:
-        'A self-knowledge app that reads your patterns in a full convergence reading, helps you find your direction, and supports living with intention.',
+        'An iPhone app that helps you understand yourself, explore career directions and take small real steps. Everything stays on your phone.',
       url: PB_URL,
       image: 'https://www.humanbased.org/images/og/og-purposebased.jpg',
       applicationCategory: 'LifestyleApplication',
@@ -242,14 +232,10 @@ const PBHome: React.FC = () => {
             purpose.
           </p>
           <div className="pbh-cta-row">
-            <a
-              href="https://www.purposebased.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pbh-btn pbh-btn--solid"
-            >
-              Start your journey
-            </a>
+            {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
+            <span className="pbh-btn pbh-btn--solid" style={{ cursor: 'default' }}>
+              {APP_STORE_LABEL}
+            </span>
             <button
               type="button"
               className="pbh-btn pbh-btn--glass"
@@ -259,7 +245,7 @@ const PBHome: React.FC = () => {
             </button>
           </div>
           <p className="pbh-hero-note">
-            Free to start · Delete your data anytime · Built in Copenhagen, where people are at the
+            Free to start · Everything stays on your phone · Built in Copenhagen, where people are at the
             center
           </p>
         </div>
@@ -321,8 +307,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title">Know Thyself</h3>
               <p className="pbh-node-body">
-                A full convergence reading reveals the pattern no single system can see: your
-                blueprint.
+                Seven short cards build your picture of who you are.
               </p>
             </div>
 
@@ -337,7 +322,7 @@ const PBHome: React.FC = () => {
               </div>
               <h3 className="pbh-node-title">Find Your Purpose</h3>
               <p className="pbh-node-body">
-                The Guide helps you read what your blueprint says about the direction of your life.
+                Career directions and missions help you test what fits and see where you are headed.
               </p>
             </div>
 
@@ -405,7 +390,7 @@ const PBHome: React.FC = () => {
       <section id="features" data-reveal="" className="pb-section pbh-sec">
         <div className="pbh-wrap">
           <p className="pbh-label">Features</p>
-          <h2 className="pbh-h2">Five ways in</h2>
+          <h2 className="pbh-h2">Six ways in</h2>
           <div className="pbh-features">
             {FEATURES.map((f, i) => (
               <div key={f.n} className={`pbh-frow${i % 2 === 1 ? ' pbh-frow--flip' : ''}`}>
@@ -425,6 +410,8 @@ const PBHome: React.FC = () => {
                     loading="lazy"
                     decoding="async"
                     className="pbh-fimg-el"
+                    // The how-it-works art has a dark frame built into the picture; zoom in so it fills the box.
+                    style={f.img.includes('/how-it-works/') ? { transform: 'scale(1.32)' } : undefined}
                   />
                 </div>
               </div>
@@ -441,124 +428,43 @@ const PBHome: React.FC = () => {
             Start free. <em>Go deeper when you want to.</em>
           </h2>
 
-          <div className="pbh-founding">
-            <div className="pbh-founding-left">
-              <span className="pbh-badge">Founding offer</span>
-              <p className="pbh-founding-head">50% off your first 6 months, for the first 1,000 members.</p>
-              <p className="pbh-founding-note">
-                Claim by 31 December 2026.
-              </p>
-            </div>
-            <a
-              href={CHECKOUT_BASED}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pbh-btn pbh-btn--solid"
-            >
-              Claim your place
-            </a>
-          </div>
+          {/* TODO(Lui): the founding offer (50% off the first 6 months for the first 1,000
+              members, claim by 31 December 2026) is removed. Confirm whether any offer still
+              applies in the iPhone app. Nothing new is invented here. */}
 
           <div className="pbh-tiers">
-            {/* Tier 1 - Seeker */}
+            {/* Tier 1 - Based (free) */}
             <div className="pbh-tier">
-              <h3 className="pbh-tier-name">Seeker</h3>
-              <div className="pbh-price">€0</div>
-              <p className="pbh-price-note">Free, always</p>
-              <ul className="pbh-list">
-                <li>Purpose Questionnaire &amp; Archetype Reveal</li>
-                <li>
-                  Preview 4 frameworks (Astrology, Numerology, Chinese Astrology, Hierarchy of
-                  Values)
-                </li>
-                <li>Preferences &amp; Values tool</li>
-                <li>Skills &amp; Experience tool</li>
-                <li>The Guide (1 message/day)</li>
-                <li>Daily sacred-geometry visual + shareable cards</li>
-                <li>Share your analysis</li>
-                <li>
-                  Free Explore tiles (This Week&apos;s Sky, Today&apos;s Numerology, Season, Chinese
-                  Astrology)
-                </li>
-                <li>Library (in-app reference)</li>
-                <li>Referral &amp; friend invites</li>
-                <li>Mood Tracker (Purpose check-in self-rating)</li>
-                <li>Today&apos;s Cosmic Insight (daily shared cosmic reading)</li>
-              </ul>
-              <a
-                href={APP_SIGNUP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pbh-btn pbh-btn--glass pbh-btn--full"
-              >
-                Begin
-              </a>
-            </div>
-
-            {/* Tier 2 - Based (highlighted) */}
-            <div className="pbh-tier pbh-tier--featured">
-              <span className="pbh-badge pbh-badge--top">Most chosen</span>
               <h3 className="pbh-tier-name">Based</h3>
-              <div className="pbh-price">
-                €6.50 <s className="pbh-price-was">€13</s>
-              </div>
-              <p className="pbh-price-note">per month for 6 months · founding price</p>
-              <p className="pbh-plus-heading">Everything on Seeker, plus:</p>
-              <ul className="pbh-list">
-                <li className="pbh-li--gold">Know Thyself (deep multi-section personal reading)</li>
-                <li>Know-thyself reading (Astrology, Human Design, Chinese Astrology)</li>
-                <li>Your Direction / Path insights (Domains, Drains, Growth Edge)</li>
-                <li>My People (compatibility readings, up to 7 people)</li>
-                <li>Daily Alignment (personal daily reading)</li>
-                <li>Self-Awareness Radar (self-evaluation chart)</li>
-                <li>Living Chronicle (reflections &amp; journal)</li>
-                <li>Odyssey (island map for life domains)</li>
-                <li>Weekly Review (guided check-in)</li>
-                <li>Supplemental questionnaires &amp; readings</li>
-                <li>
-                  Based Explore tiles (Shadow Work, Body Decides, Best Cities, Mind Wiring, People
-                  Dynamics, Today For Your People)
-                </li>
-                <li>The Guide (90 messages/month)</li>
-                <li>1 Know Thyself re-run/month</li>
-              </ul>
-              <a
-                href={CHECKOUT_BASED}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pbh-btn pbh-btn--solid pbh-btn--full"
+              <div className="pbh-price">Free</div>
+              <p className="pbh-price-note">Free, always</p>
+              {/* TODO(Lui): add what Based includes once the plan split is confirmed. */}
+              <p className="pbh-body" style={{ fontSize: 15, marginBottom: 24 }}>
+                Everything stays on your phone. No account needed.
+              </p>
+              <span
+                className="pbh-btn pbh-btn--glass pbh-btn--full"
+                style={{ cursor: 'default' }}
               >
-                Choose Based
-              </a>
+                {APP_STORE_LABEL}
+              </span>
             </div>
 
-            {/* Tier 3 - Blissed */}
-            <div className="pbh-tier">
+            {/* Tier 2 - Blissed (subscription through the App Store) */}
+            <div className="pbh-tier pbh-tier--featured">
               <h3 className="pbh-tier-name">Blissed</h3>
-              <div className="pbh-price">
-                €9 <s className="pbh-price-was">€18</s>
-              </div>
-              <p className="pbh-price-note">per month for 6 months · founding price</p>
-              <p className="pbh-plus-heading">Everything on Based, plus:</p>
-              <ul className="pbh-list">
-                <li className="pbh-li--gold">
-                  5 more framework readings (Enneagram, Hierarchy of Values deep, Gene Keys, Jungian
-                  Type, Holland Code, completing the full convergence reading)
-                </li>
-                <li>Year Ahead (12-month personal reading)</li>
-                <li>Vocational Edge (career/purpose direction)</li>
-                <li>The Guide (200 messages/month)</li>
-                <li>Unlimited My People</li>
-                <li>4 Know Thyself re-runs/month</li>
-              </ul>
-              <a
-                href={CHECKOUT_BLISSED}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pbh-btn pbh-btn--glass pbh-btn--full"
+              <div className="pbh-price">€18</div>
+              <p className="pbh-price-note">a month, or €120 a year (saves 44%, €10 a month)</p>
+              {/* TODO(Lui): add what Blissed unlocks once the plan split is confirmed. */}
+              <p className="pbh-body" style={{ fontSize: 15, marginBottom: 24 }}>
+                A subscription through the App Store. The App Store sets the price in your country.
+              </p>
+              <span
+                className="pbh-btn pbh-btn--solid pbh-btn--full"
+                style={{ cursor: 'default' }}
               >
-                Choose Blissed
-              </a>
+                {APP_STORE_LABEL}
+              </span>
             </div>
           </div>
         </div>
@@ -582,7 +488,9 @@ const PBHome: React.FC = () => {
           <p className="pbh-links">
             <Link to={PRIVACY_PATH}>Privacy policy</Link>
             <span aria-hidden="true">·</span>
-            <Link to={DELETE_ACCOUNT_PATH}>Delete your account</Link>
+            <Link to={DELETE_DATA_PATH}>Delete your data</Link>
+            <span aria-hidden="true">·</span>
+            <Link to={SUPPORT_PATH}>Support</Link>
           </p>
         </div>
       </section>
@@ -612,15 +520,10 @@ const PBHome: React.FC = () => {
           <br />
           <em>You just have not read it yet.</em>
         </h2>
-        <a
-          href={APP_SIGNUP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pbh-btn pbh-btn--solid"
-          style={{ marginTop: 34 }}
-        >
-          Start your blueprint
-        </a>
+        {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
+        <span className="pbh-btn pbh-btn--solid" style={{ marginTop: 34, cursor: 'default' }}>
+          {APP_STORE_LABEL}
+        </span>
         <p className="pbh-founders">
           <Link to={STORY_PATH}>
             Built by the founding team of HumanBased, a social enterprise in Copenhagen.

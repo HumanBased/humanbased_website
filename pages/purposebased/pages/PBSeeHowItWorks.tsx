@@ -115,14 +115,10 @@ const PBSeeHowItWorks: React.FC = () => {
 
       {/* ============ CLOSING CTA ============ */}
       <section className="pbw-cta">
-        <a
-          href="https://www.purposebased.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pbw-btn pbw-btn--solid"
-        >
-          Start your journey
-        </a>
+        {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
+        <span className="pbw-btn pbw-btn--solid" style={{ cursor: 'default' }}>
+          Coming to the App Store
+        </span>
         <Link to="/purposebased#features" className="pbw-btn pbw-btn--glass">
           Explore features
         </Link>

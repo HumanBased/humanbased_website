@@ -30,6 +30,7 @@ export const ROUTE_ENTRIES = [
   { path: '/apps/basedtalk/delete-data', priority: 0.4 },
   { path: '/apps/purposebased/privacy', priority: 0.5 },
   { path: '/apps/purposebased/terms', priority: 0.5 },
+  { path: '/apps/purposebased/support', priority: 0.5 },
   { path: '/apps/purposebased/delete-account', priority: 0.4 },
   { path: '/apps/purposebased/delete-data', priority: 0.4 },
   { path: '/legal', priority: 0.3 },

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 // Custom Formspree redirect target for the PB Partner Application.
 // Formspree Settings → Redirect → https://www.humanbased.org/purposebased/receivedapplication
 // Same design tokens as PBHome / PBPartners, scoped under .pbty.
-const APP_URL = 'https://www.purposebased.app';
 
 const PBFormspreeThankYou: React.FC = () => {
   return (
@@ -21,14 +20,10 @@ const PBFormspreeThankYou: React.FC = () => {
             <Link to="/purposebased" className="pbty-btn pbty-btn--solid">
               Explore PurposeBased
             </Link>
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pbty-btn pbty-btn--glass"
-            >
-              Visit the app
-            </a>
+            {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
+            <span className="pbty-btn pbty-btn--glass" style={{ cursor: 'default' }}>
+              Coming to the App Store
+            </span>
           </div>
         </div>
       </section>
