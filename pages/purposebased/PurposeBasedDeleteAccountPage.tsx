@@ -3,7 +3,7 @@ import { usePageTitle } from '../../hooks/usePageTitle';
 
 const PurposeBasedDeleteAccountPage: React.FC = () => {
   usePageTitle('Delete PurposeBased Account, HumanBased', '/apps/purposebased/delete-account',
-    'PurposeBased has no account. Everything stays on your phone, and Delete all my data in the app settings erases it.');
+    'PurposeBased has no account. Everything stays on your phone, and Delete my data in the app settings erases it.');
 
   return (
     <div className="flex-grow bg-transparent">
@@ -32,11 +32,11 @@ const PurposeBasedDeleteAccountPage: React.FC = () => {
               <ol className="list-decimal pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>Open the PurposeBased app on your iPhone.</li>
                 <li>Go to <strong className="text-white/80">Settings</strong>.</li>
-                <li>Tap <strong className="text-white/80">Delete all my data</strong>.</li>
-                <li>Confirm the action when prompted.</li>
+                <li>Tap <strong className="text-white/80">Delete my data</strong>.</li>
+                <li>Confirm with <strong className="text-white/80">Delete everything</strong>.</li>
               </ol>
               <p className="text-sm md:text-base text-white/60 leading-relaxed mt-4">
-                This erases everything the app holds on your phone.
+                This erases everything the app holds on your phone, including your reminders and profile photo. It does not remove a profile file you exported yourself, or your Apple subscription. Cancel a subscription in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
               </p>
             </div>
 

@@ -48,7 +48,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 3. Your account
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                There is no account and no sign-in. Everything you add stays on your phone. You can erase it at any time in Settings, with Delete all my data.
+                There is no account and no sign-in. Everything you add stays on your phone. You can erase it at any time in Settings, with Delete my data.
               </p>
             </div>
 

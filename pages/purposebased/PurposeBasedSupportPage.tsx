@@ -4,7 +4,7 @@ import { usePageTitle } from '../../hooks/usePageTitle';
 
 // Support page for the PurposeBased iPhone app. This URL goes into App Store Connect as the
 // Support URL. Text follows claude/Legal_Support_Page_draft.md, adjusted for no account and
-// "Delete all my data" (TODO(Lui): confirm wording).
+// "Delete my data", the label in the app (confirmed by the dev team, P-APP1).
 const PurposeBasedSupportPage: React.FC = () => {
   usePageTitle('PurposeBased Support, HumanBased', '/apps/purposebased/support',
     'Support for the PurposeBased iPhone app: cancelling Blissed, restoring purchases, refunds and deleting your data.');
@@ -75,7 +75,7 @@ const PurposeBasedSupportPage: React.FC = () => {
                 How do I delete my data?
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                There is no account. In the app, open Settings and tap Delete all my data. This erases everything on your phone.
+                There is no account. In the app, open Settings, tap Delete my data and confirm with Delete everything. This erases everything on your phone. It does not remove a profile file you exported yourself, or your Apple subscription.
               </p>
             </div>
 

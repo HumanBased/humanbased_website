@@ -15,25 +15,25 @@ const FEATURES: { n: string; title: string; body: string; img: string }[] = [
   {
     n: '01',
     title: 'Seven short cards',
-    body: 'Seven short cards that build your picture of who you are.',
+    body: 'Seven short cards build your picture of who you are: your strengths, where you thrive, how you work, what matters most, what you bring, your interests and what drains you.',
     img: '/images/how-it-works/step-1-realization.webp',
   },
   {
     n: '02',
     title: 'Career directions',
-    body: 'Directions that grow out of your own answers, so you can see where your work could go next.',
+    body: 'Directions that grow out of your own answers, matched right on your phone, so you can see where your work could go next.',
     img: '/images/how-it-works/step-2-search.webp',
   },
   {
     n: '03',
     title: 'Missions',
-    body: 'Small real-world tests. Try something, notice how it feels, and learn what fits.',
+    body: 'Small real-world tests with a calendar and check-ins. Try something, notice how it feels, and learn what fits.',
     img: '/images/how-it-works/step-4-conquest.webp',
   },
   {
     n: '04',
     title: 'A path in five stages',
-    body: 'Your journey runs through five stages, so you always know where you are and what comes next.',
+    body: 'Your journey runs through five stages: Know thyself, Find your purpose, Walk the path, Follow your purpose and Build a legacy. You always know where you are.',
     img: '/images/features/odyssey.webp',
   },
   {
@@ -45,7 +45,7 @@ const FEATURES: { n: string; title: string; body: string; img: string }[] = [
   {
     n: '06',
     title: 'A learn section',
-    body: 'Short reads that help you understand yourself and the path you are on.',
+    body: 'Eight short lessons, each with a three-question quiz, plus a quote of the day.',
     img: '/images/how-it-works/step-5-tend.webp',
   },
 ];
@@ -85,7 +85,7 @@ const DATA_POINTS: { title: string; body: string }[] = [
   },
   {
     title: 'Delete anytime',
-    body: 'There is no account. Open Settings in the app and tap Delete all my data to erase everything on your phone.',
+    body: 'There is no account. Open Settings in the app and tap Delete my data to erase everything on your phone.',
   },
   {
     title: 'No engagement games',
@@ -135,7 +135,7 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
         </p>
         <p>
           There is no account to close. To erase everything, open Settings in the app and tap
-          Delete all my data. Read the <Link to={PRIVACY_PATH}>privacy policy</Link> or the{' '}
+          Delete my data. Read the <Link to={PRIVACY_PATH}>privacy policy</Link> or the{' '}
           <Link to={DELETE_DATA_PATH}>delete data page</Link>.
         </p>
       </>
@@ -145,10 +145,11 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'What is the Purpose Coach?',
     a: (
       <p>
-        {/* TODO(Lui): confirm the coach name and whether it is in the first release. It is described as a later version, in line with the privacy policy. */}
+        {/* TODO(Lui): confirm the coach name and timing. Dev team: not in the first release (hidden), planned as rule-based with no network. Your wording says "trained"; check it matches. */}
         The Purpose Coach is a coach trained on purpose, meaningful careers and talent
         management. It is planned for a later version. Before it arrives, we will update the
-        privacy policy and ask for your consent in the app.
+        privacy policy, and we will ask for your consent in the app if it needs to send anything
+        off your phone.
       </p>
     ),
   },
@@ -444,15 +445,25 @@ const PBHome: React.FC = () => {
               applies in the iPhone app. Nothing new is invented here. */}
 
           <div className="pbh-tiers">
-            {/* Tier 1 - Based (free) */}
+            {/* Tier 1 - Based (free). Lists follow the dev team answers (P-APP1, 2026-10-27).
+                TODO(Lui): polish the wording of the app's own terms (pay ladder, head start, reactions). */}
             <div className="pbh-tier">
               <h3 className="pbh-tier-name">Based</h3>
               <div className="pbh-price">Free</div>
               <p className="pbh-price-note">Free, always</p>
-              {/* TODO(Lui): add what Based includes once the plan split is confirmed. */}
-              <p className="pbh-body" style={{ fontSize: 15, marginBottom: 24 }}>
-                Everything stays on your phone. No account needed.
-              </p>
+              <ul className="pbh-list">
+                <li>Reading questions</li>
+                <li>Card summaries</li>
+                <li>Browse careers</li>
+                <li>Pay ladder</li>
+                <li>5 reactions a day</li>
+                <li>One-line head start</li>
+                <li>Lessons and quizzes</li>
+                <li>One active mission</li>
+                <li>Journal</li>
+                <li>Share cards</li>
+                <li>Reminders</li>
+              </ul>
               <span
                 className="pbh-btn pbh-btn--glass pbh-btn--full"
                 style={{ cursor: 'default' }}
@@ -465,11 +476,22 @@ const PBHome: React.FC = () => {
             <div className="pbh-tier pbh-tier--featured">
               <h3 className="pbh-tier-name">Blissed</h3>
               <div className="pbh-price">€18</div>
-              <p className="pbh-price-note">a month, or €120 a year (saves 44%, €10 a month)</p>
-              {/* TODO(Lui): add what Blissed unlocks once the plan split is confirmed. */}
-              <p className="pbh-body" style={{ fontSize: 15, marginBottom: 24 }}>
-                A subscription through the App Store. The App Store sets the price in your country.
-              </p>
+              <p className="pbh-price-note">a month, or €120 a year (saves 44%, €10 a month). The App Store sets the price in your country.</p>
+              <p className="pbh-plus-heading">Everything in Based, plus:</p>
+              <ul className="pbh-list">
+                <li>Deeper profile</li>
+                <li>Top five directions</li>
+                <li>Fit numbers</li>
+                <li>Edit your criteria</li>
+                <li>Day-to-day check</li>
+                <li>Path stages and action plan</li>
+                <li>Full &ldquo;what we learned&rdquo;</li>
+                <li>Weekly review</li>
+                <li>No waiting between cards</li>
+                <li>Several missions</li>
+                <li>Unlimited reactions with the ruled-out list</li>
+                <li>Head start in detail</li>
+              </ul>
               <span
                 className="pbh-btn pbh-btn--solid pbh-btn--full"
                 style={{ cursor: 'default' }}

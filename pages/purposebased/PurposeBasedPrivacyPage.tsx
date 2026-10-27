@@ -34,7 +34,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 <li>There is no account and no sign-in. We collect no data.</li>
                 <li>Purchases go through Apple. We never see your payment details.</li>
                 <li>No ads, no tracking, no selling of data.</li>
-                <li>You can delete everything at any time: Settings, then Delete all my data.</li>
+                <li>You can delete everything at any time: Settings, then Delete my data.</li>
               </ul>
             </div>
 
@@ -55,7 +55,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Your answers to the cards, your profile, your birth date, time and place if you add them, your journal, missions, calendar, notes, points and settings. They are stored only on your device. We cannot see them and we do not hold a copy.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
+                Reminders are scheduled on your phone too. You can also export your profile as a file; that file is yours to keep or delete. If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
               </p>
             </div>
 
@@ -91,7 +91,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 A future feature: the Purpose Coach
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                A future version may offer the Purpose Coach, a coach trained on purpose, meaningful careers and talent management, which uses an AI provider to write replies. Before it is switched on, we will update this policy and ask for your consent in the app. Nothing is sent to an AI provider in this version.
+                A future version may offer the Purpose Coach, a coach trained on purpose, meaningful careers and talent management. It is not part of this version. Before it arrives, we will update this policy, and we will ask for your consent in the app if it needs to send anything off your phone.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Deleting your data
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                In the app: Settings, then Delete all my data. This removes everything on your phone. Subscriptions are managed by Apple: cancel them in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
+                In the app: Settings, then Delete my data, then confirm with Delete everything. This removes everything on your phone, including reminders and your profile photo. It does not remove a profile file you exported yourself, or your Apple subscription. Subscriptions are managed by Apple: cancel them in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
               </p>
             </div>
 
