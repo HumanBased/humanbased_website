@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
-// TODO(Lui): set the "Last updated" date to the publishing date. Text follows claude/Legal_Terms_of_Use_draft.md, adapted to no account, confirmed by Lui on 2026-10-27.
+// TODO(Lui): not legal advice. The liability cap (section 9) and the courts clause (section 11) need a lawyer's glance. Update the "Last updated" date whenever the text changes.
 const PurposeBasedTermsPage: React.FC = () => {
   usePageTitle('PurposeBased Terms of Use, HumanBased', '/apps/purposebased/terms',
     'The terms of use for the PurposeBased iPhone app, published by HumanBased in Copenhagen, Denmark.');
@@ -17,7 +17,7 @@ const PurposeBasedTermsPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Terms of Use
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: 27 October 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 14 November 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
@@ -48,7 +48,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 3. Your account
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                There is no account and no sign-in. Everything you add stays on your phone. You can erase it at any time in Settings, with Delete my data.
+                There is no account and no sign-in. Everything you add stays on your phone. You can erase what the app stores at any time in Settings, with Delete my data. That cannot remove events the app already added to your phone's calendar, or copies inside existing iPhone backups.
               </p>
             </div>
 
@@ -61,7 +61,6 @@ const PurposeBasedTermsPage: React.FC = () => {
                 <li>Payment is charged to your Apple Account when you confirm the purchase.</li>
                 <li>The subscription renews automatically at the end of each period unless you cancel at least 24 hours before it renews. Your Apple Account is charged for the renewal within 24 hours before the period ends.</li>
                 <li>You can manage or cancel the subscription in the Settings app on your iPhone, under your Apple Account, then Subscriptions. Cancelling stops the next renewal. You keep Blissed until the current period ends.</li>
-                <li>If a free trial is offered, any unused part of it ends when you buy a subscription.</li>
                 <li>Prices are shown by Apple in your local currency before you confirm.</li>
               </ul>
             </div>
@@ -80,7 +79,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 6. Your content
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                What you write stays yours and stays on your phone. We do not sell it, use it for advertising or use it to train AI. See the Privacy Policy.
+                What you write stays yours and stays on your phone. We never see it, so we cannot sell it, use it for advertising or analyse it. See the Privacy Policy.
               </p>
             </div>
 
@@ -134,7 +133,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 12. Contact
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                HumanBased, Copenhagen, Denmark. <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>
+                HumanBased, Copenhagen, Denmark. CVR 45 99 85 76. <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>
               </p>
             </div>
 

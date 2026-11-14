@@ -75,7 +75,7 @@ const PurposeBasedSupportPage: React.FC = () => {
                 How do I delete my data?
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                There is no account. In the app, open Settings, tap Delete my data and confirm with Delete everything. This erases everything on your phone. It does not remove a profile file you exported yourself, or your Apple subscription.
+                There is no account. In the app, open Settings, tap Delete my data and confirm with Delete everything. This erases everything the app stores on your phone. It cannot remove events the app already added to your phone's calendar, copies inside existing iPhone backups, a profile file you saved yourself, or your Apple subscription.
               </p>
             </div>
 

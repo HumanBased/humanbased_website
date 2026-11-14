@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
-// TODO(Lui): set the "Last updated" date to the publishing date, and decide whether to add a postal address (the GDPR asks for the controller's contact details). Text follows claude/Legal_Privacy_Policy_draft.md, adapted to no account, confirmed by Lui on 2026-10-27.
+// TODO(Lui): decide whether to add a postal address (the GDPR asks for the controller's contact details). Not legal advice; text follows the verified app facts of 2026-11-14. Update the "Last updated" date whenever the text changes.
 const PurposeBasedPrivacyPage: React.FC = () => {
   usePageTitle('PurposeBased Privacy Policy, HumanBased', '/apps/purposebased/privacy',
     'The PurposeBased privacy policy: everything stays on your phone, there is no account, and we collect no data. How to contact us and delete your data.');
@@ -17,7 +17,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: 27 October 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 14 November 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
@@ -30,12 +30,12 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 The short version
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
-                <li>Everything you answer in the app stays on your phone: your cards, profile, birth details if you add them, journal, missions, calendar and notes.</li>
+                <li>Everything you answer in the app stays on your phone: your cards, profile, birth details if you add them, journal, missions, planned days, notes and an optional profile photo.</li>
                 <li>There is no account, no sign-in and no server. The app makes no network calls of its own.</li>
                 <li>We collect no data.</li>
                 <li>Purchases go through Apple. We never see your payment details.</li>
-                <li>No analytics, no crash reporting, no ads, no tracking, no selling of data.</li>
-                <li>You can delete everything at any time: Settings, then Delete my data.</li>
+                <li>No analytics, no ads, no tracking, no third-party tools inside the app, no selling of data.</li>
+                <li>You can delete what the app stores at any time: Settings, then Delete my data.</li>
               </ul>
             </div>
 
@@ -44,7 +44,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Who is responsible
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                HumanBased, a social enterprise based in Copenhagen, Denmark, is the data controller for the app. Write to <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a> for anything about your data. We apply the GDPR to every user, wherever you live.
+                HumanBased, a social enterprise based in Copenhagen, Denmark (CVR 45 99 85 76), is the data controller for the app. Write to <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a> for anything about your data. We apply the GDPR to every user, wherever you live.
               </p>
             </div>
 
@@ -53,10 +53,13 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 What stays on your phone
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Your answers to the cards, your profile, your birth date, time and place if you add them, your journal, missions, calendar, notes, points and settings. They are stored only on your device. We cannot see them and we do not hold a copy.
+                Your answers to the cards, your profile, your birth date, time and place if you add them, your journal, missions, planned days, notes, points, settings and an optional profile photo you pick from your photo library.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Reminders are local notifications on your phone. They do not pass through any server. You can also export your profile as a file; that file is yours to keep or delete. If you back up your iPhone, the backup can bring your data back when you set up a new phone. Without a backup it cannot be recovered, because we have no copy. Backups are yours to manage in your iPhone settings.
+                Everything you enter stays on your phone. We have no server and no account system, so we never see it. If you back up your phone to iCloud, the backup includes this app's data. That copy is held by Apple in your own account, under Apple's terms, and we cannot see it. If you do not back up your phone, your data exists only on your phone. You manage backups in your iPhone settings.
+              </p>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                Reminders are local notifications on your phone. They do not pass through any server. You can also save your profile as a file and choose where to keep it; that file is yours to keep or delete.
               </p>
             </div>
 
@@ -68,7 +71,19 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Nothing, through the app. The app does not send your answers, birth details or journal anywhere in this version.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                The app has no analytics, no crash reporting, no advertising and no tracking of any kind.
+                The app has no analytics, no advertising, no tracking and no third-party tools of its own. Apple may give us anonymous crash reports, but only if you have allowed that in your iPhone settings. They do not identify you.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                What you choose to send out of the app
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                Planned days and your phone's calendar. If you turn on "add to phone calendar" (it is on by default in this version), the text of a planned day is saved as an event in your iPhone's default calendar. The app only writes events and never reads your calendar. Depending on your calendar settings, that calendar can sync to iCloud, Google or a work account such as Exchange, so other people may be able to see the event. We never see it. You manage or delete these events in your own Calendar app.
+              </p>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                Picture cards. If you share a picture card, the app hands it to the iPhone share sheet and you choose where it goes. You start it, and we never see it.
               </p>
             </div>
 
@@ -77,7 +92,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Purchases
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Blissed is a subscription sold through the App Store. Apple handles the payment and the app checks your plan on your phone. We never see your name, card or payment details. Apple's own privacy policy applies to the purchase.
+                Blissed is a subscription sold through the App Store. Apple handles the payment and refunds, and the app checks your plan on your phone. We never see your name, card or payment details. Prices are shown by Apple. Apple's own privacy policy applies to the purchase.
               </p>
             </div>
 
@@ -104,7 +119,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 A future feature: the Purpose Coach
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                A future version may offer the Purpose Coach, a coach trained on purpose, meaningful careers and talent management. It is not part of this version. Before it arrives, we will update this policy, and we will ask for your consent in the app if it needs to send anything off your phone.
+                There is no Purpose Coach in this version. If one is added later, we will update this policy and ask for your consent first.
               </p>
             </div>
 
@@ -133,7 +148,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Deleting your data
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                In the app: Settings, then Delete my data, then confirm with Delete everything. This removes everything on your phone, including reminders and your profile photo. It does not remove a profile file you exported yourself, or your Apple subscription. Subscriptions are managed by Apple: cancel them in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
+                In the app: Settings, then Delete my data, then confirm with Delete everything. This removes everything the app stores on your phone, including reminders and your profile photo. Deleting the app also removes its data from your phone. It cannot remove events the app already added to your phone's calendar, or copies inside existing iPhone backups. It does not remove a profile file you saved yourself, or your Apple subscription. Subscriptions are managed by Apple: cancel them in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
               </p>
             </div>
 
@@ -160,7 +175,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Contact
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                HumanBased, Copenhagen, Denmark. <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>
+                HumanBased, Copenhagen, Denmark. CVR 45 99 85 76. <a href="mailto:support@humanbased.org" className="text-amber-400 hover:text-amber-300 underline">support@humanbased.org</a>
               </p>
             </div>
 
