@@ -35,7 +35,7 @@ const PurposeBasedDeleteDataPage: React.FC = () => {
                 <li>Confirm with <strong className="text-white/80">Delete everything</strong>.</li>
               </ol>
               <p className="text-sm md:text-base text-white/60 leading-relaxed mt-4">
-                This erases everything the app holds on your phone, including your reminders and profile photo. It does not remove a profile file you exported yourself, or your Apple subscription. Cancel a subscription in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
+                This erases everything the app stores on your phone, including your reminders and profile photo. It cannot remove events the app already added to your phone's calendar, or copies inside existing iPhone backups. It does not remove a profile file you exported yourself, or your Apple subscription. Cancel a subscription in the Settings app on your iPhone, under your Apple Account, then Subscriptions.
               </p>
             </div>
 
@@ -64,7 +64,7 @@ const PurposeBasedDeleteDataPage: React.FC = () => {
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>Answers and cards.</li>
                 <li>Profile, and birth details if you added them.</li>
-                <li>Journal, missions, calendar and notes.</li>
+                <li>Journal, missions, planned days and notes.</li>
                 <li>Points and settings.</li>
               </ul>
             </div>

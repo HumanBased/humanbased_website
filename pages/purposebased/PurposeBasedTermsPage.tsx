@@ -70,7 +70,7 @@ const PurposeBasedTermsPage: React.FC = () => {
                 5. Refunds
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Purchases are processed by Apple, so refunds are handled by Apple under its policies. Request one at reportaproblem.apple.com. If something in the app stopped you from using what you paid for, write to us too and we will help.
+                Purchases are processed by Apple, so refunds are handled by Apple under its policies. Request one at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline">reportaproblem.apple.com</a>. If something in the app stopped you from using what you paid for, write to us too and we will help.
               </p>
             </div>
 

@@ -57,7 +57,7 @@ const PurposeBasedSupportPage: React.FC = () => {
                 How do I get a refund?
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Apple handles refunds for App Store purchases. Go to reportaproblem.apple.com. If something in the app did not work, write to us as well.
+                Apple handles refunds for App Store purchases. Go to <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline">reportaproblem.apple.com</a>. If something in the app did not work, write to us as well.
               </p>
             </div>
 
