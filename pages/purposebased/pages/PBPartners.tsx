@@ -61,23 +61,35 @@ const STEPS: { title: string; body: string }[] = [
   {
     title: 'Get paid',
     body:
-      'At the start of each month, we send you the verified redemptions for your code from our App Store reports. You send an invoice and receive payment within 30 days.',
+      'Once a month we send you a statement from our App Store reports: the new paid subscribers on your code, minus any refunds. You send an invoice and receive payment within 30 days.',
   },
 ];
 
 const FAQ: { q: string; a: string }[] = [
   {
     q: 'How does my code work?',
-    a: 'Your audience enters your promo code in the App Store when they subscribe to the PurposeBased iPhone app. Apple records every redemption against your code, so there is nothing for you to set up.',
+    a: 'Your audience enters your promo code in the App Store when they subscribe to the PurposeBased iPhone app. Your code works on both Blissed plans, monthly and yearly. Apple records every redemption against your code, so there is nothing for you to set up.',
   },
   {
     q: 'When and how do I get paid?',
-    a: 'At the start of each month, we send you the verified redemptions for your code, taken from our App Store reports. You then send us an invoice for that amount. We process payment within 30 days by bank transfer.',
+    // TODO(Lui): this wording assumes the sandbox test shows refunds per promoter offer in Apple's reports. Check it against the test result before relying on it.
+    a: 'New subscribers from one month are counted in the statement we send after the following month ends, so every subscriber counted is about 30 days old. The statement is taken from our App Store reports and shows the new paid subscribers on your code, minus any refunds. You then send us an invoice for that amount. We process payment within 30 days by bank transfer.',
   },
   {
     q: 'What counts as a new subscriber?',
-    // TODO(Lui): confirm when a new subscriber counts (at redemption, or after the first full paid period). Apple's reports count redemptions and events, not individual payments.
-    a: 'A unique individual who redeems your code and subscribes for the first time, completes their first full paid billing period without cancellation or refund, and stays subscribed through it. You earn one commission for each new subscriber, once. Free trials, refunded subscriptions, and self-referrals do not count.',
+    a: 'A unique individual who redeems your code and makes their first paid purchase of Blissed, monthly or yearly. You earn one commission for each new subscriber, once. A subscriber counts only if the purchase is not refunded. Refunded subscriptions and self-referrals do not count.',
+  },
+  {
+    q: 'What happens if a subscriber gets a refund?',
+    a: 'Refunded subscriptions are never counted. Each statement shows the new paid subscribers on your code minus the refunds Apple reports against it. If a refund arrives after a subscriber was already counted and paid, it is deducted from your next statement, and any balance carries forward until it is cleared.',
+  },
+  {
+    q: 'What is not allowed?',
+    a: 'Subscribing yourself, or arranging for people to subscribe with your code and then claim a refund, is not allowed. If Apple reports show a code being used to earn commission on subscriptions that are then refunded, we may withhold the commission concerned, deduct it from later statements and end the partnership. We show you the numbers behind any such decision.',
+  },
+  {
+    q: 'Is there a limit on how many partners you work with?',
+    a: 'Yes. We work with a small group of promoters at a time, and every promoter has their own code. When the group is full, we may bring in a new partner and end the partnership of the promoter who brings the fewest new paid subscribers, so the group stays the same size. Partners are compared on the new paid subscribers Apple counts for their code. We tell you in writing if your partnership is ending, and you are paid for every subscriber counted up to that date.',
   },
   {
     q: 'Can I promote other products at the same time?',
@@ -93,7 +105,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Can I see my earnings independently?',
-    a: 'Yes, in part. Apple records how many people redeem your code, not how many euros that was. Every month we send you that count from our App Store reports, and your commission is the count multiplied by your rate. We cannot give you a live dashboard, because App Store reports are only available to our team.',
+    a: 'Yes, in part. Apple records how many people redeem your code, not how many euros that was. Every month we send you the new paid subscribers on your code, minus any refunds, from our App Store reports, and your commission is that number multiplied by your rate. We cannot give you a live dashboard, because App Store reports are only available to our team.',
   },
 ];
 
@@ -279,7 +291,7 @@ const PBPartners: React.FC = () => {
               new subscribers you bring in each month.
             </p>
             <p className="pbp-rtable-note">
-              Rates apply to new paid subscribers per calendar month. Free trials, refunds, and
+              Rates apply to new paid subscribers per calendar month. Refunded subscriptions and
               self-referrals are excluded.
             </p>
           </div>
@@ -320,9 +332,10 @@ const PBPartners: React.FC = () => {
             </p>
             <p className="pbp-body" style={{ maxWidth: 560, marginTop: 18 }}>
               Apple reports how many people redeemed your code, not how many euros that was. Every
-              month we send you that count from our App Store reports, and your commission is the
-              count multiplied by your rate. App Store reports are only open to our team, so this is
-              a monthly statement, not a live dashboard.
+              month we send you the new paid subscribers on your code, minus any refunds, taken from
+              our App Store reports, and your commission is that number multiplied by your rate. App
+              Store reports are only open to our team, so this is a monthly statement, not a live
+              dashboard.
             </p>
             <p className="pbp-stripe-aside">
               We chose this model deliberately. Transparency is not a feature. It is the foundation of

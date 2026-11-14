@@ -109,6 +109,16 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     ),
   },
   {
+    q: 'Can I get PurposeBased for free if I can\'t afford it?',
+    a: (
+      <p>
+        Yes, if cost is in the way. We have a scholarship fund. Email us at{' '}
+        <a href="mailto:support@humanbased.org?subject=Scholarship%20request">support@humanbased.org</a>
+        , tell us about your situation, and we'll get back to you.
+      </p>
+    ),
+  },
+  {
     q: 'Where can I get it?',
     a: (
       <p>
@@ -500,6 +510,30 @@ const PBHome: React.FC = () => {
               </span>
             </div>
           </div>
+
+          <p className="pbh-links" style={{ display: 'block' }}>
+            Can't afford it right now? <Link to="/purposebased#scholarship">Apply for a scholarship.</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* ============ SECTION 5A - SCHOLARSHIP ============ */}
+      <section id="scholarship" data-reveal="" className="pb-section pbh-sec" aria-labelledby="scholarship-h">
+        <div className="pbh-wrap">
+          <p className="pbh-label">Scholarship</p>
+          <h2 className="pbh-h2" id="scholarship-h">
+            Cost shouldn't stand between you and <em>your direction</em>
+          </h2>
+          <p className="pbh-body" style={{ maxWidth: 620, marginTop: 20 }}>
+            We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. If it's a fit, we'll give you the app for free.
+          </p>
+          <a
+            href="mailto:support@humanbased.org?subject=Scholarship%20request"
+            className="pbh-btn pbh-btn--glass"
+            style={{ marginTop: 28, textDecoration: 'none' }}
+          >
+            Email us to apply
+          </a>
         </div>
       </section>
 

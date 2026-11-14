@@ -367,6 +367,17 @@ const PBStory: React.FC = () => {
           color: #ffffff;
           margin: 0;
         }
+        /* The hero is already on screen when the page opens, so the scroll reveal skips it.
+           Give it the same fall-in as the rest of the page, played once on arrival: label
+           first, title a beat later. Plain CSS (no JS), off for visitors who prefer less motion. */
+        @keyframes pbs-hero-in {
+          from { opacity: 0; transform: translate3d(0, 28px, 0); }
+          to { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .pbs-hero .pbs-label { animation: pbs-hero-in 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms backwards; }
+          .pbs-hero .pbs-h1 { animation: pbs-hero-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) 450ms backwards; }
+        }
 
         /* ---------- headings ---------- */
         .pbs-head { margin-bottom: 2.5rem; }   /* title to first paragraph */

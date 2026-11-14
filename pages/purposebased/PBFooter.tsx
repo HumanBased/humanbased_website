@@ -48,6 +48,9 @@ const PBFooter: React.FC = () => {
             <Link to="/purposebased#pricing" className="pbf-link">
               Pricing
             </Link>
+            <Link to="/purposebased#scholarship" className="pbf-link">
+              Scholarship
+            </Link>
             <Link to="/purposebased#features" className="pbf-link">
               Features
             </Link>
