@@ -66,7 +66,7 @@ const PurposeBasedSupportPage: React.FC = () => {
                 I changed phone. Where are my answers?
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Your answers live only on your phone, never on our servers. An iPhone backup (iCloud or computer) brings them back when you set up the new phone from it.
+                Your answers live only on your phone, never on our servers. An iPhone backup (iCloud or computer) brings them back when you set up the new phone from it. You can also save your profile as a file in the app and bring it back on the new phone. Without a backup or a saved file, we cannot recover your answers, because we hold no copy.
               </p>
             </div>
 

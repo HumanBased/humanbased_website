@@ -17,7 +17,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: 14 November 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 15 November 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
@@ -102,24 +102,6 @@ const PurposeBasedPrivacyPage: React.FC = () => {
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
                 Feedback and support in the app open your own email app. We only receive what you choose to send to support@humanbased.org. If you write to us, we keep the conversation to help you. Our support email runs on Google Workspace. Legal basis: legitimate interest.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                Links that open in your browser
-              </h2>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                The privacy and terms pages open in your browser, outside the app. That is a normal website visit, and it is separate from the app, which sends nothing.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
-                A future feature: the Purpose Coach
-              </h2>
-              <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                There is no Purpose Coach in this version. If one is added later, we will update this policy and ask for your consent first.
               </p>
             </div>
 
