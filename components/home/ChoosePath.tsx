@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AppStoreButton from '../AppStoreButton';
+import { APP_LIVE } from '../../config/site';
 import servicesImg from '../../assets/images/services-hero.webp';
 
 // Home "Choose your path". Product names, labels, body lines, images and URLs are
@@ -138,10 +140,10 @@ const ChoosePath: React.FC = () => (
               label="Purpose & Self-Knowledge App"
               body="Understand your patterns. Find your direction. Live with intention."
               media={<PurposeBasedMedia />}
-              status="Coming to the App Store"
+              status={APP_LIVE ? 'Available now' : 'Coming to the App Store'}
               actions={
                 <>
-                  {/* TODO(Lui): add the App Store (or purposebased.app landing) button when live. */}
+                  {APP_LIVE && <AppStoreButton className="ed-btn ed-btn--ghost" />}
                   <Link to="/purposebased" className="ed-btn ed-btn--primary">
                     Explore PurposeBased
                   </Link>

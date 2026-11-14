@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AppStoreButton from '../../../components/AppStoreButton';
 
 // Custom Formspree redirect target for the PB Partner Application.
 // Formspree Settings → Redirect → https://www.humanbased.org/purposebased/receivedapplication
@@ -20,10 +21,7 @@ const PBFormspreeThankYou: React.FC = () => {
             <Link to="/purposebased" className="pbty-btn pbty-btn--solid">
               Explore PurposeBased
             </Link>
-            {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
-            <span className="pbty-btn pbty-btn--glass" style={{ cursor: 'default' }}>
-              Coming to the App Store
-            </span>
+            <AppStoreButton className="pbty-btn pbty-btn--glass" />
           </div>
         </div>
       </section>

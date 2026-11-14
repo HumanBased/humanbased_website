@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import AppStoreButton from '../../../components/AppStoreButton';
+import { APP_LIVE, APP_STORE_URL } from '../../../config/site';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 import Journey from '../../../components/motion/Journey';
 import { PB_JOURNEY } from '../../../components/motion/journeys';
@@ -122,7 +124,13 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Where can I get it?',
     a: (
       <p>
-        PurposeBased is an iPhone app, coming to the App Store.
+        {APP_LIVE ? (
+          <>
+            PurposeBased is an iPhone app. <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">Get it on the App Store.</a>
+          </>
+        ) : (
+          'PurposeBased is an iPhone app, coming to the App Store.'
+        )}
       </p>
     ),
   },
@@ -175,10 +183,8 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
   },
 ];
 
-// TODO(Lui): add the App Store link here when the app is live, then turn every
-// "Coming to the App Store" placeholder on /purposebased pages into a link. Purchases go
-// through Apple, so there are no payment links on this site.
-const APP_STORE_LABEL = 'Coming to the App Store';
+// The App Store link lives in config/site.ts (APP_STORE_URL). Purchases go through Apple,
+// so there are no payment links on this site.
 
 const scrollToId = (id: string) => () => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -254,10 +260,7 @@ const PBHome: React.FC = () => {
             purpose.
           </p>
           <div className="pbh-cta-row">
-            {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
-            <span className="pbh-btn pbh-btn--solid" style={{ cursor: 'default' }}>
-              {APP_STORE_LABEL}
-            </span>
+            <AppStoreButton className="pbh-btn pbh-btn--solid" />
             <button
               type="button"
               className="pbh-btn pbh-btn--glass"
@@ -474,12 +477,7 @@ const PBHome: React.FC = () => {
                 <li>Share cards</li>
                 <li>Reminders</li>
               </ul>
-              <span
-                className="pbh-btn pbh-btn--glass pbh-btn--full"
-                style={{ cursor: 'default' }}
-              >
-                {APP_STORE_LABEL}
-              </span>
+              <AppStoreButton className="pbh-btn pbh-btn--glass pbh-btn--full" />
             </div>
 
             {/* Tier 2 - Blissed (subscription through the App Store) */}
@@ -502,12 +500,7 @@ const PBHome: React.FC = () => {
                 <li>Unlimited reactions with the ruled-out list</li>
                 <li>Head start in detail</li>
               </ul>
-              <span
-                className="pbh-btn pbh-btn--solid pbh-btn--full"
-                style={{ cursor: 'default' }}
-              >
-                {APP_STORE_LABEL}
-              </span>
+              <AppStoreButton className="pbh-btn pbh-btn--solid pbh-btn--full" />
             </div>
           </div>
 
@@ -587,10 +580,7 @@ const PBHome: React.FC = () => {
           <br />
           <em>You just have not read it yet.</em>
         </h2>
-        {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
-        <span className="pbh-btn pbh-btn--solid" style={{ marginTop: 34, cursor: 'default' }}>
-          {APP_STORE_LABEL}
-        </span>
+        <AppStoreButton className="pbh-btn pbh-btn--solid" style={{ marginTop: 34 }} />
         <p className="pbh-founders">
           <Link to={STORY_PATH}>
             Built by the founding team of HumanBased, a social enterprise in Copenhagen.
@@ -1533,6 +1523,11 @@ const PBHome: React.FC = () => {
           .pbh-cta-row .pbh-btn { width: 100%; }
           .pbh-tier { padding: 26px 20px; }
           .pbh-pill { padding: 24px 20px; }
+        }
+
+        /* Scholarship: a little more room from the edges on phones. */
+        @media (max-width: 640px) {
+          #scholarship .pbh-wrap { padding-left: 20px; padding-right: 20px; }
         }
       `}</style>
     </div>

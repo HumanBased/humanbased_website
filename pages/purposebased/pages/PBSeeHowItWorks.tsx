@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AppStoreButton from '../../../components/AppStoreButton';
 import { usePageSeo } from '../../../hooks/usePageSeo';
 import Journey from '../../../components/motion/Journey';
 import { PB_JOURNEY } from '../../../components/motion/journeys';
@@ -115,10 +116,7 @@ const PBSeeHowItWorks: React.FC = () => {
 
       {/* ============ CLOSING CTA ============ */}
       <section className="pbw-cta">
-        {/* TODO(Lui): placeholder, no link yet. Add the App Store URL when live. */}
-        <span className="pbw-btn pbw-btn--solid" style={{ cursor: 'default' }}>
-          Coming to the App Store
-        </span>
+        <AppStoreButton className="pbw-btn pbw-btn--solid" />
         <Link to="/purposebased#features" className="pbw-btn pbw-btn--glass">
           Explore features
         </Link>

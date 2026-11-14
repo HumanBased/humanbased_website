@@ -10,6 +10,14 @@ export const BUILD_YEAR: number = __BUILD_YEAR__;
 export const TEAM_PHOTOS: Record<string, boolean> = __TEAM_PHOTOS__;
 
 export const SUPPORT_EMAIL = 'support@humanbased.org';
+
+// TODO(Lui): paste the App Store link between the quotes when the app is live, and nothing
+// else needs to change. While it is empty, every PurposeBased button and status says
+// "Coming to the App Store". With a link, they all say "Download on the App Store" (or
+// "Available now") and open it.
+export const APP_STORE_URL = '';
+export const APP_LIVE = APP_STORE_URL !== '';
+export const APP_STORE_LABEL = APP_LIVE ? 'Download on the App Store' : 'Coming to the App Store';
 export const COMPANY_LINE = 'Est. 2025 · Copenhagen, Denmark · CVR DK45998576';
 
 export function siteUrl(path: string): string {
