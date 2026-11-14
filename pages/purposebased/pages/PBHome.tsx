@@ -515,18 +515,20 @@ const PBHome: React.FC = () => {
         <div className="pbh-wrap">
           <p className="pbh-label">Scholarship</p>
           <h2 className="pbh-h2" id="scholarship-h">
-            Cost shouldn't stand between you and <em>your direction</em>
+            Cost shouldn't stand between you and the <em>purpose</em> that the world needs you to fulfill
           </h2>
-          <p className="pbh-body" style={{ maxWidth: 620, marginTop: 20 }}>
-            We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. If it's a fit, we'll give you the app for free.
-          </p>
-          <a
-            href="mailto:support@humanbased.org?subject=Scholarship%20request"
-            className="pbh-btn pbh-btn--glass"
-            style={{ marginTop: 28, textDecoration: 'none' }}
-          >
-            Email us to apply
-          </a>
+          <div className="pbh-pill" style={{ marginTop: 36, maxWidth: 720 }}>
+            <p className="pbh-pill-body">
+              We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. If it's a fit, we'll give you the app for free.
+            </p>
+            <a
+              href="mailto:support@humanbased.org?subject=Scholarship%20request"
+              className="pbh-btn pbh-btn--glass"
+              style={{ marginTop: 22, textDecoration: 'none' }}
+            >
+              Email us to apply
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1523,11 +1525,6 @@ const PBHome: React.FC = () => {
           .pbh-cta-row .pbh-btn { width: 100%; }
           .pbh-tier { padding: 26px 20px; }
           .pbh-pill { padding: 24px 20px; }
-        }
-
-        /* Scholarship: a little more room from the edges on phones. */
-        @media (max-width: 640px) {
-          #scholarship .pbh-wrap { padding-left: 20px; padding-right: 20px; }
         }
       `}</style>
     </div>
