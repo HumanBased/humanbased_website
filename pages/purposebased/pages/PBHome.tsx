@@ -1432,6 +1432,19 @@ const PBHome: React.FC = () => {
            Mobile  ≤768px  : 48px 5%   · hero stacked/centered · single column
            ============================================================ */
 
+        /* ---------- desktop polish (visual only, no copy) ----------
+           Hero was small for wide screens: larger headline, sub-copy and note,
+           taller hero. Card text gets a touch more size and contrast. */
+        @media (min-width: 1025px) {
+          .pbh-hero { min-height: 78vh; }
+          .pbh-hero-content { max-width: 680px; }
+          .pbh-h1 { font-size: clamp(58px, 5.4vw, 76px); max-width: 760px; margin-bottom: 26px; }
+          .pbh-sub { font-size: 17px; line-height: 1.75; max-width: 470px; margin-bottom: 38px; }
+          .pbh-hero-note { font-size: 14px; max-width: 500px; margin-top: 24px; }
+        }
+        .pbh-pill-body { font-size: 15px; line-height: 1.7; color: #a9bdd6; }
+        .pbh-pill-title { font-size: 28px; }
+
         /* ---------- tablet ---------- */
         @media (max-width: 1024px) {
           .pbh-h1 { font-size: 42px; }
