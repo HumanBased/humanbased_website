@@ -23,6 +23,8 @@ export const ROUTE_ENTRIES = [
   { path: '/purposebased/library/know-thyself', priority: 0.6 },
   { path: '/purposebased/library/anamnesis', priority: 0.6 },
   { path: '/purposebased/library/exile-and-return', priority: 0.6 },
+  // Articles (content/pbArticles.ts). Add each new article's slug here.
+  { path: '/purposebased/articles/what-is-my-purpose', priority: 0.8 },
   { path: '/purposebased/partners', priority: 0.7 },
   { path: '/apps/basedtalk/privacy', priority: 0.5 },
   { path: '/apps/basedtalk/terms', priority: 0.5 },

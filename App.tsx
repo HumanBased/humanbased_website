@@ -115,6 +115,7 @@ const AppRoutes = () => {
         path="/purposebased/library/:tradition"
         element={<PurposeBased page="tradition-detail" />}
       />
+      <Route path="/purposebased/articles/:slug" element={<PurposeBased page="article" />} />
       <Route path="/purposebased/partners" element={<PurposeBased page="partners" />} />
       <Route
         path="/purposebased/receivedapplication"
