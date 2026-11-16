@@ -14,6 +14,7 @@ const PBTraditionDetail = lazy(() => import('./pages/PBTraditionDetail'));
 const PBPartners = lazy(() => import('./pages/PBPartners'));
 const PBSeeHowItWorks = lazy(() => import('./pages/PBSeeHowItWorks'));
 const PBArticle = lazy(() => import('./pages/PBArticle'));
+const PBArticles = lazy(() => import('./pages/PBArticles'));
 const PBFormspreeThankYou = lazy(() => import('./pages/PBFormspreeThankYou'));
 
 export type PBPage =
@@ -23,6 +24,7 @@ export type PBPage =
   | 'tradition-detail'
   | 'partners'
   | 'article'
+  | 'articles'
   | 'how-it-works'
   | 'receivedapplication';
 
@@ -33,6 +35,7 @@ const PAGES: Record<PBPage, React.ComponentType> = {
   'tradition-detail': PBTraditionDetail,
   partners: PBPartners,
   article: PBArticle,
+  articles: PBArticles,
   'how-it-works': PBSeeHowItWorks,
   receivedapplication: PBFormspreeThankYou,
 };

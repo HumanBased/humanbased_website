@@ -3,32 +3,41 @@
 // shared "01 PB" folder. To add an article: add an entry here and add its slug to
 // ARTICLE_SLUGS in scripts/routes.mjs.
 
+import { PB_ARTICLES_MORE } from './pbArticlesMore';
+
 export type ArticleBlock =
   | { t: 'p'; text: string }
   | { t: 'h2'; text: string }
+  | { t: 'h3'; text: string }
   | { t: 'quote'; text: string; by: string }
   | { t: 'ul'; items: string[] }
-  | { t: 'takeaways'; items: string[] };
+  | { t: 'ol'; items: string[] }
+  | { t: 'takeaways'; items: string[] }
+  | { t: 'sources'; items: string[] };
 
+// Text may carry **bold**, *italic* and [label](/path or https://url) links.
 export interface PBArticleEntry {
   slug: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
-  published: string; // ISO date
-  readMinutes: number;
+  published: string; // "2026-11": month only, shown as "November 2026"
+  cta: { heading: string; text: string; links: string };
   blocks: ArticleBlock[];
 }
 
-export const PB_ARTICLES: PBArticleEntry[] = [
-  {
+const WHAT_IS_MY_PURPOSE: PBArticleEntry = {
     slug: 'what-is-my-purpose',
     title: 'What Is My Purpose?',
     metaTitle: 'What Is My Purpose? A Plain Answer | PurposeBased',
     metaDescription:
       'Your purpose is what feels meaningful to you, fits your values and draws on what you are naturally pulled toward. You build it by practising it, and it starts with knowing yourself.',
-    published: '2026-11-15',
-    readMinutes: 6,
+    published: '2026-11',
+    cta: {
+      heading: 'Why we built PurposeBased',
+      text: "If you're trying to understand yourself better and find a clearer sense of purpose, PurposeBased can help you explore what matters to you and what direction feels right for you.",
+      links: "If you'd like to see how it works, read [how it works](/purposebased/how-it-works), or visit the [PurposeBased home page](/purposebased).",
+    },
     blocks: [
       { t: 'p', text: 'Your purpose is the thing you give your time and effort to that feels meaningful to you, fits your values, and draws on what you are naturally pulled toward and perhaps good at. Nobody hands it to you whole: you develop it, practice it and make it yours, and it can change as you do.' },
       { t: 'p', text: "That's the short answer, but finding your purpose often takes more than a simple definition. Maybe something in your life no longer feels quite right, or perhaps you're wondering what would make your life feel more meaningful. Wherever you're starting from, understanding your purpose begins with getting to know yourself." },
@@ -89,7 +98,20 @@ export const PB_ARTICLES: PBArticleEntry[] = [
         'Getting to know yourself is a good place to start. Pay attention to your values, strengths, and what gives you energy.',
       ] },
     ],
-  },
-];
+  };
+
+// Order = order on the list page. Add new articles to content/pbArticlesMore.ts.
+export const PB_ARTICLES: PBArticleEntry[] = [WHAT_IS_MY_PURPOSE, ...PB_ARTICLES_MORE];
 
 export const findArticle = (slug?: string) => PB_ARTICLES.find((a) => a.slug === slug);
+
+export const articleWords = (a: PBArticleEntry) =>
+  a.blocks.reduce((n, b) => {
+    const parts = 'text' in b ? [b.text] : b.items;
+    return n + parts.join(' ').split(/\s+/).filter(Boolean).length;
+  }, 0);
+
+export const readMinutes = (a: PBArticleEntry) => Math.max(1, Math.round(articleWords(a) / 220));
+
+export const publishedLabel = () => 'November 2026';
+

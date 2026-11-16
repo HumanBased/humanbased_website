@@ -177,6 +177,12 @@ const PBLibrary: React.FC = () => {
         ))}
       </div>
 
+      <aside className="pbl-articles">
+        <p className="pbl-articles-label">Articles</p>
+        <p className="pbl-articles-text">Plain-language reading on purpose, self-knowledge and finding direction.</p>
+        <Link to="/purposebased/articles" className="pbl-articles-link">Read the articles</Link>
+      </aside>
+
       {/* href + precedence: React hoists this into <head>, so the prerendered
           HTML styles the page before its markup paints (no unstyled first frame). */}
       <style href="pb-library" precedence="pb">{`
@@ -291,6 +297,17 @@ const PBLibrary: React.FC = () => {
           font-size: 13px;
           color: var(--pb-gold);
         }
+
+        .pbl-articles {
+          margin-top: 48px;
+          padding: 28px 32px;
+          border: 0.5px solid rgba(255,200,100,0.22);
+          border-radius: 12px;
+          background: linear-gradient(135deg, rgba(255,200,100,0.07), rgba(255,255,255,0.025));
+        }
+        .pbl-articles-label { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--pb-gold); margin: 0 0 10px; }
+        .pbl-articles-text { font-size: 17px; font-weight: 300; line-height: 1.6; color: var(--pb-text); margin: 0 0 14px; }
+        .pbl-articles-link { font-size: 15px; color: var(--pb-gold); text-decoration: underline; text-decoration-color: rgba(255,200,100,0.45); text-underline-offset: 4px; }
 
         /* ---------- responsive ---------- */
         @media (max-width: 1024px) {
