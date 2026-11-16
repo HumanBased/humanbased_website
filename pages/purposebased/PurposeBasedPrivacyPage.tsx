@@ -17,7 +17,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: 15 November 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 16 November 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
@@ -80,7 +80,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 What you choose to send out of the app
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Planned days and your phone's calendar. If you turn on "add to phone calendar" (it is on by default in this version), the text of a planned day is saved as an event in your iPhone's default calendar. The app only writes events and never reads your calendar. Depending on your calendar settings, that calendar can sync to iCloud, Google or a work account such as Exchange, so other people may be able to see the event. We never see it. You manage or delete these events in your own Calendar app.
+                Planned days and your phone's calendar. The calendar feature is off until you turn it on when you plan a day. If you turn it on, the app adds the planned day as an event in your iPhone's default calendar. It only adds events and never reads your calendar. Depending on your calendar settings, that calendar can sync to iCloud, Google or a work account such as Exchange, so other people may be able to see the event. We never see it. You manage or delete these events in your own Calendar app.
               </p>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
                 Picture cards. If you share a picture card, the app hands it to the iPhone share sheet and you choose where it goes. You start it, and we never see it.
@@ -111,7 +111,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>On your phone: until you delete it or delete the app.</li>
-                <li>Support emails: up to 2 years after the last message.</li>
+                <li>Support emails: 6 months after the last message, so we can follow up on the same question, then they are deleted. You can ask us to delete them sooner.</li>
                 <li>Sales records from Apple: as long as accounting law requires.</li>
               </ul>
             </div>

@@ -105,7 +105,7 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Is it free?',
     a: (
       <p>
-        Yes. Based is free. Blissed is a subscription at €18 a month or €120 a year, which saves
+        Yes. Based is free. Blissed is a subscription at €17.99 a month or €119.99 a year, which saves
         44%. The App Store sets the price in your country.
       </p>
     ),
@@ -483,8 +483,8 @@ const PBHome: React.FC = () => {
             {/* Tier 2 - Blissed (subscription through the App Store) */}
             <div className="pbh-tier pbh-tier--featured">
               <h3 className="pbh-tier-name">Blissed</h3>
-              <div className="pbh-price">€18</div>
-              <p className="pbh-price-note">a month, or €120 a year (saves 44%, €10 a month). The App Store sets the price in your country.</p>
+              <div className="pbh-price">€17.99</div>
+              <p className="pbh-price-note">a month, or €119.99 a year (saves 44%, €10 a month). The App Store sets the price in your country.</p>
               <p className="pbh-plus-heading">Everything in Based, plus:</p>
               <ul className="pbh-list">
                 <li>Deeper profile</li>
