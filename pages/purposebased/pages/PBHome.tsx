@@ -105,8 +105,10 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Is it free?',
     a: (
       <p>
-        Yes. Based is free. Blissed is a subscription at €17.99 a month or €119.99 a year, which saves
-        44%. The App Store sets the price in your country.
+        Yes. Based is free. Blissed is a subscription, from about €10 a month when you pay yearly
+        (€119.99 a year, which is 44% less than paying €17.99 month by month). Prices vary by country,
+        and we set them lower where they need to be so more people can afford it. The App Store shows
+        the exact price for your country.
       </p>
     ),
   },
@@ -114,9 +116,11 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     q: 'Can I get PurposeBased for free if I can\'t afford it?',
     a: (
       <p>
-        Yes, if cost is in the way. We have a scholarship fund. Email us at{' '}
+        Possibly, if cost is in the way. We have a scholarship fund, and we offer student and senior
+        discounts with proof of status. Email us at{' '}
         <a href="mailto:support@humanbased.org?subject=Scholarship%20request">support@humanbased.org</a>
-        , tell us about your situation, and we'll get back to you.
+        , tell us about your situation, and we'll get back to you. We decide each request ourselves
+        and can't promise to grant every one.
       </p>
     ),
   },
@@ -483,8 +487,8 @@ const PBHome: React.FC = () => {
             {/* Tier 2 - Blissed (subscription through the App Store) */}
             <div className="pbh-tier pbh-tier--featured">
               <h3 className="pbh-tier-name">Blissed</h3>
-              <div className="pbh-price">€17.99</div>
-              <p className="pbh-price-note">a month, or €119.99 a year (saves 44%, €10 a month). The App Store sets the price in your country.</p>
+              <div className="pbh-price">from €10</div>
+              <p className="pbh-price-note">a month, billed yearly at €119.99. Or €17.99 month by month. Prices vary by country, so more people can afford it. The App Store shows the price for your country.</p>
               <p className="pbh-plus-heading">Everything in Based, plus:</p>
               <ul className="pbh-list">
                 <li>Deeper profile</li>
@@ -505,7 +509,7 @@ const PBHome: React.FC = () => {
           </div>
 
           <p className="pbh-links" style={{ display: 'block' }}>
-            Can't afford it right now? <Link to="/purposebased#scholarship">Apply for a scholarship.</Link>
+            Scholarships, student and senior discounts: <Link to="/purposebased#scholarship">see how to ask.</Link>
           </p>
         </div>
       </section>
@@ -519,14 +523,20 @@ const PBHome: React.FC = () => {
           </h2>
           <div className="pbh-pill" style={{ marginTop: 36, maxWidth: 720 }}>
             <p className="pbh-pill-body">
-              We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. If it's a fit, we'll give you the app for free.
+              We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. We read every message.
+            </p>
+            <p className="pbh-pill-body" style={{ marginTop: 14 }}>
+              We also offer student and senior discounts. With proof of status, we can give you access at a reduced price.
+            </p>
+            <p className="pbh-pill-body" style={{ marginTop: 14 }}>
+              We decide each scholarship and discount request ourselves, and we may not be able to grant every one.
             </p>
             <a
               href="mailto:support@humanbased.org?subject=Scholarship%20request"
               className="pbh-btn pbh-btn--glass"
               style={{ marginTop: 22, textDecoration: 'none' }}
             >
-              Email us to apply
+              Email us about your situation
             </a>
           </div>
         </div>
