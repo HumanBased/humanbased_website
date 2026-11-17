@@ -335,7 +335,7 @@ export const PB_ARTICLES_MORE: PBArticleEntry[] = [
       },
       {
         "t": "p",
-        "text": "As explored in our articles on meaningful work and purposeful individuals, a sense of purpose can connect what matters to you with the way you spend your time. You do not need to wait for the perfect job or a complete plan before beginning."
+        "text": "As explored in our articles on [meaningful work](/purposebased/articles/meaningful-work-how-to-find-it) and [purposeful individuals](/purposebased/articles/purposeful-individuals-purposeful-humanity), a sense of purpose can connect what matters to you with the way you spend your time. You do not need to wait for the perfect job or a complete plan before beginning."
       },
       {
         "t": "p",
@@ -551,7 +551,7 @@ export const PB_ARTICLES_MORE: PBArticleEntry[] = [
       },
       {
         "t": "p",
-        "text": "As explored in *Meaningful Work* and *Purposeful Individuals, Purposeful Humanity*, meaning can come from connecting what we do with what we value and the people our efforts affect."
+        "text": "As explored in [Meaningful Work](/purposebased/articles/meaningful-work-how-to-find-it) and [Purposeful Individuals, Purposeful Humanity](/purposebased/articles/purposeful-individuals-purposeful-humanity), meaning can come from connecting what we do with what we value and the people our efforts affect."
       },
       {
         "t": "p",
@@ -677,7 +677,7 @@ export const PB_ARTICLES_MORE: PBArticleEntry[] = [
       },
       {
         "t": "p",
-        "text": "As explored in *Purposeful Individuals, Purposeful Humanity*, individual purpose can connect with collective progress. The world does not need everyone to do the same thing. It needs people who bring different abilities to different challenges."
+        "text": "As explored in [Purposeful Individuals, Purposeful Humanity](/purposebased/articles/purposeful-individuals-purposeful-humanity), individual purpose can connect with collective progress. The world does not need everyone to do the same thing. It needs people who bring different abilities to different challenges."
       },
       {
         "t": "p",
@@ -1341,6 +1341,804 @@ export const PB_ARTICLES_MORE: PBArticleEntry[] = [
           "[Gallup: State of the Global Workplace 2026](https://www.gallup.com/workplace/697904/state-of-the-global-workplace-2026.aspx)",
           "[Deloitte: 2025 Gen Z and Millennial Survey](https://www.deloitte.com/us/en/insights/topics/talent/2025-gen-z-millennial-survey.html)",
           "[World Economic Forum: Future of Jobs Report 2025](https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "meaningful-work-how-to-find-it",
+    "title": "Meaningful Work",
+    "metaTitle": "Meaningful Work and How to Find It | PurposeBased",
+    "metaDescription": "What makes work feel meaningful, why so many people want it and don't feel they have it, and what to check in your current job before you change it.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Put words to what fits you",
+      "text": "If you would like a structured way to name your strengths, interests and the kind of work that fits them, PurposeBased is built for that. It will not make the decision for you, and it is meant to sit alongside your own judgment.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "Many of us spend a large share of our waking hours at work, so it makes sense to want those hours to mean something. Wanting it, though, is not the same as having it, and the gap between the two is where a lot of quiet dissatisfaction lives."
+      },
+      {
+        "t": "p",
+        "text": "This article looks at what makes work feel meaningful, why so many people care about it and still do not feel they have it, and what you can check in your current job before you decide to leave it."
+      },
+      {
+        "t": "h2",
+        "text": "What makes work feel meaningful"
+      },
+      {
+        "t": "p",
+        "text": "Researchers have spent decades trying to pin this down. One review, by Brent Rosso, Kathryn Dekas and Amy Wrzesniewski, gathered the scattered research and sorted it by where meaning comes from. They found four sources: the self (your values, motivations and beliefs about work), other people (colleagues, leaders, community, family), the work context (how the job is designed, what the organisation is for, your circumstances) and spiritual life."
+      },
+      {
+        "t": "p",
+        "text": "A separate line of research asked how to measure meaningful work at all. Michael Steger, Bryan Dik and Ryan Duffy built a short questionnaire, the Work and Meaning Inventory, around three ideas. The first is positive meaning: you feel your work matters from where you stand. The second is meaning-making: you use work to build meaning in your life more broadly. The third is a motivation to do good: you see your work having an effect on something beyond yourself."
+      },
+      {
+        "t": "p",
+        "text": "In everyday words, that comes down to three questions:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Does this work matter to me?",
+          "Does it connect to the person I am becoming?",
+          "Does it reach anyone beyond me?"
+        ]
+      },
+      {
+        "t": "p",
+        "text": "You do not need a yes to all three at once. But if all three are a flat no, that is worth noticing."
+      },
+      {
+        "t": "h2",
+        "text": "Why many people care and still do not feel they have it"
+      },
+      {
+        "t": "p",
+        "text": "Work is tied up with how many people see themselves. In a Pew Research Center survey of U.S. workers in February 2023, 39% said their job or career is extremely or very important to their overall identity. In the same survey, 47% said their job is fulfilling all or most of the time. That leaves just over half who do not feel that regularly."
+      },
+      {
+        "t": "p",
+        "text": "A caution on those numbers: the survey asked about fulfilment and enjoyment, not about meaning directly, and it covers the United States only. Treat it as a rough signal."
+      },
+      {
+        "t": "p",
+        "text": "Still, the pattern fits what many people describe. Work takes up a big place in life and does not always give back what they hoped for. There are a few ordinary reasons. People often pick a job for money, location or timing, and never quite ask what it is for. Some jobs are set up so that you rarely see who benefits from what you do. And meaning is not a fixed feature of an occupation. The same job title can feel completely different from one person to the next."
+      },
+      {
+        "t": "h2",
+        "text": "Job, career or calling"
+      },
+      {
+        "t": "p",
+        "text": "In 1997, Amy Wrzesniewski and colleagues asked 196 employees at a university health service and a small college how they related to their work. People described it as one of three things: a job (mainly a way to earn money), a career (a path to advancement and status), or a calling (valued for the fulfilment it gives and its usefulness to others). Of the 135 who clearly fit one, 44 said job, 43 said career and 48 said calling."
+      },
+      {
+        "t": "p",
+        "text": "People who saw their work as a calling reported higher life and job satisfaction, and they missed fewer days. The authors could not tell whether the calling caused the satisfaction or the other way round."
+      },
+      {
+        "t": "p",
+        "text": "Two details matter more than the headline. The sample was small and mostly women. And among 24 administrative assistants doing very similar work, all three orientations still showed up in roughly equal numbers. Same job description, three different relationships to it. So some of what makes work meaningful sits in how you relate to it, not only in what it is."
+      },
+      {
+        "t": "h2",
+        "text": "Look at the job you have first"
+      },
+      {
+        "t": "p",
+        "text": "Before changing jobs, it is worth seeing how much room you have to reshape the one you are in. Wrzesniewski and Jane Dutton called this job crafting, and they described three ways people do it:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "You can change your tasks: what you do, how much of it, in what form.",
+          "You can change your relationships at work: who you talk to and how.",
+          "You can change how you see the job: as a list of separate chores, or as one contribution."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Their paper is a theoretical model. It describes how job crafting might work, and it is not a promise that any job can be reshaped. Some roles leave very little room. But it gives you three things to try before you decide."
+      },
+      {
+        "t": "h2",
+        "text": "An audit to run before you decide"
+      },
+      {
+        "t": "p",
+        "text": "Give it two weeks. Each evening, write two lines: one moment work felt worthwhile that day, and one moment it felt empty. Then keep these questions beside you:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Which tasks make me lose track of time, and which do I count down?",
+          "Who benefits from what I do, and do I ever see it?",
+          "Which one task could I do more of, hand off, or change?",
+          "Which conversation at work gives me energy, and could I have more of it?",
+          "If I changed jobs tomorrow, which of these problems would come with me?"
+        ]
+      },
+      {
+        "t": "p",
+        "text": "At the end of the two weeks, read your lines back. Patterns often show up. Maybe the work is fine and the isolation is the problem. Maybe the tasks drain you and the people do not. Each pattern points to a different next step."
+      },
+      {
+        "t": "h2",
+        "text": "When the answer is to leave"
+      },
+      {
+        "t": "p",
+        "text": "Sometimes the audit says the job does not fit, and no amount of reshaping will change that. That is a legitimate answer. The difference is that you leave with a clearer list: what you want more of, what you want less of, and who you want your work to reach. That is a stronger starting point for the next search than “anything but this.”"
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "Meaning at work tends to come from four places: you, the people around you, how the job is set up, and your wider life.",
+          "Three questions help: does it matter to me, does it connect to who I am becoming, does it reach beyond me.",
+          "In one study, people in near-identical jobs described their work as a job, a career or a calling. The relationship to the work matters, not only the work.",
+          "Before you change jobs, try changing tasks, relationships or perspective, and keep a two-week log."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[Rosso, Dekas and Wrzesniewski (2010), On the meaning of work: A theoretical integration and review](https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/6/2019/06/Onthemeaningofwork_000.pdf)",
+          "[Wrzesniewski, McCauley, Rozin and Schwartz (1997), Jobs, careers, and callings](https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/7/206/files/2016/09/jobscareerscallings156JRP1997pap-28y6cfl.pdf)",
+          "[Wrzesniewski and Dutton (2001), Crafting a job](https://cdn.shopify.com/s/files/1/0813/8179/files/Wrzesniewski_Dutton_2001.pdf)",
+          "[Pew Research Center (2023), How Americans view their jobs](https://www.pewresearch.org/social-trends/2023/03/30/how-americans-view-their-jobs/)",
+          "[Steger, Dik and Duffy (2012) Work and Meaning Inventory, as described in a 2019 adaptation study](https://spb.psychopen.eu/index.php/spb/article/download/2505/2505.html?inline=1)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "purposeful-individuals-purposeful-humanity",
+    "title": "Purposeful Individuals, Purposeful Humanity",
+    "metaTitle": "Purposeful Individuals, Purposeful Humanity | PurposeBased",
+    "metaDescription": "How one person living on purpose affects the people around them, what many purposeful people could mean for a community, and what it asks of each of us.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Start with what matters to you",
+      "text": "If you would like a structured way to work out what matters to you and what you could do about it, PurposeBased is built for that. It is a starting point you can test in your own work and your own community.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "Living on purpose is usually described as a personal matter. That is true, but it is not the whole picture. The people around you notice what you commit to, and what they notice can shape what they try themselves."
+      },
+      {
+        "t": "p",
+        "text": "This article looks at how one person living on purpose affects the people around them, what may happen when many people do, and what it asks of each of us. It sticks to what the research supports, and it says where the research runs out."
+      },
+      {
+        "t": "h2",
+        "text": "What purpose means here"
+      },
+      {
+        "t": "p",
+        "text": "In research, purpose has a specific meaning. William Damon, Jenni Menon and Kendall Cotton Bronk define it as a stable, long-term intention to accomplish something that matters to you and is “of consequence to the world beyond the self.” So purpose, in this sense, always faces outward. A goal like a promotion can matter a lot to you and still not meet that definition."
+      },
+      {
+        "t": "p",
+        "text": "That outward direction is why purpose is a question for communities as well as for individuals."
+      },
+      {
+        "t": "h2",
+        "text": "What happens around one person"
+      },
+      {
+        "t": "p",
+        "text": "The honest part first: we did not find a study that measures whether one person's purpose changes the people near them. What exists is research on how other things travel through social ties."
+      },
+      {
+        "t": "p",
+        "text": "In 2008, James Fowler and Nicholas Christakis analysed data on 4,739 people from the Framingham Heart Study, followed from 1983 to 2003. They found that happiness clustered in social networks and reached up to three degrees of separation. A person's chance of being happy rose by 15.3% if someone directly connected to them was happy, by 9.8% at two degrees and by 5.6% at three. The authors say their data cannot show how this happens."
+      },
+      {
+        "t": "p",
+        "text": "The same pair later ran a laboratory study with public goods games among strangers. People were influenced by others in their group, and the effect carried on to people they had not met. Each extra contribution in the first round was roughly tripled by the end of the experiment."
+      },
+      {
+        "t": "p",
+        "text": "Neither study is about purpose. Happiness is not purpose, and a game with strangers is not a workplace. But they show that behaviour moves through networks, and that what you do can travel further than you will ever see."
+      },
+      {
+        "t": "h2",
+        "text": "One example, told plainly"
+      },
+      {
+        "t": "p",
+        "text": "In her 2004 Nobel lecture, Wangari Maathai described how the Green Belt Movement began in 1977. She was partly responding to needs that rural women in Kenya had named: fuel, water, food, shelter and income. Tree planting was chosen because it is simple, attainable and gives quick results. By the time of the lecture she said more than 30 million trees had been planted, and that thousands of ordinary citizens had been mobilised to act."
+      },
+      {
+        "t": "p",
+        "text": "Look at what the example shows: a real need, a simple action within reach, and a lot of people doing it. The scale came from many hands. One story does not prove a pattern, but it shows what the pattern could look like."
+      },
+      {
+        "t": "h2",
+        "text": "What many purposeful people could mean for a community"
+      },
+      {
+        "t": "p",
+        "text": "The research on purpose mostly looks at individuals, so what follows is reasoning, not a finding."
+      },
+      {
+        "t": "p",
+        "text": "When many people in the same place are working on something that matters beyond themselves, a few things become more likely. More people know how to start something. More people share what they know. A newcomer is more likely to find someone to learn from. That is the kind of ground communities grow on. It is also possible the effect is small, because communities depend on a lot besides how purposeful their members are."
+      },
+      {
+        "t": "p",
+        "text": "It is also worth knowing how uncommon this may be. In a study that followed 1,200 young Americans from age 12 to 26, beginning in 2003, Damon classified about one in five as purposeful. About a quarter were disengaged, 31% were dabblers who had tried several things without a clear reason, and about a quarter were dreamers with aspirations but no steps taken. That is one study, in one country, of young people, so do not read it as a statement about everyone. But it suggests purpose takes more than good intentions. It takes a first step."
+      },
+      {
+        "t": "h2",
+        "text": "What this does not mean"
+      },
+      {
+        "t": "p",
+        "text": "It does not mean everyone has to start an organisation, or that a quiet life is a wasted one. Purpose can be a teacher who cares about her students, a nurse who takes the time to explain, or a neighbour who keeps a shared garden going. Damon's definition asks for a long-term aim that reaches beyond you. It does not ask for scale. And it does not ask you to feel certain. Being unsure of the exact words is a normal place to start."
+      },
+      {
+        "t": "h2",
+        "text": "What it asks of each of us"
+      },
+      {
+        "t": "p",
+        "text": "None of this is a call to save the world. It asks for less, and it is harder in its own way."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Choose something beyond yourself and take one concrete step. Dreamers had the idea. Purposeful people had started.",
+          "Share what you know. Skills and lessons are among the few things that grow when they are given away.",
+          "Let other people find their own. Damon has said that pressure to be purposeful backfires, and he favours offering a range of options over assigning one.",
+          "Stay modest about the effect. You will rarely see how far something travels."
+        ]
+      },
+      {
+        "t": "h2",
+        "text": "Three things to try this month"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Name one thing in your community, workplace or neighbourhood that could be a little better, and one action you could take in under an hour.",
+          "Teach one thing you know to one person. Keep it small enough to finish.",
+          "Ask someone you respect what they are working on and why. Listen for what you would like to carry into your own work."
+        ]
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "In research, purpose means a long-term aim that matters to you and reaches beyond you.",
+          "Studies show that happiness and cooperation spread through social networks. We found no study that tests this for purpose itself, so treat the link as plausible, not proven.",
+          "Real examples tend to start small, with a need someone has named and an action within reach.",
+          "Purpose seems to take action, not just intention, and it works better offered than imposed."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[Damon, Menon and Bronk (2003), The development of purpose during adolescence](https://coa.stanford.edu/sites/default/files/devofpurpose_0.pdf)",
+          "[Fowler and Christakis (2008), Dynamic spread of happiness in a large social network, BMJ](https://pmc.ncbi.nlm.nih.gov/articles/PMC2600606/)",
+          "[Fowler and Christakis (2010), Cooperative behavior cascades in human social networks](https://marketing.wharton.upenn.edu/wp-content/uploads/2016/10/Cooperative_Behaviour_Cascades_in_Human_Social_Networks.pdf)",
+          "[Wangari Maathai (2004), Nobel Peace Prize lecture](https://www.nobelprize.org/prizes/peace/2004/maathai/lecture/)",
+          "[Education Next, review of Damon's The Path to Purpose](https://www.educationnext.org/purposeful-youth/)",
+          "[Education Week (2008), Majority of youths found to lack a direction in life](https://edweek.org/leadership/majority-of-youths-found-to-lack-a-direction-in-life/2008/06)",
+          "[Interview with William Damon, University of Notre Dame Institute for Social Concerns](https://socialconcerns.nd.edu/virtues/magazine/an-interview-with-bill-damon/)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-write-a-purpose-statement",
+    "title": "How to Write a Purpose Statement or a Why Statement",
+    "metaTitle": "How to Write a Purpose or Why Statement | PurposeBased",
+    "metaDescription": "Two methods for writing one sentence about your purpose: Richard Leider's gifts, passions and values, and Simon Sinek's stories and themes. A ten-minute draft for each.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Test your sentence against real options",
+      "text": "If you would like a place to work through your strengths, interests and values, and then test your draft against real work options, PurposeBased is built for that. A sentence is a start, and you decide what to do with it.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "A purpose statement is one sentence that says what you are here to do and for whom. There are two well-known ways to write one. Richard Leider starts from your gifts, passions and values and has you finish “I get up in the morning to ___”. Simon Sinek, with David Mead and Peter Docker, starts from stories and has you finish “To ___ so that ___”. Both end in a draft you test, not a verdict."
+      },
+      {
+        "t": "p",
+        "text": "Here is how each method works, a ten-minute way to try both, and where they fall short."
+      },
+      {
+        "t": "h2",
+        "text": "Leider: gifts, passions and values"
+      },
+      {
+        "t": "p",
+        "text": "Richard Leider is a coach and author who has written on purpose for decades. In The Power of Purpose he calls purpose your reason for being, and a question runs through the book: “Why do I get up in the morning?” He also offers a formula: purpose comes from gifts plus passions plus values. On his website he puts it more firmly, saying a purpose will always express all three, “No exceptions.” That is his claim, and it reads more like a definition than a finding."
+      },
+      {
+        "t": "p",
+        "text": "The three ingredients, in plain terms:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Gifts are what you are naturally good at, the things people ask you for.",
+          "Passions are what you care about and what moves you.",
+          "Values are what you stand for, the things you would not trade away."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "He also ties purpose to serving others, bringing together the needs of the world with your unique gifts."
+      },
+      {
+        "t": "p",
+        "text": "His website lays out a guided process. First you answer reflection prompts, such as recalling a gift you had as a child, imagining a conversation near the end of your life, and asking other people what your gifts are. Then you look at your core beliefs, your passions and your gifts. For the gifts, you draft statements with action verbs such as “to awaken,” “to ignite,” “to organize,” “to teach,” “to inspire,” “to serve,” “to lead” or “to empower.” Then you write a draft beginning “I get up in the morning to,” and refine it over a week. Each morning you write down why you got up that day, and each evening you note when you felt “on purpose.” His examples include “To bring out the best in my colleagues” and “To make the world a little greener and kinder.”"
+      },
+      {
+        "t": "h2",
+        "text": "Sinek: stories, themes and one sentence"
+      },
+      {
+        "t": "p",
+        "text": "Simon Sinek is an author and speaker, known for Start with Why. Find Your Why, published in 2017 with David Mead and Peter Docker, is a practical companion that lays out a step-by-step way to find yours. The method treats you as someone with evidence about yourself. You start from what you have actually done, not from what you think you should want."
+      },
+      {
+        "t": "p",
+        "text": "It has three steps. First, you gather stories of standout moments in your life, at work and outside it, and share them with another person, because patterns in your own stories are hard to see from the inside. Second, you look across the stories for ideas and feelings that come up again and again. One or two usually stand out. Third, you write a concise sentence in the form “To ___ so that ___.” The first blank is your contribution to others, and the second is the impact that follows."
+      },
+      {
+        "t": "p",
+        "text": "The book also describes a friends exercise: you ask close friends what drew them to you, and you push past generic answers like “you are kind” until you get something specific."
+      },
+      {
+        "t": "h2",
+        "text": "Try both in ten minutes"
+      },
+      {
+        "t": "p",
+        "text": "You will not finish either whole process in ten minutes, since the week of notes and the conversations with friends are part of them. But you can get a first draft down."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Write down three moments you are proud of, from work, family, a hobby, or a bad week that went well. Two lines each: what happened, and what you did. Ordinary moments count.",
+          "Under each one, add who was better off afterwards, and how.",
+          "Read all three and underline any word or idea that shows up more than once. These are your themes, and the Sinek half of the exercise.",
+          "Now add the Leider half: write three things people thank you for or ask your help with, finish “What I stand for is ___” and “What I really care about is ___”, and choose two or three verbs that feel true.",
+          "Write one version of each sentence: “To ___ so that ___” and “I get up in the morning to ___”. Keep job titles out of them. “To be a manager” says what you are, not what you give.",
+          "Read them aloud and keep the one that sounds like you on a good day, not the one that sounds impressive."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "If you can, read your three moments to a friend and ask what they heard repeating."
+      },
+      {
+        "t": "p",
+        "text": "For illustration only, suppose your three moments are teaching a colleague to read a budget, explaining a confusing letter to a neighbour, and putting together a simple guide for new volunteers. What repeats is turning something confusing into something usable. A first draft could read: “To turn confusing things into clear ones so that people can make their own decisions.” Or, in Leider's form: “I get up in the morning to organise messy situations so people get a fair, clear answer.” These are rough passes. The second half of the Sinek sentence is usually the one worth more thought, because it asks what changes for the other person."
+      },
+      {
+        "t": "h2",
+        "text": "Test the draft"
+      },
+      {
+        "t": "p",
+        "text": "A draft is not finished when it sounds good. Take a decision you are facing now, such as a job offer, a project or a request for your time, and ask whether it fits the sentence. If it does, notice how that feels. If it does not, ask whether the sentence is wrong or the option is. Both are useful answers. For a week, note each morning why you got up and each evening when you felt on purpose, as Leider suggests. Then try the exercise again in a few weeks. If the same themes come back, you have probably found something steady. If they shift, that is information too, and you can rewrite the sentence."
+      },
+      {
+        "t": "h2",
+        "text": "Where these methods fall short"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Both are practitioners' methods from books and websites. We did not find independent research testing whether writing such a statement changes anything for the writer. Treat them as thinking tools, not tests.",
+          "Stories come from memory, and memory is selective. The moments you choose will tilt the result.",
+          "One sentence is a summary, and summaries can feel tidier than a life is. A statement still has to be checked against real choices.",
+          "“No exceptions” is a strong claim. A purpose that does not fully use your gifts, or does not match your values perfectly, can still be a purpose worth working on.",
+          "Verbs can be too general. “To inspire” fits a thousand jobs. Pair it with who you inspire and how, and keep the impact small and honest."
+        ]
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "Leider's formula is gifts plus passions plus values, aimed at something beyond you.",
+          "Sinek's method is to gather stories, find the themes that repeat, and write “To ___ so that ___.”",
+          "Ask other people. They often see your gifts and patterns better than you do.",
+          "Treat the first draft as a hypothesis and check it against how your days feel."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[Leider, The Power of Purpose (Berrett-Koehler), excerpt](https://bkconnection.com/static/The_Power_of_Purpose_EXCERPT.pdf)",
+          "[Richard Leider, Unlock the power of purpose: a guide to writing your purpose statement](https://richardleider.com/unlock-the-power-of-purpose-a-guide-to-writing-your-purpose-statement-2/)",
+          "[University of Minnesota, Taking Charge of Your Health and Wellbeing: What is life purpose?](https://takingcharge.csh.umn.edu/enhance-your-wellbeing/purpose/life-purpose/what-life-purpose)",
+          "[Sinek, Mead and Docker (2017), Find Your Why, summary of the method](https://www.supersummary.com/find-your-why/summary/)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "what-is-generativity-and-legacy",
+    "title": "What Is Generativity?",
+    "metaTitle": "What Is Generativity? Work and Legacy | PurposeBased",
+    "metaDescription": "Generativity is the concern for guiding the next generation and leaving something that lasts. What Erikson and McAdams found, and what it means for your work.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Find what is worth passing on",
+      "text": "If you would like help working out what you know that is worth passing on, and where it fits in your work, PurposeBased is built for that kind of reflection. It is a place to start, and you decide where it goes.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "Generativity is a concern for guiding and caring for the next generation, and for leaving something that outlasts you. Erik Erikson placed it at the centre of middle adulthood, and Dan McAdams later turned it into something researchers could study and measure."
+      },
+      {
+        "t": "p",
+        "text": "For choosing your work, the idea carries a useful question: not only what you want to do, but what you could leave behind in other people."
+      },
+      {
+        "t": "h2",
+        "text": "What Erikson proposed"
+      },
+      {
+        "t": "p",
+        "text": "Erik Erikson described development as a series of stages across the whole life. The seventh stage, middle adulthood, is generativity versus stagnation. Sources place it roughly between the mid-forties and mid-sixties, though the ages are approximate. The strength that goes with it is care."
+      },
+      {
+        "t": "p",
+        "text": "The question underneath is simple: can I make my life count? People answer it by caring for others, teaching, mentoring, volunteering and doing creative work that benefits society. It is not only about having children. Any of these can count, at any point in a working life. Stagnation is the contrast, the sense of not contributing beyond yourself."
+      },
+      {
+        "t": "h2",
+        "text": "What McAdams and de St. Aubin added"
+      },
+      {
+        "t": "p",
+        "text": "In 1992, Dan McAdams and Ed de St. Aubin published “A theory of generativity and its assessment through self-report, behavioral acts, and narrative themes in autobiography.” The title tells you what they did. They looked at generativity in three ways: what people say about themselves, what they do, and the stories they tell about their lives."
+      },
+      {
+        "t": "p",
+        "text": "Their model, as later summarised by other researchers, has two sources of motivation: cultural expectations and an inner desire. Both feed a general generative concern, which leads to conscious goals and then to behaviour. They also built a 20-item questionnaire, the Loyola Generativity Scale."
+      },
+      {
+        "t": "p",
+        "text": "Two things changed along the way. Generativity became something that can show up throughout adult life, not only in middle age. And the idea of legacy was added, a wish to leave something that lasts. Modern definitions are broad: activity or intention that benefits others, whether through parenting, mentoring, volunteering or contributing to a community."
+      },
+      {
+        "t": "h2",
+        "text": "What it means for choosing your work"
+      },
+      {
+        "t": "p",
+        "text": "Take the idea seriously and it changes the question you ask about a job. “What do I enjoy?” still matters. So does “what could I leave in other people, or in the world?”"
+      },
+      {
+        "t": "p",
+        "text": "Work gives you plenty of channels for that. You can teach, mentor, write down what you have learned, build something other people use, or make it easier for the person after you. None of this requires a title, a team or a particular age. If generativity can show up throughout adult life, as McAdams's work suggests, you can start in your twenties as well as your fifties."
+      },
+      {
+        "t": "p",
+        "text": "It also changes how you read a job offer. Two jobs with the same reward can leave very different room for passing things on: one with colleagues who learn from you, one where you work alone. Neither is wrong. But asking the question beforehand, and asking the people already doing the job, can show you which kind of work you are stepping into."
+      },
+      {
+        "t": "h2",
+        "text": "Try it in ten minutes: a pass-it-on list"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "List three things you know or can do that took you years to learn.",
+          "For each one, name a person or group who would benefit from knowing it.",
+          "For each one, write the smallest way you could pass it on: a conversation, a one-page note, an hour of mentoring, a short workshop.",
+          "Circle the one you would do even if nobody thanked you.",
+          "Put a first step in your calendar this month."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "For illustration only, suppose you have spent ten years learning to run difficult client meetings. The people who would benefit are newer colleagues. The smallest way to pass it on is a monthly hour where you walk through one real meeting and what you would do differently. That is generative in the sense used here, and it does not need approval from anyone."
+      },
+      {
+        "t": "h2",
+        "text": "Honest limits"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Erikson's stages are a theory of development, and the age bands are loose. Not everyone moves through life in that order, and the idea needs care when it is applied to a single person.",
+          "Early thinking on generativity rests largely on theory, and empirical research on it came later.",
+          "Questionnaires like the Loyola scale rely on self-report. People can describe themselves as more caring than their actions show. The 1992 paper addressed this by also looking at behaviour and life stories.",
+          "The idea can turn into pressure to produce a legacy. A life can matter without a monument, and passing on something small to one person counts."
+        ]
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "Generativity is a concern for guiding the next generation and leaving something that lasts.",
+          "Erikson framed it as a stage of middle adulthood, and later research treats it as something that can show up throughout adult life.",
+          "For work, it adds a question: what could I leave in other people?",
+          "You can start small, with one thing you know and one person who would benefit."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "Erikson, E. H. (1950). Childhood and Society. Erikson's stage is described in the sources below.",
+          "McAdams, D. P., and de St. Aubin, E. (1992). A theory of generativity and its assessment through self-report, behavioral acts, and narrative themes in autobiography. Journal of Personality and Social Psychology, 62(6), 1003-1015.",
+          "[Grossman and Gruenewald (2020), Failure to meet generative self-expectations is linked to poorer cognitive-affective well-being, with a summary of the McAdams and de St. Aubin model](https://midus.wisc.edu/wp-content/uploads/2024/04/1810.pdf)",
+          "Slater, C. L. (2003). Generativity versus stagnation: An elaboration of Erikson's adult stage of human development. Journal of Adult Development, 10(1), 53-65."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "what-is-purpose-research-definition",
+    "title": "What Is Purpose? The Research Definition",
+    "metaTitle": "What Is Purpose? The Research Definition | PurposeBased",
+    "metaDescription": "In research, purpose is a long-term aim that matters to you and reaches beyond you. What William Damon found, plus questions you can try in ten minutes.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Work through the questions",
+      "text": "If you would like a place to work through questions like these and test them against real options for work, PurposeBased is built for that. It is meant to support your own thinking, and it does not replace it.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "In research, purpose is a long-term aim that is meaningful to you and reaches beyond you. William Damon, Jenni Menon and Kendall Cotton Bronk set out that definition in a 2003 paper, and it is the one this article uses."
+      },
+      {
+        "t": "p",
+        "text": "Here is what the definition says, what Damon found when he studied young people, and a short exercise built on questions drawn from his and Bronk's work."
+      },
+      {
+        "t": "h2",
+        "text": "The definition in plain words"
+      },
+      {
+        "t": "p",
+        "text": "The authors describe purpose as a stable and generalised intention to accomplish something that matters to you and is “of consequence to the world beyond the self.” There are three parts in that."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "It is stable. A passing enthusiasm does not count.",
+          "It is an intention to accomplish something. Purpose points at an outcome, not only a feeling.",
+          "It has two audiences: you and the world beyond you."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "The 2003 paper was a review of existing research, not a new study with its own participants. The authors also separate purpose from personal meaning. Meaning can be a feeling that life makes sense. Purpose points outward, toward something you are trying to do. They link a lack of purpose in adolescence to what they call drift, which they connect to personal and social problems."
+      },
+      {
+        "t": "h2",
+        "text": "What Damon found"
+      },
+      {
+        "t": "p",
+        "text": "In The Path to Purpose (2008), Damon reported on a study that followed 1,200 young Americans aged 12 to 26, starting in 2003. Here is how reviews of the book describe his findings."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "About one in five were purposeful: they had found something worth dedicating themselves to and were doing something about it.",
+          "About a quarter were disengaged, with no sign of anything remotely purposeful.",
+          "31% were dabblers. They had tried several things without a clear sense of why or whether it would last.",
+          "About a quarter were dreamers. They had big aspirations and had not taken practical steps toward them."
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Notice the difference between the last two groups and the first. Interest and ambition were not missing. What was missing was the link between caring about something and doing something about it. That is one study, in one country, of young people, described here through reviews of the book. It does not tell you what is true for every adult. If you recognise yourself in the dabbler or dreamer groups, that is not a flaw. It describes where many people stand before they commit, and the exercise below is a way to move from there."
+      },
+      {
+        "t": "h2",
+        "text": "What Damon says purpose is not"
+      },
+      {
+        "t": "p",
+        "text": "In interviews, Damon has been careful about what purpose does and does not mean."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "In his studies, purpose has not been associated with socioeconomic status.",
+          "Purpose does not by itself create happiness, though it can make hard experiences more satisfying.",
+          "Pressure to be purposeful is counterproductive. He favours offering people a range of options and letting them explore, not assigning one."
+        ]
+      },
+      {
+        "t": "h2",
+        "text": "Try it in ten minutes"
+      },
+      {
+        "t": "p",
+        "text": "The Greater Good Science Center at UC Berkeley, drawing on research by Damon and Bronk, suggests a set of questions for talking about purpose. Here is an adult version you can write answers to on your own. Give each question a couple of minutes."
+      },
+      {
+        "t": "ol",
+        "items": [
+          "What is important to you in your life?",
+          "Why do you care about those things?",
+          "Do you have any long-term goals?",
+          "Why are they important to you?",
+          "If you looked back on your life, how would you want to be remembered?"
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Then add one more, which is not from the research: what am I doing about it this month? It is the question that separates dreamers from people who have started."
+      },
+      {
+        "t": "p",
+        "text": "If your answers feel vague, that is normal. Vague answers often get clearer when you write them as full sentences, and clearer again when you test them. Now read your answers. Find one thing that appears more than once and that reaches beyond you. Write a single small action you could take in the next week. Come back to the questions in six months. Purpose, in Damon's definition, is stable, so what keeps showing up is worth more attention than what changes."
+      },
+      {
+        "t": "p",
+        "text": "For illustration only, suppose your answers keep returning to fairness at work and to helping new colleagues find their feet. A long-term goal might be to build a workplace where newcomers are not left to work things out alone. What you could do this month: offer to mentor one new person for an hour a week. That fits the definition. It is long-term, it matters to you, and it reaches beyond you."
+      },
+      {
+        "t": "h2",
+        "text": "Honest limits"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "The review's authors name their own limits. Research on purpose has used inconsistent definitions, many measures were designed for adults and do not capture concern for others, and direct evidence that purpose leads to good outcomes is thin.",
+          "The “beyond the self” part is a choice. A goal about your own comfort or growth is perfectly legitimate, even if it does not meet this definition.",
+          "The findings here are about young people in the United States. Adults may differ.",
+          "The questions in the exercise come from a Berkeley teaching resource, not from a tested instrument. Use them as prompts."
+        ]
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "In research, purpose is a stable intention to accomplish something that matters to you and reaches beyond you.",
+          "Damon found that about one in five young people in his study were purposeful. Many others had interests or dreams without taking steps.",
+          "Purpose does not guarantee happiness, and pressure to find it backfires.",
+          "A few written questions and one small action can show you where you stand."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[Damon, Menon and Bronk (2003), The development of purpose during adolescence](https://coa.stanford.edu/sites/default/files/devofpurpose_0.pdf)",
+          "[Education Next, review of Damon's The Path to Purpose (2008)](https://www.educationnext.org/purposeful-youth/)",
+          "[Education Week (2008), Majority of youths found to lack a direction in life](https://edweek.org/leadership/majority-of-youths-found-to-lack-a-direction-in-life/2008/06)",
+          "[Interview with William Damon, University of Notre Dame Institute for Social Concerns](https://socialconcerns.nd.edu/virtues/magazine/an-interview-with-bill-damon/)",
+          "[Greater Good Science Center, UC Berkeley: Talk with teens about purpose](https://ggia.berkeley.edu/practice/talk_with_teens_about_purpose)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "magic-wand-exercise-for-purpose",
+    "title": "The Magic Wand Exercise for Purpose",
+    "metaTitle": "The Magic Wand Exercise for Purpose | PurposeBased",
+    "metaDescription": "Kendall Cotton Bronk studies how purpose develops. Here is her magic wand exercise, adapted for one person, and what research says about building purpose.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Test what the exercise turns up",
+      "text": "If you would like a place to test the ideas the exercise turns up against real options for work, PurposeBased is built for that. It is meant to support your own thinking.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "The magic wand exercise asks you to imagine you could change anything in the world, describe that world, and then say what you could do about it. It comes from the Purpose Challenge Toolkit, created by Kendall Cotton Bronk with the Greater Good Science Center at UC Berkeley and Prosocial."
+      },
+      {
+        "t": "p",
+        "text": "Bronk studies how purpose is developed, so the exercise sits alongside a body of research. Here is who she is, how the exercise works, how to adapt it for ten minutes on your own, and what it can and cannot tell you."
+      },
+      {
+        "t": "h2",
+        "text": "Who Bronk is and what she studies"
+      },
+      {
+        "t": "p",
+        "text": "Kendall Cotton Bronk is a researcher who studies purpose in young people. She co-wrote the 2003 paper with William Damon and Jenni Menon that gave purpose its research definition: a long-term aim that matters to you and reaches beyond you. She is also the author of Purpose in Life: A Critical Component of Optimal Youth Development, published by Springer in 2014."
+      },
+      {
+        "t": "p",
+        "text": "That book brings together research on purpose across the lifespan. It defines purpose, discusses its philosophical roots and separates it from meaning, goals and ultimate concerns. It reviews how purpose is measured and how it develops, and it ends with steps that adults, educators and mentors can take to foster purpose in young people."
+      },
+      {
+        "t": "h2",
+        "text": "What the research says about cultivating purpose"
+      },
+      {
+        "t": "p",
+        "text": "The Berkeley page describing Bronk's work points to a 2012 study of nine adolescents with a strong sense of purpose. It found three things in their stories: early commitments, mentors, and talents that meet a need other people have. That is a small study, and it is about young people. It does not prove how purpose grows in everyone. But it gives three things to look for in your own life: what you committed to early, who encouraged you, and where your abilities meet someone's need."
+      },
+      {
+        "t": "p",
+        "text": "Damon, writing in the same area, is wary of pushing purpose on people. He suggests offering a range of options, connecting a person's talents and interests to a need in the world, and using mentors and hands-on projects. Exploration comes first, and pressure tends to backfire."
+      },
+      {
+        "t": "h2",
+        "text": "How the exercise works"
+      },
+      {
+        "t": "p",
+        "text": "The toolkit version is built for a classroom and takes 15 to 30 minutes. In outline:"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Students close their eyes and take a few breaths.",
+          "They think about their home, their community and the wider world.",
+          "They are given the magic wand prompt: if you could change anything, what would you change and why?",
+          "After about a minute, they are asked whether they could help move the world closer to that ideal, and how.",
+          "They write a description of the world they imagined and what they might do to help create it. If they do not think they can contribute, they explain why not.",
+          "They share their writing with a partner or group.",
+          "To close, they ask whether the exercise confirmed their sense of purpose or gave them clues about it."
+        ]
+      },
+      {
+        "t": "h2",
+        "text": "Adapt it for ten minutes on your own"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Spend a minute thinking about your home, then your community, then the wider world.",
+          "Write: “If I had a magic wand, I would change ___, because ___.”",
+          "Describe the world after the change, in a paragraph, as if it already exists. Be specific about what people do and see.",
+          "Write three things you could do to move it a few steps closer. Keep them small and real.",
+          "If you wrote “nothing,” write why. Sometimes the reasons are good. Sometimes they are fears you can look at.",
+          "Finish with one question: does anything here confirm something you suspected about what matters to you, or hint at something new?"
+        ]
+      },
+      {
+        "t": "p",
+        "text": "For illustration only, suppose your wand changes one thing: nobody in your town has to work through official paperwork alone. The world after the change has a friendly help desk at the library, forms written in plain language, and neighbours who know whom to ask. Three small things you could do: learn the forms you already know well and offer a monthly hour at the library, write a one-page plain-language summary of one common form, and ask your local council who handles this now. That is a start you can take this month."
+      },
+      {
+        "t": "h2",
+        "text": "What the exercise cannot tell you"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "It was designed for students. The page describing it cites research linking purpose to well-being, but not research testing this exercise.",
+          "The 2012 study behind the “early commitments, mentors, talents” pattern had nine participants.",
+          "A wand question can produce answers that are big and vague. The value is in step four, where the big answer turns into something small and doable.",
+          "Purpose research shows links with well-being. It does not show that doing this exercise causes more of it.",
+          "Your answer today is a hypothesis. Run it again in a few months and see what stays."
+        ]
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "The magic wand exercise asks: if you could change anything, what would it be, and what could you do about it?",
+          "It comes from a toolkit built by Kendall Cotton Bronk and the Greater Good Science Center, and it is designed for classrooms.",
+          "Research on how purpose develops points to early commitments, mentors and talents that meet a need.",
+          "The useful part is the small step at the end, not the grand answer at the start."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[Bronk (2014), Purpose in Life: A Critical Component of Optimal Youth Development, Springer](https://link.springer.com/book/10.1007/978-94-007-7491-9)",
+          "[Greater Good Science Center, UC Berkeley: Magic wand (Purpose Challenge Toolkit)](https://ggie.berkeley.edu/practice/magic-wand)",
+          "[Greater Good Science Center, UC Berkeley: Talk with teens about purpose](https://ggia.berkeley.edu/practice/talk_with_teens_about_purpose)",
+          "[Damon, Menon and Bronk (2003), The development of purpose during adolescence](https://coa.stanford.edu/sites/default/files/devofpurpose_0.pdf)",
+          "[Interview with William Damon, University of Notre Dame Institute for Social Concerns](https://socialconcerns.nd.edu/virtues/magazine/an-interview-with-bill-damon/)"
         ]
       }
     ]

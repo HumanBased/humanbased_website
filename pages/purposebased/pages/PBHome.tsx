@@ -106,9 +106,10 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: (
       <p>
         Yes. Based is free. Blissed is a subscription, from about €10 a month when you pay yearly
-        (€119.99 a year, which is 44% less than paying €17.99 month by month). Prices vary by country,
-        and we set them lower where they need to be so more people can afford it. The App Store shows
-        the exact price for your country.
+        (€119.99 a year, which is 44% less than paying €17.99 month by month). Besides the free version
+        and all its free features, we set lower prices in countries with smaller economies and lower
+        purchasing power, so everyone can afford it. We believe everyone should get to know their
+        purpose. The App Store shows the exact price for your country.
       </p>
     ),
   },
@@ -117,7 +118,7 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: (
       <p>
         Possibly, if cost is in the way. We have a scholarship fund, and we offer student and senior
-        discounts with proof of status. Email us at{' '}
+        discounts of 50% with proof of status. Email us at{' '}
         <a href="mailto:support@humanbased.org?subject=Scholarship%20request">support@humanbased.org</a>
         , tell us about your situation, and we'll get back to you. We decide each request ourselves
         and can't promise to grant every one.
@@ -488,7 +489,7 @@ const PBHome: React.FC = () => {
             <div className="pbh-tier pbh-tier--featured">
               <h3 className="pbh-tier-name">Blissed</h3>
               <div className="pbh-price">from €10</div>
-              <p className="pbh-price-note">a month, billed yearly at €119.99. Or €17.99 month by month. Prices vary by country, so more people can afford it. The App Store shows the price for your country.</p>
+              <p className="pbh-price-note">a month, billed yearly at €119.99. Or €17.99 month by month. Prices are lower in countries with smaller economies, so more people can afford it. The App Store shows the price for your country.</p>
               <p className="pbh-plus-heading">Everything in Based, plus:</p>
               <ul className="pbh-list">
                 <li>Deeper profile</li>
@@ -523,10 +524,10 @@ const PBHome: React.FC = () => {
           </h2>
           <div className="pbh-pill" style={{ marginTop: 36, maxWidth: 720 }}>
             <p className="pbh-pill-body">
-              We built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. We read every message.
+              We believe everyone should know their purpose. That is why Based is free, and why Blissed costs less in countries with smaller economies. We also built a scholarship fund for people who need it. If PurposeBased is out of reach right now, write to us and tell us a little about your situation. We read every message.
             </p>
             <p className="pbh-pill-body" style={{ marginTop: 14 }}>
-              We also offer student and senior discounts. With proof of status, we can give you access at a reduced price.
+              We also offer student and senior discounts of 50%. With proof of status, we can give you access at half price. We delete the proof once we have confirmed it.
             </p>
             <p className="pbh-pill-body" style={{ marginTop: 14 }}>
               We decide each scholarship and discount request ourselves, and we may not be able to grant every one.

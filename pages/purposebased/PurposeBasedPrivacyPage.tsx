@@ -17,7 +17,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm text-white/50 italic">Last updated: 16 November 2026</p>
+            <p className="text-sm text-white/50 italic">Last updated: 17 November 2026</p>
           </div>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed">
@@ -107,11 +107,21 @@ const PurposeBasedPrivacyPage: React.FC = () => {
 
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Scholarship and discount requests
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                If you ask for a scholarship or a student or senior discount, you may send us proof of your situation by email. We use it only to check your request. We delete it as soon as we have confirmed it, and never keep it longer than 6 months. You can ask us to delete it sooner. Legal basis: your request and our legitimate interest in checking it.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
                 How long we keep data
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>On your phone: until you delete it or delete the app.</li>
                 <li>Support emails: 6 months after the last message, so we can follow up on the same question, then they are deleted. You can ask us to delete them sooner.</li>
+                <li>Proof sent for a scholarship or discount: deleted once we have confirmed it, and no later than 6 months after we receive it.</li>
                 <li>Sales records from Apple: as long as accounting law requires.</li>
               </ul>
             </div>
