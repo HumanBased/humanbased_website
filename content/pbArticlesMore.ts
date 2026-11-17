@@ -1111,5 +1111,238 @@ export const PB_ARTICLES_MORE: PBArticleEntry[] = [
         ]
       }
     ]
+  },
+  {
+    "slug": "why-success-doesnt-feel-like-enough",
+    "title": "You Did Everything Right. So Why Doesn't It Feel Right?",
+    "metaTitle": "Why Success Doesn't Feel Like Enough | PurposeBased",
+    "metaDescription": "You did everything right and something still feels off. Why success can feel empty, and how to start with what matters to you instead of the next job title.",
+    "published": "2026-11",
+    "cta": {
+      "heading": "Start with understanding yourself",
+      "text": "You do not need the answer before you begin. PurposeBased helps you understand your patterns, strengths, motivations and values, so you can think about purpose and direction with a clearer picture of yourself.",
+      "links": "Explore [how PurposeBased works](/purposebased/how-it-works) or visit the [PurposeBased home page](/purposebased)."
+    },
+    "blocks": [
+      {
+        "t": "p",
+        "text": "You followed the path that seemed right. You got the education, built a career, worked hard, took the opportunities and reached the milestones. Maybe you even have the stability you once wanted."
+      },
+      {
+        "t": "p",
+        "text": "And yet, something does not feel quite right."
+      },
+      {
+        "t": "p",
+        "text": "Maybe you are not unhappy enough to leave. Maybe nothing is obviously wrong. You just have a feeling that you are moving in a direction that no longer feels like yours. That can be hard to explain, because from the outside, everything looks fine."
+      },
+      {
+        "t": "h2",
+        "text": "When success does not feel like enough"
+      },
+      {
+        "t": "p",
+        "text": "Work gives us more than a way to earn a living. For many people it is also connected to identity, meaning, purpose and the feeling that what they do matters."
+      },
+      {
+        "t": "p",
+        "text": "In a survey reported by the American Psychological Association, 93% of workers said it is very or somewhat important to have a job where the work feels meaningful ([APA](https://www.apa.org/monitor/2024/01/trends-meaning-stability-workplaces)). Yet PwC's 2025 Global Workforce Hopes and Fears Survey found that only 56% of workers said they had found a meaningful career ([PwC](https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears/hopes-and-fears-2025.html)). Almost everyone cares about meaningful work. Far fewer feel they have it."
+      },
+      {
+        "t": "p",
+        "text": "The same tension shows up in engagement. Gallup reports that only 20% of employees worldwide were engaged at work in 2025 ([Gallup](https://www.gallup.com/workplace/697904/state-of-the-global-workplace-2026.aspx)). That does not mean 80% of people are in the wrong careers, because engagement and career fit are not the same thing. But it does point to something broader: a widespread distance between people and the work they spend their days on."
+      },
+      {
+        "t": "p",
+        "text": "Sometimes the problem is not that you have not achieved enough. It is that what you have achieved does not feel connected to what matters to you."
+      },
+      {
+        "t": "h2",
+        "text": "Maybe the question is not “What should I do next?”"
+      },
+      {
+        "t": "p",
+        "text": "When something feels wrong, the instinct is to fix it immediately. Find another job. Change careers. Learn something new. Move somewhere else. Start over."
+      },
+      {
+        "t": "p",
+        "text": "There is nothing wrong with any of those choices, and change does help sometimes. Other times it only disguises the problem for a while, and the same feeling returns a year or two later. The more lasting answer is to understand what the feeling is about."
+      },
+      {
+        "t": "p",
+        "text": "So before deciding what to do next, try a simpler question:"
+      },
+      {
+        "t": "p",
+        "text": "**What is making me want to change direction in the first place?**"
+      },
+      {
+        "t": "p",
+        "text": "Maybe you are no longer challenged. Maybe you are exhausted. Maybe you became good at something because it was the path everyone expected you to follow, without asking whether it would bring you the fulfilment you were looking for. Or maybe you want more meaning. These situations can look alike from the outside, but they lead to very different decisions."
+      },
+      {
+        "t": "p",
+        "text": "Deloitte's 2025 Gen Z and Millennial Survey, covering more than 23,000 people in 44 countries, found that only 6% of Gen Z respondents said reaching a senior leadership position was a primary career goal ([Deloitte](https://www.deloitte.com/us/en/insights/topics/talent/2025-gen-z-millennial-survey.html)). Their priorities were broader, including money, meaning and well-being."
+      },
+      {
+        "t": "p",
+        "text": "A successful career is not only about how far you can climb. It is also about whether you still care about what you are climbing towards. Somewhere in the climb it is easy to lose sight of the things that led you there in the first place. Most of us would not want a doctor who dreams only of becoming hospital director, or a teacher who is mainly focused on becoming a dean."
+      },
+      {
+        "t": "h2",
+        "text": "What actually matters to you?"
+      },
+      {
+        "t": "p",
+        "text": "This is where career uncertainty becomes a deeper question. Before asking “What career is right for me?”, it may be worth asking:"
+      },
+      {
+        "t": "p",
+        "text": "**What matters to me?**"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "What are you naturally good at?",
+          "What motivates you?",
+          "What kinds of problems do you enjoy solving?",
+          "What gives you energy?",
+          "What do you value?",
+          "What kind of environment brings out your best?",
+          "What have your previous choices taught you about yourself?"
+        ]
+      },
+      {
+        "t": "p",
+        "text": "These questions do not give you a job title. They give you something more basic: **a clearer understanding of the person who has to make the decision.**"
+      },
+      {
+        "t": "p",
+        "text": "Deloitte found that a sense of purpose is important to job satisfaction and well-being for about 89% of Gen Z respondents and 92% of millennials. But purpose means different things to different people. For one person it means contributing to society. For another it means financial security. For someone else it means having enough freedom and balance to pursue what matters outside of work."
+      },
+      {
+        "t": "p",
+        "text": "There is no single definition of purpose, and there does not need to be. What matters is what it means to you, and what kind of life you want your work to support."
+      },
+      {
+        "t": "h2",
+        "text": "Knowing yourself before choosing a direction"
+      },
+      {
+        "t": "p",
+        "text": "Self-understanding can sound abstract when you are trying to make a practical decision. But it gives you a better basis for making it."
+      },
+      {
+        "t": "p",
+        "text": "The World Economic Forum's *Future of Jobs Report 2025* lists motivation and self-awareness among the skills employers consider important for the future of work ([World Economic Forum](https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf)). That does not mean self-awareness guarantees success. It means understanding yourself is useful well beyond personal reflection."
+      },
+      {
+        "t": "p",
+        "text": "One way to use it is to think about upsides and downsides."
+      },
+      {
+        "t": "p",
+        "text": "Everything has its difficulties. Some things we are so driven to do that we barely feel those hardships, because we are focused on the satisfaction of it working out. That is a way of living with the downsides."
+      },
+      {
+        "t": "p",
+        "text": "Everything also has upsides, but not every upside moves every person. You might be thrilled by the idea of building a successful social enterprise, while for your brother it means nothing. So it matters to choose well, so that the upside really moves you."
+      },
+      {
+        "t": "p",
+        "text": "If you do not know what drives you, what matters to you or what kind of environment fits you, it becomes harder to judge whether an opportunity is worth pursuing, whether its upsides genuinely matter to you and whether its downsides are ones you are willing to accept."
+      },
+      {
+        "t": "h2",
+        "text": "You do not need to find one perfect path"
+      },
+      {
+        "t": "p",
+        "text": "Career uncertainty can make it feel as though there is one perfect answer somewhere. The right career, the right job, the right path. If you could only find it, everything would finally make sense."
+      },
+      {
+        "t": "p",
+        "text": "But the question may be bigger than finding the right job. We spend a lot of time thinking about what we want to get from our work: recognition, money, freedom, status, security, the feeling of having made it. There is another set of questions we do not ask often enough:"
+      },
+      {
+        "t": "p",
+        "text": "**What do you want to contribute?**"
+      },
+      {
+        "t": "p",
+        "text": "**Who or what do you want your work to serve?**"
+      },
+      {
+        "t": "p",
+        "text": "**What are you here to give, not just to get?**"
+      },
+      {
+        "t": "p",
+        "text": "These questions sit at the heart of ideas such as ikigai, purpose, service and contribution. They shift the question from “What career is right for me?” to “What kind of life do I want to build, and what role do I want to play in it?”"
+      },
+      {
+        "t": "p",
+        "text": "Your priorities change, your circumstances change, and you learn more about yourself. What matters to you at one stage of life may not matter in the same way later. So the goal may not be to find one perfect path. It may be to understand what gives a direction meaning, and to keep making choices that move you towards it."
+      },
+      {
+        "t": "p",
+        "text": "Purpose also does not have to come entirely from your job. Some people put financial security and work-life balance first because those things give them the freedom and resources to pursue meaning elsewhere. Ideally your career fulfils a meaningful part of your purpose, because work takes up so much of your life. But your career can be one part of a meaningful life without having to carry all of it."
+      },
+      {
+        "t": "h2",
+        "text": "So where do you start?"
+      },
+      {
+        "t": "p",
+        "text": "If you no longer know what fits you, picking another option at random is unlikely to solve the underlying problem. The excitement of a new job title tends to fade after a few months. You need somewhere to begin."
+      },
+      {
+        "t": "p",
+        "text": "It may begin with understanding yourself. Understanding what drives you. Understanding what matters to you. Understanding the patterns behind the choices you have already made. Then you can start exploring where those things might lead."
+      },
+      {
+        "t": "p",
+        "text": "The path looks something like this: understand yourself, gain insight, see possible directions, explore, take a next step, and keep asking the question as you go."
+      },
+      {
+        "t": "p",
+        "text": "You do not need to know the whole path before you move. You need enough clarity to know which direction is worth exploring in your next step."
+      },
+      {
+        "t": "h2",
+        "text": "Where PurposeBased comes in"
+      },
+      {
+        "t": "p",
+        "text": "PurposeBased is designed to help you understand yourself more deeply: your patterns, strengths, motivations and values, and what drives you. You can then use those insights to think about purpose and direction."
+      },
+      {
+        "t": "p",
+        "text": "It is not about handing you one career and telling you what to do. It is about helping you build a clearer picture of yourself, so you can make better-informed choices about where you want to go. Sometimes the hardest part of changing direction is not finding another option. It is understanding what makes a direction worth choosing, for you and for the life you want to build."
+      },
+      {
+        "t": "p",
+        "text": "You do not have to have the answer before you begin. You can start with a better understanding of yourself."
+      },
+      {
+        "t": "takeaways",
+        "items": [
+          "Many people care about meaningful work, but far fewer feel they have it.",
+          "Before changing jobs, ask what is making you want to change direction.",
+          "Knowing what matters to you helps you judge which upsides really move you and which downsides you can live with.",
+          "You do not need one perfect path, only enough clarity for the next step."
+        ]
+      },
+      {
+        "t": "sources",
+        "items": [
+          "[American Psychological Association: Trends in meaning and stability at work](https://www.apa.org/monitor/2024/01/trends-meaning-stability-workplaces)",
+          "[PwC: Global Workforce Hopes and Fears Survey 2025](https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears/hopes-and-fears-2025.html)",
+          "[Gallup: State of the Global Workplace 2026](https://www.gallup.com/workplace/697904/state-of-the-global-workplace-2026.aspx)",
+          "[Deloitte: 2025 Gen Z and Millennial Survey](https://www.deloitte.com/us/en/insights/topics/talent/2025-gen-z-millennial-survey.html)",
+          "[World Economic Forum: Future of Jobs Report 2025](https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf)"
+        ]
+      }
+    ]
   }
 ];

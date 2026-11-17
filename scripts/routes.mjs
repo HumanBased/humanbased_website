@@ -33,6 +33,7 @@ export const ROUTE_ENTRIES = [
   { path: '/purposebased/articles/living-on-purpose-not-by-chance', priority: 0.8 },
   { path: '/purposebased/articles/what-high-achievers-and-philosophers-say-about-purpose', priority: 0.8 },
   { path: '/purposebased/articles/people-who-work-for-purpose-change-the-world', priority: 0.8 },
+  { path: '/purposebased/articles/why-success-doesnt-feel-like-enough', priority: 0.8 },
   { path: '/purposebased/partners', priority: 0.7 },
   { path: '/apps/basedtalk/privacy', priority: 0.5 },
   { path: '/apps/basedtalk/terms', priority: 0.5 },
