@@ -4,7 +4,7 @@ import { usePageTitle } from '../../hooks/usePageTitle';
 // Text supplied by the dev team on 2026-11-20 and set exactly as written. Update the "Last updated" date whenever the text changes.
 const PurposeBasedPrivacyPage: React.FC = () => {
   usePageTitle('PurposeBased Privacy Policy, HumanBased', '/apps/purposebased/privacy',
-    'The PurposeBased privacy policy: nothing about you ever leaves your phone, there is no account, and we keep nothing. How to contact us and delete your data.');
+    'The PurposeBased privacy policy: your answers never leave your phone, there is no account, and we keep nothing. How to contact us and delete your data.');
 
   return (
     <div className="flex-grow bg-transparent">
@@ -31,7 +31,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Our promise
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                Nothing about you ever leaves your phone. We keep nothing, share nothing and sell nothing, and there is no account.
+                Your answers never leave your phone. We keep nothing, share nothing and sell nothing, and there is no account.
               </p>
             </div>
             <div>
@@ -56,9 +56,18 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 <li><strong className="text-white/80">Emails you choose to send us.</strong> Feedback opens your own mail app, so you see exactly what is sent. We keep the conversation to help you.</li>
               </ol>
               <p className="text-sm md:text-base text-white/60 leading-relaxed mt-3">
-                No ads, no tracking, no analytics, no outside code in the app. We do not use your data to train AI.
+                No tracking, no analytics, no outside code in the app. We do not use what you enter to train any system.
               </p>
             </div>
+            <div>
+              <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
+                Scholarship and discount requests
+              </h2>
+              <p className="text-sm md:text-base text-white/60 leading-relaxed">
+                If you ask for a scholarship or a student or senior discount, you may send us proof of your situation by email. We use it only to check your request. We delete it as soon as we have confirmed it, and never keep it longer than 6 months. You can ask us to delete it sooner. Legal basis: your request and our legitimate interest in checking it.
+              </p>
+            </div>
+
             <div>
               <h2 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-3 text-white/90">
                 Who is responsible
@@ -73,7 +82,8 @@ const PurposeBasedPrivacyPage: React.FC = () => {
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-sm md:text-base text-white/60">
                 <li>On your phone: until you delete it or delete the app.</li>
-                <li>Emails you send us: up to 2 years after the last message.</li>
+                <li>Emails you send us: 6 months after the last message, then they are deleted. You can ask us to delete them sooner.</li>
+                <li>Proof sent for a scholarship or discount: deleted once we have confirmed it, and no later than 6 months after we receive it.</li>
                 <li>Purchase records: kept by Apple. We hold only what accounting law requires.</li>
               </ul>
             </div>
@@ -106,7 +116,7 @@ const PurposeBasedPrivacyPage: React.FC = () => {
                 Changes
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                If anything here changes, for example a future Purpose Coach that would need to send text to a service, we will update this page first and ask for your permission in the app before anything is sent.
+                If we ever add something that sends anything off your phone, we will update this page first and ask your permission in the app before anything is sent.
               </p>
             </div>
 

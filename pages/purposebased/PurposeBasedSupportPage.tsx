@@ -84,7 +84,7 @@ const PurposeBasedSupportPage: React.FC = () => {
                 Is my data shared or sold?
               </h2>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
-                No. Everything stays on your phone and nothing is collected. No ads, no tracking, nothing sold.
+                No. Everything stays on your phone and nothing is collected. No tracking, nothing sold.
               </p>
             </div>
 
